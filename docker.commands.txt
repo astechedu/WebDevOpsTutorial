@@ -1,0 +1,6 @@
+>>>>>>>>>>>> Docker Commands <<<<<<<<<<<
+
+docker 
+docker images 
+docker rmi img_id           //img_id-> 9a87dd3fbg etc.
+docker rmi -f img_id 
