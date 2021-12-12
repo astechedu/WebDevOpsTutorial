@@ -7,7 +7,7 @@ On Ubuntu:
 How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04:
 
 Step 1: Setup Initialization:
-<code>sudo apt update </code>
+sudo apt update
 sudo apt upgrade
 
 Step 2: Install Apache:
