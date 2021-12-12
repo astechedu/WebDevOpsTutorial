@@ -53,15 +53,15 @@ Output:
     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
    Drop-In: /lib/systemd/system/apache2.service.d
             └─apache2-systemd.conf
-    Active: active (running) since Tue 2020-01-06 03:59:34 UTC; 5min ago
+    Active: active (running) since Sun 2021-12-12 04:58:34 UTC; 5min ago
   Main PID: 10617 (apache2)
      Tasks: 55 (limit: 667)
     CGroup: /system.slice/apache2.service
             ├─10617 /usr/sbin/apache2 -k start
             ├─10619 /usr/sbin/apache2 -k start
             └─10620 /usr/sbin/apache2 -k start
- Jan 06 03:59:34 apache systemd[1]: Starting The Apache HTTP Server…
- Jan 06 03:59:34 apache systemd[1]: Started The Apache HTTP Server.
+ Sun 12 04:58:34 apache systemd[1]: Starting The Apache HTTP Server…
+ Sun 12 04:58:34 apache systemd[1]: Started The Apache HTTP Server.
 
 
  Step 5: Install MySQL:
@@ -75,7 +75,7 @@ Output:
 
  ● mysql.service - MySQL Community Server
      Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
-     Active: active (running) since Tue 2020-05-05 07:13:18 UTC; 1min 4s ago
+     Active: active (running) since Sun 2021-12-12:13:18 UTC; 1min 4s ago
    Main PID: 3333 (mysqld)
      Status: "Server is operational"
       Tasks: 38 (limit: 2010)
