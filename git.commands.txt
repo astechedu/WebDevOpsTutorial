@@ -237,3 +237,175 @@ to read about a specific subcommand or concept.
     verify-pack
     write-tree
 -------------------------------------------------------------------------
+
+1. git clone
+
+This command is used for downloading the latest version of a remote project and copying it to the selected location on the local machine. It looks like this:
+git clone <repository url>
+
+To clone a specific branch, you can use
+git clone <repository url> -b <branch name>
+------------------------------------------------------------------
+
+2. git fetch
+
+This Git command will get all the updates from the remote repository, including new branches.
+3. git checkout
+
+You can use the checkout command to switch the branch that you are currently working on.
+git checkout <branch name>
+
+If you want to create a new branch and switch to it, you can do it by using this command:
+git checkout -b <branch name>
+
+-------------------------------------------------------------------
+
+4. git init
+
+This is the command you need to use if you want to start a new empty repository or to reinitialize an existing one in the project root. It will create a .git directory with its subdirectories. It should look like this:
+git init <repository name>
+
+-------------------------------------------------------------------
+
+5. git commit
+
+This one is probably the most used Git command. After changes are done locally, you can save them by “committing” them. A commit is like local a snapshot of the current state of the branch, to which you can always come back. To create a new commit, type this command in Git Bash:
+git commit -m "<commit message>"
+
+If all goes well, you will see the changes in the commit:
+
+---------------------------------------------------------------------
+
+6. git push
+
+Git push will push the locally committed changes to the remote branch. If the branch is already remotely tracked, simply use it like this (with no parameters):
+git push
+
+If the branch is not yet tracked, and only resides on the local machine, you need to run the command like this:
+git push --set-upstream <remote branch> <branch name>
+-----------------------------------------------------------------------
+
+7. git diff
+
+You can use this command to see the unstaged changes on the current branch. Here’s an example of a branch with an edited feature file:
+
+If you want to see the staged changes, run the diff command like this:
+git diff --staged
+
+Or you can compare two branches:
+gif diff <branch1> <branch2>
+-----------------------------------------------------------------------
+
+8. git pull
+
+Using git pull will fetch all the changes from the remote repository and merge any remote changes in the current local branch.
+-----------------------------------------------------------------------
+9. git add
+
+This is the command you need to use to stage changed files. You can stage individual files:
+git add <file path>
+
+Or all files:
+git add .
+-----------------------------------------------------------------------
+
+10. git branch
+
+Using git branch will list all the branches of the repository:
+
+Git Branch
+
+Or you can use it to create a new branch, without checking it out:
+git branch <new branch>
+
+To delete a branch, run it like this:
+git branch -d <branch name>
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+//
+
+git remote add origin http://github.com/UserName/RepositoryName.git
+
+git status
+git add . 
+git commit -m "comments"
+git push -u orign main
+
+//create a branch 
+git branch new-local-repo
+
+git push new-local-repo       //Pushes the new branch to new remote repo
+
+git checkout new-local-repo                        //Checkout or change to branch
+git checkout -b subbranch new-local-repo //Create new branch
+
+git branch -d new-local-repo   //Delete local branch without loosing any history
+git branch -D new-local-repo   //
+
+git push origin -delete new-local-repo   //Delete a remote branch 
+OR
+git push origin :new-local-repo
+
+git status                                //To see what branch you are on:
+git branch -r                            //To see remote branches
+git branch -m <new_name>  //To rename current branch
+git branch -a                            //To see all local and remote branched               
+
+
+
+
+-----------Git D e v e l o p m e n t W o r k -----------------------
+
+Merging Branches:  Git Development
+
+Ex: 
+
+//Merging newBranch To myBranch & myBranch To master branch
+1. master branch 2. my branch 3. new branch 
+
+Steps: 
+git branch 
+echo > newfile1.txt
+git add newfile1.txt
+git status
+git commit -m "new file1.txt added"
+git push myorigin newbranch
+git checkout mybranch
+git branch
+git merge newbranch
+git status
+git push myorigin mybranch
+
+git checkout master 
+git branch
+git merge mybranch
+git push myorigin master
+
+//Git Diff Command
+git diff <fileNameInWhichSomethingChanged>
+git add .
+git commit -m "comment"
+git push origin master
+
+git diff
+git add . 
+git diff file.txt
+
+git diff --staged tile.txt        //Diff in staged file
+
+git status
+git reset file.txt                   //Rest old changes in staged a file
+git status
+
+git chechout file.txt
+
+
+git status       //Showing two files in red color
+    file1.txt 
+    file2.txt 
+git checkout .    //Going to old commit both files
+
+git log              //See all comments
+
+--------------------- X -------------------------------------------
