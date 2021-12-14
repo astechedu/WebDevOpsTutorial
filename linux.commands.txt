@@ -2,6 +2,16 @@
 >>>>>>>> Linux Commands <<<<<<<<<
 
 
+--------------------------------------
+--------------------------------------
+Ubuntu Linux
+Red Hat Enterprise Linux
+Linux Mint
+Debian
+Fedora
+--------------------------------------
+-------------------------------------
+
 On Ubuntu: 
 
 How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04:
@@ -193,6 +203,61 @@ Conclusion:
 Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
+----------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------
+>>>>>>> Ubuntu 20.4 - Linux <<<<<<<<<<<
 
+//Install nginx on Ubuntu All Steps:
 
+sudo apt update
+sudo apt install nginx
+sudo systemctl status nginx
+sudo systemctl stop nginx
+sudo systemctl status nginx
+sudo systemctl start nginx
+sudo systemctl status nginx
+cd /etc/nginx/
+ls
+ls confg.d/
+ls sites-enabled/
+is sites-available/
+clean
+
+>>>>>> Kali Linux 2020.4 <<<<<<<<<<<
+
+//Install nginx on Kali Linux All Steps:
+
+sudo apt update
+sudo apt install nginx
+clean
+sudo service nginx status
+sudo sysemctl status nginx
+sudo service nginx start
+sudo nginx -v
+clean 
+sudo ifcongi
+sudo systemctl stop nginx
+sudo systemctl start nginx
+sudo systemctl restart nginx
+sudo systemctl reload nginx
+sudo systemctl disable nginx
+sudo systemctl enable nginx
+ls  /etc/nginx
+sudo nano /ect/nginx/nginx.conf
+exit
+------------------------------------------------------
+
+>>>>>> Linux Mint <<<<<<<<<<<
+
+//Install nginx on Linux Mint  All Steps:
+
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:nginx/stable
+sudo apt-get update
+sudo apt-get install nginx
+clear
+sudo service nginx status
+sudo sevice nginx stop
+sudo service nginx restart
+-----------------------------------------------------------------------------
 
