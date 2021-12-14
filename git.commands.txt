@@ -353,7 +353,15 @@ git branch -m <new_name>  //To rename current branch
 git branch -a                            //To see all local and remote branched               
 
 
+--------------------------------------------------------
+11. //Reset Last one or two commits:
 
+git reset --hard HEAD^          //Remove last one commit 
+git reset --hard HEAD^^        //Remove last two commits
+
+git restore --staged <fileName>  // back to last step from staging tree
+
+---------------------------------------------------------
 
 -----------Git D e v e l o p m e n t W o r k -----------------------
 
