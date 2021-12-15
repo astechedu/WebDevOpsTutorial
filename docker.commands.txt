@@ -1,10 +1,104 @@
 >>>>>>>>>>>> Docker Commands <<<<<<<<<<<
 
-docker 
-docker images 
-docker rmi img_id           //img_id-> 9a87dd3fbg etc.
-docker rmi -f img_id 
-docker ps
-docker create php
+---------------------------------------------------------------------------------------------------
+Following are the commands list:
+https://www.edureka.co/blog/docker-commands/
+
+    docker –version
+    docker pull
+    docker run
+    docker ps
+    docker ps -a
+    docker exec
+    docker stop
+    docker kill
+    docker commit
+    docker login
+    docker push
+    docker images
+    docker rm
+    docker rmi
+    docker build
+    docker search      //Searching images form docker hub
+
+ //Details: 
+
+1. docker –version
+This command is used to get the currently installed version of docker
+Ex: docker --version
+
+2. docker pull
+Usage: docker pull <image name>
+This command is used to pull images from the docker repository(hub.docker.com)
+Ex: docker pull ubuntu
+
+3. docker run
+Usage: docker run -it -d <image name>
+This command is used to create a container from an image
+Ex: docker run -it -d ubuntu
+
+4. docker ps
+This command is used to list the running containers
+Ex: docker ps
+
+5. docker ps -a
+This command is used to show all the running and exited containers
+Ex: docker ps -a
+
+6. docker exec
+Usage: docker exec -it <container id> bash
+This command is used to access the running container
+Ex: docker exec -it fe6e370a1c9c bash
+
+7. docker stop
+Usage: docker stop <container id>
+This command stops a running container
+Ex: docker stop fe6e370a1c9c 
+
+8. docker kill
+Usage: docker kill <container id>
+Ex: docker kill fe6e370a1c9c 
+
+This command kills the container by stopping its execution immediately.
+The difference between ‘docker kill’ and ‘docker stop’ is that ‘docker stop’ gives 
+the container time to shutdown gracefully, in situations when it is taking too much 
+time for getting the container to stop, one can opt to kill it
+
+9. docker commit
+Usage: docker commit <conatainer id> <username/imagename>
+This command creates a new image of an edited container on the local system
+Ex: docker commit fe6e370a1c9c hshar/ubuntunew
+
+10. docker login
+This command is used to login to the docker hub repository
+Ex: docker login
+
+11. docker push
+Usage: docker push <username/image name>
+This command is used to push an image to the docker hub repository
+Ex: docker push hshar/ubuntunew
 
 
+12. docker images
+This command lists all the locally stored docker images
+Ex: docker images
+
+13. docker rm
+Usage: docker rm <container id>
+This command is used to delete a stopped container
+Ex: docker rm 2b86a0703d4f
+
+14. docker rmi
+Usage: docker rmi <image-id>
+This command is used to delete an image from local storage
+Ex: docker rmi 2b86a0703d4f
+
+15. docker build
+Usage: docker build <path to docker file>
+This command is used to build an image from a specified docker file
+Ex: docker build . 
+
+16. docker search
+
+Ex: docker search php
+---------------------------------------------------------------------------
