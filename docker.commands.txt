@@ -32,25 +32,11 @@ https://www.edureka.co/blog/docker-commands/
     docker start
     docker network
     docker volumn
+    docker info
+    service docker status
+    service docker start    OR systemctl start docker.service
 
 ---------------------------------------------------------
-
-    Example: <Create new container name "my-app">
-
-    docker create --name my-container-name -it ubuntu bash   //Create New Container: (my-app)
-
-    docker container ls            //Container list
-    docker container ls -a         //List of all containers
-    docker start <container-name>  //Container-name: my-app
-    docker attach <container-name> //Enter into container (my-app)
-    apt-get update                 //In ubuntu conatainer update..
-    apt-get install iputls-ping     
-    ping 0.0.0.0
-    ping google.com
-    exitm                        //Exit form container 
-    docker logs my-app           //My Container name
-
------------------------------------------------------------
 
 
  //Details: 
@@ -163,6 +149,59 @@ docker rm -f (docker ps -a -q)
 
 -------------------------------------------------------------------
 
+    Example: <Create new container name "my-app">
+
+    docker create --name my-container-name -it ubuntu bash   //Create New Container: (my-app)
+
+    docker container ls            //Container list
+    docker container ls -a         //List of all containers
+    docker start <container-name>  //Container-name: my-app
+    docker attach <container-name> //Enter into container (my-app)
+    apt-get update                 //In ubuntu conatainer update..
+    apt-get install iputls-ping     
+    ping 0.0.0.0
+    ping google.com
+    exitm                        //Exit form container 
+    docker logs my-app           //My Container name
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+Example 01:  From Scratch (Docker Basics)
+
+  sudo dnf install docker-ce       //Installing of docker
+  docker info
+  service docker status
+  service docker start    OR systemctl start docker.service
+  docker version 
+
+-----------------------------------------------------------
+Example 02: 
+  docker --help |less   //Readable list formate
+
+  //Docker Parent Modules: 
+    config, container, image, network, node, plugin, secret, service, stack, swarm, system, volume 
+  //Child Modules:
+    attach, build, commit, cp, create, diff, events
+
+    Ex:  docker container ls,  docker image ls, docker network ls
+
+    docker container run ubuntu cat /etc/os-release //ubuntu->imageName:ContainerOpenedThenClosed        
+                                                    //cat-information                                   
+
+    docker container ls, docker container ls -a 
+    docker container run ubuntu sleep 30
+    docker container ls                         //docker ps -> old command
+
+    docker container run nginx
+    docker container ls
+    docker container ls -a
+    docker container rm <container_id>                 //To remove container
+    docker container rm <container_id> <container_id>  //To remove two containers
+
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+
 Example: 
  Hosting php project 
 
@@ -269,7 +308,67 @@ cat docker-compose2.yml     //Copy all contents form this file
 
 //docker-compose.yml  OR docker-compose.json  //yml and json files have same working, Choose any one form these
 
+------------------------------------------------   
+------------------------------------------------  
+Example:  Wordpress    (Example On docker compose file)
 
+docker container run --name some-mysql -e MYSQL_ROOT_PASSWORD=mypassword -d mysql:5.7
+docker container inspect 7111       //Checking ip : database tier id 172.17.0.2
+
+docker container run --name some-wordpress -e WORDPRESS_DB_HOST=172.17.0.2:3306 -e WORDPRESS_DB_PASSWORD=mypassword -d wordpress    //Standing two tiers sql & web
+
+docker container inspect 2606
+
+vim docker-compose.yml    // For database & wordpress
+
+version: '3.3'
+services:
+  db:
+   images: mysql:5.7                //For mysql
+   volumn:                            
+     -db_data:/var/lib/mysql
+   restart: always
+   environment:
+     - MYSQL_ROOT_PASSWORD=somewordpress
+     - MYSQL_DATABASE=wordpress
+     - MYSQL_PASSWORD=wordpress
+
+  wordpress:
+   depends_on:
+      - db
+   image: wordpress:latest            //For web
+   ports: 
+      - "8000:80"
+   restart:always
+   environment:
+     -WORDPRESS_DB_HOST=db:3306
+     -WORDPRESS_DB_USER=wordpress
+     -WORDPRESS_DB_PASSWORD=wordpress
+     -WORDPRESS_DB_NAME=wordpress
+
+volumes: 
+   db_data:{}
+
+:wq           //Save and exit 
+
+cd /
+cd wordpress
+wordpress]# ls
+wordpress]# docker-compose up ^C
+wordpress]# docker container ls
+wordpress]# docker volumn ls
+wordpress]# docker network ls
+wordpress]# docker-compose up -d
+wordpress]# docker container ls
+wordpress]# docker network ls
+wordpress]# docker volumn ls
+wordpress]# cat docker-compose.yml
+wordpress]# docker-compose down       //It will delete all but not delete volumns
+wordpress]# docker volumn ls
+wordpress]# docker-compose down --volume  //It will delete volumns also
+
+------------------------------------------------   
+------------------------------------------------  
 ------------------------------------------------   
 ------------------------------------------------  
 
