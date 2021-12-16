@@ -1,6 +1,11 @@
 >>>>>>>>>>>> Docker Commands <<<<<<<<<<<
 
 ---------------------------------------------------------------------------------------------------
+
+Searching: vim, Dockerfile, 
+
+-------------------------------------------------------------------------------------------------
+
 Following are the commands list:
 https://www.edureka.co/blog/docker-commands/
 
@@ -20,6 +25,31 @@ https://www.edureka.co/blog/docker-commands/
     docker rmi
     docker build
     docker search      //Searching images form docker hub
+    docker create
+    docker attach
+    docker container
+    docker logs
+    docker start
+    
+---------------------------------------------------------
+
+    Example: <Create new container name "my-app">
+
+    docker create --name my-container-name -it ubuntu bash   //Create New Container: (my-app)
+
+    docker container ls            //Container list
+    docker container ls -a         //List of all containers
+    docker start <container-name>  //Container-name: my-app
+    docker attach <container-name> //Enter into container (my-app)
+    apt-get update                 //In ubuntu conatainer update..
+    apt-get install iputls-ping     
+    ping 0.0.0.0
+    ping google.com
+    exitm                        //Exit form container 
+    docker logs my-app           //My Container name
+
+-----------------------------------------------------------
+
 
  //Details: 
 
@@ -101,4 +131,190 @@ Ex: docker build .
 16. docker search
 
 Ex: docker search php
----------------------------------------------------------------------------
+
+16. docker create
+
+Ex: $ docker create --name my-container-name -it ubuntu bash
+------------------------------------------------------------------
+
+
+** Linking Two Containers: 
+
+docker run -it --name container1 -d ubuntu                    //After running it get ID 2x33kdd3k3
+docker run -it --name container2 --link container1 -d ubuntu  //After running it get ID 1x73keej3u
+
+docker exec -it 1x73keej3u bash
+cat/etc/hosts
+
+
+-------------------------------------------------------------------
+** Remove Running Containers: 
+
+docker rm -f (docker ps -a -q)
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+
+Example: 
+ Hosting php project 
+
+ 1) index.php  2)Dockerfile
+
+ index.php:
+
+  vim index.php             //Create file in vim editor
+
+ <?php
+      echo "Hello, this is my first project";      
+  ?>
+  
+  :wq                       //Save & Exit from vim editor
+  
+
+  Dockerfile:
+    vim Dockerfille         //Creaating Dockerfile file
+
+    FROM php                //In vim editor
+    COPY ./index.php ./
+    EXPOSE 80
+    CMD ["php"."-S"."0.0.0.0:80"]
+
+    :wq                     //Exit & save 
+
+
+//Running container command 
+docker run --name php-server -p=3030:80 image/php
+
+
+------------------------------------------------  
+
+*** Some Practices in docker *** 
+
+docker image ls
+docker pull php:7.1-cli
+docker image ls
+docker pull php:7.2-cli
+docker image ls
+docker pull php:7.4-rc-cli
+docker image ls
+php -v
+docker run php:7.1-cli php -v
+docker ps
+docker ps -a
+docker rm container_id
+docker ps -a
+docker run --rm php:7.1-cli php -v
+dockeer ps -a
+docker run --rm php:7.1-cli php -v
+docker run --rm php:7.4-rc-cli php -v
+vim script.php
+//Writing some script in php in vim editor
+<?php
+  echo "Hello";
+?>
+
+php script.php           //Running php script 
+Hello                    //Output
+
+cd /usr/src/myapp && php -v
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:7.1-cli php script.php
+Hello                       //output
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:7.2-cli php script.php
+Hello                       //Output
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:7.4-rc-cli php script.php
+Hello                       //Output
+
+//Depricated php
+
+vim script.php
+
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:7.1-cli php script.php
+string(11) *NONEXISTENT"     //Output
+
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp php:7.2-cli php script.php
+
+Warning                          //Output
+
+------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------
+
+//Copying files into docker container (into tomcat)
+
+cat index.html                             //Displaying content from file 
+
+docker cp index.html <container_id>        //Tomcat Id
+docker exec -it <container_id> /bin/bash
+container_id > tomcate cd /tmp
+container_id > ls -l
+
+
+------------------------------------------------------------------------------------
+
+<-------------- vim Editor (Start) --------------------->
+
+        ****** vim Editor *****
+
+vim                //Open vim editor   
+i                  //Write into file
+:wq!               //Save and Exit
+:!q                //Close vim editor   
+vim filename.txt   //Open file in vim
+:help              //Helping
+:q                 //Exiting Vim
+:q!                //To exit from vim without saving
+:wq                //To quit and save changes
+x                  //Text editing-> deletion
+
+//Text editing-> Insertion
+ i    ->   This key is used to put the cursor before the current position.
+ a    ->   This key is used to put the cursor after the current position.
+ o    ->   This key is used to put the cursor below the line.
+ O    ->   This key is used to puts the cursor above the line.
+
+2w     or   4$             //Count:
+dw                         //delete the word 
+d2w                        //To delete 2 words 
+d$                         //delete the line
+
+//Undo and Redo:
+u    OR    ctr + r
+r                         //Replace
+//Change Operator:
+ce
+c$
+//Cursor location
+:gg    OR     :G     OR      :ctrl+g
+
+//Here is a list of some motions
+w - until the start of the next word, EXCLUDING its first character.
+e - to the end of the current word, INCLUDING the last character.
+$ - to the end of the line, INCLUDING the last character.
+
+
+* k   -> move up                                                   ^
+* j   -> move down                                                  k
+* h   -> move right                                           <  h        l >       
+* l   -> move left                                                   j
+
+//Search
+:/word           Or          :n           Or        :N
+
+//Search and Replace
+:s/searchword/replaceword/   Or :s/searchword/replaceword/g   OR  :s/searchword/replaceword/gc Or
+:%s/searchword/replaceword/gc
+
+
+//Vim configuration
+vim ~/.vimrc         Or       set number        Or     syntax on     Or      colorscheme COLOR_SCHEME_NAME
+
+
+ <-----------------------  X (End of vim Editor)   -------------------------->
+
+
+
+
+
+
+
