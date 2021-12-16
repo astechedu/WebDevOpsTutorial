@@ -30,7 +30,9 @@ https://www.edureka.co/blog/docker-commands/
     docker container
     docker logs
     docker start
-    
+    docker network
+    docker volumn
+
 ---------------------------------------------------------
 
     Example: <Create new container name "my-app">
@@ -135,6 +137,12 @@ Ex: docker search php
 16. docker create
 
 Ex: $ docker create --name my-container-name -it ubuntu bash
+
+
+.: docker network ls
+
+.: docker volumn ls
+
 ------------------------------------------------------------------
 
 
@@ -186,7 +194,85 @@ Example:
 docker run --name php-server -p=3030:80 image/php
 
 
+------------------------------------------------ 
 ------------------------------------------------  
+//Example: nginx
+
+docker container run -itd nginx            //This is command line
+vim docker-compose.yml                     //By docker-compose.yml file
+
+version: '3'
+services:
+ webapp1:
+  image: nginx
+  ports:
+   -"8000:80"
+
+:wq                                       //Exit and save 
+
+docker-compose up -d
+docker container ls
+docker network ls                         //Checking network
+docker valumn ls                    
+//SomeAreAutomaticallyStartedNowStopThem
+docker compose down
+
+//Now Creating Other Container
+
+version: '3'
+services:
+ webapp1:
+  image: nginx
+  ports:
+   -"8000:80"
+ webapp2:
+  image: nginx
+  ports:
+   -"8001:80"
+
+:wq  
+
+docker compose up
+^C
+
+//Now Some Changing
+
+version: '3'
+services:
+ webapp1:
+  image: nginx
+  ports:
+   -"8000:80"
+ webapp2:
+  image: nginx
+  ports:
+   -"8002:80"
+
+:wq        
+
+
+docker container ls
+docker container ls -a
+docker compose up -d         //Only Container 2 recreated
+docker container ls -a
+docker container ls
+clear
+
+docker compose --help  // It searches .yml file and do all  (all file with .yml)
+
+docker-compose -f docker-compose2.yml up -d    //Not check all files, Only checks docker-compose2.yml file
+
+docker-compose -f docker-compose2.yml down -d 
+
+//Now
+cat docker-compose2.yml     //Copy all contents form this file
+
+//docker-compose.yml  OR docker-compose.json  //yml and json files have same working, Choose any one form these
+
+
+------------------------------------------------   
+------------------------------------------------  
+
 
 *** Some Practices in docker *** 
 
