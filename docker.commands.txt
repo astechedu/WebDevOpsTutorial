@@ -200,6 +200,19 @@ Example 02:
 
 
 -----------------------------------------------------------
+Example 03: 
+
+ docker container stop <container_id>
+ docker container run -d ubuntu sleep 30       //Running on background, Not showing on screen
+ docker container run -it ubuntu /bin/bash  //Going into container (ex. in ubuntu container)
+ ubuntu_id]# hostname
+ ubuntu_id]# cat /etc/os-release       //os-release -> information
+ ubuntu_id]# apt-get install -----    //Install any software as apache etc.
+ ubuntu_id]# Ctrl+D  Or exit          //Out of container_id and container closed
+ ubuntu_id]# Ctrl+pq                  //Out of container but container is running
+
+ docker container rm $(docker container ls -aq)      //To remove All containers
+
 -----------------------------------------------------------
 
 Example: 
@@ -219,7 +232,7 @@ Example:
   
 
   Dockerfile:
-    vim Dockerfille         //Creaating Dockerfile file
+    vim Dockerfile         //Creaating Dockerfile file
 
     FROM php                //In vim editor
     COPY ./index.php ./
@@ -232,6 +245,7 @@ Example:
 //Running container command 
 docker run --name php-server -p=3030:80 image/php
 
+cat  /root/Dockerfile     //To read Dockerfile file from root
 
 ------------------------------------------------ 
 ------------------------------------------------  
@@ -245,7 +259,7 @@ services:
  webapp1:
   image: nginx
   ports:
-   -"8000:80"
+   - "8000:80"
 
 :wq                                       //Exit and save 
 
@@ -263,11 +277,11 @@ services:
  webapp1:
   image: nginx
   ports:
-   -"8000:80"
+   - "8000:80"
  webapp2:
   image: nginx
   ports:
-   -"8001:80"
+   - "8001:80"
 
 :wq  
 
@@ -281,11 +295,11 @@ services:
  webapp1:
   image: nginx
   ports:
-   -"8000:80"
+   - "8000:80"
  webapp2:
   image: nginx
   ports:
-   -"8002:80"
+   - "8002:80"
 
 :wq        
 
@@ -368,7 +382,12 @@ wordpress]# docker volumn ls
 wordpress]# docker-compose down --volume  //It will delete volumns also
 
 ------------------------------------------------   
-------------------------------------------------  
+------------------------------------------------ 
+ls /root     //Listing all file from root
+ls -a /root 
+
+
+cat  /root/Dockerfile     //To read content of Dockerfile file from root
 ------------------------------------------------   
 ------------------------------------------------  
 
