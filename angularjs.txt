@@ -6,5 +6,6 @@
 --------------------------------------
 Hi, GitLab,
 Adding Pull Mirroring added succeed
+Mirroring is working.
 -----------------------------------------------------------------------------
 
