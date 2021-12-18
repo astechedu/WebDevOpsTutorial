@@ -213,6 +213,8 @@ Example 03:
 
  docker container rm $(docker container ls -aq)      //To remove All containers
 
+ docker exec -u 0 -it 8662ea2fa000 /bin/sh // root user going Into running container
+
 -----------------------------------------------------------
 
 Example: 
