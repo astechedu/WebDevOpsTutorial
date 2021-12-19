@@ -4,6 +4,21 @@
 
 --------------------------------------
 --------------------------------------
+--------------------------------------
+Built-in Functions: 
 
------------------------------------------------------------------------------
+splice(),
+
+
+--------------------------------------
+--------------------------------------
+
+// Splice():
+Syntax:
+array.splice(index, howmany, item1, ....., itemX)
+The splice() method adds and/or removes array elements.
+The splice() method overwrites the original array.
+Ex: anyArray.splice(index,1)
+...............
+
 

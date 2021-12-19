@@ -4,7 +4,7 @@
 
 --------------------------------------
 --------------------------------------
-Ubuntu Linux
+Ubuntu
 Red Hat Enterprise Linux
 Linux Mint
 Debian
