@@ -7,3 +7,138 @@
 
 -----------------------------------------------------------------------------
 
+Symfony 2.7, 2.8:
+
+1. Execute the php app/console server:run command.
+2. Browse to the http://localhost:8000 URL.
+3. Read the Documentation at http://symfony.com/doc
+
+ //c:/xampp/htdocs/symfony>
+composer create-projet symfony/skeleton sf4
+composer require symfony/var-dumper 
+ php app/console
+ php app/console debug:router
+ php app/console service:run
+ php app/console generate:controller
+
+ bin/console make:crud BlogPost
+php bin/console
+bin/console make:form
+ php bin/console debug:twig
+ php bin/console debug:twig --filter=date
+ php bin/console debug:twig @Twig/Exception/error.html.twig
+ 
+ composer require symfony/asset
+
+
+//Save entities(or Scheme tables) in Database
+php bin/console doctrine:schema:update --force 
+php bin/console doctrine:migrations:diff 
+------------------------------------------------------------------------------------
+
+//-------> php bin/console <----------------
+
+C:\xampp\htdocs\symfony>php bin/console
+Symfony 4.3.2 (env: dev, debug: true)
+
+Usage:
+  command [options] [arguments]
+
+Options:
+  -h, --help            Display this help message
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi            Force ANSI output
+      --no-ansi         Disable ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+  -e, --env=ENV         The Environment name. [default: "dev"]
+      --no-debug        Switches off debug mode.
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+
+/////////////------>> Available commands: <<----------//////////////////
+
+  about                                   Displays information about the current project
+  help                                    Displays help for a command
+  list                                    Lists commands
+ assets
+  assets:install                          Installs bundles web assets under a public directory
+ cache
+  cache:clear                             Clears the cache
+  cache:pool:clear                        Clears cache pools
+  cache:pool:delete                       Deletes an item from a cache pool
+  cache:pool:list                         List available cache pools
+  cache:pool:prune                        Prunes cache pools
+  cache:warmup                            Warms up an empty cache
+ config
+  config:dump-reference                   Dumps the default configuration for an extension
+ debug
+  debug:autowiring                        Lists classes/interfaces you can use for autowiring
+  debug:config                            Dumps the current configuration for an extension
+  debug:container                         Displays current services for an application
+  debug:event-dispatcher                  Displays configured listeners for an application
+  debug:form                              Displays form type information
+  debug:router                            Displays current routes for an application
+  debug:twig                              Shows a list of twig functions, filters, globals and tests
+ doctrine
+  doctrine:cache:clear-collection-region  Clear a second-level cache collection region
+  doctrine:cache:clear-entity-region      Clear a second-level cache entity region
+  doctrine:cache:clear-metadata           Clears all metadata cache for an entity manager
+  doctrine:cache:clear-query              Clears all query cache for an entity manager
+  doctrine:cache:clear-query-region       Clear a second-level cache query region
+  doctrine:cache:clear-result             Clears result cache for an entity manager
+  doctrine:cache:contains                 Check if a cache entry exists
+  doctrine:cache:delete                   Delete a cache entry
+  doctrine:cache:flush                    [doctrine:cache:clear] Flush a given cache
+  doctrine:cache:stats                    Get stats on a given cache provider
+  doctrine:database:create                Creates the configured database
+  doctrine:database:drop                  Drops the configured database
+  doctrine:database:import                Import SQL file(s) directly to Database.
+  doctrine:ensure-production-settings     Verify that Doctrine is properly configured for a production environment
+  doctrine:generate:entities              [generate:doctrine:entities] Generates entity classes and method stubs from your mapping information
+  doctrine:mapping:convert                [orm:convert:mapping] Convert mapping information between supported formats
+  doctrine:mapping:import                 Imports mapping information from an existing database
+  doctrine:mapping:info
+  doctrine:migrations:diff                [diff] Generate a migration by comparing your current database to your mapping information.
+  doctrine:migrations:dump-schema         [dump-schema] Dump the schema for your database to a migration.
+  doctrine:migrations:execute             [execute] Execute a single migration version up or down manually.
+  doctrine:migrations:generate            [generate] Generate a blank migration class.
+  doctrine:migrations:latest              [latest] Outputs the latest version number
+  doctrine:migrations:migrate             [migrate] Execute a migration to a specified version or the latest available version.
+  doctrine:migrations:rollup              [rollup] Rollup migrations by deleting all tracked versions and insert the one version that exists.
+  doctrine:migrations:status              [status] View the status of a set of migrations.
+  doctrine:migrations:up-to-date          [up-to-date] Tells you if your schema is up-to-date.
+  doctrine:migrations:version             [version] Manually add and delete migration versions from the version table.
+  doctrine:query:dql                      Executes arbitrary DQL directly from the command line
+  doctrine:query:sql                      Executes arbitrary SQL directly from the command line.
+  doctrine:schema:create                  Executes (or dumps) the SQL needed to generate the database schema
+  doctrine:schema:drop                    Executes (or dumps) the SQL needed to drop the current database schema
+  doctrine:schema:update                  Executes (or dumps) the SQL needed to update the database schema to match the current mapping metadata
+  doctrine:schema:validate                Validate the mapping files
+ lint
+  lint:twig                               Lints a template and outputs encountered errors
+  lint:yaml                               Lints a file and outputs encountered errors
+ make
+  make:auth                               Creates a Guard authenticator of different flavors
+  make:command                            Creates a new console command class
+  make:controller                         Creates a new controller class
+  make:crud                               Creates CRUD for Doctrine entity class
+  make:entity                             Creates or updates a Doctrine entity class, and optionally an API Platform resource
+  make:fixtures                           Creates a new class to load Doctrine fixtures
+  make:form                               Creates a new form class
+  make:functional-test                    Creates a new functional test class
+  make:migration                          Creates a new migration based on database changes
+  make:registration-form                  Creates a new registration form system
+  make:serializer:encoder                 Creates a new serializer encoder class
+  make:serializer:normalizer              Creates a new serializer normalizer class
+  make:subscriber                         Creates a new event subscriber class
+  make:twig-extension                     Creates a new Twig extension class
+  make:unit-test                          Creates a new unit test class
+  make:user                               Creates a new security user class
+  make:validator                          Creates a new validator and constraint class
+  make:voter                              Creates a new security voter class
+ router
+  router:match                            Helps debug routes by simulating a path info match
+ security
+  security:encode-password                Encodes a password
+-----------------------------------------------------------------------------------

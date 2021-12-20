@@ -7,3 +7,83 @@
 
 -----------------------------------------------------------------------------
 
+c:/xampp/htdocs/cakephp/bin>...........Write here.......
+------------------------------------------------------------------------------------------------
+
+Migrations:
+c:/xampp/htdocs/cakephp/bin>.....
+
+1.  cake plugin load Migrations
+2.  cake migrations migrate
+3.  cake migrations rollback
+4.  cake migrations rollback -t 20150103081132 // Specified table or field rollback (-t)
+4.  cake bake migration migrate
+
+5.  cake bake migration product           // Not create $table instance 
+6.  cake bake migration createProducts   // Create $table instance  
+7.  cake bake migration users           // users migration
+8.  cake bake migration CreateProducts name:string description:text created modified
+9.  cake migrations rollback
+10. cake migrations status
+11. cake migrations status --format json
+11. cake migrations mark_migrated
+12. cake bake migration AddAgeToProducts age:int                      //Add new column into table
+13. cake bake migration AddPriceToProducts price:decimal          //Add new column into table
+14. cake bake migration AddNameIndexToProducts name:string:index //To add indexes to columns
+15. cake bake migration RemoveAgeFromProducts age                //To remove column from table
+
+
+Bake: 
+1. cake bake seed Articles
+2. cake bake seed Articles --table my_articles_table
+3. cake bake seed Articles --plugin PluginName
+4. cake bake seed Articles --connection connection
+5. cake bake seed --data Articles
+
+
+cake bake seed --data --limit 10 Articles
+cake bake seed --data --fields id,title,excerpt Articles
+bin/cake migrations seed
+bin/cake migrations seed --seed ArticlesSeed
+bin/cake migrations seed --source AlternativeSeeds
+bin/cake migrations seed --plugin PluginName
+bin/cake migrations seed --connection connection
+
+-------------------------------------------------------------------
+
+migrate : Applying Migrations
+
+Once you have generated or written your migration file, you need to execute the following command to apply the changes to your database:
+
+# Run all the migrations
+$ bin/cake migrations migrate
+
+# Migrate to a specific version using the ``--target`` option
+# or ``-t`` for short.
+# The value is the timestamp that is prefixed to the migrations file name::
+$ bin/cake migrations migrate -t 20150103081132
+
+# By default, migration files are looked for in the **config/Migrations**
+# directory. You can specify the directory using the ``--source`` option
+# or ``-s`` for short.
+# The following example will run migrations in the **config/Alternate**
+# directory
+$ bin/cake migrations migrate -s Alternate
+
+# You can run migrations to a different connection than the ``default`` one
+# using the ``--connection`` option or ``-c`` for short
+$ bin/cake migrations migrate -c my_custom_connection
+
+# Migrations can also be run for plugins. Simply use the ``--plugin`` option
+# or ``-p`` for short
+$ bin/cake migrations migrate -p MyAwesomePlugin
+-------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
