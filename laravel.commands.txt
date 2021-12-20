@@ -2,8 +2,186 @@
 >>>>>>>> Laravel Commands <<<<<<<<<
 
 
---------------------------------------
---------------------------------------
+----------------------------------------------------
+----------------------------------------------------
 
------------------------------------------------------------------------------
+----------------------------------------------------
 
+----------------------------------------------------
+
+Namespaces
+
+Illuminate
+
+    Illuminate
+    Illuminate\Auth
+    Illuminate\Auth\Access
+    Illuminate\Auth\Access\Events
+    Illuminate\Auth\Console
+    Illuminate\Auth\Events
+    Illuminate\Auth\Listeners
+    Illuminate\Auth\Middleware
+    Illuminate\Auth\Notifications
+    Illuminate\Auth\Passwords
+    Illuminate\Broadcasting
+    Illuminate\Broadcasting\Broadcasters
+    Illuminate\Bus
+    Illuminate\Bus\Events
+    Illuminate\Cache
+    Illuminate\Cache\Console
+    Illuminate\Cache\Events
+    Illuminate\Cache\RateLimiting
+    Illuminate\Config
+    Illuminate\Console
+    Illuminate\Console\Concerns
+    Illuminate\Console\Events
+    Illuminate\Console\Scheduling
+    Illuminate\Container
+    Illuminate\Contracts
+    Illuminate\Contracts\Auth
+    Illuminate\Contracts\Auth\Access
+    Illuminate\Contracts\Auth\Middleware
+    Illuminate\Contracts\Broadcasting
+    Illuminate\Contracts\Bus
+    Illuminate\Contracts\Cache
+    Illuminate\Contracts\Config
+    Illuminate\Contracts\Console
+    Illuminate\Contracts\Container
+    Illuminate\Contracts\Cookie
+    Illuminate\Contracts\Database
+    Illuminate\Contracts\Database\Eloquent
+    Illuminate\Contracts\Database\Events
+    Illuminate\Contracts\Debug
+    Illuminate\Contracts\Encryption
+    Illuminate\Contracts\Events
+    Illuminate\Contracts\Filesystem
+    Illuminate\Contracts\Foundation
+    Illuminate\Contracts\Hashing
+    Illuminate\Contracts\Http
+    Illuminate\Contracts\Mail
+    Illuminate\Contracts\Notifications
+    Illuminate\Contracts\Pagination
+    Illuminate\Contracts\Pipeline
+    Illuminate\Contracts\Queue
+    Illuminate\Contracts\Redis
+    Illuminate\Contracts\Routing
+    Illuminate\Contracts\Session
+    Illuminate\Contracts\Support
+    Illuminate\Contracts\Translation
+    Illuminate\Contracts\Validation
+    Illuminate\Contracts\View
+    Illuminate\Cookie
+    Illuminate\Cookie\Middleware
+    Illuminate\Database
+    Illuminate\Database\Capsule
+    Illuminate\Database\Concerns
+    Illuminate\Database\Connectors
+    Illuminate\Database\Console
+    Illuminate\Database\Console\Factories
+    Illuminate\Database\Console\Migrations
+    Illuminate\Database\Console\Seeds
+    Illuminate\Database\DBAL
+    Illuminate\Database\Eloquent
+    Illuminate\Database\Eloquent\Casts
+    Illuminate\Database\Eloquent\Concerns
+    Illuminate\Database\Eloquent\Factories
+    Illuminate\Database\Eloquent\Relations
+    Illuminate\Database\Eloquent\Relations\Concerns
+    Illuminate\Database\Events
+    Illuminate\Database\Migrations
+    Illuminate\Database\PDO
+    Illuminate\Database\PDO\Concerns
+    Illuminate\Database\Query
+    Illuminate\Database\Query\Grammars
+    Illuminate\Database\Query\Processors
+    Illuminate\Database\Schema
+    Illuminate\Database\Schema\Grammars
+    Illuminate\Encryption
+    Illuminate\Events
+    Illuminate\Filesystem
+    Illuminate\Foundation
+    Illuminate\Foundation\Auth
+    Illuminate\Foundation\Auth\Access
+    Illuminate\Foundation\Bootstrap
+    Illuminate\Foundation\Bus
+    Illuminate\Foundation\Console
+    Illuminate\Foundation\Events
+    Illuminate\Foundation\Exceptions
+    Illuminate\Foundation\Http
+    Illuminate\Foundation\Http\Events
+    Illuminate\Foundation\Http\Exceptions
+    Illuminate\Foundation\Http\Middleware
+    Illuminate\Foundation\Providers
+    Illuminate\Foundation\Support
+    Illuminate\Foundation\Support\Providers
+    Illuminate\Foundation\Testing
+    Illuminate\Foundation\Testing\Concerns
+    Illuminate\Foundation\Testing\Traits
+    Illuminate\Foundation\Validation
+    Illuminate\Hashing
+    Illuminate\Http
+    Illuminate\Http\Client
+    Illuminate\Http\Client\Events
+    Illuminate\Http\Concerns
+    Illuminate\Http\Exceptions
+    Illuminate\Http\Middleware
+    Illuminate\Http\Resources
+    Illuminate\Http\Resources\Json
+    Illuminate\Http\Testing
+    Illuminate\Log
+    Illuminate\Log\Events
+    Illuminate\Mail
+    Illuminate\Mail\Events
+    Illuminate\Mail\Transport
+    Illuminate\Notifications
+    Illuminate\Notifications\Channels
+    Illuminate\Notifications\Console
+    Illuminate\Notifications\Events
+    Illuminate\Notifications\Messages
+    Illuminate\Pagination
+    Illuminate\Pipeline
+    Illuminate\Queue
+    Illuminate\Queue\Capsule
+    Illuminate\Queue\Connectors
+    Illuminate\Queue\Console
+    Illuminate\Queue\Events
+    Illuminate\Queue\Failed
+    Illuminate\Queue\Jobs
+    Illuminate\Queue\Middleware
+    Illuminate\Redis
+    Illuminate\Redis\Connections
+    Illuminate\Redis\Connectors
+    Illuminate\Redis\Events
+    Illuminate\Redis\Limiters
+    Illuminate\Routing
+    Illuminate\Routing\Console
+    Illuminate\Routing\Contracts
+    Illuminate\Routing\Events
+    Illuminate\Routing\Exceptions
+    Illuminate\Routing\Matching
+    Illuminate\Routing\Middleware
+    Illuminate\Session
+    Illuminate\Session\Console
+    Illuminate\Session\Middleware
+    Illuminate\Support
+    Illuminate\Support\Facades
+    Illuminate\Support\Testing
+    Illuminate\Support\Testing\Fakes
+    Illuminate\Support\Traits
+    Illuminate\Testing
+    Illuminate\Testing\Concerns
+    Illuminate\Testing\Constraints
+    Illuminate\Testing\Fluent
+    Illuminate\Testing\Fluent\Concerns
+    Illuminate\Translation
+    Illuminate\Validation
+    Illuminate\Validation\Concerns
+    Illuminate\Validation\Rules
+    Illuminate\View
+    Illuminate\View\Compilers
+    Illuminate\View\Compilers\Concerns
+    Illuminate\View\Concerns
+    Illuminate\View\Engines
+    Illuminate\View\Middleware
+
+--------------------------------------------------------
