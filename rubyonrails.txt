@@ -1,0 +1,36 @@
+>>>>>> Ruby On Rails <<<<<<<<<<<
+
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------
+
+RubyOnRais (Create Api's Commands):
+
+Make the ApplicationController inherit from ActionController::API instead of ActionController::Base.
+
+
+Models:
+
+$ rails new rest-api-guide --api --database=postgresql
+
+$ rails generate model User username:string password:string
+$ rails generate model Fact user:references fact:string likes:integer
+
+$ rails db:setup
+$ rails db:migrate
+
+
+
+Controllers:
+
+$ rails g controller api/v1/Users
+$ rails g controller api/v1/Facts
+
+
+
+
+---------------------------------
+---------------------------------
+---------------------------------
+---------------------------------

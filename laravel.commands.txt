@@ -4,7 +4,16 @@
 
 ----------------------------------------------------
 ----------------------------------------------------
+3) Installing Laravel:
 
+Type the following command in your command prompt window:  
+
+    composer global require “laravel/installer”. 
+
+    composer create-project –prefer-dist laravel/laravel Project_name: this command will install Laravel 
+
+    and other dependencies with it also generate the ANSI key. 
+    
 ----------------------------------------------------
 
 ----------------------------------------------------
