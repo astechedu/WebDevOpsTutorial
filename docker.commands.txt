@@ -2,7 +2,7 @@
 
 ---------------------------------------------------------------------------------------------------
 
-Searching: vim, Dockerfile, 
+Searching: vim, Dockerfile, Docker Laravel,
 
 -------------------------------------------------------------------------------------------------
 
@@ -522,5 +522,477 @@ vim ~/.vimrc         Or       set number        Or     syntax on     Or      col
 
 
 
+
+
+
+-------------------------------------------------------------------------------
+
+Docker Laravel:
+
+//How to create laravel development environment using docker
+
+
+you should have a total of 6 services (containers) running on your machine, one for each specific need of our application, here is the full list:
+
+
+    PHP 8.0 (application code)
+    MySQL 5.7 (database)
+    NGINX (webserver)
+    phpMyAdmin (database managment)
+    Redis (caching)
+    MailHog (local email testing)
+
+
+Also here is the link to the official Docker website with installations instructions.
+
+https://www.docker.com/products/docker-desktop
+
+//Step 1: Clone Laravel's git repository
+git clone https://github.com/laravel/laravel.git src
+
+
+Now, create a couple of files and folders we need to setup and organize our docker environment. Create two files at the root of the project, one called docker-compose.yaml and another called Dockerfile. Then create the following list of folder/subfolder.
+
+    nginx/conf
+    mysql/data
+    redis/data
+
+
+//Step 2: Create a custom PHP 8 image
+
+
+But, according to Laravel's documentation (https://laravel.com/docs/8.x/deployment#server-requirements), there a list of PHP extensions (listed below) the framework version we will use (8.x) needs installed to properly work:
+
+
+    BCMath PHP Extension
+    Ctype PHP Extension
+    Fileinfo PHP Extension
+    JSON PHP Extension
+    Mbstring PHP Extension
+    OpenSSL PHP Extension
+    PDO PHP Extension
+    Tokenizer PHP Extension
+    XML PHP Extension
+
+
+
+To know which extensions a given PHP installation has available we just need to run the following command, php -m, after I executed it inside the PHP image we will be using (I already pulled it to my machine) and I got the following list of installed extensions.
+
+
+$ docker run php:8.0.3-fpm-buster php -m
+[PHP Modules]
+Core
+ctype
+curl
+date
+dom
+fileinfo
+filter
+ftp
+hash
+iconv
+json
+libxml
+mbstring
+mysqlnd
+openssl
+pcre
+PDO
+pdo_sqlite
+Phar
+posix
+readline
+Reflection
+session
+SimpleXML
+sodium
+SPL
+sqlite3
+standard
+tokenizer
+xml
+xmlreader
+xmlwriter
+zlib
+
+[Zend Modules]
+
+
+Comparing it with the list of extensions required by Laravel we can see we are missing only a single extension and since we will be using MySQL, we will also need to install the pdo_mysql.
+
+
+
+
+To create a custom image we will need to write some code to the Dockerfile we created earlier, the code we need is below.
+
+
+FROM php:8.0.3-fpm-buster
+
+RUN docker-php-ext-install bcmath pdo_mysql
+
+RUN apt-get update
+RUN apt-get install -y git zip unzip
+
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+EXPOSE 9000
+
+
+//Step 3: Setup the basic services (PHP, NGINX and MySQL)
+
+
+Let's start defining docker setup and you will see how simple it actually is.
+
+version: "3.7"
+
+networks:
+    app-network:
+        driver: bridge
+
+services:
+    app:
+        
+    
+    mysql:
+        
+    
+    nginx:
+        
+
+
+//3.2 App (custom PHP) service
+
+app:
+        build: 
+            context: ./
+            dockerfile: Dockerfile
+        image: laravel8-php-fpm-80
+        container_name: app
+        restart: unless-stopped
+        tty: true
+        working_dir: /var/www
+        volumes: 
+            - ./src:/var/www
+        networks: 
+            - app-network
+
+
+
+//3.3 NGINX service
+
+
+This container will be a standard NGINX container and will have the following set of configurations.
+
+    nginx:
+        image: nginx:1.19.8-alpine
+        container_name: nginx
+        restart: unless-stopped
+        tty: true
+        ports: 
+            - 8100:80
+        volumes: 
+            - ./src:/var/www
+            - ./nginx/conf:/etc/nginx/conf.d
+        networks: 
+            - app-network
+
+
+
+//It's content will be the following.
+
+server {
+    listen 80;
+    index index.php index.html;
+    error_log /var/log/nginx/error.log;
+    access_log /var/log/nginx/access.log;
+    root /var/www/public;
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass app:9000;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+    }
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+        gzip_static on;
+    }
+}
+
+
+
+//3.4 MySQL service
+
+//I will call that database laravel8, but you can call it whatever you want.
+
+
+
+ mysql:
+        image: mysql:5.7.33
+        container_name: mysql
+        restart: unless-stopped
+        tty: true
+        environment: 
+            MYSQL_DATABASE: laravel8
+            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_PASSWORD: 123456
+            MYSQL_USER: laravel8
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql
+        volumes: 
+            - ./mysql/data:/var/lib/mysql
+        networks:
+            - app-network
+
+
+
+//In laravel env
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel8
+DB_USERNAME=laravel8
+DB_PASSWORD=123456
+
+
+//The first version of our docker-compose.yaml file will look like this.
+
+
+version: "3.7"
+
+networks:
+    app-network:
+        driver: bridge
+
+services:
+    app:
+        build: 
+            context: ./
+            dockerfile: Dockerfile
+        image: laravel8-php-fpm-80
+        container_name: app
+        restart: unless-stopped
+        tty: true
+        working_dir: /var/www
+        volumes: 
+            - ./src:/var/www
+        networks: 
+            - app-network
+    
+    mysql:
+        image: mysql:5.7.33
+        container_name: mysql
+        restart: unless-stopped
+        tty: true
+        environment: 
+            MYSQL_DATABASE: laravel8
+            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_PASSWORD: 123456
+            MYSQL_USER: laravel8
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql
+        volumes: 
+            - ./mysql/data:/var/lib/mysql
+        networks:
+            - app-network
+    
+    nginx:
+        image: nginx:1.19.8-alpine
+        container_name: nginx
+        restart: unless-stopped
+        tty: true
+        ports: 
+            - 8100:80
+        volumes: 
+            - ./src:/var/www
+            - ./nginx/conf:/etc/nginx/conf.d
+        networks: 
+            - app-network
+
+
+//Step 4: Test our initial setup
+
+docker-compose up
+
+
+
+//4.1 Accessing the homepage
+
+
+
+docker-compose [OPTIONS] exec [SERVICE NAME] [COMMAND]
+
+//So to install our dependencies will execute.
+
+docker-compose exec -T app composer install
+
+
+
+
+docker-compose exec -T app cp .env.example .env
+docker-compose exec -T app php artisan key:generate
+
+
+
+//Now Laravel welcome page is displaying on the breowser
+
+
+4.2 Running migrations
+
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel8
+DB_USERNAME=laravel8
+DB_PASSWORD=123456
+
+
+docker-compose exec -T app php artisan config:clear
+docker-compose exec -T app php artisan migrate
+
+//4.3 Installing additional composer packages
+
+docker-compose exec -T app composer require laravel/socialite
+
+
+//Step 5: Setup additional services (Redis, phpMyAdmin and MailHog)
+
+
+//5.1 Adding Redis (caching)
+
+
+redis:
+        image: redis:6.2.1-buster
+        container_name: redis
+        restart: unless-stopped
+        tty: true
+        volumes: 
+            - ./redis/data:/data
+        networks: 
+            - app-network
+
+
+docker-compose exec -T app composer require predis/predis
+
+
+CACHE_DRIVER=redis
+REDIS_HOST=redis
+REDIS_CLIENT=predis
+
+docker-compose exec -T app php artisan config:clear
+
+
+
+//web.php
+
+use Illuminate\Support\Facades\Redis;
+
+Route::get('/store', function() {
+    Redis::set('foo', 'bar');
+});
+
+Route::get('/retrieve', function() {
+    return Redis::get('foo');
+});
+
+
+
+docker-compose down
+docker-compose up
+
+After hitting the /store route we should see nothing on the screen since we are just storin our key value pair and returning nothing, but after hitting the /retrieve route we should see on the screen the value we stored for the foo key, which is bar. 
+
+
+//5.2 Adding MailHog (local mail testing)
+
+
+mailhog:
+        image: mailhog/mailhog:v1.0.1
+        container_name: mailhog
+        restart: unless-stopped
+        ports: 
+            - 8025:8025
+        networks: 
+            - app-network
+
+
+
+MAIL_FROM_ADDRESS=isaac@isaacsouza.dev
+
+
+
+docker-compose exec -T app php artisan config:clear
+
+
+docker-compose exec -T app php artisan make:mail TestMail
+
+
+
+//It will create a file called TestMail.php inside the app/Mail folder and in it we will the following //line of code to its build method.
+
+/**
+ * Build the message.
+ *
+ * @return $this
+ */
+public function build()
+{
+    return $this->view('mail.test');
+}
+
+
+
+
+// resources/views/email/test.blade.php
+
+testing mailhog
+
+
+
+//web.php
+
+<?php
+
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
+
+Route::get('/send-email', function() {
+    Mail::to('isaac@isaacsouza.dev')->send(new TestMail);
+});
+
+
+
+docker-compose down
+docker-compose up
+
+
+5.3 Adding phpMyAdmin (MySQL managment)
+
+
+phpmyadmin:
+        image: phpmyadmin:5.1.0-apache
+        container_name: phpmyadmin
+        restart: unless-stopped
+        ports: 
+            - 8200:80
+        environment:
+            PMA_HOST: mysql
+            PMA_PORT: 3306
+            PMA_USER: laravel8
+            PMA_PASSWORD: 123456
+        networks:
+            - app-network
+
+
+docker-compose down
+docker-compose up
+
+
+
+-----docker---------X X X -------laravel-------env--------end---------
 
 

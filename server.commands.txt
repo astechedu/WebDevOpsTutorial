@@ -10,9 +10,17 @@ NGINX:
 
 ON Windows 10:
 
+
+nginx -s stop      -Rapid shutdown
+nginx -s quit      -Graceful shutdown
+nginx -s reload    -Changing configuration, starting new worker processes with a new configuration,   
+                    graceful shutdown of old worker processes
+nginx -s reopen    -Reopening log files
+
+
 In command prompt
    D:\nginx>start nginx       //To start server
-   D:\nginx>nginx -s nginx    //To stop server
+   D:\nginx>nginx -s stop    //To stop server
 
 
 In Another Command prompt
