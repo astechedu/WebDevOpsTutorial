@@ -4,6 +4,11 @@
 
 ----------------------------------------------------
 ----------------------------------------------------
+Keys: Namespaces, laravel installation, 
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
+----------------------------------------------------
 3) Installing Laravel:
 
 Type the following command in your command prompt window:  
@@ -194,3 +199,128 @@ Illuminate
     Illuminate\View\Middleware
 
 --------------------------------------------------------
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+>>>>>>>>>> Laravel Installation Steps <<<<<<<<<<<<
+
+
+
+composer global require laravel/installer
+
+laravel --version
+
+composer global require "laravel/installer:^4.0"
+
+
+
+composer global remove laravel/installer
+composer global require laravel/installer
+
+
+laravel new --help
+
+
+----------
+Option 01:
+----------
+
+//Install JetStream
+
+laravel new test --jet
+
+
+npm install
+npm run dev
+
+OR
+
+npm install && npm run dev
+
+
+php artisan migrate
+
+ERROR: 
+
+SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 1000 bytes (SQL: ...)
+
+
+
+use Illuminate\Support\Facades\Schema;public function boot()
+{
+    Schema::defaultStringLength(191);
+}
+
+
+php artisan migrate:fresh
+
+
+
+--Steps Complete--
+
+
+
+
+---------
+Option 2:
+---------
+
+
+laravel new test2
+composer require laravel/jetstream
+
+// LIVEWIRE
+// Install JetStream with the Livewire stack without teams
+
+php artisan jetstream:install livewire// Install JetStream with the LiveWire stack and teams
+php artisan jetstream:install livewire --teams
+// INERTIA
+// Install JetStream with the Inertia stack without teams
+
+php artisan jetstream:install inertia// Install Jetstream with the Inertia stack and teams
+php artisan jetstream:install inertia --teams
+
+
+npm install
+npm run dev
+
+npm install && npm run dev
+
+
+php artisan migrate
+
+
+//If Showing Errors: 
+
+use Illuminate\Support\Facades\Schema;public function boot()
+{
+    Schema::defaultStringLength(191);
+}
+
+
+
+php artisan migrate:fresh
+
+
+php artisan serve
+
+
+----Steps Completed-----
+
+
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+----------------------------------------------------------
+
+----------------------------------------------------------
