@@ -1,0 +1,64 @@
+>>>>>>> Databases <<<<<<<<<<<<
+
+
+
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+
+
+
+
+
+-----------------------------------------------------------------------
+Sqlite3:
+
+c:/sqlite> type sqlite command here
+
+.help                          //Displaying all commands
+sqlite3 database.laravel08.db  // Creating database
+.databases                     //List names and files of attached databases
+.open db_name                  //To open database
+.tables                        //List tables
+SELECT column_list FROM table;
+SELECT * FROM tracks;
+
+SELECT DISTINCT column_list
+FROM table_list
+
+CREATE TABLE [IF NOT EXISTS] [schema_name].table_name (
+	column_1 data_type PRIMARY KEY,
+   	column_2 data_type NOT NULL,
+	column_3 data_type DEFAULT 0,
+	table_constraints
+) [WITHOUT ROWID];
+
+//Example:
+create table users(id int(10) primary key, name varchar(100));
+
+SELECT trackid,	name, composer, unitprice FROM tracks;
+
+
+
+ 	
+
+.backup ?DB? FILE           //Backup DB (default "main") to FILE
+
+
+-----------------------------------------------------------------------
+
+
+Mysql:
+
+
+
+-----------------------------------------------------------------------
+
+MongoDB:
+
+
+
+------------------------------------------------------------------------

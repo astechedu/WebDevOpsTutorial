@@ -1,0 +1,98 @@
+
+<<<<<<<<<< COMMAND PROMPT (cmd) >>>>>>>>>>>>>
+
+
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+
+Batch Files: 
+
+
+1. nginxstart.bat file      //Batch file name 
+
+@echo off
+D:
+cd nginx
+start nginx
+ECHO D:\nginx
+ECHO Web services successfully started
+I:
+cd console
+
+.........................................
+
+2. ntinxstop.bat       //Batch file name   
+
+@echo off
+D:
+cd nginx
+nginx -s stop
+ECHO D:\nginx
+ECHO Web services stopped successfully
+cd/
+I:
+cd console
+
+..........................................
+
+3. nginxreload.bat      //Batch file name 
+
+ECHO OFF
+D:
+cd nginx
+nginx -s reload
+cd/
+i:
+cd console
+
+..........................................
+
+4. nginxreopen.bat      //Batch file name 
+
+@echo off
+D:
+cd nginx
+nginx -s reopen
+ECHO D:\nginx
+ECHO Web services reopened successfully
+cd/
+I:
+cd console
+
+..........................................
+
+5. phpcgistart.bat      //Batch file name 
+
+..........................................
+
+6. phpcgistop.bat       //Batch file name 
+
+..........................................
+
+7  mysqlstart.bat       //Batch file name 
+
+..........................................
+
+8  mysqlstop.bat        //Batch file name 
+
+..........................................
+
+
+9  Combine two or more batch files
+
+   webserver.bat        //Batch file name  
+
+   nginxstart.bat
+   mysqlstart.bat
+   phpstart.bat
+   
+
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
