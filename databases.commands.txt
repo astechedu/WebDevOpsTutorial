@@ -51,8 +51,14 @@ SELECT trackid,	name, composer, unitprice FROM tracks;
 -----------------------------------------------------------------------
 
 
-Mysql:
+Mysql on windows:
 
+
+Windows cmd: 
+
+
+I:\mysql\bin> mysql -u root -p                      //To start server
+I:\mysql\bin> mysqladmin -u root -p shutdown        //To stop server
 
 
 -----------------------------------------------------------------------
