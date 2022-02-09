@@ -1,0 +1,252 @@
+--------> Github Page: Change HTML, CSS, Images & github repositories links <-----------
+
+
+
+-------------------------------------------------
+My Github Repositories Links:
+
+https://github.com/astechedu/
+https://github.com/astechedu/zend3
+https://github.com/astechedu/Laminas
+https://github.com/astechedu/laravel7
+https://github.com/astechedu/yii2basic
+https://github.com/astechedu/phpjwt
+https://github.com/astechedu/paypal
+https://github.com/astechedu/cakephp4
+https://github.com/astechedu/codeigniter4
+https://github.com/astechedu/corephpapis
+https://github.com/astechedu/corephp
+https://github.com/astechedu/laravel8-jetstream-inertia 
+https://github.com/astechedu/laravel8-jetstream-livewire
+https://github.com/astechedu/Laravel8-breeze-auth
+https://github.com/astechedu/laravel8-basics-beginners
+https://github.com/astechedu/laravel8-ui-auth 
+https://github.com/astechedu/taiwind-tutorial 
+https://github.com/astechedu/bootstrap-tutorial
+https://github.com/astechedu/gittutorial
+https://github.com/astechedu/vue2-app
+https://github.com/astechedu/vue3-app
+https://github.com/astechedu/angular-app
+https://github.com/astechedu/react-app
+https://github.com/astechedu/laravel8reactinertiaspa 
+https://github.com/astechedu/laravel8vueinertiaspa
+https://github.com/astechedu/htmlcssjquerytutorial
+https://github.com/astechedu/htmlcssjavascripttutorial 
+https://github.com/astechedu/html5css3tutorial 
+https://github.com/astechedu/htmlcsstutorial
+https://github.com/astechedu/laravel8-ui-react
+https://github.com/astechedu/laravel8-ui-vue
+--------------------------------------------------
+
+
+//Editing all
+//Github Changing html, css, text, images etc:
+
+
+Github Images: 
+
+//More option of images, squares, ticks
+
+//Formating links: 
+https://stackoverflow.com/questions/47344571/how-to-draw-checkbox-or-tick-mark-in-github-markdown-table/55523035
+
+Tutorial (All in one): 
+https://www.w3schools.io/file/markdown-images/
+
+
+
+Images: 
+
+//Without size  
+	![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png)
+
+//With size
+	![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
+OR
+	<img src="https://your-image-url.type" width="300" height="100">
+
+	<img src="https://www.freecodecamp.org/news/content/images/2021/06/Ekran-Resmi-2019-11-18-18.08.13.png" width="200" height="200">
+
+
+
+Tick or check mark images: 
+
+	:heavy_check_mark:  
+	:white_check_mark: 
+	:heavy_check_mark:
+
+	[x] row
+	[ ] row 
+
+	<input type="checkbox" disabled checked /> works  
+	<input type="checkbox" disabled /> works here too 
+.........................................................
+
+	:white_large_square
+	:white_check_mark
+	:red_circle
+	:heavy_plus_sign
+
+	:x:
+	:+:
+
+mailto links in markdown:
+
+	[Contact Us](mailto:admin@cloudhadoop.com)
+
+document in markdown:
+
+	[go to heading](#heading)
+
+	<a name="heading">
+	   My Heading
+	</a>
+
+
+Links with title:
+
+	Links title example [example link](URL "link title text")
+
+Create a link with target blank in markdown:
+	<a href="url" target="_blank">link</a>
+
+
+Reference Links: 
+	It is reference links [emphasis tutorials][myexample]
+	[myexample]: /file/markdown-emphasis "markdown emphasis tutorials"
+
+
+How to add link part of the same document in markdown.
+	[go to heading](#heading)
+
+
+Relative Links in markdown:
+	[links text](relative Url)
+	[About Us](/about)
+	<a href="/about">About Us</a>
+
+Inline or External Links in markdown:
+	[links text](Links Url)
+	<a href="#">links text</a>
+
+
+Inline images:
+	![alt text](image url "image Title")
+	<img src="image url" alt="alt text" title="image Title" />
+
+
+
+
+..........................................................
+
+//Create tables on README.md
+https://www.thecodebuzz.com/display-table-readme-md-file-git-github-markup-format-table/
+
+1.
+
+| FirstName     | LastName      | City     |
+| ------------- | ------------- | -------- |
+| John          | Test1         | NewYork  |
+| Bob           | Test2         | Toronto  |
+
+
+2.
+
+| FirstName     | LastName      | City   
+| ------------- | ------------- | --------    |
+| `John`        | Test1         | `NewYork`   |
+| `Bob`         | Test2         | `Toronto`   |
+
+
+3.
+
+Right align     ---:
+Left align       :---
+Center align    :---:
+
+| FirstName     | LastName      | City  |
+| :------------ |   :---:       | --------: |
+| `John`        | Test1         | `NewYork`   |
+| `Bob`         | Test2         | `Los Angeles`   |
+
+
+
+Table List Example: 
+
+| SNo.     | Steps      |
+| ------------- | ------------- |
+| 1         | Installation of Laravel Application        |
+| 2           | Install Breeze        |
+| 3           | Run Migration        |
+| 4           | Breeze Authentication Controllers        |
+| 5           | Breeze Authentication Routes        |
+| 6           | Breeze Authentication Views        |
+| 7           | Application Testing        |
+
+
+....................................................
+
+&check; - html checkbox example
+:white_check_mark: - emoji checkbox example
+&#9746; - unicode checkbox example
+
+    Html item using ✓
+    Emojis using white_check_mark
+    Unicode using ☒
+
+.....................................
+
+> #### Heading in blockquotes text
+> **bold text**
+> _italic text_
+> ~~strikethrough text~~
+> `code element`
+
+    Heading in blockquotes text
+
+    bold text
+
+    italic text
+
+    strikethrough text
+
+    code element
+...........................................................
+
+> HelloWorld.java:
+>
+> ```java
+> class HelloWorld {
+>    public static void main(String[] args) {
+>       System.out.println("Simple hello world program"); 
+>   }
+>}
+> 
+
+
+Output is
+
+    HelloWorld.java:
+
+    class HelloWorld {
+       public static void main(String[] args) {
+          System.out.println("Simple hello world program"); 
+      }
+    }
+..............................................................
+
+	**It is Bold text**
+	__It is Bold text__
+
+Following displayed content will be shown to the browser.
+
+	<strong>It is Bold text</strong>
+	<strong>It is Bold text</strong>
+
+------------------------------------------
+	*It is Italic text*
+	_Underscore text_
+
+
+
+------------------------------------------------

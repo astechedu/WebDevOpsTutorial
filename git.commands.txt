@@ -323,7 +323,9 @@ git branch -d <branch name>
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 
-//
+//Set Url on local branch (Rename origin)
+$ git remote set-url origin https://github.com/astechedu/Laravel8-breeze-auth.git
+
 
 git remote add origin http://github.com/UserName/RepositoryName.git
 
