@@ -1,0 +1,105 @@
+----------> Jenkin Pipeline Commands<-------------
+
+---------------------------------------------------
+
+
+
+
+
+                     Jenkin Pipeline: 
+
+                   /             	  \
+                  /                	   \               
+ Pipeline Plugings               Using Groovy Script
+           /                                \
+          /                                  \
+ Job-1   Job-2   Job-3   Job-4                \
+ Build   Text    QA      Deploy                \
+
+                                              Job-1     __ stage-1
+                                              Pipeline     Build
+                                                       \
+                                                        \   
+                                                         stage-2
+                                                      \  Text
+                                                       \
+                                                        stage-3
+                                                    \   QA
+                                                     \
+                                                      stage-4
+                                                      Deploy
+
+
+Using Groovy Script:
+
+1) Scripted Pipeline
+2) Declarative Pipeline  (New mostly being used)
+
+------------------------------------------
+
+1) Scripted Pipeline
+
+node{
+	
+	stage["build"]{
+		echo "Welcome to Build Stage"
+	}
+
+	stage["Text"]{
+		echo "Welcome to Build Stage"
+	}
+
+	stage["QA"]{
+		echo "Welcome to Build Stage"
+	}
+
+	stage["Deploy"]{
+		echo "Welcome to Build Stage"
+	}
+	
+}
+
+------------------------------------------
+
+
+2) Decripted Pipeline
+
+pipeline{
+	
+	agent any	
+	stages{
+
+		stage{"build"}{
+
+			steps{
+			  echo "Welcome to Build Stage";
+			}
+		}
+
+		stage{"Test"}{
+
+			steps{
+			  echo "Welcome to Test Stage";
+			}
+		}
+
+		stage{"QA"}{
+
+			steps{
+			  echo "Welcome to Test Stage";
+			}
+		}
+
+		stage{"Deploy"}{
+
+			steps{
+			  echo "Welcome to Test Stage";
+			}
+		}				
+
+	}
+
+}
+
+------------------------------------------
+
