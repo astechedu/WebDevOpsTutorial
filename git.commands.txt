@@ -419,3 +419,12 @@ git checkout .    //Going to old commit both files
 git log              //See all comments
 
 --------------------- X ------------ X -------------------------------
+
+
+Now, you need to set up your username and email address that will be used when issuing a commit:
+  
+$ git config --global user.name "Vlad Mihalcea"            //Example
+
+$ git config --global user.email mail@vladmihalcea.com     //Example
+
+-----------------------------------------------------------------------
