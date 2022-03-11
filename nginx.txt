@@ -1,0 +1,72 @@
+
+>>>>> Nginx <<<<<<<<
+
+---------------------------------------
+
+
+----------------------------------------
+----------------------------------------
+----------------------------------------
+
+
+------->>>> Nginx Setting for windows <<<<------------
+
+
+Create nginx start, stop & restart .bat:
+
+
+Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe port same as in nginx.conf 
+
+
+@ECHO OFF
+
+    ECHO Starting PHP FastCGI...
+    C:\RunHiddenConsole.exe C:\php8\php-cgi.exe -b 127.0.0.1:9999
+
+    ECHO Starting NGINX
+    start nginx.exe
+
+    popd
+    EXIT /b
+
+
+ -- OR--
+
+
+ #This is working when nginx in d: drive & php8 in c: drive
+ //nginx & php 
+
+ @ECHO OFF
+
+    ECHO Starting PHP FastCGI...
+    RunHiddenConsole.exe C:\php8\php-cgi.exe -b 127.0.0.1:9000
+
+    ECHO Starting NGINX... 
+
+    cd D:\nginx
+    START nginx.exe
+    cd ..
+
+    popd
+    EXIT /b 
+..............................
+
+Create file "nginx-stop.bat", edit with this:
+
+
+@ECHO OFF
+    taskkill /f /IM nginx.exe
+    taskkill /f /IM php-cgi.exe
+    EXIT /b
+
+...............................
+
+Create file "nginx-restart.bat":
+
+
+@ECHO OFF
+    call nginx-stop.bat
+    call nginx-start.bat
+    EXIT /b  
+
+................................

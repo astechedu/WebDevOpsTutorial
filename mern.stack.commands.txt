@@ -1,0 +1,59 @@
+>>>>>>>>> M E R N Stack <<<<<<<<<<<
+
+
+----------------------------------------------------
+M - MongoDB
+E - Express js
+R - React js
+N - Node js
+----------------------------------------------------
+
+
+//When request is sent from frontend (React) showing errors or "CORS"
+//(Reason: CORS header ‘Access-Control-Allow-Origin’ missing).
+
+//Fixed: Install cors in express js and paste code given blow in express js (Backend)
+  npm i cors express nodemon
+
+  app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Headers", "Origin,Content-Type,   Authorization, x-id, Content-Length, X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  next();
+  });
+
+
+//In express js : Used This code to respone to frontend
+
+reating a simple Express GET request
+
+Below is a simple index.js express server.
+
+const express = require('express');
+const app = express();
+
+    const ingredients = [
+    {
+        "id": "1",
+        "item": "Bacon"
+    },
+    {
+        "id": "2",
+        "item": "Eggs"
+    },
+    {
+        "id": "3",
+        "item": "Milk"
+    },
+    {
+        "id": "4",
+        "item": "Butter"
+    }
+];
+
+app.get('/ingredients', (req, res) =>{
+    res.send(ingredients);
+});
+app.listen(6069);
+---------------------------------------------------
