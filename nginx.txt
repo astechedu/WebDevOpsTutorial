@@ -19,7 +19,7 @@
 
 1. Downlod 'runHiddenConsole.exe' from internet in C:\WebServer
 2. Download nginx (Binary)   in C:\WebServer   //Set Environment variable in System  
-3. Download php (Binary)   in C:\WebServer   //Set Environment variable in System  
+3. Download php (Binary)     in C:\WebServer   //Set Environment variable in System  
 4. Download mysql (Binary)   in C:\WebServer   //Set Environment variable in System  
 
 5. Create nginx start, stop & restart .bat 
