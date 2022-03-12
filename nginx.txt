@@ -17,7 +17,7 @@
 
 -----------------------------------------
 
-1. Downlod 'runHiddenConsole' from internet in C:
+1. Downlod 'runHiddenConsole.exe' from internet in C:
 2. Download nginx (Binary)   in C:              //Set Environment variable in System               
 3. Download php (Binary)     in C:              //Set Environment variable in System  
 4. Download mysql (Binary)   in C:              //Set Environment variable in System  
