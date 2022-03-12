@@ -11,8 +11,23 @@
 
 ------->>>> Nginx Setting for windows <<<<------------
 
+-----------------------------------------
 
-Create nginx start, stop & restart .bat:
+    ( WEB SERVER )
+
+-----------------------------------------
+
+1. Downlod 'runHiddenConsole' from internet in C:
+2. Download nginx (Binary)   in C:              //Set Environment variable in System               
+3. Download php (Binary)     in C:              //Set Environment variable in System  
+4. Download mysql (Binary)   in C:              //Set Environment variable in System  
+5. Create nginx start, stop & restart .bat 
+
+6. Check version: nginx -v, php -v, & mysql -v  //All all succeed
+
+7. Create 3 files nginx-start, nginx-stop & nginx-restart in C:
+
+-------------------------------------------------------------------
 
 
 Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe port same as in nginx.conf 
@@ -70,3 +85,14 @@ Create file "nginx-restart.bat":
     EXIT /b  
 
 ................................
+
+
+
+
+
+-------------------------------------
+
+--------> Nginx Config <-------------
+
+
+-------------------------------------
