@@ -133,3 +133,22 @@ http {
 }       
 
 -------------------------------------
+
+
+ >>>>> PHP <<<<<
+
+ php.ini
+
+   extension_dir = "D:/WebServer/php8/ext" 
+
+//If, it is required.
+  extension=C:\WebServer\php\ext\php_mysqli.dll
+  extension=C:\WebServer\php\ext\php_curl.dll
+  extension=C:\WebServer\php\ext\php_pdo_mysql.dll
+  extension=C:\WebServer\php\ext\php_mbstring.dll
+  extension=C:\WebServer\php\ext\php_gd.dll
+  extension=C:\WebServer\php\ext\hp_soap.dll
+
+
+
+-------------------------------------
