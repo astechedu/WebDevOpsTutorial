@@ -2,6 +2,9 @@
 
 ---------------------------------
 ---------------------------------
+Keys: controller, model, view, simple rest api
+---------------------------------
+---------------------------------
 ---------------------------------
 ---------------------------------
 
@@ -28,9 +31,228 @@ $ rails g controller api/v1/Users
 $ rails g controller api/v1/Facts
 
 
+-------------------------------------
+-------------------------------------
+
+
+>>>>>>>>>>>>> All Templates <<<<<<<<<<<<<<<<<<<<<
+
+
+Ruby On Rails:
+
+
+
+--> ( Model ) <---
+
+//app/models/article.rb
+
+class Article < ApplicationRecord
+  belongs_to :author, default: -> { Current.user }
+  has_many :comments
+
+  has_one_attached :avatar
+  has_rich_text :content, encrypted: true
+  enum status: [ :drafted, :publised ]
+
+  scope :recent, -> { order(created_at: :desc).limit(25)}
+
+  after_save_commit :deliver_later, if: :publised?
+
+  def byline
+    "Written by #{author.name} on #{created_at.to_s(:short)}"
+  end
+
+  def deliver_later
+    Article::DeliveryJob.perform_later self
+  end
+end
+
+
+
+
+--> ( Controller ) <--
+
+//app/controllers/articles_controller.rb
+
+class ArticleController < ApplicationController
+
+  def index
+    @articles = Article.recent
+  end
+
+  def show
+    @article = Article.find(params[:id])
+    fresh_when etag: @article
+  end
+
+  def create
+    article = Article.create!(article_params)
+    redirect_to article
+  end
+
+  
+  private
+    def article_params
+      params.require(:article).permit(:title, :content)
+    end
+
+end
+
+
+
+--> ( Views ) <-- 
+
+//app/views/articles/show.html.erb
+
+
+<h1><%= @article.title %></h1>
+
+<%= image_tag @article.creator.avatar.url %>
+<p><%= @article.content %></p>
+
+<%= link_to "Edit", edit_article_path(@article) if Current.user.admin? %>
+
+
+
+--> ( Routes ) <--
+
+//config/routes.rb
+
+Rails.application.routes.draw do
+  resource :article do     # /articles, /article/1
+
+    resources :connents    # /articles/1/comments, /comments/1
+  end
+
+  root to: "articles#index" # /
+end
 
 
 ---------------------------------
 ---------------------------------
+
+>>>> Rails 7 Simple Rest Api <<<<<<<
+
+Table: users
+
+
+Models:
+    rails generate model User
+
+Controller:
+    rails generate controller User
+
+
+    rails routes
+
+  http://localhost:3000
+  http://localhost:3000/users
+
+
+Model: 
+
+class User < ApplicationRecored  
+end
+
+------------------
+
+
+create_table "users", force :: cascade do |t|
+  t.string "username"
+  t.string "password"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end
+
+
+//User Controller 
+
+class UserController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  #before_action :find_fact, only: [:show, :update, :destroy]
+
+  # GET /users
+  def index
+     @user = User.all() # find(x) # x = given id
+     render json: @user
+  end
+
+    # GET /users/id
+  def show
+    @user = User.find(params[:id])
+      if @user        
+          render json: @user
+      else
+        render error: { error: 'Unable to create User.'}, status: 400
+      end
+  end
+
+    # POST /users
+  def create
+      @user = User.new(user_params) 
+      if @user
+        @user.save
+          render json: @user
+      else
+        render error: { error: 'Unable to create User.'}, status: 400
+      end
+  end
+
+  # PUT /users/id
+  def update
+      @user = User.find(params[:id])
+      if @user
+         @user.update(user_params)
+          render json: { message: 'User successfully updated.'}, status: 200
+      else
+        render json: { error: 'Unable to update User.'}, status: 400
+      end 
+  end
+
+    # DELETE /users/id
+  def destroy
+      @user = User.find(params[:id])
+      if @user
+         @user.destroy()
+          render json: { message: 'User successfully deleted.'}, status: 200
+      else
+        render json: { error: 'Unable to delete User.'}, status: 400
+      end
+  end
+
+    private
+
+  def user_params  
+     params.require(:user).permit(:name, :email)  
+     #params.permit(:name, :email) 
+  end
+
+  #def contact
+    #redirect_to action: 'services', id: 2    
+  #end
+end
+
+
+---------> End Conroller <----------------------------
+
+
+Rails.application.routes.draw do
+  get '/users', to: "user#index"
+  get '/users/:id', to: "user#show"
+  get '/users/new', to: "user#new"
+  post '/users', to: "user#create"
+  get '/users/:id/edit', to: "user#edit"
+  put '/users/:id', to: "user#update"
+  delete '/users/:id', to: "user#destroy"
+end
+
+
+ -- OR --
+
+ Rails.application.routes.draw do
+   resources :users      #OR resource :user
+end
+---------------------------------------------------------------
+
 ---------------------------------
 ---------------------------------

@@ -2,3 +2,104 @@
 >>>>> Django <<<<<<<<
 
 ---------------------------------------
+---------------------------------------
+Keys: model, view, controller
+---------------------------------------
+
+---------------------------------------
+
+---------------------------------------
+
+---------------------------------------
+
+---------------------------------------
+
+
+
+>>>>>>>>>>>>> All Templates <<<<<<<<<<<<<<<<<<<<<
+
+
+Python:
+
+
+ Templates Settings
+
+//Templates Directory
+ TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+
+//In settings.py file
+'DIRS': [TEMPLATE_DIR]
+
+'OR'
+'DIRS': [BASE_DIR / 'templates']
+
+
+
+
+---> ( Routes: urls.py file ) <---
+
+//Sending the request to the right view (urls.py)
+
+urlpatterns = [
+  path('admin/', admin.site.urls),
+  path('contact', views.contact, 'contact.html'),
+  path('book/<int:id>/', views.book_detail, name='book_detail'),
+  path('catalog/', include('catalog.urls')), re_path(r'^([0-9]+)/$', views.best),
+]
+
+
+
+---> ( Views ) <---
+
+//Handling the request (views.py)
+
+from django.http import HttpResponse
+from django.shortcuts import render
+
+def index(request):
+  return HttpResponse('Hello from Django!')
+end
+
+'OR'
+
+def index(request):
+  my_dict = {"insert_me": "I am "}
+  return render(request, 'index.html', my_dict)
+end
+
+
+
+//templates/admin/base_site.html
+
+{% extends "admin/base_site.html" %}
+
+{% block branding %}
+  <img src="link/to/logo.png" alt="logo">
+    {{ block.super}}
+    {% endblock %}
+
+
+
+
+---> ( Model ) <---
+
+//Defining data models (models.py)
+
+from django.db import models
+
+class Team(models.Model):
+
+  team_name = models.CharField(max_length=40)
+
+    TEAM_LEVELS = (
+      ('U09', 'Under 09s'),
+      ('U10', 'Under 10s'),
+      ('U11', 'Under 11s'),
+    )
+
+  team_level = models.CharField(max_length=3,
+    choices=TEAM_LEVELS, default='U11')
+
+
+------------------------------------------------------
+------------------------------------------------------

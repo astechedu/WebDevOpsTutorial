@@ -3,6 +3,7 @@
 
 
 --------------------------------------
+Keys: symfony6 api
 --------------------------------------
 
 -----------------------------------------------------------------------------
@@ -142,3 +143,330 @@ Options:
  security
   security:encode-password                Encodes a password
 -----------------------------------------------------------------------------------
+
+
+
+
+
+ >>>>>>>>>>>>> Symfony 6 <<<<<<<<<<<<<<<<<<<<<
+
+
+Databases:
+
+composer require symfony/orm-pack
+composer require --dev symfony/maker-bundle
+php bin/console doctrine:database:create
+php bin/console make:entity --regenerate
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+
+php bin/console dbal:run-sql 'SELECT * FROM product'
+
+php bin/console make:controller ProductController
+
+composer require sensio/framework-extra-bundle
+
+
+
+
+ -------------------------------------------------------------------
+ -------------------------------------------------------------------
+ -------------------------------------------------------------------
+ -------------------------------------------------------------------
+ <<<<<<  symfony6 api <<<<<<<<<<<
+
+//src/controller/ProductController.php
+
+<?php
+namespace App\Controller;
+
+use App\Entity\Product;
+use Doctrine\Persistence\ManagerRegistry;
+//use App\Repository\ProductRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+
+class ProductController extends AbstractController
+{    
+    #[Route('/no', name: 'list_products')]
+    public function index(ManagerRegistry $doctrine): Response
+    {        
+        $product = $doctrine->getRepository(Product::class)->findAll();
+
+
+        return $this->json([
+            'products' => $product
+        ]);
+    }
+
+    /**
+     * @Route("/add_products", name="product_add")
+     */
+    public function add_product(ManagerRegistry $doctrine, request $request):Response
+    {
+        $product = new Product(); 
+
+        $parameter = json_decode($request->getContent(), true);
+
+        $product->setName($parameter['name']);
+        $product->setPrice($parameter['price']);
+        $product->setQty($parameter['qty']);
+
+        $product_create = $doctrine->getRepository(Product::class)->add($product);
+
+        // -- OR --
+        //$em = $doctrine->getManager();
+        //$em->persist($product);
+        //$em->flush($product);
+
+        return $this->json([
+            'product' => "Saved"
+        ]);
+    }
+
+    /**
+     * @Route("/show/{id}", name="product_show")
+     */
+    public function show(ManagerRegistry $doctrine, int $id): Response
+    {
+        $product = $doctrine->getRepository(Product::class)->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+
+        //return new Response('Check out this great product: '.$product->getName());
+
+        return $this->json([
+            'product' => $product
+        ]);    
+    }
+
+
+    /**
+     * @Route("/update_product/{id}", name="product_update")
+     */
+    public function update(ManagerRegistry $doctrine, request $request, $id):Response
+    {    
+
+        $entityManager = $doctrine->getManager();
+        $product = $entityManager->getRepository(Product::class)->find($id);
+
+        $parameter = json_decode($request->getContent(), true);
+
+        $product->setName($parameter['name']);
+        $product->setPrice($parameter['price']);
+        $product->setQty($parameter['qty']);
+
+       //$entityManager->flush();
+
+        $product_create = $doctrine->getRepository(Product::class)->add($product);
+
+        return $this->json([
+            'product' => 'Updated'
+        ]);
+    }
+
+
+    /**
+     * @Route("/delete_product/{id}", name="product_delete")
+     */
+    public function delete_product(ManagerRegistry $doctrine, $id):Response
+    {        
+        $entityManager = $doctrine->getManager();
+        $product = $entityManager->getRepository(Product::class)->find($id);
+
+        /*
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+        */        
+
+        $entityManager->getRepository(Product::class)->remove($product);
+
+        return $this->json([
+            'product' => 'Deleted'
+        ]);
+    }
+
+    /**ss
+     * @Route("/prac", name="product_prac")
+     */
+    public function prac(ManagerRegistry $doctrine):Response
+    {        
+        $entityManager = $doctrine->getManager();
+        $product = $entityManager->getRepository(Product::class)->find($id);
+
+        /*s
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+        */
+
+        //$entityManager->getRepository(Product::class)->remove($product);
+
+        return $this->json([
+            'message' => 'Practicing'
+        ]);
+    }
+
+}
+
+
+...........
+
+//src/Entity/Product.php
+<?php
+
+namespace App\Entity;
+
+use App\Repository\ProductRepository;
+use Doctrine\ORM\Mapping as ORM;
+
+#[ORM\Entity(repositoryClass: ProductRepository::class)]
+class Product
+{
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
+    public $id;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    public $name;
+
+    #[ORM\Column(type: 'float')]
+    public $price;
+
+    #[ORM\Column(type: 'integer')]
+    public $qty;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getQty(): ?int
+    {
+        return $this->qty;
+    }
+
+    public function setQty(int $qty): self
+    {
+        $this->qty = $qty;
+
+        return $this;
+    }
+}
+.................
+
+//src/Repository/ProductRepository.php
+<?php
+
+namespace App\Repository;
+
+use App\Entity\Product;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
+use Doctrine\Persistence\ManagerRegistry;
+
+/**
+ * @method Product|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Product|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Product[]    findAll()
+ * @method Product[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ */
+class ProductRepository extends ServiceEntityRepository
+{
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, Product::class);
+    }
+
+    /**
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function add(Product $entity, bool $flush = true): void
+    {
+        $this->_em->persist($entity);
+        if ($flush) {
+            $this->_em->flush();
+        }
+    }
+
+    /**
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function remove(Product $entity, bool $flush = true): void
+    {
+        $this->_em->remove($entity);
+        if ($flush) {
+            $this->_em->flush();
+        }
+    }
+
+
+}
+
+.................
+
+//templates/base.html.twig
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+           <h1>This is base twig template rendering</h1>
+        {% endblock %}
+    </body>
+</html>
+
+.................
+
+ -------------------------------------------------------------------

@@ -10,10 +10,6 @@ mysql, sqlite3
 
 -----------------------------------------------------------------------
 
-
-
-
-
 -----------------------------------------------------------------------
 >>>>>> Sqlite3: <<<<<<<<
 
@@ -24,6 +20,17 @@ sqlite3 database.laravel08.db  // Creating database
 .databases                     //List names and files of attached databases
 .open db_name                  //To open database
 .tables                        //List tables
+.schema tableName              //Showing table's structure
+.dump ?OBJECTS?                //Render database content as SQL
+.show                          //Show the current values for various settings
+.recover                       //Recover as much data as possible from corrupt db.
+.restore ?DB? FILE             //Restore content of DB (default "main") from FILE
+.load FILE ?ENTRY?             //Load an extension library
+.log FILE|off                  //Turn logging on or off.  FILE can be stderr/stdout
+.mode MODE ?TABLE?             //Set output mode
+.separator COL ?ROW?           //Change the column and row separators
+.excel                         //Display the output of next command in spreadsheet
+
 SELECT column_list FROM table;
 SELECT * FROM tracks;
 
@@ -49,19 +56,185 @@ SELECT trackid,	name, composer, unitprice FROM tracks;
 .backup ?DB? FILE           //Backup DB (default "main") to FILE
 
 
+/* Export all table's records to msword
+sqlite> .headers on           
+sqlite> .mode csv
+sqlite> .once d:/dataout.csv
+sqlite> SELECT * FROM users;
+sqlite> .system d:/dataout.csv
+*/
+
+
+//Export to Excel
+
+sqlite> .excel
+sqlite> SELECT * FROM users;
+
+
+//In column mode, each record is shown on a separate line with the data aligned in columns.
+
+sqlite> .mode column
+sqlite> select * from users;
+
+
+//
+sqlite>.width
+sqlite> .mode markdown             
+sqlite> select * from users;
+
+Or 
+
+sqlite> .mode table
+sqlite> select * from tbl1;
+
+Or
+
+sqlite> .mode box
+sqlite> select * from tbl1;
+
+
 -----------------------------------------------------------------------
 
 >>>>> mysql <<<<<<<
+
+https://www.dataquest.io/blog/sql-commands/
 
 Mysql on windows:
 
 
 Windows cmd: 
 
+CREATE TABLE table_name (
+    column_1 datatype,
+    column_2 datatype,
+    column_3 datatype
+);
+
+SELECT studentID, FullName, sat_score, rcd_updated FROM student;
 
 I:\mysql\bin> mysql -u root -p                      //To start server
 I:\mysql\bin> mysqladmin -u root -p shutdown        //To stop server
 
+
+I:\mysql\bin> describe tableName
+
+ALTER TABLE table_name
+ADD column_name datatype;
+
+And then to invoke the MySQL client:
+mysql -h localhost -u root -p
+
+
+ALTER TABLE customers
+DROP COLUMN surname;
+
+
+UPDATE table_name
+SET column1 = value1, 
+    column2 = value2, ...
+WHERE condition;
+
+UPDATE table_name1
+SET table_name1.column1 = table_name2.columnA
+    table_name1.column2 = table_name2.columnB
+FROM table_name1
+JOIN table_name2 ON table_name1.ForeignKey = table_name2.Key
+
+SELECT column_name, COUNT(*)
+FROM table_name
+GROUP BY column_name;
+
+
+SELECT column_name, COUNT(*)
+FROM table_name
+GROUP BY column_name
+HAVING COUNT(*) > value;
+
+
+SELECT groupingField, AVG(num_field)
+FROM table1
+GROUP BY groupingField
+
+
+SELECT studentID, FullName, AVG(sat_score) 
+FROM student 
+GROUP BY studentID, FullName;
+
+
+SELECT user_only_num1 AS AgeOfServer, (user_only_num1 - warranty_period) AS NonWarrantyPeriod FROM server_table
+
+SELECT studentID, FullName, sat_score
+FROM student
+ORDER BY FullName DESC;
+
+SELECT count(*) AS studentCount FROM student; 
+
+DELETE FROM table_name
+WHERE condition;
+
+SELECT * FROM A x JOIN B y ON y.aId = x.Id
+
+
+
+SELECT studentID, FullName, sat_score, rcd_updated
+FROM student 
+WHERE 
+    FullName LIKE 'Monique%' OR 
+    FullName LIKE '%Greene'; 
+
+
+SELECT COUNT(customer_id), name
+FROM customers
+GROUP BY name
+HAVING COUNT(customer_id) > 2;
+
+
+SELECT name
+FROM customers
+ORDER BY age;
+
+
+SELECT name
+FROM customers
+ORDER BY age DESC;
+
+
+SELECT name
+FROM customers
+ORDER BY age
+OFFSET 10 ROWS;
+
+
+SELECT name
+FROM customers
+INNER JOIN orders
+ON customers.customer_id = orders.customer_id;
+
+GRANT SELECT, UPDATE ON customers TO usr_bob;
+
+REVOKE SELECT, UPDATE ON customers FROM usr_bob;
+
+SAVEPOINT SAVEPOINT_NAME;
+
+DELETE FROM customers
+WHERE name = ‘Bob’;
+COMMIT
+
+
+ROLLBACK TO SAVEPOINT_NAME;
+
+
+TRUNCATE TABLE customers;
+
+
+SELECT name FROM customers
+UNION
+SELECT name FROM orders;
+
+
+//Copy data to another table
+SELECT * INTO customers
+FROM customers_backup;
 
 -----------------------------------------------------------------------
 
@@ -70,3 +243,13 @@ MongoDB:
 
 
 ------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

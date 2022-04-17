@@ -9,6 +9,7 @@ Red Hat Enterprise Linux
 Linux Mint
 Debian
 Fedora
+
 --------------------------------------
 -------------------------------------
 
@@ -260,4 +261,168 @@ sudo service nginx status
 sudo sevice nginx stop
 sudo service nginx restart
 -----------------------------------------------------------------------------
+
+//Install Node js App on Linus using nginx
+
+<<<< Step 1: Installing Nodejs and NPM in Linux: >>>>>>
+-------------------------------------------------------
+
+On Debian/Ubuntu
+
+---------- Install Node.js v11.x ---------- 
+$ curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+
+---------- Install Node.js v10.x ----------
+$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+
+-------------------------------------------------------------------------
+
+On CentOS/RHEL and Fedora
+
+---------- Install Node.js v11.x ---------- 
+$ curl -sL https://rpm.nodesource.com/setup_11.x | bash -
+
+---------- Install Node.js v10.x ----------
+$ curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+
+-------------------------
+
+<<<<< Step 2: Creating a Nodejs Application >>>>>>>
+
+$ sudo mkdir -p /var/www/html/sysmon
+$ sudo vim /var/www/html/sysmon/server.js
+-------------------
+const http = require('http');
+
+const hostname = '192.168.43.31';
+const port = 5000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Sysmon App is Up and Running!\n');
+});
+
+server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
+
+---------------------
+
+Now start your node application using the following command (press Ctrl+x to terminate it).
+
+
+$ sudo node /var/www/html/sysmon/server.js
+OR
+$ sudo node /var/www/html/sysmon/server.js &   #start it in the background to free up your terminal
+
+Now open a browser and access your application at the URL http://198.168.43.31:5000
+
+----------------------
+Step 3: Install Nginx Reverse Proxy in Linux:
+
+On Debian/Ubuntu
+Create a file called /etc/apt/sources.list.d/nginx.list and add the following lines to it.
+deb http://nginx.org/packages/ubuntu/ bionic nginx
+deb-src http://nginx.org/packages/ubuntu/  bionic nginx
+
+$ wget --quiet http://nginx.org/keys/nginx_signing.key && sudo apt-key add nginx_signing.key
+$ sudo apt update
+$ sudo apt install nginx
+
+
+
+On CentOS/RHEL and Fedora
+
+CentOS
+
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/ gpgcheck=0 enabled=1
+
+RHEL
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/rhel/$releasever/$basearch/ gpgcheck=0 enabled=1
+
+# wget --quiet http://nginx.org/keys/nginx_signing.key && rpm --import nginx_signing.key
+# yum install nginx
+
+
+After successfully installing Nginx, start it, enable it to auto-start at system boot and check if it is up and running.
+
+---------- On Debian/Ubuntu ---------- 
+$ sudo systemctl status nginx
+$ sudo systemctl enable nginx
+$ sudo systemctl status nginx
+
+---------- On CentOS/RHEL ---------- 
+# systemctl status nginx
+# systemctl enable nginx
+# systemctl status nginx
+
+If you are running a system firewall, you need to open port 80 (HTTP), 443 (HTTPS) and 5000 (Node app), which the web server listens on for client connection requests.
+
+
+---------- On Debian/Ubuntu ---------- 
+$ sudo ufw allow 80/tcp
+$ sudo ufw allow 443/tcp
+$ sudo ufw allow 5000/tcp
+$ sudo ufw reload
+
+---------- On CentOS/RHEL ---------- 
+# firewall-cmd --permanent --add-port=80/tcp
+# firewall-cmd --permanent --add-port=443/tcp
+# firewall-cmd --permanent --add-port=5000/tcp
+# firewall-cmd --reload
+
+Step 4: Configure Nginx as Reverse Proxy For Nodejs Application
+
+$ sudo vim /etc/nginx/conf.d/sysmon.conf 
+
+
+server {
+    listen 80;
+    server_name sysmon.tecmint.lan;
+
+    location / {
+        proxy_set_header   X-Forwarded-For $remote_addr;
+        proxy_set_header   Host $http_host;
+        proxy_pass         http://192.168.43.31:5000;
+    }
+}
+
+------------
+$ sudo systemctl restart nginx
+OR
+# systemctl restart nginx
+
+---------------------------
+Step 5: Access Nodejs Application via Web Browser
+
+http://sysmon.tecmint.lan 
+192.168.43.31 sysmon.tecmint.lan
+
+
+------------- End Of Node Project ..............
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
