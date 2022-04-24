@@ -95,7 +95,7 @@ sqlite> select * from tbl1;
 
 -----------------------------------------------------------------------
 
->>>>> mysql <<<<<<<
+>>>>> mysql MySql MYSQL <<<<<<<
 
 https://www.dataquest.io/blog/sql-commands/
 
@@ -235,6 +235,9 @@ SELECT name FROM orders;
 //Copy data to another table
 SELECT * INTO customers
 FROM customers_backup;
+
+//Rename table's name
+rename table users to user
 
 -----------------------------------------------------------------------
 
