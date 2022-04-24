@@ -476,37 +476,38 @@ class ProductRepository extends ServiceEntityRepository
 
  >>>>>> Twig Template Extends <<<<<<<
 
-//--> layout/base.html.twig (Parent Template) <--//
+//--> layout/base.html.twig (Parent Template) <--// j
 
+{# templates/layout/base.html.twig #}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        
+        <title>{% block title %}My Application{% endblock %}</title>
+
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">        
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            
         {% endblock %}
+
     </head>
     <body>
         {% block body %}
             <div id="sidebar">
                 {% block sidebar %}
                     <ul>
-                        <li><a href="app_index">Home</a></li>
-                        <li><a href="app_contact">Blog</a></li>
+                        <li><a href="{{ path('app_index') }}">Home</a></li>
+                        <li><a href="{{ path('app_contact') }}">Blog</a></li>
                     </ul>
                 {% endblock %}
             </div>
 
-            <div id="content">
-                {% block content %}{% endblock %}
+            <div id="content" class="container">
+                {% block content %}
+                {% endblock %}
             </div>
         {% endblock %}
     </body>
@@ -515,30 +516,69 @@ class ProductRepository extends ServiceEntityRepository
 
 //--> Child Template <--//
 
+//templates/layout/index.html.twig
 
 {% extends 'layout/base.html.twig' %}
-{% block title %}UserIndex!{% endblock %}
+
+{% block title %}Lising Data{% endblock %}
 
 {% block content %}
-    <h1>Index</h1>
-    <p class="important">
-        Welcome on my awesome homepage.
-    </p>
+  <h1>Users</h1>
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for user in users %}
+        <tr>
+          <td>{{ user.id}}</td>
+          <td>{{ user.name}}</td>
+          <td>{{ user.email}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+{% endblock %}
+
+//templates/layout/contact.html.twig
+
+{% extends 'layout/base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+  <h3>Contacts</h3>
+  
 {% endblock %}
 
 
 //Controller
 
+class UserController extends AbstractController
+{
+
     #[Route('/', name: 'app_index')]
-    public function index()
+    public function index(ManagerRegistry $doctrine, Request $request)
     {
-        return $this->render('users/index.html.twig');            
+        $em = $doctrine->getManager();
+        $users = $em->getRepository(User::class)->findAll();
+
+        // print_r($users);
+        return $this->render('users/index.html.twig', ['users' => $users]);            
     }
+
     #[Route('/contact', name: 'app_contact')]
     public function contact()
     {
         return $this->render('users/contact.html.twig');            
     }
+
+}
 
  -------------------------------------------------------------------
  -------------------------------------------------------------------
