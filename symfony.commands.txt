@@ -499,8 +499,8 @@ class ProductRepository extends ServiceEntityRepository
             <div id="sidebar">
                 {% block sidebar %}
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="app_index">Home</a></li>
+                        <li><a href="app_contact">Blog</a></li>
                     </ul>
                 {% endblock %}
             </div>
@@ -526,6 +526,19 @@ class ProductRepository extends ServiceEntityRepository
     </p>
 {% endblock %}
 
+
+//Controller
+
+    #[Route('/', name: 'app_index')]
+    public function index()
+    {
+        return $this->render('users/index.html.twig');            
+    }
+    #[Route('/contact', name: 'app_contact')]
+    public function contact()
+    {
+        return $this->render('users/contact.html.twig');            
+    }
 
  -------------------------------------------------------------------
  -------------------------------------------------------------------
