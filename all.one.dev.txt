@@ -1,0 +1,5722 @@
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+Searching key words: 
+
+Rails6:
+
+Symfony6:
+      session, form, flesh message, api, sqlite3, database, child template,
+      symfony6 bundle, vue js , react js
+
+Cakephp4:
+
+Laravel8:
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+----> MyGitHub <-------
+https://github.com/astechedu/
+https://github.com/astechedu/zend3
+https://github.com/astechedu/Laminas
+https://github.com/astechedu/laravel7
+https://github.com/astechedu/yii2basic
+https://github.com/astechedu/phpjwt
+https://github.com/astechedu/paypal
+https://github.com/astechedu/cakephp4
+https://github.com/astechedu/codeigniter4
+https://github.com/astechedu/corephpapis
+https://github.com/astechedu/corephp
+https://github.com/astechedu/laravel8-jetstream-inertia 
+https://github.com/astechedu/laravel8-jetstream-livewire
+https://github.com/astechedu/Laravel8-breeze-auth
+https://github.com/astechedu/laravel8-basics-beginners
+https://github.com/astechedu/laravel8-ui-auth 
+https://github.com/astechedu/taiwind-tutorial 
+https://github.com/astechedu/bootstrap-tutorial
+https://github.com/astechedu/gittutorial
+https://github.com/astechedu/vue2api
+https://github.com/astechedu/vue3api
+https://github.com/astechedu/angularapi
+https://github.com/astechedu/reactapi
+https://github.com/astechedu/laravel8reactinertiaspa 
+https://github.com/astechedu/laravel8vueinertiaspa
+https://github.com/astechedu/htmlcssjquerytutorial
+https://github.com/astechedu/htmlcssjavascripttutorial 
+https://github.com/astechedu/html5css3tutorial 
+https://github.com/astechedu/htmlcsstutorial
+-------------------X-----------------------------------------
+
+-------------------------------------------------------------
+
+Github Images: 
+
+//More option of images, squares, ticks
+https://stackoverflow.com/questions/47344571/how-to-draw-checkbox-or-tick-mark-in-github-markdown-table/55523035
+
+Tutorial (All in one): 
+https://www.w3schools.io/file/markdown-images/
+
+
+
+  How to show images on github page
+
+  //Without size  
+  ![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png)
+
+  //With size
+  ![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
+OR
+<img src="https://your-image-url.type" width="300" height="100">
+
+<img src="#" width="200" height="200">
+
+
+
+Tick or check mark images: 
+
+:heavy_check_mark:  
+:white_check_mark: 
+:heavy_check_mark:
+
+[x] row
+[ ] row 
+
+<input type="checkbox" disabled checked /> works  
+<input type="checkbox" disabled /> works here too 
+.........................................................
+
+:white_large_square
+:white_check_mark
+:red_circle
+:heavy_plus_sign
+
+:x:
+:+:
+
+mailto links in markdown:
+[Contact Us](mailto:admin@cloudhadoop.com)
+
+document in markdown:
+[go to heading](#heading)
+
+<a name="heading">
+   My Heading
+</a>
+
+
+Links with title:
+Links title example [example link](URL "link title text")
+
+Create a link with target blank in markdown:
+<a href="url" target="_blank">link</a>
+
+
+Reference Links: 
+It is reference links [emphasis tutorials][myexample]
+[myexample]: /file/markdown-emphasis "markdown emphasis tutorials"
+
+
+How to add link part of the same document in markdown.
+[go to heading](#heading)
+
+
+Relative Links in markdown:
+[links text](relative Url)
+[About Us](/about)
+<a href="/about">About Us</a>
+
+Inline or External Links in markdown:
+[links text](Links Url)
+<a href="#">links text</a>
+
+
+Inline images:
+![alt text](image url "image Title")
+<img src="image url" alt="alt text" title="image Title" />
+
+
+
+
+..........................................................
+//Create tables on README.md
+https://www.thecodebuzz.com/display-table-readme-md-file-git-github-markup-format-table/
+
+1.
+
+| FirstName     | LastName      | City     |
+| ------------- | ------------- | -------- |
+| John          | Test1         | NewYork  |
+| Bob           | Test2         | Toronto  |
+
+
+2.
+
+| FirstName     | LastName      | City   
+| ------------- | ------------- | --------    |
+| `John`        | Test1         | `NewYork`   |
+| `Bob`         | Test2         | `Toronto`   |
+
+
+3.
+
+Right align     ---:
+Left align       :---
+Center align    :---:
+
+| FirstName     | LastName      | City  |
+| :------------ |   :---:       | --------: |
+| `John`        | Test1         | `NewYork`   |
+| `Bob`         | Test2         | `Los Angeles`   |
+
+
+
+Table List Example: 
+
+| SNo.     | Steps      |
+| ------------- | ------------- |
+| 1         | Installation of Laravel Application        |
+| 2           | Install Breeze        |
+| 3           | Run Migration        |
+| 4           | Breeze Authentication Controllers        |
+| 5           | Breeze Authentication Routes        |
+| 6           | Breeze Authentication Views        |
+| 7           | Application Testing        |
+
+
+....................................................
+
+&check; - html checkbox example
+:white_check_mark: - emoji checkbox example
+&#9746; - unicode checkbox example
+
+    Html item using ✓
+    Emojis using white_check_mark
+    Unicode using ☒
+
+.....................................
+> #### Heading in blockquotes text
+> **bold text**
+> _italic text_
+> ~~strikethrough text~~
+> `code element`
+
+    Heading in blockquotes text
+
+    bold text
+
+    italic text
+
+    strikethrough text
+
+    code element
+...........................................................
+
+> HelloWorld.java:
+>
+> ```java
+> class HelloWorld {
+>    public static void main(String[] args) {
+>       System.out.println("Simple hello world program"); 
+>   }
+>}
+> 
+
+
+
+Output is
+
+    HelloWorld.java:
+
+    class HelloWorld {
+       public static void main(String[] args) {
+          System.out.println("Simple hello world program"); 
+      }
+    }
+..............................................................
+
+**It is Bold text**
+__It is Bold text__
+
+Following displayed content will be shown to the browser.
+It is Bold text
+It is Bold text
+
+
+<strong>It is Bold text</strong>
+<strong>It is Bold text</strong>
+
+------------------------------------------
+*It is Italic text*
+_Underscore text_
+
+
+
+
+
+
+
+
+--------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------> Laravel 8 Basics For Beginners <---------
+
+=> Remove Specified Post(delete) <=
+=> Flash Message <=  
+
+1) Install laravel-8  composer global require laravel/installer
+                      laravel new <AppName>
+
+                    --OR--
+             composer create-project laravel/laravel <AppName>
+
+2)  cd <AppName>         & create migrations
+
+3) php artisan migrate 
+
+4) Database configration (env file)
+
+5)  php artisan serve
+
+6) php artisan make:controller PostController
+
+7) back to index view with message 
+
+8)
+Route (Web.php) :
+use App\Http\Controllers\PostController;
+
+Route::post('posts/delete/{id}', [PostController::class, 'distroy'])->name('posts.distroy');
+
+
+
+
+
+
+
+public function edit($id)
+ {
+    $posts = Post::find($id);
+    return view('posts.edit', compact('posts'));
+ }
+
+public function update(Request $request, $id)
+ {
+    $posts = Post::find($id);
+    $posts->name = $request->input('title');
+    $posts->email = $request->input('description');   
+    $posts->update();
+    return redirect()->route('index');     
+ }
+
+
+
+
+
+
+
+
+
+
+//Success Flash Message
+
+@if(Session::has('success'))
+    <div class="alert alert-success">
+        {{Session::get('success')}}
+    </div>
+@endif
+
+//Error Flash Message
+@if(Session::has('fail'))
+    <div class="alert alert-danger">
+       {{Session::get('fail')}}
+    </div>
+@endif
+
+//Warning Flash Message
+@if(Session::has('warning'))
+    <div class="alert alert-danger">
+       {{Session::get('warning')}}
+    </div>
+@endif
+
+//Info Flash Message
+@if(Session::has('info'))
+    <div class="alert alert-danger">
+       {{Session::get('info')}}
+    </div>
+@endif
+
+
+return redirect('posts')->with('status', 'Profile updated!'); 
+
+
+
+
+
+------------------------------------------------
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+		@foreach($posts as $post)
+		<tr>
+			<td>{{ $post['id'] }}</td>
+			<td>{{ $post['title'] }}</td>
+			<td>{{ $post['description'] }}</td>
+			<td>
+				<a href="{{ route('posts.index') }}">Edit</a>
+			</td>
+		</tr>
+        @endforeach
+	<tbody>
+	</tbody>
+</table>
+
+
+    <div class="d-flex justify-content-center">
+        {{ $posts->links() }}
+    </div>
+
+
+
+
+App Middleware:
+use Illuminate\Pagination\Paginator;
+Paginator::useBootstrap();
+
+
+
+
+
+
+-------------------------------------------------
+
+//default.blade.php
+
+
+<html>
+    <head>
+        <title>App Name - @yield('title')</title>
+    </head>
+    <body>   
+        <div class="container">
+            @yield('content')
+        </div>
+    </body>
+</html>
+
+--------------------------------------------------
+
+//Extending A Layout:
+
+
+@extends('layouts.app')
+
+@section('title', 'Page Title')
+
+
+@section('content')
+    <p>This is my body content.</p>
+@endsection
+
+---------------------------------------------------
+
+
+
+<link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+
+
+
+
+public function index(){
+	
+	return view('index');
+}
+
+
+
+
+
+---------------------------------------
+    public function create(){
+
+      return view('posts.create');
+    }
+
+    public function store(Request $request){
+
+      $validated = $request->validate([
+          'title' => ['required', 'unique:posts', 'min:5'],
+          'description' => ['required', 'min:10'],
+      ]);
+
+       $posts = new Post;
+       $posts->title = $request->title;
+       $posts->description = $request->description;
+       $posts->save();
+       //session()->flash('success',"Data successfully inserted");
+       return redirect()->route('index');       
+    }  
+
+    ---------------------------------------------------------------------------
+
+
+
+
+
+-----------------------------------------------------------------------------------------------
+   ===========>    Install Laravel 9    <==============
+-----------------------------------------------------------------------------------------------
+
+
+To install Laravel 9.0 you need to launch composer create-project as usual and then you need to set the “dev-develop” version of the “laravel/laravel” package:
+
+----------------------------------------------------------------------------
+composer create-project --prefer-dist laravel/laravel laravel-dev dev-master
+----------------------------------------------------------------------------
+
+                          O R
+
+             -------------------------------
+              laravel new laravel-dev --dev
+             -------------------------------
+
+
+$ cd laravel-dev
+
+$ php artisan --version
+
+Laravel Framework 9.x-dev
+
+php artisan serve
+
+
+
+
+
+
+
+
+
+------------------------------------------------
+
+
+--------> Laravel 8 Route Parameters <-------------------
+
+Install Laravel:
+
+laravel new AppName
+       OR
+composer create-project --prefer-dist laravel/laravel AppName
+------------------------------------------------------------------
+
+//Required Parameters:
+
+Route::get('/user/{id}', function ($id) {
+    return 'User '.$id;
+});
+
+
+//Optional Parameters:
+
+Route::get('/user/{name?}', function ($name = null) {
+    return $name;
+});
+
+
+//Regular Expression Constraints:
+
+Route::get('/user/{id}', function ($id) {
+    
+})->where('id', '[0-9]+');
+
+-------------------------------------------------------------------
+
+
+
+
+
+
+-----------> Bootstrap 5 <-------------
+
+What is Bootstrap:
+
+Bootstrap is the most popular CSS Framework for developing responsive and mobile-first websites. Bootstrap 5 is the newest version of Bootstrap.
+
+
+<!-- Required meta tags -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+CSS:
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+JS:
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+OR
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------
+
+--------> Tailwind CSS <--------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------->>>>  Laravel8 Articles  <<<<----------------
+
+https://onlinewebtutorblog.com/laravel-8-authentication-using-jetstream-with-livewire/
+
+
+Find More on Laravel 8 Articles here
+
+    How to Create Multi Language Website in Laravel 8
+    How To Read XML File in Laravel 8 – Example
+    How To Upload And Save XML Data in Laravel 8
+    Laravel 8 Ajax Post Request Tutorial
+    Laravel 8 Authentication using Jetstream with Inertia Js
+    Laravel 8 Authentication using Jetstream with Livewire
+    Laravel 8 Authentication with Breeze Tutorial
+    Laravel 8 Clear Cache of Route, View & Config
+    Laravel 8 Cron Job Task Scheduling Tutorial
+    Laravel 8 DataTable Ajax Pagination with Search And Sort
+    Laravel 8 Firebase Push Notification Tutorial
+    Laravel 8 Form Validation Methods
+    Laravel 8 Installation Guide – PHP Framework
+    Laravel 8 Layouts And Views Complete Guide
+    Laravel 8 Routing Tutorial Step by Step Guide
+    Laravel 8 Send Mail using Gmail SMTP Server
+    Laravel 8 Send Push Notification to Android Using Firebase
+    Laravel 8 Send Push Notification to IOS Using Firebase
+    Laravel 8 Stub Customization
+
+    Related Posts:
+
+    Laravel 8 Authentication using Jetstream with Inertia Js
+    Jetstream Login Register Email Verification in Laravel 8
+    File or Image Upload Using Livewire Laravel 8 Tutorial
+    Laravel 8 Livewire Notification Tutorial with Example
+    Work with Laravel 8 Livewire Wizard Form Guide
+    API Authentication using Laravel 8 Sanctum Tutorial
+
+---------------x Laravel8 Articles End x---------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------> Laravel 8 Badic For Beginnrs ( Middleware ) <-----------------------------
+
+Middleware provide a convenient mechanism for inspecting and 
+filtering HTTP requests entering your application.
+
+
+Defining Middleware:
+
+To create a new middleware, use the:-    
+
+        1. php artisan make:middleware CheckRole 
+        2. php artisan make:middleware CheckAge   
+
+
+1. The application's route middleware.
+2. The application's global HTTP middleware stack.
+3. The application's route middleware groups
+
+
+
+Changes in files: 
+
+app/Http/Middleware/CheckRole       OR     app/Http/Middleware/CheckAge
+app/Http/Kernel.php
+routes/web.php
+
+
+//Expression:  ->where('id', '[0-9]+');     ->where('name', '[A-Za-z]+');
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------
+
+
+//App\Http\Middleware\checkAge;
+
+
+class checkAge
+{    
+    public function handle(Request $request, Closure $next)
+    {
+        if($request->id == 5){
+            echo "hi:";
+            return $next($request);
+        }
+        
+        //return response()->json('Your account is inactive');
+        return redirect('welcome');
+    }
+}
+...............
+
+
+
+//routes / web.php
+
+use App\Http\Middleware\checkAge;
+
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+Route::middleware([checkAge::class])->group(function(){ 
+
+	Route::get('/users/{id}', function ($id) {
+	    echo $id;
+	});
+
+
+	Route::get('/posts/{name?}', function ($name = null) {
+	    return $name;
+	});
+
+
+	Route::get('/employee/{id}', function ($id) {
+	    echo $id;
+	})->where('id', '[0-9]+');
+
+
+	Route::get('/ajay/{id}', function ($id) {
+	    echo $id;
+	});
+
+
+    Route::get('home', [UserController::class,'contact']); 
+
+});
+
+
+
+Route::get('/welcome', function () {
+    return view('index');
+});
+
+..............
+
+
+
+
+//App\Http\Kernel.php
+
+    protected $routeMiddleware = [
+        
+        'checkage' => \App\Http\Middleware\checkAge::class,
+    ];
+
+
+
+
+----------------------> X <-------------------------------------
+
+
+3. The application's route middleware groups
+
+
+
+$ php artisan make:middleware CountryCheck
+
+
+
+//.. Other routes
+
+Route::view("noaccess", "noaccess");
+
+Route::get("route-1", function(){ echo "<h3>Welcome To Route 1</h3>"; });
+
+// Protected group by middleware
+Route::group(["middleware" => ["apprestrict"]], function(){
+
+   Route::get("route-2", function(){ echo "<h3>Welcome To Route 2</h3>"; });
+  
+   Route::get("route-3", function(){ echo "<h3>Welcome To Route 3</h3>"; });
+});
+
+---------------------------------------------------------
+
+protected $middlewareGroups = [
+   ...
+
+   'apprestrict' => [ 
+       \App\Http\Middleware\CountryCheck::class,
+    ],
+
+   ...
+];
+
+-----------------------------------------------------
+
+
+class CountryCheck
+{
+
+    public function handle(Request $request, Closure $next)
+    {
+        if ($request->country && !in_array($request->country, array("us", "in", "afg"))) {
+            return redirect("noaccess");
+        }
+        return $next($request);
+    }
+}
+-------------------------------------------------------------
+
+
+
+--------> Laravel 8 Breeze <---------
+
+1) Install laravel-8  
+      
+  >By Installer: 
+    composer global require laravel/installer
+    laravel new <AppName>
+
+  >By Composer:
+      composer create-project laravel/laravel <AppName>
+
+
+2)    composer require laravel/breeze --dev
+
+3)    php artisan breeze:install
+
+4)   npm install
+
+5)   npm run dev
+
+6)   php artisan migrate
+
+
+* If Problem: 
+  npm install Or npm run dev  (Not Working)
+
+* Solution: 
+  npm remove laravel-mix                 <- Remove
+  npm install laravel-mix --save-dev   <- Install
+-------------------------------------------------------------------------------------
+
+
+
+--------> Laravel8 Basic For Beginners (Global Middleware) <---------
+
+1) Install laravel-8  
+      
+    >By Installer:
+        composer global require laravel/installer
+        laravel new <AppName>
+
+    >By Composer:
+        composer create-project laravel/laravel <AppName>
+
+        cd AppName
+2) 
+   php artisan serve
+
+3) php artisan make:controller UserController
+4) php artisan make:controller AdminController
+
+5) php artisan make:middleware CheckCountry
+
+6) Kernel.php : Create Global 'Country' & Register in $middleware
+
+7) web.php
+
+   ->middleware('checkCountry');
+
+
+    if ($request->country && !in_array($request->country, array("us", "in", "afg"))) {
+
+          return redirect("noaccess");
+    }
+
+-----------------------------------------------------------------
+
+
+
+
+
+
+django Environment (env): 
+
+Run env 
+
+D:/django>env/Stripgs/activate
+
+(env) D:/django>
+
+(env) D:/django> pip install django
+
+(env) D:/django> django-admin mydjango
+(env) D :/django> django-admin startproject mydjango (AppName Or ProjectName)
+(env) D :/django> cd myapp
+(env) D :/django> cd myapp> python manage.py runserver
+
+
+--------------------------------
+
+
+
+
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+cdc3d4d3881f4077a6adeb0ac57abe97
+
+This may also be found at: C:\Users\Ajay\.jenkins\secrets\initialAdminPassword
+
+java -jar D:\Softwares\jenkin\jenkins.war
+
+12.0.0.1:8080
+
+
+Software:  Jenkins, Terraform, Kubernetes, Git, Docker 
+
+
+
+Gaurav Sharma:
+
+
+In Jenkins: 
+
+  myproject-build
+  myproject-test
+  myproject-deploy
+  myproject-deploy-prod
+
+
+
+----------------------------------------------------------------
+
+---------------------------------------------------------------
+
+Clean C drive: 
+
+  click (win + r) keym or 'run' window type temp, %temp% & prefetch, cleanmgr and delete all files
+
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------
+
+>>>>>>>>>   laravel 8 ui auth    <<<<<<<<<<
+
+
+//Run the bolow commands to install laravel ui package
+
+//1.
+laravel new laravel-vue         Or    composer create-project laravel/laravel laravel-vue
+composer require laravel/ui
+php artisan ui vue --auth
+npm install && npm run dev
+php artisan migrate                  
+
+
+//2.
+laravel new laravel-bootstrap    Or    composer create-project laravel/laravel laravel-bootstrap
+composer require laravel/ui 
+php artisan ui bootstrap --auth 
+npm install && npm run dev
+php artisan migrate                   
+
+
+//3.
+laravel new laravel-react         Or    composer create-project laravel/laravel laravel-react
+composer require laravel/ui  
+php artisan ui react --auth 
+npm install && npm run dev
+php artisan migrate
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------
+
+>>>>>>>>>   laravel 8 Jetstream ( Livewire )   <<<<<<<<<<
+
+
+
+
+laravel new laravel-jet-livewire       Or    composer create-project laravel/laravel laravel-jet-livewire 
+
+composer require laravel/jetstream
+
+
+php artisan jetstream:install livewire
+
+php artisan jetstream:install livewire --teams
+
+
+npm install && npm run dev
+
+php artisan migrate                  
+
+
+
+
+
+............................................
+
+use Illuminate\Support\Facades\Schema;
+Schema::defaultStringLength(191);
+
+
+--------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------> Ruby On Rails 7 <---------------------------------
+
+Installing Rails: 
+
+1. Ruby
+2. SQLite3
+3. Node.js
+4. Yarn
+----------------------------
+Installing Ruby:
+$ ruby --version
+
+Installing SQLite3:
+$ sqlite3 --version
+
+Installing Node.js and 
+$ node --version
+
+Installing Yarn:
+$ yarn --version
+---------------------------
+
+---------------------------
+gem install rails   
+
+--------------------------
+rails new blog
+
+bin/rails server
+------------------------------------------------------------
+
+
+
+bin/rails generate controller Articles index --skip-routes
+bin/rails generate model Article title:string body:text
+bin/rails generate model Comment commenter:string body:text article:references
+
+
+
+Cli commands: 
+ 
+ > which postgres
+
+ > brew install postgres
+ > rails db:create                     Or rack db:create
+ 
+
+
+----------------------------------------------------------
+
+
+
+--------> Symfony 6.0 <-----------
+
+
+Before creating your first Symfony application you must:
+
+1. Install PHP 8.0.2 or higher and these PHP extensions         
+   -----------------
+           Ctype, iconv, PCRE, Session, SimpleXML, and Tokenize
+
+
+
+2. Install Composer, which is used to install PHP packages.
+   ----------------
+                     
+
+3. Optionally, you can also install Symfony CLI
+       
+                            -------------------
+
+
+symfony new my_project_directory --webapp        //  The number of packages installed by default
+
+symfony new my_project_directory                 // API
+
+
+composer create-project symfony/skeleton:"^6.0" my_project_directory
+
+composer create-project symfony/skeleton:"^6.0" symfony6
+
+
+-----------------------------------
+
+
+  * Run your application:
+    1. Go to the project directory
+    2. Create your code repository with the git init command
+    3. Download the Symfony CLI at https://symfony.com/download to install a development web server
+
+  * Read the documentation at https://symfony.com/doc
+
+
+-----------------------------------------------------------------------------------------------------
+
+--------> Symfony 6.0 <-----------
+
+
+
+Before creating your first Symfony application you must:
+
+
+1. Install PHP 8.0.2 or higher and these PHP extensions         
+   -----------------
+           Ctype, iconv, PCRE, Session, SimpleXML, and Tokenize
+
+
+
+2. Install Composer, which is used to install PHP packages.
+   ----------------
+                     
+
+3. Optionally, you can also install Symfony CLI
+       
+                            -------------------
+
+
+
+symfony new my_project_directory --webapp        //  The number of packages installed by default
+
+symfony new my_project_directory                 // API
+
+
+
+-----------------------------------
+
+
+  * Run your application:
+    1. Go to the project directory
+
+
+
+-------------------------------------------------------------------------------------
+>>>>>>>>>> JavaScript <<<<<<<<<<<
+-------------------------------------------------------------------------------------
+
+>>>>> ECMAScript <<<<<<
+
+---------------------------------------------------------------------
+
+ECMAScript 6 (  or ECMAScript 2015 ) Or ES6
+
+
+ECMAScript 2015 was the second major revision to JavaScript.
+
+ECMAScript 2015 is also known as ES6 and ECMAScript 6.
+
+
+    ECMA-262 5.1 edition, June 2011
+
+    ECMA-262, 6th edition, June 2015     
+    ECMA-262, 7th edition, June 2016     
+    ECMA-262, 8th edition, June 2017     
+    ECMA-262, 9th edition, June 2018     
+    ECMA-262, 10th edition, June 2019
+    ECMA-262, 11th edition, June 2020
+
+
+The newer version of JavaScript that was introduced in 2015.
+
+ECMAScript is the standard that JavaScript programming language uses. 
+ECMAScript provides the specification on how JavaScript programming language should work.
+
+
+What is ES6 JavaScript used for?
+
+JavaScript ES6 brings new syntax and new awesome features to make your code more modern and more readable.
+It allows you to write less code and do more.
+ES6 introduces us to many great features like arrow functions, template strings, class destruction, Modules...etc.
+
+
+1. Const & Let :- 
+   ...........
+
+
+//ES5
+  var myBtn = document.getElementById('mybtn');
+
+
+//ES6 
+ const myBtn = document.getElementById('mybtn');
+
+    let name = "Ajay";
+    let name = "Aryan";
+
+    cnsole.log(name);
+
+    //Output: Aryan
+
+-----------------------------------
+
+
+2. Arrow functions :-
+   ................
+
+    //ES5
+
+    function myFunc() {
+      return 'Hello' + name;
+    }
+
+    console.log(myFunc('said'));
+
+    // Output
+    // Hello Said
+
+
+    //ES6
+
+    const myFunc = name =>{
+      return `Hi ${name}`;
+    }
+
+    console.log(myFunc('said'));      // output Hi Said
+
+    //OR
+
+    const myFunc = name => `Hi ${name}`;
+
+    console.log(myFunc('Said'));      // output Hi Said
+
+
+
+3. map, filter, and reduce
+
+4. Template Literals
+
+
+5.  Default parameters
+6.  Array and object destructing
+7.  Import and export
+8.  Promises
+9.  Rest parameter and Spread operator
+10. Classes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------
+
+
+>>>>>> TypeScript <<<<<<<<
+
+
+---------------------------------------------------------------------
+
+______________     _______________________      ______________
+|            |     |                     |      |            |
+| TypeScript |  __ | TypeScript Compiler |  __  | JavaScript | 
+|   .ts      |     |                     |      |   .js      |
+|____________|     |_____________________|      |____________|
+
+
+TypeScript is a super set of JavaScript.
+
+
+TypeScript adds additional syntax to JavaScript to support a tighter 
+integration with your editor. Catch errors early in your editor.
+
+
+TypeScript code converts to JavaScript, which runs anywhere JavaScript runs
+In a browser, on Node.js or Deno and in your apps.
+
+
+TypeScript understands JavaScript and uses 
+type inference to give you great tooling without additional code.
+
+
+
+
+
+
+
+
+Why TypeScript:
+
+The main goals of TypeScript are:
+
+    Introduce optional types to JavaScript.
+    Implement planned features of future JavaScript, a.k.a. ECMAScript Next or ES Next to the current JavaScript.
+
+
+
+TypeScript uses the JavaScript syntaxes and adds additional syntaxes for supporting Types.
+
+
+
+1) TypeScript improves your productivity while helping avoid bugs
+
+
+function add(x, y) {
+
+   return x + y;
+
+}
+
+
+
+let result = add(input1.value, input2.value);
+
+console.log(result); // result of concatenating strings
+
+
+//Result 1020           //input1.value = 10, input2.value=20
+
+
+......................................................................................
+
+
+//When you use ( TypeScript ) to explicitly specify the type for the parameters like this:
+
+
+
+
+function add(x: number, y: number) {
+
+   return x + y;
+
+}
+
+
+
+
+
+let result = add(input1.value, input2.value);
+
+
+//Result 30           //input1.value = 10, input2.value=20
+
+
+----------------------------------------------------------------------------
+
+
+interface Point {
+  num1:number;
+  num2:number;
+}
+
+function addPoint(p:Point) {
+  let s:number =0;
+      s = p.num1 + p.num2;
+  console.log(`${s}`);
+}
+
+const Point = {num1:10, num2:12}
+
+addPoint(Point);
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta lang="utf-8">
+  <title>HTML CSS Tutorial</title>
+  <script src="new.js"></script>
+</head>
+<body>
+
+<h1>Hellow Typescript</h1>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+>>>>>>>>>> End of JavaScript <<<<<<<<<<<
+------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+Windows 10 Shortcuts: 
+
+win + E (open explorer)
+win + x (open side menu)
+win + A (oepn settings)
+
+
+
+
+
+
+Key combinations:
+
+Fn + F5 (open bluetooth on 'or' of)
+Fn + F8 ( to increase the laptop volume on the keyboard shown below)
+Fn + F8 ()
+Fn + F6 (mute volume)
+Fn + B: This key combination has the same function as the Break key on a conventional external keyboard.
+Fn + K: This key combination has the same function as the ScrLK or Scroll Lock key on a conventional external keyboard.
+Fn + P: This key combination has the same function as the Pause key on a conventional external keyboard.
+Fn + S: This key combination has the same function as the SysRq key on a conventional external keyboard.
+Fn + 4: Press Fn+4 to put the computer into Sleep mode. To wake up the computer, press any key or the power button.
+Fn + Space Bar: If the computer supports keyboard backlight, press Fn + Spacebar to switch between the different keyboard backlight status (off, low, or high).
+
+
+The default function can be changed in the Keyboard Properties window.
+
+F1: Mute or unmute the speakers. ...
+F2: Decrease the speaker volume.
+F3: Increase the speaker volume.
+F4: Mute or unmute the microphones. ...
+F5: Darken the computer (LCD) display.
+F6: Brighten the computer (LCD) display.
+
+F7: Manage external displays to enable clone or extended desktop.
+F8: Enable or disable the built-in wireless features.
+F9: Multifunction depending on installed operating system:
+– Windows 7: Open Control Panel.
+– Windows 10: Open the Settings window.
+
+F10: For Windows 10, enable or disable the built-in Bluetooth features.
+F11: Open a keyboard setting page.
+F12: For Windows 10, the key invokes the function defined by the user. If no function is defined, press this key to open the Cortana personal assistant. To define or change the action for the F12 key, do the following:
+--------------------------------------------
+
+
+
+
+
+
+
+
+Build:
+
+Build refers to the standalone software artifact generated after converting the source code to an executable code that can be run on a computer. A release, on the other hand, is the distribution of the final version of an application.
+
+-------------------------------------------------------------------------------------------------------------------
+
+1. DevOps Team 2022 Tools: 
+
+    JIRA.
+    Kubernetes.
+    Azure DevOps.
+    Ansible.
+    GitHub.
+    Jenkins.
+    Slack.
+    Nagios.
+    Prometheus
+    New Relic
+
+
+2. Agile project management:
+
+    monday.com.
+    Nifty.
+    Wrike.
+    SpiraTeam.
+    ClickUp.
+    Teamwork.
+    Freshservice.
+    Atlassian Jira.
+    Active Collab
+    Agilo for Scrum
+    SpiraTeam
+    Pivotal Tracker
+    VSTS
+    Icescrum
+    Gravity
+    SprintGround
+    VersionOne
+    Taiga
+    Quire
+    Toggl Plan
+    Hive
+
+----------------------------------------------
+
+ >>>>>>>>     N o d e . j s     <<<<<<<<
+ ---------------------------------------------
+
+ Creating HTTP Server
+ Module: http
+
+ Using: 
+       The Built-in HTTP Module, which allows Node.js to transfer data over the Hyper Text Transfer Protocol (HTTP).
+
+
+Node.js as a Web Server:
+
+       The HTTP module can create an HTTP server that listens to server ports and gives a response back to the client.
+
+      Use the createServer() method to create an HTTP server:
+
+//Add an HTTP Header:
+//res.writeHead(200, {'Content-Type': 'text/html'});
+
+
+var http = require('http');
+//create a server object:
+
+http.createServer(function (req, res) {
+  res.write('Hello World!');             //write a response to the client
+  res.end();                             //end the response
+}).listen(8080);                         //The server object listens on port 8080... 
+
+
+
+
+--------------------------------------------------------------------------
+
+
+
+----------------------------------------------
+
+ >>>>>>>>     N o d e . j s     <<<<<<<<
+ ---------------------------------------------
+
+Path Module: 
+
+const path = require('path')
+
+
+The path module provides a lot of very useful functionality to access and interact with the file system.
+There is no need to install it. Being part of the Node.js core, it can be used by simply requiring it:
+const path = require('path')
+
+
+var baseName = path.basename('/nodejstutorial/http.js');
+var dirName = path.dirname('/nodejstutorial/http.js');
+var extName = path.extname('/nodejstutorial/http.js');
+
+console.log("BaseName:->" + baseName);
+console.log("DirName:-> " + dirName);
+console.log("ExtName:-> " + extName);
+
+var baseName = path.basename('/nodejstutorial/http.js');
+console.log(basepath);
+
+
+require('path').parse('/users/http.txt')
+
+//results in:
+
+{
+  root: '/',
+  dir: '/users',
+  base: 'test.txt',
+  ext: '.txt',
+  name: 'test'
+}
+
+
+----------------------------------------------------------------------------------
+
+
+----------------------------------------------
+
+ >>>>>>>>     N o d e . j s     <<<<<<<<
+ ---------------------------------------------
+
+The Built-in URL Module:
+
+The URL module splits up a web address into readable parts.
+
+URL module, use the require() method
+                    .........
+
+var url = require('url'); 
+
+
+Example: 
+
+Split a web address into readable parts:
+
+var url = require('url');
+var adr = 'http://localhost:8080/nodejstutorial.htm?year=2022&month=march';
+var q = url.parse(adr, true);
+
+console.log(q.host);         //returns 'localhost:8080'
+console.log(q.pathname);     //returns '/default.htm'
+console.log(q.search);       //returns '?year=2017&month=february'
+
+var qdata = q.query;         //returns an object: { year: 2017, month: 'february' }
+console.log(qdata.month);    //returns 'february'
+
+
+
+---------------------------------------------------------------------------------------
+
+----------------------------------------------
+
+ >>>>>>>>     N o d e . j s     <<<<<<<<
+ ---------------------------------------------
+
+
+
+  nodemon:
+
+      Nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+
+
+
+        npm install -g nodemon 
+
+                   
+
+        npm install --save-dev nodemon
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------
+----------------------------------------------
+
+ >>>>>>>>     N o d e . j s     <<<<<<<<
+ ---------------------------------------------
+
+  Node.js File System Module:
+
+  The Node.js file system module allows you to work with the file system on your computer.
+
+  To include the File System module, use the require() method:
+
+  var fs = require('fs'); 
+     
+
+    Common use for the File System module:
+
+    Read files    : fs.readFile()
+    Create files  : fs.appendFile(), fs.open(), fs.writeFile()
+    Update files  : fs.appendFile(), fs.writeFile()
+    Delete files  : fs.unlink()
+    Rename files  : fs.rename() 
+
+
+
+file01.html
+<html>
+<body>
+<h1>My Header</h1>
+<p>My paragraph.</p>
+</body>
+</html>
+
+
+
+
+Example:
+
+// Read Files
+
+var http = require('http');
+var fs = require('fs');
+http.createServer(function (req, res) {
+  fs.readFile('demofile1.html', function(err, data) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    return res.end();
+  });
+}).listen(8080); 
+
+
+
+//Delete Files
+
+var fs = require('fs');
+
+//Delete the file mynewfile2.txt:
+fs.unlink('mynewfile2.txt', function (err) {
+  if (err) throw err;
+  console.log('File deleted!');
+});
+
+
+//Update Files
+var fs = require('fs');
+
+fs.appendFile('mynewfile1.txt', ' This is my text.', function (err) {
+  if (err) throw err;
+  console.log('Updated!');
+}); 
+
+
+
+//Rename Files
+
+var fs = require('fs');
+
+fs.rename('mynewfile1.txt', 'myrenamedfile.txt', function (err) {
+  if (err) throw err;
+  console.log('File Renamed!');
+}); 
+
+
+
+//Create File
+
+var fs = require('fs');
+
+fs.appendFile('mynewfile1.txt', 'Hello content!', function (err) {
+  if (err) throw err;
+  console.log('Saved!');
+});
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------
+----------------------------------------------
+
+ >>>>>>>>     N o d e . j s     <<<<<<<<
+ ---------------------------------------------
+
+
+ Module : events
+
+  Every action on a computer is an event. 
+  Like when a connection is made or a file is opened.
+
+
+ var events = require("events");
+
+ var eventEmitter = new events.EventEmitter();
+
+
+
+
+Example:
+
+var fs = require('fs');
+var rs = fs.createReadStream('./fileName.txt');
+rs.on('open', function () {
+  console.log('The file is open');
+}); 
+
+
+Example:
+
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+
+//Create an event handler:
+var myEventHandler = function () {
+  console.log('I hear a Open!');
+}
+
+//Assign the event handler to an event:
+eventEmitter.on('open', myEventHandler);
+
+//Fire the 'open' event:
+eventEmitter.emit('open');
+
+------------------------------------------------------------------------------
+
+----------------------------------------------
+
+ >>>>>>>>     N o d e . j s     <<<<<<<<
+ ---------------------------------------------
+
+
+ Nodemon (Third Party Package)
+
+
+    nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+
+
+
+
+ Adding script in packages.json file
+
+  "scripts": {
+
+    "watch": "nodemon nodemon.js"
+ },
+
+ 
+
+ >>>>>>>>     N o d e . j s     <<<<<<<<
+ ---------------------------------------------
+
+
+Module : querystring
+
+   const querystring = require('querystring');
+
+ 
+   The Query String module provides a way of parsing the URL query string.
+
+
+
+    querystring = require('querystring'); 
+
+    1.  
+    const obj1=querystring.parse('name=sonoo&company=javatpoint');  
+    console.log(obj1); 
+
+
+    2. 
+    const qs1=querystring.stringify({name:'sonoo',company:'javatpoint'});  
+    console.log(qs1);  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------->>>> Nginx Setting for windows <<<<------------
+
+-----------------------------------------
+1. Download binaries of nginx & php8
+                         (D:)   (C:)
+
+2. Downlod 'runHiddenConsole' from internet
+
+3. Create nginx start, stop & restart .bat 
+   (nginx-start.bat, nginx-stop.bat & nginx-restart.bat)
+-----------------------------------------
+
+
+Create nginx start, stop & restart .bat:
+
+
+Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe port same as in nginx.conf 
+
+
+@ECHO OFF
+
+    ECHO Starting PHP FastCGI...
+    C:\RunHiddenConsole.exe C:\php8\php-cgi.exe -b 127.0.0.1:9999
+
+    ECHO Starting NGINX
+    start nginx.exe
+
+    popd
+    EXIT /b
+
+ OR 
+
+
+ #This is working when nginx in d: drive & php8 in c: drive
+ @ECHO OFF
+
+    ECHO Starting PHP FastCGI...
+    RunHiddenConsole.exe C:\php8\php-cgi.exe -b 127.0.0.1:9000
+
+    ECHO Starting NGINX... 
+
+    cd D:\nginx
+    START nginx.exe
+    cd ..
+
+    popd
+    EXIT /b 
+..............................
+
+Create file "nginx-stop.bat", edit with this:
+
+
+@ECHO OFF
+    taskkill /f /IM nginx.exe
+    taskkill /f /IM php-cgi.exe
+    EXIT /b
+
+...............................
+
+Create file "nginx-restart.bat":
+
+
+@ECHO OFF
+    call nginx-stop.bat
+    call nginx-start.bat
+    EXIT /b  
+
+................................
+
+
+How to Start, Stop, and Restart MySQL Server
+
+    To start MySQL server: sudo service mysqld start.
+    To stop MySQL server: sudo service mysqld stop.
+    To restart MySQL server: sudo service mysqld restart.
+
+
+   ------------------------------------------------------------------------------
+
+
+
+  >>>>>>>>> Web Server <<<<<<<<<<<<<<<<<
+
+  
+  Download nginx, php and mysql binaries And set environment varible
+
+  C:\WebServer\nginx            (Binary)
+  C:\WebServer\php              (Binary)
+  C:\WebServer\mysql\bin        (Binary)
+
+
+  Launch a command prompt as a Administrator and we can now initialize the MySQL setup.
+
+  cd C:/WebServer/mysql/bin
+    mysqld --initialize-insecure
+
+
+  You can then run the mysql using this command. Make sure to Allow Access when it asked for permission.
+
+  cd C:/WebServer/mysql/bin
+    mysqld 
+      'OR'
+    mysqld --console              
+
+
+
+  You need to open a new command prompt window to login to our MySQL. (Do not close the previous command prompt or else you’ll get an error saying ‘error 2003 (HYOO): Can’t connect to MySQL server on ‘localhost’ (10061))
+
+  cd C:/WebServer/mysql/bin
+  mysql -u root
+
+
+  To enable it back to native, we have to set your root password with mysql_native_password.
+
+  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '';
+  FLUSH PRIVILEGES;
+
+
+  To see if it works, try running these commands using the Windows Powershell or Command Prompt.
+
+  php -v
+  mysqld -V
+  nginx -v
+
+
+ Wrap up:
+
+  PHP:
+
+  php.ini-production to php.ini file 
+  extension=/path/to/extension/mysqli.so
+  extension=C:\WebServer\php\ext\php_mysqli.dll
+
+  extension=C:\WebServer\php\ext\php_curl.dll
+  extension=C:\WebServer\php\ext\php_pdo_mysql.dll
+  extension=C:\WebServer\php\ext\php_mbstring.dll
+  extension=C:\WebServer\php\ext\php_gd.dll
+  extension=C:\WebServer\php\ext\hp_soap.dll
+
+
+  ; On windows:
+  extension_dir = "c:\WebServer\php\ext\"
+
+
+   RunHiddenConsole.zip:
+   At C:\WebServer\nginx, unzip the RunHiddenConsole.zip.
+
+
+   C:\WebServer\nginx\myserver.bat   (create)
+
+
+    @echo off
+    cd C:\WebServer\nginx
+
+
+    IF "%1" == "stop" (
+      GOTO STOPSERVER
+    )else IF "%1" == "start" (
+      GOTO STARTSERVER
+    )else (
+      echo Use these commands:
+      echo.
+      echo myserver start
+      echo myserver stop
+    )
+    GOTO END
+
+    :STARTSERVER
+    QPROCESS * | find /I /N "mysqld.exe">NUL
+    IF "%ERRORLEVEL%"=="0" (
+      echo MYSQLD is already running.
+    )else (
+      RunHiddenConsole.exe mysqld --console
+      echo MYSQLD is now running.
+    )
+
+    QPROCESS * | find /I /N "nginx.exe">NUL
+    IF "%ERRORLEVEL%"=="0" (
+      echo NGINX is already running.
+    )else (
+      RunHiddenConsole.exe nginx
+      echo NGINX is now running.
+    )
+
+    QPROCESS * | find /I /N "php-cgi.exe">NUL
+    IF "%ERRORLEVEL%"=="0" (
+      echo PHP-CGI is already running.
+    )else (
+      RunHiddenConsole.exe php-cgi -b 127.0.0.1:9000
+      echo PHP-CGI is now running.
+    )
+
+    echo.
+    echo To stop, type "myserver stop"
+
+    GOTO END
+
+    :STOPSERVER
+
+    QPROCESS * | find /I /N "mysqld.exe">NUL
+    IF "%ERRORLEVEL%"=="0" (
+      taskkill /F /IM mysqld.exe>NUL
+      echo MYSQLD ended successfully.
+    )else (
+      echo MYSQLD is not running
+    )
+
+    QPROCESS * | find /I /N "nginx.exe">NUL
+    IF "%ERRORLEVEL%"=="0" (
+      ::nginx -s stop
+      taskkill /F /IM nginx.exe>NUL
+      echo NGINX ended successfully.
+    )else (
+      echo NGINX is not running
+    )
+
+    QPROCESS * | find /I /N "php-cgi.exe">NUL
+    IF "%ERRORLEVEL%"=="0" (
+      taskkill /F /IM php-cgi.exe>NUL
+      echo PHP-CGI ended successfully.
+    )else (
+      echo PHP-CGI is not running
+    )
+
+    :END
+
+
+
+After that, you can now use these commands for starting and stopping your server at the Command Prompt.
+
+    myserver start – It will start Nginx, and PHP
+    myserver stop – It will stop all instances of Nginx and PHP
+
+
+But before running the commandline above, we have to edit some blocks on our C:/WebServer/nginx/conf/nginx.conf.
+
+First we have to make sure index.php is been recognized by our nginx. find the location / {} block and change it with the following:
+
+        location / {
+            root   html;
+            index  index.php index.html index.htm;
+        }
+
+Next is we have to make sure nginx know where to run the php files. Find and uncomment the block that says location ~ .php$ {}, the one that says “pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000”. Change it with the following:
+
+        location ~ \.php$ {
+              root           html;
+    
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+        }
+
+
+
+
+-- Done --
+
+
+
+
+  myserver start
+
+
+  MYSQLD is now running.
+  NGINX is now running.
+  PHP-CGI is now running.
+
+  To stop, type "myserver stop"
+
+
+
+
+
+
+-------------------------------------------------------------------------------
+
+
+
+
+
+Node js config in nginx
+
+  location /api {
+     proxy_pass http://location:3000;
+  }
+
+
+  OR
+
+
+  location /public {
+     proxy_pass /usr/local/var/www;
+  }
+
+I:\YouTubeTutorials\react-app\public
+I:/YouTubeTutorials/react-app/public
+
+  location /public {
+     proxy_pass I:/YouTubeTutorials/react-app/public
+  }
+
+server {
+        listen 81;
+        server_name localhost;
+        access_log C:\var\log\nginx\access.log;
+                location ~ ^/(javascripts|stylesheets|images) {
+                root I:/YouTubeTutorials/react-app/public;
+                expires max;
+        }
+        location / {
+                proxy_pass http://localhost:3000;
+        }
+       }
+        
+-------------------------------------------------------------------
+
+
+
+
+>>>>> Symfony 6 (The Symfony MakerBundle) <<<<<<<<<<<
+
+
+Installation:
+
+composer require --dev symfony/maker-bundle
+
+compose  r require symfony/maker-bundle --dev
+
+Usage: ( make: )
+
+
+php bin/console list make
+
+
+ make:command            Creates a new console command class
+ make:controller         Creates a new controller class
+ make:entity             Creates a new Doctrine entity class
+
+  [...]
+
+ make:validator          Creates a new validator and constraint class
+ make:voter              Creates a new security voter class
+
+
+php bin/console make:controller --help
+ -------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+//"doctrine/doctrine-bundle": "^2.5",
+//"doctrine/doctrine-migrations-bundle": "^3.2",
+//"doctrine/orm": "^2.11",
+
+
+
+https://medium.com/q-software/symfony-5-the-rest-the-crud-and-the-swag-7430cb84cd5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------
+I:\YouTubeTutorials\symfony6>
+
+>>>>> Symfony 6 API <<<<<<<<<<<<<
+
+API ( Representational State Transfer )
+
+  POST — Create (insert data)
+  GET — Read (retrieve data)
+  PUT /PATCH— Update (modify data)
+  DELETE — Delete (delete data)
+
+
+* Symfony 6.0
+* Faker
+
+
+* symfony new project-name
+  OR
+* composer create-project symfony/website-skeleton project-name
+
+
+* symfony server:start
+
+* composer require --dev symfony/maker-bundle
+* composer require symfony/orm-pack
+
+
+* php bin/console make:migration
+* php bin/console doctrine:migrations:migrate
+
+
+* composer require --dev orm-fixtures
+
+
+
+
+DATABASE_URL=mysql://root:@127.0.0.1:3306/symfony6?serverVersion=8.0
+
+* php bin/console make:entity
+
+
+public function toArray()
+{
+    return [
+        'id' => $this->getId(),
+        'firstName' => $this->getFirstName(),
+        'lastName' => $this->getLastName(),
+        'email' => $this->getEmail(),
+        'phoneNumber' => $this->getPhoneNumber()
+    ];
+}
+
+
+* php bin/console make:migration
+* php bin/console doctrine:migrations:migrate
+
+* composer require --dev orm-fixtures
+* php bin/console doctrine:fixtures:load
+* composer require annotations
+
+
+
+//AppFixtures.php file
+
+
+class AppFixtures extends Fixture
+{
+    public function load(ObjectManager $manager)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < 50; $i++) {
+            $customer = new Customer();
+            $customer->setFirstName($faker->firstName);
+            $customer->setLastName($faker->lastName);
+            $customer->setEmail($faker->email);
+            $customer->setPhoneNumber($faker->phoneNumber);
+            $manager->persist($customer);
+        }
+
+        $manager->flush();
+    }
+}
+
+
+* php bin/console doctrine:fixtures:load
+
+* composer require annotations
+
+
+class CustomerController
+{
+    private $customerRepository;
+
+    public function __construct(CustomerRepository $customerRepository)
+    {
+        $this->customerRepository = $customerRepository;
+    }
+
+    /**
+     * @Route("/customers/", name="add_customer", methods={"POST"})
+     */
+    public function add(Request $request): JsonResponse
+    {
+        $data = json_decode($request->getContent(), true);
+
+        $firstName = $data['firstName'];
+        $lastName = $data['lastName'];
+        $email = $data['email'];
+        $phoneNumber = $data['phoneNumber'];
+
+        if (empty($firstName) || empty($lastName) || empty($email) || empty($phoneNumber)) {
+            throw new NotFoundHttpException('Expecting mandatory parameters!');
+        }
+
+        $this->customerRepository->saveCustomer($firstName, $lastName, $email, $phoneNumber);
+
+        return new JsonResponse(['status' => 'Customer created!'], Response::HTTP_CREATED);
+    }
+}
+
+............................
+
+
+class CustomerRepository extends ServiceEntityRepository
+{
+    private $manager;
+
+    public function __construct
+    (
+        ManagerRegistry $registry,
+        EntityManagerInterface $manager
+    )
+    {
+        parent::__construct($registry, Customer::class);
+        $this->manager = $manager;
+    }
+
+    public function saveCustomer($firstName, $lastName, $email, $phoneNumber)
+    {
+        $newCustomer = new Customer();
+
+        $newCustomer
+            ->setFirstName($firstName)
+            ->setLastName($lastName)
+            ->setEmail($email)
+            ->setPhoneNumber($phoneNumber);
+
+        $this->manager->persist($newCustomer);
+        $this->manager->flush();
+    }
+}
+
+...................
+
+/**
+ * @Route("/customers/{id}", name="get_one_customer", methods={"GET"})
+ */
+public function get($id): JsonResponse
+{
+    $customer = $this->customerRepository->findOneBy(['id' => $id]);
+
+    $data = [
+        'id' => $customer->getId(),
+        'firstName' => $customer->getFirstName(),
+        'lastName' => $customer->getLastName(),
+        'email' => $customer->getEmail(),
+        'phoneNumber' => $customer->getPhoneNumber(),
+    ];
+
+    return new JsonResponse($data, Response::HTTP_OK);
+}
+
+
+....................
+
+
+/**
+ * @Route("/customers", name="get_all_customers", methods={"GET"})
+ */
+public function getAll(): JsonResponse
+{
+    $customers = $this->customerRepository->findAll();
+    $data = [];
+
+    foreach ($customers as $customer) {
+        $data[] = [
+            'id' => $customer->getId(),
+            'firstName' => $customer->getFirstName(),
+            'lastName' => $customer->getLastName(),
+            'email' => $customer->getEmail(),
+            'phoneNumber' => $customer->getPhoneNumber(),
+        ];
+    }
+
+    return new JsonResponse($data, Response::HTTP_OK);
+}
+
+............................
+
+
+/**
+ * @Route("/customers/{id}", name="update_customer", methods={"PUT"})
+ */
+public function update($id, Request $request): JsonResponse
+{
+    $customer = $this->customerRepository->findOneBy(['id' => $id]);
+    $data = json_decode($request->getContent(), true);
+
+    empty($data['firstName']) ? true : $customer->setFirstName($data['firstName']);
+    empty($data['lastName']) ? true : $customer->setLastName($data['lastName']);
+    empty($data['email']) ? true : $customer->setEmail($data['email']);
+    empty($data['phoneNumber']) ? true : $customer->setPhoneNumber($data['phoneNumber']);
+
+    $updatedCostumer = $this->customerRepository->updateCustomer($customer);
+
+    return new JsonResponse($updatedCostumer->toArray(), Response::HTTP_OK);
+}
+
+........................
+
+
+public function updateCustomer(Customer $customer): Customer
+{
+    $this->manager->persist($customer);
+    $this->manager->flush();
+
+    return $customer;
+}
+
+........................
+
+
+/**
+ * @Route("/customers/{id}", name="delete_customer", methods={"DELETE"})
+ */
+public function delete($id): JsonResponse
+{
+    $customer = $this->customerRepository->findOneBy(['id' => $id]);
+
+    $this->customerRepository->removeCustomer($customer);
+
+    return new JsonResponse(['status' => 'Customer deleted'], Response::HTTP_NO_CONTENT);
+}
+
+.................
+
+
+public function removeCustomer(Customer $customer)
+{
+    $this->manager->remove($customer);
+    $this->manager->flush();
+}
+
+................
+
+----------------------------------------------------------------------        
+
+>>>>>> Symfony 6  API Without Any api's Packages <<<<<<<<<
+
+API ( Representational State Transfer )
+
+
+
+use App\Entity\Product;
+use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Request;
+
+http://localhost/products
+
+{
+ "name":"soap",
+ "price":"40",
+ "qty":"3"
+}
+
+
+//Adding Products
+
+    /**
+     * @Route("/add_products", name="product_add")
+     */
+    public function add_product(ManagerRegistry $doctrine, request $request):Response
+    {
+        $product = new Product();
+        $parameter = json_decode($request->getContent(), true);
+        $product->setName($parameter['name']);
+        $product->setPrice($parameter['price']);
+        $product->setQty($parameter['qty']);
+
+        $em = $doctrine->getManager();
+        $em->persist($product);
+        $em->flush($product);
+
+        return $this->json([
+            'product' => "Saved"
+        ]);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------
+
+
+>>>>>>>>>>> Rails CRUD <<<<<<<<<<<<<<
+
+
+//https://medium.com/@nancydo7/ruby-on-rails-crud-tutorial-899117710c7a
+
+
+rails new dog-app -T
+
+cd dog-app/
+
+rails g model dog name motto
+
+
+app/models/dog.rb
+db/migrate/[date_time]_create_dogs.rb
+
+
+rails g controller dogs index show new edit
+
+  index.html.erb
+  show.html.erb
+  new.html.erb
+  edit.html.erb
+
+
+config/routes.rb
+
+Rails.application.routes.draw do
+  get 'dogs/index'
+  get 'dogs/show'
+  get 'dogs/new'
+  get 'dogs/edit'
+end
+
+
+config/routes.rb:
+
+Rails.application.routes.draw do
+  resources :dogs
+end
+
+
+class CreateDogs < ActiveRecord::Migration[5.2]
+  def change
+    create_table :dogs do |t|
+      t.string :name
+      t.string :motto
+      
+      t.timestamps
+    end
+  end
+end
+
+
+db/migrate/seeds.rb
+
+Dog.create(name: 'Nala', motto: 'Born to be wild')
+Dog.create(name: 'Alex', motto: 'Calm as can be')
+Dog.create(name: 'Leroy', motto: 'Life of the pawty')
+Dog.create(name: 'Belle', motto: 'Miss Independent')
+
+
+Run rake db:seed to add the dogs to the database.
+
+rails console or rails c
+
+
+
+rails routes
+
+app/controllers/dogs_controller.rb
+
+def index
+   @dogs = Dog.all
+end
+
+
+Index — views/dogs/index.html.erb
+
+<ul>
+  <% @dogs.each do |dog| %>
+    <li><%= link_to dog.name, dog_path(dog)  %></li>
+  <% end %>
+</ul>
+
+
+
+Show — views/dogs/show.html.erb
+
+<%= link_to 'Remove', @dog, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+New — views/dogs/new.html.erb
+
+
+<h3>Create a Dog</h3>
+<%= form_with model: @dog do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+  <%= form.text_field :motto, placeholder: "motto" %>
+  <%= form.submit %>
+<% end %>
+
+<!-- <%= form_for @dog do |form| %>
+  <%= form.text_field :name, placeholder: 'name' %>
+  <%= form.text_field :motto, placeholder: 'motto' %>
+  <%= form.submit %>
+<% end %> -->
+
+
+
+Edit — views/dogs/edit.html.erb
+
+<h3>Update Dog Details</h3>
+<%= form_with model: @dog do |form| %>
+  <%= form.text_field :name, placeholder: "name" %>
+  <%= form.text_field :motto, placeholder: "motto" %>
+  <%= form.submit %>
+<% end %>
+
+
+
+Show — views/dogs/show.html.erb
+
+Show — views/dogs/show.html.erb
+Add to your current code:
+
+<h1><%= @dog.name %></h1>
+<h4>"<%= @dog.motto %>"</h4>
+
+
+
+Let’s refactor the Controller file:
+
+
+class DogsController < ApplicationController
+
+  before_action :current_dog, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @dogs = Dog.all
+  end
+
+  def show
+
+  end
+
+  def new
+    @dog = Dog.new
+  end
+
+  def create
+    dog = Dog.create(dog_params)
+
+    redirect_to dog_path(dog)
+  end
+
+  def edit
+
+end
+
+  def update
+    @dog.update(dog_params)
+
+    redirect_to dog_path(@dog)
+  end
+
+  def destroy
+    @dog.destroy
+
+    redirect_to dogs_path
+  end
+
+  private
+
+  def dog_params
+    params.require(:dog).permit(:name, :motto)
+  end
+
+  def current_dog
+    @dog = Dog.find(params[:id])
+  end
+
+  end
+
+
+
+
+index.erb:
+
+  <table>
+  <% @dogs.each do |dog| %>
+    <tr>
+      <td><%= link_to dog.name, dog_path(dog) %></td>
+      <td><%= button_to 'Edit', edit_dog_path(dog), method: 'get'%></td>
+      <td><%= button_to 'Remove', dog_path(dog), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+</table>
+<%= link_to "Add a New Dog", new_dog_path %>
+
+
+
+------------------------------------------------------------------------------------
+
+
+
+
+
+
+>>>>>>>>>>>>> All Templates <<<<<<<<<<<<<<<<<<<<<
+
+
+Ruby On Rails:
+
+
+
+--> ( Model ) <---
+
+//app/models/article.rb
+
+class Article < ApplicationRecord
+  belongs_to :author, default: -> { Current.user }
+  has_many :comments
+
+  has_one_attached :avatar
+  has_rich_text :content, encrypted: true
+  enum status: [ :drafted, :publised ]
+
+  scope :recent, -> { order(created_at: :desc).limit(25)}
+
+  after_save_commit :deliver_later, if: :publised?
+
+  def byline
+    "Written by #{author.name} on #{created_at.to_s(:short)}"
+  end
+
+  def deliver_later
+    Article::DeliveryJob.perform_later self
+  end
+end
+
+
+
+
+--> ( Controller ) <--
+
+//app/controllers/articles_controller.rb
+
+class ArticleController < ApplicationController
+
+  def index
+    @articles = Article.recent
+  end
+
+  def show
+    @article = Article.find(params[:id])
+    fresh_when etag: @article
+  end
+
+  def create
+    article = Article.create!(article_params)
+    redirect_to article
+  end
+  
+  private
+    def article_params
+      params.require(:article).permit(:title, :content)
+    end
+
+end
+
+
+
+--> ( Views ) <-- 
+
+//app/views/articles/show.html.erb
+
+
+<h1><%= @article.title %></h1>
+
+<%= image_tag @article.creator.avatar.url %>
+<p><%= @article.content %></p>
+
+<%= link_to "Edit", edit_article_path(@article) if Current.user.admin? %>
+
+
+
+--> ( Routes ) <--
+
+//config/routes.rb
+
+Rails.application.routes.draw do
+  resource :article do     # /articles, /article/1
+
+    resources :connents    # /articles/1/comments, /comments/1
+  end
+
+  root to: "articles#index" # /
+  
+  get '/users/:id', to: 'user#show', as: 'user'
+
+end
+
+
+
+.......................
+
+
+Template: 
+<ul>
+   <% @products.each do |p| %>
+      <li><%=  @p.name %></li>
+   <% end %>
+</ul>
+
+<%=h @user_entered_notes %>
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>>>>>>>> All Templates <<<<<<<<<<<<<<<<<<<<<
+
+
+Python:
+
+
+------> Django <------
+
+
+ Templates Settings
+
+//Templates Directory
+ TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+
+//In settings.py file
+'DIRS': [TEMPLATE_DIR]
+
+'OR'
+'DIRS': [BASE_DIR / 'templates']
+
+.......
+
+
+---> ( Routes: urls.py file ) <---
+
+//Sending the request to the right view (urls.py)
+
+urlpatterns = [
+  path('admin/', admin.site.urls),
+  path('contact', views.contact, 'contact.html'),
+  path('book/<int:id>/', views.book_detail, name='book_detail'),
+  path('catalog/', include('catalog.urls')), re_path(r'^([0-9]+)/$', views.best),
+]
+
+........
+
+---> ( Views ) <---
+
+//Handling the request (views.py)
+
+from django.http import HttpResponse
+from django.shortcuts import render
+
+def index(request):
+  return HttpResponse('Hello from Django!')
+end
+
+'OR'
+
+def index(request):
+  my_dict = {"insert_me": "I am "}
+  return render(request, 'index.html', my_dict)
+end
+
+.........
+
+//templates/admin/base_site.html
+
+{% extends "admin/base_site.html" %}
+
+{% block branding %}
+  <img src="link/to/logo.png" alt="logo">
+    {{ block.super}}
+    {% endblock %}
+
+
+..........
+
+---> ( Model ) <---
+
+//Defining data models (models.py)
+
+from django.db import models
+
+class Team(models.Model):
+
+  team_name = models.CharField(max_length=40)
+
+    TEAM_LEVELS = (
+      ('U09', 'Under 09s'),
+      ('U10', 'Under 10s'),
+      ('U11', 'Under 11s'),
+    )
+
+  team_level = models.CharField(max_length=3,
+    choices=TEAM_LEVELS, default='U11')
+
+............
+
+
+
+
+HTML Template:
+
+<a href="{% url 'index' %}">Home</a>.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Local Library</title>{% endblock %}
+</head>
+<body>
+  {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
+  {% block content %}<!-- default content text (typically empty) -->{% endblock %}
+</body>
+</html>
+
+
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Local Library Home</h1>
+  <p>Welcome to LocalLibrary, a website developed by <em>Mozilla Developer Network</em>!</p>
+{% endblock %}
+
+
+
+
+
+
+
+------------------------------------------------------------
+
+
+
+
+>>>>> Python Flask <<<<<<<<
+
+from flask import Flask, render_template, redirect, url_for
+
+app = Flask(__name__)
+
+@app.route("/")                 
+def index():                 
+   return render_template('index.html')
+
+@app.route("/home")                 
+def home():                 
+    return "This is home."
+
+@app.route("/<name>")                 
+def index(name):                 
+   return render_template('index.html', content=['aja','yes','no'])
+
+
+
+if __name__=="__main__":
+
+  app.run()
+
+
+
+
+
+
+--->Folder Structure <---
+
+myflask
+    templates
+    venv
+    app.py
+
+
+
+
+flaskr/templates/base.html
+
+<!doctype html>
+<title>{% block title %}{% endblock %} - Flaskr</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>Flaskr</h1>
+  <ul>
+    {% if g.user %}
+      <li><span>{{ g.user['username'] }}</span>
+      <li><a href="{{ url_for('auth.logout') }}">Log Out</a>
+    {% else %}
+      <li><a href="{{ url_for('auth.register') }}">Register</a>
+      <li><a href="{{ url_for('auth.login') }}">Log In</a>
+    {% endif %}
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
+
+
+
+
+
+
+
+
+-------------------------------------------------------  
+
+
+Rails: 
+
+Redirect: 
+     redirect_to action: 'show'
+     redirect_to action: 'show', id:2
+     redirect_to :controller => 'user', :action => 'index'
+     redirect_to :action => 'index', :format => 'html'
+
+
+
+GemFile:
+    gem 'mysql2', '~> 0.5.2'
+
+Install:
+    gem install mysql2 -v 0.5.2
+
+
+Sqlite3: 
+
+  db:create
+  rails dbconsole
+  db:migrate
+
+
+--------------------------------------
+
+
+
+
+
+-----------------------------------------------------
+Django Model: 
+
+from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
+
+class Post(models.Model):
+  title = models.CharField(max_length=100)
+  content = models.TextField()
+  date_posted = models.DateTimeField(auto_now_add=True)
+   OR
+  date_posted = models.DateTimeField(default)
+   OR
+  date_posted = models.DateTimeField(default=timezone.now)
+
+  author = models.ForeignKey(User, on_delete)
+   OR
+  author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+ //python manage.py makemigrtions
+// python manage.py sqlmigrate blog 0001
+
+
+--------------------------------------------------
+
+
+
+>>>> MEAN Stack <<<<<<<
+
+
+1. Frontend (Angular)
+
+2. Backend  (Express js)        // http://localhost:3005
+
+3. Database (MongoDB)
+
+
+
+
+
+
+
+
+
+
+https://jsonplaceholder.typicode.com/users
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.
+
+MongoDB Atlas: 
+
+const uri = mongodb+srv://astechedu:<password>@cluster0.wx4ui.mongodb.net/users?retryWrites=true&w=majority
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------
+
+
+>>>> Angular Api <<<<<
+
+//--> app.module.ts file
+
+import { HttpClientModule } from '@angular/common/http';
+ 
+@NgModule({
+
+    imports: [
+        HttpClientModule
+    ],
+
+})
+export class AppModule { }
+ 
+
+
+//--> app.component.ts file
+
+import { HttpClient } from '@angular/common/http';
+
+export class AppComponent {
+ 
+  apiUrl='http://localhost:3005';
+  apiData;
+  
+  constructor(public http: HttpClient) {
+
+  }  
+
+  ngOnInit(){
+    this.http.get(this.apiUrl).subscribe((data)=>{
+         //console.log(data);
+         this.apiData = data
+    })
+  }
+
+}
+
+----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>>> Node js ( MySql ) <<<<<<<<<<<<
+
+Node.js can be used in database applications.
+
+
+--> npm install mysql 
+
+var mysql = require('mysql'); 
+
+Node.js can use this module to manipulate the MySQL database:
+
+
+------------------
+Create Connection :
+------------------
+Start by creating a connection to the database.
+Use the username and password from your MySQL database.
+
+
+//db_connection.js
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "yourusername",
+  password: "yourpassword"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+})
+
+
+
+
+//C:\Users\Your Name>node db_connection.js 
+
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  con.query("CREATE DATABASE mydb", function (err, result) {
+    if (err) throw err;
+    console.log("Database created");
+  });
+});
+
+-----------------------------------------------------
+
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("Table created");
+  });
+});
+----------------------------------------
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+  var sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+  });
+});
+---------------------------------------
+
+con.connect(function(err) {
+  if (err) throw err;
+  con.query("SELECT * FROM customers", function (err, result, fields) {
+    if (err) throw err;
+    console.log(result);
+  });
+});
+-----------------------------------------
+-----------------------------------------------------------------------
+
+>>>>>>>> English <<<<<<<
+
+such as, during, With this done
+-----------------------------------------
+-----------------------------------------------------------------------
+https://medium.com/@oliver.seq/creating-a-rest-api-with-rails-2a07f548e5dc
+
+
+
+
+
+>>>>>> REST API with Rails 7 <<<<<<<
+
+
+ rails new rest-api-guide --api --database=postgresql
+
+
+ Models:
+    rails generate model User username:string password:string
+
+ Controller:
+    rails generate model Fact user:references fact:string likes:integer
+
+
+
+
+  rails db:setup
+  rails db:migrate
+
+
+  Controllers:
+    rails g controller api/v1/Users
+    rails g controller api/v1/Facts
+
+
+    rails routes
+
+
+  http://localhost:3000/api/v1/users
+
+
+rails c (Rail Console):
+
+oliver = User.create( username: 'Oliver', password: 'password' )
+
+fact_one = Fact.create( fact: 'Wiley Hardeman Post was the first pilot to fly solo around the world.', likes: 1, user_id: 1 )
+
+fact_two = Fact.create( fact: 'The Symphony No1 in E flat major, K.16, was written by Wolfgang Amadeus Mozart at the age of 8.’ likes: 2, user_id: 1 )
+
+
+http://localhost:3000/api/v1/facts
+
+
+
+
+------------------
+
+Models: 
+
+class User < ApplicationRecored
+  has_many :facts
+end
+
+------------------
+
+class Facts < ApplicationRecored
+  blongs_to :user
+end
+
+
+//schema.rb
+create_table "facts", force :: cascade do |t|
+  t.bigint "user_id"
+  t.string "fact"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+  t.index ["user_id"], name: "index_facts_on_user_id"
+end
+
+create_table "users", force :: cascade do |t|
+  t.string "username"
+  t.string "password"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end
+
+
+add_foreign_key "facts", "users"
+
+end
+-----------------------------------------------
+
+
+//config/routes.rb
+
+Rails.application.routes.draw do 
+  namespace :api do 
+    namespace :v1 do
+      resources :users do 
+        resources :facts
+      end
+    end
+  end
+end
+
+
+//Controller
+//UsersController
+
+class Api::V1::UsersController < ApplicationController
+  #skip_before_action :verify_authenticity_token  #For Stop Authentication
+
+# GET /users
+def index
+  @users = User.all
+  render json: @users
+end
+
+# GET /user/:id
+def show
+  @user = User.find(params[:id])
+  render json: @user
+end
+
+# POST /users
+def create
+    @user = User.new(user_params)
+    if @user.save
+        render json: @user
+    else
+      render error: { error: 'Unable to create User.'}, status: 400
+    end
+end
+
+# PUT /users/:id
+def update
+    @user = User.find(user_params)
+    if @user
+       @user.update(user_params)
+        render json: { message: 'User successfully updated.'}, status: 200
+    else
+      render json: { error: 'Unable to update User.'}, status: 400
+    end
+end
+
+# DELETE /users/:id
+def destroy
+    @user = User.find(params[:id])
+    if @user
+       @user.destroy
+        render json: { message: 'User successfully deleted.'}, status: 200
+    else
+      render json: { error: 'Unable to delete User.'}, status: 400
+    end
+end
+
+private
+
+def user_params
+  params.require(:user).permit(:username, :password)
+end
+
+end
+-------------------------------
+
+//Controller
+//UsersController
+
+class Api::V1::FactsController < ApplicationController
+
+before_action :find_fact, only: [:show, :update, :destroy]
+#skip_before_action :verify_authenticity_token  #For Stop Authentication
+
+
+def index
+  @facts = Facts.all
+  render json: @facts
+end
+
+def show
+  render json: @fact
+end
+
+def create
+    @fact = Fact.new(fact_params)
+    if @fact.save
+        render json: @fact
+    else
+      render error: { error: 'Unable to create Fact.'}, status: 400
+    end
+end
+
+def update
+    if @fact
+       @fact.update(user_params)
+        render json: { message: 'Fact successfully updated.'}, status: 200
+    else
+      render json: { error: 'Unable to update Fact.'}, status: 400
+    end
+end
+
+def destroy
+    if @fact
+       @fact.destroy
+        render json: { message: 'User successfully deleted.'}, status: 200
+    else
+      render json: { error: 'Unable to delete Fact.'}, status: 400
+    end
+end
+
+private
+
+def fact_params
+  params.require(:fact).permit(:fact, :likes, :user_id)
+end
+
+def find_fact
+  @fact = Fact.find(params[:id])
+end
+
+end
+
+
+
+//http://localhost:3000/api/v1/users
+
+
+Adding Data:
+
+
+$ rails c.
+
+$ oliver = User.create( username: 'Oliver', password: 'password' )
+
+$fact_one = Fact.create( fact: 'Wiley Hardeman Post was the first pilot to fly solo around the world.', likes: 1, user_id: 1 )
+
+$ fact_two = Fact.create( fact: 'The Symphony No1 in E flat major, K.16, was written by Wolfgang Amadeus Mozart at the age of 8.’ likes: 2, user_id: 1 )
+
+
+
+Rails.application.routes.draw do 
+  namespace :api do 
+    namespace :v1 do
+      resources :users 
+      resources :facts      
+    end
+  end
+end
+
+
+
+
+------------------------------------------------------------
+
+<<<< Node js ( nodemailer module ) >>>>>
+
+
+npm install nodemailer
+
+var nodemailer = require('nodemailer'); 
+
+
+Send an Email: 
+
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'youremail@gmail.com',
+    pass: 'yourpassword'
+  }
+})
+
+
+var mailOptions = {
+  from: 'youremail@gmail.com',
+  to: 'myfriend@yahoo.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+}); 
+
+----------------
+
+Multiple Receivers: 
+
+var mailOptions = {
+  from: 'youremail@gmail.com',
+  to: 'myfriend@yahoo.com, myotherfriend@yahoo.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+} 
+
+------------------
+
+
+Send HTML: 
+
+
+var mailOptions = {
+  from: 'youremail@gmail.com',
+  to: 'myfriend@yahoo.com',
+  subject: 'Sending Email using Node.js',
+  html: '<h1>Welcome</h1><p>That was easy!</p>'
+} 
+
+
+
+-----------------------------------------------------------------------
+
+
+>>>>> Node js ( Mangoose ) <<<<<<<<
+
+mongodb+srv://astechedu:<password>@cluster0.wx4ui.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+npm install mangoose
+
+
+
+------------------------------------------------------------------------
+
+//https://medium.com/codingthesmartway-com-blog/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-1-d8d701c2995
+
+>>>>>>> Mern Stack <<<<<<<<<<<
+
+
+Install Bootstrap : 
+
+  npm install bootstrap
+  import "bootstrap/dist/css/bootstrap.min.css";
+
+  npm install react-router-dom
+  import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+............................................................
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="container">
+          <h2>MERN-Stack Todo App</h2>
+          <Route path="/" exact component={TodosList} />
+          <Route path="/edit/:id" component={EditTodo} />
+          <Route path="/create" component={CreateTodo} />
+        </div>
+      </Router>
+    );
+  }
+}export default App;
+................................................
+
+
+Creating Components:
+
+    todos-list.component.js
+    edit-todo.component.js
+    create-todo.component.js
+
+
+
+//todos-list.component.js:
+
+import React, { Component } from 'react';export default class TodosList extends Component {
+    render() {
+        return (
+            <div>
+                <p>Welcome to Todos List Component!!</p>
+            </div>
+        )
+    }
+}
+
+
+
+//edit-todo.component.js:
+
+import React, { Component } from 'react';export default class EditTodo extends Component {
+    render() {
+        return (
+            <div>
+                <p>Welcome to Edit Todo Component!!</p>
+            </div>
+        )
+    }
+}
+
+
+//create-todo.component.js:
+
+import React, { Component } from 'react';export default class CreateTodo extends Component {
+
+  constructor(props) {
+          super(props);        
+          this.state = {
+              todo_description: '',
+              todo_responsible: '',
+              todo_priority: '',
+              todo_completed: false
+          }
+  this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this);
+          this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this);
+          this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
+          this.onSubmit = this.onSubmit.bind(this);          
+  }
+
+  onChangeTodoDescription(e) {
+          this.setState({
+              todo_description: e.target.value
+          });
+      }    onChangeTodoResponsible(e) {
+          this.setState({
+              todo_responsible: e.target.value
+          });
+      }    onChangeTodoPriority(e) {
+          this.setState({
+              todo_priority: e.target.value
+          });
+  }
+
+  onSubmit(e) {
+          e.preventDefault();
+          
+          console.log(`Form submitted:`);
+          console.log(`Todo Description: ${this.state.todo_description}`);
+          console.log(`Todo Responsible: ${this.state.todo_responsible}`);
+          console.log(`Todo Priority: ${this.state.todo_priority}`);
+          
+          this.setState({
+              todo_description: '',
+              todo_responsible: '',
+              todo_priority: '',
+              todo_completed: false
+          })
+  }
+
+    render() {
+        return (
+            <div>
+                <p>Welcome to Create Todo Component!!</p>
+            </div>
+        )
+    }
+}
+
+...............................................
+
+Creating The Basic Layout & Navigation:
+
+
+
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";import "bootstrap/dist/css/bootstrap.min.css";import CreateTodo from "./components/create-todo.component";
+import EditTodo from "./components/edit-todo.component";
+import TodosList from "./components/todos-list.component";import logo from "./logo.png";class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div className="container">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="https://codingthesmartway.com" target="_blank">
+              <img src={logo} width="30" height="30" alt="CodingTheSmartWay.com" />
+            </a>
+            <Link to="/" className="navbar-brand">MERN-Stack Todo App</Link>
+            <div className="collpase navbar-collapse">
+              <ul className="navbar-nav mr-auto">
+                <li className="navbar-item">
+                  <Link to="/" className="nav-link">Todos</Link>
+                </li>
+                <li className="navbar-item">
+                  <Link to="/create" className="nav-link">Create Todo</Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <br/>
+          <Route path="/" exact component={TodosList} />
+          <Route path="/edit/:id" component={EditTodo} />
+          <Route path="/create" component={CreateTodo} />
+        </div>
+      </Router>
+    );
+  }
+}
+export default App;
+
+........................................
+
+
+>>>>>>> Rails 7 Database ( Sqlite3 ) <<<<<<
+
+rails dbconsole
+
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name varchar(50),
+  email varchar(100),
+  created_at datetime,
+  updated_at datetime
+);
+
+insert into users(id, name, email) values(1, "ajay", "a@gmail.com");
+insert into users(id, name, email) values(2, "sumit", "s@gmail.com");
+insert into users(id, name, email) values(3, "rohit", "r@gmail.com");
+insert into users(id, name, email) values(4, "zubin", "z@gmail.com");
+insert into users(id, name, email) values(5, "ram", "ram@gmail.com");
+
+//Conroller: 
+----------
+class UserController < ApplicationController
+  def index
+    @user = User.find(x) # x = given id
+  end
+end
+
+
+//Model:      //user.rb
+------
+class User < ActiveRecord::Base
+end
+
+
+//View:  //index.html.rb
+------
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Index</title>
+</head>
+<body>
+  <h1>This is index html page</h1>
+    <% @user.each do |user| %>
+      <%= user.id %>
+      <%= user.name %>
+    <% end %>
+</body>
+</html>
+
+
+--------------------------------------------------------------------
+
+<<<< Rails 7 REST API <<<<<<<
+
+
+//UsersController
+
+class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token  #For Stop Authentication
+
+# GET /users
+def index
+  @users = User.all
+  render json: @users
+end
+
+# GET /user/:id
+def show
+  @user = User.find(params[:id])
+  render json: @user
+end
+
+# POST /users
+def create
+    @user = User.new(user_params)
+    #@user = User.create(user_params)
+    if @user.save
+        render json: @user
+    else
+      render error: { error: 'Unable to create User.'}, status: 400
+    end
+end
+
+# PUT /users/:id
+def update
+    @user = User.find(params[:id])
+    if @user
+       @user.update(user_params)
+        render json: { message: 'User successfully updated.'}, status: 200
+    else
+      render json: { error: 'Unable to update User.'}, status: 400
+    end
+end
+
+# DELETE /users/:id
+def destroy
+    @user = User.find(params[:id])
+    if @user
+       @user.destroy
+        render json: { message: 'User successfully deleted.'}, status: 200
+    else
+      render json: { error: 'Unable to delete User.'}, status: 400
+    end
+end
+
+private
+
+  def user_params  
+     params.require(:user).permit(:name, :email)  
+     #params.permit(:name, :email) 
+  end
+
+  def sign_up_params
+    params.permit(:email, :password, :password_confirmation)
+  end 
+
+  #Redirection
+  def contact
+    #redirect_to action: 'services', id: 2    
+  end
+
+
+end
+
+Flash In Controller: 
+-------------
+    flash[:success] = "The to-do item was successfully destroyed."
+    redirect_to todos_url
+--------------
+
+//Routes: routes.rb
+
+Rails.application.routes.draw do
+  root "user#index"
+  post '/users/create', to: 'user#create'
+  get '/users/show/:id', to: 'user#show'
+  put '/users/update/:id', to: 'user#update'   
+  delete '/users/delete/:id', to: 'user#delete'
+end
+
+OR  
+
+resources :users     # OR resources :user
+
+
+
+Rails.application.routes.draw do
+  get '/users', to: "user#index"
+  get '/users/:id', to: "user#show"
+  get '/users/new', to: "user#new"
+  post '/users', to: "user#create"
+  get '/users/:id/edit', to: "user#edit"
+  put '/users/:id', to: "user#update"
+  delete '/users/:id', to: "user#destroy"
+end
+
+
+Rails.application.routes.draw do
+  get '/categories', to: "user#index"
+  get '/categories/:id', to: "user#show"
+  get '/categories/new', to: "user#new"
+  post '/categories', to: "user#create"
+  get '/categories/:id/edit', to: "user#edit"
+  put '/categories/:id', to: "user#update"
+  delete '/categories/:id', to: "user#destroy"
+end
+
+
+-------
+Rails.application.routes.draw do 
+  namespace :api do  
+    namespace :v1 do   
+      resources :articles    #resources :article      
+  end 
+end
+
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+end
+------------------------
+resources :secret_menu_items, only: [:index, :show, :create, :update, :destroy]
+
+
+  rails db:setup
+  rails db:migrate
+
+
+{
+  "id":4,
+  "name":"rahul",
+  "email":"n4@gmail.com"
+}
+
+
+--------------------------------------
+
+---------------------------------------------------------------------
+
+>>>>>> Rails 7 REST API Without Any Packages <<<<<<<<<<<<<<
+
+Table: users
+
+
+Models:
+    rails generate model User
+
+Controller:
+    rails generate controller User
+
+
+    rails routes
+
+  http://localhost:3000
+  http://localhost:3000/users
+
+
+Model: 
+
+class User < ApplicationRecored  
+end
+
+------------------
+
+
+create_table "users", force :: cascade do |t|
+  t.string "username"
+  t.string "password"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+end
+
+
+//User Controller 
+
+class UserController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  #before_action :find_fact, only: [:show, :update, :destroy]
+
+  # GET /users
+  def index
+     @user = User.all() # find(x) # x = given id
+     render json: @user
+  end
+
+    # GET /users/id
+  def show
+    @user = User.find(params[:id])
+      if @user        
+          render json: @user
+      else
+        render error: { error: 'Unable to create User.'}, status: 400
+      end
+  end
+
+    # POST /users
+  def create
+      @user = User.new(user_params) 
+      if @user
+        @user.save
+          render json: @user
+      else
+        render error: { error: 'Unable to create User.'}, status: 400
+      end
+  end
+
+  # PUT /users/id
+  def update
+      @user = User.find(params[:id])
+      if @user
+         @user.update(user_params)
+          render json: { message: 'User successfully updated.'}, status: 200
+      else
+        render json: { error: 'Unable to update User.'}, status: 400
+      end 
+  end
+
+    # DELETE /users/id
+  def destroy
+      @user = User.find(params[:id])
+      if @user
+         @user.destroy()
+          render json: { message: 'User successfully deleted.'}, status: 200
+      else
+        render json: { error: 'Unable to delete User.'}, status: 400
+      end
+  end
+
+    private
+
+  def user_params  
+     params.require(:user).permit(:name, :email)  
+     #params.permit(:name, :email) 
+  end
+
+  #def contact
+    #redirect_to action: 'services', id: 2    
+  #end
+end
+
+
+---------> End Conroller <----------------------------
+
+
+Rails.application.routes.draw do
+  get '/users', to: "user#index"
+  get '/users/:id', to: "user#show"
+  get '/users/new', to: "user#new"
+  post '/users', to: "user#create"
+  get '/users/:id/edit', to: "user#edit"
+  put '/users/:id', to: "user#update"
+  delete '/users/:id', to: "user#destroy"
+end
+
+
+ -- OR --
+
+ Rails.application.routes.draw do
+   resources :users      #OR resource :user
+end
+
+
+{
+  "id":4,
+  "name":"rahul",
+  "email":"n4@gmail.com"
+}
+
+
+-------------------------------------------------------
+-------------------------------------------------------
+>>>>>>> Sqlite3 <<<<<<<<
+
+create database users;
+create table users(
+  id integer primary key autoincrement,
+  name varchar(20) NOT NULL,
+  email varchar(50) NOT NULL
+);
+
+
+//CMD Commands in Sqlite3
+.schema users    //Showing table's structue
+.databases
+.tables
+
+
+select *from users
+
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+
+
+>>>>>> Rails 7 REST API ( Api/v1 ) <<<<<<<<<<<<<<
+
+
+
+
+Controller:
+    rails g controller api/v1/Post
+
+Model: 
+    rails g model api/v1/Post
+
+
+    rails routes
+
+  http://localhost:3000/api/v1/users
+
+
+
+routes.rb:
+---------
+
+  namespace :api do  
+    namespace :v1 do         
+    resources :post
+    end
+  end 
+
+  ------------------
+
+
+post_controller.rb
+------------------
+
+
+class Api::V1::PostController < ApplicationController
+    skip_before_action :verify_authenticity_token
+  #before_action :find_fact, only: [:show, :update, :destroy]
+
+  # GET /posts
+  def index
+     @post = Post.all() # find(x) # x = given id
+     render json: @post
+  end
+
+    # GET /posts/id
+  def show
+    @post = Post.find(params[:id])
+      if @post        
+         render json: @post
+      else
+        render error: { error: 'Unable to create Post.'}, status: 400
+      end
+  end
+
+    # POST /posts
+  def create
+      @post = Post.new(post_params) 
+      if @post
+        @post.save
+          render json: @post
+      else
+        render json: { error: 'Unable to create Post.'}, status: 400
+      end
+  end
+
+  # PUT /posts/id
+  def update
+      @post = Post.find(params[:id])
+      if @post
+         @post.update(post_params)
+          render json: { message: 'Post successfully updated.'}, status: 200
+      else
+        render json: { error: 'Unable to update Post.'}, status: 400
+      end 
+  end
+
+    # DELETE /posts/id
+  def destroy
+      @post = Post.find(params[:id])
+      if @post
+         @post.destroy()
+          render json: { message: 'Post successfully deleted.'}, status: 200
+      else
+        render json: { error: 'Unable to delete Post.'}, status: 400
+      end
+  end
+
+    private
+
+  def post_params  
+     params.require(:post).permit(:title, :description)  
+     #params.permit(:title, :description) 
+  end
+
+  #def contact
+    #redirect_to action: 'services', id: 2    
+  #end
+
+end
+
+
+
+Model: 
+------
+class Api::Vi::Post < ApplicationRecord
+end
+
+---------------------------------------------------------------
+-------------------------------------------------------------
+-------------------------------------------------------------
+>>>>> Symfony 6 Rest API Basic <<<<<<<<<
+
+
+Tables     : Products
+Entity     : Pruduct
+Controller : ProductController
+
+
+
+//Controller: 
+-------------
+
+<?php
+namespace App\Controller;
+
+use App\Entity\Product;
+use Doctrine\Persistence\ManagerRegistry;
+//use App\Repository\ProductRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+
+class ProductController extends AbstractController
+{ 
+    #[Route('/', name: 'list_products')]
+    public function index(ManagerRegistry $doctrine): Response
+    {
+        $product = $doctrine->getRepository(Product::class)->findAll();
+
+        return $this->json([
+            'product' => $product
+        ]);
+    }
+   
+    /**
+     * @Route("/add_products", name="product_add")
+     */
+    public function add_product(ManagerRegistry $doctrine, request $request):Response
+    {
+        $product = new Product(); 
+
+        $parameter = json_decode($request->getContent(), true);
+
+        $product->setName($parameter['name']);
+        $product->setPrice($parameter['price']);
+        $product->setQty($parameter['qty']);
+
+        $product_create = $doctrine->getRepository(Product::class)->add($product);
+
+        // -- OR --
+        //$em = $doctrine->getManager();
+        //$em->persist($product);
+        //$em->flush($product);
+
+        return $this->json([
+            'product' => "Saved"
+        ]);
+    }
+
+    /**
+     * @Route("/show/{id}", name="product_show")
+     */
+    public function show(ManagerRegistry $doctrine, int $id): Response
+    {
+        $product = $doctrine->getRepository(Product::class)->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+
+        //return new Response('Check out this great product: '.$product->getName());
+
+        return $this->json([
+            'product' => $product
+        ]);    
+    }
+
+    /**
+     * @Route("/update_product/{id}", name="product_update")
+     */
+    public function update(ManagerRegistry $doctrine, request $request, $id):Response
+    {        
+        $entityManager = $doctrine->getManager();
+        $product = $entityManager->getRepository(Product::class)->find($id);
+
+        /*
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+        */        
+
+        $parameter = json_decode($request->getContent(), true);
+
+        $product->setName($parameter['name']);
+        $product->setPrice($parameter['price']);
+        $product->setQty($parameter['qty']);
+
+        $entityManager->flush();
+
+        //$product_create = $doctrine->getRepository(Product::class)->add($product);
+
+        return $this->json([
+            'product' => "Updated"
+        ]);
+    }
+
+    /**
+     * @Route("/delete_product/{id}", name="product_delete")
+     */
+    public function delete_product(ManagerRegistry $doctrine, request $request, $id):Response
+    {        
+        $entityManager = $doctrine->getManager();
+        $product = $entityManager->getRepository(Product::class)->find($id);
+
+        /*
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+        */        
+
+        $entityManager->getRepository(Product::class)->remove($product);
+
+        return $this->json([
+            'product' => "Deleted"
+        ]);
+    }
+
+    -------------------------------------------------------------------------
+
+Entity: 
+
+<?php
+
+namespace App\Entity;
+
+use App\Repository\ProductRepository;
+use Doctrine\ORM\Mapping as ORM;
+
+#[ORM\Entity(repositoryClass: ProductRepository::class)]
+class Product
+{
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
+    public $id;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    public $name;
+
+    #[ORM\Column(type: 'float')]
+    public $price;
+
+    #[ORM\Column(type: 'integer')]
+    public $qty;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getQty(): ?int
+    {
+        return $this->qty;
+    }
+
+    public function setQty(int $qty): self
+    {
+        $this->qty = $qty;
+
+        return $this;
+    }
+}
+
+//src/Repository/ProductRepository: 
+
+<?php
+
+namespace App\Repository;
+
+use App\Entity\Product;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
+use Doctrine\Persistence\ManagerRegistry;
+
+/**
+ * @method Product|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Product|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Product[]    findAll()
+ * @method Product[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ */
+class ProductRepository extends ServiceEntityRepository
+{
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, Product::class);
+    }
+
+    /**
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function add(Product $entity, bool $flush = true): void
+    {
+        $this->_em->persist($entity);
+        if ($flush) {
+            $this->_em->flush();
+        }
+    }
+
+    /**
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function remove(Product $entity, bool $flush = true): void
+    {
+        $this->_em->remove($entity);
+        if ($flush) {
+            $this->_em->flush();
+        }
+    }
+
+
+}
+
+
+// Views: templates/base.html.twig
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+           <h1>This is base twig template rendering</h1>
+        {% endblock %}
+    </body>
+</html>
+
+-------------------------------------------------------------
+-------------------------------------------------------------
+-------------------------------------------------------------
+
+>>>>>>>> Symfony 6 Form >>>>>>>>>>>>
+
+
+composer require symfony/form
+
+
+//
+namespace App\Form
+
+use App\Entity\User;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class UserType extends AbstractType
+{
+  public function buildform(FormBuilderInterface $builder, array $options)
+  {
+    $builder
+          ->add('name')
+          ->add('email');
+  }
+
+  public function configureOptions(OptionsResolver $resolver)
+  {
+    $resolver->setDefaults([
+      'data_class' => User::class,
+    ]);
+  }
+}
+
+
+//--------> Controller <-------------
+
+use App\Entity\User;
+use App\Form\UserType;
+
+class UserController extends AbstractController
+{
+  /**
+  * @Route("/", name="form")
+  */
+  public function index()
+  {
+    $user = new User();
+    $user->setName('amit');
+    $user->setEmail('amit@gmail.com');
+    $form = $this->createForm(UserType::class, $user);
+
+    return $this->render('users/index.html.twig',[
+      'form' => $form->createView()
+    ]);
+  }
+}
+
+//View file: 
+
+{% block body %}
+   {{ form(user_form) }}
+{% endblock %}
+
+
+Creating Form Classes:
+
+// src/Form/Type/UserType.php
+namespace App\Form\Type;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\FormBuilderInterface;
+
+class UserType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options): void
+    {
+        $builder
+            ->add('name', TextType::class)
+            ->add('email', EmailType::class)              
+            ->add('save', SubmitType::class)
+        ;
+    }
+}
+
+...........
+
+// src/Controller/UserController.php
+namespace App\Controller;
+
+use App\Form\Type\UserType;
+// ...
+
+class UserController extends AbstractController
+{
+    public function new(): Response
+    {
+        // creates a user object and initializes some data for this example
+        $user = new User();
+        $user->setName('rohan');
+        $user->setEmail('rohan@gmail.com');
+
+        $form = $this->createForm(UserType::class, $user);
+
+        // ...
+    }
+        return $this->renderForm('users/new.html.twig', [
+            'form' => $form,
+        ]);    
+}
+
+...........
+
+// src/Form/Type/UserType.php
+namespace App\Form\Type;
+
+use App\Entity\User;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+// ...
+
+class UserType extends AbstractType
+{
+    // ...
+
+    public function configureOptions(OptionsResolver $resolver): void
+    {
+        $resolver->setDefaults([
+            'data_class' => User::class,
+        ]);
+    }
+}
+
+....
+{# templates/users/new.html.twig #}
+{{ form(form) }}
+
+
+....
+
+Processing Forms:
+
+// src/Controller/UserController.php
+
+// ...
+use Symfony\Component\HttpFoundation\Request;
+
+class UserController extends AbstractController
+{
+    public function new(Request $request): Response
+    {
+        // just set up a fresh $user object (remove the example data)
+        $user = new User();
+
+        $form = $this->createForm(UserType::class, $user);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $form->getData() holds the submitted values
+            // but, the original `$user` variable h as also been updated
+            $user = $form->getData();
+
+            // ... perform some action, such as saving the user to the database
+
+            return $this->redirectToRoute('user_success');
+        }
+
+        return $this->renderForm('users/new.html.twig', [
+            'form' => $form,
+        ]);
+    }
+}
+
+............
+
+//Form in controller:  It is working.
+
+<?php
+
+namespace App\Controller;
+
+use App\Entity\User;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class UserController extends AbstractController
+{
+    #[Route('/', name: 'app_index')]
+    public function index(Request $request): Response
+    {
+        // creates a task object and initializes some data for this example
+        $user = new User();      
+        $form = $this->createFormBuilder($user)
+            ->add('name', TextType::class)
+            ->add('email', EmailType::class)
+            ->add('save', SubmitType::class, ['label' => 'Create User'])
+            ->getForm();        
+
+        return $this->renderForm('users/index.html.twig', [
+            'form' => $form,
+        ]);                
+    }
+}
+
+// In view: index.html.twig; 
+
+{% block body %}
+{{ form(form) }}
+{% endblock %}
+
+-------------------------------------------------------------
+-------------------------------------------------------------
+-------------------------------------------------------------
+>>>>>>>> Symfony 6 Form >>>>>>>>>>>>
+
+composer require symfony/form
+
+
+table : users
+src / Controller / UserController.php
+src / Entity / User.php
+templates / users / index.html.twig
+
+ {{ form(form) }}
+
+
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+
+class UserController extends AbstractController
+{
+    #[Route('/', name: 'app_index')]
+    public function index(Request $request): Response
+    {
+        // creates a task object and initializes some data for this example
+        $user = new User();
+        $form = $this->createFormBuilder($user)
+            ->add('name', TextType::class)
+            ->add('email', EmailType::class)
+            ->add('save', SubmitType::class, ['label' => 'Create User'])
+            ->getForm();        
+
+        return $this->renderForm('users/index.html.twig', [
+            'form' => $form,
+        ]);            
+    }
+}
+
+
+//When form is submitted
+
+
+      if($form->isSubmitted() && $form->isValid()){
+          //$user = $form->getData();
+          //print_r($user);
+          $entityManager->persist($user);
+          $entityManager->flush();
+          return new Response("User added");
+
+          //return $this->redirectToRoute('user_success');
+      }
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+
+>>>>> Django Form <<<<<<<<
+
+
+from django import forms
+
+class NameForm(forms.Form):
+    your_name = forms.CharField(label='Your name', max_length=100)
+
+..........
+
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+
+from .forms import NameForm
+
+def get_name(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = NameForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            return HttpResponseRedirect('/thanks/')
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = NameForm()
+
+    return render(request, 'name.html', {'form': form})
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+
+
+<<<< Symfony 6 >>>>>>
+
+How to Use the submit() Function to Handle Form Submissions:
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+// ...
+
+public function new(Request $request): Response
+{
+    $task = new Task();
+    $form = $this->createForm(TaskType::class, $task);
+
+    if ($request->isMethod('POST')) {
+        $form->submit($request->request->get($form->getName()));
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // perform some action...
+
+            return $this->redirectToRoute('task_success');
+        }
+    }
+
+    return $this->renderForm('task/new.html.twig', [
+        'form' => $form,
+    ]);
+}
+
+..........
+
+public function new(Request $request): Response
+{
+    // ...
+
+    if ($request->isMethod('POST')) {
+        // '$json' represents payload data sent by React/Angular/Vue
+        // the merge of parameters is needed to submit all form fields
+        $form->submit(array_merge($json, $request->request->all()));
+
+        // ...
+    }
+
+    // ...
+}
+
+
+'OR'
+
+$form->get('firstName')->submit('Fabien');
+
+//'email' and 'username' are added manually to force their validation
+$form->submit(array_merge(['email' => null, 'username' => null], $request->request->all()), false);
+
+.............
+
+
+
+.........................................
+# config/packages/security.yaml
+security:
+    # ...
+
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+
+
+public function toArray()
+{
+    return [
+        'id' => $this->getId(),
+        'firstName' => $this->getFirstName(),
+        'lastName' => $this->getLastName(),
+        'email' => $this->getEmail(),
+        'phoneNumber' => $this->getPhoneNumber()
+    ];
+}
+.........................................
+.........................................
+.........................................
+
+
+<<<<< Symfony 6 Save Data into Database <<<<<<<<<
+
+    #[Route('/', name: 'app_index')]
+    public function index(ManagerRegistry $doctrine, Request $request): Response
+    {
+        // creates a task object and initializes some data for this example
+        $user = new User();    
+        //$user->setName('rohan');
+        //$user->setEmail('rohan@gmail.com');  
+        //echo "<pre>";print_r($user);
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+
+   if ($request->isMethod('POST')) {
+        //$form->submit($request->request->get($form->getName()));
+         //echo "<pre>";print_r($form->getData());
+        if ($form->isSubmitted() && $form->isValid()) {
+          $em = $doctrine->getManager();          
+          $em->persist($form->getData());
+          $em->flush();
+        }
+         echo "Saved";
+    }        
+
+        return $this->renderForm('users/index.html.twig',[
+          'form' => $form
+        ]);            
+    }
+-------------------------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+
+
+<<<<<< Symfony 6 CRUD <<<<<<<<<<<<<<
+
+
+index, show, new, 
+
+
+//Listing Data
+
+    #[Route('/', name: 'list_products')]
+    public function index(ManagerRegistry $doctrine): Response
+    {        
+      $products = $doctrine->getRepository(Product::class)->findAll();
+
+      return $this->render('users/index.html.twig', ['products'=>$products]);  
+    }
+
+//Adding Data
+
+    /**
+     * @Route("/add_products", name="product_add")
+     */
+    public function add_product(ManagerRegistry $doctrine, request $request):Response
+    {
+        $product = new Product();   
+        $product->setName($parameter['name']);
+        $product->setPrice($parameter['price']);
+        $product->setQty($parameter['qty']);
+
+        $form = $this->createForm(ProductType::class, $product);
+        $form->handleRequest($request);
+
+         if ($request->isMethod('POST')) {
+              //$form->submit($request->request->get($form->getName()));
+              
+              if ($form->isSubmitted() && $form->isValid()) {
+                $em = $doctrine->getManager();          
+                $em->persist($form->getData());
+                $em->flush();
+              }
+               echo "Saved";
+          }  
+
+
+        return $this->render('users/add.html.twig');  
+
+    }
+
+
+//Show by id
+
+    /**
+     * @Route("/show/{id}", name="product_show")
+     */
+
+    public function show(ManagerRegistry $doctrine, int $id): Response
+    {
+        $product = $doctrine->getRepository(Product::class)->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+
+        return $this->render('users/show.html.twig', ['product'=>$product]);    
+    }
+
+//Update 
+
+
+    /**
+     * @Route("/update_product/{id}", name="product_update")
+     */
+    public function update(ManagerRegistry $doctrine, request $request, $id):Response
+    {    
+
+        $entityManager = $doctrine->getManager();
+        $product = $entityManager->getRepository(Product::class)->find($id);      
+
+        //$product->setName($parameter['name']);
+        //$product->setPrice($parameter['price']);
+        //$product->setQty($parameter['qty']);
+
+       //$entityManager->flush();
+        $product_create = $doctrine->getRepository(Product::class)->add($product);
+        return $this->render('users/index.html.twig'); 
+    }
+
+//Remove 
+
+    /**
+     * @Route("/delete_product/{id}", name="product_delete")
+     */
+    public function delete_product(ManagerRegistry $doctrine, $id):Response
+    {        
+        $entityManager = $doctrine->getManager();
+        $product = $entityManager->getRepository(Product::class)->find($id);
+
+        /*
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id '.$id
+            );
+        }
+        */        
+
+        $entityManager->getRepository(Product::class)->remove($product);
+
+        return $this->render('users/index.html.twig'); 
+    }
+
+
+////Attributes in form's input control
+
+    public function buildForm(FormBuilderInterface $builder, array $options): void
+    {
+        $builder
+            ->add('name', TextType::class, ['attr' =>['class'=>'form-control']])
+            ->add('email', EmailType::class, ['attr' =>['class'=>'form-control']])         
+            ->add('save', SubmitType::class, ['attr' =>['class'=>'btn btn-success form-control mt-3']]);
+    }
+
+------------------------------------------------------------------
+------------------------------------------------------------------
+
+//Symfony 6 Patent or base template 'extends'
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            <div id="sidebar">
+                {% block sidebar %}
+                    <ul>
+                        <li><a href="app_index">Home</a></li>
+                        <li><a href="app_contact">Blog</a></li>
+                    </ul>
+                {% endblock %}
+            </div>
+
+            <div id="content">
+                {% block content %}{% endblock %}
+            </div>
+        {% endblock %}
+    </body>
+</html>
+
+
+>>> Child Template >>>
+
+{% extends 'layout/base.html.twig' %}
+{% block title %}UserIndex!{% endblock %}
+
+{% block content %}
+    <h1>Index</h1>
+    <p class="important">
+        Welcome on my awesome homepage.
+    </p>
+{% endblock %}
+
+
+//Controller
+
+    #[Route('/', name: 'app_index')]
+    public function index()
+    {
+        return $this->render('users/index.html.twig');            
+    }
+    #[Route('/contact', name: 'app_contact')]
+    public function contact()
+    {
+        return $this->render('users/contact.html.twig');            
+    }
+
+
+--------------------------------------------------------------------------------
+
+
+
+>>>> Symfony 6 Form Submit <<<<<
+
+
+Save data into database
+
+
+1. Table: User
+2. Controller: UserController
+3. View: add_user.html.twig
+
+
+
+composer require symfony/asset
+ <link rel="stylesheet" href="/styles/app.css">
+ <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+
+ {% extends 'layout/base.html.twig' %}
+{% block title %}UserIndex!{% endblock %}
+
+{% block content %} 
+
+  <h1>Users</h1>
+
+  <table border="1" class="">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for user in users %}
+        <tr>
+          <td>{{ user.id}}</td>
+          <td>{{ user.name}}</td>
+          <td>{{ user.email}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+{% endblock %}
+
+
+
+//Include 
+{{ include('blog/_user_profile.html.twig') }}
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+
+>>> Symfony 6 Flass Message <<<<<
+
+Table: user (mysql)
+Controller: src/Controller/UserController
+View: users/index.html.twig
+
+
+Flash Messages: 
+
+
+$this->addFlash(
+  'notice',
+  'Your changes were saved!'
+);
+
+
+{# read and display just one flash message type #}
+
+{% for message in app.flashes('notice') %}
+
+    <div class="flash-notice">
+        {{ message }}
+    </div>
+{% endfor %}
+
+
+-------------------------------------------------------------------------
+>>> Symfony 6: Managing Errors and 404 Pages <<<
+
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
+// ...
+public function index(): Response
+{
+    // retrieve the object from database
+    $product = ...;
+    if (!$product) {
+        throw $this->createNotFoundException('The product does not exist');
+
+        // the above is just a shortcut for:
+        // throw new NotFoundHttpException('The product does not exist');
+    }
+
+    return $this->render(...);
+}
+// this exception ultimately generates a 500 status error
+throw new \Exception('Something went wrong!');
+
+--------------------------------------------------------------------------
+
+
+>>>> Symfony 6 Session <<<<<<<
+
+
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
+
+public function index(SessionInterface $session): Response
+{
+    // stores an attribute for reuse during a later user request
+    $session->set('foo', 'bar');
+
+    // gets the attribute set by another controller in another request
+    $foobar = $session->get('foobar');
+
+    // uses a default value if the attribute doesn't exist
+    $filters = $session->get('filters', []);
+
+    // ...
+}
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+>>>>>> Symfony 6 Form Validation <<<<<<<<
+
+
+
+//The Basics of Validation//
+
+// src/Entity/Author.php
+namespace App\Entity;
+
+// ...
+use Symfony\Component\Validator\Constraints as Assert;
+
+class Author
+{
+    /**
+     * @Assert\NotBlank
+     */
+    private $name;
+}
+
+//Using the Validator Service//
+
+// ...
+use App\Entity\Author;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
+
+// ...
+public function author(ValidatorInterface $validator)
+{
+    $author = new Author();
+
+    // ... do something to the $author object
+
+    $errors = $validator->validate($author);
+
+    if (count($errors) > 0) {
+        /*
+         * Uses a __toString method on the $errors variable which is a
+         * ConstraintViolationList object. This gives us a nice string
+         * for debugging.
+         */
+        $errorsString = (string) $errors;
+
+        return new Response($errorsString);
+    }
+
+    return new Response('The author is valid! Yes!');  
+}
+
+
+
+//You could also pass the collection of errors into a template//
+
+if (count($errors) > 0) {
+    return $this->render('author/validation.html.twig', [
+        'errors' => $errors,
+    ]);
+}
+
+
+//Inside the template, you can output the list of errors exactly as needed:
+
+{# templates/author/validation.html.twig #}
+
+<h3>The author has the following errors</h3>
+<ul>
+{% for error in errors %}
+    <li>{{ error.message }}</li>
+{% endfor %}
+</ul>
+
+
+
+//Basic Constraints
+
+    NotBlank
+    Blank
+    NotNull
+    IsNull
+    IsTrue
+    IsFalse
+    Type
+
+
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+
+
+>>>>> Rails Form <<<<<<<<
+
+
+<%= form_with url: "/search", method: :get do |form| %>
+  <%= form.label :query, "Search for:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+<% end %>
+
+
+<%= form.check_box :pet_dog %>
+<%= form.label :pet_dog, "I own a dog" %>
+<%= form.check_box :pet_cat %>
+<%= form.label :pet_cat, "I own a cat" %>
+
+------------------------------------------
+
+------------------------------------------
+------------------------------------------
+
+>>>> Symfony6 Bundle <<<<<<<<<<<<<<
+
+
+//Creating a Bundle:
+
+// src/Acme/TestBundle/AcmeTestBundle.php
+namespace App\Acme\TestBundle;
+
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+class AcmeTestBundle extends Bundle
+{
+}
+
+.............
+
+// config/bundles.php
+return [
+    // ...
+    App\Acme\TestBundle\AcmeTestBundle::class => ['all' => true],
+];
+
+......................
+//Bundle Directory Structure
+
+Controller/                e.g. RandomController.php
+DependencyInjection/
+Resources/config/          e.g. routing.yaml
+Resources/views/           e.g. Random/index.html.twig
+Resources/public/          web assets (images, stylesheets, etc) 
+Tests/                     Holds all tests for the bundle. 
+
+
+------------------------------------------
+------------------------------------------
+------------------------------------------
+https://zetcode.com/symfony/vue/
+
+------------------------------------------
+
+>>>>>>>> Symfony 6 Vue js <<<<<<<<<<
+
+
+
+ symfony new symvue
+ cd symvue
+ composer require maker --dev
+ composer req annot twig
+ composer require encore
+ npm install
+ npm i vue vue-loader vue-template-compiler
+ npm run dev
+ symfony serve
+
+
+localhost:8000/home page
+
+---------------------------------------------------------------
+https://www.cloudways.com/blog/symfony-react-using-webpack-encore/
+------------------------------------------------------------------
+>>>>>>>> Symfony 6 Vue js <<<<<<<<<<
+
+//React js
+
+composer create-project symfony/website-skeleton symfony-react-starter
+cd symfony-react-starter
+php bin/console server:run
+
+
+composer require symfony/webpack-encore-pack
+yarn add --dev react react-dom prop-types babel-preset-react
+yarn install
+php bin/console make:controller Default
+yarn run encore dev --watch
+php bin/console server:run
+
+
+
+
+
+
+
+------------------------------------------
+------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
