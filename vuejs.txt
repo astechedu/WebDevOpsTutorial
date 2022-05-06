@@ -3,9 +3,12 @@
 
 
 --------------------------------------
+Keys:
+vue3 js:
+   submit form, validation
 --------------------------------------
 Mirroring started
-
+--------------------------------------
 --------------------------------------
 
 //Component.vue
@@ -14,6 +17,9 @@ Mirroring started
 </template>
 
 <script>
+export default {
+	
+}
 </script>
 
 <style>
@@ -38,4 +44,463 @@ vue ui
 
 ---------------------------------------
 ---------------------------------------
+>>>>>> Vue Js Form <<<<<<<<<<
 
+
+<div id="vueRoot">
+  <form ref="form">
+    <input name="vitalInformation" v-model="store.vital">
+    <a href="#" v-on:click="submit">SUBMIT</a>
+  </form>
+</div>
+
+
+
+
+var store = {vital:''};
+vm = new Vue({
+  el : "#vueRoot",
+  data : {store : store},
+  methods : {
+    submit : function(){
+      this.$refs.form.$el.submit()
+    }
+  }
+});
+
+
+this.$refs.submit.click();
+
+...................
+  
+  data: function(){
+     return {
+       name: "",
+       price: "",
+   }
+},
+ methods: {
+    addProduct(e){
+      e.preventDefault() // it prevent from page reload
+      // console.log(this.name, this.price);
+    }
+  }
+ 
+
+<form v-on:submit="addProduct">
+    <input type="text" v-model="name" placeholder="Product Name" >
+    <input type="number"  v-model="price" placeholder="Price" >
+    <button type="submit">Add</button>
+</form>
+
+
+this.$refs.form.submit()
+this.$refs.submit.click();
+...............................
+
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+>>>>>>> Vue js 2 <<<<<<<<<<
+
+
+<div id="app">
+  {{ message }}
+</div>
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+
+................
+
+
+<div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+  </span>
+</div>
+
+var app2 = new Vue({
+  el: '#app-2',
+  data: {
+    message: 'You loaded this page on ' + new Date().toLocaleString()
+  }
+})
+......................
+
+<div id="app-3">
+  <span v-if="seen">Now you see me</span>
+</div>
+
+var app3 = new Vue({
+  el: '#app-3',
+  data: {
+    seen: true
+  }
+})
+..................
+
+<div id="app-4">
+  <ol>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ol>
+</div>
+
+var app4 = new Vue({
+  el: '#app-4',
+  data: {
+    todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ]
+  }
+})
+
+
+.....................
+
+
+<div id="app-4">
+  <ol>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ol>
+</div>
+
+var app4 = new Vue({
+  el: '#app-4',
+  data: {
+    todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ]
+  }
+})
+
+.....................
+
+
+
+
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+//Vue Form Validation
+https://v2.vuejs.org/v2/cookbook/form-validation.html?redirect=true
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+
+
+>>>>> Vue js 3 <<<<<<<<
+
+
+
+
+import { createApp } from 'vue'
+
+createApp({
+  data() {
+    return {
+      count: 0
+    }
+  }
+}).mount('#app')
+
+
+<div id="app">
+  <button @click="count++">
+    Count is: {{ count }}
+  </button>
+</div>
+
+............................
+
+
+//Single-File Components 
+
+
+<script>
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  }
+}
+</script>
+
+<template>
+  <button @click="count++">Count is: {{ count }}</button>
+</template>
+
+<style scoped>
+button {
+  font-weight: bold;
+}
+</style>
+.............................
+
+
+
+
+
+
+
+
+
+>>>>>>>> Vue Js Form <<<<<<<<<<<<<
+
+npm run serve
+
+
+
+<template>
+  <h1>User Form</h1>
+<form
+  id="app"
+  @submit="checkForm"s
+  +
+  action="https://vuejs.org/"
+  method="post"
+>
+
+  <p v-if="errors.length">
+    <b>Please correct the following error(s):</b>
+    <ul>
+      <li v-for="error in errors" v-bind:key='error'>{{ error }}</li>
+    </ul>
+  </p>
+
+  <p>
+    <label for="name">Name</label>
+    <input
+      id="name"
+      v-model="name"
+      type="text"
+      name="name"
+    >
+  </p>
+
+  <p>
+    <label for="age">Age</label>
+    <input
+      id="age"
+      v-model="age"
+      type="number"
+      name="age"
+      min="0"
+    >
+  </p>
+
+  <p>
+    <label for="movie">Favorite Movie</label>
+    <select
+      id="movie"
+      v-model="movie"
+      name="movie"
+    >
+      <option>Star Wars</option>
+      <option>Vanilla Sky</option>
+      <option>Atomic Blonde</option>
+    </select>
+  </p>
+
+  <p>
+    <input
+      type="submit"
+      value="Submit"
+    >
+  </p>
+
+</form>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      errors: [],
+      name: null,
+      age: null,
+      movie: null
+    }
+  },
+  methods:{
+    checkForm: function (e) {
+      if (this.name && this.age) {
+        return true;
+      }
+
+      this.errors = [];
+
+      if (!this.name) {
+        this.errors.push('Name required.');
+      }
+      if (!this.age) {
+        this.errors.push('Age required.');
+      }
+
+      e.preventDefault();
+    }
+  }
+}
+</script>
+
+// --> Vue Form Validation <--
+
+<template>
+  <div class="container">
+  <div class="row">   
+  <div class="col-lg-4">
+  <div id="result"></div>
+  </div>
+  <div class="col-lg-4">
+  <h1>User Form</h1>
+  <form id="app" @submit.prevent = "" action="/" method="post">
+  <p v-if="errors.length">
+  <ul v-for="error in errors" v-bind:key="error">
+  <li class="text-danger">{{ error }}</li>
+  </ul>
+  </p>
+  <input id="name" type="text" v-model="name" placeholder="Name" class="form-control" autocomplete="off">   
+
+  <input id="password" type="text" v-model="password" min="0" placeholder="Password" class="mt-3 form-control" autocomplete="off">
+
+  <input id="age" type="submit" value="Submit" class="btn btn-lg btn-success mt-3 form-control">
+  <button ref="btn" v-on:click="submit()">Submit</button>
+  </form>
+  </div>
+  </div>
+  </div>
+
+</template>
+<script>
+export default{
+  data() {    
+    return{
+    uname:"ajay",
+    upass:"ajay123",
+        name:"",
+        password:"",
+        errors:[],
+    }
+  },
+  methods:{
+  submit: function () {
+  this.errors = [];
+      if (this.name && this.password) {
+        return true;
+      }   
+
+      if (!this.name) {
+        this.errors.push('Name required.')
+      }      
+
+      if (!this.password) {
+        this.errors.push('Password required.')      
+      } 
+  }
+  },
+  mounted(){
+  console.log('hihi')
+  },
+  updated(){
+  //this.$refs.btn.click()
+  }
+  
+}
+</script>
+
+---------------------------------------------------------------------
+
+>>>>>> Vue Js Params <<<<<<<
+
+1. Child to Parent Component
+2. Parent to Child Component
+
+
+1. Child to Parent Component
+
+//Parent Component
+<template>   
+ <Form @title="getTitle" />  
+</template>
+<script>
+import Form from './components/Form.vue'
+export default {
+  name: 'App',
+  components: {
+  Form
+  },
+  methods:{
+   getTitle:function(value){
+    console.log(value)
+   }
+  }
+}
+</script>
+
+//Child Component
+<template>  
+<button v-on:click="child()" class="btn btn-lg btn-success mt-3 form-control">Child</button>  
+</template>
+<script>
+export default{
+  data() {    
+    return{
+    title:"This is from child component",    
+    }
+  },
+  methods:{
+    child: function(){
+      console.log(this.$emit('title',this.title))
+    }
+  }  
+}
+</script>
+
+--------------------------------------------------
+
+2. Parent to Child component
+
+//Parent Component
+<template>
+  <Child :userName=username/>
+</template>
+import Child from './childcomponent'
+<script>
+export default {
+  data(){
+   return {
+     username:"Ajay Sisaudiya"
+   }
+  }
+}
+</script>
+
+//Child Component
+<template>
+  {{ userName }}
+</template>
+<script>
+export default {
+  params:['userName'],
+  data(){
+   return {    
+   }
+  }
+}
+</script>
+----------------------------------------------------------
