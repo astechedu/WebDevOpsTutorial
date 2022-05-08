@@ -5,7 +5,7 @@
 --------------------------------------
 Keys:
 vue3 js:
-   submit form, validation
+   submit form, validation, props, router
 --------------------------------------
 Mirroring started
 --------------------------------------
@@ -424,14 +424,48 @@ export default{
 </script>
 
 ---------------------------------------------------------------------
+---------------------------------------------------------------------
 
->>>>>> Vue Js Params <<<<<<<
+>>>>>> Vue Js Props <<<<<<<
 
-1. Child to Parent Component
-2. Parent to Child Component
+1. Parent to Child Component
+2. Child to Parent Component
 
+............................
+1. Parent to Child component
 
-1. Child to Parent Component
+//Parent Component
+<template>
+  <Child :userName=username/>
+</template>
+
+<script>
+import Child from './components/Child.vue'  
+export default {
+  data(){
+   return {
+     username:"Ajay Sisaudiya"
+   }
+  }
+}
+</script>
+
+//Child Component
+<template>
+  {{ userName }}
+</template>
+<script>
+export default {
+  props:['userName'],
+  data(){
+   return {    
+   }
+  }
+}
+</script>
+
+.............................
+2. Child to Parent Component
 
 //Parent Component
 <template>   
@@ -471,36 +505,99 @@ export default{
 }
 </script>
 
---------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
 
-2. Parent to Child component
+>>>>>> Vue cli Router <<<<<<<<
 
-//Parent Component
-<template>
-  <Child :userName=username/>
+//src/main.js
+
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+createApp(App).use(router).mount('#app')
+
+//src/router/index.js
+import { createRouter, createWebHistory } from 'vue-router'
+//import Index from '@/components/Index.vue'
+import Form from '@/components/Form.vue'
+import Contact from '@/components/Contact.vue'
+//import Register from '@/components/Register.vue'
+import Child from '@/components/Child.vue'
+import Parent from '@/components/Parent.vue'
+const routes = [
+  {
+    path: '/',
+    name: 'Form',
+    component: Form
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
+  {
+    path: '/child',
+    name: 'Child',
+    component: Child
+  },  
+   {
+    path: '/parent',
+    name: 'Parent',
+    component: Parent
+  },  
+]
+const router = createRouter({ history: createWebHistory(), routes })
+export default router
+
+//src/App.js
+<template>  
+  <div id="nav">
+      <router-link to="/">Form</router-link> |
+      <router-link to="/about">Contact</router-link> |
+      <router-link to="/child">Child</router-link>
+  </div>
+  <router-view />
+
+  <h1>Vue Js</h1>
+<!--<Child />-->
 </template>
-import Child from './childcomponent'
+
 <script>
+import './assets/bootstrap.css'
+//import Child from './components/Child.vue'  
 export default {
-  data(){
-   return {
-     username:"Ajay Sisaudiya"
-   }
+  name: 'App',
+  components: {
+  //Child
   }
 }
 </script>
 
-//Child Component
-<template>
-  {{ userName }}
+
+//src/components
+Form.vue, 
+Child.vue, 
+Contact.vue
+Parent.vue
+
+//Example: 
+<template>   
+<h1>Child</h1>
 </template>
 <script>
 export default {
-  params:['userName'],
+  name: 'Child',
+  props: [],
   data(){
-   return {    
+   return {  
    }
+  },
+  methods: {   
   }
 }
 </script>
-----------------------------------------------------------
+
+----------------> End of Vue Router <------------------------------

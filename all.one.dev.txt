@@ -7,11 +7,19 @@ Rails6:
 
 Symfony6:
       session, form, flesh message, api, sqlite3, database, child template,
-      symfony6 bundle, vue js , react js
+      symfony6 bundle, vue js , react js, fixture
 
 Cakephp4:
 
 Laravel8:
+
+Vue Js 2.0: vue js form,
+Vue Js 3.0:
+
+React js : react form
+
+Computer: cluster
+
 
 -----------------------------------------------------------
 -----------------------------------------------------------
@@ -368,26 +376,26 @@ return redirect('posts')->with('status', 'Profile updated!');
 
 ------------------------------------------------
 <table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Id</th>
-			<th>Title</th>
-			<th>Description</th>
-			<th>Actions</th>
-		</tr>
-	</thead>
-		@foreach($posts as $post)
-		<tr>
-			<td>{{ $post['id'] }}</td>
-			<td>{{ $post['title'] }}</td>
-			<td>{{ $post['description'] }}</td>
-			<td>
-				<a href="{{ route('posts.index') }}">Edit</a>
-			</td>
-		</tr>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+    @foreach($posts as $post)
+    <tr>
+      <td>{{ $post['id'] }}</td>
+      <td>{{ $post['title'] }}</td>
+      <td>{{ $post['description'] }}</td>
+      <td>
+        <a href="{{ route('posts.index') }}">Edit</a>
+      </td>
+    </tr>
         @endforeach
-	<tbody>
-	</tbody>
+  <tbody>
+  </tbody>
 </table>
 
 
@@ -447,8 +455,8 @@ Paginator::useBootstrap();
 
 
 public function index(){
-	
-	return view('index');
+  
+  return view('index');
 }
 
 
@@ -768,24 +776,24 @@ Route::get('/', function () {
 
 Route::middleware([checkAge::class])->group(function(){ 
 
-	Route::get('/users/{id}', function ($id) {
-	    echo $id;
-	});
+  Route::get('/users/{id}', function ($id) {
+      echo $id;
+  });
 
 
-	Route::get('/posts/{name?}', function ($name = null) {
-	    return $name;
-	});
+  Route::get('/posts/{name?}', function ($name = null) {
+      return $name;
+  });
 
 
-	Route::get('/employee/{id}', function ($id) {
-	    echo $id;
-	})->where('id', '[0-9]+');
+  Route::get('/employee/{id}', function ($id) {
+      echo $id;
+  })->where('id', '[0-9]+');
 
 
-	Route::get('/ajay/{id}', function ($id) {
-	    echo $id;
-	});
+  Route::get('/ajay/{id}', function ($id) {
+      echo $id;
+  });
 
 
     Route::get('home', [UserController::class,'contact']); 
@@ -5632,11 +5640,95 @@ Tests/                     Holds all tests for the bundle.
 ------------------------------------------
 ------------------------------------------
 ------------------------------------------
+
 https://zetcode.com/symfony/vue/
 
 ------------------------------------------
 
 >>>>>>>> Symfony 6 Vue js <<<<<<<<<<
+
+symfony new symfony6vue
+composer require --dev symfony/maker-bundle
+composer require doctrine/annotations
+composer require symfony/twig-bundle
+
+composer require symfony/webpack-encore-bundle
+
+npm install && npm run dev-server
+
+
+
+//assets/app.js
+
+import Vue from 'vue'
+
+Vue.config.productionTip = false
+
+const app = new Vue({    
+    el: '#app',    
+    render: h => h(App)
+});
+
+export default app;
+
+
+
+//templates/base.html.twig
+<!DOCTYPE html>
+<html>
+    <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <title>{% block title %}Home{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block content %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+
+
+//templates/app.html.twig
+
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+{% block content %}
+    <div id="app">
+    </div>
+{% endblock %}
+{% block javascripts %}
+     {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+
+
+
+------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5645,6 +5737,7 @@ https://zetcode.com/symfony/vue/
  composer require maker --dev
  composer req annot twig
  composer require encore
+
  npm install
  npm i vue vue-loader vue-template-compiler
  npm run dev
@@ -5653,16 +5746,35 @@ https://zetcode.com/symfony/vue/
 
 localhost:8000/home page
 
----------------------------------------------------------------
-https://www.cloudways.com/blog/symfony-react-using-webpack-encore/
+
+
+
+
+
+
+
+
+
+
+
+
+
 ------------------------------------------------------------------
->>>>>>>> Symfony 6 Vue js <<<<<<<<<<
+------------------------------------------------------------------
+
+https://www.cloudways.com/blog/symfony-react-using-webpack-encore/
+https://symfonycasts.com/screencast/vue/vue-install
+------------------------------------------------------------------
+
+>>>>>>>> Symfony 6 React js <<<<<<<<<<
 
 //React js
+
 
 composer create-project symfony/website-skeleton symfony-react-starter
 cd symfony-react-starter
 php bin/console server:run
+
 
 
 composer require symfony/webpack-encore-pack
@@ -5678,9 +5790,448 @@ php bin/console server:run
 
 
 
+
+
+
+
+
 ------------------------------------------
 ------------------------------------------
 
+>>>>>> Symfony 6 DataFixures <<<<<<<<<<<<
+
+* composer require --dev orm-fixtures
+* php bin/console doctrine:fixtures:load
+
+
+//AppFixtures.php file
+
+class AppFixtures extends Fixture
+{
+    public function load(ObjectManager $manager)
+    {
+        $faker = Factory::create();
+
+        for ($i = 0; $i < 50; $i++) {
+            $customer = new Customer();
+            $customer->setFirstName($faker->firstName);
+            $customer->setLastName($faker->lastName);
+            $customer->setEmail($faker->email);
+            $customer->setPhoneNumber($faker->phoneNumber);
+            $manager->persist($customer);
+        }
+
+        $manager->flush();
+    }
+}
+
+
+
+------------------------------------------
+------------------------------------------
+{% block javascripts %}
+     <script src="{{ asset('build/js/app.js') }}"></script>
+Or
+     {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+
+{% block stylesheets %}
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+               'OR'
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+
+
+//assets/app.js
+import Vue from 'vue'
+//import App from './components/App'
+import Example from './components/Example'
+Vue.config.productionTip = false
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+
+export default app
+..................................
+
+
+
+import Vue from 'vue';
+import App from './components/App';
+import '../css/app.css';
+
+new Vue({
+    el: '#app',
+    render: h => h(App)
+});
+
+
+<button @click="counter++">Click me{{ counter }}</button>
+
+
+data:() =>{
+  counter: 0
+}
+
+
+
+
+FIX  To load Vue files:
+        1. Add Encore.enableVueLoader() to your webpack.config.js file.
+        2. Install vue & vue-loader & vue-template-compiler to use enableVueLoader()
+           npm install vue@^2.5 vue-loader@^15.9.5 vue-template-compiler --save-dev
+
+
+{{ twig_variable }}   {# renders a Twig variable #}
+${ vuejs_variable }$  {# renders a Vue.js variable #}
+
+@{{ foo }}
+
+
+
+
+Vue.component('todo-item', {
+  template: '<li>This is a list item</li>'
+})
+
+new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  }
+})
+
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+  <ol>
+    <todo-item></todo-item>
+  </ol>
+  <p>{{ message }}</p>
+
+.......................
+
+<template>
+  <li>This is a list item</li>
+</template>
+
+<script>
+  export default {
+    name: 'todo-item'
+  }
+</script>
+
+import TodoItem from './components/todo-item'
+
+ new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  components: {
+    TodoItem
+  }
+})
+
+.........................
+
+
+//Using Vue (^2.0.0-rc.6) + Browserify, entry point is index.js:
+
+import Vue from 'vue'
+import App from './containers/App.vue'
+
+new Vue({ // eslint-disable-line no-new
+  el: '#root',
+  render: (h) => h(App)
+})
+.................
+Hello.vue:
+
+<template>
+  <div class="hello">
+    <h1>\{{ msg }}</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      msg: 'Hello Vue!'
+    }
+  }
+}
+</script>
+.....................
+
+import Vue from 'vue/dist/vue.js'
+import App from './App.vue'
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+})
+.......................
+
+<template>
+    <v-app>
+        <v-main>
+            <v-container fluid>
+                <router-view>
+
+        <!---             <router-link to="<my_route>">My Component</router-link> -->
+                </router-view>
+            </v-container>
+        </v-main>
+    </v-app>
+</template>
+<script>
+export default {
+    name: "App"
+}
+</script>
+<style scoped>
+
+</style>
+..............................
+import Vue from 'vue'
+import Vuetify from 'vuetify';
+import Routes from './routes.js';
+import App from './views/App';
+import 'vuetify/dist/vuetify.min.css'
+
+
+Vue.config.productionTip = false
+Vue.use(Vuetify);
+
+const app = new Vue({
+    vuetify: new Vuetify(),
+    el: '#app',
+    router: Routes,
+    render: h => h(App)
+});
+
+export default app;
+........................
+
+
+
+--------------------------------------------------------
+
+>>>>>> Vue Js Form <<<<<<<<<<
+
+
+<div id="vueRoot">
+  <form ref="form">
+    <input name="vitalInformation" v-model="store.vital">
+    <a href="#" v-on:click="submit">SUBMIT</a>
+  </form>
+</div>
+
+
+
+
+var store = {vital:''};
+vm = new Vue({
+  el : "#vueRoot",
+  data : {store : store},
+  methods : {
+    submit : function(){
+      this.$refs.form.$el.submit()
+    }
+  }
+});
+
+
+this.$refs.submit.click();
+
+...................
+  
+  data: function(){
+     return {
+       name: "",
+       price: "",
+   }
+},
+ methods: {
+    addProduct(e){
+      e.preventDefault() // it prevent from page reload
+      // console.log(this.name, this.price);
+    }
+  }
+ 
+
+<form v-on:submit="addProduct">
+    <input type="text" v-model="name" placeholder="Product Name" >
+    <input type="number"  v-model="price" placeholder="Price" >
+    <button type="submit">Add</button>
+</form>
+
+
+this.$refs.form.submit()
+this.$refs.submit.click();
+...............................
+
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+>>>>>>> Vue js 2 <<<<<<<<<<
+
+
+<div id="app">
+  {{ message }}
+</div>
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+
+................
+
+
+<div id="app-2">
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+  </span>
+</div>
+
+var app2 = new Vue({
+  el: '#app-2',
+  data: {
+    message: 'You loaded this page on ' + new Date().toLocaleString()
+  }
+})
+......................
+
+<div id="app-3">
+  <span v-if="seen">Now you see me</span>
+</div>
+
+var app3 = new Vue({
+  el: '#app-3',
+  data: {
+    seen: true
+  }
+})
+..................
+
+<div id="app-4">
+  <ol>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ol>
+</div>
+
+var app4 = new Vue({
+  el: '#app-4',
+  data: {
+    todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ]
+  }
+})
+
+
+.....................
+
+
+<div id="app-4">
+  <ol>
+    <li v-for="todo in todos">
+      {{ todo.text }}
+    </li>
+  </ol>
+</div>
+
+var app4 = new Vue({
+  el: '#app-4',
+  data: {
+    todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ]
+  }
+})
+
+.....................
+
+
+
+
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+//Vue Form Validation
+https://v2.vuejs.org/v2/cookbook/form-validation.html?redirect=true
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+
+
+>>>>> Vue js 3 <<<<<<<<
+
+
+
+
+import { createApp } from 'vue'
+
+createApp({
+  data() {
+    return {
+      count: 0
+    }
+  }
+}).mount('#app')
+
+
+<div id="app">
+  <button @click="count++">
+    Count is: {{ count }}
+  </button>
+</div>
+
+............................
+
+
+//Single-File Components 
+
+
+<script>
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  }
+}
+</script>
+
+<template>
+  <button @click="count++">Count is: {{ count }}</button>
+</template>
+
+<style scoped>
+button {
+  font-weight: bold;
+}
+</style>
+.............................
 
 
 
@@ -5690,33 +6241,745 @@ php bin/console server:run
 
 
 
+>>>>>>>> Vue Js Form <<<<<<<<<<<<<
+
+npm run serve
+
+
+
+<template>
+  <h1>User Form</h1>
+<form
+  id="app"
+  @submit="checkForm"s
+  +
+  action="https://vuejs.org/"
+  method="post"
+>
+
+  <p v-if="errors.length">
+    <b>Please correct the following error(s):</b>
+    <ul>
+      <li v-for="error in errors" v-bind:key='error'>{{ error }}</li>
+    </ul>
+  </p>
+
+  <p>
+    <label for="name">Name</label>
+    <input
+      id="name"
+      v-model="name"
+      type="text"
+      name="name"
+    >
+  </p>
+
+  <p>
+    <label for="age">Age</label>
+    <input
+      id="age"
+      v-model="age"
+      type="number"
+      name="age"
+      min="0"
+    >
+  </p>
+
+  <p>
+    <label for="movie">Favorite Movie</label>
+    <select
+      id="movie"
+      v-model="movie"
+      name="movie"
+    >
+      <option>Star Wars</option>
+      <option>Vanilla Sky</option>
+      <option>Atomic Blonde</option>
+    </select>
+  </p>
+
+  <p>
+    <input
+      type="submit"
+      value="Submit"
+    >
+  </p>
+
+</form>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      errors: [],
+      name: null,
+      age: null,
+      movie: null
+    }
+  },
+  methods:{
+    checkForm: function (e) {
+      if (this.name && this.age) {
+        return true;
+      }
+
+      this.errors = [];
+
+      if (!this.name) {
+        this.errors.push('Name required.');
+      }
+      if (!this.age) {
+        this.errors.push('Age required.');
+      }
+
+      e.preventDefault();
+    }
+  }
+}
+</script>
+
+// --> Vue Form Validation <--
+
+<template>
+  <div class="container">
+  <div class="row">   
+  <div class="col-lg-4">
+  <div id="result"></div>
+  </div>
+  <div class="col-lg-4">
+  <h1>User Form</h1>
+  <form id="app" @submit.prevent = "" action="/" method="post">
+  <p v-if="errors.length">
+  <ul v-for="error in errors" v-bind:key="error">
+  <li class="text-danger">{{ error }}</li>
+  </ul>
+  </p>
+  <input id="name" type="text" v-model="name" placeholder="Name" class="form-control" autocomplete="off">   
+
+  <input id="password" type="text" v-model="password" min="0" placeholder="Password" class="mt-3 form-control" autocomplete="off">
+
+  <input id="age" type="submit" value="Submit" class="btn btn-lg btn-success mt-3 form-control">
+  <button ref="btn" v-on:click="submit()">Submit</button>
+  </form>
+  </div>
+  </div>
+  </div>
+
+</template>
+<script>
+export default{
+  data() {    
+    return{
+    uname:"ajay",
+    upass:"ajay123",
+        name:"",
+        password:"",
+        errors:[],
+    }
+  },
+  methods:{
+  submit: function () {
+  this.errors = [];
+      if (this.name && this.password) {
+        return true;
+      }   
+
+      if (!this.name) {
+        this.errors.push('Name required.')
+      }      
+
+      if (!this.password) {
+        this.errors.push('Password required.')      
+      } 
+  }
+  },
+  mounted(){
+  console.log('hihi')
+  },
+  updated(){
+  //this.$refs.btn.click()
+  }
+  
+}
+</script>
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+>>>>>> Vue Js Props <<<<<<<
+
+1. Parent to Child Component
+2. Child to Parent Component
+
+............................
+1. Parent to Child component
+
+//Parent Component
+<template>
+  <Child :userName=username/>
+</template>
+
+<script>
+import Child from './components/Child.vue'  
+export default {
+  data(){
+   return {
+     username:"Ajay Sisaudiya"
+   }
+  }
+}
+</script>
+
+//Child Component
+<template>
+  {{ userName }}
+</template>
+<script>
+export default {
+  props:['userName'],
+  data(){
+   return {    
+   }
+  }
+}
+</script>
+
+.............................
+2. Child to Parent Component
+
+//Parent Component
+<template>   
+ <Form @title="getTitle" />  
+</template>
+<script>
+import Form from './components/Form.vue'
+export default {
+  name: 'App',
+  components: {
+  Form
+  },
+  methods:{
+   getTitle:function(value){
+    console.log(value)
+   }
+  }
+}
+</script>
+
+//Child Component
+<template>  
+<button v-on:click="child()" class="btn btn-lg btn-success mt-3 form-control">Child</button>  
+</template>
+<script>
+export default{
+  data() {    
+    return{
+    title:"This is from child component",    
+    }
+  },
+  methods:{
+    child: function(){
+      console.log(this.$emit('title',this.title))
+    }
+  }  
+}
+</script>
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+>>>>>> Vue cli 'Router' <<<<<<<<
+
+//src/main.js
+
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+createApp(App).use(router).mount('#app')
+
+//src/router/index.js
+import { createRouter, createWebHistory } from 'vue-router'
+//import Index from '@/components/Index.vue'
+import Form from '@/components/Form.vue'
+import Contact from '@/components/Contact.vue'
+//import Register from '@/components/Register.vue'
+import Child from '@/components/Child.vue'
+import Parent from '@/components/Parent.vue'
+const routes = [
+  {
+    path: '/',
+    name: 'Form',
+    component: Form
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
+  {
+    path: '/child',
+    name: 'Child',
+    component: Child
+  },  
+   {
+    path: '/parent',
+    name: 'Parent',
+    component: Parent
+  },  
+]
+const router = createRouter({ history: createWebHistory(), routes })
+export default router
+
+//src/App.js
+<template>  
+  <div id="nav">
+      <router-link to="/">Form</router-link> |
+      <router-link to="/about">Contact</router-link> |
+      <router-link to="/child">Child</router-link>
+  </div>
+  <router-view />
+
+  <h1>Vue Js</h1>
+<!--<Child />-->
+</template>
+
+<script>
+import './assets/bootstrap.css'
+//import Child from './components/Child.vue'  
+export default {
+  name: 'App',
+  components: {
+  //Child
+  }
+}
+</script>
+
+
+//src/components
+Form.vue, 
+Child.vue, 
+Contact.vue
+Parent.vue
+
+//Example: 
+<template>   
+<h1>Child</h1>
+</template>
+<script>
+export default {
+  name: 'Child',
+  props: [],
+  data(){
+   return {  
+   }
+  },
+  methods: {   
+  }
+}
+</script>
+
+
+----------------> End of Vue Router <------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+//React Form
+https://reactjs.org/docs/forms.html#the-textarea-tag
+//React Form Validation
+https://www.freecodecamp.org/news/add-form-validation-in-react-app-with-react-hook-form/
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+
+>>>> React Form <<<<<<<<<<<<<<<
+
+npm run start
+
+
+import React from 'react';
+//import { useState } from 'react';
+
+//Basic 
+class className extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render() {
+      return {
+
+      }
+  }
+}
+.............
+
+<form>
+  <label>
+    Name:
+    <input type="text" name="name" />
+  </label>
+  <input type="submit" value="Submit" />
+</form>
+
+
+//Controlled Components:
+
+import React from 'react';
+//import { useState } from 'react';
+
+class Form extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {name:'', password:''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);    
+  }
+
+  handleChange(event) {    
+    this.setState({
+      [event.target.name]:event.target.value
+    });  
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.name + "; " + this.state.password);
+    event.preventDefault();
+  }
+
+  render() {
+      return (   
+       <div className="row">
+       <div className="col-lg-4">   
+       </div>
+
+        <div className="col-lg-4">   
+        <h1 class="mt-5" >User Form</h1>  
+      <form onSubmit={this.handleSubmit} >        
+        <input type="text" value={this.state.name} name="name" onChange={this.handleChange}
+        placeholder="Name" className="form-control" />
+
+        <input type="text" value={this.state.password} name="password" placeholder="password" 
+        onChange={this.handleChange} className="form-control mt-3" />
+
+        <input type="submit" value="Submit" 
+        className="form-control btn btn-lg btn-success mt-3" />
+      </form> 
+     </div>
+    </div>     
+      );
+  }
+}
+
+export default Form;
+
+..............................
+
+//The textarea Tag 
+
+<textarea>
+  Hello there, this is some text in a text area
+</textarea>
+
+
+//Controled Component
+
+class EssayForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {      
+      value: 'Please write an essay about your favorite DOM element.'    
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {    
+    this.setState({value: event.target.value});  
+  }
+
+  handleSubmit(event) {
+    alert('An essay was submitted: ' + this.state.value);
+    event.preventDefault();
+}
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Essay:
+          <textarea value={this.state.value} onChange={this.handleChange} />        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+
+.......................
+
+//Controlled Input Null Value :
+
+
+ReactDOM.createRoot(mountNode).render(<input value="hi" />);
+
+setTimeout(function() {
+  ReactDOM.createRoot(mountNode).render(<input value={null} />);
+}, 1000);
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+>>>>> Symfony 6 Validation <<<<<<<<<<<<<<
+
+
+
+composer require symfony/validator 
+
+
+
+
+// src/Entity/User.php
+namespace App\Entity;
+
+// ...
+use Symfony\Component\Validator\Constraints as Assert;
+
+class User
+{
+    /**
+     * @Assert\NotBlank
+     */
+    private $name;
+}
+
+.........................
+
+  /**
+    * @Assert\NotBlank
+    * @Assert\Length(min=3)
+  */
+........................
+
+
+-----------------------------------------------------------------
+
+
+
+>>>>>>>> Angular Template Driver Form <<<<<<<<<<<
+
+
+// app.module.ts
+
+import { FormsModule } from '@angular/forms';
+
+
+   imports: [ 
+      FormsModule,      
+   ],
+
+
+//app.component.html
+
+<form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
+   <input type = "text" name = "emailid" placeholder = "emailid" ngModel>
+   <br/>
+   <input type = "password" name = "passwd" placeholder = "passwd" ngModel>
+   <br/>
+   <input type = "submit" value = "submit">
+</form>
+
+//app.component.ts
+
+   
+
+------------------------------------------------------------------
+------------------------------------------------------------------
+>>>>>>> Cluster <<<<<<<<
+
+Website:
+
+https://www.studyfry.com/%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%B8%E0%A5%8D%E0%A4%9F%E0%A4%B0-%E0%A4%95%E0%A4%82%E0%A4%AA%E0%A5%8D%E0%A4%AF%E0%A5%82%E0%A4%9F%E0%A4%BF%E0%A4%82%E0%A4%97-%E0%A4%95%E0%A5%8D%E0%A4%AF%E0%A4%BE
+
+
+
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+
+>>>> Javascript <<<<<<<
+
+Important JavaScript Functions Every Web Developer Should Know
+
+1. Shorten the console log
+
+const log = console.log.bind(document)
+log("does it work?")
+log("yes")
+log(5)
+
+2. Merge two arrays into one
+
+const array1 = ["one", "two", "three"]
+const array2 = ["four", "five", "six"]
+const merged = array1.concat(array2)
+console.log(merged)  //"One", "Two", "Three", "Four", "Six"
+
+3. Merge two objects into one
+
+const user = {
+  name: 'Paul Knulst',
+  gender: 'Male'
+};
+
+const article = {
+  title: 'Javascript tips',
+  data: '2022-01-20'
+};
+
+const summary = {...user, ...article}
+console.log(summary)
+
+4. Shorten an array
+
+cosnt big_array = ["one", "two", "three", "Four", "Five", "Six"]
+big_array.length = 3
+console.log(big_array)
+
+5. Shuffle an array
+const array = ["one", "two", "three", "Four", "Five", "Six"]
+array.sort( conpareFn: function(){ return Math.random() - 0.5 })
+console.log(array)
+
+6. Use isNum to verify a number
+function isNull(n) { return !isNaN(parseFloat(n)) && isFinite(n);}
+
+console.log(isNum(n:1337))         //true
+console.log(isNum(n:13.37))        //true
+console.log(isNum(n:"JavaScript")) //true
+
+7. Use isStr to verify a string
+
+console.log(isStr(value:'JavaScript')) //true
+console.log(isStr(value:345))          //false
+console.log(isStr(value:true))         //false
+
+8. Use isNull
+
+const isNull = value => === null || value === undefind;
+console.log(isNull(value:null))  //true
+console.log(isNull())            //true
+console.log(isNull(value:123))   //false
+console.log(isNull(value:"J"))   //false
+
+9. Calculate the performance of a function
+const start = performance.now();
+//some program
+const end = performance.now();
+const total = start -end
+console.log("function takes " +  "milisecond");
+
+10. Remove duplicates from an array
+
+const delDuplicates = array => [...new Set(array)]
+console.log(delDuplicates(array:["One", "Two", "Three", "Two", "Four",
+                                 "Five", "Four", "Three", "One", "Five",
+                                 "Five", "Three", "Four", "One", "Two"]))
+
+//Output: 
+//"One", "Two", "Three", "Four", "Five"
+
+11. Use logical AND/OR for conditions
+
+const input = 2 
+input == 5 && console.log("it is 5")
+input == 5 || console.log("it is not 5")
+
+'Or'
+
+function defalultsTo(arg) {
+  arg = arg || 5;
+  console.log(arg)
+}
+
+let arg1 = 2 
+let arg2 = null
+defaultsTo5(arg1) //2
+defaultsTo5(arg2) //5
+
+12. Ternary operator
+
+function temperature(temp) {
+  return (temp > 39 || temp < 35.5) ? 'Visit Doctor'
+     : (temp < 37.5 && temp > 36.5) ? 'Go Out and Play!!'
+        : (temp <= 39 && temp >= 35.5) ? 'Take Some Rest!' : ''
+}
+
+-------------------------------------------------------------
 
 
 
 
 
+>>>>> Simple React Form Validation <<<<<<<<<<<<
+
+import React from 'react'
+
+class Form extends React.Component {
+  constructor(props){
+   super(props);
+   this.state={
+    name="", 
+    password="",
+    nameError="",
+    passwordError="",
+   }
+  }
+
+valid(){
+  if(!this.state.includes("@") && this.state.password.length<5){
+    this.setState({nameError:"Invalid Name",passwordError:"Password length should be more than 5"})
+  }else if(this.state.name.includes("@")){
+    this.setState(
+     { nameError:"Invalid Name"}
+    )
+  }else if(this.password.length<5){
+    this.setState(
+     { passwordError:"Password Length should be more than 5"}
+    )
+  }else{
+    return true
+  }
+}
+
+submit(this.valid()){
+  this.setState({nameError:"",passwordError:""})
+
+  alert("Form has been submitted")
+}
+  render() {
+    return (
+     <div className="Form">
+      <h1>Form Validation</h1>
+      <input type="text" onChange={(event)=>{this.setState({name:envent.target.value})}} />
+      <p>{this.state.error}</p>
+      <input type="password" onChange={(event)=>setState({password:envent.target.value})}} />
+      <p></p>
+      <button onClick={()=>{this.submit()}}>Submit</button>
+     </div>
+    );
+  }
+
+}
+
+export default Form;
+
+---------------------------------------------------
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+>>>>>>>> React Redux <<<<<<<<<<<
 
