@@ -8,4 +8,137 @@ Hi, GitLab,
 Adding Pull Mirroring added succeed
 Mirroring is working.
 -----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+Angular Cli Commands: 
+
+
+Command 	Alias 	Description
+add 		It is used to add support for an external library to your project.
+build 	b 	It compiles an Angular app into an output directory named dist/ at the given output path. Must be executed from within a workspace directory.
+config 		It retrieves or sets Angular configuration values in the angular.json file for the workspace.
+doc 	d 	It opens the official Angular documentation (angular.io) in a browser, and searches for a given keyword.
+e2e 	e 	It builds and serves an Angular app, then runs end-to-end tests using Protractor.
+generate 	g 	It generates and/or modifies files based on a schematic.
+help 		It provides a list of available commands and their short descriptions.
+lint 	l 	It is used to run linting tools on Angular app code in a given project folder.
+new 	n 	It creates a new workspace and an initial Angular app.
+run 		It runs an Architect target with an optional custom builder configuration defined in your project.
+serve 	s 	It builds and serves your app, rebuilding on file changes.
+test 	t 	It runs unit tests in a project.
+update 		It updates your application and its dependencies. See https://update.angular.io/
+version 	v 	It utputs Angular CLI version.
+xi18n 		It extracts i18n messages from source code.
+-----------------------------------------------------------------------
+
+
+ng add Command:
+
+Syntax:
+  ng add <collection> [options]  
+
+
+  ng build <project> [options]  
+  ng b <project> [options]  
+
+  ng config <jsonPath> <value> [options]  
+
+
+  ng doc <keyword> [options]  
+  ng d <keyword> [options]  
+
+    ng e2e <project> [options]       
+    ng e <project> [options]  
+
+
+    ng generate <schematic> [options]  
+    ng g <schematic> [options]  
+
+
+Parameter Explanation:
+
+    appShell
+    application
+    class
+    component
+    directive
+    enum
+    guard
+    interface
+    library
+    module
+    pipe
+    service
+    serviceWorker
+    universal
+
+
+
+    ng generate appShell [options]  
+    ng g appShell [options]  
+
+    ng generate application <name> [options]  
+    ng g application <name> [options]  
+
+    ng generate class <name> [options]  
+    ng g class <name> [options]  
+
+    ng generate component <name> [options]  
+    ng g component <name> [options]  
+
+	ng generate directive <name> [options]  
+	ng g directive <name> [options] 
+
+    ng generate enum <name> [options]  
+    ng g enum <name> [options]  
+
+	ng generate enum <name> [options]  
+	ng g enum <name> [options]     
+
+    ng generate enum <name> [options]  
+    ng g enum <name> [options] 
+
+    ng generate interface <name> <type> [options]  
+    ng g interface <name> <type> [options]  
+
+    ng generate library <name> [options]  
+    ng g library <name> [options]  
+
+    ng generate module <name> [options]  
+    ng g module <name> [options]  
+
+    ng generate pipe <name> [options]  
+    ng g pipe <name> [options]  
+
+    ng generate pipe <name> [options]  
+    ng g pipe <name> [options]  
+
+    ng generate pipe <name> [options]  
+    ng g pipe <name> [options]  
+
+    ng generate universal [options]  
+    ng g universal [options]  
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
