@@ -13,6 +13,8 @@ Cakephp4:
 
 Laravel8:
 
+Codeigniter4: 
+
 Vue Js 2.0: vue js form,
 Vue Js 3.0:
 
@@ -54,8 +56,46 @@ https://github.com/astechedu/htmlcssjavascripttutorial
 https://github.com/astechedu/html5css3tutorial 
 https://github.com/astechedu/htmlcsstutorial
 -------------------X-----------------------------------------
-
 -------------------------------------------------------------
+-------------------------------------------------------------
+//YouTube Videos Links
+   ----> AsTechEdu <----
+
+Playlists :
+----------
+
+React App (new playlist created): 
+https://youtube.com/playlist?list=PLxAEnUvHtm9NCBIlCWt38zCPPUu2Hzxkh
+
+VueJs app: 
+https://youtube.com/playlist?list=PLxAEnUvHtm9MCnsROqNBot4yxlbasdVww
+
+Angular App: 
+https://youtube.com/playlist?list=PLxAEnUvHtm9PtdrYsSxK-sa-gD-Mu-YUJ
+
+Express: 
+https://youtube.com/playlist?list=PLxAEnUvHtm9NRbbTyahOfUwGfME4dWFv-
+
+NodeJs:
+https://youtube.com/playlist?list=PLxAEnUvHtm9PX3BV5ThIJzhqgrHoxwWBH
+
+MongoDB:
+https://youtube.com/playlist?list=PLxAEnUvHtm9PZQ6ujDRB78pGeiy7qE6hQ
+
+Ruby Programs: 
+https://youtube.com/playlist?list=PLxAEnUvHtm9O0XehRGH-5fE9i466NVMod
+
+PHP Built-in Functions: 
+https://youtube.com/playlist?list=PLxAEnUvHtm9OLtEjvO216Fuf3jt5K7Ps7
+
+
+Vedios Links: 
+
+
+
+
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
 
 Github Images: 
 
@@ -6488,8 +6528,9 @@ export default{
 
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------
+//https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
 
->>>>>> Vue cli 'Router' <<<<<<<<
+>>>>>> Vue cli Router <<<<<<<<
 
 //src/main.js
 
@@ -6979,7 +7020,840 @@ export default Form;
 ---------------------------------------------------
 
 
+>>>>>>>> React <<<<<<<<<<<
 
 
->>>>>>>> React Redux <<<<<<<<<<<
+import React, { useState } from 'react';
+
+function Example() {
+  // Declare a new state variable, which we'll call "count"  
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+
+--------------------------------------------------------
+--------------------------------------------------------
+--------------------------------------------------------
+
+>>>> Lyfe Cycle Hooks <<<<<
+
+1. Vue
+2. React 
+3. Angular
+
+
+//1. Vue Life Cycle 
+
+1. Create
+2. Mount
+3. Update
+4. Unmount
+
+Methods:
+beforeCreate()-->created()-->beforeMount()-->
+mounted()-->beforeUpdate()-->updated()-->
+beforeMounte()-->mounted()
+
+
+
+//2. React Component LifeCycle
+
+Mounting : Birth of your component
+Update: Growth of your component
+Unmount: Death of your component
+
+Methods:
+render()-->
+componentDidMount()-->
+componentDidUpdate()-->
+componentWillUnmount()
+
+
+//3. Angular
+
+Methods: 
+
+constructor-->ngOnChanges-->ngOnIt-->
+ngDoCheck-->ngAfterContentInit-->ngAfterContentChecked-->
+ngAfterViewInit-->ngAfterViewChecked-->ngOnDestroy
+
+------------------------------------------------------------------
+------------------------------------------------------------------
+>>>>> React Props <<<<<<<<<<<
+
+1. Parent to child component
+2. Child to parent component
+
+
+//1. Parent to child component
+
+//Parent Component
+
+  const user={name:"ajay",age:23}
+  return (
+    <div className="container">
+      <Form user={user} />
+    </div>
+  );
+
+
+
+//Child Component
+
+<h1>{ this.props.user.name }</h1>
+
+//2. Child to Parent
+https://javascript.plainenglish.io/how-to-pass-props-from-child-to-parent-component-in-react-d90752ff4d01
+
+//Parent Component
+import { useState } from "react";
+import Child from "./child";
+const App = () => {
+  const [Name, setName] = useState("Parent");
+
+  return (
+    <>
+      <h1>{Name}</h1>
+      <Child Changedata={(Name) => setName(Name)} />
+    </>
+  );
+};
+
+export default App;
+
+//Chid Component
+
+
+const Child = (props) => {
+  return (
+
+   <button 
+   onClick={() => props.Changedata("Child")}>
+   Change</button>
+
+  )
+};
+
+export default Child;
+
+
+
+//Example 2 Props (Child To Parent Component)
+
+//Parent Component 
+
+import React, { useState } from 'react';
+import Child from './components/Child';
+
+function App() {
+  const [name, setName] = useState("aja")
+  return (    
+    <div className="container">   
+     { name }
+     <Child changeName={(name) => { setName(name) } } />     
+    </div>
+  );
+}
+export default App;
+
+
+//Child Component
+
+import React from 'react';
+function Child(props) { 
+  return (
+    <div className="container"> 
+      <button 
+       onClick={() => props.changeName("Sohan")}>
+       Change</button>
+    </div>
+  );
+}
+export default Child;
+
+-------------------------------------------------------------
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+https://ultimatecourses.com/blog/component-events-event-emitter-output-angular-2
+
+>>>>>>> Angular Props <<<<<<<<
+
+
+1. Parent to child
+2. Child to parent 
+
+
+
+1.
+//
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <div class="app">
+      <counter [count]="initialCount"></counter>
+    </div>
+  `
+})
+export class AppComponent {
+  initialCount: number = 10;
+}
+
+
+.....
+//
+
+import { Component, Input } from '@angular/core';
+
+@Component({...})
+export class CounterComponent {
+
+  @Input()
+  count: number = 0;
+
+  increment() {
+    this.count++;
+  }
+
+  decrement() {
+    this.count--;
+  }
+
+}
+
+
+''OR''
+
+@Component({
+  selector: 'app-root',
+  template: `
+   <div class="app">
+      <counter [init]="initialCount"></counter>
+    </div>
+  `
+})
+export class AppComponent {
+  initialCount: number = 10;
+}
+
+//
+@Component({...})
+export class CounterComponent {
+
+  @Input()
+  count: number = 0;
+
+  // ...
+
+}
+
+//
+@Component({...})
+export class CounterComponent {
+
+  @Input('init')
+  count: number = 0;
+
+  // ...
+
+}
+
+----------------
+
+
+
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <div class="app">
+      Parent: {{ myCount }}
+      <counter
+        [count]="myCount"
+        (update)="countChange($event)">
+      </counter>
+    </div>
+  `
+})
+export class AppComponent {
+  myCount: number = 10;
+  countChange(event) {
+    this.myCount = event;
+  }
+}
+
+//
+@Component({...})
+export class CounterComponent {
+
+  // ...
+
+  @Output('update')
+  change: EventEmitter<number> = new EventEmitter<number>();
+
+  increment() {
+    this.count++;
+    this.change.emit(this.count);
+  }
+
+  decrement() {
+    this.count--;
+    this.change.emit(this.count);
+  }
+
+}
+
+
+https://ultimatecourses.com/blog/component-events-event-emitter-output-angular-2
+-----------------------------------------------------------
+
+
+>>>>>>> Angular Set Title <<<<<<<
+
+//app.component.ts
+
+import { Title } from '@angular/platform-browser';
+ 
+
+export class AppComponent {
+
+  constructor(private titleService: Title) { }
+
+  setTitle(newTitle: string) {
+  this.titleService.setTitle(newTitle);
+  }
+}
+
+
+//app.component.html 
+ {{ setTitle("MyTitle") }}
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+>>>>>> Angular Passing Data <<<<<<<<
+
+
+1. Parent To Child Component
+2. Child To Parent Component
+
+
+
+//1. Parent to child component
+
+
+//1. Prepare Child component to emit data
+
+// Child.ts
+
+...
+
+export class InputBookComponent implements OnInit {
+  @Output() bookTitleCreated = new EventEmitter<{ title: string }>();
+  bookTitle: string;
+  ...
+
+  onAddTitle() {
+    this.bookTitleCreated.emit({ title: this.bookTitle });
+  }
+}
+
+
+// Child.html
+
+<div>
+  <input type="text" placeholder="Write a title" [(ngModel)]="bookTitle">
+  <button (click)="onAddTitle()">Add Title</button>
+</div>
+
+
+
+//2. Bind Property in Parent Component template
+
+
+// Parent.html
+
+...
+
+<child-selector (bookTitleCreated)=onBookAdded($event)></child-selector>
+
+
+//3. Use Property in Parent Component class
+
+// Parent.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+  title = 'BindingUp';
+  favBooks = [
+    { title: 'Principles' },
+    { title: 'The Story of Success' },
+    { title: 'Extreme Economies' },
+  ];
+
+  onBookAdded(eventData: { title: string }) {
+    this.favBooks = this.favBooks.concat({
+      title: eventData.title,
+    });
+  }
+}
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
+>>>>>> Angular Passing values Between Components <<<<<<<<<
+
+ng g c user
+ng generate component user
+
+1. Parent To Child
+2. Child To Parent
+
+
+//1.Parent To Child
+
+app.component.ts        //Parent Component
+
+ name = "Ajay Sisaudiya"
+
+ data = {
+  name: "Sohan",
+  age: 23,
+  address: "Raipur Road Dehradun"
+ }
+
+ record=[
+  "Aryan Singh",
+  "24",
+  "Meerut"
+ ]
+
+//app.component.html    
+
+<user-root [username]="name" [user]="data" [record]="record"></user-root>
+
+
+//user.component.ts     //Child Component
+
+import { Component, Input, OnInit } from '@angular/core';
+
+ @Input() username
+ @Input() user
+ @Input() record
+
+ constructor(){}
+
+ ngOnInit(): void {
+  
+ }
+
+
+//user.component.html
+
+<h1>This is User HTML</h1>
+User Name From Parent : {{ username }} <br>
+
+<div>
+<h4>Object Data From Parent</h4>
+User Name: {{ user.name }}<br>
+User Age: {{ user.age }}  <br>
+User Address: {{ user.address }}<br>
+</div>
+
+<h4>Array From Parent</h4>
+<div *ngFor="let d of record">
+  {{ d }}
+</div>
+..............................
+-------------------> End <-------------------------
+
+
+-------------------> Start Forms <-----------------------------------------
+//https://blog.angular-university.io/introduction-to-angular-2-forms-template-driven-vs-model-driven/
+-----------------------------------------------------------------
+
+>>>>>> Angular Passing Data <<<<<<<<<<<
+
+1. parent to child  (done)
+
+2. Child To Parent
+
+
+//app.component.ts file
+
+parentFun(data){
+  console.log(data)
+}
+
+
+//app.component.html file
+
+<h1>App Component HTML</h1>
+<user-root (parentFun)="getName($event)"></user-root>
+
+//Child Component
+
+//child.component.ts
+
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
+ @Output() parentFun:EventEmitter<any>=new EventEmitter()
+
+ constructor(){}
+
+ ngOnInit(): void {
+  this.parentFun.emit("Hi from child")
+ }
+"OR"
+
+let item={name:"ajay",age:33}
+sendData(){
+  this.parentFun.emit(item)
+}
+
+//child.component.html
+
+<button (click)="sendData()">Send Data To Parent</button>
+
+
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------
+
+>>>>>> Angular Form <<<<<<<<<<<
+
+1. Template driven formm
+2. Reactive form
+
+
+//1. Template driven formm
+
+//src/app/hero.ts
+
+export class Hero {
+
+  constructor(
+    public id: number,
+    public name: string,
+    public power: string,
+    public alterEgo?: string
+  ) {  }
+
+}
+
+
+//src/app/hero-form/hero-form.component.ts (v1) file
+
+import { Component } from '@angular/core';
+
+import { Hero } from '../hero';
+
+@Component({
+  selector: 'app-hero-form',
+  templateUrl: './hero-form.component.html',
+  styleUrls: ['./hero-form.component.css']
+})
+export class HeroFormComponent {
+
+  powers = ['Really Smart', 'Super Flexible',
+            'Super Hot', 'Weather Changer'];
+
+  model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
+}
+
+
+const myHero =  new Hero(42, 'SkyDog',
+                       'Fetch any object at any distance',
+                       'Leslie Rollover');
+console.log('My hero is called ' + myHero.name); // "My hero is called SkyDog"
+
+
+
+//src/app/app.module.ts
+
+
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+//import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    //CommonModule,
+    FormsModule
+  ],
+  declarations: [
+    AppComponent,
+    HeroFormComponent
+  ],
+  providers: [],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+
+
+//src/app/app.component.html
+
+<app-hero-form></app-hero-form>
+
+//src/styles.css
+
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+//src/app/hero-form/hero-form.component.html (powers)
+
+<div class="form-group">
+  <label for="power">Hero Power</label>
+  <select class="form-control" id="power" required>
+    <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+  </select>
+</div>
+
+
+//Bind input controls to data properties
+//src/app/hero-form/hero-form.component.html (excerpt)
+
+<input type="text" class="form-control" id="name"
+       required
+       [(ngModel)]="model.name" name="name">
+TODO: remove this: {{model.name}}
+
+//Access the overall form status
+
+//src/app/hero-form/hero-form.component.html (excerpt)
+
+<form #heroForm="ngForm">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//2. Reactive form:
+
+//src/app/app.module.ts file
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [
+    // other imports ...
+    ReactiveFormsModule
+  ],
+})
+export class AppModule { }
+
+
+
+//src/app/name-editor/name-editor.component.ts file
+
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+@Component({
+  selector: 'app-name-editor',
+  templateUrl: './name-editor.component.html',
+  styleUrls: ['./name-editor.component.css']
+})
+export class NameEditorComponent {
+  name = new FormControl('');
+}
+
+
+//src/app/name-editor/name-editor.component.html file 
+
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name">
+
+
+//src/app/app.component.html (name editor) file
+
+<app-name-editor></app-name-editor>
+
+
+
+//src/app/name-editor/name-editor.component.html (control value) file
+
+<p>Value: {{ name.value }}</p>
+
+
+//src/app/name-editor/name-editor.component.ts (update value) file
+
+updateName() {
+  this.name.setValue('Nancy');
+}
+
+
+//src/app/name-editor/name-editor.component.html (update value) file
+
+<button type="button" (click)="updateName()">Update Name</button>
+
+
+
+
+//Example 02: Angular Reactive form
+
+<h1>{{ title }}</h1>
+<form [FormGroup]="loginForm" (ngSunmit)="loginuser()">
+  <input type="text" placeholder="Enter Name" name="user" formControlName="user"> <br>
+  <input type="password" placeholder="Enter Password" name="password" formControlName="password"> <br>
+  <button>Login</button>
+</form>
+
+//app.modules.ts file
+
+import { ReactiveFormModule } from '@angular/forms'
+
+@import:[ReactiveFormModule]
+
+
+//app.component.ts file
+
+import {FormContro, FormGroup} from "@angular/forms"
+
+export class AppComponent {
+  title="Angular Reactive Form";
+
+  loginForm = new FormGroup({
+    user:new FormContrle("ajay"),
+    password:new FormControl("ajay123")
+  })
+
+ loginuser(){
+  console.log(this.loginForm.value)
+ }
+
+}
+
+
+--------> End of Angular Reactive Form <-----------
+
+
+
+
+>>>>>> Next Js Installation <<<<<<<<<<
+
+
+
+
+----------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---->>>> Patanjali Medicines <<<<<<<---
+
+
+
+............
+--> Any soiling & Foilariya <--
+punarnavadi mandur -> Liver & Intestine Soiling
+chandraprabh vait -> (no need any pain killer, joint pains)
+
+............
+--> Punarnavarist -> Instestine soiling (4-4 spoon)
+punarnavadi mandur -> Any Soiling (Liver & Intestine)
+arogyavardhini vati -> any body infection (neem, tulsi, aloye vera)
+............
+
+
+Medha vati -> Brain Pain (3 tabs 0-0-0)
+............
+
+Swasari vati -> sans(lungs problem) ki problem
+............
+
+Vatari Churan -> any pain, bones pain, back pain
+.............
+
+chitrari vati & arogyavardhini vati & punaravarist juice -> for digetion
+
+
+..............
+:)For Acidity: 
+
+->abipattikar churan(kam acidity) & kaamdudha rus(jayada acidity hone pare) : 1-1 spoon milana hai fresh water( 1-1-1 spoons)
+OR
+->Hritaki churna (bahut kam acidity)
+OR
+->Aloyvera & aanwla ke joice (bahut kam acidity)
+.............
+
+
+//Natural remedies for ulcerative colitis | Patanjali Kutajarishta
+
+Kutajarishta brings relief to you from chronic indigestion problems, upset stomach, diarrhoea, fever, etc. Kutajghan Vati eliminates viruses and organisms from the digestive tract and soothes your stomach ulcers and aids in digestion. ChitrakadiVati stimulates production of digestive enzymes, increases absorption of food and soothes hyper acidity in stomach. 
+
+
+कुटजारिष्ट(Kutajarishta) आपको पुरानी अपच की समस्याओं, पेट की खराबी, दस्त, बुखार आदि से राहत दिलाता है। कुटजघन वटी पाचन तंत्र से वायरस और जीवों को खत्म करती है और आपके पेट के अल्सर और पाचन में सहायक होती है। चित्रकादिवटी पाचन एंजाइमों के उत्पादन को उत्तेजित करता है, भोजन के पाचन को बढ़ाता है। 
+
+
+------------------------------------------------------------------
+
+
 
