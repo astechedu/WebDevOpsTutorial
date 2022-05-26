@@ -18,7 +18,8 @@ Codeigniter4:
 Vue Js 2.0: vue js form,
 Vue Js 3.0:
 
-React js : react form
+React js : react form, e.target.value in function component,
+Angular: template driven form, reactive form,
 
 Computer: cluster
 
@@ -6835,6 +6836,29 @@ import { FormsModule } from '@angular/forms';
 
    
 
+
+
+
+//Example 02:   (Template driven form)
+
+Template-driven forms are just model-driven forms but driven by directives in the the template versus code in the component.
+In template-driven we use directives to create the model.
+
+In model-driven we create a model on the component and then use directives to map elements in the template to our form model.
+
+>>Important<<
+
+Remove all the formGroup, formGroupName, formControl and formControlName directives from our template, these are from the ReactiveFormsModule and used for model-driven forms. 
+
+
+
+
+
+
+
+
+
+
 ------------------------------------------------------------------
 ------------------------------------------------------------------
 >>>>>>> Cluster <<<<<<<<
@@ -7042,14 +7066,14 @@ function Example() {
 --------------------------------------------------------
 --------------------------------------------------------
 
->>>> Lyfe Cycle Hooks <<<<<
+>>>> Life Cycle Hooks, lifecycle, lyfecycle<<<<<
 
 1. Vue
 2. React 
 3. Angular
 
 
-//1. Vue Life Cycle 
+//1. Vue Lifecycle hooks, lifecycle
 
 1. Create
 2. Mount
@@ -7063,7 +7087,7 @@ beforeMounte()-->mounted()
 
 
 
-//2. React Component LifeCycle
+//2. React Lifecycle hooks
 
 Mounting : Birth of your component
 Update: Growth of your component
@@ -7076,7 +7100,7 @@ componentDidUpdate()-->
 componentWillUnmount()
 
 
-//3. Angular
+//3. Angular lifecycle hooks
 
 Methods: 
 
@@ -7540,14 +7564,17 @@ sendData(){
 
 
 --------------------------------------------------------------------
-
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+https://www.simplilearn.com/tutorials/angular-tutorial/angular-forms
+--------------------------------------------------------------------
 >>>>>> Angular Form <<<<<<<<<<<
 
-1. Template driven formm
+1. Template driven form
 2. Reactive form
 
 
-//1. Template driven formm
+//1. Template driven form
 
 //src/app/hero.ts
 
@@ -7568,6 +7595,7 @@ export class Hero {
 import { Component } from '@angular/core';
 
 import { Hero } from '../hero';
+import { NgForm } from '@angular/forms'; 
 
 @Component({
   selector: 'app-hero-form',
@@ -7581,17 +7609,20 @@ export class HeroFormComponent {
 
   model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
 
-  submitted = false;
+  //submitted = false;
+  //onSubmit() { this.submitted = true; }
 
-  onSubmit() { this.submitted = true; }
+  ngOnInit(): void {
+    //console.log('My hero is called ' + this.model.name); // "My hero is called SkyDog"
+  }
 
+  onSubmit(formData : NgForm){
+    //console.log("Form Submitted !" + this.model.name)
+    //console.log("Form Submitted !" + this.model.alterEgo)
+    console.log(formData.value)
+
+  }
 }
-
-
-const myHero =  new Hero(42, 'SkyDog',
-                       'Fetch any object at any distance',
-                       'Leslie Rollover');
-console.log('My hero is called ' + myHero.name); // "My hero is called SkyDog"
 
 
 
@@ -7652,17 +7683,18 @@ TODO: remove this: {{model.name}}
 
 //src/app/hero-form/hero-form.component.html (excerpt)
 
-<form #heroForm="ngForm">
 
+'OR'
+<form (ngSubmit)="onSubmit(formData)" #formData="ngForm">
+  <label for="name">Name</label>
+  <input type="text" class="form-control" id="name"
+         required
+         [(ngModel)]="model.name" name="name" #name="ngModel">
 
+</form>
 
-
-
-
-
-
-
-
+'OR'
+<button (click)="onSubmit(formData)">Submit</button>
 
 
 
@@ -7670,6 +7702,8 @@ TODO: remove this: {{model.name}}
 
 
 //2. Reactive form:
+
+Example 01: 
 
 //src/app/app.module.ts file
 
@@ -7696,7 +7730,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./name-editor.component.css']
 })
 export class NameEditorComponent {
-  name = new FormControl('');
+  name = new FormControl('');       
 }
 
 
@@ -7727,11 +7761,69 @@ updateName() {
 //src/app/name-editor/name-editor.component.html (update value) file
 
 <button type="button" (click)="updateName()">Update Name</button>
+.....
 
 
+//Example 02: Angular Reactive Form (Working)
 
+//app.component.ts file
 
-//Example 02: Angular Reactive form
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserComponent } from './user/user.component';
+
+@NgModule({
+  declarations: [
+    UserComponent,
+  ],
+  imports: [
+    ReactiveFormsModule,
+  ],  
+}]
+
+//app.component.html
+
+<h1>App Component HTML</h1>
+<user-root></user-root>
+
+//user.component.ts
+
+import { FormControl,FormGroup} from "@angular/forms";
+
+@Component({
+  selector: 'user-root',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
+})
+
+ constructor(){} 
+ ngOnInit(){}
+
+  userForm = new FormGroup({
+    username:new FormControl('ajay'),
+    password:new FormControl('ajay123')
+  })
+
+  loginuser(){
+    console.log(this.userForm.value);
+  }
+
+//user.component.html
+
+<h4>Child: User</h4>
+
+<form [formGroup]="userForm" (ngSubmit)="loginuser()">
+  <input type="text" formControlName="username" placeholder="Enter Name"> <br>
+  <input type="text" formControlName="password" placeholder="Enter Password"> <br>
+  <input type="submit" name="submit" value="Login">
+</form>
+
+OR
+<button (ngSubmit)="loginuser()">Login</button>
+
+......
+
+//Example 03: Angular Reactive form (Not cheked)
+
 
 <h1>{{ title }}</h1>
 <form [FormGroup]="loginForm" (ngSunmit)="loginuser()">
@@ -7742,20 +7834,20 @@ updateName() {
 
 //app.modules.ts file
 
-import { ReactiveFormModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 
-@import:[ReactiveFormModule]
+@import:[ReactiveFormsModule]
 
 
 //app.component.ts file
 
-import {FormContro, FormGroup} from "@angular/forms"
+import {FormControl, FormGroup} from "@angular/forms"
 
 export class AppComponent {
   title="Angular Reactive Form";
 
   loginForm = new FormGroup({
-    user:new FormContrle("ajay"),
+    user:new FormControl("ajay"),
     password:new FormControl("ajay123")
   })
 
@@ -7766,7 +7858,24 @@ export class AppComponent {
 }
 
 
+
+//Some more 
+
+console.log(this.loginForm['name'].value)
+console.log(this.loginForm[0].value)
+console.log(this.loginForm.formControl['name'])
+
+
 --------> End of Angular Reactive Form <-----------
+
+
+
+
+
+
+
+
+
 
 
 
@@ -7774,7 +7883,9 @@ export class AppComponent {
 >>>>>> Next Js Installation <<<<<<<<<<
 
 
-
+Next. js is a React framework that gives you building blocks to create web applications. 
+By framework, we mean Next. js handles the tooling and configuration needed for React, 
+and provides additional structure, features, and optimizations for your application.
 
 ----------------------------------------------------
 
@@ -7782,12 +7893,191 @@ export class AppComponent {
 
 
 
+>>>>>> Nuxt JS Installation <<<<<<<<<<
+
+
+Nuxt(NuxtJs) is a frontend framework built upon Vue. js that offers great development features such as server side rendering, automatically generated routes, improved meta tags managing and SEO improvement.
+
+>>Using create-nuxt-app:
+
+yarn create nuxt-app <project-name>
+
+cd <project-name>
+yarn dev
+
+..................................
+npm init nuxt-app <project-name>
+
+cd <project-name>
+npm run dev
+
+...................................
+npx create-nuxt-app <project-name>
 
 
 
 
+>>Manual Installation:
 
 
+mkdir <project-name>
+cd <project-name>
+
+
+Create the package.json file:
+
+Install Nuxt 
+
+npm install nuxt
+yarn add nuxt
+
+
+Create your first page:
+
+mkdir pages
+
+pages/index.vue
+
+<template>
+  <h1>Hello world!</h1>
+</template>
+
+yarn dev
+
+npm run dev
+
+http://localhost:3000
+
+
+----------------------------------------------------
+
+
+>>>>> Nest Js App Installation <<<<<
+
+SSR (Server Side Rendering)
+SSG (Static-Site Generating)
+SEO (Search Engine Obtinization)
+Introduction. Nest (NestJS) is a framework for building efficient, scalable Node.
+
+$ npm i -g @nestjs/cli
+$ nest new project-name
+
+Alternatives:
+
+$ git clone https://github.com/nestjs/typescript-starter.git project
+$ cd project
+$ npm install
+$ npm run start
+
+------------------------------------------------------------------------------------
+
+
+>>> React Loop <<<<<<
+
+updatedNums(){
+  this.state.records.map((number) => {
+   return "<li>" + {number} + "</li>"
+  })
+}
+..............
+const products = ['orange', 'apple', 'watermelon']
+const list = []
+
+products.forEach((product) => {
+  list.push(<li>{product}</li>)
+})
+
+return (
+ <div>
+  {list}
+ </div>
+)
+................
+
+//Product is non unique
+
+const list = products.map(product => <li key={product}>{product}</li>)
+return (
+ <div>
+  {list}
+ </div>
+)
+
+//with key
+
+const list = products.map(({info, key}) => <li key={key}>{info}</li>)
+
+
+//React Lifecycle Methods: 
+
+1. Mounting  //Birth of your component
+2. Update    //Growth of your component
+3. Unmount   //Death of your component
+
+
+render(), componentDidMount(), componentDidUpdate(), 
+componentWillUnmount(), 
+
+//
+shouldComponentUpdate(), 
+
+//static new
+getDrivedStateFromProps()
+
+getSnapshotBeforeUpdate()
+
+
+
+// axios
+
+const baseURL="https://jsonplacehoder.typicode.com/posts"
+
+axios.get('${baseURL}/1').then((response) => setPost(response.data))
+
+
+
+//mysql connection 
+------------------------------------------------
+
+
+>>>> React Function Component <<<<<<<
+
+Form Controls: e.target.value
+
+
+import React, {useState} from 'react';
+import '../style.css';
+
+function Registration() { 
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [password, setPassword] = useState("");
+
+  //const [confirmPassword, setConfirmPassword] = useState("");
+
+    return(
+    <> 
+    <form>
+      <h1>User Form</h1>
+                   
+      <input type="text" name="firstname" value={firstname} placeholder="First Name" onChange={(e) => setFirstname(e.target.value)} className="form-control mt-5" />      
+      <input type="text" name="lastname" value={lastname} placeholder="LastName" onChange={(e) => setLastname(e.target.value)} className="form-control mt-2" />             
+      <input type="password" name="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} className="form-control mt-2" />             
+      <input type="submit" name="submit" value="Register" className="form-control mt-2 btn btn-info" />
+        
+    </form> 
+    First Name: {firstname}<br />
+    Last Name: {lastname} <br/>
+    Password: {password}
+    </>   
+    );
+         
+}
+export default Registration;
+
+
+
+-------------------------------------------------
 
 
 
@@ -7809,7 +8099,6 @@ export class AppComponent {
 ---->>>> Patanjali Medicines <<<<<<<---
 
 
-
 ............
 --> Any soiling & Foilariya <--
 punarnavadi mandur -> Liver & Intestine Soiling
@@ -7822,7 +8111,7 @@ arogyavardhini vati -> any body infection (neem, tulsi, aloye vera)
 ............
 
 
-Medha vati -> Brain Pain (3 tabs 0-0-0)
+Medha vati -> Brain Pain (3 tabs 1-1-1)
 ............
 
 Swasari vati -> sans(lungs problem) ki problem
@@ -7837,21 +8126,34 @@ chitrari vati & arogyavardhini vati & punaravarist juice -> for digetion
 ..............
 :)For Acidity: 
 
-->abipattikar churan(kam acidity) & kaamdudha rus(jayada acidity hone pare) : 1-1 spoon milana hai fresh water( 1-1-1 spoons)
+->abipattikar churan(kam acidity) & kaamdudha rus(jayada acidity hone par) : 1-1 spoon milana hai fresh water( 1-1-1 spoons)
 OR
 ->Hritaki churna (bahut kam acidity)
 OR
-->Aloyvera & aanwla ke joice (bahut kam acidity)
+->Aloyvera & aanwla ke juice (bahut kam acidity)
 .............
 
 
+->khadiravati : bahut khansi,jukham ke liye,purani khansi
+
+
+-> Harvel hair expert oil-> for hair
+
 //Natural remedies for ulcerative colitis | Patanjali Kutajarishta
 
-Kutajarishta brings relief to you from chronic indigestion problems, upset stomach, diarrhoea, fever, etc. Kutajghan Vati eliminates viruses and organisms from the digestive tract and soothes your stomach ulcers and aids in digestion. ChitrakadiVati stimulates production of digestive enzymes, increases absorption of food and soothes hyper acidity in stomach. 
+Kutajarishta brings relief to you from chronic indigestion problems, upset stomach, diarrhoea, fever, etc. 
 
+Kutajghan Vati eliminates viruses and organisms from the digestive tract and soothes your stomach ulcers and aids in digestion. 
 
-कुटजारिष्ट(Kutajarishta) आपको पुरानी अपच की समस्याओं, पेट की खराबी, दस्त, बुखार आदि से राहत दिलाता है। कुटजघन वटी पाचन तंत्र से वायरस और जीवों को खत्म करती है और आपके पेट के अल्सर और पाचन में सहायक होती है। चित्रकादिवटी पाचन एंजाइमों के उत्पादन को उत्तेजित करता है, भोजन के पाचन को बढ़ाता है। 
+ChitrakadiVati stimulates production of digestive enzymes, increases absorption of food and soothes hyper acidity in stomach. 
+..
 
+कुटजारिष्ट(Kutajarishta) आपको पुरानी अपच की समस्याओं, पेट की खराबी, दस्त, बुखार आदि से राहत दिलाता है। 
+
+कुटजघन वटी पाचन तंत्र से वायरस और जीवों को खत्म करती है और आपके पेट के अल्सर और पाचन में सहायक होती है। 
+
+चित्रकादिवटी पाचन एंजाइमों के उत्पादन को उत्तेजित करता है, भोजन के पाचन को बढ़ाता है। 
+...................
 
 ------------------------------------------------------------------
 
