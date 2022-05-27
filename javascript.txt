@@ -9,6 +9,14 @@ Built-in Functions:
 
 splice(), map(), push()
 
+map(), filter(), reduce(), some(), every(), includes(), slice(), splice().
+
+‎map(), filter(), reduce(), slice()
+
+eval(), parseInt(), parseFloat(), escape(), unscape(), 
+
+write(), alert()
+
 
 --------------------------------------
 --------------------------------------
@@ -21,4 +29,254 @@ The splice() method overwrites the original array.
 Ex: anyArray.splice(index,1)
 ...............
 
+
+>>>>> Javascript Predefined Functions <<<<<<<<<<
+
+
+map(), filter(), reduce(), some(), every(), includes(), slice(), splice().
+
+‎map(), filter(), reduce(), slice()
+
+eval(), parseInt(), parseFloat(), escape(), unscape(), 
+
+write(), alert()
+
+
+
+1. Shorten the console log
+
+const log = console.log.bind(document)
+log("does it work?")
+log("yes")
+log(12)
+
+2. Merge two arrays into one
+
+ const array1 = ["one", "two", "three"]
+ const array2 = ["four", "five", "six"]
+ const merged = array1.concat(array2)
+
+ console.log(merged) // "one", "two", "three", "four", "five", "six"
+
+3. Merge two objects into one
+
+ const User = {
+    name: "ajay sisaudiya",
+    gender: "Male"
+ };
+
+ const article = {
+    title: "Javascript tips",
+    data: '2022-06-01'
+ };
+
+ const summary = {...User, ...article}
+
+ 4. Shorten an array
+ const array1 = ["One", "Two", "Three", "Four", "Five", "Six"]
+ big_array.length = 3
+ console.log(big_array)  //["One", "Two", "Three"]
+ 
+ 5. Shuffle an array
+ const array1 = ["One", "Two", "Three", "Four", "Five", "Six"]
+ array.sort(compareFn: function(){ return Math.random() - 0.5})
+ console.log(array)
+
+ 6. Use isNum to verify a number
+
+ console.log(isNum(n:1338))  //true
+ console.log(isNum(n:13.38))  //true
+ console.log(isNum(n:"Javascript"))  //false
+
+ 7. Use isStr to verify a string
+
+ const isStr = value => typeof value === 'string';
+
+ console.log(isStr(value:'JavaScript'));   //true
+ console.log(isStr(value:346));           //false
+ console.log(isStr(value:true));         //false
+
+8. Use isNull
+
+const isNull = value => value === null || value === undefinced;
+
+console.log(isNull(value:null))     // true
+console.log(isNull())              //  true
+console.log(isNull(value:123))    //   false
+console.log(isNull(value:"J"))   // false
+
+9. Calculate the performance of a function
+
+const start = performance.now();
+//some program
+const end = performance.now();
+const total = start - end
+console.log("function takes " + total + " milisecond");
+
+10. Remove duplicates from an array
+
+const delDuplicates = array => [...new Set(array)]
+console.log(delDuplicates(array:["One", "Two", "Three", "Two", "Four",
+                                 "Five", "Four", "Three", "One", "Five",
+                                 "Five", "Three", "Four", "One", "Two"
+                                 ]))
+
+11. Use logical AND/OR for conditions
+
+const input = 2 
+input === 5 && console.log("it is 5")
+input === 5 || console.log("it is not 5")
+
+or for assigning values:
+
+function defaultsTo5(arg){
+  arg = arg || 5; arg will have 5 as a default value if not set
+  console.log(arg)
+}
+
+let arg1 = 2
+let arg2 = null
+defaultsTo5(arg1) //2
+defaultsTo5(arg2) //5
+
+
+12. Ternary operator
+
+function temperature(temp) {
+  return (temp > 39 || temp < 35.5) ? 'Visit Doctor!'
+    : (temp < 37.5 && temp > 36.5) ? 'Go Out and Play!!'
+      : (temp <= 39 && temp >= 35.5) ? 'Take Some Rest!' : ''
+}
+
+console.log(temperature(temp:38))   // Take Some Rest!
+console.log(temperature(temp:36))   // Take Some Rest!
+console.log(temperature(temp:39.1)) // Visit Doctor!
+console.log(temperature(temp:35.1)) // Visit Doctor!
+console.log(temperature(temp:37))   // Go Out and Play
+
+
+
+1.Spread operator
+2.for…of iterator
+3.includes()
+4.some()
+5.every()
+6.filter()
+7.map()
+8.reduce()
+
+
+1. Spread operator
+
+const favouriteFood = ['Pizza', 'Fries', 'Swedish-meatballs'];
+console.log(...favoriteFood);
+
+//Pizza Fries Swedish-meatballs
+
+2. for…of iterator
+
+const toolBox = ['Hammer', 'Screwdriver', 'Ruler']
+
+for(const item of toolBox){
+  console.log(item)
+}
+
+//Hammer
+//Screwdrive
+//Ruler
+
+3. Includes() method
+
+const garage = ['BMW', 'AUDI', 'VOLVO'];
+const findCar = garage.includes('BMW');
+
+console.log(findCar)      // true
+
+4. Some() method
+
+ES5:
+
+ const age = [15, 13, 17];
+ age.some(function(person){
+   return person >= 17
+ })                              //true
+
+ES6: 
+
+ const age = [15, 13, 17];
+ age.some((person) => person >= 17)    //true
+
+5. Every() method
+
+ES5: 
+
+const age = [15, 20, 19];
+   age.every(function(person){
+    return person >= 18;
+   })                           //Output: false
+
+
+ES6: 
+
+const age = [15, 20, 19];
+age.every((person) => person >= 18); //Output: false
+
+6. Filter() method
+
+ES5: 
+
+const prices = [25, 30, 15, 55, 40, 10];
+prices.filter(function(){
+  return price >= 30;
+});                   //Output: [30, 55, 40]
+
+
+ES6:
+
+const prices = [25, 30, 15, 55, 40, 10];
+prices.filter((price) => price >= 30)
+
+// [30, 55, 40]
+
+
+7. Map() method
+
+ES5:
+
+const productPriceList = [200, 350, 1500, 5000];
+productPriceList.map(function(item){
+  return item * 0.75;
+});
+
+// [150, 262.5, 1125, 3750]
+
+ES6: 
+
+const productPriceList = [200, 350, 1500, 5000];
+productPriceList.map((item) => item * 0.75);
+
+// [150, 262.5, 1125, 3750]
+
+
+8. Reduce() method
+
+ES5: 
+
+const weeklyExpresses = [200, 350, 1500, 5000, 450, 680, 350]
+
+weeklyExpensses.reduce(function(first, last){
+  return first + last;
+});
+
+//8530
+
+ES6: 
+
+const weeklyExpresses = [200, 350, 1500, 5000, 450, 680, 350]
+
+weeklyExpensses.reduce((first, last) => first + last);
+
+//8530
+--------------------------------------------------------------------
+------------------------------------------------------------------------
 
