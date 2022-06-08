@@ -1,0 +1,73 @@
+
+>>>> Development Info <<<<<<<<<<
+
+----------------------------------------
+----------------------------------------
+Keys: 
+      next.js, 
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+----------------------------------------
+
+
+>>>>>>  Next Js ( next.js) <<<<<<<<<<<<<
+
+
+A Server Side Rendering Framework
+
+ Youtube Channel ( Hindi ) : ILive4Codding
+
+
+PWAs, 
+Production, 
+Static Websites, 
+SEO friendly website,
+the Desktop, 
+Electron, 
+Pre-Rendered Apps,
+the Jamstack,
+
+
+
+What is use of server side rendering?
+
+1. SEO Crawlers can read the site content easily
+
+
+What to use Next Js?
+
+ -Pre-Rendering - Server side or Static Site Generation
+
+
+-No setup for Server Side Rendering of React App
+-Easy concepts or Page Creation
+-No Configuration Routing
+-Automatice code splitting
+-Dynamic routing
+
+
+
+What are Pages in Next.JS
+
+-We just add files in pages folder to create a new page
+
+......
+
+Two forms of Pre-rendering:
+
+Next.js has two forms of pre-rendering: 
+
+    Static Generation and Server-side Rendering. The difference is in when it generates the HTML for a page.
+
+    Static Generation (Recommended): The HTML is generated at build time and will be reused on each request.
+    Server-side Rendering: The HTML is generated on each request.
+
+-----------------------------------------------------------------------
+
+
+
