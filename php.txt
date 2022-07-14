@@ -3,7 +3,8 @@
 
 ---------------------------------------
 
-
+Keys: 
+  password hash, password identify, header
 ----------------------------------------
 ----------------------------------------
 ----------------------------------------
@@ -21,3 +22,48 @@ exit()
 Flags:
 
 PHP_URL_PATH
+
+
+-------------------------------------------
+-------------------------------------------
+>> Password Hash <<
+
+//Content Type
+
+//-----Content Types In PHP--------------
+
+//header("Content-Type:application/json");
+//header("Content-Type:application/pdf");
+//header("Content-Type:image/png");
+//header("Content-Type:video/mp4");
+
+//header('Access-Control-Allow-Origin:*')
+//header('Access-Control-Allow-Methods: GET, POST')
+//header('Access-Control-Allow-Headers: ')
+
+//-----Content Types In PHP -------------
+
+
+//Password Hashing
+
+
+//echo md5("Ajay Sisaudiya"); echo "<br>";
+//echo sha1("Ajay Sisaudiya"); echo "<br>";
+//echo crypt("Ajay Sisaudiya",10); echo "<br>";
+//echo base64_encode("Ajay Sisaudiya"); echo "<br>";
+//echo base64_decode("QWpheSBTaXNhdWRpeWE="); echo "<br>";
+//echo password_hash("Ajay Sisaudiya",PASSWORD_DEFAULT); echo "<br>";
+//echo password_hash("Ajay Sisaudiya", PASSWORD_BCRYPT ); echo "<br>";
+//echo password_hash("Ajay Sisaudiya", PASSWORD_ARGON2I ); echo "<br>";
+//echo password_hash("Ajay Sisaudiya", PASSWORD_ARGON2ID ); echo "<br>";
+
+//password_verify() - Verifies that a password matches a hash
+//crypt() - One-way string hashing
+//» userland implementation
+//sodium_crypto_pwhash_str() - Get an ASCII-encoded hash
+
+
+-------------------------------------------
+-------------------------------------------
+-------------------------------------------
+-------------------------------------------

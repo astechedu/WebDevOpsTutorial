@@ -18,7 +18,7 @@ Keys:
 
 //I did successfully it (Good)
 
-//Settings->System->Storage->free up space now (Not Done)
+//Settings->System->Storage->free up space now (Done)
 
 
 //Press ctrl + shift + del (Done)
