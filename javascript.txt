@@ -17,6 +17,9 @@ eval(), parseInt(), parseFloat(), escape(), unscape(),
 
 write(), alert()
 
+Object.create(),Object.create(),Object.keys(),Object.values(),Object.entries()
+Object.freeze(),Object.seal();Object.getPrototypeOf()
+
 
 --------------------------------------
 --------------------------------------
@@ -279,4 +282,115 @@ weeklyExpensses.reduce((first, last) => first + last);
 //8530
 --------------------------------------------------------------------
 ------------------------------------------------------------------------
+
+ES6: Object
+
+//Details: Website Links
+//https://www.digitalocean.com/community/tutorials/how-to-use-object-methods-in-javascript
+
+--> Operations On Objects
+
+Object.assign(obj,objnew);
+Object.create(obj);
+Object.keys(obj);
+Object.values(obj);
+Object.entries(obj);  
+Object.freeze(obj);
+Object.seal(obj)
+Object.getPrototypeOf(obj)
+
+
+Example 01:
+----------- 
+           //Object.create();
+
+// Initialize an object with properties and methods
+const job = {
+    position: 'cashier',
+    type: 'hourly',
+    isAvailable: true,
+    showDetails() {
+        const accepting = this.isAvailable ? 'is accepting applications' : "is not currently accepting applications";
+
+        console.log(`The ${this.position} position is ${this.type} and ${accepting}.`);
+    }
+};
+
+// Use Object.create to pass properties
+const barista = Object.create(job);
+
+barista.position = "barista";
+barista.showDetails();
+
+
+Example 02: 
+-----------
+           //Object.keys()
+
+// Initialize an object
+const employees = {
+  boss: 'Michael',
+  secretary: 'Pam',
+  sales: 'Jim',
+  accountant: 'Oscar'
+};
+
+// Get the keys of the object
+const keys = Object.keys(employees);
+
+console.log(keys);
+
+
+// Iterate through the keys
+Object.keys(employees).forEach(key => {
+    let value = employees[key];
+
+   console.log(`${key}: ${value}`);
+});
+
+
+Example 03:
+----------
+              // Object.values()
+
+// Initialize an object
+const session = {
+    id: 1,
+    time: `26-July-2018`,
+    device: 'mobile',
+    browser: 'Chrome'
+};
+
+// Get all values of the object
+const values = Object.values(session);
+
+console.log(values);
+
+
+Example 04: 
+             // Object.entries()
+
+// Initialize an object
+const operatingSystem = {
+    name: 'Ubuntu',
+    version: 18.04,
+    license: 'Open Source'
+};
+
+// Get the object key/value pairs
+const entries = Object.entries(operatingSystem);
+
+console.log(entries);
+
+
+// Loop through the results
+entries.forEach(entry => {
+    let key = entry[0];
+    let value = entry[1];
+
+    console.log(`${key}: ${value}`);
+});
+
+
+-------------------------------------------------------------------------
 
