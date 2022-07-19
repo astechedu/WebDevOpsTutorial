@@ -1,0 +1,362 @@
+
+>>>>>>>> Vue 3  <<<<<<<<<
+
+
+--------------------------------------
+Keys:
+vue3 js:
+   submit form, validation, props, router
+   store, actions, mutations, getters
+--------------------------------------
+Mirroring started
+--------------------------------------
+--------------------------------------
+
+//Component.vue
+
+<template>
+</template>
+
+<script>
+export default {
+	
+}
+</script>
+
+<style>
+</style>
+
+---------------------------------------
+---------------------------------------
+
+Getting Started:
+
+Install:
+
+npm install -g @vue/cli
+# OR
+yarn global add @vue/cli
+
+Create a project:
+
+vue create my-project
+# OR
+vue ui
+
+---------------------------------------
+---------------------------------------
+
+
+>>>> Vue 3 Vuex Store <<<<<<<
+
+
+
+Website:
+         https://learnvue.co/tutorials/vuex-in-vue-3
+
+
+
+npm install vuex@next
+
+
+
+--> main.js file
+
+
+import { createApp } from "vue";
+import { createStore } from "vuex";
+// Create a new store instance or import from module.
+const store = createStore({
+  /* state, actions, mutations */
+});
+const app = createApp();
+app.use(store);
+app.mount("#app");
+
+
+
+--> Vuex State
+
+import { createApp } from "vue";
+import { createStore } from "vuex";
+const store = createStore({
+  state: {
+    count: 0,
+  },
+});
+const app = createApp();
+app.use(store);
+app.mount("#app");
+
+
+--> Access Vuex State - Options API
+
+<script>
+export default {
+  mounted() {
+    console.log(this.$store.state.count) // this.$store
+  },
+}
+</script>
+
+
+<template>{{ count }}</template>
+<script>
+export default {
+  computed: {
+    count() {
+      return this.$store.state.count
+    },
+  },
+}
+</script>
+
+
+
+--> Using Vuex mapState
+
+
+<script>
+import { mapState } from 'vuex'
+export default {
+  computed: mapState({
+    count: 'count',
+    // OR
+    count: (state) => state.count,
+    // OR IF WE NEED ACCESS TO `this`
+    countPlusMultiplier(state) {
+      return state.count + this.multiple
+    },
+  }),
+}
+</script>
+
+
+
+--> Access Vuex State - Composition API
+
+
+<script setup>
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+const store = useStore()
+const count = computed(() => store.state.count)
+</script>
+<template>{{ count }}</template>
+
+
+--> Using Vuex Helpers in the Composition API
+
+npm install vuex-composition-helpers@next
+
+<script setup>
+import { useState, useActions } from 'vuex-composition-helpers/dist'
+
+const { count } = useState(['count'])
+</script>
+
+<template>{{ count }}</template>
+
+
+==>> ( Vuex Mutations  )
+
+const store = createStore({
+  state: {
+    count: "",
+  },
+  mutations: {
+    INCREMENT_COUNT(state, payload) {
+      state.count += payload;
+    },
+  },
+});
+
+
+--> 
+
+// Option 1
+store.commit('INCREMENT_COUNT', 5)
+// Option 2
+store.commit({
+  type: 'INCREMENT_COUNT',
+  amount: 5,
+})
+
+-->
+
+<template>
+  {{ count }}
+  <button @click="store.commit('INCREMENT_COUNT', 1)">Increment</button>
+</template>
+
+
+
+---> Mapping Vuex Mutations - Options API
+
+<template>
+  {{ count }}
+  <button @click="INCREMENT_COUNT(1)">Increment</button>
+</template>
+<script>
+import { mapMutations } from 'vuex'
+export default {
+  computed: {
+    count() {
+      return this.$store.state.count
+    },
+  },
+  methods: mapMutations(['INCREMENT_COUNT']),
+}
+</script>
+
+
+--> Mapping Vuex Mutations - Composition API
+
+<script setup>
+import { useState, useMutations } from 'vuex-composition-helpers/dist'
+const { count } = useState(['count'])
+const { INCREMENT_COUNT } = useMutations(['INCREMENT_COUNT'])
+console.log(useMutations)
+</script>
+<template>
+  {{ count }} <button @click="INCREMENT_COUNT(1)">Increment</button>
+</template>
+
+
+===> ( Vuex Actions )
+
+
+const store = createStore({
+  state: {
+    count: 0,
+  },
+  mutations: {
+    INCREMENT_COUNT(state, payload) {
+      state.count += payload;
+    },
+  },
+  actions: {
+    incrementCount(context, payload) {
+      context.commit("INCREMENT_COUNT", payload);
+    },
+  },
+});
+
+
+--> 
+
+const store = createStore({
+  // ...
+  actions: {
+    incrementCount(context, payload) {
+      setTimeout(() => {
+        context.commit("INCREMENT_COUNT", payload);
+      }, 1000);
+    },
+  },
+  // ...
+});
+
+
+==>  ( Mapping Vuex Actions ) 
+
+
+
+<template>
+  {{ count }}
+  <button @click="incrementCount(1)">Increment</button>
+</template>
+<script>
+import { mapActions } from 'vuex'
+export default {
+  computed: {
+    count() {
+      return this.$store.state.count
+    },
+  },
+  methods: mapActions(['incrementCount']),
+}
+</script>
+
+
+
+<script setup>
+import { useState, useActions } from 'vuex-composition-helpers/dist'
+const { count } = useState(['count'])
+const { incrementCount } = useActions(['incrementCount'])
+</script>
+<template>
+  {{ count }} <button @click="incrementCount(1)">Increment</button>
+</template>
+
+
+
+==> ( Gatters ) 
+
+
+<script>
+export default {
+  computed: {
+    doubleCountPlusOne() {
+      return this.$store.getters.doubleCountPlusOne
+    },
+  },
+  methods: mapActions(['incrementCount']),
+}
+</script>
+
+
+const store = createStore({
+  getters: {
+    countOverValue: (state) => (val) => {
+      return state.count > val;
+  }
+});
+
+
+--> Mapping our Vuex Getters
+
+<template>
+  {{ doubleCountPlusOne }}
+  <button @click="incrementCount(1)">Increment</button>
+</template>
+<script>
+import { mapActions, mapGetters } from 'vuex'
+export default {
+  computed: mapGetters(['doubleCountPlusOne']),
+  methods: mapActions(['incrementCount']),
+}
+</script>
+
+
+--> 
+<script setup>
+import { useActions, useGetters } from 'vuex-composition-helpers/dist'
+const { doubleCountPlusOne } = useGetters(['doubleCountPlusOne'])
+const { incrementCount } = useActions(['incrementCount'])
+</script>
+<template>
+  {{ doubleCountPlusOne }}
+  <button @click="incrementCount(1)">Increment</button>
+</template>
+
+
+
+
+
+
+
+
+----------> End Of Store <--------------
+
+----------------------------------------
+
+
+
+
+
+
+
+
+
+
