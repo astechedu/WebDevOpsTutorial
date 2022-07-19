@@ -5,6 +5,9 @@ Searching key words:
 
 Rails6:
 
+Core php: 
+      php api, 
+
 Symfony6:
       session, form, flesh message, api, sqlite3, database, child template,
       symfony6 bundle, vue js , react js, fixture
@@ -15,14 +18,22 @@ Laravel8:
 
 Codeigniter4: 
 
+Javascript: Object
+
+ES6: promise
+
 Vue Js 2.0: vue js form,
-Vue Js 3.0:
+
+Vue Js 3.0: store,
 
 React js : react form, e.target.value in function component,
+           redux store,
+
 Angular: template driven form, reactive form,
 
 Computer: cluster
 
+SSH : windows to github, key-generate
 
 -----------------------------------------------------------
 -----------------------------------------------------------
@@ -44,7 +55,7 @@ https://github.com/astechedu/Laravel8-breeze-auth
 https://github.com/astechedu/laravel8-basics-beginners
 https://github.com/astechedu/laravel8-ui-auth 
 https://github.com/astechedu/taiwind-tutorial 
-https://github.com/astechedu/bootstrap-tutorial
+https://github.com/astechedu/bootstrap-tutorial 
 https://github.com/astechedu/gittutorial
 https://github.com/astechedu/vue2api
 https://github.com/astechedu/vue3api
@@ -7887,6 +7898,28 @@ Next. js is a React framework that gives you building blocks to create web appli
 By framework, we mean Next. js handles the tooling and configuration needed for React, 
 and provides additional structure, features, and optimizations for your application.
 
+SSR
+
+SEO
+
+
+npx react-next-app@latest
+
+
+Manually: 
+
+npm run react react-dom next
+
+
+
+
+
+
+
+
+
+
+
 ----------------------------------------------------
 
 
@@ -8180,33 +8213,6 @@ useEffect(()=>{
 
 ----------------------------------------------
 
-
->>>>> Windows Clear Cache <<<<<
-
-//I did successfully it (Good)
-
-//Settings->System->Storage->free up space now (Not Done)
-
-
-//Press ctrl + shift + del (Done)
-Clear All History
-
-//Disk Clean Up (C:)  (Done)
-
-//In Settings clear Location (Done)
-
-//Type in cmd (command prompt as a Administrator) (Done)
-ipconfig/flushDSN
-
-//Type in run window  (Done)
-cleanmgr.exe
-
-//Type in run window   (Done)
-WSReset.exe
-
-
-
-
 -------------------------------------------------------
 
 
@@ -8462,12 +8468,178 @@ weeklyExpensses.reduce((first, last) => first + last);
 
 
 
-
-
-
 https://www.freecodecamp.org/news/7-javascript-methods-that-will-boost-your-skills-in-less-than-8-minutes-4cc4c3dca03f/
+
 ---------------------------------------------------------------
 
+------------------------------------------------------------------
+
+
+>>> Next Js <<<<
+
+Two forms of Pre-rendering:
+
+Next.js has two forms of pre-rendering: Static Generation and Server-side Rendering. The difference is in when it generates the HTML for a page.
+
+    Static Generation (Recommended): The HTML is generated at build time and will be reused on each request.
+    Server-side Rendering: The HTML is generated on each request.
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+
+>>>>> Next Js Routing <<<<<<<<<<
+
+
+Routing:
+
+Index routes:
+
+  pages/index.js → /
+  pages/blog/index.js → /blog
+
+
+Nested routes:
+
+  pages/blog/first-post.js → /blog/first-post
+  pages/dashboard/settings/username.js → /dashboard/settings/username
+
+
+
+
+
+
+
+----------------------------------------------------------------------
+
+JavaScript:
+
+In JavaScript, the fetch() method is used to make asynchronous requests to the server and load the information that is returned by the server onto the web pages.
+
+Syntax:
+
+fetch(URL, options);
+
+
+Code:
+
+fetch('https://reqres.in/api/products')
+
+  .then(res => res.json())
+
+  .then(data => console.log(data))
+
+  .error(e => console.error(e))
+
+.............................................
+
+
+Init (optional): Any further options such as:
+
+  Method: The request method is either GET or POST.
+  Headers
+  Body: The body can be any of the following: Body.array.Buffer(), Body.Blob(), Body.formData(), Body.json(), Body.text().
+  Mode
+  Credentials
+  Cache
+
+.........................
+
+  Example:
+
+  fetch('url', {
+  Method: 'POST',
+  Headers: {
+    Accept: 'application.json',
+    'Content-Type': 'application/json'
+  },
+  Body: body,
+  Cache: 'default'
+})
+
+....................................
+
+ GetImage().catch(error => {
+      console.error(error);
+ });
+
+  async function GetImage(){
+       const response = await fetch('/anim.jpg');
+       const blob = await response.blob();
+       document.getElementById('flower').src=URL.createObjectURL(blob);
+  }
+
+....................................
+
+  getData();
+
+  async function getData(){
+       const response= await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita%’)
+       console.log(response);
+       const data= await response.json();
+       console.log(data);
+       length=data.drinks.length;
+       console.log(data);
+       var temp="";
+       for(i=0;i<length;i++)
+       {
+          temp+="<tr>";
+          temp+="<td>"+data.drinks[i].strDrink+"</td>";
+          temp+="<td>"+data.drinks[i].strInstructions+"</td>";
+       }
+
+    document.getElementById("data").innerHTML=temp;
+  }
+
+
+................................
+
+Using fetch() to POST JSON Data:
+
+Object {
+  title: "",
+  body: "",
+  id: 101
+}
+
+body: ""
+
+id: 101
+
+title: ""
+
+
+var form=document.getElementById('form')
+
+form.addEventListener('submit', function(e){
+ e.preventDefault()
+
+ var name=document.getElementById('name').value
+ var body=document.getElementById('body').value
+
+ fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title:name,
+    body:body,
+
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  }
+  })
+  .then(function(response){ 
+  return response.json()})
+  .then(function(data)
+  {console.log(data)
+  title=document.getElementById("title")
+  body=document.getElementById("bd")
+  title.innerHTML = data.title
+  body.innerHTML = data.body  
+}).catch(error => console.error('Error:', error)); 
+});
+
+-------------------------------------------------------------------------
 
 
 
@@ -8477,66 +8649,2496 @@ https://www.freecodecamp.org/news/7-javascript-methods-that-will-boost-your-skil
 
 
 
----->>>> Patanjali Medicines <<<<<<<---
 
 
-............
---> Any soiling & Foilariya <--
-punarnavadi mandur -> Liver & Intestine Soiling
-chandraprabh vait -> (no need any pain killer, joint pains)
 
-............
---> Punarnavarist -> Instestine soiling (4-4 spoon)
-punarnavadi mandur -> Any Soiling (Liver & Intestine)
-arogyavardhini vati -> any body infection (neem, tulsi, aloye vera)
-............
+-------------------------------------------------------------------
 
 
-Medha vati -> Brain Pain (3 tabs 1-1-1)
-............
 
-Swasari vati -> sans(lungs problem) ki problem
-............
-
-Vatari Churan -> any pain, bones pain, back pain
-.............
-
-chitrari vati & arogyavardhini vati & punaravarist juice -> for digetion
+>>> Next Routing <<<<
 
 
-..............
-:)For Acidity: 
-
-->abipattikar churan(kam acidity) & kaamdudha rus(jayada acidity hone par) : 1-1 spoon milana hai fresh water( 1-1-1 spoons)
-OR
-->Hritaki churna (bahut kam acidity)
-OR
-->Aloyvera & aanwla ke juice (bahut kam acidity)
-.............
 
 
-->khadiravati : bahut khansi,jukham ke liye,purani khansi
+
+-------------------------------------------
+
+Wht is Typescript: 
+
+TS not a new programming lanuglar 
+ts is a yped superset of js
+developed by Microsoft
+Object Oriented
 
 
--> Harvel hair expert oil-> for hair
+Current Version: 
+Initial release in 1 Obtober 2012
+Development by Microsoft
 
-//Natural remedies for ulcerative colitis | Patanjali Kutajarishta
 
-Kutajarishta brings relief to you from chronic indigestion problems, upset stomach, diarrhoea, fever, etc. 
 
-Kutajghan Vati eliminates viruses and organisms from the digestive tract and soothes your stomach ulcers and aids in digestion. 
 
-ChitrakadiVati stimulates production of digestive enzymes, increases absorption of food and soothes hyper acidity in stomach. 
-..
+easy code management
+support ecmascript
+we can use data types, classes, interface etc
+ide support
 
-कुटजारिष्ट(Kutajarishta) आपको पुरानी अपच की समस्याओं, पेट की खराबी, दस्त, बुखार आदि से राहत दिलाता है। 
 
-कुटजघन वटी पाचन तंत्र से वायरस और जीवों को खत्म करती है और आपके पेट के अल्सर और पाचन में सहायक होती है। 
+Node js and npm
+a mordern code editor
+a basic idea about js
 
-चित्रकादिवटी पाचन एंजाइमों के उत्पादन को उत्तेजित करता है, भोजन के पाचन को बढ़ाता है। 
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+>>>>> Nuxt Js Routing <<<<<<<
+
+
+
+
+<template>
+  <NuxtLink to="/">Home page</NuxtLink>
+</template>
+
+
+
+.................
+
+<template>
+  <main>
+    <h1>Home page</h1>
+    <NuxtLink to="/about">
+      About
+    </NuxtLink>
+    <a href="/about">About</a>
+  </main>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+Development words: 
+
+Portability
+Time Saving
+Agility
+Light weight
+Cloud Provider Support
+
+
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+>>>>>> Nest Routing <<<<<<<<<<
+
+
+//Create users controller
+
+src / users.controller.ts
+
+
+
+//Config users controller
+
+src / app.module.ts
+
+
+
+
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+
+
+
+
+<<<<<<<  React Redux <<<<<<<<<<
+
+Store: 
+
+
+npm install --save redux react-redux
+
+
+
+mkdir src\actions
+echo "" > src\actions\startAction.js
+echo "" > src\actions\stopAction.js
+
+
+src/actions/startAction.js
+
+export const startAction = {
+  type: "rotate",
+  payload: true
+};
+
+
+src/actions/stopAction.js
+
+export const stopAction = {
+  type: "rotate",
+  payload: false
+};
+
+
+mkdir src\reducers
+echo "" > src\reducers\rotateReducer.js
+
+
+
+export default (state, action) => {
+  switch (action.type) {
+    case "rotate":
+      return {
+        rotating: action.payload
+      };
+    default:
+      return state;
+  }
+};
+
+
+
+echo "" > src\store.js
+
+
+import { createStore } from "redux";
+import rotateReducer from "reducers/rotateReducer";
+
+function configureStore(state = { rotating: true }) {
+  return createStore(rotateReducer,state);
+}
+
+export default configureStore;
+
+
+
+Add a .env file into your app like so:
+
+echo "NODE_PATH=./src" > .env
+
+npm install -g cross-env
+
+
+"start": "NODE_PATH=./src react-scripts start",
+
+import { connect } from "react-redux";
+
+export default connect()(App);
+
+
+import { startAction } from "actions/startAction";
+import { stopAction } from "actions/stopAction";
+
+
+
+    mapStateToProps: this is used to retrieve the store state
+    mapDispatchToProps: this is used to retrieve the actions and dispatch them to the store
+
+
+
+So let’s write inside our App.js (at the end of the file if you may):
+
+const mapStateToProps = state => ({
+  ...state
+});
+
+const mapDispatchToProps = dispatch => ({
+  startAction: () => dispatch(startAction),
+  stopAction: () => dispatch(stopAction)
+});
+
+
+
+After this, let’s add them inside our connect function like so:
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+
+
+Let’s change the img tag to:
+
+<img 
+  src={logo} 
+  className={
+    "App-logo" + 
+    (this.props.rotating ? "":" App-logo-paused")
+  } 
+  alt="logo" 
+  onClick={
+    this.props.rotating ? 
+      this.props.stopAction : this.props.startAction
+  }
+/>
+
+
+For this, we go inside src/index.js, we import a Provider from react-redux, and the newly created store like so:
+
+import { Provider } from "react-redux";
+
+import configureStore from "store";
+
+
+Provider: makes the Redux store available to any nested components that have been wrapped in the connect function
+
+
+ReactDOM.render(
+  <Provider store={configureStore()}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+
+
+
+So, your index.js should look like this:
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+// new imports start
+import { Provider } from "react-redux";
+
+import configureStore from "store";
+// new imports stop
+
+import './index.css';
+
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+
+// changed the render
+ReactDOM.render(
+  <Provider store={configureStore()}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+// changed the render
+
+serviceWorker.unregister();
+
+
+Using action creators:
+
+
+echo "" > src\actions\rotateAction.js
+
+
+const rotateAction = (payload) => {
+  return {
+    type: "rotate",
+    payload
+  }
+}
+export default rotateAction;
+
+
+import rotateAction from "actions/rotateAction";
+
+onClick={() => this.props.rotateAction(!this.props.rotating)}
+
+
+rotateAction: (payload) => dispatch(rotateAction(payload))
+
+
+
+
+
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+
+
+<<<<<< ECMAScript <<<<<<<<<<
+
+
+In September 1995, a Netscape programmer named Brandan Eich developed a new scripting language in just 10 days. It was originally named Mocha, but quickly became known as LiveScript and, later, JavaScript.
+
+Microsoft - Internet Explorer: JScript  
+
+
+Why JavaScript is called ECMAScript?
+A confusing bit of history is that JavaScript was created in 1996. It was then submitted to Ecma International in 1997 for standardization, which resulted in ECMAScript. At the same time, because JavaScript conformed to the ECMAScript specification, JavaScript is an example of an ECMAScript implementation.
+
+
+What does ECMAScript stand for *?
+Image result for what is ecmascript
+European Computer Manufacturers Association Script
+ECMAScript (European Computer Manufacturers Association Script) is a scripting language based on JavaScript. Invented by Brendan Eich at Netscape, ECMAScript made its first appearance in the Navigator 2.0 browser.
+
+
+What is ES6 JavaScript?
+JavaScript ES6 (also known as ECMAScript 2015 or ECMAScript 6) is the newer version of JavaScript that was introduced in 2015. ECMAScript is the standard that JavaScript programming language uses. ECMAScript provides the specification on how JavaScript programming language should work.
+
+
+Why is ES6 better than JavaScript?
+JavaScript ES6 brings new syntax and new awesome features to make your code more modern and more readable. It allows you to write less code and do more. ES6 introduces us to many great features like arrow functions, template strings, class destruction, Modules… and more.
+
+
+What are the versions of JavaScript?
+Till date, ES has published nine versions and the latest one (9th version) was published in the year 2018.
+
+    ES1 1997.        ECMA-262
+    ES2 1998.      
+    ES3 1999.      
+    ES4 Abandoned.
+    ES5 2009.
+    ES6 2015.         ECMAScript 2015
+    ES7 2016.         ECMAScript 2016
+    ES8 2017.
+    ES9 2018
+    ES10 2019
+    ES11 2020
+    ES12 2021
+    ES13 2022         ECMAScript 2016
+
+    
+
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
+
+
+
+>>>>>> Next Js <<<<<<<<<<
+ 
+
+> getStaticProps
+
+> Fetch Data
+
+// posts will be populated at build time by getStaticProps()
+
+function Blog({ posts }) {
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li>{post.title}</li>
+      ))}
+    </ul>
+  )
+}
+
+export async function getStaticProps(context) {
+
+  const res = await fetch('https://.../posts')
+  const posts = await res.json()
+
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}
+
+
+
+
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+>>>>> ECMAScript 6 ( ES6 ) 2015 <<<<<<<<<<<<<<<
+
+
+1. The let keyword
+2. The const keyword
+
+
+JavaScript let:
+The let keyword allows you to declare a variable with block scope.
+
+Example: 
+<h2>Redeclaring a Variable Using let</h2>
+
+<p id="demo"></p>
+
+<script>
+let  x = 10;
+// Here x is 10
+
+{  
+  let x = 2;
+  // Here x is 2
+}
+
+// Here x is 10
+document.getElementById("demo").innerHTML = x;
+</script>
+
+............................
+
+JavaScript const:
+The const keyword allows you to declare a constant.
+
+
+Example: 
+<h2>Declaring a Variable Using const</h2>
+
+<p id="demo"></p>
+
+<script>
+var  x = 10;
+// Here x is 10
+{  
+  const x = 2;
+  // Here x is 2
+}
+// Here x is 10
+document.getElementById("demo").innerHTML = x;
+</script>
+
+
+
+
+
+
+
+>> ES6 <<<<<<<
+
+
+Arrow Function: 
+
+let myFunction = (a, b) => a * b;
+
+
+hello = () => {
+  return "Hello World!";
+} 
+
+...............
+
+Arrow Functions Return Value by Default:
+
+<p id="demo"></p>
+
+var hello;
+
+hello = () => "Hello World!";
+
+document.getElementById("demo").innerHTML = hello();
+
+................
+
+
+Arrow Function With Parameters:
+
+<p id="demo"></p>
+
+var hello;
+
+hello = (val) => "Hello " + val;
+
+document.getElementById("demo").innerHTML = hello("Universe!");
+
+..................
+
+
+Arrow Function Without Parentheses:
+
+var hello;
+
+hello = val => "Hello " + val;
+
+document.getElementById("demo").innerHTML = hello("Universe!");
+
 ...................
+
+
+
+
+-----------------------------------------------------------------------
+
+New Features in ES6
+
+    The let keyword
+    The const keyword
+    Arrow Functions
+    For/of
+    Map Objects
+    Set Objects
+    Classes
+    Promises
+    Symbol
+    Default Parameters
+    Function Rest Parameter
+    String.includes()
+    String.startsWith()
+    String.endsWith()
+    Array.from()
+    Array keys()
+    Array find()
+    Array findIndex()
+    New Math Methods
+    New Number Properties
+    New Number Methods
+    New Global Methods
+    Object entries
+    JavaScript Modules
+
+
+-------------------------------------------------------------------------
+
+
+>>>>> ES6 <<<<<<<
+
+
+- The For/Of Loop -
+
+The JavaScript for/of statement loops through the values of an iterable objects.
+
+
+for (variable of iterable) {
+  // code block to be executed
+}
+
+
+#Looping over an Array
+
+Example:
+
+const cars = ["BMW", "Volvo", "Mini"];
+let text = "";
+
+for (let x of cars) {
+  text += x + " ";
+}
+
+
+#Looping over a String
+
+Example:
+
+let language = "JavaScript";
+let text = "";
+
+for (let x of language) {
+    text += x + " ";
+}
+
+
+--------------------------------------------
+
+
+-- ES6 --
+
+== Map Objects ===
+
+var map = new Map();  
+    map.set('user01', 'author');  
+    map.set('user02', 'publisher');  
+    map.set('user03', 'subscriber');  
+    map.set('user04', 'Distributor');  
+        
+console.log(map.size);  
+
+
+// Create Objects
+const apples = {name:"Apples", age:23};
+const bananas = {name: 'Bananas',age:55};
+const oranges = {name: 'Oranges',age:9};
+
+// Create a new Map
+const fruits = new Map();
+
+// Add the Objects to the Map
+fruits.set(apples, 500);
+fruits.set(bananas, 300);
+fruits.set(oranges, 200);
+
+
+let text = "";  
+
+for(const k of fruits.entries()){
+   console.log(k);
+  text += k[0].name + "<br>";
+ //console.log(k.name);
+ //console.log(`${k[0].name}: ${k[1]}`);
+
+};
+
+// Display Object Type
+document.getElementById("es6").innerHTML = text;
+
+
+---------------------------------------------------------
+
+----- ES6 -------
+
+--> WeakMap() <--
+
+
+        ++++ const wm = new WeakMap() ++++
+
+
+Weak Maps:
+.........
+A weak map is identical to a map with the following exceptions −
+
+    Its keys must be objects.
+
+    Keys in a weak map can be Garbage collected. Garbage collection is a process of clearing the memory occupied by unreferenced objects in a program.
+
+    A weak map cannot be iterated or cleared.
+
+Example : Weak Map
+
+'use strict' 
+let weakMap = new WeakMap(); 
+let obj = {}; 
+console.log(weakMap.set(obj,"hello, Ajay"));  
+console.log(weakMap.has(obj));// true
+
+
+
+
+---------------------------------------------------
+
+>>>> ES6 <<<<<
+
+--> Set() & WeakSet() <---
+
+
+A JavaScript Set is a collection of unique values.
+A Set can hold any value of any data type.
+Each value can only occur once in a Set.
+
+
+// create Set
+const set1 = new Set(); // an empty set
+console.log(set1); // Set {}
+
+// Set with multiple types of value
+const set2 = new Set([1, 'hello', {count : true}]);
+console.log(set2); // Set {1, "hello", {count: true}}
+
+
+
+//create WeakSet
+const ws = new WeakSet()
+
+------------------------------------------------
+
+
+<<<<< ES6 <<<<<<
+
+ --> Class <--
+
+
+ECMAScript 2015, also known as ES6, introduced JavaScript Classes.
+JavaScript Classes are templates for JavaScript Objects.
+
+
+Syntax:
+
+class ClassName {
+  constructor() { ... }
+}
+
+
+Example:
+
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+
+ ----------------------------------------------------
+
+
+<<<< ES6 <<<<<<
+
+Promise: 
+
+const promise  = new Promise();
+
+const promise  = new Promise((Resolve, Reject) => {
+  
+});
+
+
+------------------------------------------------------
+
+
+>>>> PHP API <<<<<<
+
+//Content Type
+
+//-----Content Types In PHP--------------
+
+//header("Content-Type:application/json");
+//header("Content-Type:application/pdf");
+//header("Content-Type:image/png");
+//header("Content-Type:video/mp4");
+
+//header('Access-Control-Allow-Origin:*')
+//header('Access-Control-Allow-Methods: GET, POST')
+//header('Access-Control-Allow-Headers: ')
+
+//-----Content Types In PHP -------------
+
+
+//Password Hashing
+
+
+//echo md5("Ajay Sisaudiya"); echo "<br>";
+//echo sha1("Ajay Sisaudiya"); echo "<br>";
+//echo crypt("Ajay Sisaudiya",10); echo "<br>";
+//echo base64_encode("Ajay Sisaudiya"); echo "<br>";
+//echo base64_decode("QWpheSBTaXNhdWRpeWE="); echo "<br>";
+//echo password_hash("Ajay Sisaudiya",PASSWORD_DEFAULT); echo "<br>";
+//echo password_hash("Ajay Sisaudiya", PASSWORD_BCRYPT ); echo "<br>";
+//echo password_hash("Ajay Sisaudiya", PASSWORD_ARGON2I ); echo "<br>";
+//echo password_hash("Ajay Sisaudiya", PASSWORD_ARGON2ID ); echo "<br>";
+
+//password_verify() - Verifies that a password matches a hash
+//crypt() - One-way string hashing
+//» userland implementation
+//sodium_crypto_pwhash_str() - Get an ASCII-encoded hash
+
+
+
+
+
+-----------------------------------------------------
+
+
+>>>> Ajax + PHP <<<<<<
+
+//Files: phpajax.php & index.php in same folder
+
+//Send request to phpajax.php with id 
+//Check id's value call specifed function with switch statement
+
+Code:
+
+index.php:
+
+<?php 
+declare(strict_types=1); // strict requirement
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+
+<ul id="menu">
+  <li id="java">Java</li>
+  <li id="cpp">C++</li>
+  <li id="es6">es6</li>
+  <li id="main">main</li>
+</ul>
+
+<div id="php"></div>
+
+<button>Post</button>
+
+</body>
+</html>
+
+<script src="jquery.min.js"></script>
+<script>
+
+$(function(){     
+   
+$('#menu li').on('click', function(){
+  let id = $(this).attr('id');
+
+    $.get('phpajax.php', {id:id}, function(data){
+        $('#php').html(data); //do something with whatever data is returned
+    });
+});
+
+});
+
+
+</script>
+
+
+
+phpajax.php:
+
+
+<?php
+$id = $_GET['id'];
+
+switch ($id) {
+  case 'java':
+    java();
+    break;
+  case 'cpp':
+    cpp();
+    break;
+  case 'es6':
+    es6();
+    break;  
+  case 'main':
+    main();
+    break;      
+  default:
+    # code...
+    break;
+}
+
+function java(){
+   include 'java.php';
+}
+
+function cpp(){
+   include 'cpp.php';
+}
+function es6(){
+   include 'es6.php';
+}
+
+function main(){
+   include 'main.php';
+}
+
+
+?>
+
+---------------------------------------------------------
+
+
+---------------------------------------------------------
+
+----------> Core PHP API <-------------------------------
+
+>>>> Core PHP Api <<<<<<<
+
+Two Files: DbConnection.php & api.php
+
+1. DbConnection.php
+
+
+<?php
+/**
+* Database Connection 
+*/
+class DbConnection {
+  private $server = 'localhost';
+  private $dbname = 'phpreactapi';
+  private $user = 'root';
+  private $pass = '';
+
+  public function connect() {
+    try{
+      $conn = new PDO('mysql:host=' .$this->server.';dbname='.$this->dbname,$this->user,$this->pass);
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      return $conn;     
+    }catch(\Exception $e) {
+      echo "Database Error: " . $e->getMessage();
+    }
+  }
+}
+?>
+
+
+
+2. api.php
+
+<?php
+header("Acess-Control-Allow-Origin:*");
+header("Acess-Control-Allow-Headers:*");
+include 'DbConnect.php';
+$db = new DbConnection();
+$conn = $db->connect();
+//var_dump($conn);
+
+$method = $_SERVER['REQUEST_METHOD'];
+switch($method){
+    case "POST":
+    $user = file_get_contents('php://input');
+
+    $sql = "INSERT INTO users(id, name, email, mobile, created_at) VALUES(null, :name, :email, :mobile, :created_at)";  
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':name', $user->name);
+    $stmt->bindParam(':email', $user->email);
+    $stmt->bindParam(':mobile', $user->mobile);
+    $stmt->bindParam(':created_at', $user->created_at);
+    if($stmt->execute()){
+        $response = ['status' => 1, 'message' => 'Record Created Successfully'];
+    }else{
+        $response = ['status' => 0, 'message' => 'Failed to create record'];
+    }
+    break;
+
+    case "GET":
+    break;
+
+    default : echo "Error In Database or any...";
+}
+
+?>
+
+--------> End of PHP API <----------------------------
+
+-------------------------------------------------------
+
+
+
+>>> Jquery Events <<<<
+
+
+
+Mouse Events    : click, dblclick, dblclick, mouseleave
+
+Keyboard Events : keypress, keydown, keyup
+
+Form Events     : submit, change, focus, blur
+
+Document/Window : load, resize, scroll, unload
+
+
+
+Event Methods:
+
+$("p").click();
+
+$("p").click(function(){
+     // action goes here!!
+}); 
+
+
+Example:
+
+$("p").click(function(){
+  $(this).hide();
+});
+
+
+Example:
+
+$("p").dblclick(function(){
+  $(this).hide();
+});
+
+
+Example:
+
+$("#p1").mouseenter(function(){
+  alert("You entered p1!");
+});
+
+Example:
+
+$("#p1").mouseleave(function(){
+  alert("Bye! You now leave p1!");
+});
+
+Example:
+$("#p1").mousedown(function(){
+  alert("Mouse down over p1!");
+});
+
+Example:
+$("#p1").mouseup(function(){
+  alert("Mouse up over p1!");
+});
+
+Example:
+$("input").focus(function(){
+  $(this).css("background-color", "#cccccc");
+});
+
+Example:
+$("p").on({
+  mouseenter: function(){
+    $(this).css("background-color", "lightgray");
+  },
+  mouseleave: function(){
+    $(this).css("background-color", "lightblue");
+  },
+  click: function(){
+    $(this).css("background-color", "yellow");
+  }
+}); 
+-----------> End Of Jquery Events <-------------
+
+----------------------------------------------
+
+----------------------------------------------
+
+-----------------------------------------------
+>>>> PHP (Calling php function by ajax)
+
+Two File: index.php, myphp.php
+
+1. index.php
+
+<input type="text" id="name" onblur="fajax()">
+
+
+<button>Calling php fun from ajax</button>
+</body>
+</html>
+
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+
+function fajax() {
+  var name = document.getElementById('name').value;
+  $.ajax({
+    url:'http://localhost/api.php',
+    data:{name:name,fun_name:"test"},
+    type:"POST",
+    success:function(res){
+        console.log(res);
+    }
+  });
+}
+
+</script>
+
+2. myphp.php
+
+<?php
+
+if($_POST['fun_name'] == 'test'){
+  $name = $_POST['name'];
+  echo test($name);
+  exit(0);
+}
+
+function test($name){
+  return "Hello! ".$name;
+}
+
+
+?>
+
+
+
+-----------------------------------------------
+
+
+>>>> Jquery Effetct <<<<<<<
+
+                  Sytax: 
+
+  hide()         - $(selector).hide(speed,callback);
+  show()         - $(selector).show(speed,callback); 
+  toggle()       - $(selector).toggle(speed,callback); 
+
+  fadeIn()       - $(selector).fadeIn(speed,callback);
+  fadeOut()      - $(selector).fadeOut(speed,callback);
+  fadeToggle()   - $(selector).fadeToggle(speed,callback);
+  fadeTo()       - $(selector).fadeTo(speed,opacity,callback);
+
+
+ slideDown()     $(selector).slideDown(speed,callback);
+ slideUp()       $(selector).slideUp(speed,callback);
+ slideToggle()   $(selector).slideToggle(speed,callback);
+
+Syntax:
+
+  $(selector).hide(speed,callback);
+  $(selector).show(speed,callback);
+
+  Example:
+
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+
+  $("#show").click(function(){
+    $("p").show();
+  }); 
+
+
+  toggle()
+
+
+Syntax:
+
+  $(selector).toggle(speed,callback);
+
+Example:
+
+  $("button").click(function(){
+    $("p").toggle();
+  }); 
+
+
+
+--------------------------------------------------
+
+
+
+>>>> Stop, Callback & Chaining <<<<
+
+
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideDown(5000);
+  });
+  $("#stop").click(function(){
+    $("#panel").stop();
+  });
+});
+
+
+#panel, #flip {
+  padding: 8px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #555;
+  color: white;
+  border: solid 1px #666;
+  border-radius: 5px;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+
+-----------------------------------------------
+
+
+
+>>> Jquery <<<<<
+
+Get:
+1. Get Content and Attributes
+
+    a. Get Content: 
+        text(), html(), and val()
+
+    b. Get Attributes:
+        attr();
+
+
+Example: 
+
+$("#btn1").click(function(){
+  alert("Text: " + $("#test").text());
+});
+
+Example:
+
+$("button").click(function(){
+  alert($("#w3s").attr("href"));
+});
+......................................
+
+Set: 
+2. Set
+  a. Set Content:
+     text(), html(), and val()
+
+  b. Set Attributes:
+     attr()
+
+
+Example:
+
+$("#btn1").click(function(){
+  $("#test1").text("Hello world!");
+});
+$("#btn2").click(function(){
+  $("#test2").html("<b>Hello world!</b>");
+});
+$("#btn3").click(function(){
+  $("#test3").val("Dolly Duck");
+});
+
+Example: 
+
+$("button").click(function(){
+  $("#w3s").attr("href", "https://www.w3schools.com/jquery/");
+});
+
+
+Example:
+
+$("button").click(function(){
+  $("#w3s").attr({
+    "href" : "https://www.w3schools.com/jquery/",
+    "title" : "W3Schools jQuery Tutorial"
+  });
+});
+
 
 ------------------------------------------------------------------
 
 
 
+>>>> Add & Remove <<<<<<<<<<
+
+
+
+ Add Elements:
+
+    append() - Inserts content at the end of the selected elements
+    prepend() - Inserts content at the beginning of the selected elements
+    after() - Inserts content after the selected elements
+    before() - Inserts content before the selected elements
+
+
+
+ Elements/Content: 
+
+    remove() - Removes the selected element (and its child elements)
+    empty() - Removes the child elements from the selected element
+
+
+
+Add Element Examples: 
+
+  $("#btn1").click(function(){
+    $("p").append(" <b>Appended text</b>.");
+  });
+
+  $("#btn1").click(function(){
+    $("p").prepend("<b>Prepended text</b>. ");
+  });
+
+  $("img").after("Some text after");
+
+  $("img").before("Some text before");
+
+
+  $("#btn1").click(function(){
+    $("img").before("<b>Before</b>");
+  });
+
+  $("#btn2").click(function(){
+    $("img").after("<i>After</i>");
+  });
+
+
+
+Elements/Content Examples: 
+
+$("#div1").remove();
+
+
+$("#div1").empty();
+
+
+$("p").remove(".test");
+
+$("p").remove(".test, .demo"); 
+
+
+
+--------------------------------------------
+
+
+>>>> Get and Set CSS Classes >>>>>
+
+jQuery Manipulating CSS:
+
+    addClass() - Adds one or more classes to the selected elements
+    removeClass() - Removes one or more classes from the selected elements
+    toggleClass() - Toggles between adding/removing classes from the selected elements
+    css() - Sets or returns the style attribute
+
+
+.important {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.blue {
+  color: blue;
+}
+
+$("button").click(function(){
+  $("h1, h2, p").addClass("blue");
+  $("div").addClass("important");
+});
+
+
+$("button").click(function(){
+  $("#div1").addClass("important blue");
+});
+
+$("button").click(function(){
+  $("h1, h2, p").removeClass("blue");
+});
+
+$("button").click(function(){
+  $("h1, h2, p").toggleClass("blue");
+});
+
+
+
+
+-------------------------------------------------
+
+
+
+
+>>> jQuery Dimension Methods <<<<<<<<<<<
+
+
+
+    width()
+    height()
+    innerWidth()
+    innerHeight()
+    outerWidth()
+    outerHeight()
+
+Example:
+
+$("button").click(function(){
+  var txt = "";
+  txt += "Width: " + $("#div1").width() + "</br>";
+  txt += "Height: " + $("#div1").height();
+  $("#div1").html(txt);
+}); 
+
+Example:
+$("button").click(function(){
+  var txt = "";
+  txt += "Inner width: " + $("#div1").innerWidth() + "</br>";
+  txt += "Inner height: " + $("#div1").innerHeight();
+  $("#div1").html(txt);
+}); 
+
+Example:
+$("button").click(function(){
+  var txt = "";
+  txt += "Outer width: " + $("#div1").outerWidth() + "</br>";
+  txt += "Outer height: " + $("#div1").outerHeight();
+  $("#div1").html(txt);
+}); 
+
+Example:
+$("button").click(function(){
+  var txt = "";
+  txt += "Outer width (+margin): " + $("#div1").outerWidth(true) + "</br>";
+  txt += "Outer height (+margin): " + $("#div1").outerHeight(true);
+  $("#div1").html(txt);
+}); 
+
+Example:
+$("button").click(function(){
+  var txt = "";
+  txt += "Document width/height: " + $(document).width();
+  txt += "x" + $(document).height() + "\n";
+  txt += "Window width/height: " + $(window).width();
+  txt += "x" + $(window).height();
+  alert(txt);
+}); 
+
+Example:
+$("button").click(function(){
+  $("#div1").width(500).height(500);
+}); 
+
+
+
+-------------------------------------------------------------
+
+
+>>>> jQuery Traversing <<<<<<<
+
+
+Traversing the DOM:
+
+
+1. Traversing - Ancestors
+
+    Traversing Up the DOM Tree:
+
+    parent()
+    parents()
+    parentsUntil()
+
+2. Traversing - Descendants
+
+    Traversing Down the DOM Tree
+
+    children()
+    find()
+
+
+Example:                       --> Ancestors
+
+$(document).ready(function(){
+  $("span").parent();
+}); 
+
+Example:
+$(document).ready(function(){
+  $("span").parents();
+}); 
+
+Example:
+$(document).ready(function(){
+  $("span").parents("ul");
+}); 
+
+Example:
+$(document).ready(function(){
+  $("span").parentsUntil("div");
+}); 
+
+
+Example:                        --> Descendants
+$(document).ready(function(){
+  $("div").children();
+}); 
+
+Example:
+$(document).ready(function(){
+  $("div").children("p.first");
+}); 
+
+Example:
+$(document).ready(function(){
+  $("div").find("span");
+}); 
+
+Example:
+$(document).ready(function(){
+  $("div").find("*");
+}); 
+
+------------------------------------------------
+
+
+
+
+
+ >>>>> jQuery Traversing - Siblings <<<<<<<<
+
+
+ Traversing Sideways in The DOM Tree:
+
+    siblings()
+    next()
+    nextAll()
+    nextUntil()
+    prev()
+    prevAll()
+    prevUntil()
+
+Example
+$(document).ready(function(){
+  $("h2").siblings();
+}); 
+
+Example
+$(document).ready(function(){
+  $("h2").siblings("p");
+}); 
+
+Example
+$(document).ready(function(){
+  $("h2").next();
+}); 
+
+Example
+$(document).ready(function(){
+  $("h2").nextAll();
+}); 
+
+Example
+$(document).ready(function(){
+  $("h2").nextUntil("h6");
+}); 
+
+
+
+-----------------------------------------------
+
+
+>>>>>> jQuery Traversing - Filtering <<<<<<<<<<<<<
+
+
+The first(), last(), eq(), filter() and not() Methods
+
+
+Example
+$(document).ready(function(){
+  $("div").first();
+}); 
+
+
+Example
+$(document).ready(function(){
+  $("div").last();
+}); 
+
+
+Example
+$(document).ready(function(){
+  $("p").eq(1);
+}); 
+
+
+Example
+$(document).ready(function(){
+  $("p").filter(".intro");
+}); 
+
+
+Example
+$(document).ready(function(){
+  $("p").not(".intro");
+}); 
+
+
+
+------------------------------------------------------
+
+
+
+>>>>>> jQuery - AJAX Introduction <<<<<<<<<<<<
+
+
+
+What is AJAX?
+
+AJAX = Asynchronous JavaScript and XML.
+
+AJAX is about loading data in the background and display it on the webpage, without reloading the whole page.
+
+
+Examples of applications using AJAX: 
+       Gmail, Google Maps, Youtube, and Facebook tabs.
+
+jQuery provides several methods for AJAX functionality.
+
+
+    responseTxt - contains the resulting content if the call succeeds
+    statusTxt - contains the status of the call
+    xhr - contains the XMLHttpRequest object
+
+
+jQuery - AJAX load() Method:
+
+Syntax:
+$(selector).load(URL,data,callback); 
+
+
+Here is the content of our example file: 
+"ajaxdemo.txt":
+
+<h2>jQuery and AJAX is FUN!!!</h2>
+<p id="p1">This is some text in a paragraph.</p>
+
+
+Example
+$("#div1").load("ajaxdemo.txt"); 
+
+Example
+$("#div1").load("ajaxdemo.txt #p1"); 
+
+
+Example
+$("button").click(function(){
+  $("#div1").load("demo_test.txt", function(responseTxt, statusTxt, xhr){
+    if(statusTxt == "success")
+      alert("External content loaded successfully!");
+    if(statusTxt == "error")
+      alert("Error: " + xhr.status + ": " + xhr.statusText);
+  });
+}); 
+
+
+-----------------------------------------------------------------------
+
+
+
+ <<<<<<< jQuery - AJAX get() and post() Methods <<<<<<<<<<<<<
+
+
+ HTTP Request: GET vs. POST
+
+    GET - Requests data from a specified resource
+    POST - Submits data to be processed to a specified resource
+
+1.
+jQuery $.get() Method:
+The $.get() method requests data from the server with an HTTP GET request.
+
+Syntax:
+$.get(URL,callback); 
+
+
+Example
+$("button").click(function(){
+  $.get("demo_test.asp", function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+}); 
+
+
+2.
+jQuery $.post() Method:
+The $.post() method requests data from the server using an HTTP POST request.
+
+Syntax:
+$.post(URL,data,callback); 
+
+Example
+$("button").click(function(){
+  $.post("demo_test_post.asp",
+  {
+    name: "Donald Duck",
+    city: "Duckburg"
+  },
+  function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+}); 
+
+
+
+
+-------------------------------------------------------------------
+
+
+>>>>>>> JavaScript <<<<<<<<<<<<<<
+
+
+Variables, Loops, Objects
+
+
+Variable: 
+
+var x = 4;
+let y = 5;
+const z = 10;
+
+
+Loops:
+
+
+
+Object: 
+
+
+const car = {type:"Fiat", model:"500", color:"white"};
+
+Or 
+
+const car = {
+  type:"Fiat", 
+  model:"500", 
+  color:"white"
+};
+
+
+
+
+//Other example
+
+const car = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+person.firstName;
+person["firstName"]
+
+
+console.log(perons.firstName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+
+>>>> SSH <<<<<<<<<<<<<<
+
+
+-> SSH Github to windows 10
+
+Generate ssh key with github:
+
+Steps: 
+
+//Copy command in cmd or power shell or git ON windows 10
+ssh-keygen -t rsa -b 4096 -C "astech.youtube@gmail.com"
+
+//Got this in cmd..
+SHA256:H2Dde0k0yJ2iS+K4G41W8CQYWebtwbbW7qc62JFX+X0 astech.youtube@gmail.com
+
+Commands: 
+ls !/.ssh
+
+
+eval $(ssh-agent -s)
+
+
+//Add to system (Register)
+ssh-add -k ~/.ssh/id_rsa
+
+//
+Now add public key to Github
+
+//
+cat ~/ssh/id_rsa.pub
+
+//Check connection is stablished or not 
+ssh -t git@github.com
+
+--------------------------------------------------------------------
+--------------------------------------------------------------------
+
+----------------------------------------------------------
+
+>>>>>> ES6 <<<<<<<<<<
+
+
+Promise: 
+
+
+Promise Syntax:
+
+let p = new Promise(function(resolve,reject){
+   let workDone = true; // some time consuming work
+      if(workDone){
+      //invoke resolve function passed
+      
+    resolve('success promise completed')
+   }
+   else{
+      reject('ERROR , work could not be completed')
+   }
+});
+
+
+Example 01: 
+----------
+
+   function add_positivenos_async(n1, n2) {
+      let p = new Promise(function (resolve, reject) {
+         if (n1 >= 0 && n2 >= 0) {
+            //do some complex time consuming work
+            resolve(n1 + n2)
+         }
+         else
+            reject('NOT_Postive_Number_Passed') 
+         })
+         return p;
+   }
+
+   add_positivenos_async(10, 20)
+      .then(successHandler) // if promise resolved
+      .catch(errorHandler);// if promise rejected
+
+   add_positivenos_async(-10, -20)
+      .then(successHandler) // if promise resolved
+      .catch(errorHandler);// if promise rejected
+
+   function errorHandler(err) {
+      console.log('Handling error', err)
+   }
+   function successHandler(result) {
+      console.log('Handling success', result)
+   }
+
+   console.log('end')
+
+
+
+
+
+   Promises Chaining:
+   ------------------
+Example: 02:
+
+   function add_positivenos_async(n1, n2) {
+      let p = new Promise(function (resolve, reject) {
+         if (n1 >= 0 && n2 >= 0) {
+            //do some complex time consuming work
+            resolve(n1 + n2)
+         }
+         else
+            reject('NOT_Postive_Number_Passed')
+      })
+      return p;
+   }
+
+   add_positivenos_async(10,20)
+   .then(function(result){
+      console.log("first result",result)
+      return add_positivenos_async(result,result)
+   }).then(function(result){
+   console.log("second result",result)
+      return add_positivenos_async(result,result)
+   }).then(function(result){
+      console.log("third result",result)
+   })
+
+   console.log('end')
+
+
+
+promise.all() : 
+--------------
+This method can be useful for aggregating the results of multiple promises.
+
+Syntax:
+Promise.all(iterable);
+
+Example 03: 
+
+   function add_positivenos_async(n1, n2) {
+      let p = new Promise(function (resolve, reject) {
+         if (n1 >= 0 && n2 >= 0) {
+            //do some complex time consuming work
+            resolve(n1 + n2)
+         }
+         else
+            reject('NOT_Postive_Number_Passed')
+      })
+
+      return p;
+   }
+   //Promise.all(iterable)
+
+Promise.all([add_positivenos_async(10,20),add_positivenos_async(30,40),add_positivenos_async(50,60)])
+   .then(function(resolveValue){
+      console.log(resolveValue[0])
+      console.log(resolveValue[1])
+      console.log(resolveValue[2])
+      console.log('all add operations done')
+   })
+   .catch(function(err){
+      console.log('Error',err)
+   })
+   console.log('end')
+
+
+
+
+promise.race(): 
+--------------
+
+This function takes an array of promises and returns the first promise that is settled.
+
+
+Syntax:
+Promise.race(iterable)
+
+Examp   function add_positivenos_async(n1, n2) {
+      let p = new Promise(function (resolve, reject) {
+         if (n1 >= 0 && n2 >= 0) {
+            //do some complex time consuming work
+            resolve(n1 + n2)
+         } else
+            reject('NOT_Postive_Number_Passed')
+      })
+
+      return p;
+   }
+
+   //Promise.race(iterable)
+   Promise.race([add_positivenos_async(10,20),add_positivenos_async(30,40)])
+   .then(function(resolveValue){
+      console.log('one of them is done')
+      console.log(resolveValue)
+   }).catch(function(err){
+      console.log("Error",err)
+   })
+
+   console.log('end')le 04: 
+
+   function add_positivenos_async(n1, n2) {
+      let p = new Promise(function (resolve, reject) {
+         if (n1 >= 0 && n2 >= 0) {
+            //do some complex time consuming work
+            resolve(n1 + n2)
+         } else
+            reject('NOT_Postive_Number_Passed')
+      })
+
+      return p;
+   }
+
+   //Promise.race(iterable)
+   Promise.race([add_positivenos_async(10,20),add_positivenos_async(30,40)])
+   .then(function(resolveValue){
+      console.log('one of them is done')
+      console.log(resolveValue)
+   }).catch(function(err){
+      console.log("Error",err)
+   })
+
+   console.log('end')
+
+
+
+Understanding AsyncCallback: 
+----------------------------
+
+   function notifyAll(fnSms, fnEmail) {   
+      setTimeout(function() {   
+         console.log('starting notification process');   
+         fnSms();   
+         fnEmail();   
+      }, 2000);   
+   }   
+   notifyAll(function() {   
+      console.log("Sms send ..");   
+   },  
+   function() {   
+      console.log("email send ..");   
+   });   
+   console.log("End of script"); //executes first or not blocked by others   
+
+
+
+multiple callbacks: 
+------------------
+
+   setTimeout(function() {   
+      console.log("one");   
+      setTimeout(function() {   
+         console.log("two");   
+         setTimeout(function() {   
+            console.log("three");   
+         }, 1000);   
+      }, 1000);   
+   }, 1000);
+
+
+
+Basic Example : 
+-------------
+var promise = new Promise(function(resolve , reject) {    
+   // do a thing, possibly async , then..  
+   if(/*everthing turned out fine */)    resolve("stuff worked");  
+   else     
+   reject(Error("It broke"));  
+});  
+
+//return promise;
+
+// Give this to someone
+
+
+
+Example:  (Get Sum)
+
+function getSum(n1, n2) {   
+   varisAnyNegative = function() {   
+      return n1 < 0 || n2 < 0;   
+   }   
+   var promise = new Promise(function(resolve, reject) {   
+      if (isAnyNegative()) {   
+         reject(Error("Negatives not supported"));   
+      }   
+      resolve(n1 + n2)
+   });   
+   return promise;   
+} 
+
+
+getSum(5, 6)   
+.then(function (result) {   
+   console.log(result);   
+},   
+function (error) {   
+   console.log(error);   
+});
+
+
+
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+
+
+
+>>>>>> Javascript Object <<<<<<<<<<
+
+//Details: Website Links
+//https://www.digitalocean.com/community/tutorials/how-to-use-object-methods-in-javascript
+
+--> Operations On Objects
+
+Object.assign(obj,objnew);
+Object.create(obj);
+Object.keys(obj);
+Object.values(obj);
+Object.entries(obj);  
+Object.freeze(obj);
+Object.seal(obj)
+Object.getPrototypeOf(obj)
+
+
+Example 01:
+----------- 
+           //Object.create();
+
+// Initialize an object with properties and methods
+const job = {
+    position: 'cashier',
+    type: 'hourly',
+    isAvailable: true,
+    showDetails() {
+        const accepting = this.isAvailable ? 'is accepting applications' : "is not currently accepting applications";
+
+        console.log(`The ${this.position} position is ${this.type} and ${accepting}.`);
+    }
+};
+
+// Use Object.create to pass properties
+const barista = Object.create(job);
+
+barista.position = "barista";
+barista.showDetails();
+
+
+Example 02: 
+-----------
+           //Object.keys()
+
+// Initialize an object
+const employees = {
+  boss: 'Michael',
+  secretary: 'Pam',
+  sales: 'Jim',
+  accountant: 'Oscar'
+};
+
+// Get the keys of the object
+const keys = Object.keys(employees);
+
+console.log(keys);
+
+
+// Iterate through the keys
+Object.keys(employees).forEach(key => {
+    let value = employees[key];
+
+   console.log(`${key}: ${value}`);
+});
+
+
+Example 03:
+----------
+              // Object.values()
+
+// Initialize an object
+const session = {
+    id: 1,
+    time: `26-July-2018`,
+    device: 'mobile',
+    browser: 'Chrome'
+};
+
+// Get all values of the object
+const values = Object.values(session);
+
+console.log(values);
+
+
+Example 04: 
+             // Object.entries()
+
+// Initialize an object
+const operatingSystem = {
+    name: 'Ubuntu',
+    version: 18.04,
+    license: 'Open Source'
+};
+
+// Get the object key/value pairs
+const entries = Object.entries(operatingSystem);
+
+console.log(entries);
+
+
+// Loop through the results
+entries.forEach(entry => {
+    let key = entry[0];
+    let value = entry[1];
+
+    console.log(`${key}: ${value}`);
+});
+
+----------------------------------------------------
+----------------------------------------------------
+
+
+
+>>> Vite + Vue3 Installation <<<<<<<
+
+//Package.json
+
+{
+  "name": "vitevue",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+
+  "dependencies": {
+    "vue": "^3.2.37"
+  },
+
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.0",
+    "vite": "^3.0.0"
+  }
+}
+
+------------------------------------------
+
+
+src/main.js
+
+import { createApp } from 'vue'
+import './style.css'
+import App from './App.vue'
+
+createApp(App).mount('#app')
+=================================
+
+
+In main dir: vite.config.js
+
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()]
+})
+
+
+Main dir: index.html 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
+
+----------------------------------------------
+
+Migrate to vite: 
+
+  These are the steps we will follow to migrate.
+
+    Update your package.json.
+    Add a Vite config.
+    Update your tsconfig.json file.
+    Install all the packages.
+    Move your index.html file.
+    Update the index.html contents.
+    Update all your env vars.
+
+
+
+  Vue Cli To Vite
+
+
+
+
+
+
+================================================================
+
+
+>>>>> React Redux <<<<<<<
+
+Website: 
+
+https://scriptverse.academy/tutorials/reactjs-redux-example.html
+
+
+npm i react-redux
+npm i redux
+npm i redux-thunk
+
+
+reducer.js. 
+
+
+
+// reducer.js
+const INITIAL_STATE = {
+  name: '',
+  books: []
+}
+
+export default (state = INITIAL_STATE, action={}) => {
+  switch(action.type) {
+    case "SET_DATA":
+      return {
+        ...state,
+        ...action.content
+      };
+    default:
+      return state;
+  }
+};
+
+
+--> 
+
+// action.js
+
+const setData = (content) => {
+  return {
+    type: "SET_DATA",
+    content
+  }
+}
+
+const appendData = (obj) => {
+  return (dispatch) => {
+    dispatch(setData(obj));
+  }
+}
+
+export {
+  appendData
+}
+
+
+--> 
+
+
+
+
+// store.js
+import { createStore, applyMiddleware } from "redux";
+import thunk from 'redux-thunk';
+import reducer from "./reducer";
+
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk)
+);
+
+export default store;
+
+
+--> 
+
+
+
+// Books.js
+import React from "react";
+import { connect } from "react-redux";
+import { appendData } from "./action";
+
+class Library extends React.Component {
+  componentDidMount() {
+    let name = 'Anastasia';
+    let arr = [];
+
+    arr.push({
+      book_id: 1,
+      title: 'Dune',
+      author: 'Frank Herbert',
+      year: 1965
+    });
+
+    arr.push({
+      book_id: 2,
+      title: 'Hyperion',
+      author: 'Dan Simmons',
+      year: 1989
+    });
+
+    this.props.appendData({
+      name: name,
+      books: [...this.props.books, ...arr]
+    });
+  }
+
+  render() {
+    const { name, books } = this.props;
+
+    let booksList = books.length > 0
+      && books.map((item, i) => {
+      return (
+        <li key={i} value={item.book_id}>
+          {item.title} by {item.author} ({item.year})
+        </li>
+      )
+    }, this);
+
+    return (
+      <div>
+        <h1>Hello {name}!</h1>
+        <ol>
+          { booksList }
+        </ol>
+      </div>
+    );
+  }
+}
+
+const mapDispatchToProps = {
+  appendData
+}
+
+const mapStateToProps = state => ({
+  name: state.name,
+  books: state.books
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Library);
+
+
+--> 
+
+
+
+// index.js
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import Books from "./Books";
+import store from "./store";
+
+const App = () => {
+  return (
+    <div>
+      <Books/>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>,
+  rootElement
+);
+
+
+
+
+---------------------------------------------------
+
+
+>>>> Box Boxes <<<<<
+
+
+
+  _______     ________    __________
+ |_______|   |________|  |__________|
+
+
+  _______     ________    __________
+ |_______|   |________|  |__________|
+
+
+  _______     ________     __________
+ |       |   |        |   |          |
+ |_______|   |________|   |__________|
+
+
+  _______       ________       __________
+ |       | ==> |        | ==> |          |
+ |_______|     |________|     |__________|
+
+ 
+ 
+  
+
+--------------------------------------------------
+
+
+
+
+------------------------------------------
+
+
+
+>>>>>>>> Vue Store (Vuex) <<<<<<<<<<<<
+
+------------------------------------------

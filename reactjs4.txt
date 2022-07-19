@@ -1,9 +1,196 @@
 
->>>>>>>> React js <<<<<<<<<
+>>>>>>>> React 4 js <<<<<<<<<
 
 
 --------------------------------------
 --------------------------------------
+Keys: 
+
+
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+
+>>> React Redux Store
+
+
+
+Website: 
+
+https://scriptverse.academy/tutorials/reactjs-redux-example.html
+
+
+npm i react-redux
+npm i redux
+npm i redux-thunk
+
+
+reducer.js. 
+
+
+
+// reducer.js
+const INITIAL_STATE = {
+  name: '',
+  books: []
+}
+
+export default (state = INITIAL_STATE, action={}) => {
+  switch(action.type) {
+    case "SET_DATA":
+      return {
+        ...state,
+        ...action.content
+      };
+    default:
+      return state;
+  }
+};
+
+
+--> 
+
+// action.js
+
+const setData = (content) => {
+  return {
+    type: "SET_DATA",
+    content
+  }
+}
+
+const appendData = (obj) => {
+  return (dispatch) => {
+    dispatch(setData(obj));
+  }
+}
+
+export {
+  appendData
+}
+
+
+--> 
+
+
+
+
+// store.js
+import { createStore, applyMiddleware } from "redux";
+import thunk from 'redux-thunk';
+import reducer from "./reducer";
+
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk)
+);
+
+export default store;
+
+
+--> 
+
+
+
+// Books.js
+import React from "react";
+import { connect } from "react-redux";
+import { appendData } from "./action";
+
+class Library extends React.Component {
+  componentDidMount() {
+    let name = 'Anastasia';
+    let arr = [];
+
+    arr.push({
+      book_id: 1,
+      title: 'Dune',
+      author: 'Frank Herbert',
+      year: 1965
+    });
+
+    arr.push({
+      book_id: 2,
+      title: 'Hyperion',
+      author: 'Dan Simmons',
+      year: 1989
+    });
+
+    this.props.appendData({
+      name: name,
+      books: [...this.props.books, ...arr]
+    });
+  }
+
+  render() {
+    const { name, books } = this.props;
+
+    let booksList = books.length > 0
+      && books.map((item, i) => {
+      return (
+        <li key={i} value={item.book_id}>
+          {item.title} by {item.author} ({item.year})
+        </li>
+      )
+    }, this);
+
+    return (
+      <div>
+        <h1>Hello {name}!</h1>
+        <ol>
+          { booksList }
+        </ol>
+      </div>
+    );
+  }
+}
+
+const mapDispatchToProps = {
+  appendData
+}
+
+const mapStateToProps = state => ({
+  name: state.name,
+  books: state.books
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Library);
+
+
+--> 
+
+
+
+// index.js
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import Books from "./Books";
+import store from "./store";
+
+const App = () => {
+  return (
+    <div>
+      <Books/>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>,
+  rootElement
+);
+
+
+
+
+-----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
 
