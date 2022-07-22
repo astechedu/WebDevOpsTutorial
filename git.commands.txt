@@ -319,7 +319,7 @@ Or you can use it to create a new branch, without checking it out:
 git branch <new branch>
 
 To delete a branch, run it like this:
-git branch -d <branch name>
+git branch -d <branch name>  // Or git branch -D <branch name>
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
 
