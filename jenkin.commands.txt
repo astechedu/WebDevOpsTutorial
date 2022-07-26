@@ -101,5 +101,45 @@ pipeline{
 
 }
 
-------------------------------------------
+-----------------------------------------------------------------------------------------------------
+
+>>>> Jenkins Notes <<<<<<<<<<<
+
+
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+cdc3d4d3881f4077a6adeb0ac57abe97
+
+This may also be found at: 
+
+	C:\Users\Ajay\.jenkins\secrets\initialAdminPassword
+
+    java -jar D:\Softwares\jenkin\jenkins.war  //Type in cmd to start jenkins
+
+Type On Browser: 
+
+	127.0.0.1:8080    //Type of Browser's address bar
+
+
+Software:  Jenkins, Terraform, Kubernetes, Git, Docker 
+
+
+
+Gaurav Sharma:
+
+
+In Jenkins: 
+
+  myproject-build
+  myproject-test
+  myproject-deploy
+  myproject-deploy-prod
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
 

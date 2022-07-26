@@ -37,15 +37,31 @@ cleanmgr.exe
 //Type in run window   (Done)
 WSReset.exe
 
-
-
-
-
-
-
 ---------------------------------------
 ---------------------------------------
 
+>>> Windows Slow Copy Paste Speed <<<<
+--> Copy files and folders very slow <--
+
+1. 
+//Type in cmd
+netsh int tcp set global autotuninglevel=disabled
+//Back 
+netsh int tcp set global autotuninglevel=normal
+
+2.
+//open services
+Optimize service
+
+3.
+//Search windows features on or off (Before: 200kb; Done 100% Working copy speed is upto 20mb)
+untick Remote Differential Compressions API Support
+
+4.
+//Open google and search fastcopy software
+
+
+-------------------------------------------------------------
 ---------------------------------------
 ---------------------------------------
 

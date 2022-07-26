@@ -1,0 +1,92 @@
+>>>>>> DevOps Engeenear <<<<<<<<
+
+
+------------------------------------------
+------------------------------------------
+
+ *Adding to your resume:
+
+ *Created CI/CD pipeline of a web app using docker, jenkins & AWS
+
+------------------------------------------------------------------
+
+
+Project One: 
+
+DevOps Engeenear: 
+
+  GitHub ---> Docker ---> Jenkins ---> AWS (EC2: Cloud)
+
+1. Stip Start (git,python,linux)
+
+ git:
+  git clone <projetName>                   //Project on local machine
+  git checout -b feature/deploy-app        //Make new branch
+  git add . 
+  git commit -m "added requirememts"
+
+  git push origin feature/deploy-app
+  
+
+ Python:
+ 
+  virtualenv -p python3.7 env
+  source env/bin/activate
+  pin install django
+  python manage.py makemigrations
+  python manage.py migrate
+  python manage.py createsuperuser
+  python manage.py runserver
+  pip freeze > requirements.txt      //Make requirement.txt file
+
+
+Linux: 
+  cd download
+  sudo <es2 ssh paste here to connect ec2>
+  mdkir projects
+  cd projects
+  git clone <git..pro name>
+  cd django-todo/
+  sudo apt install python3-pip
+  sudo apt-get update
+  sudo apt install python3-pip
+  pip install django
+  python3 manage.py migrate  (After this command showing error of time zone fix it)
+
+AWS:
+
+ EC2: 
+   
+
+2. Step (Docker)
+
+
+  linux: 
+    ls
+    sudo apt install docker.io
+    vi Dockerfile
+
+    //Making docker file Code in vi edirot
+
+    FROM python:3
+    RUN pip install django==3.2
+    COPY <source> <destination>
+    RUN python manage.py migrate
+    CMD ["python","manage.py","runserver","0.0.0.0:8001"]
+    :wq                                                     #(save file command)             
+
+    sudo docker build . -t doto-app       //Build now
+    
+    sudo docker ps                        //Checking images 
+
+    sudo docker run -p 8001:8001 <container ID>   //Port mapping 
+
+
+    sudo docker run -d -p 8001:8001 <container ID>  (Demon: App Run in Background)
+
+
+
+--------------> End One <------------------
+
+
+

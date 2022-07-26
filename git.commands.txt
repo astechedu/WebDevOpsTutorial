@@ -50,6 +50,7 @@
    $ git diff
    $ git patch
    $ git add untracked
+   $ git commit --amend  //Changing old commit message
 
    //These command for project directory   
    $ pwd                           // Show current directory
@@ -71,7 +72,7 @@
    $ ls -1l
    $ ls -1f  //List contents in white color
 
-   $ cat filename   // Lists of the file  
+   $ cat filename   // Lists of the file  (showing file contents)
 
 
 ----------------------------------------------------------------------------  
@@ -358,10 +359,12 @@ git branch -a                            //To see all local and remote branched
 --------------------------------------------------------
 11. //Reset Last one or two commits:
 
-git reset --hard HEAD^          //Remove last one commit 
+git reset --hard                //Remove  //Working
+git reset --hard HEAD^          //Remove last one commit  //Not done
 git reset --hard HEAD^^        //Remove last two commits
 
 git restore --staged <fileName>  // back to last step from staging tree
+
 
 ---------------------------------------------------------
 
@@ -428,3 +431,11 @@ $ git config --global user.name "Vlad Mihalcea"            //Example
 $ git config --global user.email mail@vladmihalcea.com     //Example
 
 -----------------------------------------------------------------------
+
+Changing Old commit message: 
+
+git commit --amend           //Opening vi editor to change old commit message
+
+
+-------------------------------------------------------------------------
+
