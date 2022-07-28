@@ -1,0 +1,420 @@
+>>>>> YAML (yamal or ymal)  <<<<<
+
+
+--------------------------------------
+--------------------------------------
+keys:
+     GitLAb Yamal File, 
+--------------------------------------
+--------------------------------------
+
+
+words (keys): 
+
+name:
+jobs:
+build:
+runs-on:
+stages:
+stage:
+steps: 
+users:
+name:
+width:
+python-version:
+run
+
+
+
+
+
+---------------------------------------------------
+
+
+1.
+
+YAML syntax example
+
+Here's an example of a simple YAML file for an employee record that demonstrates the syntax rules.
+
+---
+# An employee record
+name: Martin D'vloper
+job: Developer
+skill: Elite
+employed: True
+foods:
+  - Apple
+  - Orange
+  - Strawberry
+  - Mango
+languages:
+  perl: Elite
+  python: Elite
+  pascal: Lame
+education: |
+  4 GCSEs
+  3 A-Levels
+  BSc in the Internet of Things
+
+---------------------------------------------
+
+YAML in Ansible:
+
+
+Ansible Playbooks are used to orchestrate IT processes. 
+A playbook is a YAML file containing 1 or more plays, and is used to define the desired state of a system. 
+
+-----------------------------------------------
+
+YAML for Kubernetes: 
+
+
+Kubernetes works based on defined state and actual state. Kubernetes objects represent the state of a cluster and tell Kubernetes what you want the workload to look like. Kubernetes resources, such as pods, objects, and deployments can be created using YAML files.
+
+---------------------------------------
+
+
+import yaml
+
+if __name__ == '__main__':
+
+    stream = open("foo.yaml", 'r')
+    dictionary = yaml.load(stream)
+    for key, value in dictionary.items():
+        print (key + " : " + str(value))
+
+------------------------------------------------
+
+
+All members of a list are lines beginning at the same indentation level starting with a "- " (a dash and a space):
+
+---
+# A list of tasty fruits
+- Apple
+- Orange
+- Strawberry
+- Mango
+...
+
+
+
+
+
+A dictionary is represented in a simple key: value form (the colon must be followed by a space):
+
+# An employee record
+martin:
+  name: Martin D'vloper
+  job: Developer
+  skill: Elite
+
+---------------------------------
+
+More complicated data structures are possible, such as lists of dictionaries, dictionaries whose values are lists or a mix of both:
+
+# Employee records
+- martin:
+    name: Martin D'vloper
+    job: Developer
+    skills:
+      - python
+      - perl
+      - pascal
+- tabitha:
+    name: Tabitha Bitumen
+    job: Developer
+    skills:
+      - lisp
+      - fortran
+      - erlang
+
+
+--------------------------------
+
+Dictionaries and lists can also be represented in an abbreviated form if you really want to:
+
+---
+martin: {name: Martin D'vloper, job: Developer, skill: Elite}
+fruits: ['Apple', 'Orange', 'Strawberry', 'Mango']
+
+--------------------------------------------------
+
+Dictionaries and lists can also be represented in an abbreviated form if you really want to:
+
+---
+martin: {name: Martin D'vloper, job: Developer, skill: Elite}
+fruits: ['Apple', 'Orange', 'Strawberry', 'Mango']
+
+-------------------------------------------------------
+
+
+
+include_newlines: |
+            exactly as you see
+            will appear these three
+            lines of poetry
+
+fold_newlines: >
+            this is really a
+            single line of text
+            despite appearances
+
+
+-------------------------------------
+
+Let’s combine what we learned so far in an arbitrary YAML example. This really has nothing to do with Ansible, but will give you a feel for the format:
+
+---
+# An employee record
+name: Martin D'vloper
+job: Developer
+skill: Elite
+employed: True
+foods:
+  - Apple
+  - Orange
+  - Strawberry
+  - Mango
+languages:
+  perl: Elite
+  python: Elite
+  pascal: Lame
+education: |
+  4 GCSEs
+  3 A-Levels
+  BSc in the Internet of Things
+
+
+  -----------------------------------
+
+
+
+Examples: 
+
+Docker: 
+
+
+1. Nginx Reverse Proxy
+
+This is  a sample:
+
+version: '3'
+services:
+nginx:
+image: nginx:latest
+volumes:
+- /home/USER/nginx-configuration:/etc/nginx
+ports:
+- 80:80
+- 443:443
+
+------------------------------------------
+
+2. Ghost Blog
+
+version: '3'
+services:
+ghost:
+image: ghost:latest
+ports:
+- 2368:2368
+volumes:
+- ghost-data:/var/lib/ghost/content/
+
+volumes:
+Ghost-data:
+
+
+------------------------------------------
+
+3. MariaDB
+
+
+version: '3'
+services:
+mydb:
+image: mariadb
+environment:
+- MYSQL_ROOT_PASSWORD=my-secret-pw
+
+---------------------------------------
+
+ 
+4. WordPress Stack
+
+version: '3.3'
+ 
+services:
+db:
+image: mysql:5.7
+volumes:
+- db_data:/var/lib/mysql
+restart: always
+environment:
+MYSQL_ROOT_PASSWORD: somewordpress
+MYSQL_DATABASE: wordpress
+MYSQL_USER: wordpress
+MYSQL_PASSWORD: wordpress
+ 
+wordpress:
+depends_on:
+- db
+image: wordpress:latest
+ports:
+- "8000:80"
+restart: always
+environment:
+WORDPRESS_DB_HOST: db:3306
+WORDPRESS_DB_USER: wordpress
+WORDPRESS_DB_PASSWORD: wordpress
+volumes:
+db_data:
+
+----------------------------------
+
+
+5. Docker-Compose with Dockerfiles
+
+
+version: ‘3’
+services:
+front-end:
+build: ./frontend-code
+back-end:
+image: mariadb
+…
+
+
+-----------------------------------
+
+
+
+build-job:
+  stage: build
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+
+test-job1:
+  stage: test
+  script:
+    - echo "This job tests something"
+
+test-job2:
+  stage: test
+  script:
+    - echo "This job tests something, but takes more time than test-job1."
+    - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
+    - echo "which simulates a test that runs 20 seconds longer than test-job1"
+    - sleep 20
+
+deploy-prod:
+  stage: deploy
+  script:
+    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+
+-----------------------------------------------
+
+
+
+>>>>> GitLAb Yamal File <<<<<<
+
+
+.gitlab-ci.yml
+
+Example 01: 
+
+stages:
+  - build
+  - test
+
+build-code-job:
+  stage: build
+  script:
+    - echo "Check the ruby versions. then build some Ruby project files:"
+    - ruby -v
+    - rake
+test-code-job1:
+  stage: test
+  script:
+    - echo "It the files are built successfully. test some files with one command:"
+    - rake test1
+
+test-coke-job2:
+  stage: test
+  script: echo "If the files are built successfully. test other files with a different command:"
+
+
+
+Example 02: 
+
+.gitlab-ci.yml
+
+
+build-job:
+ stage: buid
+script:
+ -echo "Hellow. $GITLAB_USER_LOGIN:"
+
+test-job1:
+ stage: test
+ script: 
+  - echo "This job tests something"
+
+test-job2:
+ state: test
+ script: 
+  - echo "This job test something. but takes more time than test-job1."
+  - echo "After the echo commands complete. It runs the sleep command for 20 seconds"
+  - echo "Which simulates a test that runs 20 seconds longer than test-job1"
+  - sleep 20
+
+deploy-prod:
+ stage: deploy
+ script:
+  - echo "This job deploys something from the $CI_COMMIT_BRANCH branch"
+
+
+- Note -
+
+I you want the runner to use a Docker container to run the jobs edit the .gitlab-ci.yml
+
+
+default:
+ image: ruby:2.7.5
+
+
+--------------> GitLAb Yamal File END <---------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
