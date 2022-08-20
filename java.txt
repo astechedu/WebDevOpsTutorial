@@ -2,3 +2,34 @@
 >>>>> Java <<<<<<<<
 
 ---------------------------------------
+---------------------------------------
+Keys: class, object, compile, run
+
+---------------------------------------
+---------------------------------------
+---------------------------------------
+
+
+>>>> Class and Object <<<<<
+
+File Name: person.java
+
+import java.io.*;
+
+  class Person {
+  int x = 5;
+
+  public static void main(String[] args) {
+    Person myObj = new Person();
+    System.out.println(myObj.x);
+  }
+}
+
+
+
+Compile Java File: javac person.java   //javac fileName
+
+Run Java Class: java Person            //java className
+
+-------------------------------------------
+

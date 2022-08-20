@@ -3,6 +3,9 @@
 
 
 --------------------------------------
+Keys: 
+     install laravel, 
+
 --------------------------------------
 Ubuntu
 Red Hat Enterprise Linux
@@ -484,6 +487,145 @@ help read
 
 --------> End of linux shell scirpts <-------------
 
+
+
+------------------------------------------------------
+------------------------------------------------------
+
+-------> Install Laravel <------------
+
+
+//How to Install Laravel on Ubuntu
+
+
+
+//1. Install Apache Web Server
+
+sudo systemctl status apache2
+sudo apt install apache2
+sudo ufw allow “Apache Full”
+sudo systemctl status apache2
+
+//2. Install PHP
+
+sudo apt install php libapache2-mod-php php-mbstring php-xmlrpc php-soap php-gd php-xml php-cli php-zip php-bcmath php-tokenizer php-json php-pear
+
+apt-get update
+sudo nano /var/www/html/test.php
+
+Adding in php file:
+
+<?php
+phpinfo();
+?>
+
+
+//3. Download and Install a Database Manager
+
+sudo apt install mariadb-server
+sudo mysql_secure_installation
+
+
+Remove anonymous users? [Y/n] y
+Disallow root login remotely? [Y/n] n
+Remove test database and access to it? [Y/n] y
+Reload privilege tables now? [Y/n] y
+
+
+//4. Install Composer
+
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+sudo mv composer.phar /usr/local/bin/composer
+sudo chmod +x /usr/local/bin/composer
+
+
+//5. Install Laravel on Ubuntu Using Composer
+
+composer create-project --prefer-dist laravel/laravel [project_name]
+
+
+//Using Laravel for Local Development
+
+cd example
+
+
+php artisan serve --host=[IP] --port=[port]
+
+
+//Using Laravel to Deploy an Application
+
+sudo mv example /var/www/html/
+sudo chgrp -R www-data /var/www/html/example/
+sudo chmod -R 775 /var/www/html/example/storage
+cd /etc/apache2/sites-available
+sudo nano laravel_project.conf
+
+
+<VirtualHost *:80>
+   ServerName thedomain.com
+   ServerAdmin webmaster@thedomain.com
+   DocumentRoot /var/www/html/example/public
+
+   <Directory /var/www/html/example>
+       AllowOverride All
+   </Directory>
+   ErrorLog ${APACHE_LOG_DIR}/error.log
+   CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+sudo a2dissite 000-default.conf
+sudo a2ensite laravel_project
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+
+
+//Uninstall Laravel and Composer
+
+sudo rm /usr/local/bin/composer
+
+
+
+------> Laravel Installed End <-----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------
 
 
 

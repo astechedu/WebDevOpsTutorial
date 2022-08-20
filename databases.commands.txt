@@ -3,7 +3,11 @@
 
 
 -----------------------------------------------------------------------
+Kerys: 
+
 mysql, sqlite3
+
+mysqld, mysql-nt, mysqladmin, start server
 -----------------------------------------------------------------------
 
 -----------------------------------------------------------------------
@@ -247,8 +251,28 @@ MongoDB:
 
 ------------------------------------------------------------------------
 
+>>>>>> Start & Stop Server <<<<<<<<
 
 
+//Mysql server start in cmd
+C:\> "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld" OR c:/>mysqld
+
+
+//Mysql server stop in cmd
+C:\> "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqladmin" -u root shutdown
+
+ OR C:\>mysqladmin -u root shutdown
+
+
+ OR
+ 
+ C:\Program Files\MySQL\MySQL Server 5.0\bin\mysqld
+
+ C:\>mysqld-nt                       //Start MySql Server
+ C:\>mysqladmin -uroot shutdown     //Stop MySql Server
+  
+
+-----------------------------------------------------------------------------  
 
 
 

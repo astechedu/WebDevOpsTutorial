@@ -1,6 +1,12 @@
 ----------> Jenkin Pipeline Commands<-------------
 
 ---------------------------------------------------
+---------------------------------------------------
+Keys: 
+      pipeline script
+---------------------------------------------------
+---------------------------------------------------
+
 
 
 
@@ -139,7 +145,86 @@ In Jenkins:
 
 
 
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+
+>>>>>> Pipeline Script <<<<<<<<<
 
 
-------------------------------------------------------------------------------------------------------
+There are two types of pipelines in Jenkins:
+
+1.   Declarative
+2.   Scripted
+
+
+Jenkins Pipeline Concepts:
+
+1.
+	pipeline{  
+	}  
+
+2.
+	node{  
+	}  
+
+
+
+    pipeline {  
+        agent any  
+        stages {  
+                stage ('Build') {  
+                    ...  
+                }  
+                stage ('Test') {  
+                    ...  
+                }  
+                stage ('QA') {  
+                    ...  
+                }  
+                stage ('Deploy') {  
+                    ...  
+                }  
+                stage ('Monitor') {  
+                    ...  
+                }  
+        }  
+    }  
+
+
+----------------
+
+Step: A step is a single task that executes a specific process at a defined time. A pipeline involves a series of steps defined within a stage block.
+
+
+    pipeline {  
+        agent any  
+        stages {  
+                stage ('Build') {  
+                    steps {  
+                            echo 'Running build phase...'  
+                    }  
+                }  
+        }  
+    }  
+
+
+------------------
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------
+------------------------------------------------------------
+
+
+
 

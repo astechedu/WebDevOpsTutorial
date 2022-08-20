@@ -4,7 +4,24 @@
 
 -------------------------------------------------
 -------------------------------------------------
+Keys: 
+     batch file, check connections and ids, net help,
+     nginx cmds, cmds details, rem, if, for,
+     examples
 -------------------------------------------------
+-------------------------------------------------
+-------------------------------------------------
+
+>>>> Check Connections and ids <<<<<<<<
+
+1. netstat -h         //Helping 
+2. netstat -a         //Display all active connections
+
+
+
+
+
+
 -------------------------------------------------
 -------------------------------------------------
 
@@ -92,7 +109,308 @@ cd console
 
 -------------------------------------------------
 -------------------------------------------------
+>>> net help
+
+net help
+net user
+net file
 -------------------------------------------------
 -------------------------------------------------
 -------------------------------------------------
+
+>>> nginx cmds <<<<<
+
+nginx -s stop 	    fast shutdown
+nginx -s quit 	    graceful shutdown
+nginx -s reload 	changing configuration, starting new worker processes with a new 
+                    configuration, graceful shutdown of old worker processes
+nginx -s reopen 	re-opening log files
 -------------------------------------------------
+
+
+-------------------------------------------------------------
+
+
+>>>>> CMDS Details <<<<<<<<<<
+
+
+
+Watch Files Examples:
+
+
+1.
+
+@echo off         //Version Check
+VER
+
+
+2. 
+
+@echo off              //Listing directories       
+DIR /a c:\example
+
+3.
+
+@echo off 
+DEL "My File.txt"
+
+4.
+@echo off 
+MKDIR C:\Users\StackHowTo\MyFolder
+
+5.
+
+@echo off 
+RMDIR C:\Users\StackHowTo\MyFolder
+
+6.
+@echo off 
+RENAME example.txt test.txt
+
+
+7.
+
+@echo off 
+REPLACE "C:\tmp\record.mp3" C:\records /s
+
+8.
+@echo off 
+MOVE oldfile.txt newfile.doc
+
+9.
+@echo off 
+COPY source.doc newfile.doc
+
+10.
+@echo off 
+CD ..
+
+11.
+@echo off 
+CHDIR ..
+
+12.
+@echo off 
+CHKDSK C:
+
+13.
+@echo off 
+CLS
+
+14.
+
+@echo off            //Change the color or background of console
+COLOR 17
+
+
+15.
+@echo off                                //Compare    
+COMP C:\demo\file1.txt C:\demo\file2.txt    
+
+16.
+@echo off          //System date
+echo %DATE%
+echo %TIME%
+
+16.
+@echo off                   //display the department variable
+Set _department = 'Tech'
+ECHO %_department%
+
+17.
+                        //If conditions
+@echo off 
+
+IF EXIST "filename" (
+    echo 'File EXIST!'
+) ELSE (
+    echo 'File missing!'
+)
+
+
+18.
+
+@Echo Off             //exit if the required file “myFile.txt” is missing
+IF NOT EXIST myFile.txt EXIT /b
+Echo "File Exists!"
+
+19.
+
+@Echo Off                      //For Loop
+FOR /L %%A IN (1,1,10) DO (
+  ECHO %%A
+)
+
+
+29.                                   //IF
+@Echo Off
+IF NOT EXIST myFile.txt EXIT /b
+Echo "File Exists!"
+
+21.                    //REM
+@Echo Off             //All commands coming after REM or :: are considered 
+:: First comment      //as comments by the console
+REM Second comment
+
+
+22.
+@Echo Off                //GOTO
+GOTO next_message
+   Echo "This will not display"
+goto:eof
+
+:next_message
+   Echo "Next Message"
+
+23.                  //PAUSE
+@Echo Off
+PAUSE
+
+24.                  //CALL
+@Echo Off            //This command allows you to call 
+CALL SecondScript    //a batch file from another batch file
+
+
+25.
+                   //This command allows you to read and
+                  // delete variables in the command prompt.
+@echo off
+Set /P _department=Please enter Department: 
+
+If /i "%_department%"=="finance" goto finance
+If /i "%_department%"=="hr" goto hr
+goto:eof
+
+:finance
+echo You have chosen the Finance department
+goto:eof
+
+:hr
+echo You have chosen the HR department
+goto:eof
+
+
+26.             //Title
+@Echo Off
+TITLE "Welcome to StackHowTo!"
+
+27.                  //START
+@Echo Off            //This command allows you to start 
+START notepad.exe    //some programs or some commands
+START calc.exe
+
+28.
+
+SHUTDOWN                  //SHUTDOWN
+@Echo Off                 //To closes the session
+SHUTDOWN /s /t 60 /c
+
+29.
+                         //FIND
+@Echo Off
+FIND "hello" myFile.txt
+
+
+30.
+                       //MORE
+@Echo Off
+FIND "hello" myFile.txt
+
+31.
+                   //TYPE
+@Echo Off          //This command allows you to display the contents of text files
+TYPE myFile.txt
+
+32.
+@Echo Off                  //PING
+PING -n 5 www.example.com
+
+33.           //HOSTNAME
+@Echo Off
+HOSTNAME
+
+---------> End OF Commnds <-------------------------
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+
+>>>> Batch File Examples <<<<<<<
+
+
+1.
+
+@ECHO OFF
+
+ECHO Hello World! Your first batch file was printed on the screen successfully. 
+
+PAUSE
+
+
+2.
+
+@ECHO OFF 
+
+:: This batch file details Windows 10, hardware, and networking configuration.
+
+TITLE My System Info
+
+ECHO Please wait... Checking system information.
+
+:: Section 1: Windows 10 information
+
+ECHO ==========================
+
+ECHO WINDOWS INFO
+
+ECHO ============================
+
+systeminfo | findstr /c:"OS Name"
+
+systeminfo | findstr /c:"OS Version"
+
+systeminfo | findstr /c:"System Type"
+
+:: Section 2: Hardware information.
+
+ECHO ============================
+
+ECHO HARDWARE INFO
+
+ECHO ============================
+
+systeminfo | findstr /c:"Total Physical Memory"
+
+wmic cpu get name
+
+wmic diskdrive get name,model,size
+
+wmic path win32_videocontroller get name
+
+wmic path win32_VideoController get CurrentHorizontalResolution,CurrentVerticalResolution
+
+:: Section 3: Networking information.
+
+ECHO ============================
+
+ECHO NETWORK INFO
+
+ECHO ============================
+
+ipconfig | findstr IPv4ipconfig | findstr IPv6
+
+START https://support.microsoft.com/en-us/windows/windows-10-system-requirements-6d4e9a79-66bf-7950-467c-795cf0386715
+
+PAUSE
+
+
+3.
+
+
+
+
+
+
+-----------------------------------------------------
+-----------------------------------------------------
+-----------------------------------------------------

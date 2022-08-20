@@ -1,3 +1,14 @@
+>>>>> Github.com <<<<<<<
+
+
+--------------------------------------------------------------------------------------
+Keys: 
+      ssh, github pages,
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+
 --------> Github Page: Change HTML, CSS, Images & github repositories links <-----------
 
 
@@ -37,7 +48,10 @@ https://github.com/astechedu/htmlcsstutorial
 https://github.com/astechedu/laravel8-ui-react
 https://github.com/astechedu/laravel8-ui-vue
 --------------------------------------------------
+--------------------------------------------------
 
+
+------> Github Pages <------
 
 //Editing all
 //Github Changing html, css, text, images etc:
@@ -250,3 +264,17 @@ Following displayed content will be shown to the browser.
 
 
 ------------------------------------------------
+
+
+>>> SSH <<<<
+
+
+
+//Authenticated but not permission github's shell
+
+ssh -T -p 443 git@ssh.github.com
+
+
+-------------------------------------------------
+
+
