@@ -353,6 +353,233 @@ const { incrementCount } = useActions(['incrementCount'])
 
 
 
+----------------------------------------
+--------> Vuex Store <------------------
+
+Start Store: 
+
+
+Installation and Setup:
+
+In order to get started with Vuex, you can install it with npm or yarn.
+
+npm install vuex@4 --save
+# or with yarn
+yarn add vuex@4
+
+
+Then instantiate it via a createStore() function much like Vue 3's createApp() function.
+
+// store/index.js
+import {createStore} from 'vuex'
+export default createStore()
+
+
+Lastly, you register it with Vue like any other Vue plugin with the use() method.
+
+// main.js
+import { createApp } from 'vue'
+import store from '@/store' // short for @/store/index
+const app = createApp({ /* your root component */ })
+app.use(store)
+
+Store Definition
+
+Stores in Vuex are defined via an object passed to the createStore function. The object can have any of the following properties: state, getters, mutations, and actions.
+
+// store/index.js
+export default createStore({
+  state:{},
+  getters:{},
+  mutations: {},
+  actions:{}
+})
+
+
+//State: 
+
+state:{
+  user: { name: 'John Doe', email: 'fake@email.com', username: 'jd123'},
+  posts: [],
+  someString: 'etc'
+}
+
+
+// ProfileComponent.vue
+<template>
+  <h1>Hello, my name is {{$store.state.user.name}}</h1>
+</template>
+
+
+
+Or we can clean up the template a bit by using a computed property.
+
+// ProfileComponent.vue
+<template>
+  <h1>Hello, my name is {{name}}</h1>
+</template>
+<script>
+export default{
+  computed:{
+    name(){ return this.$store.user.name }
+  }
+}
+</script>
+
+
+
+<template>
+  <h1>Hello, my name is {{user.name}}</h1>
+</template>
+<script>
+export default{
+  computed:{
+    ...mapState(['user'])
+  }
+}
+</script>
+
+
+//Gatters
+
+{
+  state:{
+   posts: ['post 1', 'post 2', 'post 3', 'post 4']
+  },
+
+  // the result from all the postsCount getters below is exactly the same
+  // personal preference dicates how you'd like to write them
+  getters:{
+    // arrow function
+    postsCount: state => state.posts.length,
+
+    // traditional function
+    postsCount: function(state){
+      return state.posts.length
+    },
+
+    // method shorthand
+    postsCount(state){
+      return state.posts.length
+    },
+
+    // can access other getters
+    postsCountMessage: (state, getters) => ${getters.postsCount} posts available
+  }
+} 
+
+
+Accessing the store's getters is much the same as accessing the state except you look under the getters property instead of the state property.
+
+// FeedComponent.vue
+<template>
+  <p>{{$store.getters.postsCount}} posts available</p>
+</template>
+
+
+
+You could also use a computed property in your component or a helper function (this time mapGetters) like with the state.
+
+// FeedComponent.vue
+<template>
+  <p>{{postsCount}} posts available</p>
+</template>
+<script>
+import {mapGetters} from 'vuex'
+export default{
+  computed:{
+    ...mapGetters(['postsCount'])
+  }
+}
+</script>
+
+
+
+{
+  state: {
+    posts: ['post 1', 'post 2', 'post 3', 'post 4'],
+    user: { postsCount: 2 }
+    errors: []
+  }
+  mutations:{
+    // convention to uppercase mutation names
+    INSERT_POST(state, post){
+            state.posts.push(post)
+    },
+    INSERT_ERROR(state, error){
+        state.errors.push(error)
+    },
+    INCREMENT_USER_POSTS_COUNT(state, error){
+      state.user.postsCount++
+    }
+  },
+  actions:{
+    async insertPost({commit}, payload){
+       //make some kind of ajax request 
+       try{
+         await doAjaxRequest(payload)
+
+         // can commit multiple mutations in an action
+         commit('INSERT_POST', payload)
+         commit('INCREMENT_USER_POSTS_COUNT')
+       }catch(error){
+        commit('INSERT_ERROR', error)
+       }
+    }
+  }
+}
+
+
+
+// PostEditorComponent.vue
+<template>
+  <input type="text" v-model="post" />
+  <button @click="$store.dispatch('insertPost', post)">Save</button>
+</template>
+
+
+// PostEditorComponent.vue
+<template>
+  <input type="text" v-model="post" />
+  <button @click="savePost">Save</button>
+</template>
+<script>
+export default{
+  methods:{
+    savePost(){
+      this.$store.dispatch('insertPost', this.post)
+    }
+  }
+}
+</script>
+
+
+// PostEditorComponent.vue
+<template>
+  <input type="text" v-model="post" />
+  <button @click="insertPost(post)">Save</button>
+</template>
+<script>
+import {mapActions} from 'vuex'
+export default{
+  methods:{
+    ...mapActions(['insertPost'])
+  }
+}
+</script>
+
+
+Website: 
+ https://vueschool.io/articles/vuejs-tutorials/vuex-the-official-vuejs-store/
+
+ 
+
+End store : 
+
+----------------------------------------
+----------------------------------------
+
+
 
 
 

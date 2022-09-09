@@ -4,7 +4,9 @@
 
 ----------------------------------------------------
 ----------------------------------------------------
-Keys: Namespaces, laravel installation, 
+Keys: Namespaces, laravel installation,
+      upload images, 
+
 ----------------------------------------------------
 ----------------------------------------------------
 ----------------------------------------------------
@@ -314,6 +316,67 @@ php artisan serve
 ----------------------------------------------------------
 
 ----------------------------------------------------------
+
+>>>> Upload Images <<<<
+
+public     : images (Dir)
+Routes     : Web.php 
+Controller : ImageController.php    //php artisan make:contoller ImageController
+View       : image-form.blade.php
+
+
+//1. Routes: Web.php
+Route::get('image', [ImageController::class, 'index'])->name('image.index');
+Route::post('image', [ImageController::class, 'store'])->name('image.store');
+
+
+//2. Controller: ImageController.php
+class ImageController extends Controller
+{
+    public function index() {
+      
+     return view('image-form');
+    }
+
+    public function store(Request $request) {
+        
+        $request->validate([
+            'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
+        ]);
+
+        $imageName = time().'.'.$request->image->extension();
+
+        // Public Folder
+        $request->image->move(public_path('images'), $imageName);
+
+        return back()->with('success', 'Image uploaded Successfully!')
+        ->with('image', $imageName);
+    }
+}
+
+
+//3. View: image-form.blade.php
+   <!-- Container (Contact Section) -->
+    <div id="contact" class="container">
+        <h1 class="text-center" style="margin-top: 100px">Image Upload</h1>
+
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-block">
+                <strong>{{$message}}</strong>
+            </div>
+
+            <img src="{{ asset('images/'.Session::get('image')) }}" />
+        @endif
+
+        <form method="POST" action="{{ route('image.store') }}" enctype="multipart/form-data">
+            @csrf
+            <input type="file" class="form-control" name="image" />
+
+            <button type="submit" class="btn btn-sm">Upload</button>
+        </form>
+
+    </div>
+
 
 ----------------------------------------------------------
 
