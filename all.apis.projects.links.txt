@@ -78,21 +78,117 @@ https://developers.nest.com/guides/api/how-to-read-data
 
 ----------------------------------------------------------
   --->> PHP Api & Projects Links <<------------
+
+
+
+1. CorePHP Api: 
+
+
+
+2. Laravel Api: 
+
+  //Oficial website
+ 	https://laravel.com/docs/9.x/eloquent-resources 
+
+  //Namespaces
+    https://laravel.com/api/9.x/
+
+
+
+3. Codeigniter Api: 
+
+ //Oficial website
+   https://codeigniter.com/user_guide/incoming/restful.html?highlight=rest%20api
+
+
+4. Symfony Api: 
+
+ //Rest Api Symfony-4
+   https://www.adcisolutions.com/knowledge/getting-started-rest-api-symfony-4
+
+
+
+5. Cakephp Api: 
+
+ //Rest 
+   https://book.cakephp.org/4/en/development/rest.html
+
+
+ //Namespaces
+   https://api.cakephp.org/4.4/
+
+
+6. Yii Api: 
+
+   //Namespaces Yii 2.0
+     https://www.yiiframework.com/doc/api/2.0
+   
+   //Rest Api Oficial website
+   https://www.yiiframework.com/doc/guide/2.0/en/rest-quick-start
+
+
+7. Laminas Api: 
+
+  //Rest Oficial website
+   https://api-tools.getlaminas.org/documentation/modules/api-tools-rest
+
+
+
+
+
+8.
+
+
+
+
+
 ----------------------------------------------------------
 
 
 ----------------------------------------------------------
   --->> Python Api & Projects Links <<------------
+
+1. Python Api: 
+
+
+
+
+2. Django Api: 
+
+  //Rest Oficial website
+    https://www.django-rest-framework.org/
+    https://www.django-rest-framework.org/tutorial/quickstart/
+
+
+3. Flash Api: 
+   
+   //Rest Api Oficial Website
+   https://flask-restful.readthedocs.io/en/latest/
+
+
 ----------------------------------------------------------
 
 
 ----------------------------------------------------------
   --->> Ruby Api & Projects Links <<------------
+
+1. Ruby Api: 
+
+
+2. Ruby On Rails Api: 
+
+
+
 ----------------------------------------------------------
 
 
 ----------------------------------------------------------
+
   --->> Java Api & Projects Links <<------------
+
+
+
+
 ----------------------------------------------------------
 
 
