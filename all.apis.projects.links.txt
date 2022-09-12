@@ -10,8 +10,16 @@ Keys: vue api, react api
 
 
 ----------------------------------------------------------
+  --->> JavaScript Api & Projects Links <<------------
+----------------------------------------------------------
 
 Vue Api: 
+
+Vue Api: 
+//Api oficial website All Details of All Built-in functions
+
+https://vuejs.org/api/
+
 
 //1. 
 https://medium.com/bb-tutorials-and-thoughts/how-to-make-api-calls-in-vue-js-applications-43e017d4dc86
@@ -25,26 +33,72 @@ Its Rpository:
 React Api: 
 
 
+//Api oficial website, All built-in functions details
+https://reactjs.org/docs/react-api.html
+
+
+
 ----------------------------------------------------------
+
 Angular Api: 
+ 
+//Api oficial website, All built-in functions details
+https://angular.io/api
+
 
 
 -----------------------------------------------------------
+
 Next Api: 
+ 
+//Api oficial website
+https://nextjs.org/docs/api-routes/introduction
+
 
 
 -----------------------------------------------------------
+
 Nuxt Api: 
+
+
+//Api oficial website
+https://nuxtjs.org/docs/features/data-fetching/
  
 
 -----------------------------------------------------------
 Nest Api: 
 
 
+//Api oficial website
+https://developers.nest.com/guides/api/how-to-read-data
+
 -----------------------------------------------------------
 
 
 
+----------------------------------------------------------
+  --->> PHP Api & Projects Links <<------------
+----------------------------------------------------------
+
+
+----------------------------------------------------------
+  --->> Python Api & Projects Links <<------------
+----------------------------------------------------------
+
+
+----------------------------------------------------------
+  --->> Ruby Api & Projects Links <<------------
+----------------------------------------------------------
+
+
+----------------------------------------------------------
+  --->> Java Api & Projects Links <<------------
+----------------------------------------------------------
+
+
+----------------------------------------------------------
+  --->> .NET Api & Projects Links <<------------
+----------------------------------------------------------
 
 
 
