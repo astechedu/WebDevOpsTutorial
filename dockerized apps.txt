@@ -381,6 +381,86 @@ $ git commit -m ‘Dockerizing this great PHP app’
 
 ===> Codeigniter App <==========
 
+.database
+.docker
+  |php
+     |sites-available
+       |site.conf
+     |Dockerfile
+  |custom.ini
+  |docker-compose.yml
+.git
+app
+  |app
+  |public
+  |tests
+  |vendor
+  |writable
+  |.env
+  |composer.json
+  |composer.lock
+  |spark
+.gitignore
+
+
+
+version: '3'
+services:
+    web:
+        container_name: ci4-web
+        build:
+            context: ./php
+        ports:
+            - 80:80
+        volumes:
+            - ../app:/var/www/html/app/
+            - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
+        links:
+            - mysql
+        depends_on:
+          - mysql
+    mysql:
+        container_name: db-ci4
+        image: mysql:latest
+        volumes:
+            - ./db:/var/lib/mysql
+        command: --default-authentication-plugin=mysql_native_password
+        ports:
+            - 3306:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+
+
+
+The Dockerfile
+
+FROM php:7.2-apache
+RUN apt-get update && \
+    apt-get install -y
+RUN apt-get install -y curl
+RUN apt-get install -y build-essential libssl-dev zlib1g-dev libpng-dev libjpeg-dev libfreetype6-dev
+RUN apt-get install -y libicu-dev
+COPY sites-available/elioter.conf /etc/apache2/sites-enabled/elioter.conf
+RUN apt-get update
+RUN docker-php-ext-install intl
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-install mysqli pdo pdo_mysql zip mbstring
+RUN a2enmod rewrite
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install gd
+RUN service apache2 restart
+
+
+my site.conf
+
+<VirtualHost *:80>
+    DocumentRoot "/var/www/html/app/public/"
+    ServerName ci4.local
+    <Directory "/var/www/html/app/public/">
+        AllowOverride all
+    </Directory>
+</VirtualHost>
+
 ===> End Codeigniter App <======
 
 
