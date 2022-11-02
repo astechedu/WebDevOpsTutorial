@@ -28,7 +28,6 @@ php -v
 sudo ufw status
 sudo ufw allow in "Apache Full"
 
-
 http://<your server's IP>
 
 /var/www/html
