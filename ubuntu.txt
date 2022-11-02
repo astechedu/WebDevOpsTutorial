@@ -417,6 +417,7 @@ systemctl restart apache2
 
 //Verify Apache Configurations
 Example: 
+/etc/hosts
 
 127.0.0.1          localhost
 255.255.255.255    broadcasthost
