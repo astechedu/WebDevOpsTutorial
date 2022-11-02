@@ -4,13 +4,10 @@
 
 How To Install Linux, Apache, MySQL and PHP (LAMP Stack) On Ubuntu 20.04?
 
-
-
-    Linux is the operating system in the stack.
-    Apache is the web server in the stack.
-    MySQL is the database in the stack.
-    PHP is the programming language in the stack.
-
+  Linux is the operating system in the stack.
+  Apache is the web server in the stack.
+  MySQL is the database in the stack.
+  PHP is the programming language in the stack.
 
 sudo apt update
 sudo apt install apache2 -y
