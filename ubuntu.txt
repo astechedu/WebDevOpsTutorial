@@ -101,6 +101,7 @@ mysqli_close($DBconnect);
 
 //Uninstall Apache2 
 sudo apt-get autoremove apache2
+sudo apt-get purge apache2 apache2-utils apache2.2-bin apache2-common
 
 sudo apt update
 sudo apt install apache2
