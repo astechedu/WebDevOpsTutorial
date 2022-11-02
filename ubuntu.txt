@@ -191,6 +191,8 @@ Change in /etc/hosts
 
 ## NGINX Installation: 
 
+sudo apt purge nginx nginx-common nginx-core
+
 -->Installation
 
 sudo apt update
