@@ -1,4 +1,9 @@
-//Ubuntu 
+# Ubuntu 
+## Softwares Installations
+   Apache
+   Nginx
+   PHP
+   MySql
 
 //Install Lamp: 
 
