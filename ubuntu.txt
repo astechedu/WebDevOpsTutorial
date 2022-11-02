@@ -100,6 +100,7 @@ mysqli_close($DBconnect);
 //Apache2 Config & Create New Domain: 
 
 //Uninstall Apache2 
+sudo apt remove apache2*
 sudo apt-get autoremove apache2
 sudo apt-get purge apache2 apache2-utils apache2.2-bin apache2-common
 
