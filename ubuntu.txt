@@ -26,6 +26,7 @@ sudo apt-get remove, sudo apt-get purge, apt-get autoremove,
    Nginx
    PHP
    MySql
+   Apache Multi Sites Config
 
 ### Install Lamp: 
 
@@ -381,8 +382,51 @@ By default, Nginx stores different configuration and log files in the following 
     /var/log/ngins/error.log – A log of any errors generated in Nginx.
 
 ------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+//Apache Multi Sites Config
 
-Ubuntu Terminal Shortcuts	Function:
+mkdir -p /var/www/domain.com/public_html         //Make a Directory for Each Site
+mkdir -p /var/www/domain2.com/public_html
+chmod -R 755 /var/www                            //Set Folder Permissions
+
+vim /var/www/domain.com/public_html/index.html   //Set up an Index Page
+testing for domain.com
+vim /var/www/domain2.com/public_html/index.html
+
+//Copy the Config File for Each Site
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/domain.com.conf
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/domain2.com.conf
+
+//Edit the Config File for Each Site
+vim /etc/apache2/sites-available/domain.com.conf
+
+<VirtualHost *:80>
+ServerAdmin admin@example.com
+ServerName domain.com
+ServerAlias www.domain.com
+DocumentRoot /var/www/domain.com/public_html
+ErrorLog ${APACHE_LOG_DIR}/error.log
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+// Enable Your Config File
+a2dissite 000-default.conf
+a2ensite domain.com.conf
+a2ensite domain2.com.conf
+systemctl restart apache2
+
+//Verify Apache Configurations
+Example: 
+
+127.0.0.1          localhost
+255.255.255.255    broadcasthost
+::1                localhost
+123.123.123.123    astechedu.com www.astechedu.com
+
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
+//Ubuntu Terminal Shortcuts	Function:
 
 Alt + F	          Move forward one word
 Alt + B         	Move backward one word
