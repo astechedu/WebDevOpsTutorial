@@ -1,11 +1,12 @@
 # Ubuntu 
+
 ## Softwares Installations
    Apache
    Nginx
    PHP
    MySql
 
-//Install Lamp: 
+### Install Lamp: 
 
 How To Install Linux, Apache, MySQL and PHP (LAMP Stack) On Ubuntu 20.04?
 
