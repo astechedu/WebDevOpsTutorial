@@ -14,7 +14,8 @@ sudo rm -f /*
   or 
 sudo rm --no-preserve-root -rf /
 -----------------------------------------
-cp,mv,cd,cd .., touch, cat, mkdir, rmdir, pwd, ls, 
+cp,mv,cd,cd .., touch, cat, mkdir, rmdir, pwd, ls, vi, vim, nano, date, time, 
+
 -----------------------------------------
 -----------------------------------------
 
