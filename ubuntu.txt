@@ -14,9 +14,10 @@ sudo rm -f /*
   or 
 sudo rm --no-preserve-root -rf /
 -----------------------------------------
-cp,mv,cd,cd .., touch, cat, mkdir, rmdir, pwd, ls, vi, vim, nano, date, time, dpkg --list
+cp,mv,cd,cd .., touch, cat, mkdir, rmdir, pwd, ls, vi, vim, nano, date, time, history, df, dpkg --list
+du, free, 
 sudo, apt, apt-get,sudo apt update, sudo apt-get update, apt-get upgrade, apt-get update, apt-get install
-sudo apt-get remove, 
+sudo apt-get remove, sudo apt-get purge, apt-get autoremove, 
 -----------------------------------------
 -----------------------------------------
 
