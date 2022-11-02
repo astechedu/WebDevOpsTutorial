@@ -1,0 +1,357 @@
+//Ubuntu 
+
+//Install Lamp: 
+
+How To Install Linux, Apache, MySQL and PHP (LAMP Stack) On Ubuntu 20.04?
+
+
+
+    Linux is the operating system in the stack.
+    Apache is the web server in the stack.
+    MySQL is the database in the stack.
+    PHP is the programming language in the stack.
+
+
+sudo apt update
+sudo apt install apache2 -y
+
+apt install mysql-server -y
+sudo mysql_secure_installation
+
+mysql -V
+sudo apt install php libapache2-mod-php php-mysql -y
+
+php -v
+sudo ufw status
+sudo ufw allow in "Apache Full"
+
+
+http://<your server's IP>
+
+
+/var/www/html
+
+Out Site: 
+  astechedu.local
+  
+sudo a2dissite 000-default.conf
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/astechedu.local.conf
+
+etc/apache2/sites-available/astechedu.local.conf
+
+<Directory /var/www/html/astechedu.local/public>
+        Require all granted
+</Directory>
+
+<VirtualHost *:80>
+        ServerName astechedu.local
+        ServerAlias www.astechedu.local
+        ServerAdmin sisaudiya@localhost
+        DocumentRoot /var/www/html/astechedu.local/public
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+sudo mkdir -p /var/www/html/astechedu.local/public
+udo chown -R www-data:www-data /var/www/html/astechedu.local/public 
+sudo chmod -R 755 /var/www/html/astechedu.local/public
+
+sudo a2ensite astechedu.local
+
+sudo systemctl reload apache2
+
+//File test.php
+/var/www/html/astechedu.local/public/test.php
+
+<?php
+phpinfo();
+?>
+
+http://<your server's IP>/test.php
+
+
+sudo mysql
+CREATE DATABASE testDB;
+CREATE USER 'phpUser'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+
+GRANT ALL ON testDB.* TO 'phpUser'@'%';
+
+CREATE TABLE testDB.breakfastMenu(food VARCHAR(50), description VARCHAR(255));
+
+INSERT INTO testDB.breakfastMenu(food, description) VALUES ('Pepper and Egg With Giardiniera', 'Great Way To Start The Day');
+
+exit
+
+/var/www/html/astechedu.local/public/cherry.php
+
+<?php
+$DBconnect=mysqli_connect("localhost","phpUser","password","testDB");
+$result = mysqli_query($DBconnect,"SELECT * FROM breakfastMenu");
+while($row = mysqli_fetch_array($result))
+    print_r($row['food']);
+mysqli_close($DBconnect);
+?>
+
+
+-----------------------------------------------------------
+
+//Apache2 Config & Create New Domain: 
+
+sudo apt update
+sudo apt install apache2
+apache2 -version
+
+sudo ufw app list
+sudo ufw allow ‘Apache’
+sudo ufw status
+sudo systemctl status apache2
+
+hostname –I
+http://ip
+
+
+
+//Create a directory for your domain
+
+sudo mkdir -p /var/www/astechedu.net/html
+sudo chown -R $USER:$USER /var/www/astechedu.net/html
+sudo chmod -R 755 /var/www/astechedu.net
+nano /var/www/astechedu.net/html/index.html
+
+
+<html>
+<head>
+<title>Welcome to astechedu.net!</title>
+</head>
+<body>
+<h1>You are running astechedu.net on Ubuntu 20.04!</h1>
+</body>
+</html>
+
+
+sudo nano /etc/apache2/sites-available/astechedu.net.conf  //Create Vhost
+
+<VirtualHost *:80>
+ServerAdmin admin@astechedu.net
+ServerName astechedu.net
+ServerAlias astechedu.net
+DocumentRoot /var/www/astechedu.net/html
+ErrorLog ${APACHE_LOG_DIR}/error.log
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+sudo a2ensite astechedu.net.conf  //Vhsot config
+sudo a2dissite 000-default.conf
+sudo systemctl restart apache2
+sudo apache2ctl configtest
+
+sudo nano /etc/apache2/conf-available/astechedu.net.conf
+ServerName astechedu.net
+
+ sudo a2enconf servername
+
+sudo apache2ctl configtest
+
+http://astechedu.net
+
+
+sudo systemctl start apache2
+sudo systemctl stop apache2
+sudo systemctl stop apache2
+sudo systemctl reload apache2
+sudo systemctl enable apache2
+sudo systemctl disable apache2
+
+
+Change in /etc/hosts
+127.0.0.1 localhost astechedu.net
+
+
+
+//The location of the Apache configuration file
+
+  /etc/apache2/httpd.conf
+  /etc/apache2/apache2.conf
+  /etc/httpd/httpd.conf
+  /etc/httpd/conf/httpd.conf
+  
+  /usr/local/etc/httpd/httpd.conf
+  
+  /usr/sbin/apache2 
+  /etc/apache2 
+  /usr/lib/apache2 
+  /usr/share/apache2 
+  /usr/share/man/man8/apache2.8.gz
+  /usr/local/etc/httpd/httpd.conf
+  
+------------------------------------------------------------------------------
+
+
+//ININX Installation: 
+
+-->Installation
+
+sudo apt update
+sudo apt install nginx
+
+--> Adjusting the Firewall
+
+sudo ufw app list
+sudo ufw allow 'Nginx HTTP'
+sudo ufw status
+
+
+systemctl status nginx
+curl -4 icanhazip.com
+http://your_server_ip
+
+-->Managing the Nginx Process
+sudo systemctl stop nginx
+sudo systemctl start nginx
+sudo systemctl restart nginx
+sudo systemctl reload nginx
+sudo systemctl disable nginx
+sudo systemctl enable nginx
+
+-->Setting Up Server Blocks (Recommended)
+
+sudo mkdir -p /var/www/your_domain.net/html
+sudo chown -R $USER:$USER /var/www/your_domain.net/html
+sudo chmod -R 755 /var/www/your_domain.net
+sudo nano /var/www/your_domain.net/html/index.html
+
+/var/www/your_domain.net/html/index.html
+
+<html>
+    <head>
+        <title>Welcome to your_domain.net!</title>
+    </head>
+    <body>
+        <h1>Success!  The your_domain.net server block is working!</h1>
+    </body>
+</html>
+
+
+sudo nano /etc/nginx/sites-available/your_domain.net
+/etc/nginx/sites-available/your_domain.net
+
+
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/your_domain/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name your_domain www.your_domain;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+
+
+sudo ln -s /etc/nginx/sites-available/your_domain.net /etc/nginx/sites-enabled/
+sudo nano /etc/nginx/nginx.conf
+
+/etc/nginx/nginx.conf
+
+...
+http {
+    ...
+    server_names_hash_bucket_size 64;
+    ...
+}
+...
+
+
+sudo nginx -t
+sudo systemctl restart nginx
+
+
+//The location of the NGINX configuration file
+//Getting Familiar with Important Nginx Files and Directories
+
+
+/var/www/html  //Content
+
+/etc/nginx
+/etc/nginx/nginx.conf
+/etc/nginx/sites-available/
+/etc/nginx/sites-enabled/
+/etc/nginx/snippets
+
+/var/log/nginx/access.log    //Server logs
+/var/log/nginx/error.log
+
+
+
+--> Copying Files to the New Location
+
+grep -R "root" /etc/nginx/sites-enabled
+
+Output
+/etc/nginx/sites-enabled/your_domain.net:           root /var/www/your_domain.net/html;
+/etc/nginx/sites-enabled/default:               root /var/www/html;
+/etc/nginx/sites-enabled/default:               # deny access to .htaccess files, if Apache's document root
+/etc/nginx/sites-enabled/default:#              root /var/www/your_domain;
+
+
+sudo rsync -av /var/www/your_domain.net/html /mnt/volume-nyc3-01
+
+Output
+sending incremental file list
+created directory /mnt/volume-nyc3-01
+html/
+html/index.html
+
+sent 318 bytes  received 39 bytes  714.00 bytes/sec
+total size is 176  speedup is 0.49
+
+
+--> Updating the Configuration Files
+
+sudo nano /etc/nginx/sites-enabled/your_domain.net
+
+/etc/nginx/sites-enabled/your_domain.net
+
+server {
+
+        root /mnt/volume-nyc3-01/html;
+        index index.html index.htm index.nginx-debian.html;
+        . . .
+}
+. . .
+
+
+--> Restarting Nginx
+
+sudo nginx -t
+
+Output:
+
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+
+sudo systemctl restart nginx
+sudo rm -Rf /var/www/your_domain.net/html
+
+
+Important Nginx File Locations
+
+By default, Nginx stores different configuration and log files in the following locations:
+
+    /var/www/html – Website content as seen by visitors.
+    /etc/nginx – Location of the main Nginx application files.
+    /etc/nginx/nginx.conf – The main Nginx configuration file.
+    /etc/nginx/sites-available – List of all websites configured through Nginx.
+    /etc/nginx/sites-enabled – List of websites actively being served by Nginx.
+    /var/log/nginx/access.log – Access logs tracking every request to your server.
+    /var/log/ngins/error.log – A log of any errors generated in Nginx.
+
+------------------------------------------------------------------------------
+
+
+  
+  
