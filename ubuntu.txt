@@ -189,7 +189,7 @@ Change in /etc/hosts
 ------------------------------------------------------------------------------
 
 
-//ININX Installation: 
+## NGINX Installation: 
 
 -->Installation
 
