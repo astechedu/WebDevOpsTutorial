@@ -193,6 +193,7 @@ Change in /etc/hosts
 
 --> Uninstall NGINX
 sudo apt purge nginx nginx-common nginx-core
+sudo apt autoremove
 
 -->Installation
 
