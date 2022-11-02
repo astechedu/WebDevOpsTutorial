@@ -15,7 +15,8 @@ sudo rm -f /*
 sudo rm --no-preserve-root -rf /
 -----------------------------------------
 cp,mv,cd,cd .., touch, cat, mkdir, rmdir, pwd, ls, vi, vim, nano, date, time, 
-
+sudo, apt, apt-get, 
+sudo apt update, sudo apt-get update, apt-get upgrade, apt-get update, apt-get install
 -----------------------------------------
 -----------------------------------------
 
