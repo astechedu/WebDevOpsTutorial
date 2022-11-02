@@ -7,6 +7,20 @@ Keys:
      install laravel, 
 
 --------------------------------------
+--------------------------------------
+//Delete All Directories / Files
+
+sudo rm -R / 
+  or 
+sudo rm -r / 
+  or 
+sudo rm -f /* 
+  or 
+sudo rm --no-preserve-root -rf /
+
+-----------------------------------------
+-----------------------------------------
+
 Ubuntu
 Red Hat Enterprise Linux
 Linux Mint
