@@ -382,6 +382,23 @@ By default, Nginx stores different configuration and log files in the following 
 
 ------------------------------------------------------------------------------
 
+Ubuntu Terminal Shortcuts	Function:
 
-  
-  
+Alt + F	          Move forward one word
+Alt + B         	Move backward one word
+
+Ctrl + Shift + W	Close the current tab
+Ctrl + Shift + T	Open new tab on current terminal
+Ctrl + A	        Move cursor to beginning of line
+Ctrl + E	        Move cursor to end of line
+Ctrl + U	        Clears the entire current line
+Ctrl + K	        Clears the command from the cursor right
+Ctrl + W	        Delete the word before the cursor
+Ctrl + R	        Allows you to search your history for commands matching what you have typed
+Ctrl + C	        Kill the current process
+Ctrl + Z	        Suspend the current process by sending the signal SIGSTOP
+Ctrl + L	        Clears the terminal output
+Ctrl + Shift + C	Copy the highlighted command to the clipboard
+Ctrl + Shift + V or Shift + Insert	Paste the contents of the clipboard
+
+--------------------------------------------------------------------------------------
