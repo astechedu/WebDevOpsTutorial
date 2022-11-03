@@ -84,6 +84,9 @@ sudo a2ensite astechedu.local
 
 sudo systemctl reload apache2
 
+sudo nano /etc/hosts
+120.0.0.1 astechedu.net www.astechedu.net
+
 //File test.php
 /var/www/html/astechedu.local/public/test.php
 
@@ -184,6 +187,9 @@ ServerName astechedu.net
 sudo apache2ctl configtest
 
 http://astechedu.net
+
+sudo nano /etc/hosts
+120.0.0.1 astechedu.net www.astechedu.net
 
 
 sudo systemctl start apache2
