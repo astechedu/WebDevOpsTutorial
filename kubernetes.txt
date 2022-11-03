@@ -124,7 +124,23 @@ Run Yamal File:
 
  >>> Microk8s CMDS <<<<<<
  
+ sudo snap install microk8s --classic --channel=1.25   //Install MicroK8s
+ sudo usermod -a -G microk8s $USER                    //Join the group
+ sudo chown -f -R $USER ~/.kube
+ su - $USER                                           // Password
+ microk8s status --wait-ready                         //Check the status
+ microk8s kubectl get nodes                          //Access Kubernetes
+ microk8s kubectl get services
+ alias kubectl='microk8s kubectl'
+ 
+ microk8s kubectl create deployment nginx --image=nginx //Deploy an app
+ microk8s kubectl get pods
+ 
+ microk8s enable dns storage           //Use add-ons
+ 
  $ microk8s
+ $ microk8s stop
+ $ microk8s start
  $ microk8s status
  $ microk8s kubectl get all --all-namespaces
  $ microk8s kubectl get pods
