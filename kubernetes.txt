@@ -159,12 +159,19 @@ spec:
  
  microk8s enable dns storage           //Use add-ons
  
- $ microk8s
- $ microk8s stop
- $ microk8s start
- $ microk8s status
- $ microk8s kubectl get all --all-namespaces
- $ microk8s kubectl get pods
+  //microk8s
+  microk8s stop
+  microk8s start
+  microk8s status
+  microk8s kubectl get all --all-namespaces
+  microk8s kubectl get pods
+  microk8s kubectl create deployment <deploymentName> --image=nginx
+  microk8s kubectl create deployment <deploymentName> --image=mysql --replicas=2
+  microk8s kubectl scale deployment <deploymentName> --replicas=1
+  microk8s kubectl get deployments
+  microk8s kubectl get deployments -o wide
+  microk8s kubectl get deployments -o yaml 
+  microk8s kubectl get deployments -o json
  -------------------------------------------
 
 
