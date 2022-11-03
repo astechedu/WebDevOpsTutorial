@@ -59,6 +59,7 @@ Out Site:
   
 sudo a2dissite 000-default.conf
 sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/astechedu.local.conf
+ln -s /etc/apache2/sites-available/astechedu.local.conf /etc/apache2/sites-enabled/astechedu.local.conf
 
 etc/apache2/sites-available/astechedu.local.conf
 
@@ -174,6 +175,8 @@ sudo systemctl restart apache2
 sudo apache2ctl configtest
 
 sudo nano /etc/apache2/conf-available/astechedu.net.conf
+ln -s /etc/apache2/sites-available/astechedu.net.conf /etc/apache2/sites-enabled/astechedu.net.conf
+
 ServerName astechedu.net
 
  sudo a2enconf servername
