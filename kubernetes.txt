@@ -177,15 +177,6 @@ spec:
   microk8s kubectl rollout undo deployment <deploymentName> --to-revision=1
  
 --------------------------------------------
-
-Some CMDS: 
-kubectl expose pod <podName>
-kubectl get pod
-kubectl expose pod <podname> --port=8000 --target=80 --name <serviceName>
-kubectl get services
-kubectl get svc
-curl 10.88.20e.56:8000
-
 //In Pod's container
 kubectl get pods
 kubectl exec <podName> env
@@ -195,5 +186,13 @@ kucbctl get pods
 kubectl exec <podName> <containerName> -it bash
 kubectl exec <podName> -c <containerName> -it bash
 kubectl exec <podName> -c <containerName> -it ls /   
+
+Some CMDS: 
+kubectl expose pod <podName>
+kubectl get pod
+kubectl expose pod <podname> --port=8000 --target=80 --name <serviceName>
+kubectl get services
+kubectl get svc
+curl 10.88.20e.56:8000
 
 --------------------------------------------------------
