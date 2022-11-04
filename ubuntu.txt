@@ -26,6 +26,7 @@ sudo apt-get remove, sudo apt-get purge, apt-get autoremove,
    Nginx
    PHP
    MySql
+   PHPMYADMIN
    Apache Multi Sites Config
 
 ### Install Lamp: 
