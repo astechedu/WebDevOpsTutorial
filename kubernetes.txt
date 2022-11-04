@@ -186,6 +186,14 @@ kubectl get services
 kubectl get svc
 curl 10.88.20e.56:8000
 
---------------------------------------------
+//In Pod's container
+kubectl get pods
+kubectl exec <podName> env
+kubectl exec <podName> -c <containerName> env
+kubectl exec <podName> 
+kucbctl get pods
+kubectl exec <podName> <containerName> -it bash
+kubectl exec <podName> -c <containerName> -it bash
+kubectl exec <podName> -c <containerName> -it ls /   
 
-
+--------------------------------------------------------
