@@ -120,7 +120,6 @@ while($row = mysqli_fetch_array($result))
 mysqli_close($DBconnect);
 ?>
 
-
 -----------------------------------------------------------
 
 //Apache2 Config & Create New Domain: 
@@ -203,7 +202,6 @@ Change in /etc/hosts
 127.0.0.1 localhost astechedu.net
 
 
-
 //The location of the Apache configuration file
 
   /etc/apache2/httpd.conf
@@ -221,7 +219,6 @@ Change in /etc/hosts
   /usr/local/etc/httpd/httpd.conf
   
 ------------------------------------------------------------------------------
-
 
 ## NGINX Installation: 
 
