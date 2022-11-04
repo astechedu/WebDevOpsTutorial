@@ -16,7 +16,6 @@ How to deploy first spring boot application to Kubernetes
 -------------------------------------------------
 -------------------------------------------------
 
-
 Installatioin: 
 
 1. Minikube     (  )
@@ -27,7 +26,6 @@ Requirements:
 
   1. Virtual Box Or Hiper-V or docker ( as a driver )
   
-
 
 --------------------------------------------------
 --------------------------------------------------
@@ -40,13 +38,9 @@ Requirements:
 
    Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node.
 
-
-
-
 2. KubeCtl Installation ( Kubectl.exe )
 
 	kubectl. The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For more information including a complete list of kubectl operations, see the kubectl reference documentation.
-
 
 
 # Download minikube & kubectl
@@ -66,8 +60,6 @@ Requirements:
     > docker images
     > ........... more
 
-
-
 -------------------------------------------------------------------
 -------------------------------------------------------------------
 //Creating first yml file 
@@ -77,7 +69,6 @@ apiVersion:
 kind: 
 metadata:
 spec:
-
 
 
 apiVersion: v1
@@ -92,9 +83,7 @@ spec:
  containers:
   - name: containername
     image: coolgaurab147/nginx-custom
-    
-    
-    
+        
     
 Run Yamal File: 
  kubectl create -f firstpod.yml --dry-run
@@ -111,14 +100,12 @@ Run Yamal File:
  
  //Output redirect to new yaml file
   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml > mysecondpd.yml
-  
-  
+    
   Commands: 
   kubectl get pods
   kubectl delete pods myfirstpod
   ls
-  kubectl apply -f mysecond.yml    //Create pod  
- 
+  kubectl apply -f mysecond.yml    //Create pod   
  
  Example YML File: 
  apiVersion: apps/v1
@@ -195,4 +182,16 @@ kubectl get services
 kubectl get svc
 curl 10.88.20e.56:8000
 
---------------------------------------------------------
+//Mulit containers in a pod (shared network)
+kubectl get pods
+kubectl apply -f firstpod.yml
+kubectl get pods
+
+kubectl grep name firstpod.yml
+kubectl exec myfirstpod -c firstcontainer -it bash
+netstat -nltp
+netcat -l -p 8000  //Port listen
+telnet localhost 8000
+ifconfig
+
+--------------------------------------------
