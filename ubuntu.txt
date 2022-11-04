@@ -640,7 +640,55 @@ sudo htpasswd /etc/phpmyadmin/.htpasswd additionaluser
 sudo systemctl restart apache2
 https://domain_name_or_IP/phpmyadmin
 
+//OR Install PHPMYADMIN
+
+Install Apache and PHP
+sudo apt install apache2 wget unzip 
+sudo apt install php php-zip php-json php-mbstring php-mysql 
+
+sudo systemctl enable apache2 
+sudo systemctl start apache2 
+
+Install phpMyAdmin on Ubuntu 20.04
+wget https://files.phpmyadmin.net/phpMyAdmin/5.1.1/phpMyAdmin-5.1.1-all-languages.zip 
+unzip phpMyAdmin-5.1.1-all-languages.zip 
+mv phpMyAdmin-5.1.1-all-languages /usr/share/phpmyadmin 
+
+Configure phpMyAdmin
+sudo vi /etc/apache/conf-available/phpmyadmin.conf 
+
+Alias /phpmyadmin /usr/share/phpmyadmin
+Alias /phpMyAdmin /usr/share/phpmyadmin
+ 
+<Directory /usr/share/phpmyadmin/>
+   AddDefaultCharset UTF-8
+   <IfModule mod_authz_core.c>
+      <RequireAny>
+      Require all granted
+     </RequireAny>
+   </IfModule>
+</Directory>
+ 
+<Directory /usr/share/phpmyadmin/setup/>
+   <IfModule mod_authz_core.c>
+     <RequireAny>
+       Require all granted
+     </RequireAny>
+   </IfModule>
+</Directory>
+
+sudo a2enconf phpmyadmin 
+sudo systemctl restart apache2 
+
+Adjusting FirewallD
+sudo firewall-cmd --permanent --add-service=http 
+sudo firewall-cmd --reload 
+
+Access phpMyAdmin
+http://your-server-ip-domain/phpmyadmin
+
 ---------------------------------------------------------
+
 //Ubuntu Terminal Shortcuts	Function:
 
 Alt + F	          Move forward one word
