@@ -539,9 +539,70 @@ mysql -u sammy -p
 systemctl status mysql.service
 sudo mysqladmin -p -u sammy version
 
-
+-----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
 
+//Install & Uninstall phpmyadmin
+
+//Uninstall PHPMYADMIN
+
+//Install PHPMYADMIN
+sudo apt update
+sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+
+    php-mbstring: A module for managing non-ASCII strings and convert strings to different encodings
+    php-zip: This extension supports uploading .zip files to phpMyAdmin
+    php-gd: Enables support for the GD Graphics Library
+    php-json: Provides PHP with support for JSON serialization
+    php-curl: Allows PHP to interact with different kinds of servers using different protocols
+    
+sudo mysql
+mysql -u root -p
+UNINSTALL COMPONENT "file://component_validate_password";
+exit
+sudo apt install phpmyadmin
+INSTALL COMPONENT "file://component_validate_password";
+sudo phpenmod mbstring
+sudo systemctl restart apache2
+sudo mysql
+SELECT user,authentication_string,plugin,host FROM mysql.user;
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+SELECT user,authentication_string,plugin,host FROM mysql.user;
+sudo mysql
+mysql -u root -p
+CREATE USER 'sammy'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
+ALTER USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+exit
+https://your_domain_or_IP/phpmyadmin
+sudo nano /etc/apache2/conf-available/phpmyadmin.conf
+
+/etc/apache2/conf-available/phpmyadmin.conf
+
+<Directory /usr/share/phpmyadmin>
+    Options SymLinksIfOwnerMatch
+    DirectoryIndex index.php
+    AllowOverride All
+    . . .
+
+sudo systemctl restart apache2
+sudo nano /usr/share/phpmyadmin/.htaccess
+
+/usr/share/phpmyadmin/.htaccess
+
+AuthType Basic
+AuthName "Restricted Files"
+AuthUserFile /etc/phpmyadmin/.htpasswd
+Require valid-user
+
+
+sudo htpasswd -c /etc/phpmyadmin/.htpasswd username
+sudo htpasswd /etc/phpmyadmin/.htpasswd additionaluser
+sudo systemctl restart apache2
+https://domain_name_or_IP/phpmyadmin
+
+---------------------------------------------------------
 //Ubuntu Terminal Shortcuts	Function:
 
 Alt + F	          Move forward one word
