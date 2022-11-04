@@ -141,8 +141,6 @@ sudo systemctl status apache2
 hostname –I
 http://ip
 
-
-
 //Create a directory for your domain
 
 sudo mkdir -p /var/www/astechedu.net/html
@@ -504,6 +502,43 @@ sudo a2enmod php5
 and restart apache:
 
 sudo service apache2 restart
+
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+//Mysql Install & Uninstall 
+
+//Uninstall MySql
+sudo apt-get purge 'mysql*'
+
+
+//Install MySql
+
+
+sudo apt update
+sudo apt install mysql-server
+sudo systemctl start mysql.service
+sudo mysql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+exit
+mysql -u root -p
+ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
+sudo mysql_secure_installation
+sudo mysql
+mysql -u root -p
+CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
+CREATE USER 'sammy'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+ALTER USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+GRANT PRIVILEGE ON database.table TO 'username'@'host';
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+exit
+mysql -u sammy -p
+systemctl status mysql.service
+sudo mysqladmin -p -u sammy version
+
 
 -----------------------------------------------------------------------------
 
