@@ -172,6 +172,20 @@ spec:
   microk8s kubectl get deployments -o wide
   microk8s kubectl get deployments -o yaml 
   microk8s kubectl get deployments -o json
- -------------------------------------------
+  microk8s kubectl describe deployment
+  microk8s kubectl describe deployment <deploymentName>
+  microk8s kubectl rollout undo deployment <deploymentName> --to-revision=1
+ 
+--------------------------------------------
+
+Some CMDS: 
+kubectl expose pod <podName>
+kubectl get pod
+kubectl expose pod <podname> --port=8000 --target=80 --name <serviceName>
+kubectl get services
+kubectl get svc
+curl 10.88.20e.56:8000
+
+--------------------------------------------
 
 
