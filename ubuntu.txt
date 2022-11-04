@@ -544,9 +544,13 @@ sudo apt install php8.0-mysql php8.0-gd
 //Uninstall MySql
 sudo apt-get purge 'mysql*'
 
-
 //Install MySql
-
+cd /tmp
+curl -OL https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
+ls
+sudo dpkg -i mysql-apt-config*
+sudo apt update
+rm mysql-apt-config*
 
 sudo apt update
 sudo apt install mysql-server
