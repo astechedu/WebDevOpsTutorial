@@ -194,4 +194,21 @@ netcat -l -p 8000  //Port listen
 telnet localhost 8000
 ifconfig
 
+//initContainer (Add initContainer in above yml file)
+ initContainers:
+  - name: initcontainer
+    image: coolgourav147/nginx-custom
+    env:
+     - name: myname
+       value: Gaurav
+     - name: City
+       value: Jaipur
+    args: ["sleep","3600"]
+  - name: secondcontainer
+    image: coolgourav147/nginx-custom  
+    
+kubectl apply -f firtpod.yml
+kubectl get pods -w
+
 --------------------------------------------
+
