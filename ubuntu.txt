@@ -693,7 +693,7 @@ sudo firewall-cmd --reload
 --OR This--
 mysql -u root -p
 mysql> create user 'admin'@'%' IDENTIFIED BY 'admin'; 
-mysql> GRANT ALL PRIVILEGES on "." TO 'admin'@'%' WITH GRANT OPTION;
+mysql> GRANT ALL PRIVILEGES on *.* TO 'admin'@'%' WITH GRANT OPTION;
 
 Access phpMyAdmin
 http://your-server-ip-domain/phpmyadmin
