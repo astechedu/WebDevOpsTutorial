@@ -3,20 +3,20 @@
 
 #### Ubuntu Commands: 
 
-//Delete All Directories / Files <br />
+ Delete All Directories / Files <br />
 
-sudo rm -R / <br />
-  or 
-sudo rm -r / <br />
-  or 
-sudo rm -f /* <br />
-  or 
-sudo rm --no-preserve-root -rf / <br />
+    sudo rm -R / <br />
+      or 
+    sudo rm -r / <br />
+      or 
+    sudo rm -f /* <br />
+      or 
+    sudo rm --no-preserve-root -rf / <br />
 
-  cp,mv,cd,cd .., touch, cat, mkdir, rmdir, pwd, ls, vi, vim, nano, date, time, history, df, dpkg --list, <br />
-  du, free, uname -a, hostname -I, top, man, info, passwd, whatis, ping -4 websiteName, ip a | egrep "inet ", <br />
-  sudo, sudo -i, sudo -s, apt, apt-get,sudo apt update, sudo apt-get update, apt-get upgrade, apt-get update, apt-get install, <br />
-  sudo apt-get remove, sudo apt-get purge, apt-get autoremove <br />
+    cp,mv,cd,cd .., touch, cat, mkdir, rmdir, pwd, ls, vi, vim, nano, date, time, history, df, dpkg --list, <br />
+    du, free, uname -a, hostname -I, top, man, info, passwd, whatis, ping -4 websiteName, ip a | egrep "inet ", <br />
+    sudo, sudo -i, sudo -s, apt, apt-get,sudo apt update, sudo apt-get update, apt-get upgrade, apt-get update, apt-get install, <br />
+    sudo apt-get remove, sudo apt-get purge, apt-get autoremove <br />
 
 ## Softwares Installations
    Apache <br />
@@ -28,544 +28,535 @@ sudo rm --no-preserve-root -rf / <br />
 
 ### Install Lamp: 
 
-How To Install Linux, Apache, MySQL and PHP (LAMP Stack) On Ubuntu 20.04?
+  How To Install Linux, Apache, MySQL and PHP (LAMP Stack) On Ubuntu 20.04?
 
-  Linux is the operating system in the stack.
-  Apache is the web server in the stack.
-  MySQL is the database in the stack.
-  PHP is the programming language in the stack.
+    Linux is the operating system in the stack.
+    Apache is the web server in the stack.
+    MySQL is the database in the stack.
+    PHP is the programming language in the stack.
 
-sudo apt update
-sudo apt install apache2 -y
+  sudo apt update
+  sudo apt install apache2 -y
 
-apt install mysql-server -y
-sudo mysql_secure_installation
+  apt install mysql-server -y
+  sudo mysql_secure_installation
 
-mysql -V
-sudo apt install php libapache2-mod-php php-mysql -y
+  mysql -V
+  sudo apt install php libapache2-mod-php php-mysql -y
 
-php -v
-sudo ufw status
-sudo ufw allow in "Apache Full"
+  php -v
+  sudo ufw status
+  sudo ufw allow in "Apache Full"
 
-http://<your server's IP>
+  http://<your server's IP>
 
-/var/www/html
+  /var/www/html
 
-Out Site: 
-  astechedu.local
+  Out Site: 
+    astechedu.local
   
-sudo a2dissite 000-default.conf
-sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/astechedu.local.conf
-ln -s /etc/apache2/sites-available/astechedu.local.conf /etc/apache2/sites-enabled/astechedu.local.conf
+  sudo a2dissite 000-default.conf
+  sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/astechedu.local.conf
+  ln -s /etc/apache2/sites-available/astechedu.local.conf /etc/apache2/sites-enabled/astechedu.local.conf
 
-etc/apache2/sites-available/astechedu.local.conf
+  etc/apache2/sites-available/astechedu.local.conf
 
-<Directory /var/www/html/astechedu.local/public>
-        Require all granted
-</Directory>
+  <Directory /var/www/html/astechedu.local/public>
+          Require all granted
+  </Directory>
 
-<VirtualHost *:80>
-        ServerName astechedu.local
-        ServerAlias www.astechedu.local
-        ServerAdmin sisaudiya@localhost
-        DocumentRoot /var/www/html/astechedu.local/public
-        ErrorLog ${APACHE_LOG_DIR}/error.log
-        CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
+    <VirtualHost *:80>
+            ServerName astechedu.local
+            ServerAlias www.astechedu.local
+            ServerAdmin sisaudiya@localhost
+            DocumentRoot /var/www/html/astechedu.local/public
+            ErrorLog ${APACHE_LOG_DIR}/error.log
+            CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
 
-sudo mkdir -p /var/www/html/astechedu.local/public
-udo chown -R www-data:www-data /var/www/html/astechedu.local/public 
-sudo chmod -R 755 /var/www/html/astechedu.local/public
+  sudo mkdir -p /var/www/html/astechedu.local/public
+  udo chown -R www-data:www-data /var/www/html/astechedu.local/public 
+  sudo chmod -R 755 /var/www/html/astechedu.local/public
 
-sudo a2ensite astechedu.local
+  sudo a2ensite astechedu.local
 
-sudo systemctl reload apache2
+  sudo systemctl reload apache2
 
-sudo nano /etc/hosts
-120.0.0.1 astechedu.net www.astechedu.net
+  sudo nano /etc/hosts
+  120.0.0.1 astechedu.net www.astechedu.net
 
-//File test.php
-/var/www/html/astechedu.local/public/test.php
+  //File test.php
+  /var/www/html/astechedu.local/public/test.php
 
-<?php
-phpinfo();
-?>
+  <?php
+  phpinfo();
+  ?>
 
-http://<your server's IP>/test.php
+  http://<your server's IP>/test.php
 
 
-sudo mysql
-CREATE DATABASE testDB;
-CREATE USER 'phpUser'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+  sudo mysql
+  CREATE DATABASE testDB;
+  CREATE USER 'phpUser'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
 
-GRANT ALL ON testDB.* TO 'phpUser'@'%';
+  GRANT ALL ON testDB.* TO 'phpUser'@'%';
 
-CREATE TABLE testDB.breakfastMenu(food VARCHAR(50), description VARCHAR(255));
+  CREATE TABLE testDB.breakfastMenu(food VARCHAR(50), description VARCHAR(255));
 
-INSERT INTO testDB.breakfastMenu(food, description) VALUES ('Pepper and Egg With Giardiniera', 'Great Way To Start The Day');
+  INSERT INTO testDB.breakfastMenu(food, description) VALUES ('Pepper and Egg With Giardiniera', 'Great Way To Start The Day');
 
-exit
+  exit
 
-/var/www/html/astechedu.local/public/cherry.php
+  /var/www/html/astechedu.local/public/cherry.php
 
-<?php
-$DBconnect=mysqli_connect("localhost","phpUser","password","testDB");
-$result = mysqli_query($DBconnect,"SELECT * FROM breakfastMenu");
-while($row = mysqli_fetch_array($result))
-    print_r($row['food']);
-mysqli_close($DBconnect);
-?>
+    <?php
+    $DBconnect=mysqli_connect("localhost","phpUser","password","testDB");
+    $result = mysqli_query($DBconnect,"SELECT * FROM breakfastMenu");
+    while($row = mysqli_fetch_array($result))
+        print_r($row['food']);
+    mysqli_close($DBconnect);
+    ?>
 
 #### Apache2 Config & Create New Domain: 
 
 //Uninstall Apache2 
-sudo apt remove apache2*
-sudo apt-get autoremove apache2
-sudo apt-get purge apache2 apache2-utils apache2.2-bin apache2-common
+  sudo apt remove apache2*
+  sudo apt-get autoremove apache2
+  sudo apt-get purge apache2 apache2-utils apache2.2-bin apache2-common
 
-sudo apt update
-sudo apt install apache2
-apache2 -version
+  sudo apt update
+  sudo apt install apache2
+  apache2 -version
 
-sudo ufw app list
-sudo ufw allow ‘Apache’
-sudo ufw status
-sudo systemctl status apache2
+  sudo ufw app list
+  sudo ufw allow ‘Apache’
+  sudo ufw status
+  sudo systemctl status apache2
 
-hostname –I
-http://ip
+  hostname –I
+  http://ip
 
-//Create a directory for your domain
+  //Create a directory for your domain
 
-sudo mkdir -p /var/www/astechedu.net/html
-sudo chown -R $USER:$USER /var/www/astechedu.net/html
-sudo chmod -R 755 /var/www/astechedu.net
-nano /var/www/astechedu.net/html/index.html
-
-
-<html>
-<head>
-<title>Welcome to astechedu.net!</title>
-</head>
-<body>
-<h1>You are running astechedu.net on Ubuntu 20.04!</h1>
-</body>
-</html>
+  sudo mkdir -p /var/www/astechedu.net/html
+  sudo chown -R $USER:$USER /var/www/astechedu.net/html
+  sudo chmod -R 755 /var/www/astechedu.net
+  nano /var/www/astechedu.net/html/index.html
 
 
-sudo nano /etc/apache2/sites-available/astechedu.net.conf  //Create Vhost
-
-<VirtualHost *:80>
-ServerAdmin admin@astechedu.net
-ServerName astechedu.net
-ServerAlias astechedu.net
-DocumentRoot /var/www/astechedu.net/html
-ErrorLog ${APACHE_LOG_DIR}/error.log
-CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-
-sudo a2ensite astechedu.net.conf  //Vhsot config
-sudo a2dissite 000-default.conf
-sudo systemctl restart apache2
-sudo apache2ctl configtest
-
-sudo nano /etc/apache2/conf-available/astechedu.net.conf
-ln -s /etc/apache2/sites-available/astechedu.net.conf /etc/apache2/sites-enabled/astechedu.net.conf
-
-ServerName astechedu.net
-
- sudo a2enconf servername
-
-sudo apache2ctl configtest
-
-http://astechedu.net
-
-sudo nano /etc/hosts
-120.0.0.1 astechedu.net www.astechedu.net
+    <html>
+    <head>
+    <title>Welcome to astechedu.net!</title>
+    </head>
+    <body>
+    <h1>You are running astechedu.net on Ubuntu 20.04!</h1>
+    </body>
+    </html>
 
 
-sudo systemctl start apache2
-sudo systemctl stop apache2
-sudo systemctl stop apache2
-sudo systemctl reload apache2
-sudo systemctl enable apache2
-sudo systemctl disable apache2
+  sudo nano /etc/apache2/sites-available/astechedu.net.conf  //Create Vhost
+
+    <VirtualHost *:80>
+    ServerAdmin admin@astechedu.net
+    ServerName astechedu.net
+    ServerAlias astechedu.net
+    DocumentRoot /var/www/astechedu.net/html
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+
+    sudo a2ensite astechedu.net.conf  //Vhsot config
+    sudo a2dissite 000-default.conf
+    sudo systemctl restart apache2
+    sudo apache2ctl configtest
+
+    sudo nano /etc/apache2/conf-available/astechedu.net.conf
+    ln -s /etc/apache2/sites-available/astechedu.net.conf /etc/apache2/sites-enabled/astechedu.net.conf
+
+  ServerName astechedu.net
+
+   sudo a2enconf servername
+
+  sudo apache2ctl configtest
+
+  http://astechedu.net
+
+  sudo nano /etc/hosts
+  120.0.0.1 astechedu.net www.astechedu.net
+
+    sudo systemctl start apache2
+    sudo systemctl stop apache2
+    sudo systemctl stop apache2
+    sudo systemctl reload apache2
+    sudo systemctl enable apache2
+    sudo systemctl disable apache2
+
+  Change in /etc/hosts
+  127.0.0.1 localhost astechedu.net
 
 
-Change in /etc/hosts
-127.0.0.1 localhost astechedu.net
+  The location of the Apache configuration file
 
+    /etc/apache2/httpd.conf
+    /etc/apache2/apache2.conf
+    /etc/httpd/httpd.conf
+    /etc/httpd/conf/httpd.conf
 
-//The location of the Apache configuration file
+    /usr/local/etc/httpd/httpd.conf
 
-  /etc/apache2/httpd.conf
-  /etc/apache2/apache2.conf
-  /etc/httpd/httpd.conf
-  /etc/httpd/conf/httpd.conf
-  
-  /usr/local/etc/httpd/httpd.conf
-  
-  /usr/sbin/apache2 
-  /etc/apache2 
-  /usr/lib/apache2 
-  /usr/share/apache2 
-  /usr/share/man/man8/apache2.8.gz
-  /usr/local/etc/httpd/httpd.conf
-  
+    /usr/sbin/apache2 
+    /etc/apache2 
+    /usr/lib/apache2 
+    /usr/share/apache2 
+    /usr/share/man/man8/apache2.8.gz
+    /usr/local/etc/httpd/httpd.conf
+
 
 ### NGINX Installation: 
 
 --> Uninstall NGINX
-sudo apt purge nginx nginx-common nginx-core
+  sudo apt purge nginx nginx-common nginx-core
 
--->Installation
+  -->Installation
 
-sudo apt update
-sudo apt install nginx
+  sudo apt update
+  sudo apt install nginx
 
---> Adjusting the Firewall
+  --> Adjusting the Firewall
 
-sudo ufw app list
-sudo ufw allow 'Nginx HTTP'
-sudo ufw status
+  sudo ufw app list
+  sudo ufw allow 'Nginx HTTP'
+  sudo ufw status
 
 
-systemctl status nginx
-curl -4 icanhazip.com
-http://your_server_ip
+  systemctl status nginx
+  curl -4 icanhazip.com
+  http://your_server_ip
 
 -->Managing the Nginx Process
-sudo systemctl stop nginx
-sudo systemctl start nginx
-sudo systemctl restart nginx
-sudo systemctl reload nginx
-sudo systemctl disable nginx
-sudo systemctl enable nginx
+    sudo systemctl stop nginx
+    sudo systemctl start nginx
+    sudo systemctl restart nginx
+    sudo systemctl reload nginx
+    sudo systemctl disable nginx
+    sudo systemctl enable nginx
 
 -->Setting Up Server Blocks (Recommended)
 
-sudo mkdir -p /var/www/your_domain.net/html
-sudo chown -R $USER:$USER /var/www/your_domain.net/html
-sudo chmod -R 755 /var/www/your_domain.net
-sudo nano /var/www/your_domain.net/html/index.html
+    sudo mkdir -p /var/www/your_domain.net/html
+    sudo chown -R $USER:$USER /var/www/your_domain.net/html
+    sudo chmod -R 755 /var/www/your_domain.net
+    sudo nano /var/www/your_domain.net/html/index.html
 
-/var/www/your_domain.net/html/index.html
+    /var/www/your_domain.net/html/index.html
 
-<html>
-    <head>
-        <title>Welcome to your_domain.net!</title>
-    </head>
-    <body>
-        <h1>Success!  The your_domain.net server block is working!</h1>
-    </body>
-</html>
-
-
-sudo nano /etc/nginx/sites-available/your_domain.net
-/etc/nginx/sites-available/your_domain.net
+      <html>
+          <head>
+              <title>Welcome to your_domain.net!</title>
+          </head>
+          <body>
+              <h1>Success!  The your_domain.net server block is working!</h1>
+          </body>
+      </html>
 
 
-server {
-        listen 80;
-        listen [::]:80;
+  sudo nano /etc/nginx/sites-available/your_domain.net
+  /etc/nginx/sites-available/your_domain.net
 
-        root /var/www/your_domain/html;
-        index index.html index.htm index.nginx-debian.html;
 
-        server_name your_domain www.your_domain;
+      server {
+              listen 80;
+              listen [::]:80;
 
-        location / {
-                try_files $uri $uri/ =404;
+              root /var/www/your_domain/html;
+              index index.html index.htm index.nginx-debian.html;
+
+              server_name your_domain www.your_domain;
+
+              location / {
+                      try_files $uri $uri/ =404;
+              }
+      }
+
+
+    sudo ln -s /etc/nginx/sites-available/your_domain.net /etc/nginx/sites-enabled/
+    sudo nano /etc/nginx/nginx.conf
+
+    /etc/nginx/nginx.conf
+
+        ...
+        http {
+            ...
+            server_names_hash_bucket_size 64;
+            ...
         }
-}
+        ...
 
 
-sudo ln -s /etc/nginx/sites-available/your_domain.net /etc/nginx/sites-enabled/
-sudo nano /etc/nginx/nginx.conf
-
-/etc/nginx/nginx.conf
-
-...
-http {
-    ...
-    server_names_hash_bucket_size 64;
-    ...
-}
-...
+    sudo nginx -t
+    sudo systemctl restart nginx
 
 
-sudo nginx -t
-sudo systemctl restart nginx
+  //The location of the NGINX configuration file
+  //Getting Familiar with Important Nginx Files and Directories
 
 
-//The location of the NGINX configuration file
-//Getting Familiar with Important Nginx Files and Directories
+  /var/www/html  //Content
 
+  /etc/nginx
+  /etc/nginx/nginx.conf
+  /etc/nginx/sites-available/
+  /etc/nginx/sites-enabled/
+  /etc/nginx/snippets
 
-/var/www/html  //Content
-
-/etc/nginx
-/etc/nginx/nginx.conf
-/etc/nginx/sites-available/
-/etc/nginx/sites-enabled/
-/etc/nginx/snippets
-
-/var/log/nginx/access.log    //Server logs
-/var/log/nginx/error.log
+  /var/log/nginx/access.log    //Server logs
+  /var/log/nginx/error.log
 
 
 
 --> Copying Files to the New Location
 
-grep -R "root" /etc/nginx/sites-enabled
+    grep -R "root" /etc/nginx/sites-enabled
 
-Output
-/etc/nginx/sites-enabled/your_domain.net:           root /var/www/your_domain.net/html;
-/etc/nginx/sites-enabled/default:               root /var/www/html;
-/etc/nginx/sites-enabled/default:               # deny access to .htaccess files, if Apache's document root
-/etc/nginx/sites-enabled/default:#              root /var/www/your_domain;
+    Output
+    /etc/nginx/sites-enabled/your_domain.net:           root /var/www/your_domain.net/html;
+    /etc/nginx/sites-enabled/default:               root /var/www/html;
+    /etc/nginx/sites-enabled/default:               # deny access to .htaccess files, if Apache's document root
+    /etc/nginx/sites-enabled/default:#              root /var/www/your_domain;
 
 
-sudo rsync -av /var/www/your_domain.net/html /mnt/volume-nyc3-01
+    sudo rsync -av /var/www/your_domain.net/html /mnt/volume-nyc3-01
 
-Output
-sending incremental file list
-created directory /mnt/volume-nyc3-01
-html/
-html/index.html
+  Output
+    sending incremental file list
+    created directory /mnt/volume-nyc3-01
+    html/
+    html/index.html
 
-sent 318 bytes  received 39 bytes  714.00 bytes/sec
-total size is 176  speedup is 0.49
+  sent 318 bytes  received 39 bytes  714.00 bytes/sec
+  total size is 176  speedup is 0.49
 
 
 --> Updating the Configuration Files
 
-sudo nano /etc/nginx/sites-enabled/your_domain.net
+  sudo nano /etc/nginx/sites-enabled/your_domain.net
 
-/etc/nginx/sites-enabled/your_domain.net
+  /etc/nginx/sites-enabled/your_domain.net
 
-server {
+        server {
 
-        root /mnt/volume-nyc3-01/html;
-        index index.html index.htm index.nginx-debian.html;
+                root /mnt/volume-nyc3-01/html;
+                index index.html index.htm index.nginx-debian.html;
+                . . .
+        }
         . . .
-}
-. . .
 
 
---> Restarting Nginx
+  --> Restarting Nginx
 
-sudo nginx -t
+  sudo nginx -t
 
-Output:
+  Output:
 
-nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-nginx: configuration file /etc/nginx/nginx.conf test is successful
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
 
+    sudo systemctl restart nginx
+    sudo rm -Rf /var/www/your_domain.net/html
 
-sudo systemctl restart nginx
-sudo rm -Rf /var/www/your_domain.net/html
+  Important Nginx File Locations
 
+  By default, Nginx stores different configuration and log files in the following locations:
 
-Important Nginx File Locations
-
-By default, Nginx stores different configuration and log files in the following locations:
-
-    /var/www/html – Website content as seen by visitors.
-    /etc/nginx – Location of the main Nginx application files.
-    /etc/nginx/nginx.conf – The main Nginx configuration file.
-    /etc/nginx/sites-available – List of all websites configured through Nginx.
-    /etc/nginx/sites-enabled – List of websites actively being served by Nginx.
-    /var/log/nginx/access.log – Access logs tracking every request to your server.
-    /var/log/ngins/error.log – A log of any errors generated in Nginx.
-
-------------------------------------------------------------------------------
+      /var/www/html – Website content as seen by visitors.
+      /etc/nginx – Location of the main Nginx application files.
+      /etc/nginx/nginx.conf – The main Nginx configuration file.
+      /etc/nginx/sites-available – List of all websites configured through Nginx.
+      /etc/nginx/sites-enabled – List of websites actively being served by Nginx.
+      /var/log/nginx/access.log – Access logs tracking every request to your server.
+      /var/log/ngins/error.log – A log of any errors generated in Nginx.
 
 #### Apache Multi Sites Config
 
-mkdir -p /var/www/domain.com/public_html         //Make a Directory for Each Site
-mkdir -p /var/www/domain2.com/public_html
-chmod -R 755 /var/www                            //Set Folder Permissions
+    mkdir -p /var/www/domain.com/public_html         //Make a Directory for Each Site
+    mkdir -p /var/www/domain2.com/public_html
+    chmod -R 755 /var/www                            //Set Folder Permissions
 
-vim /var/www/domain.com/public_html/index.html   //Set up an Index Page
-testing for domain.com
-vim /var/www/domain2.com/public_html/index.html
+    vim /var/www/domain.com/public_html/index.html   //Set up an Index Page
+    testing for domain.com
+    vim /var/www/domain2.com/public_html/index.html
 
-//Copy the Config File for Each Site
-cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/domain.com.conf
-cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/domain2.com.conf
+  //Copy the Config File for Each Site
+      cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/domain.com.conf
+      cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/domain2.com.conf
 
-//Edit the Config File for Each Site
-vim /etc/apache2/sites-available/domain.com.conf
+  //Edit the Config File for Each Site
+    vim /etc/apache2/sites-available/domain.com.conf
 
-<VirtualHost *:80>
-ServerAdmin admin@example.com
-ServerName domain.com
-ServerAlias www.domain.com
-DocumentRoot /var/www/domain.com/public_html
-ErrorLog ${APACHE_LOG_DIR}/error.log
-CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
+        <VirtualHost *:80>
+        ServerAdmin admin@example.com
+        ServerName domain.com
+        ServerAlias www.domain.com
+        DocumentRoot /var/www/domain.com/public_html
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        </VirtualHost>
 
-// Enable Your Config File
-a2dissite 000-default.conf
-a2ensite domain.com.conf
-a2ensite domain2.com.conf
-systemctl restart apache2
+    // Enable Your Config File
+        a2dissite 000-default.conf
+        a2ensite domain.com.conf
+        a2ensite domain2.com.conf
+        systemctl restart apache2
 
-//Verify Apache Configurations
-Example: 
-/etc/hosts
+  //Verify Apache Configurations
+  Example: 
+    /etc/hosts
 
-127.0.0.1          localhost
-255.255.255.255    broadcasthost
-::1                localhost
-123.123.123.123    astechedu.com www.astechedu.com
-
-------------------------------------------------------------------------------
+      127.0.0.1          localhost
+      255.255.255.255    broadcasthost
+      ::1                localhost
+      123.123.123.123    astechedu.com www.astechedu.com
 
 #### PHP Install & Uninstall
 
+  //Uninstall PHP 
+    sudo apt-get purge 'php*'
 
-//Uninstall PHP 
-sudo apt-get purge 'php*'
+  //Install PHP
 
-//Install PHP
-
-sudo apt-get install apache2 php5 libapache2-mod-php5
-
-OR
-
-sudo apt-get install apache2 php libapache2-mod-php7.0 mysql-server php-mbstring php7.0-mbstring phpmyadmin     //install
-sudo service apache2 restart
+    sudo apt-get install apache2 php5 libapache2-mod-php5
 
 OR
-sudo apt-get install -y php8.1-cli php8.1-common php8.1-mysql php8.1-zip php8.1-gd php8.1-mbstring php8.1-curl php8.1-xml php8.1-bcmath
 
-This command will install the following modules:
+  sudo apt-get install apache2 php libapache2-mod-php7.0 mysql-server php-mbstring php7.0-mbstring phpmyadmin     //install
+  sudo service apache2 restart
 
-    php8.1-cli - command interpreter, useful for testing PHP scripts from a shell or performing general shell scripting tasks
-    php8.1-common - documentation, examples, and common modules for PHP
-    php8.1-mysql - for working with MySQL databases
-    php8.1-zip - for working with compressed files
-    php8.1-gd - for working with images
-    php8.1-mbstring - used to manage non-ASCII strings
-    php8.1-curl - lets you make HTTP requests in PHP
-    php8.1-xml - for working with XML data
-    php8.1-bcmath - used when working with precision floats
+OR
+  sudo apt-get install -y php8.1-cli php8.1-common php8.1-mysql php8.1-zip php8.1-gd php8.1-mbstring php8.1-curl php8.1-xml php8.1-bcmath
 
-php -m  //Listing php modules  /etc/php/8.1/apache2/php.ini
+  This command will install the following modules:
 
-curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php   //To install composer
-HASH=`curl -sS https://composer.github.io/installer.sig`
-echo $HASH
-php -r "if (hash_file('SHA384', '/tmp/composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+        php8.1-cli - command interpreter, useful for testing PHP scripts from a shell or performing general shell scripting tasks
+        php8.1-common - documentation, examples, and common modules for PHP
+        php8.1-mysql - for working with MySQL databases
+        php8.1-zip - for working with compressed files
+        php8.1-gd - for working with images
+        php8.1-mbstring - used to manage non-ASCII strings
+        php8.1-curl - lets you make HTTP requests in PHP
+        php8.1-xml - for working with XML data
+        php8.1-bcmath - used when working with precision floats
 
-sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer     // /usr/local/bin
-composer
+  php -m  //Listing php modules  /etc/php/8.1/apache2/php.ini
 
-//Composer in php project
-cd ~
-mkdir example-project
-cd example-project
+  curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php   //To install composer
+  HASH=`curl -sS https://composer.github.io/installer.sig`
+  echo $HASH
+  php -r "if (hash_file('SHA384', '/tmp/composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 
-composer init
-//Testing php env
-nano hello.php
+  sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer     // /usr/local/bin
+  composer
 
-<?php
-echo 'Hello World!';
-?>
-php hello.php
+  //Composer in php project
+      cd ~
+      mkdir example-project
+      cd example-project
 
-will install everything you need and will start the apache server with support for PHP.
-To verify that the php module is loaded, type:
-a2query -m php5
+  composer init
+  //Testing php env
+      nano hello.php
 
-if not enabled, then load with:
-sudo a2enmod php5
+    <?php
+    echo 'Hello World!';
+    ?>
+    
+  php hello.php
 
-and restart apache:
-sudo service apache2 restart
+  will install everything you need and will start the apache server with support for PHP.
+  To verify that the php module is loaded, type:
+      a2query -m php5
 
-//Install PHP as Apache Module 
+  if not enabled, then load with:
+      sudo a2enmod php5
 
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:ondrej/php
-sudo apt update
-sudo apt install php8.0 libapache2-mod-php8.0 php8.0-mysql
-sudo systemctl restart apache2
+     and restart apache:
+      sudo service apache2 restart
 
+  //Install PHP as Apache Module 
 
-//Configure Apache with PHP-FPM 
-sudo apt update
-sudo apt install php8.0-fpm libapache2-mod-fcgid
+      sudo apt install software-properties-common
+      sudo add-apt-repository ppa:ondrej/php
+      sudo apt update
+      sudo apt install php8.0 libapache2-mod-php8.0 php8.0-mysql
+      sudo systemctl restart apache2
 
-sudo a2enmod proxy_fcgi setenvif
-sudo a2enconf php8.0-fpm
+  //Configure Apache with PHP-FPM 
+    sudo apt update
+    sudo apt install php8.0-fpm libapache2-mod-fcgid
 
-systemctl restart apache2
+  sudo a2enmod proxy_fcgi setenvif
+  sudo a2enconf php8.0-fpm
 
-//Installing PHP 8.0 with Nginx 
-sudo apt update
-sudo apt install php8.0-fpm
+  systemctl restart apache2
 
-systemctl status php8.0-fpm
+  //Installing PHP 8.0 with Nginx 
+    sudo apt update
+    sudo apt install php8.0-fpm
 
-server {
+    systemctl status php8.0-fpm
 
-    # . . . other code
+        server {
 
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php8.0-fpm.sock;
-    }
-}
+            # . . . other code
 
-sudo systemctl restart nginx
+            location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/run/php/php8.0-fpm.sock;
+            }
+        }
 
-//Installing PHP extensions 
-sudo apt install php8.0-[extname]
-sudo apt install php8.0-mysql php8.0-gd
+    sudo systemctl restart nginx
+
+  //Installing PHP extensions 
+    sudo apt install php8.0-[extname]
+    sudo apt install php8.0-mysql php8.0-gd
 
 #### Mysql Install & Uninstall 
 
-//Uninstall MySql
-sudo apt-get purge 'mysql*'
+  //Uninstall MySql
+  sudo apt-get purge 'mysql*'
 
-//Install MySql
-cd /tmp
-curl -OL https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
-ls
-sudo dpkg -i mysql-apt-config*
-sudo apt update
-rm mysql-apt-config*
+  //Install MySql
+  cd /tmp
+  curl -OL https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
+  ls
+  sudo dpkg -i mysql-apt-config*
+  sudo apt update
+  rm mysql-apt-config*
 
-sudo apt update
-sudo apt install mysql-server
-sudo systemctl start mysql.service
-sudo service mysql status
-sudo mysql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-exit
-mysql -u root -p
-ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
-sudo mysql_secure_installation
-sudo mysql
-mysql -u root -p
-CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
-CREATE USER 'sammy'@'localhost' IDENTIFIED BY 'password';
-CREATE USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-ALTER USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-GRANT PRIVILEGE ON database.table TO 'username'@'host';
-GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
-GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-exit
-mysql -u sammy -p
-systemctl status mysql.service
-sudo mysqladmin -p -u sammy version
+  sudo apt update
+  sudo apt install mysql-server
+  sudo systemctl start mysql.service
+  sudo service mysql status
+  sudo mysql
+  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+  exit
+  mysql -u root -p
+  ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
+  sudo mysql_secure_installation
+  sudo mysql
+  mysql -u root -p
+  CREATE USER 'username'@'host' IDENTIFIED WITH authentication_plugin BY 'password';
+  CREATE USER 'sammy'@'localhost' IDENTIFIED BY 'password';
+  CREATE USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+  ALTER USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+  GRANT PRIVILEGE ON database.table TO 'username'@'host';
+  GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+  GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+  FLUSH PRIVILEGES;
+  exit
+  mysql -u sammy -p
+  systemctl status mysql.service
+  sudo mysqladmin -p -u sammy version
 
 #### Install & Uninstall phpmyadmin
 
