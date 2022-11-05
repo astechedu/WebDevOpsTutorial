@@ -613,6 +613,12 @@ CREATE USER 'sammy'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'passwo
 ALTER USER 'sammy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
 exit
+
+-OR This -
+mysql -u root -p
+mysql> create user 'admin'@'%' IDENTIFIED BY 'admin'; 
+mysql> GRANT ALL PRIVILEGES on "." TO 'admin'@'%' WITH GRANT OPTION;
+
 https://your_domain_or_IP/phpmyadmin
 sudo nano /etc/apache2/conf-available/phpmyadmin.conf
 
