@@ -687,10 +687,9 @@ http://your-server-ip-domain/phpmyadmin
 
 #### Ubuntu Terminal Shortcuts	Function:
 
-Alt + F	          Move forward one word.
-Alt + B         	Move backward one word.
-
-Ctrl + Shift + W	Close the current tab.
+Alt + F	          Move forward one word <br />
+Alt + B         	Move backward one word <br />
+Ctrl + Shift + W	Close the current tab <br />
 Ctrl + Shift + T	Open new tab on current terminal <br />
 Ctrl + A	        Move cursor to beginning of line <br />
 Ctrl + E	        Move cursor to end of line <br />
