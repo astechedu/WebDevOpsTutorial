@@ -685,12 +685,12 @@ mysql> GRANT ALL PRIVILEGES on *.* TO 'admin'@'%' WITH GRANT OPTION;
 Access phpMyAdmin
 http://your-server-ip-domain/phpmyadmin
 
-#### Ubuntu Terminal Shortcuts	Function: <br />
+#### Ubuntu Terminal Shortcuts	Function:
 
-Alt + F	          Move forward one word <br />
-Alt + B         	Move backward one word <br />
+Alt + F	          Move forward one word.
+Alt + B         	Move backward one word.
 
-Ctrl + Shift + W	Close the current tab <br />
+Ctrl + Shift + W	Close the current tab.
 Ctrl + Shift + T	Open new tab on current terminal <br />
 Ctrl + A	        Move cursor to beginning of line <br />
 Ctrl + E	        Move cursor to end of line <br />
@@ -703,5 +703,3 @@ Ctrl + Z	        Suspend the current process by sending the signal SIGSTOP <br /
 Ctrl + L	        Clears the terminal output <br />
 Ctrl + Shift + C	Copy the highlighted command to the clipboard <br />
 Ctrl + Shift + V or Shift + Insert	Paste the contents of the clipboard <br />
-
---------------------------------------------------------------------------------------
