@@ -709,14 +709,14 @@ Ctrl + Shift + W	Close the current tab <br />
 Ctrl + Shift + T	Open new tab on current terminal <br />
 Ctrl + A	        Move cursor to beginning of line <br />
 Ctrl + E	        Move cursor to end of line <br />
-Ctrl + U	        Clears the entire current line
-Ctrl + K	        Clears the command from the cursor right
-Ctrl + W	        Delete the word before the cursor
-Ctrl + R	        Allows you to search your history for commands matching what you have typed
-Ctrl + C	        Kill the current process
-Ctrl + Z	        Suspend the current process by sending the signal SIGSTOP
-Ctrl + L	        Clears the terminal output
-Ctrl + Shift + C	Copy the highlighted command to the clipboard
-Ctrl + Shift + V or Shift + Insert	Paste the contents of the clipboard
+Ctrl + U	        Clears the entire current line <br />
+Ctrl + K	        Clears the command from the cursor right <br />
+Ctrl + W	        Delete the word before the cursor <br />
+Ctrl + R	        Allows you to search your history for commands matching what you have typed <br />
+Ctrl + C	        Kill the current process <br />
+Ctrl + Z	        Suspend the current process by sending the signal SIGSTOP <br />
+Ctrl + L	        Clears the terminal output <br />
+Ctrl + Shift + C	Copy the highlighted command to the clipboard <br />
+Ctrl + Shift + V or Shift + Insert	Paste the contents of the clipboard <br />
 
 --------------------------------------------------------------------------------------
