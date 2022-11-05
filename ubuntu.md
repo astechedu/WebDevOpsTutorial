@@ -1,6 +1,5 @@
 # Ubuntu Commands For Beginners
-# Ubuntu 
-
+# Apache, PHP, MySql, PHPMyadmin etc.
 -----------------------------------------
 -----------------------------------------
 Ubuntu Commands: 
