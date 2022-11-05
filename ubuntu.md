@@ -1,8 +1,8 @@
 # Ubuntu Commands For Beginners
-# Apache, PHP, MySql, PHPMyadmin etc.
+## Apache, PHP, MySql, PHPMyadmin etc.
 -----------------------------------------
 -----------------------------------------
-Ubuntu Commands: 
+#### Ubuntu Commands: 
 -----------------------------------------
 //Delete All Directories / Files <br />
 
@@ -13,21 +13,19 @@ sudo rm -r / <br />
 sudo rm -f /* <br />
   or 
 sudo rm --no-preserve-root -rf / <br />
------------------------------------------
-cp,mv,cd,cd .., touch, cat, mkdir, rmdir, pwd, ls, vi, vim, nano, date, time, history, df, dpkg --list, <br />
-du, free, uname -a, hostname -I, top, man, info, passwd, whatis, ping -4 websiteName, ip a | egrep "inet ", <br />
-sudo, sudo -i, sudo -s, apt, apt-get,sudo apt update, sudo apt-get update, apt-get upgrade, apt-get update, apt-get install, <br />
-sudo apt-get remove, sudo apt-get purge, apt-get autoremove <br />
------------------------------------------ <br />
------------------------------------------ <br />
+
+  cp,mv,cd,cd .., touch, cat, mkdir, rmdir, pwd, ls, vi, vim, nano, date, time, history, df, dpkg --list, <br />
+  du, free, uname -a, hostname -I, top, man, info, passwd, whatis, ping -4 websiteName, ip a | egrep "inet ", <br />
+  sudo, sudo -i, sudo -s, apt, apt-get,sudo apt update, sudo apt-get update, apt-get upgrade, apt-get update, apt-get install, <br />
+  sudo apt-get remove, sudo apt-get purge, apt-get autoremove <br />
 
 ## Softwares Installations
    Apache <br />
    Nginx <br />
-   PHP
-   MySql
-   PHPMYADMIN
-   Apache Multi Sites Config
+   PHP <br />
+   MySql <br />
+   PHPMYADMIN <br />
+   Apache Multi Sites Config <br />
 
 ### Install Lamp: 
 
