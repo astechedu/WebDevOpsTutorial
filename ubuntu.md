@@ -700,15 +700,15 @@ http://your-server-ip-domain/phpmyadmin
 
 ---------------------------------------------------------
 
-//Ubuntu Terminal Shortcuts	Function:
+//Ubuntu Terminal Shortcuts	Function: <br />
 
-Alt + F	          Move forward one word
-Alt + B         	Move backward one word
+Alt + F	          Move forward one word <br />
+Alt + B         	Move backward one word <br />
 
-Ctrl + Shift + W	Close the current tab
-Ctrl + Shift + T	Open new tab on current terminal
-Ctrl + A	        Move cursor to beginning of line
-Ctrl + E	        Move cursor to end of line
+Ctrl + Shift + W	Close the current tab <br />
+Ctrl + Shift + T	Open new tab on current terminal <br />
+Ctrl + A	        Move cursor to beginning of line <br />
+Ctrl + E	        Move cursor to end of line <br />
 Ctrl + U	        Clears the entire current line
 Ctrl + K	        Clears the command from the cursor right
 Ctrl + W	        Delete the word before the cursor
