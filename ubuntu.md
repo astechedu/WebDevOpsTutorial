@@ -4,26 +4,26 @@
 -----------------------------------------
 Ubuntu Commands: 
 -----------------------------------------
-//Delete All Directories / Files
+//Delete All Directories / Files <br />
 
-sudo rm -R / 
+sudo rm -R / <br />
   or 
-sudo rm -r / 
+sudo rm -r / <br />
   or 
-sudo rm -f /* 
+sudo rm -f /* <br />
   or 
-sudo rm --no-preserve-root -rf /
+sudo rm --no-preserve-root -rf / <br />
 -----------------------------------------
-cp,mv,cd,cd .., touch, cat, mkdir, rmdir, pwd, ls, vi, vim, nano, date, time, history, df, dpkg --list
-du, free, uname -a, hostname -I, top, man, info, passwd, whatis, ping -4 websiteName, ip a | egrep "inet ",
-sudo, sudo -i, sudo -s, apt, apt-get,sudo apt update, sudo apt-get update, apt-get upgrade, apt-get update, apt-get install
-sudo apt-get remove, sudo apt-get purge, apt-get autoremove, 
------------------------------------------
------------------------------------------
+cp,mv,cd,cd .., touch, cat, mkdir, rmdir, pwd, ls, vi, vim, nano, date, time, history, df, dpkg --list, <br />
+du, free, uname -a, hostname -I, top, man, info, passwd, whatis, ping -4 websiteName, ip a | egrep "inet ", <br />
+sudo, sudo -i, sudo -s, apt, apt-get,sudo apt update, sudo apt-get update, apt-get upgrade, apt-get update, apt-get install, <br />
+sudo apt-get remove, sudo apt-get purge, apt-get autoremove <br />
+----------------------------------------- <br />
+----------------------------------------- <br />
 
 ## Softwares Installations
-   Apache
-   Nginx
+   Apache <br />
+   Nginx <br />
    PHP
    MySql
    PHPMYADMIN
