@@ -1,9 +1,8 @@
 # Ubuntu Commands For Beginners
 ## Apache, PHP, MySql, PHPMyadmin etc.
------------------------------------------
------------------------------------------
+
 #### Ubuntu Commands: 
------------------------------------------
+
 //Delete All Directories / Files <br />
 
 sudo rm -R / <br />
@@ -118,9 +117,7 @@ while($row = mysqli_fetch_array($result))
 mysqli_close($DBconnect);
 ?>
 
------------------------------------------------------------
-
-//Apache2 Config & Create New Domain: 
+#### Apache2 Config & Create New Domain: 
 
 //Uninstall Apache2 
 sudo apt remove apache2*
@@ -216,9 +213,8 @@ Change in /etc/hosts
   /usr/share/man/man8/apache2.8.gz
   /usr/local/etc/httpd/httpd.conf
   
-------------------------------------------------------------------------------
 
-## NGINX Installation: 
+### NGINX Installation: 
 
 --> Uninstall NGINX
 sudo apt purge nginx nginx-common nginx-core
@@ -385,8 +381,8 @@ By default, Nginx stores different configuration and log files in the following 
     /var/log/ngins/error.log – A log of any errors generated in Nginx.
 
 ------------------------------------------------------------------------------
-------------------------------------------------------------------------------
-//Apache Multi Sites Config
+
+#### Apache Multi Sites Config
 
 mkdir -p /var/www/domain.com/public_html         //Make a Directory for Each Site
 mkdir -p /var/www/domain2.com/public_html
@@ -428,9 +424,8 @@ Example:
 123.123.123.123    astechedu.com www.astechedu.com
 
 ------------------------------------------------------------------------------
-------------------------------------------------------------------------------
 
-//PHP Install & Uninstall
+#### PHP Install & Uninstall
 
 
 //Uninstall PHP 
@@ -534,10 +529,7 @@ sudo systemctl restart nginx
 sudo apt install php8.0-[extname]
 sudo apt install php8.0-mysql php8.0-gd
 
------------------------------------------------------------------------------
------------------------------------------------------------------------------
-
-//Mysql Install & Uninstall 
+#### Mysql Install & Uninstall 
 
 //Uninstall MySql
 sudo apt-get purge 'mysql*'
@@ -575,10 +567,7 @@ mysql -u sammy -p
 systemctl status mysql.service
 sudo mysqladmin -p -u sammy version
 
------------------------------------------------------------------------------
------------------------------------------------------------------------------
-
-//Install & Uninstall phpmyadmin
+#### Install & Uninstall phpmyadmin
 
 //Uninstall PHPMYADMIN
 
@@ -696,9 +685,7 @@ mysql> GRANT ALL PRIVILEGES on *.* TO 'admin'@'%' WITH GRANT OPTION;
 Access phpMyAdmin
 http://your-server-ip-domain/phpmyadmin
 
----------------------------------------------------------
-
-//Ubuntu Terminal Shortcuts	Function: <br />
+#### Ubuntu Terminal Shortcuts	Function: <br />
 
 Alt + F	          Move forward one word <br />
 Alt + B         	Move backward one word <br />
