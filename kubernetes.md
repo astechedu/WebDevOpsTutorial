@@ -9,12 +9,18 @@
 
 ## Topics
 
-	Basic Commands
+        <!----><a name="basic_commands"></a>
+	#Basic Commands	
+	<!----><a name="minikube"></a>
 	Minikube    
+	<!----><a name="kubectl"></a>
 	KubeCTL 
+	<!----><a name="create_yml_file"></a>
 	Create YML File
+	<!----><a name="micro8ks_ckds"></a>
 	Microk8s CMDS
-
+	
+[Go to Real Cool Heading section](#basic_commands)
 ## Basic Commands 
 
 	0. Display all list (pods,services,deployments & riplicaSets)
@@ -60,8 +66,7 @@
 	   kubectl describe deployment <deploymentName>
 	   kubectl rollout undo deployment <deploymentName> --to-revision=1
 	   
-     [Go to Real Cool Heading section](#basic_commands)
-	   
+     	   
 ## Minikube & KubeCTL
 
 	What is Minikube
@@ -78,13 +83,14 @@ Requirements:
 
 	  1. Virtual Box Or Hiper-V or docker ( as a driver )
 
-
+[Go to Real Cool Heading section](#mimikube)
 1. Minikube Installation ( minikube.exe )
 
 	   Usually used to run k8s cluster in your local machine/computer.
 	   Minikube runs a single-node Kubernetes cluster on your machine so that you can try out Kubernetes for your daily development work.
 	   Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one  node.
-
+	   
+[Go to Real Cool Heading section](#kubectl)
 2. KubeCtl Installation ( Kubectl.exe )
 
 	kubectl. The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For more information including a complete list of kubectl operations, see the kubectl reference documentation.
@@ -108,7 +114,7 @@ Requirements:
 		    > docker images
 		    > ........... more
 		    
- [Go to Real Cool Heading section](#create_yaml_file)
+ [Go to Real Cool Heading section](#create_yml_file)
  
 ## Create Yaml File
 
@@ -185,7 +191,7 @@ This is heading
 		ports:
 		- containerPort: 80 
  
-
+ [Go to Real Cool Heading section](#microk8s_cmds)
  ## Microk8s CMDS
  
 	 sudo snap install microk8s --classic --channel=1.25   //Install MicroK8s
