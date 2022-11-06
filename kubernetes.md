@@ -2,15 +2,15 @@
 
 ## Topics 
 
-[Go to  Topics](#basic_commands)
+[Go to  Basic Commands](#basic_commands)
 #### Basic Commands
-<!----><a name="minikube"></a>
+[Go to  Minikube](#minikube)
 #### Minikube   
-<!----><a name="kubectl"></a>
+[Go to  Kubectl](#kubectl)
 #### KubeCTL 
-<!----><a name="create_yml_file"></a>
+[Go to  Create YML File](#create_yml_file)
 #### Create YML File
-[Go to  Topics](#micro8ks_cmds)
+[Go to  Microk8s](#micro8ks_cmds)
 #### Microk8s CMDS
 
 	
@@ -79,7 +79,7 @@ Requirements:
 	  1. Virtual Box Or Hiper-V or docker ( as a driver )
 
 
-[Go to Topics](#minikube)
+<!----><a name="minikube"></a>
 
 ### 1. Minikube Installation ( minikube.exe )
 
@@ -87,7 +87,7 @@ Requirements:
 	   Minikube runs a single-node Kubernetes cluster on your machine so that you can try out Kubernetes for your daily development work.
 	   Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one  node.
 	   
-[Go to Topics](#kubectl)
+<!----><a name="kubectl"></a>
 
 ### 2. KubeCtl Installation ( Kubectl.exe )
 
@@ -113,7 +113,8 @@ Requirements:
 		    > ........... more
 		    
 		    
- [Go to Topics](#create_yml_file)  
+ 
+ <!----><a name="create_yml_file"></a>
  
 ### Create Yaml File
 
@@ -192,7 +193,7 @@ This is heading
  
  
 <!----><a name="micro8ks_cmds">Top</a>
- 
+
  ### Microk8s CMDS
  
 	 sudo snap install microk8s --classic --channel=1.25   //Install MicroK8s
