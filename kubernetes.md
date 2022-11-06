@@ -2,7 +2,7 @@
 
 ## Topics
 
-	Basic Commands
+	#Basic Commands
 	Minikube    
 	KubeCTL 
 	Create YML File
@@ -52,7 +52,8 @@
 	   kubectl describe deployment
 	   kubectl describe deployment <deploymentName>
 	   kubectl rollout undo deployment <deploymentName> --to-revision=1
- 
+           #Basic Commands
+	   
 ## Minikube & KubeCTL
 
 	What is Minikube
