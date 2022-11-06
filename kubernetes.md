@@ -2,7 +2,7 @@
 
 ## Topics 
 
-<!----><a name="basic_commands"></a>
+[Go to  Topics](#basic_commands)
 #### Basic Commands
 <!----><a name="minikube"></a>
 #### Minikube   
@@ -10,12 +10,12 @@
 #### KubeCTL 
 <!----><a name="create_yml_file"></a>
 #### Create YML File
-<!----><a name="micro8ks_cmds"></a>
+[Go to  Topics](#micro8ks_cmds)
 #### Microk8s CMDS
 
 	
-[Go to  Topics](#basic_commands)
 
+<!----><a name="basic_commands">Go Top</a>
 ### Basic Commands 
 
 	0. Display all list (pods,services,deployments & riplicaSets)
@@ -191,7 +191,7 @@ This is heading
 		- containerPort: 80 
  
  
- [Go to Topics](#micro8ks_cmds)
+<!----><a name="micro8ks_cmds">Top</a>
  
  ### Microk8s CMDS
  
