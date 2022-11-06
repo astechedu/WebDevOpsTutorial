@@ -3,10 +3,10 @@
 ## Topics 
 
 <!----><a name="basic_commands"></a>
-# Basic Commands
+#### Basic Commands
 
 <!----><a name="minikube"></a>
-# Minikube   
+### Minikube   
 
 <!----><a name="kubectl"></a>
 # KubeCTL 
