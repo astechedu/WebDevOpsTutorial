@@ -1,8 +1,11 @@
 # Kubernetes Commands & Examples For Beginners
 
+#Basic Commands
+This is cool heading
+
 ## Topics
 
-	#Basic Commands
+	Basic Commands
 	Minikube    
 	KubeCTL 
 	Create YML File
@@ -53,7 +56,7 @@
 	   kubectl describe deployment <deploymentName>
 	   kubectl rollout undo deployment <deploymentName> --to-revision=1
 	   
-           [Go to Real Cool Heading section](#basic-commands)
+     [Go to Real Cool Heading section](#basic-commands)
 	   
 ## Minikube & KubeCTL
 
@@ -132,7 +135,10 @@ Requirements:
 	 kubectl get pods
 	 kubectl explain pod --recursive !less
 
-	#basic-commands
+
+#basic-commands
+This is heading 
+
 
  //Create k8s pod
  
