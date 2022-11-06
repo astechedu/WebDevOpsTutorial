@@ -53,9 +53,9 @@
 	   kubectl describe deployment <deploymentName>
 	   kubectl rollout undo deployment <deploymentName> --to-revision=1
  
-## Minicube & KubeCTL
+## Minikube & KubeCTL
 
-	What is Minicube
+	What is Minikube
 	Minikube installation steps in windows
 	How to deploy first spring boot application to Kubernetes
 
