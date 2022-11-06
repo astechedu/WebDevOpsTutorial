@@ -1,6 +1,6 @@
 # Kubernetes Commands & Examples For Beginners
 
-<!----><a name="basic commands"></a>
+<!----><a name="basic_commands"></a>
 # basic commands
 
 ## Topics
