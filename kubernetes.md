@@ -53,6 +53,7 @@
 	   kubectl describe deployment <deploymentName>
 	   kubectl rollout undo deployment <deploymentName> --to-revision=1
  
+## Minicube & KubeCTL
 
 	What is Minicube
 	Minikube installation steps in windows
@@ -95,7 +96,7 @@ Requirements:
 	    > docker images
 	    > ........... more
 
-Creating first yml file
+## Create Yaml File
 
    MyFirst Yaml File:
 
@@ -164,7 +165,7 @@ Creating first yml file
 		- containerPort: 80 
  
 
- >>> Microk8s CMDS <<<<<<
+ ## Microk8s CMDS
  
 	 sudo snap install microk8s --classic --channel=1.25   //Install MicroK8s
 	 sudo usermod -a -G microk8s $USER                    //Join the group
