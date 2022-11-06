@@ -2,17 +2,17 @@
 
 ## Topics 
 
-<!----><a name="basic_commands"></a>
-#### Basic Commands
-<!----><a name="minikube"></a>
-#### Minikube   
-<!----><a name="kubectl"></a>
-#### KubeCTL 
-<!----><a name="create_yml_file"></a>
-#### Create YML File
-<!----><a name="micro8ks_cmds"></a>
-#### Microk8s CMDS
-	
+	<!----><a name="basic_commands"></a>
+	#### Basic Commands
+	<!----><a name="minikube"></a>
+	#### Minikube   
+	<!----><a name="kubectl"></a>
+	#### KubeCTL 
+	<!----><a name="create_yml_file"></a>
+	#### Create YML File
+	<!----><a name="micro8ks_cmds"></a>
+	#### Microk8s CMDS
+
 	
 [Go to  Topics](#basic_commands)
 
