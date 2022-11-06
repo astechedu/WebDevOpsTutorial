@@ -3,7 +3,7 @@
 
 --------------------------------------------------------------------------------------
 Keys: 
-      ssh, github pages,
+      ssh, github pages,up & down links, 
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
@@ -55,6 +55,13 @@ https://github.com/astechedu/laravel8-ui-vue
 
 //Editing all
 //Github Changing html, css, text, images etc:
+
+Up & Down Links:
+
+<a name="custom_anchor_name"></a>    //Top or Bottom link
+# some header                        
+
+[click here to jump to my anchor](#custom_anchor_name) //Top or Bottom link
 
 
 Github Images: 
