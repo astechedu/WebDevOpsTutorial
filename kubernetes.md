@@ -1,24 +1,17 @@
 # Kubernetes Commands & Examples For Beginners
 
+## Topics 
+
 <!----><a name="basic_commands"></a>
-# basic commands
-
+#### Basic Commands		
+<!----><a name="minikube"></a>
+#### Minikube    
+<!----><a name="kubectl"></a>
+#### KubeCTL 
 <!----><a name="create_yml_file"></a>
-# Create YML File
-
-
-## Topics
-
-        <!----><a name="basic_commands"></a>
-	#Basic Commands	
-	<!----><a name="minikube"></a>
-	Minikube    
-	<!----><a name="kubectl"></a>
-	KubeCTL 
-	<!----><a name="create_yml_file"></a>
-	Create YML File
-	<!----><a name="micro8ks_ckds"></a>
-	Microk8s CMDS
+#### Create YML File
+<!----><a name="micro8ks_ckds"></a>
+#### Microk8s CMDS
 	
 [Go to Real Cool Heading section](#basic_commands)
 
