@@ -3,7 +3,6 @@
 ## Topics
 
 	#Basic Commands
-	#Basic-Commands
 	Minikube    
 	KubeCTL 
 	Create YML File
@@ -53,7 +52,8 @@
 	   kubectl describe deployment
 	   kubectl describe deployment <deploymentName>
 	   kubectl rollout undo deployment <deploymentName> --to-revision=1
-           [Go to Real Cool Heading section](#Basic-Commands)
+	   
+           [Go to Real Cool Heading section](#basic-commands)
 	   
 ## Minikube & KubeCTL
 
@@ -131,6 +131,8 @@ Requirements:
 	 kubectl create -f firstpod.yml
 	 kubectl get pods
 	 kubectl explain pod --recursive !less
+
+	#basic-commands
 
  //Create k8s pod
  
