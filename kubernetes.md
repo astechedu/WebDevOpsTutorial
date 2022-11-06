@@ -1,6 +1,6 @@
 # Kubernetes Commands & Examples For Beginners
 
-## Kubernetes <<<<<<<<<
+## Topics
 
 	Basic Commands
 	Minikube    
@@ -8,7 +8,7 @@
 	Create YML File
 	Microk8s CMDS
 
-## Basic Commands : 
+## Basic Commands 
 
 	0. Display all list (pods,services,deployments & riplicaSets)
 	   kubectl get all --all-namespaces  
@@ -71,30 +71,33 @@ Requirements:
 
 
 1. Minikube Installation ( minikube.exe )
+
 	   Usually used to run k8s cluster in your local machine/computer.
 	   Minikube runs a single-node Kubernetes cluster on your machine so that you can try out Kubernetes for your daily development work.
-	   Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one node.
+	   Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one  node.
 
 2. KubeCtl Installation ( Kubectl.exe )
 
 	kubectl. The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For more information including a complete list of kubectl operations, see the kubectl reference documentation.
 
   Download minikube & kubectl
+  
   Install first minikube second kubectl
+  
   Path to environment variable  ( kubectl & minikube )
 
-  Open cmd write command 
-	    > minikube start --driver=docker
-	    > minikube status
-	    > kubectl cluster-info
-	    > kubectl get node
+	  Open cmd write command 
+		    > minikube start --driver=docker
+		    > minikube status
+		    > kubectl cluster-info
+		    > kubectl get node
 
-    Now install spring boot project
-	
-	    > minikube docker-env
-	    > copy the above command showing @FOR /F %1 ('minikube -p minikube docker-env') Do @i
-	    > docker images
-	    > ........... more
+	    Now install spring boot project
+
+		    > minikube docker-env
+		    > copy the above command showing @FOR /F %1 ('minikube -p minikube docker-env') Do @i
+		    > docker images
+		    > ........... more
 
 ## Create Yaml File
 
@@ -128,12 +131,14 @@ Requirements:
 	 kubectl explain pod --recursive !less
 
  //Create k8s pod
+ 
 	 kubectl run secondpod --generator=run-pod/v1 --image=coolgaurab147/nginx-custom
 	 //Client side run 
 	 kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom
 	 kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml
 
  //Output redirect to new yaml file
+ 
   	kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml > mysecondpd.yml
     
   Commands: 
