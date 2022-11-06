@@ -1,9 +1,7 @@
 # Kubernetes Commands & Examples For Beginners
 
 <!----><a name="basic commands"></a>
-# some header
-
-This is cool heading
+# basic commands
 
 ## Topics
 
@@ -58,7 +56,7 @@ This is cool heading
 	   kubectl describe deployment <deploymentName>
 	   kubectl rollout undo deployment <deploymentName> --to-revision=1
 	   
-     [Go to Real Cool Heading section](#basic-commands)
+     [Go to Real Cool Heading section](#basic_commands)
 	   
 ## Minikube & KubeCTL
 
