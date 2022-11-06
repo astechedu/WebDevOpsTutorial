@@ -3,14 +3,18 @@
 ## Topics 
 
 <!----><a name="basic_commands"></a>
-# Basic Commands		
+# Basic Commands
+
 <!----><a name="minikube"></a>
-# Minikube    
-<!----><a name="kubeCTL"></a>
+# Minikube   
+
+<!----><a name="kubectl"></a>
 # KubeCTL 
+
 <!----><a name="create_yml_file"></a>
 # Create YML File
-<!----><a name="micro8ks_ckds"></a>
+
+<!----><a name="micro8ks_cmds"></a>
 # Microk8s CMDS
 	
 	
@@ -114,6 +118,7 @@ Requirements:
 		    
 		    
  [Go to Topics](#create_yml_file)  
+ 
 ### Create Yaml File
 
    MyFirst Yaml File:
