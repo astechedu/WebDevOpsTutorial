@@ -3,15 +3,15 @@
 ## Topics 
 
 
-###### Basic Commands [Go to Basic Commands](#basic_commands) click here
+###### 1. Basic Commands [Go to Basic Commands click here](#basic_commands) 
 
-###### Minikube [Go to Minikube](#minikube) click here
+###### 2. Minikube [Go to Minikube click here](#minikube)
 
-###### KubeCTL [Go to Kubectl](#kubectl) click here
+###### 3. KubeCTL [Go to Kubectl click here](#kubectl)
 
-###### Create YML File [Go to Create YML File](#create_yml_file) click here
+###### 4. Create YML File [Go to Create YML File click here](#create_yml_file)
 
-###### Microk8s CMDS [Go to Microk8s](#micro8ks_cmds) click here
+###### 5. Microk8s CMDS [Go to Microk8s click here](#micro8ks_cmds)
 
 	
 
