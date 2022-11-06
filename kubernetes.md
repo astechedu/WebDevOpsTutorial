@@ -77,8 +77,8 @@ Requirements:
 
 	  1. Virtual Box Or Hiper-V or docker ( as a driver )
 
-[Go to Real Cool Heading section](#mimikube)
 
+[Go to Real Cool Heading section](#minikube)
 1. Minikube Installation ( minikube.exe )
 
 	   Usually used to run k8s cluster in your local machine/computer.
