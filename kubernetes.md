@@ -21,6 +21,7 @@
 	Microk8s CMDS
 	
 [Go to Real Cool Heading section](#basic_commands)
+
 ## Basic Commands 
 
 	0. Display all list (pods,services,deployments & riplicaSets)
@@ -84,6 +85,7 @@ Requirements:
 	  1. Virtual Box Or Hiper-V or docker ( as a driver )
 
 [Go to Real Cool Heading section](#mimikube)
+
 1. Minikube Installation ( minikube.exe )
 
 	   Usually used to run k8s cluster in your local machine/computer.
@@ -91,6 +93,7 @@ Requirements:
 	   Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one  node.
 	   
 [Go to Real Cool Heading section](#kubectl)
+
 2. KubeCtl Installation ( Kubectl.exe )
 
 	kubectl. The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For more information including a complete list of kubectl operations, see the kubectl reference documentation.
@@ -114,8 +117,8 @@ Requirements:
 		    > docker images
 		    > ........... more
 		    
- [Go to Real Cool Heading section](#create_yml_file)
- 
+		    
+ [Go to Real Cool Heading section](#create_yml_file)  
 ## Create Yaml File
 
    MyFirst Yaml File:
