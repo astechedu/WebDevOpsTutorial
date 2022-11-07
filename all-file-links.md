@@ -49,25 +49,25 @@
 
 [Kubernetes click here](kubernetes.md)
 
-[Ubuntu File click here](jquery.txt)
+[Jquery click here](jquery.txt)
 
-[Ubuntu File click here](laravel.commands.txt)
+[Laravel click here](laravel.commands.txt)
 
-[Ubuntu File click here](linux.commands.txt)
+[Linux click here](linux.commands.txt)
 
-[Ubuntu File click here](mean.stack.commands.txt)
+[Mean Stack Commands click here](mean.stack.commands.txt)
 
-[Ubuntu File click here](mern.stack.commands.txt)
+[Mern Stack click here](mern.stack.commands.txt)
 
-[Ubuntu File click here](mevn.stack.commands.txt)
+[Mevn Stack click here](mevn.stack.commands.txt)
 
-[Ubuntu File click here](nextjs.txt)
+[Next Js click here](nextjs.txt)
 
-[Ubuntu File click here](nginx.txt)
+[Nginx click here](nginx.txt)
 
-[Ubuntu File click here](php.txt)
+[PHP click here](php.txt)
 
-[Ubuntu File click here](python.txt)
+[Python click here](python.txt)
 
 [Ubuntu File click here](mevn.stack.commands.txt)
 
