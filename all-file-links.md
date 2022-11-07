@@ -11,51 +11,43 @@
 
 [Databases Commands click here](databases.commands.md)
 
-[larave. click here](all.one.dev.txt)
+[All Apis Commands click here](all.apis.projects.links.txt)
 
-[Ubuntu File click here](all.apis.projects.links.txt)
+[Jenkins Commands](jenkin.commands.txt)   
 
-[Ubuntu File click here](jenkin.commands.txt)   
+[Javascript click here](javascript.txt)
 
-[Ubuntu File click here](javascript.txt)
+[Java Commands click here](java.txt)
 
-[Ubuntu File click here](java.txt)
+[GitLab click here](gitLab.txt)
 
-[Ubuntu File click here](github.html.txt)
+[Git Commands click here](git.commands.txt)
 
-[Ubuntu File click here](github.html.txt)
+[Flash click here](flash.txt)
 
-[Ubuntu File click here](gitLab.txt)
+[Doctor Medichines click here](doctor.medicines.txt)
 
-[Ubuntu File click here](git.commands.txt)
+[Docker Commands click here](docker.commands.txt)
 
-[Ubuntu File click here](flash.txt)
+[Django click here](django.txt)
 
-[Ubuntu File click here](doctor.medicines.txt)
+[Development Info click here](development.info.txt)
 
-[Ubuntu File click here](dockerized apps.txt)
+[DevOpes click here](devOps.txt)
 
-[Ubuntu File click here](docker.commands.txt)
+[Databases Commands click here](databases.commands.txt)
 
-[Ubuntu File click here](django.txt)
+[Codeigniter click here](codeigniter.commands.txt)
 
-[Ubuntu File click here](development.info.txt)
+[CakePhp click here](cakephp.commands.txt)
 
-[Ubuntu File click here](devOps.txt)
+[Bootstrap Components click here](bootstrap.components.txt)      
 
-[Ubuntu File click here](databases.commands.txt)
+[Angular Js click here](angularjs.txt)
 
-[Ubuntu File click here](codeigniter.commands.txt)
+[Kubernetes click here](kubernetes.txt)
 
-[Ubuntu File click here](cakephp.commands.txt)
-
-[Ubuntu File click here](bootstrap.components.txt)      
-
-[Ubuntu File click here](angularjs.txt)
-
-[Ubuntu File click here](kubernetes.txt)
-
-[Ubuntu File click here](kubernetes.md)
+[Kubernetes click here](kubernetes.md)
 
 [Ubuntu File click here](jquery.txt)
 
