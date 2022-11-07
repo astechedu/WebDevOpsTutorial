@@ -11,7 +11,7 @@ see documentation [here](myLib/ubuntu.md)
 
 …you can use a relative link:
 
-[a relative link](ubuntu.md)
+[Ubuntu File](ubuntu.md)
 [a relative link](path%20with%20spaces/ubuntu.md)
 
  
