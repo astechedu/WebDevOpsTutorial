@@ -12,78 +12,52 @@
 
 [Databases Commands click here](databases.commands.md)
 
-[larave. click here](ubuntu.md)
+[larave. click here](all.one.dev.txt)
 
-[Ubuntu File click here](ubuntu.md)
-
-
+[Ubuntu File click here](all.apis.projects.links.txt)
 
 
 
+[Ubuntu File click here](jenkin.commands.txt)
+[Ubuntu File click here](javascript.txt)
+[Ubuntu File click here](java.txt)
+[Ubuntu File click here](github.html.txt)
+[Ubuntu File click here](github.html.txt)
+[Ubuntu File click here](gitLab.txt)
+[Ubuntu File click here](git.commands.txt)
+[Ubuntu File click here](flash.txt)
+[Ubuntu File click here](doctor.medicines.txt)
+[Ubuntu File click here](dockerized apps.txt)
+[Ubuntu File click here](docker.commands.txt)
+[Ubuntu File click here](django.txt)
+[Ubuntu File click here](development.info.txt)
+[Ubuntu File click here](devOps.txt)
+[Ubuntu File click here](databases.commands.txt)
+[Ubuntu File click here](codeigniter.commands.txt)
+[Ubuntu File click here](cakephp.commands.txt)
+[Ubuntu File click here](bootstrap.components.txt)
+[Ubuntu File click here](angularjs.txt)
 
 
 
 
-all.apis.projects.links.txt
+[Ubuntu File click here](kubernetes.txt)
+[Ubuntu File click here](kubernetes.md)
+[Ubuntu File click here](jquery.txt)
+[Ubuntu File click here](laravel.commands.txt)
+[Ubuntu File click here](linux.commands.txt)
+[Ubuntu File click here](mean.stack.commands.txt)
+[Ubuntu File click here](mern.stack.commands.txt)
+[Ubuntu File click here](all.apis.projects.links.txt)
+[Ubuntu File click here](all.apis.projects.links.txt)
+[Ubuntu File click here](all.apis.projects.links.txt)
+[Ubuntu File click here](all.apis.projects.links.txt)
 
 
-all.one.dev.txt
-
-angularjs.txt
-
-bootstrap.components.txt
-
-cakephp.commands.txt
-
-codeigniter.commands.txt
-
-databases.commands.txt
-
-devOps.txt
-
-development.info.txt
 
 
-django.txt
-
-docker.commands.txt
 
 
-dockerized apps.txt
-
-doctor.medicines.txt
-
-
-flash.txt
-
-git.commands.txt
-
-gitLab.txt
-
-github.html.txt
-
-github.html.txt
-
-java.txt
-
-javascript.txt
-
-jenkin.commands.txt
-
-jquery.txt
-
-kubernetes.md
-
-kubernetes.txt
-
-
-laravel.commands.txt
-
-linux.commands.txt
-
-mean.stack.commands.txt
-
-mern.stack.commands.txt
 
 mevn.stack.commands.txt
 
@@ -110,30 +84,26 @@ symfony.commands.txt
 taildwind.components.txt
 
 typescript.txt
-some updates
-Jul 14, 2022
+
 ubuntu.md
-Update ubuntu.md
-Nov 5, 2022
+
+
 ubuntu.txt
-Update ubuntu.txt
-Nov 5, 2022
+
+
 vuejs.txt
-updated commands
-May 8, 2022
+
 vuejs3.txt
-new code syntex added
-Sep 9, 2022
+
+
 web-servers.md
-Update web-servers.md
-Nov 7, 2022
+
 web-servers.txt
-Create web-servers.txt
-Nov 7, 2022
+
 windows.info.txt
-added some files
-Jul 26, 2022
+
 yamal.txt
-added yamal code to file .gitlab-ci.yml
-Jul 28, 2022
+
+gitlab-ci.yml
+
 yii.commands.txt 
