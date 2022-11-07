@@ -7,6 +7,12 @@
 see documentation [here](myLib/ubuntu.md)
 [a link](https://github.com/astechedu/gittutorial/ubuntu.txt)
 
+[a link](https://github.com/astechedu/gittutorial/blob/branch/ubuntu.md)
+
+…you can use a relative link:
+
+[a relative link](ubuntu.md)
+[a relative link](path%20with%20spaces/ubuntu.md)
 
  
  
