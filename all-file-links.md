@@ -3,20 +3,13 @@
 
 
 
-            [Ubuntu File click here](ubuntu.md)
-
-
+   [Ubuntu File click here](ubuntu.md)   
             [Web Servers Installation Commands click here](web-servers.md)
-
             [Docker Installation Commands click here](docker.commands.md)
-
             [Databases Commands click here](databases.commands.md)
-
             [larave. click here](all.one.dev.txt)
-
             [Ubuntu File click here](all.apis.projects.links.txt)
-
-            [Ubuntu File click here](jenkin.commands.txt)
+            [Ubuntu File click here](jenkin.commands.txt)   
             [Ubuntu File click here](javascript.txt)
             [Ubuntu File click here](java.txt)
             [Ubuntu File click here](github.html.txt)
@@ -33,8 +26,7 @@
             [Ubuntu File click here](databases.commands.txt)
             [Ubuntu File click here](codeigniter.commands.txt)
             [Ubuntu File click here](cakephp.commands.txt)
-            [Ubuntu File click here](bootstrap.components.txt)
-            
+            [Ubuntu File click here](bootstrap.components.txt)            
 [Ubuntu File click here](angularjs.txt)
 [Ubuntu File click here](kubernetes.txt)
 [Ubuntu File click here](kubernetes.md)
