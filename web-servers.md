@@ -5,6 +5,8 @@
  
  ## myLib documentation
 see documentation [here](myLib/ubuntu.md)
+[a link](https://github.com/astechedu/gittutorial/ubuntu.md)
+
 
  
  
