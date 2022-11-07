@@ -3,20 +3,6 @@
 ## Topics
  1. Inginx On Ubuntu 20.04
  
- ## myLib documentation
-see documentation [here](myLib/ubuntu.md)
-[a link](https://github.com/astechedu/gittutorial/ubuntu.txt)
-
-[a link](https://github.com/astechedu/gittutorial/blob/branch/ubuntu.md)
-
-…you can use a relative link:
-
-[Ubuntu File](ubuntu.md)
-[a relative link](path%20with%20spaces/ubuntu.md)
-
- 
- 
- 
  
 ## Inginx On Ubuntu 20.04
 
@@ -102,3 +88,6 @@ By default, Nginx stores different configuration and log files in the following 
     /var/log/nginx/access.log – Access logs tracking every request to your server.
     /var/log/ngins/error.log – A log of any errors generated in Nginx.
 
+
+###### Install apache nginx php mysql etc
+[Ubuntu File click here](ubuntu.md)
