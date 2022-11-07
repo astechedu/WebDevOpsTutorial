@@ -69,40 +69,40 @@
 
 [Python click here](python.txt)
 
-[Ubuntu File click here](mevn.stack.commands.txt)
+[Mevn click here](mevn.stack.commands.txt)
 
-[Ubuntu File click here](reactjs.txt)
+[React Js click here](reactjs.txt)
 
-[Ubuntu File click here](reactjs4.txt)
+[React Js 4 click here](reactjs4.txt)
 
-[Ubuntu File click here](ruby.txt)
+[Ruby click here](ruby.txt)
 
-[Ubuntu File click here](rubyonrails.txt)
+[RubyOnRails click here](rubyonrails.txt)
 
-[Ubuntu File click here](server.commands.txt)
+[Server click here](server.commands.txt)
 
-[Ubuntu File click here](symfony.commands.txt)
+[Sysmfony Commands click here](symfony.commands.txt)
 
-[Ubuntu File click here](taildwind.components.txt)
+[Tailwind Components click here](taildwind.components.txt)
 
-[Ubuntu File click here](typescript.txt)
+[TypeScript click here](typescript.txt)
 
-[Ubuntu File click here](ubuntu.md)
+[Ubuntu Commands click here](ubuntu.md)
 
-[Ubuntu File click here](ubuntu.txt)
+[Ubunut Commands click here](ubuntu.txt)
 
-[Ubuntu File click here](vuejs.txt)
+[Vue Js  click here](vuejs.txt)
 
-[Ubuntu File click here](vuejs3.txt)
+[Vue Js 3 click here](vuejs3.txt)
 
-[Ubuntu File click here](web-servers.md)
+[Web Servers click here](web-servers.md)
 
-[Ubuntu File click here](web-servers.txt)
+[Web Servers click here](web-servers.txt)
 
-[Ubuntu File click here](windows.info.txt)
+[Windows Info click here](windows.info.txt)
 
-[Ubuntu File click here](yamal.txt)
+[Yamal click here](yamal.txt)
 
-[Ubuntu File click here](gitlab-ci.yml)
+[GitLab CI click here](gitlab-ci.yml)
 
-[Ubuntu File click here](yii.commands.txt)
+[Yii click here](yii.commands.txt)
