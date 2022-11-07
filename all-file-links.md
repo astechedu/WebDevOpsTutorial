@@ -4,9 +4,13 @@
 
 
 [Ubuntu File click here](ubuntu.md)   
+
 [Web Servers Installation Commands click here](web-servers.md)
+
 [Docker Installation Commands click here](docker.commands.md)
+
 [Databases Commands click here](databases.commands.md)
+
 [larave. click here](all.one.dev.txt)
 [Ubuntu File click here](all.apis.projects.links.txt)
 [Ubuntu File click here](jenkin.commands.txt)   
