@@ -10,22 +10,22 @@
  
 ## Inginx On Ubuntu 20.04
 
-  sudo apt-get update
-  sudo apt-get install nginx
-  nginx -v
+    sudo apt-get update
+    sudo apt-get install nginx
+    nginx -v
 
-  sudo systemctl status nginx
-  sudo systemctl start nginx
-  sudo systemctl enable nginx
-  sudo systemctl stop nginx
-  sudo systemctl disable nginx
-  sudo systemctl reload nginx
-  sudo systemctl restart nginx
-  sudo ufw app list
-  sudo ufw allow 'nginx http'
-  sudo ufw reload
-  sudo ufw allow 'nginx https'
-  sudo ufw allow 'nginx full'
+    sudo systemctl status nginx
+    sudo systemctl start nginx
+    sudo systemctl enable nginx
+    sudo systemctl stop nginx
+    sudo systemctl disable nginx
+    sudo systemctl reload nginx
+    sudo systemctl restart nginx
+    sudo ufw app list
+    sudo ufw allow 'nginx http'
+    sudo ufw reload
+    sudo ufw allow 'nginx https'
+    sudo ufw allow 'nginx full'
 
 http://127.0.0.1
 
