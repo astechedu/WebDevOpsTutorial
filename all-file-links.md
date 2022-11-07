@@ -12,54 +12,105 @@
 [Databases Commands click here](databases.commands.md)
 
 [larave. click here](all.one.dev.txt)
+
 [Ubuntu File click here](all.apis.projects.links.txt)
+
 [Ubuntu File click here](jenkin.commands.txt)   
+
 [Ubuntu File click here](javascript.txt)
+
 [Ubuntu File click here](java.txt)
+
 [Ubuntu File click here](github.html.txt)
+
 [Ubuntu File click here](github.html.txt)
+
 [Ubuntu File click here](gitLab.txt)
+
 [Ubuntu File click here](git.commands.txt)
+
 [Ubuntu File click here](flash.txt)
+
 [Ubuntu File click here](doctor.medicines.txt)
+
 [Ubuntu File click here](dockerized apps.txt)
+
 [Ubuntu File click here](docker.commands.txt)
+
 [Ubuntu File click here](django.txt)
+
 [Ubuntu File click here](development.info.txt)
+
 [Ubuntu File click here](devOps.txt)
+
 [Ubuntu File click here](databases.commands.txt)
+
 [Ubuntu File click here](codeigniter.commands.txt)
+
 [Ubuntu File click here](cakephp.commands.txt)
-[Ubuntu File click here](bootstrap.components.txt)            
+
+[Ubuntu File click here](bootstrap.components.txt)      
+
 [Ubuntu File click here](angularjs.txt)
+
 [Ubuntu File click here](kubernetes.txt)
+
 [Ubuntu File click here](kubernetes.md)
+
 [Ubuntu File click here](jquery.txt)
+
 [Ubuntu File click here](laravel.commands.txt)
+
 [Ubuntu File click here](linux.commands.txt)
+
 [Ubuntu File click here](mean.stack.commands.txt)
+
 [Ubuntu File click here](mern.stack.commands.txt)
+
 [Ubuntu File click here](mevn.stack.commands.txt)
+
 [Ubuntu File click here](nextjs.txt)
+
 [Ubuntu File click here](nginx.txt)
+
 [Ubuntu File click here](php.txt)
+
 [Ubuntu File click here](python.txt)
+
 [Ubuntu File click here](mevn.stack.commands.txt)
+
 [Ubuntu File click here](reactjs.txt)
+
 [Ubuntu File click here](reactjs4.txt)
+
 [Ubuntu File click here](ruby.txt)
+
 [Ubuntu File click here](rubyonrails.txt)
+
 [Ubuntu File click here](server.commands.txt)
+
 [Ubuntu File click here](symfony.commands.txt)
+
 [Ubuntu File click here](taildwind.components.txt)
+
 [Ubuntu File click here](typescript.txt)
+
 [Ubuntu File click here](ubuntu.md)
+
 [Ubuntu File click here](ubuntu.txt)
+
 [Ubuntu File click here](vuejs.txt)
+
 [Ubuntu File click here](vuejs3.txt)
+
 [Ubuntu File click here](web-servers.md)
+
 [Ubuntu File click here](web-servers.txt)
+
 [Ubuntu File click here](windows.info.txt)
+
 [Ubuntu File click here](yamal.txt)
+
 [Ubuntu File click here](gitlab-ci.yml)
+
 [Ubuntu File click here](yii.commands.txt)
