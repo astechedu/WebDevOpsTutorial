@@ -279,7 +279,7 @@ Some CMDS:
 	kubectl apply -f firtpod.yml
 	kubectl get pods -w
 
---------------------------------------------
+
 
   ###### Kubernetes Short Commands:
   
