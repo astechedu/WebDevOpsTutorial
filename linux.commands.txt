@@ -27,7 +27,7 @@ Linux Mint
 Debian
 Fedora
 Centos Commands
-
+Laravel Installation
 --------------------------------------
 -------------------------------------
 
@@ -562,7 +562,6 @@ systemcl  - may be used to introspect and control the state of the "systemd" sys
 tail      - used to output last part of a file, useful on log files
 
 
-
 ------>
 
 More: 
@@ -579,6 +578,7 @@ Install Applications:
 
   rpm -q                   //View the version of the software package
 
+------>
 
 //Yum not working in Centos's bash (Not install softs): Run this in Centos's bash
 
@@ -592,7 +592,9 @@ sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.epel.cloud|g' /
 
 //Now you should be able to update CentOS or install packages without any error:
 
-====> 
+
+-----> 
+
 
 cat /etc/group   //Listing all group's name
 stat /etc/       //Discover group name in unix and linux
@@ -706,56 +708,4 @@ sudo rm /usr/local/bin/composer
 
 
 ------> Laravel Installed End <-----------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
