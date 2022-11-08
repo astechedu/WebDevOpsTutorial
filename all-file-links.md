@@ -27,7 +27,11 @@
 
 [Doctor Medichines click here](doctor.medicines.txt)
 
-[Docker Commands click here](docker.commands.txt)
+[Docker Commands click here](docker.commands.txt)   
+
+[Dockerized apps click here](dockerized apps.txt) 
+
+[Docker Commands click here](docker.commands.txt) 
 
 [Django click here](django.txt)
 
