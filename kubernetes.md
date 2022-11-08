@@ -342,10 +342,9 @@ Step 2) Install Minikube dependencies
    sudo apt install -y curl wget apt-transport-https
  
 Step 3) Download Minikube Binary
-        Download Minikube latest minikube binary
-        https://www.linuxtechi.com/wget-command-practical-examples/
+        Download Minikube latest minikube binary       
 
-  wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+ 	 wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
        Once the binary is downloaded, copy it to the path /usr/local/bin and set the executable permissions on it
 
