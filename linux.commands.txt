@@ -26,6 +26,7 @@ Red Hat Enterprise Linux
 Linux Mint
 Debian
 Fedora
+Centos Commands
 
 --------------------------------------
 -------------------------------------
@@ -501,6 +502,109 @@ help read
 
 --------> End of linux shell scirpts <-------------
 
+------------------------------------------------------
+//Centos Commands: 
+
+
+
+Centos Command           Description
+
+top
+nman
+rpm-ql<packagename> or dpkg -L <packagename>
+sosreport
+Ismod
+tcpdump
+
+//Directory Movement
+ls    - lists the conents of the directory
+cp    - copies a file
+mv    - moves a directory
+cd .. - moves up one directory
+cd ~  - moves to home directory
+ll    - lists the contents of the directory length-wise
+pwd   - present working directory
+find  - search given directory for namestring and display it
+
+//User Management
+alias     - creates and alias
+passwrd   - updates user authentication
+useradd   - adds a new user
+sudo      - admin privileges
+who       - shows currently logged on users
+groupadd  - create new groud
+uname     - print system info
+
+//File Management
+chmod     - change permissions of a file
+chown     - change the ownership of a file
+diff      - compare the ownership of a file
+diff      - compare two files against each other
+du        - displyas disk usage of a directory
+rm        - removes files / directories
+
+//System Management
+apropos   - search set of database files and display result as standard output
+bcwipe    - repeatedly overwrite special patterns onto to be-destroyed files
+bhkconfig - update and query run level info for system services
+dstat     - displays real-time system stats
+fdisk     - disk partioning utility
+mount     - mounts a filesystem
+grep      - search named input files for lines containing match to given pattern, then print
+hostname  - configure networking interface
+ifdown    - manually take down and interface
+iftop     - shows bandwidth usage of interface
+ifup      - brings interface back up
+kill      - terminate a running process
+ps        - list of currently running proceses and their process IDs
+man       - manual page for particular command/tool
+systemcl  - may be used to introspect and control the state of the "systemd" system and service mnager
+tail      - used to output last part of a file, useful on log files
+
+
+
+------>
+
+More: 
+
+Install Applications: 
+
+//The system will automatically search for the relevant 
+  software package and dependencies, and ask for your confirmation.
+  
+  dnf install [software name]    //Run the following command to install software.
+
+  yum install php          // Install php
+  rpm -ql [software name]  //Viewing installed software information
+
+  rpm -q                   //View the version of the software package
+
+
+//Yum not working in Centos's bash (Not install softs): Run this in Centos's bash
+
+sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+
+Alternetively: 
+
+sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-*
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.epel.cloud|g' /etc/yum.repos.d/CentOS-Linux-*
+
+//Now you should be able to update CentOS or install packages without any error:
+
+====> 
+
+cat /etc/group   //Listing all group's name
+stat /etc/       //Discover group name in unix and linux
+
+//Centro in Bash : Permission denied Then run this cmd: chmod U+x /etc/group
+/etc/group
+/etc/passwd
+stat /etc/group      //[root@2kk3kk /] in root
+stat /etc/passwd
+
+
+--------> End Of Centos <-------------------------------
 
 
 ------------------------------------------------------
