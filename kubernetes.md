@@ -281,3 +281,30 @@ Some CMDS:
 
 --------------------------------------------
 
+  ###### Kubernetes Short Commands:
+  
+  Minikube vs Kind vs K3s 
+   
+	  kubectl get all
+	  kubectl get rs
+	  kubectl get ns
+	  kubectl get pods -n kube-system    
+
+	  Minikube: 
+	  minikube kubectl get all
+	  minikube kubectl get rs
+	  minikube kubectl get ns
+	  minikube kubectl get pods -n kube-system
+
+	  kind kubectl get all
+	  kind kubectl get rs
+	  kind kubectl get ns
+	  kind kubectl get pods -n kube-system
+
+	  microk8s kubectl get all
+	  microk8s kind kubectl get rs
+	  microk8s kind kubectl get ns
+	  microk8s kind kubectl get pods -n kube-system
+ 
+  
+
