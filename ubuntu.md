@@ -316,22 +316,25 @@
 
 --> Copying Files to the New Location
 
-    grep -R "root" /etc/nginx/sites-enabled
+      grep -R "root" /etc/nginx/sites-enabled
 
     Output
-      /etc/nginx/sites-enabled/your_domain.net:       root /var/www/your_domain.net/html;
-      /etc/nginx/sites-enabled/default:               root /var/www/html;
-      /etc/nginx/sites-enabled/default:               # deny access to .htaccess files, if Apache's document root
-      /etc/nginx/sites-enabled/default:#              root /var/www/your_domain;
+    
+        /etc/nginx/sites-enabled/your_domain.net:       root /var/www/your_domain.net/html;
+        /etc/nginx/sites-enabled/default:               root /var/www/html;
+        /etc/nginx/sites-enabled/default:               # deny access to .htaccess files, if Apache's document root
+        /etc/nginx/sites-enabled/default:#              root /var/www/your_domain;
 
 
       sudo rsync -av /var/www/your_domain.net/html /mnt/volume-nyc3-01
 
-  Output
+
+  Output:
+  
      sending incremental file list
-     created directory /mnt/volume-nyc3-01
-     html/
-     html/index.html
+       created directory /mnt/volume-nyc3-01
+       html/
+       html/index.html
 
      sent 318 bytes  received 39 bytes  714.00 bytes/sec
      total size is 176  speedup is 0.49
@@ -346,6 +349,7 @@
         server {
 
                 root /mnt/volume-nyc3-01/html;
+                
                 index index.html index.htm index.nginx-debian.html;
                 . . .
         }
@@ -387,10 +391,13 @@
       vim /var/www/domain2.com/public_html/index.html
 
   //Copy the Config File for Each Site
-      cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/domain.com.conf
-      cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/domain2.com.conf
+  
+        cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/domain.com.conf
+        cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/domain2.com.conf
+
 
   //Edit the Config File for Each Site
+  
     vim /etc/apache2/sites-available/domain.com.conf
 
         <VirtualHost *:80>
@@ -403,13 +410,17 @@
         </VirtualHost>
 
     // Enable Your Config File
+    
         a2dissite 000-default.conf
         a2ensite domain.com.conf
         a2ensite domain2.com.conf
         systemctl restart apache2
 
+
   //Verify Apache Configurations
+  
   Example: 
+  
     /etc/hosts
 
       127.0.0.1          localhost
@@ -420,16 +431,18 @@
 #### PHP Install & Uninstall
 
   //Uninstall PHP 
-    sudo apt-get purge 'php*'
+  
+      sudo apt-get purge 'php*'
 
   //Install PHP
 
-    sudo apt-get install apache2 php5 libapache2-mod-php5
+      sudo apt-get install apache2 php5 libapache2-mod-php5
 
 OR
 
-    sudo apt-get install apache2 php libapache2-mod-php7.0 mysql-server php-mbstring php7.0-mbstring phpmyadmin     //install
-    sudo service apache2 restart
+      sudo apt-get install apache2 php libapache2-mod-php7.0 mysql-server php-mbstring php7.0-mbstring phpmyadmin     //install
+    
+      sudo service apache2 restart
 
 OR
     sudo apt-get install -y php8.1-cli php8.1-common php8.1-mysql php8.1-zip php8.1-gd php8.1-mbstring php8.1-curl php8.1-xml php8.1-bcmath
@@ -457,6 +470,7 @@ OR
   composer
 
   //Composer in php project
+  
       cd ~
       mkdir example-project
       cd example-project
@@ -474,6 +488,7 @@ OR
     php hello.php
 
   will install everything you need and will start the apache server with support for PHP.
+  
   To verify that the php module is loaded, type:
       a2query -m php5
 
@@ -565,6 +580,7 @@ OR
 //Uninstall PHPMYADMIN
 
 //Install PHPMYADMIN
+
     sudo apt update
     sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
 
@@ -595,11 +611,13 @@ OR
     exit
 
  -OR This -
+ 
     mysql -u root -p
     mysql> create user 'admin'@'%' IDENTIFIED BY 'admin'; 
     mysql> GRANT ALL PRIVILEGES on "." TO 'admin'@'%' WITH GRANT OPTION;
 
 https://your_domain_or_IP/phpmyadmin
+
     sudo nano /etc/apache2/conf-available/phpmyadmin.conf
 
     /etc/apache2/conf-available/phpmyadmin.conf
@@ -629,71 +647,76 @@ https://domain_name_or_IP/phpmyadmin
 
 #### OR Install PHPMYADMIN
 
-Install Apache and PHP
-    sudo apt install apache2 wget unzip 
-    sudo apt install php php-zip php-json php-mbstring php-mysql 
+  Install Apache and PHP
 
-    sudo systemctl enable apache2 
-    sudo systemctl start apache2 
+      sudo apt install apache2 wget unzip 
+      sudo apt install php php-zip php-json php-mbstring php-mysql 
 
-Install phpMyAdmin on Ubuntu 20.04
+      sudo systemctl enable apache2 
+      sudo systemctl start apache2 
 
-    wget https://files.phpmyadmin.net/phpMyAdmin/5.1.1/phpMyAdmin-5.1.1-all-languages.zip 
-    unzip phpMyAdmin-5.1.1-all-languages.zip 
-    mv phpMyAdmin-5.1.1-all-languages /usr/share/phpmyadmin 
+  Install phpMyAdmin on Ubuntu 20.04
 
-Configure phpMyAdmin
-    sudo vi /etc/apache/conf-available/phpmyadmin.conf 
+      wget https://files.phpmyadmin.net/phpMyAdmin/5.1.1/phpMyAdmin-5.1.1-all-languages.zip 
+      unzip phpMyAdmin-5.1.1-all-languages.zip 
+      mv phpMyAdmin-5.1.1-all-languages /usr/share/phpmyadmin 
 
-    Alias /phpmyadmin /usr/share/phpmyadmin
-    Alias /phpMyAdmin /usr/share/phpmyadmin
+  Configure phpMyAdmin
 
-      <Directory /usr/share/phpmyadmin/>
-         AddDefaultCharset UTF-8
-         <IfModule mod_authz_core.c>
-            <RequireAny>
-            Require all granted
-           </RequireAny>
-         </IfModule>
-      </Directory>
+      sudo vi /etc/apache/conf-available/phpmyadmin.conf 
 
-      <Directory /usr/share/phpmyadmin/setup/>
-         <IfModule mod_authz_core.c>
-           <RequireAny>
-             Require all granted
-           </RequireAny>
-         </IfModule>
-      </Directory>
+      Alias /phpmyadmin /usr/share/phpmyadmin
+      Alias /phpMyAdmin /usr/share/phpmyadmin
 
-    sudo a2enconf phpmyadmin 
-    sudo systemctl restart apache2 
+        <Directory /usr/share/phpmyadmin/>
+           AddDefaultCharset UTF-8
+           <IfModule mod_authz_core.c>
+              <RequireAny>
+              Require all granted
+             </RequireAny>
+           </IfModule>
+        </Directory>
 
-Adjusting FirewallD
-    sudo firewall-cmd --permanent --add-service=http 
-    sudo firewall-cmd --reload 
+        <Directory /usr/share/phpmyadmin/setup/>
+           <IfModule mod_authz_core.c>
+             <RequireAny>
+               Require all granted
+             </RequireAny>
+           </IfModule>
+        </Directory>
 
---OR This--
-    mysql -u root -p
-    mysql> create user 'admin'@'%' IDENTIFIED BY 'admin'; 
-    mysql> GRANT ALL PRIVILEGES on *.* TO 'admin'@'%' WITH GRANT OPTION;
+      sudo a2enconf phpmyadmin 
+      sudo systemctl restart apache2 
 
-Access phpMyAdmin
-http://your-server-ip-domain/phpmyadmin
+  Adjusting FirewallD
+  
+      sudo firewall-cmd --permanent --add-service=http 
+      sudo firewall-cmd --reload 
+
+  --OR This--
+  
+      mysql -u root -p
+      mysql> create user 'admin'@'%' IDENTIFIED BY 'admin'; 
+      mysql> GRANT ALL PRIVILEGES on *.* TO 'admin'@'%' WITH GRANT OPTION;
+
+  Access phpMyAdmin
+  
+  http://your-server-ip-domain/phpmyadmin
 
 #### Ubuntu Terminal Shortcuts	Function:
 
-Alt + F	          Move forward one word <br />
-Alt + B         	Move backward one word <br />
-Ctrl + Shift + W	Close the current tab <br />
-Ctrl + Shift + T	Open new tab on current terminal <br />
-Ctrl + A	        Move cursor to beginning of line <br />
-Ctrl + E	        Move cursor to end of line <br />
-Ctrl + U	        Clears the entire current line <br />
-Ctrl + K	        Clears the command from the cursor right <br />
-Ctrl + W	        Delete the word before the cursor <br />
-Ctrl + R	        Allows you to search your history for commands matching what you have typed <br />
-Ctrl + C	        Kill the current process <br />
-Ctrl + Z	        Suspend the current process by sending the signal SIGSTOP <br />
-Ctrl + L	        Clears the terminal output <br />
-Ctrl + Shift + C	Copy the highlighted command to the clipboard <br />
-Ctrl + Shift + V or Shift + Insert	Paste the contents of the clipboard <br />
+  Alt + F	          Move forward one word <br />
+  Alt + B         	Move backward one word <br />
+  Ctrl + Shift + W	Close the current tab <br />
+  Ctrl + Shift + T	Open new tab on current terminal <br />
+  Ctrl + A	        Move cursor to beginning of line <br />
+  Ctrl + E	        Move cursor to end of line <br />
+  Ctrl + U	        Clears the entire current line <br />
+  Ctrl + K	        Clears the command from the cursor right <br />
+  Ctrl + W	        Delete the word before the cursor <br />
+  Ctrl + R	        Allows you to search your history for commands matching what you have typed <br />
+  Ctrl + C	        Kill the current process <br />
+  Ctrl + Z	        Suspend the current process by sending the signal SIGSTOP <br />
+  Ctrl + L	        Clears the terminal output <br />
+  Ctrl + Shift + C	Copy the highlighted command to the clipboard <br />
+  Ctrl + Shift + V or Shift + Insert	Paste the contents of the clipboard <br />
