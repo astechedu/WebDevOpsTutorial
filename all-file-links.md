@@ -29,7 +29,7 @@
 
 [Docker Commands click here](docker.commands.txt)   
 
-[Dockerized apps click here](dockerized apps.txt) 
+[Dockerized apps click here](dockerized.apps.txt) 
 
 [Django click here](django.txt)
 
