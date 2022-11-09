@@ -1,4 +1,4 @@
-# As Tech Edu Tutorial ( @astechedu ) For Absolute Beginners
+# As Tech Edu Tutorial ( @astechedu ) For Absolute Beginners `#0969DA`
 
 
 
@@ -19,7 +19,7 @@
   ### Mevn Stack
 
 # PHP
-  ### PHP Core
+  ### *PHP Core*
   ### laravel
   ### CakePHP
   ### Codeigniter
