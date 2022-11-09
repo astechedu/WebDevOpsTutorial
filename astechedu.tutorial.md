@@ -11,7 +11,6 @@ wrapped in a link
 [![Everything Is AWESOME](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://youtu.be/jJGMo3HhKPw "Everything Is AWESOME")
 
 
-[![Everything Is AWESOME]()](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
-
+[![Everything Is AWESOME](#)](https://youtu.be/jJGMo3HhKPw "Everything Is AWESOME")
 
 
