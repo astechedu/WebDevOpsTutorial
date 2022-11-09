@@ -163,6 +163,25 @@ The primary configuration file for PHP when run from as PHP-FPM.
 # PHP Mysql Connection: 
 
 
+ ## Create MySql Table 
+
+Example: 
+
+	CREATE TABLE Persons (
+	    personID int,
+	    lastName varchar(255),
+	    firstName varchar(255),
+	    address varchar(255),
+	    city varchar(255)
+	);
+
+
+	INSERT INTO table_name
+	VALUES (value1, value2, value3, ...); 
+
+        SELECT * FROM table_name; 
+
+
 Example (MySQLi Procedural): 
 
 	<?php
@@ -215,29 +234,9 @@ Example (PDO):
 	  echo "Connection failed: " . $e->getMessage();
 	}
 	?> 
-
-
-# Create MySql Table 
-
-Example: 
-
-	CREATE TABLE Persons (
-	    personID int,
-	    lastName varchar(255),
-	    firstName varchar(255),
-	    address varchar(255),
-	    city varchar(255)
-	);
-
-
-	INSERT INTO table_name
-	VALUES (value1, value2, value3, ...); 
-
-        SELECT * FROM table_name; 
 	
 	
- Example: 
- 
+
  Example (MySQLi Procedural):
  
 	<?php
@@ -269,9 +268,8 @@ Example:
 	?> 
 	
 	
-Example: 
-
-	Example (MySQLi Object-oriented):
+	
+Example (MySQLi Object-oriented):
 	
 	<?php
 	$servername = "localhost";
@@ -300,7 +298,10 @@ Example:
 	$conn->close();
 	?> 
 	
-Example (PDO)
+	
+	
+Example (PDO): 
+
 	<?php
 	echo "<table style='border: solid 1px black;'>";
 	echo "<tr><th>Id</th><th>Firstname</th><th>Lastname</th></tr>";
