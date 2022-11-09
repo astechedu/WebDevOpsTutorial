@@ -5,23 +5,11 @@
 
 
  
+# CSS
 
+[Bootstrap Components click here](bootstrap.components.txt)     
 
-# Databases
-
-[Databases Commands click here](databases.commands.md)
-
-[Databases Commands click here](databases.commands.txt)
-
-[All Apis Commands click here](all.apis.projects.links.txt)
-
-# Jenkins
-
-[Jenkins Commands](jenkin.commands.txt)   
-
-# Java
-
-[Java Commands click here](java.txt)
+[Tailwind Components click here](taildwind.components.txt)
 
 # Github
 
@@ -45,9 +33,27 @@
 
 [Kubernetes click here](kubernetes.txt)
 
+# Jenkins
+
+[Jenkins Commands](jenkin.commands.txt)   
+
 # DevOps
 
 [DevOpes click here](devOps.txt)
+
+# PHP
+
+[PHP click here](php.txt)
+
+[Laravel click here](laravel.commands.txt)
+
+[Sysmfony Commands click here](symfony.commands.txt)
+
+[Codeigniter click here](codeigniter.commands.txt)
+
+[CakePhp click here](cakephp.commands.txt)
+
+[Yii click here](yii.commands.txt)
 
 # Python 
 
@@ -62,12 +68,6 @@
 [Ruby click here](ruby.txt)
 
 [RubyOnRails click here](rubyonrails.txt)
-
-# CSS
-
-[Bootstrap Components click here](bootstrap.components.txt)     
-
-[Tailwind Components click here](taildwind.components.txt)
 
 # Linux 
 
@@ -97,20 +97,6 @@
 
 [GitLab CI click here](gitlab-ci.yml)
 
-# PHP
-
-[PHP click here](php.txt)
-
-[Laravel click here](laravel.commands.txt)
-
-[Sysmfony Commands click here](symfony.commands.txt)
-
-[Codeigniter click here](codeigniter.commands.txt)
-
-[CakePhp click here](cakephp.commands.txt)
-
-[Yii click here](yii.commands.txt)
-
 # JavaScript
 
 [Javascript click here](javascript.txt)
@@ -139,6 +125,21 @@
 
 [Mean Stack Commands click here](mean.stack.commands.txt)
 
+# Java
+
+[Java Commands click here](java.txt)
+
+# Databases
+
+[Databases Commands click here](databases.commands.md)
+
+[Databases Commands click here](databases.commands.txt)
+
+[All Apis Commands click here](all.apis.projects.links.txt)
+
 # Web Development
 
 [Development Info click here](development.info.txt)
+
+
+---------------------------------------------------------------
