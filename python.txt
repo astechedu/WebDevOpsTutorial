@@ -4,6 +4,11 @@
 ---------------------------------------
 
 ---------------------------------------
+# Topics
+
+        Virtual Environment
+	Python Installation On Ubuntu
+	
 ---------------------------------------
 
 >>>>>>>>>> Virtual Environment <<<<<<<<<<<<<<<<<
@@ -14,24 +19,81 @@ Website:
 
 > py -m pip install --upgrade pip
 
-> py -m pip --version                   // Check pip versioon
+> py -m pip --version                    // Check pip versioon
 
 > py -m pip install --user virtualenv    //Installing virtualenv
 
-> py -m venv env                       //Creating a virtual environment
+> py -m venv env                         //Creating a virtual environment
 
 
-> .\env\Scripts\activate             //Activating a virtual environment
+> .\env\Scripts\activate                 //Activating a virtual environment
 
 > where python
 	
 > ...\env\Scripts\python.exe
 
-> deactivate                     //Leaving the virtual environment
+> deactivate                            //Leaving the virtual environment
 
-> py -m pip install requests     //Installing packages
+> py -m pip install requests            //Installing packages
 
 
-> py -m pip install django    //Install Django 
+> py -m pip install django              //Install Django 
 
 ------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------
+
+# Python Installation On Ubuntu
+
+
+How To Install Python 3 and Set Up a Programming Environment on an Ubuntu 20.04 Server
+
+
+Step 1 — Setting Up Python 3
+
+	sudo apt update
+	sudo apt -y upgrade
+	python3 -V	
+	sudo apt install -y python3-pip
+	pip3 install package_name	
+	sudo apt install -y build-essential libssl-dev libffi-dev python3-dev	
+
+Step 2 — Setting Up a Virtual Environment
+
+	sudo apt install -y python3-venv
+	
+	mkdir environments
+	
+	cd environments
+	
+	python3 -m venv my_env
+	
+	ls my_env
+	
+	source my_env/bin/activate
+	
+	
+	Shwoing on screen
+
+       (my_env) sammy@ubuntu:~/environment$
+       
+
+Step 3 — Creating a “Hello, World” Program
+
+	(my_env) sammy@ubuntu:~/environment$ nano hello.py
+
+
+    hello.py
+
+	print("Hello, World!")
+
+	(my_env) sammy@ubuntu:~/environment$ python hello.py
+
+
+Output:
+
+Hello, World!
+
+--------------------------------------------------------------------------
