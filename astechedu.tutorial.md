@@ -1,6 +1,43 @@
 # As Tech Edu Tutorial ( @astechedu ) For Absolute Beginners
 
 
+# CSS
+
+# HTML
+
+# PHP
+  ### PHP Core
+  ### laravel
+  ### CakePHP
+  ### Codeigniter
+  ### Symfony
+  ### Laminas
+  ### Zend
+  
+  
+# Python
+
+  ### Python Core
+  ### Django
+  ### Flash
+  
+  
+# Java
+
+# Ruby
+
+
+
+
+
+
+
+
+
+
+
+
+
 an image
 ![image alt text](https://example.com/link-to-image)
 
