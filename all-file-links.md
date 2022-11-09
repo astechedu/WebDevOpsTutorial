@@ -11,35 +11,33 @@
 
 [Tailwind Components click here](taildwind.components.txt)
 
-# Github
+# JavaScript
 
-[GitLab click here](gitLab.txt)
+[Javascript click here](javascript.txt)
 
-[Git Commands click here](git.commands.txt)
+[Jquery click here](jquery.txt)
 
-[Doctor Medichines click here](doctor.medicines.txt)
+[Vue Js  click here](vuejs.txt)
 
-# Docker 
+[Vue Js 3 click here](vuejs3.txt)
 
-[Docker Installation Commands click here](docker.commands.md)
+[Angular Js click here](angularjs.txt)
 
-[Docker Commands click here](docker.commands.txt)   
+[Mevn click here](mevn.stack.commands.txt)
 
-[Dockerized apps click here](dockerized.apps.txt) 
+[React Js click here](reactjs.txt)
 
-# Kubernetes
+[React Js 4 click here](reactjs4.txt)
 
-[Kubernetes click here](kubernetes.md)
+[Next Js click here](nextjs.txt)
 
-[Kubernetes click here](kubernetes.txt)
+[TypeScript click here](typescript.txt)
 
-# Jenkins
+[Mern Stack click here](mern.stack.commands.txt)
 
-[Jenkins Commands](jenkin.commands.txt)   
+[Mevn Stack click here](mevn.stack.commands.txt)
 
-# DevOps
-
-[DevOpes click here](devOps.txt)
+[Mean Stack Commands click here](mean.stack.commands.txt)
 
 # PHP
 
@@ -69,6 +67,26 @@
 
 [RubyOnRails click here](rubyonrails.txt)
 
+# Java
+
+[Java Commands click here](java.txt)
+
+# Github
+
+[GitLab click here](gitLab.txt)
+
+[Git Commands click here](git.commands.txt)
+
+[Doctor Medichines click here](doctor.medicines.txt)
+
+# Databases
+
+[Databases Commands click here](databases.commands.md)
+
+[Databases Commands click here](databases.commands.txt)
+
+[All Apis Commands click here](all.apis.projects.links.txt)
+
 # Linux 
 
 [Linux click here](linux.commands.txt)
@@ -76,6 +94,34 @@
 [Ubuntu Commands click here](ubuntu.md)
 
 [Ubunut Commands click here](ubuntu.txt)
+
+# Scripts
+
+[Yamal click here](yamal.txt)
+
+[GitLab CI click here](gitlab-ci.yml)
+
+# Docker 
+
+[Docker Installation Commands click here](docker.commands.md)
+
+[Docker Commands click here](docker.commands.txt)   
+
+[Dockerized apps click here](dockerized.apps.txt) 
+
+# Kubernetes
+
+[Kubernetes click here](kubernetes.md)
+
+[Kubernetes click here](kubernetes.txt)
+
+# Jenkins
+
+[Jenkins Commands](jenkin.commands.txt)   
+
+# DevOps
+
+[DevOpes click here](devOps.txt)
 
 # Web Servers
 
@@ -87,59 +133,10 @@
 
 [Server click here](server.commands.txt)
 
-# Windows Info
-
-[Windows Info click here](windows.info.txt)
-
-# Scripts
-
-[Yamal click here](yamal.txt)
-
-[GitLab CI click here](gitlab-ci.yml)
-
-# JavaScript
-
-[Javascript click here](javascript.txt)
-
-[Jquery click here](jquery.txt)
-
-[Vue Js  click here](vuejs.txt)
-
-[Vue Js 3 click here](vuejs3.txt)
-
-[Angular Js click here](angularjs.txt)
-
-[Mevn click here](mevn.stack.commands.txt)
-
-[React Js click here](reactjs.txt)
-
-[React Js 4 click here](reactjs4.txt)
-
-[Next Js click here](nextjs.txt)
-
-[TypeScript click here](typescript.txt)
-
-[Mern Stack click here](mern.stack.commands.txt)
-
-[Mevn Stack click here](mevn.stack.commands.txt)
-
-[Mean Stack Commands click here](mean.stack.commands.txt)
-
-# Java
-
-[Java Commands click here](java.txt)
-
-# Databases
-
-[Databases Commands click here](databases.commands.md)
-
-[Databases Commands click here](databases.commands.txt)
-
-[All Apis Commands click here](all.apis.projects.links.txt)
-
 # Web Development
 
 [Development Info click here](development.info.txt)
 
+# Windows Info
 
----------------------------------------------------------------
+[Windows Info click here](windows.info.txt)
