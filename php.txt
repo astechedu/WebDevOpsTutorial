@@ -156,5 +156,46 @@ The primary configuration file for PHP when run from the Apache module.
 The primary configuration file for PHP when run from as PHP-FPM.
 
 -------------------------------------------
+
+
+
+# PHP MySql
+
+
+Example (MySQLi Object-Oriented):
+
+	<?php
+	$servername = "localhost";
+	$username = "username";
+	$password = "password";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password);
+
+	// Check connection
+	if ($conn->connect_error) {
+	  die("Connection failed: " . $conn->connect_error);
+	}
+	echo "Connected successfully";
+	?> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -------------------------------------------
 -------------------------------------------
