@@ -4,7 +4,8 @@
 ---------------------------------------
 
 Keys: 
-  password hash, password identify, header, php installation on ubuntu
+  password hash, password identify, header, php installation on ubuntu,
+  php mysql connection,
 ----------------------------------------
 ----------------------------------------
 ----------------------------------------
@@ -159,7 +160,7 @@ The primary configuration file for PHP when run from as PHP-FPM.
 
 
 
-# PHP & MySql
+# PHP Mysql Connection: 
 
 
 Example (MySQLi Procedural): 
