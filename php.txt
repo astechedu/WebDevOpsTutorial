@@ -72,19 +72,23 @@ PHP_URL_PATH
 
  
 Step 1 — Add the repository
+
 You must first run the following command to add a repository before installing PHP.
 
 	sudo add-apt-repository ppa:ondrej/php
 
 
-Step 2 — Update packages
+Step 2 — Update 
+
 Run the following to update your list of packages.
 
 	sudo apt update
 
 
 Step 3 — Install PHP
+
 You have the choice to install PHP as a module or FPM.
+
 Installing as a PHP module
 
 Run the following commands to install and load PHP.
@@ -129,6 +133,7 @@ You can also install several modules at once. This assumes the module names star
 
 
 View modules currently loaded
+
 The following command lists all modules currently loaded by PHP.
 
 	php -m
