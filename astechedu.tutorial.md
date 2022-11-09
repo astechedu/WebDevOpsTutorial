@@ -1,4 +1,4 @@
-# As Tech Edu Tutorial ( @astechedu ) For Absolute Beginners `#0969DA`
+# As Tech Edu Tutorial ( @astechedu ) For Absolute Beginners
 
 
 
