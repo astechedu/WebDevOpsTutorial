@@ -5,6 +5,9 @@
 
 # HTML
 
+# Boostrap 
+
+
 # PHP
   ### PHP Core
   ### laravel
@@ -32,7 +35,7 @@
    ### MySql
    ### PostgreSql
    ### MongoDB
-   
+   ### Redis
     
 # DevOps
 
