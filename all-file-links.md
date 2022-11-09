@@ -1,75 +1,127 @@
+
 #### All File Links Of This Rrpository
 
 
 
 
-[Ubuntu File click here](ubuntu.md)   
+ 
 
-[Web Servers Installation Commands click here](web-servers.md)
 
-[Docker Installation Commands click here](docker.commands.md)
+# Databases
 
 [Databases Commands click here](databases.commands.md)
 
+[Databases Commands click here](databases.commands.txt)
+
 [All Apis Commands click here](all.apis.projects.links.txt)
+
+# Jenkins
 
 [Jenkins Commands](jenkin.commands.txt)   
 
-[Javascript click here](javascript.txt)
+# Java
 
 [Java Commands click here](java.txt)
+
+# Github
 
 [GitLab click here](gitLab.txt)
 
 [Git Commands click here](git.commands.txt)
 
-[Flash click here](flash.txt)
-
 [Doctor Medichines click here](doctor.medicines.txt)
+
+# Docker 
+
+[Docker Installation Commands click here](docker.commands.md)
 
 [Docker Commands click here](docker.commands.txt)   
 
 [Dockerized apps click here](dockerized.apps.txt) 
 
-[Django click here](django.txt)
+# Kubernetes
 
-[Development Info click here](development.info.txt)
+[Kubernetes click here](kubernetes.md)
+
+[Kubernetes click here](kubernetes.txt)
+
+# DevOps
 
 [DevOpes click here](devOps.txt)
 
-[Databases Commands click here](databases.commands.txt)
+# Python 
+
+[Python click here](python.txt)
+
+[Django click here](django.txt)
+
+[Flash click here](flash.txt)
+
+# Ruby
+
+[Ruby click here](ruby.txt)
+
+[RubyOnRails click here](rubyonrails.txt)
+
+# CSS
+
+[Bootstrap Components click here](bootstrap.components.txt)     
+
+[Tailwind Components click here](taildwind.components.txt)
+
+# Linux 
+
+[Linux click here](linux.commands.txt)
+
+[Ubuntu Commands click here](ubuntu.md)
+
+[Ubunut Commands click here](ubuntu.txt)
+
+# Web Servers
+
+[Web Servers Installation Commands click here](web-servers.md)
+
+[Web Servers click here](web-servers.txt)
+
+[Nginx click here](nginx.txt)
+
+[Server click here](server.commands.txt)
+
+# Windows Info
+
+[Windows Info click here](windows.info.txt)
+
+# Scripts
+
+[Yamal click here](yamal.txt)
+
+[GitLab CI click here](gitlab-ci.yml)
+
+# PHP
+
+[PHP click here](php.txt)
+
+[Laravel click here](laravel.commands.txt)
+
+[Sysmfony Commands click here](symfony.commands.txt)
 
 [Codeigniter click here](codeigniter.commands.txt)
 
 [CakePhp click here](cakephp.commands.txt)
 
-[Bootstrap Components click here](bootstrap.components.txt)      
+[Yii click here](yii.commands.txt)
 
-[Angular Js click here](angularjs.txt)
+# JavaScript
 
-[Kubernetes click here](kubernetes.txt)
-
-[Kubernetes click here](kubernetes.md)
+[Javascript click here](javascript.txt)
 
 [Jquery click here](jquery.txt)
 
-[Laravel click here](laravel.commands.txt)
+[Vue Js  click here](vuejs.txt)
 
-[Linux click here](linux.commands.txt)
+[Vue Js 3 click here](vuejs3.txt)
 
-[Mean Stack Commands click here](mean.stack.commands.txt)
-
-[Mern Stack click here](mern.stack.commands.txt)
-
-[Mevn Stack click here](mevn.stack.commands.txt)
-
-[Next Js click here](nextjs.txt)
-
-[Nginx click here](nginx.txt)
-
-[PHP click here](php.txt)
-
-[Python click here](python.txt)
+[Angular Js click here](angularjs.txt)
 
 [Mevn click here](mevn.stack.commands.txt)
 
@@ -77,34 +129,16 @@
 
 [React Js 4 click here](reactjs4.txt)
 
-[Ruby click here](ruby.txt)
-
-[RubyOnRails click here](rubyonrails.txt)
-
-[Server click here](server.commands.txt)
-
-[Sysmfony Commands click here](symfony.commands.txt)
-
-[Tailwind Components click here](taildwind.components.txt)
+[Next Js click here](nextjs.txt)
 
 [TypeScript click here](typescript.txt)
 
-[Ubuntu Commands click here](ubuntu.md)
+[Mern Stack click here](mern.stack.commands.txt)
 
-[Ubunut Commands click here](ubuntu.txt)
+[Mevn Stack click here](mevn.stack.commands.txt)
 
-[Vue Js  click here](vuejs.txt)
+[Mean Stack Commands click here](mean.stack.commands.txt)
 
-[Vue Js 3 click here](vuejs3.txt)
+# Web Development
 
-[Web Servers click here](web-servers.md)
-
-[Web Servers click here](web-servers.txt)
-
-[Windows Info click here](windows.info.txt)
-
-[Yamal click here](yamal.txt)
-
-[GitLab CI click here](gitlab-ci.yml)
-
-[Yii click here](yii.commands.txt)
+[Development Info click here](development.info.txt)
