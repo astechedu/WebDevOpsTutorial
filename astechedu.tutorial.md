@@ -35,6 +35,10 @@ https://youtu.be/jJGMo3HhKPw
 <iframe width="560" height="315" src="https://youtu.be/jJGMo3HhKPw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
+![]([http://damien.pobel.fr/images/youtube-video-github.gif](http://damien.pobel.fr/images/youtube-video-github.gif))
+
+
+
 
 
 
@@ -52,4 +56,13 @@ Demo:
 
 ![](http://damien.pobel.fr/images/youtube-video-github.gif)
 
+
+
 See also [Embed a Youtube video in Github markdown](http://damien.pobel.fr/post/youtube-video-github/)
+
+
+
+
+
+
+
