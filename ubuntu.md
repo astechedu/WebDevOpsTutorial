@@ -53,7 +53,9 @@
 
      /var/www/html
 
+
   Out Site: 
+  
      astechedu.local
   
      sudo a2dissite 000-default.conf
@@ -118,7 +120,9 @@
         mysqli_close($DBconnect);
      ?>
 
+
 #### Apache2 Config & Create New Domain: 
+
 
 //Uninstall Apache2 
   sudo apt remove apache2*
@@ -216,6 +220,7 @@
 ### NGINX Installation: 
 
 --> Uninstall NGINX
+
     sudo apt purge nginx nginx-common nginx-core
 
   -->Installation
@@ -236,6 +241,7 @@
   http://your_server_ip
 
 -->Managing the Nginx Process
+
      sudo systemctl stop nginx
      sudo systemctl start nginx
      sudo systemctl restart nginx
@@ -380,15 +386,16 @@
        /var/log/nginx/access.log – Access logs tracking every request to your server.
        /var/log/ngins/error.log – A log of any errors generated in Nginx.
 
+
 #### Apache Multi Sites Config
 
-      mkdir -p /var/www/domain.com/public_html         //Make a Directory for Each Site
-      mkdir -p /var/www/domain2.com/public_html
-      chmod -R 755 /var/www                            //Set Folder Permissions
+       mkdir -p /var/www/domain.com/public_html         //Make a Directory for Each Site
+       mkdir -p /var/www/domain2.com/public_html
+       chmod -R 755 /var/www                            //Set Folder Permissions
 
-      vim /var/www/domain.com/public_html/index.html   //Set up an Index Page
-      testing for domain.com
-      vim /var/www/domain2.com/public_html/index.html
+       vim /var/www/domain.com/public_html/index.html   //Set up an Index Page
+       testing for domain.com
+       vim /var/www/domain2.com/public_html/index.html
 
   //Copy the Config File for Each Site
   
@@ -539,9 +546,11 @@ OR
 #### Mysql Install & Uninstall 
 
   //Uninstall MySql
+  
       sudo apt-get purge 'mysql*'
 
   //Install MySql
+  
      cd /tmp
      curl -OL https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
      ls
@@ -582,6 +591,7 @@ OR
 //Install PHPMYADMIN
 
     sudo apt update
+    
     sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
 
     php-mbstring: A module for managing non-ASCII strings and convert strings to different encodings
