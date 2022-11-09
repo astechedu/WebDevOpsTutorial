@@ -63,6 +63,8 @@ See also [Embed a Youtube video in Github markdown](http://damien.pobel.fr/post/
 
 
 
-
+[![Final video of fixing issues in your code in VS Code]
+(https://img.youtube.com/vi/JLMbpiywVxQ/maxresdefault.jpg)]
+(https://www.youtube.com/watch?v=JLMbpiywVxQ)
 
 
