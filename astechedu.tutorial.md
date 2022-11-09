@@ -13,7 +13,15 @@ wrapped in a link
 src="https://www.youtube.com/embed/tgbNymZ7vqY">
 </iframe> 
 
+<!DOCTYPE html>
+<html>
+<body>
 
+<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+</iframe>
+
+</body>
+</html>
 
 
 [![Everything Is AWESOME](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://youtu.be/jJGMo3HhKPw "Everything Is AWESOME")
