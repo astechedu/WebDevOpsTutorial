@@ -216,7 +216,17 @@ Example (PDO):
 	?> 
 
 
+# Create MySql Table 
 
+Example: 
+
+	CREATE TABLE Persons (
+	    personID int,
+	    lastName varchar(255),
+	    firstName varchar(255),
+	    address varchar(255),
+	    city varchar(255)
+	);
 
 
 
