@@ -101,7 +101,6 @@ sqlite> select * from tbl1;
 
 >>>>> mysql MySql MYSQL <<<<<<<
 
-https://www.dataquest.io/blog/sql-commands/
 
 Mysql on windows:
 
