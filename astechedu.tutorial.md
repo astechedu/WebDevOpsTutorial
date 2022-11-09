@@ -33,6 +33,22 @@
    ### PostgreSql
    ### MongoDB
    
+    
+# DevOps
+
+  ### Docker 
+  
+  ### Kubernetes
+  
+  ### Jenkins
+  
+  ### Terrafomrm
+  
+  ### Ansible
+
+
+
+   
    
    
    
