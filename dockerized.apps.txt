@@ -9,7 +9,7 @@ PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app
 PYTHON: python app, django app, flask app
 
 Production: 
-   phpfpm and NGINS ( 100% Tested )
+   phpfpm and NGINS ( 100% Working )
 
 ----------------------------------------------------------
 ----------------------------------------------------------
