@@ -13,8 +13,7 @@ PYTHON: python app, django app, flask app
 
 Production: 
    phpfpm and NGINS ( Worked )
-   
-   
+ 
 
 ----------------------------------------------------------
 ----------------------------------------------------------
@@ -48,8 +47,6 @@ EXPOSE 8080
 CMD [ "http-server", "dist" ]
 
 
-
-
 docker build -t vuejs-cookbook/dockerize-vuejs-app .
 
 
@@ -78,8 +75,6 @@ CMD ["nginx", "-g", "daemon off;"]
 
 docker build -t vuejs-cookbook/dockerize-vuejs-app .
 docker run -it -p 8080:80 --rm --name dockerize-vuejs-app-1 vuejs-cookbook/dockerize-vuejs-app
-
-
 
 
     Microservices
@@ -135,9 +130,7 @@ docker images | grep dockerized-react
 docker run -p 3000:3000 -d dockerized-react
 
 
-
 http://localhost:3000
-
 
 
 Save the app through nginx:
@@ -235,12 +228,7 @@ docker run -d -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --rm angular-micr
 docker run -d -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --name foo --rm angular-microservice:dev
 
 
-
-
-
 ===> End Angular App <======
-
-
 
 ----------------------------------------------------------
 
@@ -367,8 +355,6 @@ services:
       - UNSPLASH_SECRET_KEY=${UNSPLASH_SECRET_KEY}
 
 
-
-
 # Dockerfile.development
 FROM php:7.4-apache
 
@@ -384,11 +370,7 @@ $ git commit -m "add docker and apache config"
 $ git push origin master
 
 
-
-
 ===> End PHP App <======
-
-
 
 ----------------------------------------------------------
 
