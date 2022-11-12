@@ -6,7 +6,8 @@
 #### JS:     vuejs app, react app, angular app
 
 #### PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app,
-      
+    
+   [Dockrized App PHP + Composer Worked Click Here](#php_composer) 
    [Dockrized App PHP + MySql+ PHPMyAdmin Worked Click Here](#php_mysql_phpmyadmin)   
    [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
 
@@ -288,7 +289,39 @@ Dockerfile
 
 ===> PHP App <==========
 
-## 1.
+## 1. 
+
+<a name="php_composer"></a>    
+### PHP + Composer ( Worked )
+
+  Dockerfile
+
+      FROM php:7.3-fpm-alpine
+      RUN docker-php-ext-install pdo pdo_mysql
+      RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+
+      RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
+      RUN apk update
+      RUN apk upgrade
+      RUN apk add bash
+      RUN alias composer='php /usr/bin/composer'
+
+       docker.compose.yml
+
+      version: "3.3"
+      services: 
+        phpcomposer: 
+          build: .
+          volumes: 
+            - .:/var/www
+          working_dir: /var/www
+
+
+  //Command run in docker container or in local host dir  
+      docker run composer create-project symfony/symfony
+
+
+## 2.
 
 <a name="phpfpm_nginx"></a>    
 ### PHP-FPM NGINX 
