@@ -273,14 +273,12 @@ Dockerfile
 ===> PHP App <==========
 
 
-====> PHPfpm and NGINX : Production  100% Working =====>
 
 
 <a name="phpfpm_nginx"></a>    
 # PHP-FPM NGINX 
 
-//PHPFPM ajay nginx ( 100% Woring - Production)
-
+====> PHPfpm and NGINX : Production  100% Worked =====>
 
 //Directory Structure:
 
@@ -419,7 +417,7 @@ http://localhost
 
 -----x------
 
-2. 
+# 2. 
 
 Dockerfile:
 
