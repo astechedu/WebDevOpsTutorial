@@ -5,11 +5,16 @@
 Keys: 
       
 JS:     vuejs app, react app, angular app
-PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app
+
+PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app,
+        php+mysql+phpmyadmin ( Worked )
+        
 PYTHON: python app, django app, flask app
 
 Production: 
-   phpfpm and NGINS ( 100% Working )
+   phpfpm and NGINS ( Worked )
+   
+   
 
 ----------------------------------------------------------
 ----------------------------------------------------------
@@ -241,6 +246,53 @@ docker run -d -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --name foo --rm a
 
 ===> PHP App <==========
 
+1. PHP + MYSQL + PHPMYADMIN    ( Worked )
+
+Dockerfile
+
+FROM php:8.0-apache
+WORKDIR /var/www/html
+RUN apt-get update -y && apt-get install -y libmariadb-dev
+RUN docker-php-ext-install mysqli 
+
+
+version: "3.7"
+services: 
+  php-env:
+     build: .
+     volumes:
+       - ./src:/var/www/html
+     ports: 
+       - 9000:80
+  
+  mysql_db: 
+   image: mysql:latest 
+   command: --default-authentication-plugin=mysql_native_password
+   restart: always
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports: 
+     - 9001:80
+    environment: 
+     - PMA_ARBITRARY=1   
+     
+     
+index.php
+
+$con = new mysqli("mysql_db","root","root")
+
+if($con){
+  echo "Connected";
+}
+
+
+
+
+2. 
 
 Dockerfile:
 
