@@ -103,7 +103,7 @@
 
 # Docker 
 
-[Docker Commands click here](docker.commands.txt)   
+[Docker Commands click here text file](docker.commands.txt)   
 
 [Dockerized apps click here md file](dockerized.apps.md) 
 
