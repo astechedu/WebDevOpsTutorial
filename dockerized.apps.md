@@ -240,7 +240,7 @@ Dockerfile:
 
 ----------------------------------------------------------
 
-# 3. 
+## 3. 
 
 ##### ===> Angualr App <==========
 
@@ -288,16 +288,17 @@ Dockerfile
 
 ===> PHP App <==========
 
+## 1.
 
 <a name="phpfpm_nginx"></a>    
 ### PHP-FPM NGINX 
 
-## 1.
 ====> PHPfpm and NGINX : Production  100% Worked =====>
 
 //Directory Structure:
 
       myapp (project app) (dir)
+      
        1 docker(dir) -> nginx(dir) -> Dockerfile, docker-compose.yml
        2 src (dir) -> public (dir) -> index.php
 
