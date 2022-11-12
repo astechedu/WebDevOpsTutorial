@@ -3,18 +3,17 @@
 >>>>>> Dockerize Apps <<<<<<<
 
 
-      Keys: 
+### Topics: 
 
-      JS:     vuejs app, react app, angular app
+#### JS:     vuejs app, react app, angular app
 
-      PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app,
+#### PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app,
       
-              [Dockrized App PHP + MySql+ PHPMyAdmon Worked Click Here](#php_mysql_phpmyadmin)               
+      [Dockrized App PHP + MySql+ PHPMyAdmon Worked Click Here](#php_mysql_phpmyadmin)               
 
-      PYTHON: python app, django app, flask app
+#### PYTHON: python app, django app, flask app
 
-      Production: 
-      
+      Production:       
          phpfpm and NGINS ( Worked )        
 
 
