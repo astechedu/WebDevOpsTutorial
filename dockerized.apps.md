@@ -16,10 +16,6 @@
          phpfpm and NGINS ( Worked )
 
 
-----------------------------------------------------------
-----------------------------------------------------------
-----------------------------------------------------------
-
 ===> Vuejs App <==========
 
 Dockerfile: 
@@ -286,6 +282,7 @@ index.php
 http://localhost
 
 //Run Commands
+
       docker-compose up -d       //Running all containers
       docker-compose down        //Stop and delete all containers
 
@@ -303,73 +300,76 @@ COPY start-apache /usr/local/bin
 RUN a2enmod rewrite
 
 # Copy application source
-COPY src /var/www/
-RUN chown -R www-data:www-data /var/www
 
-CMD ["start-apache"]
+      COPY src /var/www/
+      RUN chown -R www-data:www-data /var/www
+
+      CMD ["start-apache"]
 
 
 
 //# 000-default.conf
 
-<VirtualHost *:80>
-  ServerAdmin webmaster@localhost
-  DocumentRoot /var/www/public
+      <VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/public
 
-  <Directory /var/www>
-    Options Indexes FollowSymLinks
-    AllowOverride All
-    Require all granted
-  </Directory>
-</VirtualHost>
+        <Directory /var/www>
+          Options Indexes FollowSymLinks
+          AllowOverride All
+          Require all granted
+        </Directory>
+      </VirtualHost>
 
 
-RUN apt-get update && \
-    apt-get install nodejs
+      RUN apt-get update && \
+          apt-get install nodejs
 
-ENV MYSQL_ROOT_PASSWORD=root
-ENV MYSQL_ROOT_USER=root
+      ENV MYSQL_ROOT_PASSWORD=root
+      ENV MYSQL_ROOT_USER=root
 
-docker build .
+      docker build .
 
-docker tag SOURCE_IMAGE:TAG TARGET_IMAGE:TAG
+      docker tag SOURCE_IMAGE:TAG TARGET_IMAGE:TAG
 
 
 The final docker-compose.yml looks like this:
 
-version: "3.9"
-services:
-  webapp:
-    build:
-      context: .
-      dockerfile: ./Dockerfile.development
-    ports:
-      - "8000:80"
-    volumes:
-      - ./src:/var/www
-    environment:
-      - APP_KEY=SomeRandomStringToAddSecurity123
-      - APP_ENV=development
-      - APP_DEBUG=true
-      - APACHE_RUN_USER=apache-www-volume
-      - APACHE_RUN_GROUP=apache-www-volume
-      - UNSPLASH_ACCESS_KEY=${UNSPLASH_ACCESS_KEY}
-      - UNSPLASH_SECRET_KEY=${UNSPLASH_SECRET_KEY}
+      version: "3.9"
+      services:
+        webapp:
+          build:
+            context: .
+            dockerfile: ./Dockerfile.development
+          ports:
+            - "8000:80"
+          volumes:
+            - ./src:/var/www
+          environment:
+            - APP_KEY=SomeRandomStringToAddSecurity123
+            - APP_ENV=development
+            - APP_DEBUG=true
+            - APACHE_RUN_USER=apache-www-volume
+            - APACHE_RUN_GROUP=apache-www-volume
+            - UNSPLASH_ACCESS_KEY=${UNSPLASH_ACCESS_KEY}
+            - UNSPLASH_SECRET_KEY=${UNSPLASH_SECRET_KEY}
 
 
 # Dockerfile.development
-FROM php:7.4-apache
+
+      FROM php:7.4-apache
 
 # Setup Apache2 config
-COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
-RUN a2enmod rewrite
 
-CMD ["apache2-foreground"]
+      COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+      RUN a2enmod rewrite
+
+      CMD ["apache2-foreground"]
 
 
-$ git add docker-compose.yml 000-default.conf Dockerfile* start-apache
-$ git commit -m "add docker and apache config"
-$ git push origin master
+      $ git add docker-compose.yml 000-default.conf Dockerfile* start-apache
+      $ git commit -m "add docker and apache config"
+      $ git push origin master
 
 
 ===> End PHP App <======
@@ -380,45 +380,46 @@ $ git push origin master
 
 
 # Dockerfile
-FROM php:5.5-apache
 
-RUN docker-php-ext-install pdo_mysql
-RUN a2enmod rewrite
+      FROM php:5.5-apache
 
-ADD . /var/www
-ADD ./public /var/www/html
+      RUN docker-php-ext-install pdo_mysql
+      RUN a2enmod rewrite
+
+      ADD . /var/www
+      ADD ./public /var/www/html
 
 
 
-$ docker build -t laravel-app .
-$ docker run -p 80:80 laravel-app
+      $ docker build -t laravel-app .
+      $ docker run -p 80:80 laravel-app
 
 docker-machine ip default
-$ docker run -p 80:80 -e DB_HOST=dbhost.com laravel-app
+
+      $ docker run -p 80:80 -e DB_HOST=dbhost.com laravel-app
 
 
+      FROM php:5.5-apache
+
+      RUN docker-php-ext-install pdo_mysql
+      RUN a2enmod rewrite
+
+      ADD . /var/www
+      ADD ./public /var/www/html
+
+      ADD config/docker/apache.conf /etc/apache2/httpd.conf
+      COPY config/docker/php.ini /usr/local/etc/php/
 
 
-FROM php:5.5-apache
-
-RUN docker-php-ext-install pdo_mysql
-RUN a2enmod rewrite
-
-ADD . /var/www
-ADD ./public /var/www/html
-
-ADD config/docker/apache.conf /etc/apache2/httpd.conf
-COPY config/docker/php.ini /usr/local/etc/php/
-
-
-$ docker build -t laravel-app .
+      $ docker build -t laravel-app .
 
 
 # .dockerignore
-.git
 
-$ git add .dockerignore Dockerfile
-$ git commit -m ‘Dockerizing this great PHP app’
+      .git
+
+      $ git add .dockerignore Dockerfile
+      $ git commit -m ‘Dockerizing this great PHP app’
 
 
 
@@ -430,85 +431,85 @@ $ git commit -m ‘Dockerizing this great PHP app’
 
 ===> Codeigniter App <==========
 
-.database
-.docker
-  |php
-     |sites-available
-       |site.conf
-     |Dockerfile
-  |custom.ini
-  |docker-compose.yml
-.git
-app
-  |app
-  |public
-  |tests
-  |vendor
-  |writable
-  |.env
-  |composer.json
-  |composer.lock
-  |spark
-.gitignore
+      .database
+      .docker
+        |php
+           |sites-available
+             |site.conf
+           |Dockerfile
+        |custom.ini
+        |docker-compose.yml
+      .git
+      app
+        |app
+        |public
+        |tests
+        |vendor
+        |writable
+        |.env
+        |composer.json
+        |composer.lock
+        |spark
+      .gitignore
 
 
 
-version: '3'
-services:
-    web:
-        container_name: ci4-web
-        build:
-            context: ./php
-        ports:
-            - 80:80
-        volumes:
-            - ../app:/var/www/html/app/
-            - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
-        links:
-            - mysql
-        depends_on:
-          - mysql
-    mysql:
-        container_name: db-ci4
-        image: mysql:latest
-        volumes:
-            - ./db:/var/lib/mysql
-        command: --default-authentication-plugin=mysql_native_password
-        ports:
-            - 3306:3306
-        environment:
-            MYSQL_ROOT_PASSWORD: root
+      version: '3'
+      services:
+          web:
+              container_name: ci4-web
+              build:
+                  context: ./php
+              ports:
+                  - 80:80
+              volumes:
+                  - ../app:/var/www/html/app/
+                  - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
+              links:
+                  - mysql
+              depends_on:
+                - mysql
+          mysql:
+              container_name: db-ci4
+              image: mysql:latest
+              volumes:
+                  - ./db:/var/lib/mysql
+              command: --default-authentication-plugin=mysql_native_password
+              ports:
+                  - 3306:3306
+              environment:
+                  MYSQL_ROOT_PASSWORD: root
 
 
 
 The Dockerfile
 
-FROM php:7.2-apache
-RUN apt-get update && \
-    apt-get install -y
-RUN apt-get install -y curl
-RUN apt-get install -y build-essential libssl-dev zlib1g-dev libpng-dev libjpeg-dev libfreetype6-dev
-RUN apt-get install -y libicu-dev
-COPY sites-available/elioter.conf /etc/apache2/sites-enabled/elioter.conf
-RUN apt-get update
-RUN docker-php-ext-install intl
-RUN docker-php-ext-configure intl
-RUN docker-php-ext-install mysqli pdo pdo_mysql zip mbstring
-RUN a2enmod rewrite
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install gd
-RUN service apache2 restart
+      FROM php:7.2-apache
+      RUN apt-get update && \
+          apt-get install -y
+      RUN apt-get install -y curl
+      RUN apt-get install -y build-essential libssl-dev zlib1g-dev libpng-dev libjpeg-dev libfreetype6-dev
+      RUN apt-get install -y libicu-dev
+      COPY sites-available/elioter.conf /etc/apache2/sites-enabled/elioter.conf
+      RUN apt-get update
+      RUN docker-php-ext-install intl
+      RUN docker-php-ext-configure intl
+      RUN docker-php-ext-install mysqli pdo pdo_mysql zip mbstring
+      RUN a2enmod rewrite
+      RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+          && docker-php-ext-install gd
+      RUN service apache2 restart
 
 
 my site.conf
 
-<VirtualHost *:80>
-    DocumentRoot "/var/www/html/app/public/"
-    ServerName ci4.local
-    <Directory "/var/www/html/app/public/">
-        AllowOverride all
-    </Directory>
-</VirtualHost>
+      <VirtualHost *:80>
+          DocumentRoot "/var/www/html/app/public/"
+          ServerName ci4.local
+          <Directory "/var/www/html/app/public/">
+              AllowOverride all
+          </Directory>
+      </VirtualHost>
 
 ===> End Codeigniter App <======
 
@@ -556,82 +557,78 @@ my site.conf
 //PHPFPM ajay nginx ( 100% Woring - Production)
 
 
-//Directries : 
+//Directory Structure:
 
-myapp (project app) (dir)
- 1 docker(dir) -> nginx(dir) -> Dockerfile, docker-compose.yml
- 2 src (dir) -> public (dir) -> index.php
- 
-Directory Structure:
-
-
+      myapp (project app) (dir)
+       1 docker(dir) -> nginx(dir) -> Dockerfile, docker-compose.yml
+       2 src (dir) -> public (dir) -> index.php
 
 
 Dockerfile
 
 
-FROM php:8.0.2-fpm
+      FROM php:8.0.2-fpm
 
-RUN apt-get update && apt-get install -y \
-   git \
-   curl \
-   zip  \
-   unzip 
-   
-WORKDIR /var/www
+      RUN apt-get update && apt-get install -y \
+         git \
+         curl \
+         zip  \
+         unzip 
 
-
-
-docker-composer.yml
+      WORKDIR /var/www
 
 
-version: "3.8"
-services: 
-  app: 
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    container_name: my-app
-    restart: always
-    working_dir: /var/www/
-    volumes: 
-      - ../src:/var/www
-      
-  nginx: 
-     image: nginx:1.19-alpine
-     container_name: my-nginx
-     restart: always
-     ports: 
-       - "8001:80"
-     volumes: 
-       - ../src:/var/www
-       - ./nginx:/etc/nginx/conf.d
-   
-   
-  
 
-server {
-
-  listen 80;
-  index index.php;
-  error_log /var/log/nginx/error.log;
-  access_log /var/log/nginx/acces.log;
-  error_page 404 /index.php;
-  root /var/www/public; 
-  
-  location ~ \.php$ {
-      try_files $uri =404;
-      fastcgi_pass app:9000;
-      fastcgi_index index.php;
-      include fastcgi_params;
-      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;      
-  }
-  location /.php$ {
-     try_files $uri $uri/ /index.php?$query_string; 
-     gzip_static on;
-  }
+      docker-composer.yml
 
 
-}
+      version: "3.8"
+      services: 
+        app: 
+          build:
+            context: ./
+            dockerfile: Dockerfile
+          container_name: my-app
+          restart: always
+          working_dir: /var/www/
+          volumes: 
+            - ../src:/var/www
+
+        nginx: 
+           image: nginx:1.19-alpine
+           container_name: my-nginx
+           restart: always
+           ports: 
+             - "8001:80"
+           volumes: 
+             - ../src:/var/www
+             - ./nginx:/etc/nginx/conf.d
+
+
+
+
+      server {
+
+        listen 80;
+        index index.php;
+        error_log /var/log/nginx/error.log;
+        access_log /var/log/nginx/acces.log;
+        error_page 404 /index.php;
+        root /var/www/public; 
+
+        location ~ \.php$ {
+            try_files $uri =404;
+            fastcgi_pass app:9000;
+            fastcgi_index index.php;
+            include fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;      
+        }
+        location /.php$ {
+           try_files $uri $uri/ /index.php?$query_string; 
+           gzip_static on;
+        }
+
+
+      }
 
 -----------------------------------------------------------
