@@ -5,8 +5,8 @@
 
 #### JS:     vuejs app, react app, angular app
 
-#### PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app,
-    
+#### PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app
+
    [Dockrized App PHP + Composer Worked Click Here](#php_composer) 
    [Dockrized App PHP + MySql+ PHPMyAdmin Worked Click Here](#php_mysql_phpmyadmin)   
    [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
