@@ -1,7 +1,5 @@
 # Dockerized App For Beginners
 
->>>>>> Dockerize Apps <<<<<<<
-
 
 ### Topics: 
 
