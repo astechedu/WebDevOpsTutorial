@@ -273,12 +273,10 @@ Dockerfile
 ===> PHP App <==========
 
 
-
 ====> PHPfpm and NGINX : Production  100% Working =====>
 
 
 <a name="phpfpm_nginx"></a>    
-
 # PHP-FPM NGINX 
 
 //PHPFPM ajay nginx ( 100% Woring - Production)
@@ -359,7 +357,8 @@ Dockerfile
       }
 
 
--------------------------------
+2.
+
 <a name="php_mysql_phpmyadmin"></a>   
 # php mysql phpmyadmin                    
 
