@@ -293,6 +293,13 @@ if($con){
   echo "Connected";
 }
 
+http://localhost
+
+//Run Commands
+docker-compose up -d       //Running all containers
+docker-compose down        //Stop and delete all containers
+
+
 -----x------
 
 2. 
