@@ -431,6 +431,56 @@ http://localhost
 
 -----x------
 
+
+## 3. PHP + MYSQL + ADMINER   ( Worked )
+
+   Directory Structure: 
+   
+      myapp(dir) --> docker-compose.yml, Dockerfile, src(dir) -> index.php   
+   
+Dockerfile
+
+      FROM php:7.4-apache
+      RUN docker-php-ext-install mysqli
+
+
+      version: "3.1"
+      services: 
+        php:
+           build: .
+             context: .
+             dockerfile: Dockerfile
+           ports:
+             - 80:80
+           volumes:
+             - ./src:/var/www/html
+
+        db: 
+          image: mysql 
+          command: --default-authentication-plugin=mysql_native_password
+          restart: always
+          environment:
+            MYSQL_ROOT_PASSWORD: ajay123
+          volumes:
+            - mysql-data:/var/lib/mysql
+
+        adminer:
+          image: adminer
+          restart: always
+          ports: 
+           - 8080:8080
+      volumes: 
+        mysql-data:   
+
+
+  index.php:
+  
+           <?php
+
+              echo "PHP + Mysql + Adminer";
+
+           ?>
+
 ## 3. 
 
 Dockerfile:
