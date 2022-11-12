@@ -61,7 +61,8 @@ Dockerfile:
       Let’s refactor our Dockerfile to use NGINX:
 
 
-# build stage
+###### build stage
+
       FROM node:lts-alpine as build-stage
       WORKDIR /app
       COPY package*.json ./
@@ -69,7 +70,8 @@ Dockerfile:
       COPY . .
       RUN npm run build
 
-# production stage
+###### production stage
+
       FROM nginx:stable-alpine as production-stage
       COPY --from=build-stage /app/dist /usr/share/nginx/html
       EXPOSE 80
@@ -89,7 +91,7 @@ Dockerfile:
 
 ----------------------------------------------------------
 
-===> React App <==========
+#### React App 
 
 
 // .dockerignore
@@ -100,23 +102,41 @@ Dockerfile:
 // Dockerfile
 
 # ==== CONFIGURE =====
-# Use a Node 16 base image
+
+###### Use a Node 16 base image
+
       FROM node:16-alpine 
-# Set the working directory to /app inside the container
+      
+###### Set the working directory to /app inside the container
+
       WORKDIR /app
-# Copy app files
+      
+###### Copy app files
+
       COPY . .
-# ==== BUILD =====
-# Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
+      
+###### ==== BUILD =====
+
+###### Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
+
       RUN npm ci 
-# Build the app
+      
+###### Build the app
+
       RUN npm run build
-# ==== RUN =======
-# Set the env to "production"
+      
+###### ==== RUN =======
+
+###### Set the env to "production"
+
       ENV NODE_ENV production
-# Expose the port on which the app will be running (3000 is the default that `serve` uses)
+      
+###### Expose the port on which the app will be running (3000 is the default that `serve` uses)
+
       EXPOSE 3000
-# Start the app
+
+###### Start the app
+
       CMD [ "npx", "serve", "build" ]
 
 
