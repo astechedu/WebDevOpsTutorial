@@ -294,7 +294,7 @@ Dockerfile
 ## 1. 
 
 <a name="php_composer"></a>    
-### PHP + Composer ( Worked )
+### Composer Installation  ( Worked )
 
   Dockerfile
 
