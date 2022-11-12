@@ -281,7 +281,7 @@ Dockerfile
 <a name="phpfpm_nginx"></a>    
 # PHP-FPM NGINX 
 
-1.
+# 1.
 ====> PHPfpm and NGINX : Production  100% Worked =====>
 
 //Directory Structure:
@@ -363,7 +363,7 @@ Dockerfile
 <a name="php_mysql_phpmyadmin"></a>   
 # php mysql phpmyadmin                    
 
-2. PHP + MYSQL + PHPMYADMIN    ( Worked )
+# 2. PHP + MYSQL + PHPMYADMIN    ( Worked )
 
 Directory Structure: 
 
