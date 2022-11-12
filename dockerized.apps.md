@@ -272,6 +272,94 @@ Dockerfile
 
 ===> PHP App <==========
 
+
+
+====> PHPfpm and NGINX : Production  100% Working =====>
+
+
+<a name="phpfpm_nginx"></a>    
+
+# PHP-FPM NGINX 
+
+//PHPFPM ajay nginx ( 100% Woring - Production)
+
+
+//Directory Structure:
+
+      myapp (project app) (dir)
+       1 docker(dir) -> nginx(dir) -> Dockerfile, docker-compose.yml
+       2 src (dir) -> public (dir) -> index.php
+
+
+Dockerfile
+
+
+      FROM php:8.0.2-fpm
+
+      RUN apt-get update && apt-get install -y \
+         git \
+         curl \
+         zip  \
+         unzip 
+
+      WORKDIR /var/www
+
+
+
+      docker-composer.yml
+
+
+      version: "3.8"
+      services: 
+        app: 
+          build:
+            context: ./
+            dockerfile: Dockerfile
+          container_name: my-app
+          restart: always
+          working_dir: /var/www/
+          volumes: 
+            - ../src:/var/www
+
+        nginx: 
+           image: nginx:1.19-alpine
+           container_name: my-nginx
+           restart: always
+           ports: 
+             - "8001:80"
+           volumes: 
+             - ../src:/var/www
+             - ./nginx:/etc/nginx/conf.d
+
+
+
+
+      server {
+
+        listen 80;
+        index index.php;
+        error_log /var/log/nginx/error.log;
+        access_log /var/log/nginx/acces.log;
+        error_page 404 /index.php;
+        root /var/www/public; 
+
+        location ~ \.php$ {
+            try_files $uri =404;
+            fastcgi_pass app:9000;
+            fastcgi_index index.php;
+            include fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;      
+        }
+        location /.php$ {
+           try_files $uri $uri/ /index.php?$query_string; 
+           gzip_static on;
+        }
+
+
+      }
+
+
+-------------------------------
 <a name="php_mysql_phpmyadmin"></a>   
 # php mysql phpmyadmin                    
 
@@ -591,90 +679,4 @@ my site.conf
 ===> End Flask App <======
 
 ----------------------------------------------------------
-
-
-====> PHPfpm and NGINX : Production  100% Working =====>
-
-
-<a name="phpfpm_nginx"></a>    
-
-# PHP-FPM NGINX 
-
-//PHPFPM ajay nginx ( 100% Woring - Production)
-
-
-//Directory Structure:
-
-      myapp (project app) (dir)
-       1 docker(dir) -> nginx(dir) -> Dockerfile, docker-compose.yml
-       2 src (dir) -> public (dir) -> index.php
-
-
-Dockerfile
-
-
-      FROM php:8.0.2-fpm
-
-      RUN apt-get update && apt-get install -y \
-         git \
-         curl \
-         zip  \
-         unzip 
-
-      WORKDIR /var/www
-
-
-
-      docker-composer.yml
-
-
-      version: "3.8"
-      services: 
-        app: 
-          build:
-            context: ./
-            dockerfile: Dockerfile
-          container_name: my-app
-          restart: always
-          working_dir: /var/www/
-          volumes: 
-            - ../src:/var/www
-
-        nginx: 
-           image: nginx:1.19-alpine
-           container_name: my-nginx
-           restart: always
-           ports: 
-             - "8001:80"
-           volumes: 
-             - ../src:/var/www
-             - ./nginx:/etc/nginx/conf.d
-
-
-
-
-      server {
-
-        listen 80;
-        index index.php;
-        error_log /var/log/nginx/error.log;
-        access_log /var/log/nginx/acces.log;
-        error_page 404 /index.php;
-        root /var/www/public; 
-
-        location ~ \.php$ {
-            try_files $uri =404;
-            fastcgi_pass app:9000;
-            fastcgi_index index.php;
-            include fastcgi_params;
-            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;      
-        }
-        location /.php$ {
-           try_files $uri $uri/ /index.php?$query_string; 
-           gzip_static on;
-        }
-
-
-      }
-
 -----------------------------------------------------------
