@@ -429,8 +429,6 @@ http://localhost
 -----x------
 
 <a name="php_mysql_adminer"></a>    
-### PHP + MYSQL + ADMINER 
-
 ## 3. PHP + MYSQL + ADMINER   ( Worked )
 
    Directory Structure: 
