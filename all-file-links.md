@@ -104,10 +104,9 @@
 # Docker 
 
 [Docker Installation Commands click here](docker.commands.md)
-
 [Docker Commands click here](docker.commands.txt)   
-
-[Dockerized apps click here](dockerized.apps.txt) 
+[Dockerized apps click here md file](dockerized.apps.md) 
+[Dockerized apps click here text file](dockerized.apps.txt) 
 
 # Kubernetes
 
