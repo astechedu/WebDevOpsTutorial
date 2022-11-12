@@ -7,7 +7,7 @@
 
 #### PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app,
       
-   [Dockrized App PHP + MySql+ PHPMyAdmon Worked Click Here](#php_mysql_phpmyadmin)   
+   [Dockrized App PHP + MySql+ PHPMyAdmin Worked Click Here](#php_mysql_phpmyadmin)   
    [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
 
 #### PYTHON: python app, django app, flask app
@@ -364,10 +364,7 @@ Dockerfile
            try_files $uri $uri/ /index.php?$query_string; 
            gzip_static on;
         }
-
-
       }
-
 
 
 ##### 2. PHP + MYSQL + PHPMYADMIN    ( Worked )
