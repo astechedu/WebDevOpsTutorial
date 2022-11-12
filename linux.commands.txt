@@ -215,15 +215,13 @@ Now go ahead and check your domain name with the info.php in the url (domainname
 You will see that your domain got redirected to HTTPS and see the PHP information details.
 
 
-
-
 Conclusion:
 
 Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
-----------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------
+
 >>>>>>> Ubuntu 20.4 - Linux <<<<<<<<<<<
 
 //Install nginx on Ubuntu All Steps:
@@ -511,6 +509,7 @@ help read
 --------> End of linux shell scirpts <-------------
 
 ------------------------------------------------------
+
 //Centos Commands: 
 
 
