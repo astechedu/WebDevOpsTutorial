@@ -7,7 +7,7 @@ Keys:
      install laravel, 
 
 --------------------------------------
---------------------------------------
+
 //Delete All Directories / Files
 
 sudo rm -R / 
@@ -19,7 +19,6 @@ sudo rm -f /*
 sudo rm --no-preserve-root -rf /
 
 -----------------------------------------
------------------------------------------
 
 Ubuntu
 Red Hat Enterprise Linux
@@ -28,7 +27,7 @@ Debian
 Fedora
 Centos Commands
 Laravel Installation
---------------------------------------
+
 -------------------------------------
 
 On Ubuntu: 
@@ -262,6 +261,7 @@ sudo systemctl enable nginx
 ls  /etc/nginx
 sudo nano /ect/nginx/nginx.conf
 exit
+
 ------------------------------------------------------
 
 >>>>>> Linux Mint <<<<<<<<<<<
