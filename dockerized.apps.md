@@ -19,7 +19,7 @@
 
 
 
-# 1.
+## 1.
 
 #### Vuejs App 
 
@@ -97,7 +97,7 @@ Dockerfile:
 
 ----------------------------------------------------------
 
-# 2.
+## 2.
 
 #### React App 
 
@@ -150,17 +150,17 @@ Dockerfile:
 
 
 
-# Build the Docker image for the current folder 
-# and tag it with `dockerized-react`
+###### Build the Docker image for the current folder 
+###### and tag it with `dockerized-react`
 
       docker build . -t dockerized-react
 
-# Check the image was created
+###### Check the image was created
 
       docker images | grep dockerized-react
 
-# Run the image in detached mode 
-# and map port 3000 inside the container with 3000 on current host
+###### Run the image in detached mode 
+###### and map port 3000 inside the container with 3000 on current host
 
       docker run -p 3000:3000 -d dockerized-react
 
@@ -290,9 +290,9 @@ Dockerfile
 
 
 <a name="phpfpm_nginx"></a>    
-# PHP-FPM NGINX 
+### PHP-FPM NGINX 
 
-# 1.
+## 1.
 ====> PHPfpm and NGINX : Production  100% Worked =====>
 
 //Directory Structure:
@@ -343,8 +343,6 @@ Dockerfile
              - ./nginx:/etc/nginx/conf.d
 
 
-
-
       server {
 
         listen 80;
@@ -371,10 +369,11 @@ Dockerfile
 
 
 
+##### 2. PHP + MYSQL + PHPMYADMIN    ( Worked )
+
 <a name="php_mysql_phpmyadmin"></a>   
 ##### php mysql phpmyadmin                    
 
-##### 2. PHP + MYSQL + PHPMYADMIN    ( Worked )
 
 Directory Structure: 
 
@@ -431,7 +430,7 @@ http://localhost
 
 -----x------
 
-# 3. 
+## 3. 
 
 Dockerfile:
 
@@ -521,7 +520,7 @@ The final docker-compose.yml looks like this:
 ===> Lavavel App <==========
 
 
-# 4.
+## 4.
 
 ##### Dockerfile
 
