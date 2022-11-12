@@ -15,8 +15,8 @@
       Production: 
          phpfpm and NGINS ( Worked )
          
-<a name="php_mysql_phpmyadmin"></a>   
-# php mysql phpmyadmin                        
+[click here to jump to php mysql phpmyadmin](#php_mysql_phpmyadmin) 
+                      
 
 
 ===> Vuejs App <==========
@@ -235,8 +235,8 @@ Dockerfile
 
 ===> PHP App <==========
 
-[click here to jump to php mysql phpmyadmin](#php_mysql_phpmyadmin) 
-
+<a name="php_mysql_phpmyadmin"></a>   
+# php mysql phpmyadmin                    
 
 1. PHP + MYSQL + PHPMYADMIN    ( Worked )
 
