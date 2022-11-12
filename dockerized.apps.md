@@ -14,8 +14,8 @@
 
 #### PYTHON: python app, django app, flask app
 
-      Production:       
-         phpfpm and NGINS ( Worked )        
+   Production:   
+            [Dockrized App PHP-PFM NGINX Worked Click Here](#php_mysql_phpmyadmin)  
 
 
 ===> Vuejs App <==========
