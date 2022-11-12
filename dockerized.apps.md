@@ -8,7 +8,7 @@
 #### PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app,
       
    [Dockrized App PHP + MySql+ PHPMyAdmon Worked Click Here](#php_mysql_phpmyadmin)   
-   
+   [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
 
 #### PYTHON: python app, django app, flask app
 
@@ -431,6 +431,8 @@ http://localhost
 
 -----x------
 
+<a name="php_mysql_adminer"></a>    
+### PHP + MYSQL + ADMINER 
 
 ## 3. PHP + MYSQL + ADMINER   ( Worked )
 
