@@ -95,9 +95,10 @@ Dockerfile:
 #### React App 
 
 
-// .dockerignore
-      node_modules
-      build
+      // .dockerignore
+      
+            node_modules
+            build
 
 
 // Dockerfile
@@ -144,13 +145,16 @@ Dockerfile:
 
 # Build the Docker image for the current folder 
 # and tag it with `dockerized-react`
+
       docker build . -t dockerized-react
 
 # Check the image was created
+
       docker images | grep dockerized-react
 
 # Run the image in detached mode 
 # and map port 3000 inside the container with 3000 on current host
+
       docker run -p 3000:3000 -d dockerized-react
 
 
@@ -179,47 +183,47 @@ Dockerfile:
 
       FROM node:16-alpine as builder
 
-# Set the working directory to /app inside the container
+##### Set the working directory to /app inside the container
 
       WORKDIR /app
       
-# Copy app files
+##### Copy app files
 
       COPY . .
       
-# Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
+##### Install dependencies (npm ci makes sure the exact versions in the lockfile gets installed)
 
       RUN npm ci 
       
-# Build the app
+##### Build the app
 
       RUN npm run build
 
-# Bundle static assets with nginx
+##### Bundle static assets with nginx
 
       FROM nginx:1.21.0-alpine as production
       ENV NODE_ENV production
       
-# Copy built assets from `builder` image
+##### Copy built assets from `builder` image
 
       COPY --from=builder /app/build /usr/share/nginx/html
       
-# Add your nginx.conf
+##### Add your nginx.conf
 
       COPY nginx.conf /etc/nginx/conf.d/default.conf
       
-# Expose port
+##### Expose port
 
       EXPOSE 80
       
-# Start nginx
+##### Start nginx
 
       CMD ["nginx", "-g", "daemon off;"]
 
       docker build . -t dockerized-react
 
-# Notice we're now mapping port 80 inside the container 
-# to port 3000 on the host machine!
+##### Notice we're now mapping port 80 inside the container 
+##### to port 3000 on the host machine!
 
       docker run -p 3000:80 -d dockerized-react
 
@@ -231,7 +235,7 @@ Dockerfile:
 
 # 3. 
 
-===> Angualr App <==========
+##### ===> Angualr App <==========
 
 Project Setup
 
@@ -247,20 +251,20 @@ Docker Setup:
 
 Dockerfile
 
-# base image
+##### base image
       FROM node:12.2.0
 
-# set working directory
+##### set working directory
       WORKDIR /app
-# install and cache app dependencies
+##### install and cache app dependencies
       COPY package.json /app/package.json
       RUN npm install
       RUN npm install -g @angular/cli@7.3.10
 
-# add app
+##### add app
       COPY . /app
 
-# start app
+##### start app
       CMD ng serve --host 0.0.0.0
 
 
@@ -361,9 +365,9 @@ Dockerfile
 
 
 <a name="php_mysql_phpmyadmin"></a>   
-# php mysql phpmyadmin                    
+##### php mysql phpmyadmin                    
 
-# 2. PHP + MYSQL + PHPMYADMIN    ( Worked )
+##### 2. PHP + MYSQL + PHPMYADMIN    ( Worked )
 
 Directory Structure: 
 
@@ -430,7 +434,7 @@ COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY start-apache /usr/local/bin
 RUN a2enmod rewrite
 
-# Copy application source
+##### Copy application source
 
       COPY src /var/www/
       RUN chown -R www-data:www-data /var/www
@@ -486,11 +490,11 @@ The final docker-compose.yml looks like this:
             - UNSPLASH_SECRET_KEY=${UNSPLASH_SECRET_KEY}
 
 
-# Dockerfile.development
+##### Dockerfile.development
 
       FROM php:7.4-apache
 
-# Setup Apache2 config
+##### Setup Apache2 config
 
       COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
       RUN a2enmod rewrite
@@ -512,7 +516,7 @@ The final docker-compose.yml looks like this:
 
 # 4.
 
-# Dockerfile
+##### Dockerfile
 
       FROM php:5.5-apache
 
@@ -547,7 +551,7 @@ docker-machine ip default
       $ docker build -t laravel-app .
 
 
-# .dockerignore
+##### .dockerignore
 
       .git
 
@@ -562,7 +566,7 @@ docker-machine ip default
 
 ----------------------------------------------------------
 
-# 5. 
+##### 5. 
 
 ===> Codeigniter App <==========
 
