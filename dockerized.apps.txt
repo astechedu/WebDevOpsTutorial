@@ -7,7 +7,7 @@ Keys:
 JS:     vuejs app, react app, angular app
 
 PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app,
-        php+mysql+phpmyadmin ( Worked )
+        php + mysql + phpmyadmin ( Worked )
         
 PYTHON: python app, django app, flask app
 
@@ -248,6 +248,10 @@ docker run -d -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --name foo --rm a
 
 1. PHP + MYSQL + PHPMYADMIN    ( Worked )
 
+Directory Structure: 
+
+myapp (dir) -> Dockerfile, docker-compose.yml, src(dir)->index.php
+
 Dockerfile
 
 FROM php:8.0-apache
@@ -289,8 +293,7 @@ if($con){
   echo "Connected";
 }
 
-
-
+-----x------
 
 2. 
 
