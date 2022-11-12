@@ -402,7 +402,7 @@ Dockerfile
       }
 
 
-##### 2. PHP + MYSQL + PHPMYADMIN    ( Worked )
+##### 3. PHP + MYSQL + PHPMYADMIN    ( Worked )
 
 <a name="php_mysql_phpmyadmin"></a>   
 ##### php mysql phpmyadmin                    
@@ -464,7 +464,7 @@ http://localhost
 -----x------
 
 <a name="php_mysql_adminer"></a>    
-## 3. PHP + MYSQL + ADMINER   ( Worked )
+## 4. PHP + MYSQL + ADMINER   ( Worked )
 
    Directory Structure: 
    
@@ -475,6 +475,7 @@ Dockerfile
       FROM php:7.4-apache
       RUN docker-php-ext-install mysqli
 
+docker-compose.yml
 
       version: "3.1"
       services: 
@@ -513,7 +514,7 @@ Dockerfile
 
            ?>
 
-## 3. 
+## 5. 
 
 Dockerfile:
 
@@ -603,7 +604,7 @@ The final docker-compose.yml looks like this:
 ===> Lavavel App <==========
 
 
-## 4.
+## 6.
 
 ##### Dockerfile
 
@@ -655,7 +656,7 @@ docker-machine ip default
 
 ----------------------------------------------------------
 
-##### 5. 
+##### 7. 
 
 ===> Codeigniter App <==========
 
