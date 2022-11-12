@@ -278,6 +278,7 @@ Dockerfile
 <a name="phpfpm_nginx"></a>    
 # PHP-FPM NGINX 
 
+1.
 ====> PHPfpm and NGINX : Production  100% Worked =====>
 
 //Directory Structure:
@@ -355,12 +356,11 @@ Dockerfile
       }
 
 
-2.
 
 <a name="php_mysql_phpmyadmin"></a>   
 # php mysql phpmyadmin                    
 
-1. PHP + MYSQL + PHPMYADMIN    ( Worked )
+2. PHP + MYSQL + PHPMYADMIN    ( Worked )
 
 Directory Structure: 
 
@@ -417,7 +417,7 @@ http://localhost
 
 -----x------
 
-# 2. 
+# 3. 
 
 Dockerfile:
 
@@ -507,6 +507,8 @@ The final docker-compose.yml looks like this:
 ===> Lavavel App <==========
 
 
+# 4.
+
 # Dockerfile
 
       FROM php:5.5-apache
@@ -556,6 +558,8 @@ docker-machine ip default
 
 
 ----------------------------------------------------------
+
+# 5. 
 
 ===> Codeigniter App <==========
 
