@@ -234,7 +234,7 @@ Dockerfile
 
 ===> PHP App <==========
 
-<a name="php_mysql_phpmyadmin"></a>   
+<a name="php_mysql_phpmyadmin">Top</a>   
 # php mysql phpmyadmin                    
 
 1. PHP + MYSQL + PHPMYADMIN    ( Worked )
@@ -559,6 +559,7 @@ my site.conf
 
 
 <a name="phpfpm_nginx"></a>    
+
 # PHP-FPM NGINX 
 
 //PHPFPM ajay nginx ( 100% Woring - Production)
