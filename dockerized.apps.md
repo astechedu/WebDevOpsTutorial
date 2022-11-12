@@ -8,15 +8,14 @@
       JS:     vuejs app, react app, angular app
 
       PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app,
-              php + mysql + phpmyadmin ( Worked )
+      
+              [Dockrized App PHP + MySql+ PHPMyAdmon Worked Click Here](#php_mysql_phpmyadmin)               
 
       PYTHON: python app, django app, flask app
 
       Production: 
-         phpfpm and NGINS ( Worked )
-         
-[click here to jump to php mysql phpmyadmin](#php_mysql_phpmyadmin) 
-                      
+      
+         phpfpm and NGINS ( Worked )        
 
 
 ===> Vuejs App <==========
