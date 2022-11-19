@@ -2,8 +2,7 @@
 
 #Topics 
  
-  1. Permissions
-  [click here to jump to my anchor](#permissions) 
+  1. [Permissions](#permissions) 
      
           
 
