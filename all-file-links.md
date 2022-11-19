@@ -89,13 +89,15 @@
 
 # Linux 
 
-[Linux click here](linux.commands.md)
+[Linux Commands click here md](linux.commands.md)
 
-[Linux click here](linux.commands.txt)
+[Linux Commands click here txt](linux.commands.txt)
 
-[Ubuntu Commands click here](ubuntu.md)
+[Linux Permissions click here md](linux.permissions.md)
 
-[Ubunut Commands click here](ubuntu.txt)
+[Ubuntu Commands click here md](ubuntu.md)
+
+[Ubunut Commands click here txt](ubuntu.txt)
 
 # Scripts
 
