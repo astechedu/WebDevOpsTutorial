@@ -3,9 +3,13 @@
 #Topics 
  
   1. Permissions
+  [click here to jump to my anchor](#permissions) 
+     
+          
+
+
   
-  
-  
+   <a name="permissions"></a>    
   #### 1. Permissions
   
   >>>>> Linux Commands <<<<<<<<<
