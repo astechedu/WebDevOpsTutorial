@@ -89,6 +89,8 @@
 
 # Linux 
 
+[Linux click here](linux.commands.md)
+
 [Linux click here](linux.commands.txt)
 
 [Ubuntu Commands click here](ubuntu.md)
