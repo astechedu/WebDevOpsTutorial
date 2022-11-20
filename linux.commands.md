@@ -2,12 +2,17 @@
 # Linux Basic Commands 
   
 
-Keys <br /> : 
+Topics <br /> : 
      1. [Ubuntu click here](#ubuntu)  <br />   
      2. [Ubuntu 20.04 click here](#uubuntu20.04)  <br />  
      3. [Install click here](#install)   <br />
      4. [Laravel click here](#laravel)   <br />
- 
+     5. [Red Hat Enterprise Linux click here](#Red Hat Enterprise Linux)   <br />
+     6. [Linux Mint click here](#Linux Mint)   <br />
+     7. [Debian click here](#Debian)   <br />
+     8. [Fedoran click here](#Fedora)   <br />
+     9. [Centos Commands click here](#Centos Commands)   <br />
+    10. [Laravel Installation click here](#Laravel Installation)   <br />
 
 
 //Delete All Directories / Files
@@ -20,17 +25,9 @@ Keys <br /> :
             or 
           sudo rm --no-preserve-root -rf /
 
------------------------------------------
 
-Ubuntu
-Red Hat Enterprise Linux
-Linux Mint
-Debian
-Fedora
-Centos Commands
-Laravel Installation
 
--------------------------------------
+
 
 ## On Ubuntu: 
 
