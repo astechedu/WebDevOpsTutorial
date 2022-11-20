@@ -5,7 +5,7 @@
 Topics <br /> : 
 
    1. [Ubuntu click here](#ubuntu)  <br />   
-   2. [Ubuntu 20.04 click here](#uubuntu20.04)  <br />  
+   2. [Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
    3. [Install click here](#install)   <br />
    4. [Laravel click here](#laravel)   <br />
    5. [Red Hat Enterprise Linux click here](#RedHat_Enterprise_Linux)   <br />
@@ -236,8 +236,7 @@ Conclusion:
 Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
-------------------------------------------------------------------------------------------------
-
+<a name="ubuntu20.04"></a> 
 ## >>>>>>> Ubuntu 20.4 - Linux <<<<<<<<<<<
 
 //Install nginx on Ubuntu All Steps:
@@ -255,7 +254,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
           ls sites-enabled/
           is sites-available/
           clean
-
+<a name="#kali_linux"></a> 
 ## >>>>>> Kali Linux 2020.4 <<<<<<<<<<<
 
 //Install nginx on Kali Linux All Steps:
@@ -279,8 +278,9 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
           sudo nano /ect/nginx/nginx.conf
           exit
 
-------------------------------------------------------
 
+
+<a name="#linux_mint"></a> 
 ## >>>>>> Linux Mint <<<<<<<<<<<
 
 //Install nginx on Linux Mint  All Steps:
@@ -295,8 +295,8 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
           sudo service nginx restart
           
 
-//Install Node js App on Linus using nginx
 
+<a name="#nodejs_npm"></a> 
 <<<< Step 1: Installing Nodejs and NPM in Linux: >>>>>>
 -------------------------------------------------------
 
@@ -640,9 +640,6 @@ stat /etc/passwd
 
 
 --------> End Of Centos <-------------------------------
-
-
-------------------------------------------------------
 ------------------------------------------------------
 
 -------> Install Laravel <------------
