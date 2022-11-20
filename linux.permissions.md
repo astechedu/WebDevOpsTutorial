@@ -197,6 +197,7 @@ Creating a System Group with Password
 Deleting a group:
 
           groupdel [groupName]
+	  
   
 <a name="add_user"></a>   
 #### Add User: 
@@ -291,9 +292,11 @@ count all user accounts using the wc
 
           getent passwd | wc -l
 
+Another option is to use the cut command:
+
+	  cut -d: -f1 /etc/passwd
 
 What is a Linux Group?
-
 Linux groups help developers manage user accounts in Linux. You can set individual permissions for each user. But, this can be impractical if you’re working with multiple users who should all have the same privileges. 
 
           Primary group : 
