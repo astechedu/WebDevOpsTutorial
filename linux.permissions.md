@@ -158,12 +158,12 @@ How to Create Groups in Linux (groupadd Command):
 
 groupadd Command Syntax:
 
-       groupadd [OPTIONS] GROUPNAME
+        groupadd [OPTIONS] GROUPNAME
    
 Creating a Group in Linux: 
 
-       groupadd mygroup
-       groupadd -f mygroup
+        groupadd mygroup
+        groupadd -f mygroup
 
    
 Creating a Group with Specific GID: 
