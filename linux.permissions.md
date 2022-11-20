@@ -270,6 +270,13 @@ Changing the Default useradd Values:
          sudo useradd -D | grep -i shell     //verify
 
 
+Linux list user names only:
+
+To list only usernames type the following awk command:
+
+	  awk -F':' '{ print $1}' /etc/passwd
+
+
 What is a Linux Group?
 
 Linux groups help developers manage user accounts in Linux. You can set individual permissions for each user. But, this can be impractical if you’re working with multiple users who should all have the same privileges. 
