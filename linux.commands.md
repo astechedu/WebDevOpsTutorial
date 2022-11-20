@@ -2,11 +2,13 @@
 # Linux Basic Commands 
 
 
---------------------------------------
 Keys: 
-     install laravel, 
+     ubuntu
+     ubuntu 20.04
+     install 
+     laravel, 
 
---------------------------------------
+
 
 //Delete All Directories / Files
 
