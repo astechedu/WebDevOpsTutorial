@@ -276,6 +276,21 @@ To list only usernames type the following awk command:
 
 	  awk -F':' '{ print $1}' /etc/passwd
 
+Get a list of all users using the getent command
+
+To get a list of all Linux users you can type the following getent command:
+
+	  getent passwd
+          getent passwd | grep tom
+	  
+get a list all users
+
+          getent passwd | cut -d: -f1
+	  
+count all user accounts using the wc
+
+          getent passwd | wc -l
+
 
 What is a Linux Group?
 
