@@ -296,6 +296,9 @@ Another option is to use the cut command:
 
 	  cut -d: -f1 /etc/passwd
 
+	  compgen -u              //Or
+
+
 What is a Linux Group?
 Linux groups help developers manage user accounts in Linux. You can set individual permissions for each user. But, this can be impractical if you’re working with multiple users who should all have the same privileges. 
 
