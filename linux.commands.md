@@ -4,8 +4,11 @@
 
 Keys: 
      1. [Ubuntu click here](#ubuntu) 
+     
      2. [Ubuntu 20.04 click here](#uubuntu20.04) 
+     
      3. [Install click here](#install) 
+     
      4. [Laravel click here](#laravel)      
  
 
