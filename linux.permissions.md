@@ -303,3 +303,67 @@ The -G flag specifies the name of the secondary group to which you want to add t
  
            id username        
     
+
+
+ display:
+
+    All users 
+
+    All groups
+    
+    
+
+Display users & groups list: 
+
+
+You can display with the help of compgen builtin command as follows:
+
+    To display all users run following command:
+
+    compgen -u
+
+    To display all groups run following command:
+
+    compgen -g
+
+However you can also display all users by cut -d ":" -f 1 /etc/passwd.
+
+
+
+Here we are going to use getent for the detailed the info
+
+We can list the user with the following command:
+
+     getent passwd
+
+We can list the group as follows:
+
+      getent group
+
+To fetch detail a specific user
+
+      getent passwd lalit
+
+
+
+You can also list a specific group’s membership using the following command:
+
+       getent group www-data
+
+
+
+Listing All Groups:
+
+       less /etc/group
+
+
+
+To get a list of all groups, type the following command:
+
+	       getent group
+
+You can also use awk or cut to print only the first field containing the name of the group:
+
+	       getent group | awk -F: '{ print $1}'
+
+	       getent group | cut -d: -f1	
