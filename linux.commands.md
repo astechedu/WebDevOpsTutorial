@@ -298,7 +298,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 <a name="#nodejs_npm"></a> 
 <<<< Step 1: Installing Nodejs and NPM in Linux: >>>>>>
--------------------------------------------------------
+
 
 On Debian/Ubuntu
 
@@ -313,7 +313,6 @@ On Debian/Ubuntu
           
           $ sudo apt-get install -y nodejs
 
--------------------------------------------------------------------------
 
 On CentOS/RHEL and Fedora
 
@@ -325,14 +324,13 @@ On CentOS/RHEL and Fedora
           
           $ curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 
--------------------------
+
 
 <<<<< Step 2: Creating a Nodejs Application >>>>>>>
 
           $ sudo mkdir -p /var/www/html/sysmon
           $ sudo vim /var/www/html/sysmon/server.js
           
--------------------
 
           const http = require('http');
 
@@ -349,18 +347,17 @@ On CentOS/RHEL and Fedora
               console.log(`Server running at http://${hostname}:${port}/`);
           });
 
----------------------
 
 Now start your node application using the following command (press Ctrl+x to terminate it).
 
 
           $ sudo node /var/www/html/sysmon/server.js
-          OR
+              OR
           $ sudo node /var/www/html/sysmon/server.js &   #start it in the background to free up your terminal
 
 Now open a browser and access your application at the URL http://198.168.43.31:5000
 
-----------------------
+
 
 Step 3: Install Nginx Reverse Proxy in Linux:
 
@@ -453,7 +450,8 @@ Step 4: Configure Nginx as Reverse Proxy For Nodejs Application
 Step 5: Access Nodejs Application via Web Browser
 
 http://sysmon.tecmint.lan 
-192.168.43.31 sysmon.tecmint.lan
+
+  192.168.43.31 sysmon.tecmint.lan
 
 
 ------------- End Of Node Project ..............
@@ -471,20 +469,21 @@ Steps to execute a shell script in Linux:
 
 The procedure is as follows:
 
-    Create a new file called demo.sh using a text editor such as nano or vi in Linux: 
-    nano demo.sh
+   Create a new file called demo.sh using a text editor such as nano or vi in Linux: 
+    
+     nano demo.sh
 
-    Add the following code:
+Add the following code:
 
     #!/bin/bash
 
     echo "Hello World"
 
-    Set the script executable permission by running chmod command in Linux: 
+Set the script executable permission by running chmod command in Linux: 
 
     chmod +x demo.sh
 
-    Execute a shell script in Linux: 
+Execute a shell script in Linux: 
 
     ./demo.sh
 
@@ -494,105 +493,107 @@ Let us see all steps in details.
 Add the following code:
 
 #!/bin/bash
+
 # My first shell script
-echo "Hello $USER"
-echo "Today is $(date)"
-echo "Bye for now"
+    echo "Hello $USER"
+    echo "Today is $(date)"
+    echo "Bye for now"
 
 Step 3 – Make the shell script executable:
 
-ls -l demo.sh
-cat demo.sh
+    ls -l demo.sh
+    cat demo.sh
 
 To set executable permission, run the following chmod command:
 
-chmod +x demo.sh
+    chmod +x demo.sh
 
 Verify permissions:
 
-ls -l demo.sh
+    ls -l demo.sh
 
 
 Step 4 – Execute the shell script in Linux:
 
 Now we have shell script named demo.sh. But, how do you run it? Try:
 
-./demo.sh
+    ./demo.sh
 
 The . refers to the current directory. Another option is to specify the full path:
 
-/path/to/demo.sh
-/home/vivek/demo.sh
-~/demo.sh
+    /path/to/demo.sh
+    /home/vivek/demo.sh
+    ~/demo.sh
 
 Conclusion
 
 For more info see Linux Shell Scripting Tutorial and bash command man page using the man command or help command:
 
-man bash
-help read
+    man bash
+    help read
 
 --------> End of linux shell scirpts <-------------
 
-------------------------------------------------------
 
 //Centos Commands: 
 
+    Centos Command           Description
 
-
-Centos Command           Description
-
-top
-nman
-rpm-ql<packagename> or dpkg -L <packagename>
-sosreport
-Ismod
-tcpdump
+    top
+    nman
+    rpm-ql<packagename> or dpkg -L <packagename>
+    sosreport
+    Ismod
+    tcpdump
 
 //Directory Movement
-ls    - lists the conents of the directory
-cp    - copies a file
-mv    - moves a directory
-cd .. - moves up one directory
-cd ~  - moves to home directory
-ll    - lists the contents of the directory length-wise
-pwd   - present working directory
-find  - search given directory for namestring and display it
+  
+    ls    - lists the conents of the directory
+    cp    - copies a file
+    mv    - moves a directory
+    cd .. - moves up one directory
+    cd ~  - moves to home directory
+    ll    - lists the contents of the directory length-wise
+    pwd   - present working directory
+    find  - search given directory for namestring and display it
 
 //User Management
-alias     - creates and alias
-passwrd   - updates user authentication
-useradd   - adds a new user
-sudo      - admin privileges
-who       - shows currently logged on users
-groupadd  - create new groud
-uname     - print system info
+  
+    alias     - creates and alias
+    passwrd   - updates user authentication
+    useradd   - adds a new user
+    sudo      - admin privileges
+    who       - shows currently logged on users
+    groupadd  - create new groud
+    uname     - print system info
 
 //File Management
-chmod     - change permissions of a file
-chown     - change the ownership of a file
-diff      - compare the ownership of a file
-diff      - compare two files against each other
-du        - displyas disk usage of a directory
-rm        - removes files / directories
+  
+    chmod     - change permissions of a file
+    chown     - change the ownership of a file
+    diff      - compare the ownership of a file
+    diff      - compare two files against each other
+    du        - displyas disk usage of a directory
+    rm        - removes files / directories
 
 //System Management
-apropos   - search set of database files and display result as standard output
-bcwipe    - repeatedly overwrite special patterns onto to be-destroyed files
-bhkconfig - update and query run level info for system services
-dstat     - displays real-time system stats
-fdisk     - disk partioning utility
-mount     - mounts a filesystem
-grep      - search named input files for lines containing match to given pattern, then print
-hostname  - configure networking interface
-ifdown    - manually take down and interface
-iftop     - shows bandwidth usage of interface
-ifup      - brings interface back up
-kill      - terminate a running process
-ps        - list of currently running proceses and their process IDs
-man       - manual page for particular command/tool
-systemcl  - may be used to introspect and control the state of the "systemd" system and service mnager
-tail      - used to output last part of a file, useful on log files
+  
+    apropos   - search set of database files and display result as standard output
+    bcwipe    - repeatedly overwrite special patterns onto to be-destroyed files
+    bhkconfig - update and query run level info for system services
+    dstat     - displays real-time system stats
+    fdisk     - disk partioning utility
+    mount     - mounts a filesystem
+    grep      - search named input files for lines containing match to given pattern, then print
+    hostname  - configure networking interface
+    ifdown    - manually take down and interface
+    iftop     - shows bandwidth usage of interface
+    ifup      - brings interface back up
+    kill      - terminate a running process
+    ps        - list of currently running proceses and their process IDs
+    man       - manual page for particular command/tool
+    systemcl  - may be used to introspect and control the state of the "systemd" system and service mnager
+    tail      - used to output last part of a file, useful on log files
 
 
 ------>
@@ -602,26 +603,27 @@ More:
 Install Applications: 
 
 //The system will automatically search for the relevant 
+  
   software package and dependencies, and ask for your confirmation.
   
-  dnf install [software name]    //Run the following command to install software.
+      dnf install [software name]    //Run the following command to install software.
 
-  yum install php          // Install php
-  rpm -ql [software name]  //Viewing installed software information
+      yum install php          // Install php
+      rpm -ql [software name]  //Viewing installed software information
 
-  rpm -q                   //View the version of the software package
+      rpm -q                   //View the version of the software package
 
 ------>
 
 //Yum not working in Centos's bash (Not install softs): Run this in Centos's bash
 
-sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
-sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+    sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 
 Alternetively: 
 
-sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-*
-sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.epel.cloud|g' /etc/yum.repos.d/CentOS-Linux-*
+    sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-*
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.epel.cloud|g' /etc/yum.repos.d/CentOS-Linux-*
 
 //Now you should be able to update CentOS or install packages without any error:
 
@@ -629,14 +631,15 @@ sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.epel.cloud|g' /
 -----> 
 
 
-cat /etc/group   //Listing all group's name
-stat /etc/       //Discover group name in unix and linux
+    cat /etc/group   //Listing all group's name
+    stat /etc/       //Discover group name in unix and linux
 
 //Centro in Bash : Permission denied Then run this cmd: chmod U+x /etc/group
-/etc/group
-/etc/passwd
-stat /etc/group      //[root@2kk3kk /] in root
-stat /etc/passwd
+  
+    /etc/group
+    /etc/passwd
+    stat /etc/group      //[root@2kk3kk /] in root
+    stat /etc/passwd
 
 
 --------> End Of Centos <-------------------------------
@@ -651,91 +654,90 @@ stat /etc/passwd
 
 //1. Install Apache Web Server
 
-sudo systemctl status apache2
-sudo apt install apache2
-sudo ufw allow “Apache Full”
-sudo systemctl status apache2
+    sudo systemctl status apache2
+    sudo apt install apache2
+    sudo ufw allow “Apache Full”
+    sudo systemctl status apache2
 
 //2. Install PHP
 
 sudo apt install php libapache2-mod-php php-mbstring php-xmlrpc php-soap php-gd php-xml php-cli php-zip php-bcmath php-tokenizer php-json php-pear
 
-apt-get update
-sudo nano /var/www/html/test.php
+    apt-get update
+    sudo nano /var/www/html/test.php
 
 Adding in php file:
 
-<?php
-phpinfo();
-?>
+  <?php
+    phpinfo();
+  ?>
 
 
 //3. Download and Install a Database Manager
 
-sudo apt install mariadb-server
-sudo mysql_secure_installation
+    sudo apt install mariadb-server
+    sudo mysql_secure_installation
 
 
-Remove anonymous users? [Y/n] y
-Disallow root login remotely? [Y/n] n
-Remove test database and access to it? [Y/n] y
-Reload privilege tables now? [Y/n] y
+    Remove anonymous users? [Y/n] y
+    Disallow root login remotely? [Y/n] n
+    Remove test database and access to it? [Y/n] y
+    Reload privilege tables now? [Y/n] y
 
 
 //4. Install Composer
 
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
-sudo mv composer.phar /usr/local/bin/composer
-sudo chmod +x /usr/local/bin/composer
+    curl -sS https://getcomposer.org/installer | php
+    sudo mv composer.phar /usr/local/bin/composer
+    sudo mv composer.phar /usr/local/bin/composer
+    sudo chmod +x /usr/local/bin/composer
 
 
 //5. Install Laravel on Ubuntu Using Composer
 
-composer create-project --prefer-dist laravel/laravel [project_name]
+    composer create-project --prefer-dist laravel/laravel [project_name]
 
 
 //Using Laravel for Local Development
 
-cd example
+    cd example
 
 
-php artisan serve --host=[IP] --port=[port]
+    php artisan serve --host=[IP] --port=[port]
 
 
 //Using Laravel to Deploy an Application
 
-sudo mv example /var/www/html/
-sudo chgrp -R www-data /var/www/html/example/
-sudo chmod -R 775 /var/www/html/example/storage
-cd /etc/apache2/sites-available
-sudo nano laravel_project.conf
+    sudo mv example /var/www/html/
+    sudo chgrp -R www-data /var/www/html/example/
+    sudo chmod -R 775 /var/www/html/example/storage
+    cd /etc/apache2/sites-available
+    sudo nano laravel_project.conf
 
 
-<VirtualHost *:80>
-   ServerName thedomain.com
-   ServerAdmin webmaster@thedomain.com
-   DocumentRoot /var/www/html/example/public
+    <VirtualHost *:80>
+       ServerName thedomain.com
+       ServerAdmin webmaster@thedomain.com
+       DocumentRoot /var/www/html/example/public
 
-   <Directory /var/www/html/example>
-       AllowOverride All
-   </Directory>
-   ErrorLog ${APACHE_LOG_DIR}/error.log
-   CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
+       <Directory /var/www/html/example>
+           AllowOverride All
+       </Directory>
+       ErrorLog ${APACHE_LOG_DIR}/error.log
+       CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
 
 
-sudo a2dissite 000-default.conf
-sudo a2ensite laravel_project
-sudo a2enmod rewrite
-sudo systemctl restart apache2
+    sudo a2dissite 000-default.conf
+    sudo a2ensite laravel_project
+    sudo a2enmod rewrite
+    sudo systemctl restart apache2
 
 
 //Uninstall Laravel and Composer
 
-sudo rm /usr/local/bin/composer
+    sudo rm /usr/local/bin/composer
 
 
 
 ------> Laravel Installed End <-----------------------
-------------------------------------------------------
