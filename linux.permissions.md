@@ -151,7 +151,7 @@ How to Recursively Change the File Ownership:
      (For example, the following command will assign the user and group ownership of the file1 to file2)
    
    
-<a name="#add_delete_gropu"></a>   
+<a name="add_delete_gropu"></a>   
 ###### AddGroup & DelGroup: 
 
 How to Create Groups in Linux (groupadd Command): 
@@ -198,7 +198,7 @@ Deleting a group:
 
           groupdel [groupName]
   
-<a name="#add_user"></a>   
+<a name="add_user"></a>   
 ##### AddUser: 
 
 
