@@ -152,7 +152,7 @@ How to Recursively Change the File Ownership:
    
    
 <a name="add_delete_group"></a>   
-###### AddGroup & DelGroup: 
+#### AddGroup & DelGroup: 
 
 How to Create Groups in Linux (groupadd Command): 
 
@@ -199,7 +199,7 @@ Deleting a group:
           groupdel [groupName]
   
 <a name="add_user"></a>   
-##### AddUser: 
+#### Add User: 
 
 
 useradd Command:
