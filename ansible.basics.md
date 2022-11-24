@@ -7,8 +7,6 @@
 
 <a href="ansible_installation"></a>
 
-lines 11 to 17 in 1693d33
-
 Installing Ansible:
  
       sudo apt-add-repository ppa:ansible/ansible
