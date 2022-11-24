@@ -83,6 +83,10 @@ Step 6: How to create a virtual environment?.
 
         virtualenv -p python3.8 <your-fav-env-name>
 	
+Step 7: How you can use the virtual environment?
+     
+        source <your-fav-env>/bin/activate
+
 	
 # Python Installation On Ubuntu
 
