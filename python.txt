@@ -70,9 +70,18 @@ Step 4: Install Python 3:
 
 
 	sudo apt install python3.8
-	python3 --version
+	python3 --version	
+	
+	sudo apt install python3-pip
 	
 	
+Step 5: How to install the virtual environment 
+
+        python3.8 -m pip install virtualenv
+	
+Step 6: How to create a virtual environment?.
+
+        virtualenv -p python3.8 <your-fav-env-name>
 	
 	
 # Python Installation On Ubuntu
