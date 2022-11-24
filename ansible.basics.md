@@ -6,6 +6,7 @@
 
 
 <a href="ansible_installation"></a>
+
 Installing Ansible:
  
       sudo apt-add-repository ppa:ansible/ansible
@@ -22,13 +23,14 @@ Output:
 
    /etc/ansible/hosts
 
-   [servers]
-   server1 ansible_host=203.0.113.111
-   server2 ansible_host=203.0.113.112
-   server3 ansible_host=203.0.113.113
+      [servers]
+      server1 ansible_host=203.0.113.111
+      server2 ansible_host=203.0.113.112
+      server3 ansible_host=203.0.113.113
 
-   [all:vars]
-   ansible_python_interpreter=/usr/bin/python3
+      [all:vars]
+      ansible_python_interpreter=/usr/bin/python3
+
 
 
       ansible-inventory --list -y
@@ -106,6 +108,7 @@ Output:
 
 
 
-         ansible all -m apt -a "name=vim state=latest" -u root
-         ansible servers -a "uptime" -u root
-         ansible server1:server2 -m ping -u root
+
+            ansible all -m apt -a "name=vim state=latest" -u root
+            ansible servers -a "uptime" -u root
+            ansible server1:server2 -m ping -u root
