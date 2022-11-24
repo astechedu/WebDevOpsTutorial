@@ -25,3 +25,47 @@ Output:
 
    [all:vars]
    ansible_python_interpreter=/usr/bin/python3
+
+
+    ansible-inventory --list -y
+
+Output:
+all:
+  children:
+    servers:
+      hosts:
+        server1:
+          ansible_host: 203.0.113.111
+          ansible_python_interpreter: /usr/bin/python3
+        server2:
+          ansible_host: 203.0.113.112
+          ansible_python_interpreter: /usr/bin/python3
+        server3:
+          ansible_host: 203.0.113.113
+          ansible_python_interpreter: /usr/bin/python3
+    ungrouped: {}
+
+
+Testing Connection:
+
+   ansible all -m ping -u root
+   
+   
+Output:
+
+server1 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+server2 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+server3 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+} 
+   
+   
+Running Ad-Hoc Commands (Optional): 
+
