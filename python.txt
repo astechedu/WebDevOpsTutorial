@@ -45,6 +45,36 @@ Website:
 
 ------------------------------------------------------------------------
 
+# Python Installation: 
+
+Step 1: Update and Refresh Repository Lists
+
+
+	sudo apt update
+	
+	
+Step 2: Install Supporting Software
+
+
+	sudo apt install software-properties-common
+	
+	
+Step 3: Add Deadsnakes PPA	
+
+	
+	sudo add-apt-repository ppa:deadsnakes/ppa
+	sudo apt update
+	
+	
+Step 4: Install Python 3: 
+
+
+	sudo apt install python3.8
+	python --version
+	
+	
+	
+	
 # Python Installation On Ubuntu
 
 
