@@ -37,20 +37,21 @@ Output:
 
 Output:
 
-   all:
-     children:
-       servers:
-         hosts:
-           server1:
-             ansible_host: 203.0.113.111
-             ansible_python_interpreter: /usr/bin/python3
-           server2:
-             ansible_host: 203.0.113.112
-             ansible_python_interpreter: /usr/bin/python3
-           server3:
-             ansible_host: 203.0.113.113
-             ansible_python_interpreter: /usr/bin/python3
-       ungrouped: {}
+
+      all:
+        children:
+          servers:
+            hosts:
+              server1:
+                ansible_host: 203.0.113.111
+                ansible_python_interpreter: /usr/bin/python3
+              server2:
+                ansible_host: 203.0.113.112
+                ansible_python_interpreter: /usr/bin/python3
+              server3:
+                ansible_host: 203.0.113.113
+                ansible_python_interpreter: /usr/bin/python3
+          ungrouped: {}
 
 
 Testing Connection:
