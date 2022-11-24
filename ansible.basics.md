@@ -8,7 +8,9 @@
 <a name="ansible_installation"></a>
 
 Installing Ansible:
- 
+
+      sudo apt update
+      
       sudo apt-add-repository ppa:ansible/ansible
       
       sudo apt update
