@@ -4,7 +4,9 @@
 
    [Ansible Installation](#ansible_installation)  <br />  
 
- Installing Ansible:
+
+<a href="ansible_installation"></a>
+Installing Ansible:
  
       sudo apt-add-repository ppa:ansible/ansible
       
@@ -104,8 +106,6 @@ Output:
 
 
 
-      ansible all -m apt -a "name=vim state=latest" -u root
-
-      ansible servers -a "uptime" -u root
-
-      ansible server1:server2 -m ping -u root
+         ansible all -m apt -a "name=vim state=latest" -u root
+         ansible servers -a "uptime" -u root
+         ansible server1:server2 -m ping -u root
