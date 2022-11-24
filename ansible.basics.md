@@ -69,3 +69,40 @@ server3 | SUCCESS => {
    
 Running Ad-Hoc Commands (Optional): 
 
+ansible all -a "df -h" -u root
+
+
+
+Output
+
+server1 | CHANGED | rc=0 >>
+Filesystem      Size  Used Avail Use% Mounted on
+udev            3.9G     0  3.9G   0% /dev
+tmpfs           798M  624K  798M   1% /run
+/dev/vda1       155G  2.3G  153G   2% /
+tmpfs           3.9G     0  3.9G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           3.9G     0  3.9G   0% /sys/fs/cgroup
+/dev/vda15      105M  3.6M  101M   4% /boot/efi
+tmpfs           798M     0  798M   0% /run/user/0
+
+server2 | CHANGED | rc=0 >>
+Filesystem      Size  Used Avail Use% Mounted on
+udev            2.0G     0  2.0G   0% /dev
+tmpfs           395M  608K  394M   1% /run
+/dev/vda1        78G  2.2G   76G   3% /
+tmpfs           2.0G     0  2.0G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           2.0G     0  2.0G   0% /sys/fs/cgroup
+/dev/vda15      105M  3.6M  101M   4% /boot/efi
+tmpfs           395M     0  395M   0% /run/user/0
+
+...
+
+
+
+ansible all -m apt -a "name=vim state=latest" -u root
+
+ansible servers -a "uptime" -u root
+
+ansible server1:server2 -m ping -u root
