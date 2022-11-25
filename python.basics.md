@@ -1,6 +1,4 @@
-# Python Basic Commands For Beginner
-
-$${\color{red}Python Basic Commands For Beginner}$$
+$${\color{blue}Python Basic Commands For Beginner}$$
 
 ### Topics
 
