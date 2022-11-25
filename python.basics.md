@@ -63,12 +63,27 @@ Step 8: Activating the virtual environment
 
          ajay@sisaudiya:~/project01$ source env01/bin/activate  
 
-
 Output: 
        (env01) ajay@sisaudiya:~/project01$
        
+
+Step 9: Install Django 
+
+	 python3.8 -m pip install Django      OR  Django 4.0
+
+Step 10: Confirm version
+
+	 python3.8 -m django --version
+	 
+Step 11: Creating project directory
+
+         django-admin startproject myapp
+
+Step 12: Running Server 
+         
+	 python3.8 manage.py runserver 8000       
        
-Step 9: To deactivate a virtual environment
+Step 13: To deactivate a virtual environment
 
 	 ajay@sisaudiya:~/project01$ deactivate  
 
