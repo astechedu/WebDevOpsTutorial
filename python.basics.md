@@ -48,7 +48,7 @@ Step 5: Creating Virtual Environments
 
         python3 -m venv env01
         
-Step 6: Create new directory
+Step 6: Creating new directory
 
         mkdir project01
         cd project01
@@ -60,7 +60,7 @@ Step 7: Activating the virtual environment
 
 Output: 
 
-       (env01) ajay@sisaudiya:~/python01$
+       (env01) ajay@sisaudiya:~/project01$
        
        
 To deactivate a virtual environment
@@ -69,4 +69,4 @@ To deactivate a virtual environment
 
 Output: 
 
-       ajay@sisaudiya:~/python01$ 
+       ajay@sisaudiya:~/project01$ 
