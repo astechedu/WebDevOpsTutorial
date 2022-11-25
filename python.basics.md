@@ -65,7 +65,6 @@ Step 8: Activating the virtual environment
 
 
 Output: 
-
        (env01) ajay@sisaudiya:~/project01$
        
        
@@ -74,5 +73,4 @@ Step 9: To deactivate a virtual environment
 	 ajay@sisaudiya:~/project01$ deactivate  
 
 Output: 
-
        ajay@sisaudiya:~/project01$ 
