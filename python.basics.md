@@ -48,6 +48,8 @@ Output:
 
 	ajay@sisaudiya:~/project01$
 	
+	$\color{green}{ajay@sisaudiya:~/project01$}$
+	
 	
 Step 7: Creating Virtual Environments
 
