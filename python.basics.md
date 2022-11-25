@@ -62,7 +62,7 @@ Step 5: Creating Virtual Environments
              
 Step 7: Activating the virtual environment
 
-        project01> env01/bin/activate  
+         ajay@sisaudiya:~/project01$ env01/bin/activate  
 
 
 Output: 
@@ -72,7 +72,7 @@ Output:
        
 To deactivate a virtual environment
 
-	project01> deactivate  
+	 ajay@sisaudiya:~/project01$ deactivate  
 
 Output: 
 
