@@ -48,7 +48,7 @@ Output:
 
 	ajay@sisaudiya:~/project01$ 
 	
-$\color{green}{/project01$}$
+$\color{green}{project01}$
 
 	
 	
