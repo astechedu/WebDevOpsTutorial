@@ -25,6 +25,7 @@ Step 3: Add Deadsnakes PPA
 	
 	sudo add-apt-repository ppa:deadsnakes/ppa
 	
+	
 	sudo apt update
 	
 	
@@ -32,6 +33,7 @@ Step 4: Install Python 3.8 :
 
 
 	sudo apt install python3.8
+	
 	
 	python3 --version	
 	
