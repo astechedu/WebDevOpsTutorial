@@ -48,7 +48,7 @@ Output:
 
 	ajay@sisaudiya:~/project01$
 	
-$\color{green}{ajay@sisaudiya:~/project01$}$
+$\color{green}{ajay}$
 	
 	
 Step 7: Creating Virtual Environments
