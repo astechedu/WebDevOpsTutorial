@@ -1,6 +1,5 @@
 # Python Basics For Beginners
 
-
 ### Topics
 
   [Creating Python3.8 Virtual environment click here](#virtual_env) <br />
