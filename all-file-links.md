@@ -55,6 +55,8 @@
 
 # Python 
 
+[Python Basics click here md](python.basics.md)
+
 [Python click here](python.txt)
 
 [Django click here](django.txt)
