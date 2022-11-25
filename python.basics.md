@@ -6,12 +6,6 @@
   [Creating Virtual environment click here](#virtual_env) <br />
 
 
-
-## $\colorbox{green}{{\color{white}{Python\ 3.8\ Installation\ on\ Ubuntu 20.04}}}$
-
-
-
-
 <a name="virtual_env"></a>
 ## $\colorbox{green}{{\color{white}{Python\ 3.8\ Installation\ on\ Ubuntu 20.04}}}$
 
