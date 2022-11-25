@@ -48,44 +48,42 @@ Step 6: Creating new directory
 	
         cd project01
 	
-Output: 
-
-	ajay@sisaudiya:~/project01$
+Output: ajay@sisaudiya:~/project01$
 	
 	
 Step 7: Creating Virtual Environments
 
-        ajay@sisaudiya:~/project01$ python3 -m venv env01
-        
+        ajay@sisaudiya:~/project01$ python3 -m venv env01        
 
              
 Step 8: Activating the virtual environment
 
          ajay@sisaudiya:~/project01$ source env01/bin/activate  
 
-Output: 
-       (env01) ajay@sisaudiya:~/project01$
+Output: (env01) ajay@sisaudiya:~/project01$
        
 
 Step 9: Install Django 
 
-	 python3.8 -m pip install Django      OR  Django 4.0
+	 (env01) ajay@sisaudiya:~/project01$ python3.8 -m pip install Django      OR  Django 4.0
 
 Step 10: Confirm version
 
-	 python3.8 -m django --version
+	 (env01) ajay@sisaudiya:~/project01$ python3.8 -m django --version
 	 
 Step 11: Creating project directory
 
-         django-admin startproject myapp
-
+         (env01) ajay@sisaudiya:~/project01$ django-admin startproject myapp
+	 
+         (env01) ajay@sisaudiya:~/project01$ cd myapp
+	 
 Step 12: Running Server 
          
-	 python3.8 manage.py runserver 8000       
+	 (env01) ajay@sisaudiya:~/project01/myapp$ python3.8 manage.py runserver 8000       
        
 Step 13: To deactivate a virtual environment
 
-	 ajay@sisaudiya:~/project01$ deactivate  
+	 (env01) ajay@sisaudiya:~/project01/myapp$ deactivate  
 
 Output: 
        ajay@sisaudiya:~/project01$ 
