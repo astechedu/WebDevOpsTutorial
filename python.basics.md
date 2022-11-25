@@ -1,8 +1,8 @@
 # Python Basics For Beginners
 
 
-## Topics
-   [Creating Virtual environment click here] (#virtual_env)
+# Topics
+     [Creating Virtual environment click here] (#virtual_env)
 
 
 
@@ -10,9 +10,7 @@
 
 
 <a name="virtual_env"></a>
-
-
-# Python 3.8 Installation on Ubuntu 20.04: 
+#### Python 3.8 Installation on Ubuntu 20.04: 
 
 Step 1: Update and Refresh Repository Lists
 
