@@ -56,6 +56,10 @@ https://github.com/astechedu/laravel8-ui-vue
 //Editing all
 //Github Changing html, css, text, images etc:
 
+Heading background green & text color white:
+
+## $\colorbox{green}{{\color{white}{Python\ 3.8\ Installation\ on\ Ubuntu 20.04}}}$
+
 Up & Down Links:
 
 <a name="custom_anchor_name"></a>    //Top or Bottom link
