@@ -38,7 +38,7 @@ Step 4: Install Python 3.8 :
 	python3 --version	
 	
 	
-Step : Installing venv 
+Step 5: Installing venv 
 
         sudo apt install python3.8-env
 	
@@ -52,13 +52,13 @@ Output:
 	ajay@sisaudiya:~/project01$
 	
 	
-Step 5: Creating Virtual Environments
+Step 7: Creating Virtual Environments
 
         ajay@sisaudiya:~/project01$ python3 -m venv env01
         
 
              
-Step 7: Activating the virtual environment
+Step 8: Activating the virtual environment
 
          ajay@sisaudiya:~/project01$ env01/bin/activate  
 
@@ -68,7 +68,7 @@ Output:
        (env01) ajay@sisaudiya:~/project01$
        
        
-To deactivate a virtual environment
+Step 9: To deactivate a virtual environment
 
 	 ajay@sisaudiya:~/project01$ deactivate  
 
