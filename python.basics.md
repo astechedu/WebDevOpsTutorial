@@ -1,5 +1,7 @@
 # Python Basic Commands For Beginner
 
+$${\color{red}Python Basic Commands For Beginner}$$
+
 ### Topics
 
   [Creating Python3.8 Virtual environment click here](#virtual_env) <br />
