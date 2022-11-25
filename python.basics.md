@@ -13,7 +13,7 @@
 
 
 <a name="virtual_env"></a>
-#### Python 3.8 Installation on Ubuntu 20.04: 
+## $\colorbox{green}{{\color{white}{Python\ 3.8\ Installation\ on\ Ubuntu 20.04}}}$
 
 Step 1: Update and Refresh Repository Lists
 
