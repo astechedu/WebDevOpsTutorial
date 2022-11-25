@@ -12,6 +12,7 @@
 ---------------------------------------
 
 
+>>>>>>>>>> Virtual Environment <<<<<<<<<<<<<<<<<
 
 # Python 3.8 Installation on Ubuntu 20.04: 
 
@@ -63,7 +64,9 @@ To deactivate a virtual environment
 
 	project01> deactivate  
 
+Output: 
 
+       (env01) project01> 
 
 
 >>>>>>>>>> Virtual Environment <<<<<<<<<<<<<<<<<
