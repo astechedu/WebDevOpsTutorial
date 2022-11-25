@@ -45,7 +45,7 @@ Website:
 
 ------------------------------------------------------------------------
 
-# Python Installation on Ubuntu 20.04: 
+# Python 3.8 Installation on Ubuntu 20.04: 
 
 Step 1: Update and Refresh Repository Lists
 
@@ -72,29 +72,31 @@ Step 4: Install Python 3.8 :
 	sudo apt install python3.8
 	python3 --version	
 	
-	sudo apt install python3-pip
+	
+Step : Installing venv 
+
+        sudo apt install python3.8-env
+	
+Step 5: Creating Virtual Environments
+
+        python3 -m venv env01
+        
+Step 6: Create new directory
+
+        mkdir project01
+        cd project01
+             
+Step 7: Activating the virtual environment
+
+        project01> env01/bin/activate  
+
+
+To deactivate a virtual environment
+
+	project01> deactivate  
 	
 	
-Step 5: How to install the virtual environment 
-
-        python3.8 -m pip install virtualenv
 	
-Step 6: How to create a virtual environment?.
-
-        virtualenv -p python3.8 <your-fav-env-name>
-	
-Step 7: How you can use the virtual environment?
-     
-        source <your-fav-env>/bin/activate
-	
-
-    Ex: Eg: python3.8 -m pip install Django==3.0.5
-
-
-Step: 8. How can I see my installed packages?.
-
-         python3.8 -m pip freeze
-	 
 	
 	
 	
