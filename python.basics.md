@@ -1,8 +1,4 @@
-# $\colorbox{green}{{\color{white}{Python\ Basic\ Commands\ For}}}$
-
-##### $\colorbox{green}{{\color{white}{Python\ Basic\ Commands\ For}}}$
-
-##### $\colorbox{green}{{\color{white}{Python\ 3.8\ Installation\ on\ Ubuntu 20.04}}}$
+# Python Basic Commands For Beginner
 
 ### Topics
 
