@@ -60,13 +60,20 @@ Step 7: Activating the virtual environment
         project01> env01/bin/activate  
 
 
+Output: 
+
+       (env01) ajay@sisaudiya:~/python01$
+       
+       
 To deactivate a virtual environment
 
 	project01> deactivate  
 
 Output: 
 
-       (env01) project01> 
+       ajay@sisaudiya:~/python01$ 
+       
+       
 
 
 >>>>>>>>>> Virtual Environment <<<<<<<<<<<<<<<<<
