@@ -1,6 +1,6 @@
 # $\colorbox{green}{{\color{white}{Python\ Basic\ Commands\ For\ Beginners}}}$
 
-##### $\colorbox{green}{{\color{white}{Python\ Basic\ Commands}}}$
+##### $\colorbox{green}{{\color{white}{Python\ Basic\ Commands\ For\ Beginners}}}$
 
 ##### $\colorbox{green}{{\color{white}{Python\ 3.8\ Installation\ on\ Ubuntu 20.04}}}$
 
