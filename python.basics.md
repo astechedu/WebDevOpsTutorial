@@ -24,6 +24,7 @@ Step 3: Add Deadsnakes PPA
 
 	
 	sudo add-apt-repository ppa:deadsnakes/ppa
+	
 	sudo apt update
 	
 	
@@ -31,6 +32,7 @@ Step 4: Install Python 3.8 :
 
 
 	sudo apt install python3.8
+	
 	python3 --version	
 	
 	
@@ -41,6 +43,7 @@ Step 5: Installing venv
 Step 6: Creating new directory
 
         mkdir project01
+	
         cd project01
 	
 Output: 
@@ -56,7 +59,7 @@ Step 7: Creating Virtual Environments
              
 Step 8: Activating the virtual environment
 
-         ajay@sisaudiya:~/project01$ env01/bin/activate  
+         ajay@sisaudiya:~/project01$ source env01/bin/activate  
 
 
 Output: 
