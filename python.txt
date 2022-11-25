@@ -11,39 +11,7 @@
 	
 ---------------------------------------
 
->>>>>>>>>> Virtual Environment <<<<<<<<<<<<<<<<<
 
-Website: 
-    https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#installing-virtualenv
-
-
-> py -m pip install --upgrade pip
-
-> py -m pip --version                    // Check pip versioon
-
-> py -m pip install --user virtualenv    //Installing virtualenv
-
-> py -m venv env                         //Creating a virtual environment
-
-
-> .\env\Scripts\activate                 //Activating a virtual environment
-
-> where python
-	
-> ...\env\Scripts\python.exe
-
-> deactivate                            //Leaving the virtual environment
-
-> py -m pip install requests            //Installing packages
-
-
-> py -m pip install django              //Install Django 
-
-------------------------------------------------------------------------
-
-
-
-------------------------------------------------------------------------
 
 # Python 3.8 Installation on Ubuntu 20.04: 
 
@@ -94,11 +62,45 @@ Step 7: Activating the virtual environment
 To deactivate a virtual environment
 
 	project01> deactivate  
+
+
+
+
+>>>>>>>>>> Virtual Environment <<<<<<<<<<<<<<<<<
+
+Website: 
+    https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#installing-virtualenv
+
+
+> py -m pip install --upgrade pip
+
+> py -m pip --version                    // Check pip versioon
+
+> py -m pip install --user virtualenv    //Installing virtualenv
+
+> py -m venv env                         //Creating a virtual environment
+
+
+> .\env\Scripts\activate                 //Activating a virtual environment
+
+> where python
 	
+> ...\env\Scripts\python.exe
+
+> deactivate                            //Leaving the virtual environment
+
+> py -m pip install requests            //Installing packages
+
+
+> py -m pip install django              //Install Django 
+
+------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------
 	
-	
-	
-	
+		
 	
 # Python Installation On Ubuntu
 
