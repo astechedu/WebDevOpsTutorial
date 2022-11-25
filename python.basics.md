@@ -46,10 +46,7 @@ Step 6: Creating new directory
 	
 Output: 
 
-	ajay@sisaudiya:~/ $\color{green}{project01}$
-	
-
-
+	ajay@sisaudiya:~/project01$
 	
 	
 Step 7: Creating Virtual Environments
