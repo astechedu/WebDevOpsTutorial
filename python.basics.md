@@ -2,15 +2,15 @@
 
 
 ## Topics
+   [Creating Virtual environment click here] (#virtual_env)
 
 
 
 
 
 
+<a name="virtual_env"></a>
 
-
->>>>>>>>>> Virtual Environment <<<<<<<<<<<<<<<<<
 
 # Python 3.8 Installation on Ubuntu 20.04: 
 
