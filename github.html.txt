@@ -56,6 +56,12 @@ https://github.com/astechedu/laravel8-ui-vue
 //Editing all
 //Github Changing html, css, text, images etc:
 
+Entering colored text: 
+$\color{green}{test}$
+
+Entering colored text: 
+## $\textcolor{yellow}{This\ is\ a\ Big\ Title}$
+
 change color for only part of the text:
 # ${This\ is\ a\ {\color{red}Big}}\ Title$
 
