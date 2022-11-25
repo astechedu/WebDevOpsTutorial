@@ -1,4 +1,4 @@
-$${\color{blue}Python Basic Commands For Beginner}$$
+$${\color{blue}Python \space Basic \space Commands \space For \space Beginner}$$
 
 ### Topics
 
