@@ -1660,6 +1660,7 @@ services:
       volumes:  
        - /var/lib/mysql  
       command: "true" 
+      
 -------------X----------
 
 
@@ -1668,9 +1669,9 @@ services:
 - Download the Linux kernel update package
 
     Download the latest package:
-        
-    <a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">WSL2 Linux kernel update package for x64 machines</a>
-   
+    
+    WSL2 Linux kernel update package for x64 machines
+    https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi   
 
 
 Step 1: Uninstall Docker Desktop
