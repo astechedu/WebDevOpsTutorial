@@ -1706,6 +1706,8 @@ docker compose version
 # compatibility, you'll want to choose option (1) from the prompt to use iptables-legacy.
 sudo update-alternatives --config iptables
 
+sudo service docker start
+docker ps, docker ps, docker pull nginx etc. (Now, Docker is working)
 
 If you’re using a different distro it’s very similar. Docker has docs for the steps above. These steps came from official Linux installation guides:
 
