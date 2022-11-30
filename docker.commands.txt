@@ -1675,7 +1675,10 @@ services:
     https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi  
     
     wsl --set-default-version 2
-     
+    wsl --install -d <DistroName>
+    wsl --list --online
+    wsl --status
+    wsl --update rollback
 
 Step 1: Uninstall Docker Desktop
 
