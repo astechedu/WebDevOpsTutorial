@@ -30,7 +30,8 @@ https://www.edureka.co/blog/docker-commands/
     docker build
     docker search      //Searching images form docker hub
     docker create     //Create a container
-    docker attach
+    docker 
+    
     docker container
     docker logs
     docker start
@@ -1671,8 +1672,10 @@ services:
     Download the latest package:
     
     WSL2 Linux kernel update package for x64 machines
-    https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi   
-
+    https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi  
+    
+    wsl --set-default-version 2
+     
 
 Step 1: Uninstall Docker Desktop
 
