@@ -1684,12 +1684,24 @@ At the time of this post systemd doesn’t run inside of WSL 2 by default. We wo
 
 All you have to do is drop this into your ~/.profile, .zprofile or equivalent file:
 
-if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
-    if service docker status 2>&1 | grep -q "is not running"; then
-        wsl.exe --distribution "${WSL_DISTRO_NAME}" --user root \
-            --exec /usr/sbin/service docker start > /dev/null 2>&1
-    fi
-fi
+		if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
+		    if service docker status 2>&1 | grep -q "is not running"; then
+			wsl.exe --distribution "${WSL_DISTRO_NAME}" --user root \
+			    --exec /usr/sbin/service docker start > /dev/null 2>&1
+		    fi
+		fi
+
+
+
+The idea here is the Docker service will get started if it’s not already running. The first time this runs it’ll hang your terminal for a few seconds. However, even if you close your terminal the next time you open it, it will open instantly since Docker will already be running. Closing your terminal will not stop Docker, only rebooting Windows or fully shutting down WSL will.
+
+You can run ps aux | grep docker to see the Docker daemon running:
+
+root  8899  ...  /usr/bin/dockerd -p /var/run/docker.pid
+root  8908  ... containerd --config /var/run/docker/containerd/containerd.toml --log-level info
+
+
+After opening a new terminal you should now be able to run docker run hello-world successfully without sudo. By the way, I have a bunch of open source web app examples on GitHub if you want to explore more in depth examples of using Docker.
 
 
 
