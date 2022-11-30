@@ -5,8 +5,8 @@
 Searching: 
        vim, Dockerfile, Docker Laravel,
        working php in container,copy files in vlume, create file in volume
-       application, create Dockerfile, docker-compose 
-
+       application, create Dockerfile, docker-compose, 
+       Install Docker in WSL 2 without Docker Desktop, 
 -------------------------------------------------------------------------------------------------
 
 Following are the commands list:
@@ -1642,9 +1642,54 @@ services:
       command: "true" 
 ----------------------------------------------------------
 
+# Install Docker in WSL 2 without Docker Desktop:
 
 
+Step 1: Uninstall Docker Desktop
 
+Since we’re installing Docker directly inside of WSL 2 you won’t need Docker Desktop installed to make this work.
+
+Step 2: Install Docker / Docker Compose v2 in WSL 2
+
+Here’s the condensed version for Ubuntu and Debian based distros:
+
+# Install Docker, you can ignore the warning from Docker about using WSL
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+# Add your user to the Docker group
+sudo usermod -aG docker $USER
+
+# Install Docker Compose v2
+sudo apt-get update && sudo apt-get install docker-compose-plugin
+
+# Sanity check that both tools were installed successfully
+docker --version
+docker compose version
+
+# Using Ubuntu 22.04 or Debian 10 / 11? You need to do 1 extra step for iptables
+# compatibility, you'll want to choose option (1) from the prompt to use iptables-legacy.
+sudo update-alternatives --config iptables
+
+
+If you’re using a different distro it’s very similar. Docker has docs for the steps above. These steps came from official Linux installation guides:
+
+    https://docs.docker.com/engine/install/ubuntu/#install-using-the-convenience-script
+    https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
+    https://docs.docker.com/compose/install/linux/
+
+Step 3: Ensure the Docker Service Runs in WSL 2
+
+At the time of this post systemd doesn’t run inside of WSL 2 by default. We won’t need it.
+
+All you have to do is drop this into your ~/.profile, .zprofile or equivalent file:
+
+if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
+    if service docker status 2>&1 | grep -q "is not running"; then
+        wsl.exe --distribution "${WSL_DISTRO_NAME}" --user root \
+            --exec /usr/sbin/service docker start > /dev/null 2>&1
+    fi
+fi
 
 
 
