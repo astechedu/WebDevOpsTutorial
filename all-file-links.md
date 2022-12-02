@@ -2,9 +2,7 @@
 #### All File Links Of This Rrpository
 :notes:
 
-<p style="color:red">This is some red text.</p>
 
- 
 ## CSS :diamond_shape_with_a_dot_inside:
 
 :link:[Bootstrap Components click here](bootstrap.components.txt)     
