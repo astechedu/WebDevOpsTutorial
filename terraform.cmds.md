@@ -65,6 +65,31 @@ on linux_amd64
 
 
 
+#### 2. Install Terraform Manually
+
+You can also install the Terraform manually by downloading it from the source. In this method, you can download the specific or latest version of Terraform to your system. You will also get the flexibility to install more than one version of Terraform.
+
+First, download the latest version of Terraform source using the following command:
+
+    wget https://releases.hashicorp.com/terraform/1.1.2/terraform_1.1.2_linux_amd64.zip
+
+Once the download is completed, extract the downloaded file using the following command.
+
+    unzip terraform_1.1.2_linux_amd64.zip
+
+Next, copy the Terraform binary from the extracted file to the /usr/bin/ directory:
+
+    cp terraform /usr/bin/
+
+Next, verify the Terraform version by running the following command:
+
+    terraform -v
+
+You will get the following output:
+
+    Terraform v1.1.2
+    
+on linux_amd64
 
 
 
