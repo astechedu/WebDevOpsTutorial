@@ -31,7 +31,7 @@ Advantages of Terraform (Pros)
 
 
 <a name="install_terraform"></a>                
-:arrow_down: #### 1. Install Terraform on Ubuntu 20.04 using APT
+:arrow_down: **1. Install Terraform on Ubuntu 20.04 using APT**
 
 *APT also known as an “Advanced Packaging Tool” is a package manager for Debian based distributions. It allows you to install and manage packages on Debian and Ubuntu operating systems. In this section, we will show you how to install Terraform using apt.*
 
@@ -67,7 +67,7 @@ on linux_amd64
 
 
 <a name="install_terraform_manually"></a>
-:arrow_down: #### 2. Install Terraform Manually
+:arrow_down: **2. Install Terraform Manually**
 
 *You can also install the Terraform manually by downloading it from the source. In this method, you can download the specific or latest version of Terraform to your system. You will also get the flexibility to install more than one version of Terraform.*
 
@@ -95,7 +95,7 @@ on linux_amd64
 
 
 <a name="install_terraform_extension"></a>
-:arrow_down: #### 3. Install the "auto-complete" Terraform Extension
+:arrow_down: **3. Install the "auto-complete" Terraform Extension**
 
 *Terraform provides auto-complete features that allow you to list all sub-commands after pressing the TAB key twice. In order to activate the auto-complete feature, you will need to install the autocomplete extension to your system. *
 
@@ -122,7 +122,7 @@ destroy       force-unlock  import        logout        providers     show      
 
 
 <a name="uninstall_terraform"></a>
-:arrow_down: #### 4. Uninstall Terraform from Ubuntu 20.04
+:arrow_down: **4. Uninstall Terraform from Ubuntu 20.04**
 
 If you want to remove Terraform from your system, run the following command:
 
