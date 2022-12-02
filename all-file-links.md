@@ -4,9 +4,6 @@
 
 <p style='color:red'>This is some red text.</p>
 
-```html
-   #ccffdd Ajay Sisaudiya```
-   
  
 ## CSS :diamond_shape_with_a_dot_inside:
 
