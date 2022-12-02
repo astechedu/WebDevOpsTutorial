@@ -65,21 +65,21 @@
 
 # Ruby :diamond_shape_with_a_dot_inside:
 
-[Ruby click here](ruby.txt)
+:link:[Ruby click here](ruby.txt)
 
-[RubyOnRails click here](rubyonrails.txt)
+:link:[RubyOnRails click here](rubyonrails.txt)
 
 # Java :diamond_shape_with_a_dot_inside:
 
-[Java Commands click here](java.txt)
+:link:[Java Commands click here](java.txt)
 
 # Github :diamond_shape_with_a_dot_inside:
 
-[Git Commands click here](git.commands.txt)
+:link:[Git Commands click here](git.commands.txt)
 
-[GitLab click here](gitLab.txt)
+:link:[GitLab click here](gitLab.txt)
 
-[Doctor Medichines click here](doctor.medicines.txt)
+:link:[Doctor Medichines click here](doctor.medicines.txt)
 
 # Databases :diamond_shape_with_a_dot_inside:
 
