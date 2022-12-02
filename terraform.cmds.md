@@ -15,13 +15,12 @@ What is Terraform ?
 
 Terraform is mainly divided into two parts, they are:
 
-    Terraform core
-    Terraform plugins
+    - Terraform core
+    - Terraform plugins
 
 
 Advantages of Terraform (Pros)
-
-    The terraform can be used as reproducible infrastructure management.
+    The terraform can be used as reproducible infrastructure management.    
     Reduces the production incident that arises due to environment configuration errors.
     Increases the velocity and reliability.
     Eliminates the wait time for environment provisioning.
