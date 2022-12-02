@@ -3,7 +3,7 @@
 :notes:
 
 
-```css
+```text
    // code for coloring
    #f03c15
   
