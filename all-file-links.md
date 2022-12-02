@@ -129,6 +129,9 @@
 
 [Ansible Basics](ansible.basics.md)   
 
+# Terraform
+
+[Terrafom Basic Cmds](terraform.cmds.md)   
 
 # DevOps
 
