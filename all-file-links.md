@@ -7,9 +7,9 @@
  
 ## CSS :diamond_shape_with_a_dot_inside:
 
-[Bootstrap Components click here](bootstrap.components.txt)     
+:link:[Bootstrap Components click here](bootstrap.components.txt)     
 
-[Tailwind Components click here](taildwind.components.txt)
+:link:[Tailwind Components click here](taildwind.components.txt)
 
 # JavaScript :diamond_shape_with_a_dot_inside:
 
