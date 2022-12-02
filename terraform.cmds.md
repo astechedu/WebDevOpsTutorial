@@ -1,5 +1,11 @@
 # How to Install Terraform on Ubuntu Server 20.04 Step by Step.
 
+Steps: 
+     [1. Install Terraform on Ubuntu 20.04 using APT](#install_ubuntu01)
+     [2. Install Terraform Manually](#install_ubuntu02)
+     [3. Install the "auto-complete" Terraform Extension](#install_ubuntu03)
+     [4. Uninstall Terraform from Ubuntu 20.04](#install_ubuntu04)
+        
 What is Terraform ?
 
 Terraform is one of the popular open source infrastructure tools that is used as code software, first developed by HashiCorp Pvt. Ltd. Terraform is a user defined and data center infrastructure service provider that uses various HashiCorp languages, optionally it uses the JSON structure language rather than XML. The main purpose of using terraform platform is to build, change, and update the infrastructure functionality safely and effectively. 
