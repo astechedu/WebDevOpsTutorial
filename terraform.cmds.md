@@ -121,7 +121,7 @@ console       fmt           graph         login         plan          refresh   
 destroy       force-unlock  import        logout        providers     show          test          version
 
 
-<a name="uninstall_terraform">Top</a>
+<a name="uninstall_terraform"></a>
 #### 4. Uninstall Terraform from Ubuntu 20.04
 
 If you want to remove Terraform from your system, run the following command:
@@ -132,4 +132,5 @@ You can also remove it manually by running the following command:
 
     rm -rf /usr/bin/terraform
 
-:pen:
+
+:notebook: :pen:
