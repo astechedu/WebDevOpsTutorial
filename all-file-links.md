@@ -2,8 +2,7 @@
 #### All File Links Of This Rrpository
 :notes:
 
-! ajay
-#f03c15
+
 ```json
    // code for coloring
    #f03c15
