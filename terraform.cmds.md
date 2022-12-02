@@ -1,4 +1,4 @@
-# How to Install Terraform on Ubuntu Server 20.04 (Step by Step Tutorial)
+# How to Install Terraform on Ubuntu Server 20.04 Step by Step.
 
 What is Terraform ?
 
@@ -6,14 +6,10 @@ Terraform is one of the popular open source infrastructure tools that is used as
 
 
 
-
 Terraform is mainly divided into two parts, they are:
 
     Terraform core
     Terraform plugins
-
-
-
 
 
 Advantages of Terraform (Pros)
@@ -130,3 +126,4 @@ You can also remove it manually by running the following command:
 
     rm -rf /usr/bin/terraform
 
+------------------------------ X ------------------------------------------
