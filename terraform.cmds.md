@@ -93,9 +93,30 @@ on linux_amd64
 
 
 
+#### 3. Install the "auto-complete" Terraform Extension
+
+Terraform provides auto-complete features that allow you to list all sub-commands after pressing the TAB key twice. In order to activate the auto-complete feature, you will need to install the autocomplete extension to your system.
+
+You can install it by running the following command:
+
+    terraform -install-autocomplete
+
+Next, run the following command to activate the auto-complete features:
+
+    source ~/.bashrc
+
+To check the Terraform auto-complete feature, run the terraform command and press the TAB key twice:
+
+terraform
+
+
+You should see all sub-commands in the following output:
 
 
 
+apply         env           get           init          output        push          state         untaint       workspace
+console       fmt           graph         login         plan          refresh       taint         validate
+destroy       force-unlock  import        logout        providers     show          test          version
 
 
 
