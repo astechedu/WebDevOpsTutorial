@@ -2,7 +2,7 @@
 
 :microphone:
 
-   :notes: [1. Install Terraform on Ubuntu 20.04 using APT **click here**](#install_terraform)<br />
+   :notes: [1. Install Terraform on Ubuntu 20.04 using APT **click here** :link:](#install_terraform)<br />
    :notes: [2. Install Terraform Manually **click here**](#install_terraform_manually)<br />
    :notes: [3. Install the "auto-complete" Terraform Extension **click here**](#install_terraform_extension)<br />
    :notes: [4. Uninstall Terraform from Ubuntu 20.04 **click here**](#uninstall_terraform)<br />
