@@ -1,10 +1,10 @@
 # How to Install Terraform on Ubuntu Server 20.04 Step by Step.
 
 Steps: 
-     [1. Install Terraform on Ubuntu 20.04 using APT](#install_ubuntu01)
-     [2. Install Terraform Manually](#install_ubuntu02)
-     [3. Install the "auto-complete" Terraform Extension](#install_ubuntu03)
-     [4. Uninstall Terraform from Ubuntu 20.04](#install_ubuntu04)
+     [1. Install Terraform on Ubuntu 20.04 using APT](#install_terraform)
+     [2. Install Terraform Manually](#install_manually)
+     [3. Install the "auto-complete" Terraform Extension](#install_terraform_extension)
+     [4. Uninstall Terraform from Ubuntu 20.04](#uninstall_terraform)
         
 What is Terraform ?
 
