@@ -11,7 +11,7 @@
 
 [Tailwind Components click here](taildwind.components.txt)
 
-# JavaScript
+# JavaScript :diamond_shape_with_a_dot_inside:
 
 [Javascript click here](javascript.txt)
 
@@ -39,7 +39,7 @@
 
 [Mevn Stack click here](mevn.stack.commands.txt)
 
-# PHP
+# PHP :diamond_shape_with_a_dot_inside:
 
 [PHP click here](php.txt)
 
@@ -53,7 +53,7 @@
 
 [Yii click here](yii.commands.txt)
 
-# Python 
+# Python :diamond_shape_with_a_dot_inside:
 
 [Python Basics click here md](python.basics.md)
 
@@ -63,17 +63,17 @@
 
 [Flash click here](flash.txt)
 
-# Ruby
+# Ruby :diamond_shape_with_a_dot_inside:
 
 [Ruby click here](ruby.txt)
 
 [RubyOnRails click here](rubyonrails.txt)
 
-# Java
+# Java :diamond_shape_with_a_dot_inside:
 
 [Java Commands click here](java.txt)
 
-# Github
+# Github :diamond_shape_with_a_dot_inside:
 
 [Git Commands click here](git.commands.txt)
 
@@ -81,7 +81,7 @@
 
 [Doctor Medichines click here](doctor.medicines.txt)
 
-# Databases
+# Databases :diamond_shape_with_a_dot_inside:
 
 [Databases Commands click here](databases.commands.md)
 
@@ -89,7 +89,7 @@
 
 [All Apis Commands click here](all.apis.projects.links.txt)
 
-# Linux 
+# Linux :diamond_shape_with_a_dot_inside:
 
 [Linux Commands click here md](linux.commands.md)
 
@@ -101,13 +101,13 @@
 
 [Ubunut Commands click here txt](ubuntu.txt)
 
-# Scripts
+# Scripts :diamond_shape_with_a_dot_inside:
 
 [Yamal click here](yamal.txt)
 
 [GitLab CI click here](gitlab-ci.yml)
 
-# Docker 
+# Docker :diamond_shape_with_a_dot_inside:
 
 [Docker Commands click here text file](docker.commands.txt)   
 
@@ -115,29 +115,29 @@
 
 [Dockerized apps click here text file](dockerized.apps.txt) 
 
-# Kubernetes
+# Kubernetes :diamond_shape_with_a_dot_inside:
 
 [Kubernetes click here](kubernetes.md)
 
 [Kubernetes click here](kubernetes.txt)
 
-# Jenkins
+# Jenkins :diamond_shape_with_a_dot_inside:
 
 [Jenkins Commands](jenkin.commands.txt)   
 
-# Ansible
+# Ansible :diamond_shape_with_a_dot_inside:
 
 [Ansible Basics](ansible.basics.md)   
 
-# Terraform
+# Terraform :diamond_shape_with_a_dot_inside:
 
 [Terrafom Basic Cmds](terraform.cmds.md)   
 
-# DevOps
+# DevOps :diamond_shape_with_a_dot_inside:
 
 [DevOpes click here](devOps.txt)
 
-# Web Servers
+# Web Servers :diamond_shape_with_a_dot_inside:
 
 [Web Servers Installation Commands click here](web-servers.md)
 
@@ -147,10 +147,10 @@
 
 [Server click here](server.commands.txt)
 
-# Web Development
+# Web Development :diamond_shape_with_a_dot_inside:
 
 [Development Info click here](development.info.txt)
 
-# Windows Info
+# Windows Info :diamond_shape_with_a_dot_inside:
 
 [Windows Info click here](windows.info.txt)
