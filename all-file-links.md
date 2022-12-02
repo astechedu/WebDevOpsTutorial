@@ -13,45 +13,45 @@
 
 # JavaScript :diamond_shape_with_a_dot_inside:
 
-[Javascript click here](javascript.txt)
+:link:[Javascript click here](javascript.txt)
 
-[TypeScript click here](typescript.txt)
+:link:[TypeScript click here](typescript.txt)
 
-[Jquery click here](jquery.txt)
+:link:[Jquery click here](jquery.txt)
 
-[Vue Js  click here](vuejs.txt)
+:link:[Vue Js  click here](vuejs.txt)
 
-[Vue Js 3 click here](vuejs3.txt)
+:link:[Vue Js 3 click here](vuejs3.txt)
 
-[React Js click here](reactjs.txt)
+:link:[React Js click here](reactjs.txt)
 
-[React Js 4 click here](reactjs4.txt)
+:link:[React Js 4 click here](reactjs4.txt)
 
-[Angular Js click here](angularjs.txt)
+:link:[Angular Js click here](angularjs.txt)
 
-[Mevn click here](mevn.stack.commands.txt)
+:link:[Mevn click here](mevn.stack.commands.txt)
 
-[Next Js click here](nextjs.txt)
+:link:[Next Js click here](nextjs.txt)
 
-[Mern Stack click here](mern.stack.commands.txt)
+:link:[Mern Stack click here](mern.stack.commands.txt)
 
-[Mean Stack Commands click here](mean.stack.commands.txt)
+:link:[Mean Stack Commands click here](mean.stack.commands.txt)
 
-[Mevn Stack click here](mevn.stack.commands.txt)
+:link:[Mevn Stack click here](mevn.stack.commands.txt)
 
 # PHP :diamond_shape_with_a_dot_inside:
 
-[PHP click here](php.txt)
+:link:[PHP click here](php.txt)
 
-[CakePhp click here](cakephp.commands.txt)
+:link:[CakePhp click here](cakephp.commands.txt)
 
-[Codeigniter click here](codeigniter.commands.txt)
+:link:[Codeigniter click here](codeigniter.commands.txt)
 
-[Laravel click here](laravel.commands.txt)
+:link:[Laravel click here](laravel.commands.txt)
 
-[Sysmfony Commands click here](symfony.commands.txt)
+:link:[Sysmfony Commands click here](symfony.commands.txt)
 
-[Yii click here](yii.commands.txt)
+:link:[Yii click here](yii.commands.txt)
 
 # Python :diamond_shape_with_a_dot_inside:
 
