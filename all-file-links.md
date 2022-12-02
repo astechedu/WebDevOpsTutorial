@@ -4,7 +4,7 @@
 
 ! ajay
 #f03c15
-```json
+```html
    // code for coloring
    #f03c15
  
