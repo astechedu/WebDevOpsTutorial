@@ -29,4 +29,49 @@ There are two easy methods to install Terraform on Ubuntu 20.04. In this post, w
 
 
 
+#### 1. Install Terraform on Ubuntu 20.04 using APT
+
+APT also known as an “Advanced Packaging Tool” is a package manager for Debian based distributions. It allows you to install and manage packages on Debian and Ubuntu operating systems. In this section, we will show you how to install Terraform using apt.
+
+First, install the required dependencies using the following command:
+
+    apt-get install wget curl unzip software-properties-common gnupg2 -y
+
+Next, download and add the HashiCorp signed gpg keys to your system:
+
+    curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
+
+Next, add the HashiCorp repository to the APT using the following command:
+
+    apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
+Next, update the repository using the command given below:
+
+    apt-get update -y
+
+Finally, install the Terraform by running the following command:
+
+    apt-get install terraform -y
+
+Once the Terraform has been installed, verify it using the following command:
+
+    terraform -v
+
+You will get the Terraform version in the following output:
+
+    Terraform v1.1.2
+    
+on linux_amd64
+
+
+
+
+
+
+
+
+
+
+
+
 
