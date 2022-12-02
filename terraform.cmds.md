@@ -31,7 +31,7 @@ Advantages of Terraform (Pros)
 There are two easy methods to install Terraform on Ubuntu 20.04. In this post, we will show you both options one by one.
 
 
-<a name="install_terraform"></a>                
+:arrow_right: <a name="install_terraform"></a>                
 #### 1. Install Terraform on Ubuntu 20.04 using APT
 
 APT also known as an “Advanced Packaging Tool” is a package manager for Debian based distributions. It allows you to install and manage packages on Debian and Ubuntu operating systems. In this section, we will show you how to install Terraform using apt.
