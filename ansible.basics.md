@@ -2,7 +2,7 @@
 
 # Topics: 
 
-   [Ansible Installation](#ansible_installation)  <br />  
+   :link:[Ansible Installation](#ansible_installation)  <br />  
 
 
 <a name="ansible_installation"></a>
@@ -115,3 +115,15 @@ Output:
           ansible all -m apt -a "name=vim state=latest" -u root
           ansible servers -a "uptime" -u root
           ansible server1:server2 -m ping -u root
+
+
+
+:notebook: :pen:
+
+
+
+
+
+
+
+
