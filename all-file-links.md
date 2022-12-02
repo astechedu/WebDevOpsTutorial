@@ -55,13 +55,13 @@
 
 # Python :diamond_shape_with_a_dot_inside:
 
-[Python Basics click here md](python.basics.md)
+:link:[Python Basics click here md](python.basics.md)
 
-[Python click here](python.txt)
+:link:[Python click here](python.txt)
 
-[Django click here](django.txt)
+:link:[Django click here](django.txt)
 
-[Flash click here](flash.txt)
+:link:[Flash click here](flash.txt)
 
 # Ruby :diamond_shape_with_a_dot_inside:
 
