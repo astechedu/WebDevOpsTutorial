@@ -2,6 +2,10 @@
 #### All File Links Of This Rrpository
 :notes:
 
+<p style='color:red'>This is some red text.</p>
+
+```html
+   #00ff00
    
  
 ## CSS :diamond_shape_with_a_dot_inside:
