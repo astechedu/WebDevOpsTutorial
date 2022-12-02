@@ -83,74 +83,74 @@
 
 # Databases :diamond_shape_with_a_dot_inside:
 
-[Databases Commands click here](databases.commands.md)
+:link:[Databases Commands click here](databases.commands.md)
 
-[Databases Commands click here](databases.commands.txt)
+:link:[Databases Commands click here](databases.commands.txt)
 
-[All Apis Commands click here](all.apis.projects.links.txt)
+:link:[All Apis Commands click here](all.apis.projects.links.txt)
 
 # Linux :diamond_shape_with_a_dot_inside:
 
-[Linux Commands click here md](linux.commands.md)
+:link:[Linux Commands click here md](linux.commands.md)
 
-[Linux Commands click here txt](linux.commands.txt)
+:link:[Linux Commands click here txt](linux.commands.txt)
 
-[Linux Permissions click here md](linux.permissions.md)
+:link:[Linux Permissions click here md](linux.permissions.md)
 
-[Ubuntu Commands click here md](ubuntu.md)
+:link:[Ubuntu Commands click here md](ubuntu.md)
 
-[Ubunut Commands click here txt](ubuntu.txt)
+:link:[Ubunut Commands click here txt](ubuntu.txt)
 
 # Scripts :diamond_shape_with_a_dot_inside:
 
-[Yamal click here](yamal.txt)
+:link:[Yamal click here](yamal.txt)
 
-[GitLab CI click here](gitlab-ci.yml)
+:link:[GitLab CI click here](gitlab-ci.yml)
 
 # Docker :diamond_shape_with_a_dot_inside:
 
-[Docker Commands click here text file](docker.commands.txt)   
+:link:[Docker Commands click here text file](docker.commands.txt)   
 
-[Dockerized apps click here md file](dockerized.apps.md) 
+:link:[Dockerized apps click here md file](dockerized.apps.md) 
 
-[Dockerized apps click here text file](dockerized.apps.txt) 
+:link:[Dockerized apps click here text file](dockerized.apps.txt) 
 
 # Kubernetes :diamond_shape_with_a_dot_inside:
 
-[Kubernetes click here](kubernetes.md)
+:link:[Kubernetes click here](kubernetes.md)
 
-[Kubernetes click here](kubernetes.txt)
+:link:[Kubernetes click here](kubernetes.txt)
 
 # Jenkins :diamond_shape_with_a_dot_inside:
 
-[Jenkins Commands](jenkin.commands.txt)   
+:link:[Jenkins Commands](jenkin.commands.txt)   
 
 # Ansible :diamond_shape_with_a_dot_inside:
 
-[Ansible Basics](ansible.basics.md)   
+:link:[Ansible Basics](ansible.basics.md)   
 
 # Terraform :diamond_shape_with_a_dot_inside:
 
-[Terrafom Basic Cmds](terraform.cmds.md)   
+:link:[Terrafom Basic Cmds](terraform.cmds.md)   
 
 # DevOps :diamond_shape_with_a_dot_inside:
 
-[DevOpes click here](devOps.txt)
+:link:[DevOpes click here](devOps.txt)
 
 # Web Servers :diamond_shape_with_a_dot_inside:
 
-[Web Servers Installation Commands click here](web-servers.md)
+:link:[Web Servers Installation Commands click here](web-servers.md)
 
-[Web Servers click here](web-servers.txt)
+:link:[Web Servers click here](web-servers.txt)
 
-[Nginx click here](nginx.txt)
+:link:[Nginx click here](nginx.txt)
 
-[Server click here](server.commands.txt)
+:link:[Server click here](server.commands.txt)
 
 # Web Development :diamond_shape_with_a_dot_inside:
 
-[Development Info click here](development.info.txt)
+:link:[Development Info click here](development.info.txt)
 
 # Windows Info :diamond_shape_with_a_dot_inside:
 
-[Windows Info click here](windows.info.txt)
+:link:[Windows Info click here](windows.info.txt)
