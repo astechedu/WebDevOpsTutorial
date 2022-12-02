@@ -4,7 +4,7 @@
 
 
 
-## CSS :diamond_shape_with_a_dot_inside:
+## CSS :diamond_shape_with_a_dot_inside: `#RRGGBB`
 
 :link:[Bootstrap Components click here](bootstrap.components.txt)     
 
