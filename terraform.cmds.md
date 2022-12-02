@@ -28,7 +28,6 @@ Advantages of Terraform (Pros)
     Helps in cleaning the work environment.
     The business benefits of defining infrastructure as code reduce the costs of system management and also lower the risk of unexpected problems that arise when modifications of infrastructure are implemented.
 
-There are two easy methods to install Terraform on Ubuntu 20.04. In this post, we will show you both options one by one.
 
 
 :arrow_right: <a name="install_terraform"></a>                
@@ -67,7 +66,7 @@ You will get the Terraform version in the following output:
 on linux_amd64
 
 
-<a name="install_terraform_manually"></a>
+:arrow_right: <a name="install_terraform_manually"></a>
 #### 2. Install Terraform Manually
 
 You can also install the Terraform manually by downloading it from the source. In this method, you can download the specific or latest version of Terraform to your system. You will also get the flexibility to install more than one version of Terraform.
@@ -95,7 +94,7 @@ You will get the following output:
 on linux_amd64
 
 
-<a name="install_terraform_extension"></a>
+:arrow_right: <a name="install_terraform_extension"></a>
 #### 3. Install the "auto-complete" Terraform Extension
 
 Terraform provides auto-complete features that allow you to list all sub-commands after pressing the TAB key twice. In order to activate the auto-complete feature, you will need to install the autocomplete extension to your system.
@@ -122,7 +121,7 @@ console       fmt           graph         login         plan          refresh   
 destroy       force-unlock  import        logout        providers     show          test          version
 
 
-<a name="uninstall_terraform"></a>
+:arrow_right: <a name="uninstall_terraform"></a>
 #### 4. Uninstall Terraform from Ubuntu 20.04
 
 If you want to remove Terraform from your system, run the following command:
