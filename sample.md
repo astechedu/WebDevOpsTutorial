@@ -1,3 +1,12 @@
+$This \ is \ a \ sample \.$
+
+$\color{red}This \ is \ a \ sample \.$
+
+
+
+
+
+
 $\mathcal{\color{purple}{this \ is \ a \ paragraph} \ \color{cyan}{in \ another \ font}}$
 
 $\mathbb{\color{teal}{this \ is \ a } \ \color{magenta}{paragraph \ in \ another \ font}}$
