@@ -1,9 +1,14 @@
 $This \ is \ a \ sample \.$
 
+
 $\color{red}This \ is \ a \ sample \.$
 
 
+$\color{red}This \ is \ a \ sample \.$
 
+$\colorbox{red}This \ is \ a \ sample \.$
+
+$\colorbox{red}{This \ is \ a \ sample \.}$
 
 
 
