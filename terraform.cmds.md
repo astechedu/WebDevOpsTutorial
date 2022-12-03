@@ -152,7 +152,7 @@ Prerequisites:
     a code or text editor.
 
 
-Step 1. Create the main.tf file
+::arrow_down: **Step 1. Create the main.tf file**
 
 Open your text/code editor and create a new directory. Make a file called main.tf. When setting up the main.tf file, you will create and use the Terraform AWS provider -- a plugin that enables Terraform to communicate with the AWS platform -- and the EC2 instance.
 
@@ -182,7 +182,7 @@ resource "aws_instance" "" {
   }
 }
 
-Step 2. Create the variables.tf file
+::arrow_down: **Step 2. Create the variables.tf file
 
 Once the main.tf file is created, it's time to set up the necessary variables. These variables let you pass in values, and ensure the code is repeatable. With variables, you can use your code within any EC2 environment.
 
@@ -209,7 +209,7 @@ variable "instance_type" {
     default = "t2.micro"
 }
 
-Step 3. Create the EC2 environment
+::arrow_down: **Step 3. Create the EC2 environment
 
 To deploy the EC2 environment, ensure you're in the Terraform module/directory in which you write the Terraform code, and run the following commands:
 
@@ -217,7 +217,7 @@ To deploy the EC2 environment, ensure you're in the Terraform module/directory i
     terraform plan. Creates an execution plan for the environment and confirm no bugs are found.
     terraform apply --auto-approve. Creates and automatically approves the environment.
 
-Step 4. Clean up the environment
+::arrow_down: **Step 4. Clean up the environment
 
 To destroy all Terraform environments, ensure that you're in the Terraform module/directory that you used to create the EC2 instance and run terraform destroy.
 
