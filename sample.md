@@ -11,6 +11,9 @@ $\colorbox{red}{This \ is \ a \ sample \.}$
 $\colorbox{red}{\color{yellow} This \ is \ a \ sample \.}$
 
 
+$$ 
+  This \is \ Sample \.
+$$
 
 $\mathcal{\color{purple}{this \ is \ a \ paragraph} \ \color{cyan}{in \ another \ font}}$
 
