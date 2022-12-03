@@ -1,14 +1,5 @@
-
 $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
-
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" width="50" height="50" />
-
-<img src="https://www.freepnglogos.com/uploads/logo-php-png/php-server-integration-wysiwyg-html-editor-froala-10.png" width="50" height="50" />
-
-<img src="https://pic.vsixhub.com/76/ee/4a23294b-fd16-4c51-9759-da9936474cf8-logo.png" width="50" height="50" />
-    
     
 :computer:
 
