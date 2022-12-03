@@ -1,6 +1,10 @@
 
 $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
+
+![Build](https://github.com/canonical/ubuntu-image/actions/workflows/build-and-test.yml/badge.svg)
+
+
 :computer:
 
 ## CSS :diamond_shape_with_a_dot_inside:
