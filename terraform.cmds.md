@@ -1,4 +1,4 @@
-$$\colorbox{pink}{\color{teal}Terraform}$$
+$$\colorbox{pink}{\color{green} Terraform}$$
 
 <!--- $\Large{How \ to \ Install \ Terraform \ on \ Ubuntu \ Server \ 20.04 \ Step \ by \ Step.}$   ---> 
 
