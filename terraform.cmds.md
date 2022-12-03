@@ -6,7 +6,7 @@
    :notes: [2. Install Terraform Manually :link: ](#install_terraform_manually)<br />
    :notes: [3. Install the "auto-complete" Terraform Extension :link:](#install_terraform_extension)<br />
    :notes: [4. Uninstall Terraform from Ubuntu 20.04 :link:](#uninstall_terraform)<br />
-   :notes: [5. How to launch an EC2 instance using Terraform :link: ](#launch_instance)<br />    
+   :notes: [5. How to launch an EC2 instance using Terraform ? :link: ](#launch_instance)<br />    
        
         
 What is Terraform ?
@@ -134,4 +134,45 @@ You can also remove it manually by running the following command:
     rm -rf /usr/bin/terraform
 
 
+
+<a name="launch_instance"></a>
+::arrow_down: **5. How to launch an EC2 instance using Terraform ?**
+
+
+Create an EC2 instance with Terraform
+
+In this section, we'll write the code to create an EC2 instance. We'll review how to set up the main.tf file to create an EC2 instance and the variable files to ensure the instance is repeatable across any environment.
+
+Prerequisites:
+
+    AWS account;
+    AWS Identify and Access Management (IAM) credentials and programmatic access. The IAM credentials that you need for EC2 can be found here;
+    setting up AWS credentials locally with aws configure in the AWS Command Line Interface (CLI). You can find further details here;
+    a VPC configured for EC2. You can find a CloudFormation template to do that here; and
+    a code or text editor.
+
+
+
+
 :notebook: :pen:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
