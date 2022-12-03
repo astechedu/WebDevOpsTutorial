@@ -1,5 +1,3 @@
-***How to Install Terraform on Ubuntu Server 20.04 Step by Step.***
-
 $\Large{How \space to \space Install \space Terraform \space \space on \space Ubuntu \space Server \space 20.04 \space Step \space by \space Step.}$   
 
        
