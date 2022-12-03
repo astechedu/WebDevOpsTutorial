@@ -1,3 +1,5 @@
+<!-- Inline text -->
+
 $This \ is \ a \ sample \.$
 
 $\color{red}This \ is \ a \ sample \.$
@@ -11,9 +13,11 @@ $\colorbox{red}{This \ is \ a \ sample \.}$
 $\colorbox{red}{\color{yellow} This \ is \ a \ sample \.}$
 
 
+<!-- Center Text -->
 $$ 
-  This \is \ Sample \.
+  This \ is \ Sample \.
 $$
+
 
 $\mathcal{\color{purple}{this \ is \ a \ paragraph} \ \color{cyan}{in \ another \ font}}$
 
