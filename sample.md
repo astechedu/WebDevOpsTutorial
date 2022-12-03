@@ -17,3 +17,16 @@ $\text{hello}$    #normal
 $\Large{hello}$$   #Bigger text size
 
 $$\LaTeX$$
+
+
+
+
+
+
+Color Marking :
+
+$\colorbox{red}{text}$
+
+Text inside bordered Box 
+
+$\fbox{Hello there}$
