@@ -1,4 +1,5 @@
-<!--- $\Large{How \ to \ Install \ Terraform \ on \ Ubuntu \ Server \ 20.04 \ Step \ by \ Step.}$    ---> 
+<!--- $\Large{How \ to \ Install \ Terraform \ on \ Ubuntu \ Server \ 20.04 \ Step \ by \ Step.}$   ---> 
+
 $\Large{\color{purple} How \ to \ Install \ Terraform \ on \ Ubuntu \ Server \ 20.04 \ Step \ by \ Step.}$   
 
        
