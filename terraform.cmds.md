@@ -3,9 +3,11 @@
 :arrow_down_small:
 
    :notes: [1. Install Terraform on Ubuntu 20.04 using APT :link:](#install_terraform)<br />
-   :notes: [2. Install Terraform Manually  :link: ](#install_terraform_manually)<br />
-   :notes: [3. Install the "auto-complete" Terraform Extension  :link:](#install_terraform_extension)<br />
-   :notes: [4. Uninstall Terraform from Ubuntu 20.04  :link:](#uninstall_terraform)<br />
+   :notes: [2. Install Terraform Manually :link: ](#install_terraform_manually)<br />
+   :notes: [3. Install the "auto-complete" Terraform Extension :link:](#install_terraform_extension)<br />
+   :notes: [4. Uninstall Terraform from Ubuntu 20.04 :link:](#uninstall_terraform)<br />
+   :notes: [5. How to launch an EC2 instance using Terraform :link: ](#launch_instance)<br />    
+       
         
 What is Terraform ?
 
