@@ -14,6 +14,9 @@ $\colorbox{red}{\color{yellow} This \ is \ a \ sample \.}$
 
 
 <!-- Center Text -->
+
+$$\color{teal} This \ is \ Sample \.$$
+
 $$ 
   This \ is \ Sample \.
 $$
