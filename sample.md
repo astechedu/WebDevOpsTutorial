@@ -57,6 +57,7 @@ possible colors :
     black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow
 
     use $..$ for inline code and $$..$$ for centered
+    
     u can use \color or \textcolor
     u can use \ between text as a space (or \ \ for double space)
 
