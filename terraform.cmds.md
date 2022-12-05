@@ -17,12 +17,6 @@ $\Large{\color{purple} How \ to \ Install \ Terraform \ on \ Ubuntu \ Server \ 2
    :notes: [5. How to launch an EC2 instance using Terraform ? :link: ](#launch_instance)<br />    
      
      
-  $\Large{\color{purple} How \ to \ Install \ Terraform \ on \ Windows \ With \ Bash \ Or \ PowerShell \ Step.}$
-   
-   
-   
-   
-        Install Terraform on Windows with Bash
 What is Terraform ?
 
 *Terraform is one of the popular open source infrastructure tools that is used as code software, first developed by HashiCorp Pvt. Ltd. Terraform is a user defined and data center infrastructure service provider that uses various HashiCorp languages, optionally it uses the JSON structure language rather than XML. The main purpose of using terraform platform is to build, change, and update the infrastructure functionality safely and effectively.*
