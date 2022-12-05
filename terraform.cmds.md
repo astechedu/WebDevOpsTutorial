@@ -4,7 +4,7 @@ $$\colorbox{pink}{\color{green} Terraform}$$
 
 <!-- $\Large{\color{purple} How \ to \ Install \ Terraform \ on \ Ubuntu \ Server \ 20.04 \ Step \ by \ Step.}$ --> 
 
-<img src="https://boxboat.com/2020/02/04/writing-a-custom-terraform-provider/featured.png" width="200" style="display: block; margin: 0 auto" />
+<img src="https://boxboat.com/2020/02/04/writing-a-custom-terraform-provider/featured.png" width="200" />
 
 
 :arrow_down_small:
