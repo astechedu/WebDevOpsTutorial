@@ -9,7 +9,7 @@ $$\colorbox{pink}{\color{green} Terraform}$$
 
 
 
-![image search api](https://boxboat.com/2020/02/04/writing-a-custom-terraform-provider/featured.png)[(Youtube)](https://www.youtube.com/watch?v=3HIr0imLgxM)
+![image search api](https://boxboat.com/2020/02/04/writing-a-custom-terraform-provider/featured.png)[(Playlist)](https://www.youtube.com/@astechedu)
 
 
 
