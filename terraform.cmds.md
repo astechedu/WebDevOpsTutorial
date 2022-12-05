@@ -8,11 +8,7 @@ $$\colorbox{pink}{\color{green} Terraform}$$
 [![Terraform](Terraform)](https://boxboat.com/2020/02/04/writing-a-custom-terraform-provider/featured.png)   
 
 
-
 ![image search api](https://boxboat.com/2020/02/04/writing-a-custom-terraform-provider/featured.png)[(Playlist)](https://www.youtube.com/@astechedu)
-
-
-
 
 
 :arrow_down_small:
