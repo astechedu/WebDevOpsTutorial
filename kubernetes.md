@@ -1,4 +1,5 @@
-# Kubernetes Commands & Examples For Beginners
+<!-- # Kubernetes Commands & Examples For Beginners -->
+$$\color{red}{ Kubernetes \ Commands \ and \ Examples \ For \ Beginners}$$
 
 ## Topics 
 
