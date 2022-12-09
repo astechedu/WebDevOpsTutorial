@@ -1,5 +1,5 @@
 <!-- # Kubernetes Commands & Examples For Beginners -->
-$$\color{red}{ Kubernetes \ Commands \ and \ Examples \ For \ Beginners}$$
+$$\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ For \ Beginners}$$
 
 ## Topics 
 
