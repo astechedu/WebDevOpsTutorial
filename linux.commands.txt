@@ -30,18 +30,17 @@ Laravel Installation
 
 -------------------------------------
 Ubuntu Basic Commands: 
+How to create users and groups in Linux from the command line 
 
+If you administer a Linux server, you very likely will have to create users and groups. Without knowing how to create users, you will find yourself limited in a few crucial ways. First off, new users cannot be added to a system. Second, you might find yourself having to create a user in order to install a piece of software. As for groups: Beyond having to create groups for successful installation of certain software, this is a great way to control user permissions for directories.
+
+Chances are you will also have to do this from the command line. Because of the necessity of this task I want to walk you through the process of:
 
     Creating users
     Creating groups
     Adding users to groups
 
-Creating users:
-
-     useradd [options] username
-     sudo useradd olivia
-     sudo useradd -m olivia
-
+Let’s dive in, so you can up your Linux admin game.
 
 
 
