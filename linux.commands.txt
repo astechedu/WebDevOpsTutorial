@@ -32,6 +32,18 @@ Laravel Installation
 Ubuntu Basic Commands: 
 
 
+    Creating users
+    Creating groups
+    Adding users to groups
+
+Creating users:
+
+     useradd [options] username
+     sudo useradd olivia
+
+
+
+
 
 
 
