@@ -29,6 +29,13 @@ Centos Commands
 Laravel Installation
 
 -------------------------------------
+Ubuntu Basic Commands: 
+
+
+
+
+
+--------------------------------------
 
 On Ubuntu: 
 
