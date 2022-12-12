@@ -40,7 +40,7 @@ Creating users:
 
      useradd [options] username
      sudo useradd olivia
-
+     sudo useradd -m olivia
 
 
 
