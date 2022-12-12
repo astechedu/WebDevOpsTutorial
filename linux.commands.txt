@@ -48,27 +48,27 @@ For this, we will be making use of the useradd command. This command is pretty f
 
 The basic syntax of the command is:
 
-useradd [options] username
+     useradd [options] username
 
 Say, you want to create the user olivia such that she has a home directory and can log in. If you were to issue the command:
 
-sudo useradd olivia
+     sudo useradd olivia
 
 The user would be added, without a home directory and be locked out of logging in. Instead of issuing the command without arguments, let’s go with this:
 
-sudo useradd -m olivia
+     sudo useradd -m olivia
 
 The above command would create the user and also create the user’s home directory to match the username. So if you looked in the /home directory, you would now see olivia.
 
 But what about that lockout issue? There are two ways you can do this. If you’ve already created the user, you could issue the command:
 
-sudo passwd olivia
+     sudo passwd olivia
 
 You will be prompted to enter and verify the new password. At this point, the user account will be unlocked and they can login.
 
 If you want to do this all in a single step, that command would look like this:
 
-sudo useradd -m olivia -p PASSWORD
+     sudo useradd -m olivia -p PASSWORD
 
 Where PASSWORD is the password you want to use for the user olivia.
 
@@ -76,8 +76,8 @@ Once the user logs in, they can change their password by using the passwd comman
 
 If you need to create a user that has no home directory and is locked out from logging in, you can do this with the the following commands:
 
-sudo useradd -M USERNAME
-âsudo usermod -L USERNAME
+     sudo useradd -M USERNAME
+     âsudo usermod -L USERNAME
 
 Where USERNAME is the name of the user to add.
 
@@ -87,11 +87,11 @@ Creating groups and adding users
 
 Now it’s time to create a group. Let’s create the group editorial. To do this, you would issue the command:
 
-sudo groupadd editorial
+     sudo groupadd editorial
 
 Now we want to add our new user, olivia, to the group editorial. For this we will take advantage of the usermod command. This command is quite simple to use.
 
-sudo usermod -a -G editorial olivia
+     sudo usermod -a -G editorial olivia
 
 The -a option tells usermod we are appending and the -G option tells usermod we are appending to the group name that follows the option.
 
@@ -106,7 +106,7 @@ Figure A
 
 Another method for finding out who is in a group is with the command members. This command isn’t installed on most distributions, but can be installed from the standard repositories. If you’re using a Ubuntu distribution, the command for installation would be:
 
-sudo apt-get install members
+     sudo apt-get install members
 
 Once installed, the command for listing out who is in our editorial group would be:
 
