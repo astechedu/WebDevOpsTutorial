@@ -122,6 +122,72 @@ If you were concerned that managing users on Linux would be a challenge, you sho
 
 
 
+Linux: 
+ //Group Management
+ 
+ groupadd group1   //Creating group
+ groupadd group1   //Creating group
+ groupadd group1   //Creating group
+ 
+ 
+ cat /etc/group    //Groups file
+ 
+ groups            //Group members
+ 
+ cat /etc/users    // check users
+ cat /etc/passwd   //Check Which users 
+ 
+ useradd user1     //Creating uers
+ useradd user2
+ useradd user3
+ useradd user4
+ 
+ cat /etc/passwd   //Check users
+ 
+ usermod -G group1 user1      //user1 added to group1 
+ 
+ cat /etc/group
+ 
+ //Overwrite all users to gropu1
+ usermod -G group1 user2      //user2 added to group1 
+ usermod -G group1 user3      //user3 added to group1 
+ usermod -G group1 user4      //user4 added to group1 
+
+
+
+
+
+//Appened all users to group1
+ usermod -aG group1 user1      //user1 added to group1 
+ usermod -aG group1 user2      //user2 added to group1 
+ usermod -aG group1 user3      //user3 added to group1 
+ usermod -aG group1 user4      //user4 added to group1 
+
+//Changing group name
+ groupmod -n newgroup group5  
+ 
+ cat /etc/group
+ 
+ groupdel newgroup
+ 
+ cat /etc/group
+ 
+ gpasswd -A harsh gropu1         //Make group admin
+ cat /etc/gshadow                //check admin info
+ 
+ id user5                        //Checking 
+ 
+ gpasswd -a user5 group1
+ 
+ gpasswd -A "" group1            //Removing group admin
+ 
+ cat /etc/gshadow
+ 
+ 
+ 
+-----------------------------------------------------------
+
+
 
 
 --------------------------------------
