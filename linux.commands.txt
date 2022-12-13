@@ -249,11 +249,11 @@ How do I change the user/owner associated with file1?
 
 How do I change the group associated with file1?
 
-      chown :groupA file1
+       chown :groupA file1
 
 How do I change the owner and group at the same time for file2?
 
-      chown user02:groupA file2
+       chown user02:groupA file2
      
      
      
