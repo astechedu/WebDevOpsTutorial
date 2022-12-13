@@ -1,8 +1,7 @@
+$$\colorbox{red}{\color{white} Linux \ Commnands}$$
 
->>>>>>>> Linux Commands <<<<<<<<<
 
-
-//Delete All Directories / Files
+## Delete All Directories / Files
 
 sudo rm -R / 
   or 
@@ -12,17 +11,19 @@ sudo rm -f /*
   or 
 sudo rm --no-preserve-root -rf /
 
------------------------------------------
 
-Ubuntu
-Red Hat Enterprise Linux
-Linux Mint
-Debian
-Fedora
-Centos Commands
-Laravel Installation
+Steps: 
+
+   - Ubuntu
+   - Red Hat Enterprise Linux
+   - Linux Mint
+   - Debian
+   - Fedora
+   - Centos Commands
+   - Laravel Installation
 
 -------------------------------------
+
 Ubuntu Basic Commands: 
 How to create users and groups in Linux from the command line 
 
