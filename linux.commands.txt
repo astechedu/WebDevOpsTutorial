@@ -181,7 +181,15 @@ Linux:
  cat /etc/gshadow
  
  
- 
+//The command to change the user ID for a user.  
+     usermod  -u new_id username
+     
+//Command to Modify the group ID of a user. 
+     usermod -g  new_group_id username 
+     
+// You can change the user login name using usermod command.
+     sudo usermod -l new_login_name old_login_name
+     
 -----------------------------------------------------------
 
 --------------------------------------
