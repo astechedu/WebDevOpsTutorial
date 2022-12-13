@@ -89,6 +89,8 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
 # Linux :diamond_shape_with_a_dot_inside:
 
+:link:[Linux Basic CMDS md](linux.basic.cmds.md)
+
 :link:[Linux Commands click here md](linux.commands.md)
 
 :link:[Linux Commands click here txt](linux.commands.txt)
