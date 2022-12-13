@@ -214,7 +214,14 @@ Linux:
 //Command to Delete a Group
      groupdel *group_name
      
-//     
+//Linux command to change UID and GID 
+     usermod -u 2005 foo
+     groupmod -g 3000 foo
+    
+     find / -gorup 3000 -exec chgrp -h foo {} \
+     find / -user 1005 -exec chown -h foo {} \
+     
+     
 -----------------------------------------------------------
 
 --------------------------------------
