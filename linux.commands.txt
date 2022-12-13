@@ -208,8 +208,13 @@ Linux:
 //Command to Add Multiple Users to a Group at once:
      gpasswd -M *username1, *username2, *username3 ...., *usernamen *group_name
      
+//Command to Delete a User From a Group
+     gpasswd -d *username1  *group_name
      
+//Command to Delete a Group
+     groupdel *group_name
      
+//     
 -----------------------------------------------------------
 
 --------------------------------------
