@@ -301,6 +301,13 @@ Each identity (user, group, others) has a position:
 //The three permissions values are associated with identities:
     ugo
     740
+    
+    The 7 is assigned to the user and is the sum of 4+2+1 or read+write+execute (full access)
+    The 4 is assigned to the group and is the sum of 4+0+0 (read-only)
+    The 0 is assigned to others and is the sum of 0+0+0 (no access)
+
+In this example, the user has rwx, the group has r only, and all others have no access to file2.
+
 
 -----------------------------------------------------------
 
