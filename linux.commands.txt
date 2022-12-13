@@ -154,9 +154,6 @@ Linux:
  usermod -G group1 user4      //user4 added to group1 
 
 
-
-
-
 //Appened all users to group1
  usermod -aG group1 user1      //user1 added to group1 
  usermod -aG group1 user2      //user2 added to group1 
@@ -186,9 +183,6 @@ Linux:
  
  
 -----------------------------------------------------------
-
-
-
 
 --------------------------------------
 
