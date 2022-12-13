@@ -238,6 +238,25 @@ Linux:
      man find 
      man groupmod
      
+     
+//How to manage Linux permissions for users, groups, and others   
+
+How do I manage ownership and groups?
+
+How do I change the user/owner associated with file1?
+
+      chown user02 file1
+
+How do I change the group associated with file1?
+
+      chown :groupA file1
+
+How do I change the owner and group at the same time for file2?
+
+      chown user02:groupA file2
+     
+     
+     
 -----------------------------------------------------------
 
 --------------------------------------
