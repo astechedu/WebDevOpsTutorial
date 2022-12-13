@@ -309,6 +309,20 @@ Each identity (user, group, others) has a position:
 In this example, the user has rwx, the group has r only, and all others have no access to file2.
 
 
+Example.
+
+How do I grant the user (owner) read and write, the group read-only, and all others read-only to file2?
+
+# chmod 644 file2
+
+    The user has 6 (read and write)
+    The group has 4 (read-only)
+    All others have 4 (read-only)
+    
+    
+    
+    
+
 -----------------------------------------------------------
 
 --------------------------------------
