@@ -199,7 +199,17 @@ Linux:
 //Command to Set the Password for the Group
       gpasswd group_name
 
-
+//Command to Display the Group Password File
+      cat /etc/gshadow
+      
+//Command to Add User to Group Without Removing From Existing Groups
+     usermod -aG *group_name  *username
+    
+//Command to Add Multiple Users to a Group at once:
+     gpasswd -M *username1, *username2, *username3 ...., *usernamen *group_name
+     
+     
+     
 -----------------------------------------------------------
 
 --------------------------------------
