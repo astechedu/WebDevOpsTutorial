@@ -351,7 +351,7 @@ There are also operators to manipulate the permissions:
 
  
  
- The general chmod command syntax is the same:
+The general chmod command syntax is the same:
 
 command permissions directory/file
 
@@ -359,7 +359,7 @@ Here is an example:
 
 How do I remove the read permissions from others for file2 by using symbolic mode?
 
-# chmod o-r file2
+     chmod o-r file2
 
 This example removes (-) the read (r) permission from others (o) for file2.
 
@@ -367,13 +367,13 @@ Here's another simple example:
 
 How do I grant the read and write permissions to the group for file2?
 
-# chmod g+rw file2
+     chmod g+rw file2
 
 This one gives (+) read and write (rw) to the group (g) for file2.
 
 How do I set permissions for a directory and all of its contents by using symbolic mode?
 
-# chmod -R o=rwx,g+rw,o-rwx Resources
+     chmod -R o=rwx,g+rw,o-rwx Resources
 
 -----------------------------------------------------------
 
