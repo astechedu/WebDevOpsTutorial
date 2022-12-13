@@ -232,6 +232,12 @@ Linux:
      find / -user foo -ls
      find / -group sales -ls 
     
+//For more info see the following manual pages using the man command or help command
+     man id
+     man usermod
+     man find 
+     man groupmod
+     
 -----------------------------------------------------------
 
 --------------------------------------
