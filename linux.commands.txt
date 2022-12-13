@@ -255,7 +255,13 @@ How do I change the owner and group at the same time for file2?
 
        chown user02:groupA file2
      
-     
+So how do I use chgrp?
+
+        chgrp groupB file1
+
+How do I change the user/group for a directory and all of its contents?
+
+        chown -R user01:groupA Resources     
      
 -----------------------------------------------------------
 
