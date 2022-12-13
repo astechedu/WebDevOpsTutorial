@@ -190,6 +190,16 @@ Linux:
 // You can change the user login name using usermod command.
      sudo usermod -l new_login_name old_login_name
      
+//The command to change the home directory     
+     usermod -d new_home_directory_path username
+
+//You can also delete a user name
+     userdel -r username
+     
+//Command to Set the Password for the Group
+      gpasswd group_name
+
+
 -----------------------------------------------------------
 
 --------------------------------------
