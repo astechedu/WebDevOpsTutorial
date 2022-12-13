@@ -3,13 +3,7 @@ $$\colorbox{red}{\color{white} Linux \ Commnands}$$
 
 ## Delete All Directories / Files
 
-sudo rm -R / 
-  or 
-sudo rm -r / 
-  or 
-sudo rm -f /* 
-  or 
-sudo rm --no-preserve-root -rf /
+sudo rm -R /  or  sudo rm -r /   or  sudo rm -f /*   or  sudo rm --no-preserve-root -rf /
 
 
 Steps: 
