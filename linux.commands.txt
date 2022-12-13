@@ -320,8 +320,36 @@ How do I grant the user (owner) read and write, the group read-only, and all oth
     All others have 4 (read-only)
     
     
+ How do I set permissions for the Resources directory and all of its contents by using absolute mode?
+
+     chmod -R 744 Resources   
     
     
+ //How do I use symbolic mode?
+ 
+ 
+ Access level 	Symbol
+ 
+     Read 	  r
+     Write 	  w
+     Execute 	  x
+
+Each identity has a symbol:
+
+     Identity 	 Symbol
+     User 	 u
+     Group 	 g
+     Others 	 o
+
+There are also operators to manipulate the permissions:
+
+     Task 	                 Operator
+
+     Grant a level of access 	     +
+     Remove a level of access 	-
+     Set a level of access 	     =
+
+ 
 
 -----------------------------------------------------------
 
