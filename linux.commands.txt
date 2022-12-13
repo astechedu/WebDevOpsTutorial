@@ -221,7 +221,17 @@ Linux:
      find / -gorup 3000 -exec chgrp -h foo {} \
      find / -user 1005 -exec chown -h foo {} \
      
+     ls -l /home/foo
+     id -u foo
+     id -g foo
      
+ //Search for 'foo' in the passwd file 
+     grep foo /etc/passwd      //serch for 'foo' on the group file 
+     grep foo /etc/group       //use the find command to locate files owned by 'foo'
+     
+     find / -user foo -ls
+     find / -group sales -ls 
+    
 -----------------------------------------------------------
 
 --------------------------------------
