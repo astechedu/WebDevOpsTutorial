@@ -294,11 +294,13 @@ Each identity (user, group, others) has a position:
 
 
 
-How do I grant the user (owner) read, write, and execute, the group read-only, and all others no access to file2 by using absolute mode?
+//How do I grant the user (owner) read, write, and execute, the group read-only, and all others no access to file2 by using absolute mode?
 
        chmod 740 file2
 
-
+//The three permissions values are associated with identities:
+    ugo
+    740
 
 -----------------------------------------------------------
 
