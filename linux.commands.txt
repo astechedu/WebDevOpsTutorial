@@ -263,6 +263,37 @@ How do I change the user/group for a directory and all of its contents?
 
         chown -R user01:groupA Resources     
      
+     
+How do I manage permissions?
+
+The change mode or chmod command sets permissions. The syntax is straight-forward:
+
+          chmod permissions resource-name
+
+Here are two examples of manipulating permissions for file2:
+
+          chmod 740 file2
+          chmod u=rwx,g=r,o-rwx file2     
+          
+          
+
+Each access level (read, write, execute) has an octal value:
+
+     Access level 	Octal value
+     
+     Read 	      4
+     Write 	      2
+     Execute 	      1
+
+Each identity (user, group, others) has a position:
+     Identity 	Position
+
+     User 	First or left-most
+     Group 	Middle
+     Others 	Last or right-most
+
+
+
 -----------------------------------------------------------
 
 --------------------------------------
