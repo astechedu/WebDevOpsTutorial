@@ -4,7 +4,7 @@
 
 Topics <br /> : 
 
-   1. [Linx Cell Scripting click here](#linux_cell_scripting)   <br />
+   1. [Linux Cell Scripting click here](#linux_cell_scripting)   <br />
    2. [CentOS Basic Commands click here](#centos_basic_commands)   <br />
    3. [Install Composer On Ubuntu click here](#install_composer)  <br />
    4. [Install Apache2 On Ubuntu click here](#install_apache2)  <br /> 
@@ -29,6 +29,80 @@ Topics <br /> :
             or 
           sudo rm --no-preserve-root -rf /
 
+
+
+<a name="linux_cell_scripting"></a>
+### 1. Linux Shell Scripting Steps: 
+
+
+Steps to execute a shell script in Linux:
+
+The procedure is as follows:
+
+   Create a new file called demo.sh using a text editor such as nano or vi in Linux: 
+    
+     nano demo.sh
+
+Add the following code:
+
+    #!/bin/bash
+
+    echo "Hello World"
+
+Set the script executable permission by running chmod command in Linux: 
+
+    chmod +x demo.sh
+
+Execute a shell script in Linux: 
+
+    ./demo.sh
+
+Let us see all steps in details.
+
+
+Add the following code:
+
+#!/bin/bash
+
+# My first shell script
+    echo "Hello $USER"
+    echo "Today is $(date)"
+    echo "Bye for now"
+
+Step 3 – Make the shell script executable:
+
+    ls -l demo.sh
+    cat demo.sh
+
+To set executable permission, run the following chmod command:
+
+    chmod +x demo.sh
+
+Verify permissions:
+
+    ls -l demo.sh
+
+
+Step 4 – Execute the shell script in Linux:
+
+Now we have shell script named demo.sh. But, how do you run it? Try:
+
+    ./demo.sh
+
+The . refers to the current directory. Another option is to specify the full path:
+
+    /path/to/demo.sh
+    /home/vivek/demo.sh
+    ~/demo.sh
+
+Conclusion
+
+For more info see Linux Shell Scripting Tutorial and bash command man page using the man command or help command:
+
+    man bash
+    help read
+
+##### ------- X ----------
 
 
 
@@ -463,82 +537,6 @@ http://sysmon.tecmint.lan
   192.168.43.31 sysmon.tecmint.lan
 
 ###### ------- X ..............
-
-
-
-<a name="linux_cell_scripting"></a>
-### Linux Shell Scripting Steps: 
-
-
-Steps to execute a shell script in Linux:
-
-The procedure is as follows:
-
-   Create a new file called demo.sh using a text editor such as nano or vi in Linux: 
-    
-     nano demo.sh
-
-Add the following code:
-
-    #!/bin/bash
-
-    echo "Hello World"
-
-Set the script executable permission by running chmod command in Linux: 
-
-    chmod +x demo.sh
-
-Execute a shell script in Linux: 
-
-    ./demo.sh
-
-Let us see all steps in details.
-
-
-Add the following code:
-
-#!/bin/bash
-
-# My first shell script
-    echo "Hello $USER"
-    echo "Today is $(date)"
-    echo "Bye for now"
-
-Step 3 – Make the shell script executable:
-
-    ls -l demo.sh
-    cat demo.sh
-
-To set executable permission, run the following chmod command:
-
-    chmod +x demo.sh
-
-Verify permissions:
-
-    ls -l demo.sh
-
-
-Step 4 – Execute the shell script in Linux:
-
-Now we have shell script named demo.sh. But, how do you run it? Try:
-
-    ./demo.sh
-
-The . refers to the current directory. Another option is to specify the full path:
-
-    /path/to/demo.sh
-    /home/vivek/demo.sh
-    ~/demo.sh
-
-Conclusion
-
-For more info see Linux Shell Scripting Tutorial and bash command man page using the man command or help command:
-
-    man bash
-    help read
-
-##### ------- X ----------
-
 
 
 <a name="centos_basic_commands"></a>
