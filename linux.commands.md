@@ -18,7 +18,8 @@ Topics <br /> :
   12. [How to Deploy Laravel Project with Apache on Ubuntu click here](#deploy_laravel)   <br />
       
 
-
+[Linx Cell Scripting click here](#linux_cell_scripting)   <br />
+[CentOS Basic Commands click here](#centos_basic_commands)   <br />
 
 //Delete All Directories / Files
 
@@ -462,17 +463,13 @@ http://sysmon.tecmint.lan
 
   192.168.43.31 sysmon.tecmint.lan
 
-
-------------- End Of Node Project ..............
-
+###### ------- X ..............
 
 
->> Linux Shell Scripting Steps: 
 
+<a name="linux_cell_scripting"></a>
+### Linux Shell Scripting Steps: 
 
-Website: 
-
-  https://www.cyberciti.biz/faq/how-to-execute-a-shell-script-in-linux/
 
 Steps to execute a shell script in Linux:
 
@@ -543,6 +540,10 @@ For more info see Linux Shell Scripting Tutorial and bash command man page using
 
 --------> End of linux shell scirpts <-------------
 
+
+
+<a name="centos_basic_commands"></a>
+### CentOS Basic Commands
 
 //Centos Commands: 
 
