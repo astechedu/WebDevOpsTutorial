@@ -252,10 +252,22 @@ check the version:
           sudo apt install apache2
           
           
+ <a name="install_mysql"></a> 
+### 6. Install MySQL
+ 
+           sudo apt install mysql-server
 
+           sudo service mysql status
+
+    Secure MySQL:
+
+          sudo mysql_secure_installation 
+ 
+ 
  <a name="lamp_ubuntu"></a> 
+ 
 
-### 1. How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04:
+### 7. How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04
 
 
 Step 1: Setup Initialization:
@@ -325,7 +337,7 @@ Output:
       Sun 12 04:58:34 apache systemd[1]: Starting The Apache HTTP Server…
       Sun 12 04:58:34 apache systemd[1]: Started The Apache HTTP Server.
 
-<a name="install_mysql"></a>
+
  Step 5: Install MySQL:
  
            sudo apt install mysql-server
@@ -349,7 +361,7 @@ Step 6: Secure MySQL:
 
           sudo mysql_secure_installation
 
-<a name="install_php"></a>
+
 Step 7: Install PHP:
 
 sudo apt install php libapache2-mod-php php7.4-mysql php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl -y 
