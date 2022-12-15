@@ -11,37 +11,16 @@ Topics: <br />
    5. [Install Apache2 On Ubuntu click here](#install_apache2)  <br />  
    6. [Install Mysql On Ubuntu click here](#install_mysql)  <br />  
    7. [Install Git On Ubuntu click here](#install_git)  <br />  
-   8. [How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04 click here](#lamp_ubuntu)  <br />   
-   9. [Install NGINX Basic Cmds On Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
-  10. [Install NGINX Basic Cmds On Kali Linux CMDS click here](#kali_linux)   <br />
-  11. [Install NGINX Basic Cmds On Mint Linux CMDS here](#linux_mint)   <br />   
-  12. [Laravel Installation click here](#laravel_installation)   <br />
-  13. [How to Deploy Laravel Project with Apache on Ubuntu click here](#deploy_laravel)   <br />
-  14. [Node & Npm On Debian/Ubuntu, CentOS/RHEL click here](#nodejs_npm)   <br />
+   8. [How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04 click here](#lamp_ubuntu)  <br />  
+   9. [Configure Apache to serve Laravel site click here](#apache_serve_laravel_site)   <br /> 
+  10. [Install NGINX Basic Cmds On Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
+  11. [Install NGINX Basic Cmds On Kali Linux CMDS click here](#kali_linux)   <br />
+  12. [Install NGINX Basic Cmds On Mint Linux CMDS here](#linux_mint)   <br />   
+  13. [Laravel Installation click here](#laravel_installation)   <br />
+  14. [How to Deploy Laravel Project with Apache on Ubuntu click here](#deploy_laravel)   <br />
+  15. [Node & Npm On Debian/Ubuntu, CentOS/RHEL click here](#nodejs_npm)   <br />
 
- [Configure Apache to serve Laravel site click here](#apache_serve_laravel_site)   <br />
-
-<a name="apache_serve_laravel_site"></a>
-### Configure Apache to serve Laravel site
-
-    sudo vim /etc/apache2/sites-available/laravel.conf
-
-    <VirtualHost *:80>
-    ServerName example.com
-    ServerAdmin admin@example.com
-    DocumentRoot /var/www/html/laravelapp/public
-    <Directory /var/www/html/laravelapp>
-    AllowOverride All
-    </Directory>
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-    </VirtualHost>
-
-   sudo a2ensite laravel.conf
-
-   sudo a2enmod rewrite
-
-   sudo systemctl restart apache2
+ 
    
    
 
@@ -290,6 +269,27 @@ check the version:
 
           sudo mysql_secure_installation 
  
+<a name="apache_serve_laravel_site"></a>
+### 9. Configure Apache to serve Laravel site
+
+    sudo vim /etc/apache2/sites-available/laravel.conf
+
+    <VirtualHost *:80>
+    ServerName example.com
+    ServerAdmin admin@example.com
+    DocumentRoot /var/www/html/laravelapp/public
+    <Directory /var/www/html/laravelapp>
+    AllowOverride All
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+
+   sudo a2ensite laravel.conf
+
+   sudo a2enmod rewrite
+
+   sudo systemctl restart apache2
  
  
  
