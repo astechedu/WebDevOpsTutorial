@@ -603,7 +603,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
          
 
 
-<a name="install_laravel"></a>
+<a name="laravel_installation"></a>
 ### 12. Install Laravel
 
      cd /var/www/html
