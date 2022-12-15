@@ -39,7 +39,7 @@ Topics: <br />
 
 <a name="linux_cell_scripting"></a>
 ### 1. Linux Shell Scripting Step : 
-
+     $\color{red}Shell Scripting$
 
 Steps to execute a shell script in Linux :
 
@@ -242,7 +242,7 @@ check the version:
       
 <a name="install_composer"></a>          
 ### 4. Install Composer On Ubuntu:
-
+    $\color{red}Composer Installation$
 
      sudo apt-get update
      sudo apt-get install git composer -y 
