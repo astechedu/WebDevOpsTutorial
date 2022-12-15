@@ -10,7 +10,7 @@ Topics <br /> :
    4. [Install Composer On Ubuntu click here](#install_composer)  <br />
    5. [Install Apache2 On Ubuntu click here](#install_apache2)  <br />  
    6. [Install Mysql On Ubuntu click here](#install_mysql)  <br />  
-   7. [Install Mysql On Ubuntu click here](#install_git)  <br />  
+   7. [Install Git On Ubuntu click here](#install_git)  <br />  
    8. [How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04 click here](#lamp_ubuntu)  <br />   
    9. [Install NGINX Basic Cmds On Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
   10. [Install NGINX Basic Cmds On Kali Linux CMDS click here](#kali_linux)   <br />
@@ -332,7 +332,7 @@ check the version:
 
 
  <a name="lamp_ubuntu"></a> 
-### 7. How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04
+### 8. How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04
 
 
 Step 1: Setup Initialization:
@@ -540,7 +540,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 <a name="ubuntu20.04"></a> 
-### 8. Install nginx on Ubuntu
+### 9. Install nginx on Ubuntu
 
    Steps:
 
@@ -562,7 +562,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
           
           
 <a name="kali_linux"></a> 
-### 9. Install nginx on Kali Linux 2020.4 
+### 10. Install nginx on Kali Linux 2020.4 
 
       Steps:
 
@@ -588,7 +588,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 <a name="linux_mint"></a> 
-### 10. Install nginx on Linux Mint
+### 11. Install nginx on Linux Mint
 
      Steps:
 
@@ -605,7 +605,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 <a name="deploy_laravel"></a>
-### 12. How to Deploy Laravel Project with Apache on Ubuntu: 
+### 13. How to Deploy Laravel Project with Apache on Ubuntu: 
 
 1. Prerequisites
 
@@ -714,7 +714,7 @@ Change the following lines:
 
 
 <a name="nodejs_npm"></a> 
-### 13. Step 1: Installing Nodejs and NPM in Linux:
+### 14. Step 1: Installing Nodejs and NPM in Linux:
 
 
 On Debian/Ubuntu
