@@ -541,7 +541,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 <a name="deploy_laravel"></a>
-### 13. How to Deploy Laravel Project with Apache on Ubuntu: 
+### 12. How to Deploy Laravel Project with Apache on Ubuntu: 
 
 1. Prerequisites
 
@@ -647,9 +647,9 @@ Change the following lines:
 ###### --------- X -------------------
 
 
-<a name="nodejs_npm"></a> 
 
-### 5. Step 1: Installing Nodejs and NPM in Linux:
+<a name="nodejs_npm"></a> 
+### 13. Step 1: Installing Nodejs and NPM in Linux:
 
 
 On Debian/Ubuntu
