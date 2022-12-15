@@ -39,7 +39,7 @@ Topics: <br />
 
 <a name="linux_cell_scripting"></a>
 ### 1. Linux Shell Scripting Step : 
-     $\color{red}Shell Scripting$
+     $\color{red}Shell \ Scripting$
 
 Steps to execute a shell script in Linux :
 
@@ -117,7 +117,7 @@ For more info see Linux Shell Scripting Tutorial and bash command man page using
 <a name="centos_basic_commands"></a>
 ### 2. CentOS Basic Commands
 
-  $\color{red}Centos Commands:$ 
+  $\color{red}Centos \ Commands:$ 
 
     Centos Command           Description
 
