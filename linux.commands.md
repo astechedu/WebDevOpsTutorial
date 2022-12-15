@@ -603,6 +603,26 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
          
 
 
+<a name="install_laravel"></a>
+### 12. Install Laravel
+
+     cd /var/www/html
+    
+     sudo composer create-project laravel/laravel laravelapp
+     
+    
+ Change the ownership of the Laravel directory to the webserver user and also the permissions:
+ 
+ 
+     sudo chown -R www-data:www-data /var/www/html/laravelapp
+     
+     sudo chmod -R 775 /var/www/html/laravelapp/storage
+    
+     cd laravelapp
+     
+     php artisan
+     
+     
 
 <a name="deploy_laravel"></a>
 ### 13. How to Deploy Laravel Project with Apache on Ubuntu: 
