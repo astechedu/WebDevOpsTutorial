@@ -6,7 +6,7 @@ Topics <br /> :
 
    1. [Linx Cell Scripting click here](#linux_cell_scripting)   <br />
    2. [Install Composer On Ubuntu click here](#install_composer)  <br />
-   3. [Install Composer On Ubuntu click here](#install_composer)  <br /> 
+   3. [Install Apache2 On Ubuntu click here](#install_apache2)  <br /> 
    4. [Install PHP On Ubuntu click here](#install_php)  <br /> 
    5. [Install Mysql On Ubuntu click here](#install_mysql)  <br />  
    6. [How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04 click here](#lamp_ubuntu)  <br />   
