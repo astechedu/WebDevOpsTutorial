@@ -747,9 +747,9 @@ Adding in php file:
 
 
 
-## How to Deploy Laravel Project with Apache on Ubuntu: 
-
 <a name="deploy_laravel"></a>
+
+## How to Deploy Laravel Project with Apache on Ubuntu: 
 
 1. Prerequisites
 
