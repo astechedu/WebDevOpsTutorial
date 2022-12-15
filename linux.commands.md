@@ -2,7 +2,7 @@
 # Linux Basic Commands 
   
 
-Topics <br /> : 
+Topics: <br /> 
 
    1. [Linux Cell Scripting click here](#linux_cell_scripting)   <br />
    2. [CentOS Basic Commands click here](#centos_basic_commands)   <br />
@@ -36,7 +36,7 @@ Topics <br /> :
 ### 1. Linux Shell Scripting Steps: 
 
 
-Steps to execute a shell script in Linux:
+Steps to execute a shell script in \colorbox{red}Linux:
 
 The procedure is as follows:
 
