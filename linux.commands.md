@@ -6,9 +6,9 @@ Topics <br /> :
 
    1. [Linux Cell Scripting click here](#linux_cell_scripting)   <br />
    2. [CentOS Basic Commands click here](#centos_basic_commands)   <br />
-   3. [Install Composer On Ubuntu click here](#install_composer)  <br />
-   4. [Install Apache2 On Ubuntu click here](#install_apache2)  <br /> 
-   5. [Install PHP On Ubuntu click here](#install_php)  <br /> 
+   3. [Install PHP On Ubuntu click here](#install_php)  <br /> 
+   4. [Install Composer On Ubuntu click here](#install_composer)  <br />
+   5. [Install Apache2 On Ubuntu click here](#install_apache2)  <br />  
    6. [Install Mysql On Ubuntu click here](#install_mysql)  <br />  
    7. [How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04 click here](#lamp_ubuntu)  <br />   
    8. [Install NGINX Basic Cmds On Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
@@ -220,6 +220,28 @@ Alternetively:
 ##### ------ X ------
 
 
+
+<a name="install_php"></a>
+### 3. Install PHP:
+
+sudo apt install php libapache2-mod-php php7.4-mysql php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl -y 
+
+
+check the version:
+
+         php -v
+      
+      
+      
+<a name="install_composer"></a>          
+### 4. Install Composer On Ubuntu:
+
+
+     sudo apt-get update
+     sudo apt-get install git composer -y 
+          
+          
+          
 
  <a name="lamp_ubuntu"></a> 
 
