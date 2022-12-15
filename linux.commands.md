@@ -539,7 +539,6 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 
-
 <a name="deploy_laravel"></a>
 ### 12. How to Deploy Laravel Project with Apache on Ubuntu: 
 
@@ -561,6 +560,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
      sudo apt-get update
+     
      sudo apt-get install git composer -y 
 
 
