@@ -23,6 +23,28 @@ Topics: <br />
  
    
    
+<a name="apache_serve_laravel_site"></a>
+### 9. Configure Apache to serve Laravel site
+
+    sudo vim /etc/apache2/sites-available/laravel.conf
+
+    <VirtualHost *:80>
+    ServerName example.com
+    ServerAdmin admin@example.com
+    DocumentRoot /var/www/html/laravelapp/public
+    <Directory /var/www/html/laravelapp>
+    AllowOverride All
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+
+   sudo a2ensite laravel.conf
+
+   sudo a2enmod rewrite
+
+   sudo systemctl restart apache2
+ 
 
 //Delete All Directories / Files
 
@@ -268,28 +290,6 @@ check the version:
     Secure MySQL:
 
           sudo mysql_secure_installation 
- 
-<a name="apache_serve_laravel_site"></a>
-### 9. Configure Apache to serve Laravel site
-
-    sudo vim /etc/apache2/sites-available/laravel.conf
-
-    <VirtualHost *:80>
-    ServerName example.com
-    ServerAdmin admin@example.com
-    DocumentRoot /var/www/html/laravelapp/public
-    <Directory /var/www/html/laravelapp>
-    AllowOverride All
-    </Directory>
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-    </VirtualHost>
-
-   sudo a2ensite laravel.conf
-
-   sudo a2enmod rewrite
-
-   sudo systemctl restart apache2
  
  
  
