@@ -4,14 +4,13 @@
 
 Topics <br /> : 
 
+   8. [Linx Cell Scripting click here](#linux_cell_scripting)   <br />
    1. [How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04 click here](#lamp_ubuntu)  <br />   
    2. [Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
    3. [Install NGINX On Kali Linux CMDS click here](#kali_linux)   <br />
    4. [Install NGINX On Mint Linux CMDS here](#linux_mint)   <br />
    5. [Node & Npm On Debian/Ubuntu, CentOS/RHEL click here](#nodejs_npm)   <br />
-   6. [Red Hat Enterprise Linux click here](#RedHat_Enterprise_Linux)   <br />
    7. [Linux Mint click here](#Linux_Mint)   <br />
-   8. [Linx Cell Scripting click here](#linux_cell_scripting)   <br />
    9. [CentOS Basic Commands click here](#centos_basic_commands)   <br />
   10. [Centos Commands click here](#Centos_Commands)   <br />
   11. [Laravel Installation click here](#laravel_installation)   <br />
