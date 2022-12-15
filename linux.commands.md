@@ -4,23 +4,22 @@
 
 Topics <br /> : 
 
-   8. [Linx Cell Scripting click here](#linux_cell_scripting)   <br />
-   1. [How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04 click here](#lamp_ubuntu)  <br />   
-   2. [Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
-   3. [Install NGINX On Kali Linux CMDS click here](#kali_linux)   <br />
-   4. [Install NGINX On Mint Linux CMDS here](#linux_mint)   <br />
-   5. [Node & Npm On Debian/Ubuntu, CentOS/RHEL click here](#nodejs_npm)   <br />
-   7. [Linux Mint click here](#Linux_Mint)   <br />
-   9. [CentOS Basic Commands click here](#centos_basic_commands)   <br />
-  10. [Centos Commands click here](#Centos_Commands)   <br />
-  11. [Laravel Installation click here](#laravel_installation)   <br />
-  12. [How to Deploy Laravel Project with Apache on Ubuntu click here](#deploy_laravel)   <br />
+   1. [Linx Cell Scripting click here](#linux_cell_scripting)   <br />
+   2. [Install Composer On Ubuntu click here](#install_composer)  <br />
+   3. [Install Composer On Ubuntu click here](#install_composer)  <br /> 
+   4. [Install PHP On Ubuntu click here](#install_php)  <br /> 
+   5. [Install Mysql On Ubuntu click here](#install_mysql)  <br />  
+   6. [How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04 click here](#lamp_ubuntu)  <br />   
+   7. [Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
+   8. [Install NGINX On Kali Linux CMDS click here](#kali_linux)   <br />
+   9. [Install NGINX On Mint Linux CMDS here](#linux_mint)   <br />
+  10. [Node & Npm On Debian/Ubuntu, CentOS/RHEL click here](#nodejs_npm)   <br />
+  11. [Linux Mint click here](#Linux_Mint)   <br />
+  12. [CentOS Basic Commands click here](#centos_basic_commands)   <br />
+  13. [Centos Commands click here](#Centos_Commands)   <br />
+  14. [Laravel Installation click here](#laravel_installation)   <br />
+  15. [How to Deploy Laravel Project with Apache on Ubuntu click here](#deploy_laravel)   <br />
 
-
-[Install Composer On Ubuntu click here](#install_composer)  <br />  
-[Install Apache2 On Ubuntu click here](#install_apache2)  <br />  
-[Install PHP On Ubuntu click here](#install_php)  <br /> 
-[Install Mysql On Ubuntu click here](#install_mysql)  <br />  
 
 
 //Delete All Directories / Files
