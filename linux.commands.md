@@ -535,7 +535,116 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
           sudo service nginx status
           sudo sevice nginx stop
           sudo service nginx restart
-          
+         
+
+
+
+
+<a name="deploy_laravel"></a>
+### 13. How to Deploy Laravel Project with Apache on Ubuntu: 
+
+1. Prerequisites
+
+    The operating system running Ubuntu Linux
+    A root or non-root user with Sudo privileges
+    Has stable internet connection
+    Terminal window / Command line
+
+
+2. Install Apache On Ubuntu: 
+
+   If you have installed Apache, you can skip this. 
+
+
+
+3. Install Composer On Ubuntu:
+
+
+     sudo apt-get update
+     sudo apt-get install git composer -y 
+
+
+4. Install Laravel
+   
+   Option 1: Clone a Git Repository 
+
+
+     cd /var/www/html
+     git clone https://github.com/laravel/laravel.git .
+     composer install
+
+
+ Option 2: Deploy a new Laravel Project:
+ 
+     cd /var/www/html
+     composer create-project --prefer-dist laravel/laravel .
+
+
+5. Update ENV File and Generate An Encryption Key
+
+     cd /var/www/html
+     cp .env.example .env
+     php artisan key:generate
+
+
+     cd /var/www/html
+     nano .env
+
+
+To copy the file from .env.example to .env and generate an encryption key, run the following commands.
+
+    cd /var/www/html
+    cp .env.example .env
+    php artisan key:generate
+
+Next, edit the .env file and define your database:
+
+    cd /var/www/html
+    nano .env
+
+Change the following lines:
+
+     APP_URL=https://techvblogs.com
+
+     DB_CONNECTION=mysql
+     DB_HOST=YOUR_DB_HOST
+     DB_PORT=3306
+     DB_DATABASE=techvblogs
+     DB_USERNAME=admin
+     DB_PASSWORD=YOUR_PASSWORD
+
+
+ 6. Configure Apache for Laravel
+ 
+     sudo nano /etc/apache2/sites-available/techvblogs.conf
+ 
+ Add the following lines:
+
+<VirtualHost *:80>
+
+    ServerAdmin admin@techvblogs.com
+    ServerName techvblogs.com
+    DocumentRoot /var/www/html/public
+
+    <Directory /var/www/html/public>
+       Options +FollowSymlinks
+       AllowOverride All
+       Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+
+    sudo a2enmod rewrite
+    sudo a2ensite techvblogs.conf
+
+
+    sudo service apache2 restart
+    
+###### --------- X -------------------
 
 
 <a name="nodejs_npm"></a> 
@@ -699,112 +808,4 @@ http://sysmon.tecmint.lan
 ###### ------- X ..............
 
 
-
-
-
-<a name="deploy_laravel"></a>
-### 11. How to Deploy Laravel Project with Apache on Ubuntu: 
-
-1. Prerequisites
-
-    The operating system running Ubuntu Linux
-    A root or non-root user with Sudo privileges
-    Has stable internet connection
-    Terminal window / Command line
-
-
-2. Install Apache On Ubuntu: 
-
-   If you have installed Apache, you can skip this. 
-
-
-
-3. Install Composer On Ubuntu:
-
-
-     sudo apt-get update
-     sudo apt-get install git composer -y 
-
-
-4. Install Laravel
-   
-   Option 1: Clone a Git Repository 
-
-
-     cd /var/www/html
-     git clone https://github.com/laravel/laravel.git .
-     composer install
-
-
- Option 2: Deploy a new Laravel Project:
- 
-     cd /var/www/html
-     composer create-project --prefer-dist laravel/laravel .
-
-
-5. Update ENV File and Generate An Encryption Key
-
-     cd /var/www/html
-     cp .env.example .env
-     php artisan key:generate
-
-
-     cd /var/www/html
-     nano .env
-
-
-To copy the file from .env.example to .env and generate an encryption key, run the following commands.
-
-    cd /var/www/html
-    cp .env.example .env
-    php artisan key:generate
-
-Next, edit the .env file and define your database:
-
-    cd /var/www/html
-    nano .env
-
-Change the following lines:
-
-     APP_URL=https://techvblogs.com
-
-     DB_CONNECTION=mysql
-     DB_HOST=YOUR_DB_HOST
-     DB_PORT=3306
-     DB_DATABASE=techvblogs
-     DB_USERNAME=admin
-     DB_PASSWORD=YOUR_PASSWORD
-
-
- 6. Configure Apache for Laravel
- 
-     sudo nano /etc/apache2/sites-available/techvblogs.conf
- 
- Add the following lines:
-
-<VirtualHost *:80>
-
-    ServerAdmin admin@techvblogs.com
-    ServerName techvblogs.com
-    DocumentRoot /var/www/html/public
-
-    <Directory /var/www/html/public>
-       Options +FollowSymlinks
-       AllowOverride All
-       Require all granted
-    </Directory>
-
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-
-</VirtualHost>
-
-
-    sudo a2enmod rewrite
-    sudo a2ensite techvblogs.conf
-
-
-    sudo service apache2 restart
-    
-###### --------- X -------------------
 :end:
