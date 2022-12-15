@@ -240,6 +240,16 @@ check the version:
      sudo apt-get update
      sudo apt-get install git composer -y 
           
+       
+       
+<a name="install_apache2"></a>
+
+### 5. Install Apache2
+
+          sudo apt update
+          sudo apt upgrade
+          
+          sudo apt install apache2
           
           
 
@@ -247,7 +257,7 @@ check the version:
 
 ### 1. How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04:
 
-<a name="install_apache2"></a>
+
 Step 1: Setup Initialization:
 
           sudo apt update
