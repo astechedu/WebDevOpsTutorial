@@ -245,7 +245,6 @@ check the version:
       
 <a name="install_composer"></a>          
 ### 4. Install Composer On Ubuntu:
-
     $\color{red}Composer \ Installation$
 
      sudo apt-get update
