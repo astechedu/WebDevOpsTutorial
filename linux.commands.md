@@ -264,9 +264,73 @@ check the version:
           sudo mysql_secure_installation 
  
  
- <a name="lamp_ubuntu"></a> 
  
+ 
+ <a name="install_git"></a>
+ ### 7. Install Git
+ 
+   ###### Installing Git with Default Packages:
 
+    git --version
+
+    sudo apt update
+    
+    sudo apt install git
+    
+    git --version
+
+
+
+   ###### Installing Git from Source:
+
+    git --version
+
+    sudo apt update
+    sudo apt install libz-dev libssl-dev libcurl4-gnutls-dev libexpat1-dev gettext cmake gcc
+
+
+    mkdir tmp
+
+    cd /tmp
+
+    curl -o git.tar.gz https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.26.2.tar.gz
+
+    tar -zxf git.tar.gz
+
+    cd git-*
+
+    make prefix=/usr/local all
+    
+    sudo make prefix=/usr/local install
+
+    exec bash
+
+    git --version
+
+
+
+   ###### Setting Up Git: 
+
+
+    git config --global user.name "Your Name"
+    git config --global user.email "youremail@domain.com"
+
+    git config --list
+
+
+
+    nano ~/.gitconfig
+
+    ~/.gitconfig contents
+
+	[user]
+	  name = Your Name
+	  email = youremail@domain.com
+
+
+
+
+ <a name="lamp_ubuntu"></a> 
 ### 7. How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04
 
 
