@@ -4,7 +4,7 @@
 
 Topics <br /> : 
 
-   1. [Ubuntu click here](#ubuntu)  <br />   
+   1. [How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04 click here](#lamp_ubuntu)  <br />   
    2. [Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
    3. [Install click here](#install)   <br />
    4. [Laravel click here](#laravel)   <br />
@@ -32,7 +32,7 @@ Topics <br /> :
 
 
 
- <a name="ubuntu"></a> 
+ <a name="lamp_ubuntu"></a> 
 ## On Ubuntu: 
 
 How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04:
