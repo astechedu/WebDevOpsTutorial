@@ -10,9 +10,9 @@ Topics <br /> :
    4. [Install PHP On Ubuntu click here](#install_php)  <br /> 
    5. [Install Mysql On Ubuntu click here](#install_mysql)  <br />  
    6. [How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04 click here](#lamp_ubuntu)  <br />   
-   7. [Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
-   8. [Install NGINX On Kali Linux CMDS click here](#kali_linux)   <br />
-   9. [Install NGINX On Mint Linux CMDS here](#linux_mint)   <br />
+   7. [Install NGINX Basic Cmds On Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
+   8. [Install NGINX Basic Cmds On Kali Linux CMDS click here](#kali_linux)   <br />
+   9. [Install NGINX Basic Cmds On Mint Linux CMDS here](#linux_mint)   <br />
   10. [Node & Npm On Debian/Ubuntu, CentOS/RHEL click here](#nodejs_npm)   <br />
   11. [Linux Mint click here](#Linux_Mint)   <br />
   12. [CentOS Basic Commands click here](#centos_basic_commands)   <br />
