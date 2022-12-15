@@ -649,10 +649,8 @@ Alternetively:
     stat /etc/passwd
 
 
---------> End Of Centos <-------------------------------
-------------------------------------------------------
+##### ------ X ------
 
--------> Install Laravel <------------
 
 
 <a name="laravel_installation"></a>
