@@ -10,7 +10,7 @@ Topics: <br />
    4. [Install Composer On Ubuntu click here](#install_composer)  <br />
    5. [Install Apache2 On Ubuntu click here](#install_apache2)  <br />  
    6. [Install Mysql On Ubuntu click here](#install_mysql)  <br />  
-   7. [Install Git On Ubuntu click here](#install_git)  <br />  
+   7. [Install $\colorbox{red}Git$ On Ubuntu click here](#install_git)  <br />  
    8. [How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04 click here](#lamp_ubuntu)  <br />   
    9. [Install NGINX Basic Cmds On Ubuntu 20.04 click here](#ubuntu20.04)  <br />  
   10. [Install NGINX Basic Cmds On Kali Linux CMDS click here](#kali_linux)   <br />
@@ -33,7 +33,7 @@ Topics: <br />
 
 
 <a name="linux_cell_scripting"></a>
-### 1. Linux Shell Scripting $\colorbox{red}Step$ : 
+### 1. Linux Shell Scripting Step : 
 
 
 Steps to execute a shell script in Linux:
