@@ -11,15 +11,13 @@ Topics <br /> :
    5. [Node & Npm On Debian/Ubuntu, CentOS/RHEL click here](#nodejs_npm)   <br />
    6. [Red Hat Enterprise Linux click here](#RedHat_Enterprise_Linux)   <br />
    7. [Linux Mint click here](#Linux_Mint)   <br />
-   8. [Debian click here](#Debian)   <br />
-   9. [Fedoran click here](#Fedora)   <br />
+   8. [Linx Cell Scripting click here](#linux_cell_scripting)   <br />
+   9. [CentOS Basic Commands click here](#centos_basic_commands)   <br />
   10. [Centos Commands click here](#Centos_Commands)   <br />
   11. [Laravel Installation click here](#laravel_installation)   <br />
   12. [How to Deploy Laravel Project with Apache on Ubuntu click here](#deploy_laravel)   <br />
-      
 
-[Linx Cell Scripting click here](#linux_cell_scripting)   <br />
-[CentOS Basic Commands click here](#centos_basic_commands)   <br />
+
 
 //Delete All Directories / Files
 
