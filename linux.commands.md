@@ -14,10 +14,9 @@ Topics <br /> :
    8. [Install NGINX Basic Cmds On Kali Linux CMDS click here](#kali_linux)   <br />
    9. [Install NGINX Basic Cmds On Mint Linux CMDS here](#linux_mint)   <br />
   10. [Node & Npm On Debian/Ubuntu, CentOS/RHEL click here](#nodejs_npm)   <br /> 
-  12. [CentOS Basic Commands click here](#centos_basic_commands)   <br />
-  13. [Centos Commands click here](#Centos_Commands)   <br />
-  14. [Laravel Installation click here](#laravel_installation)   <br />
-  15. [How to Deploy Laravel Project with Apache on Ubuntu click here](#deploy_laravel)   <br />
+  11. [CentOS Basic Commands click here](#centos_basic_commands)   <br />
+  12. [Laravel Installation click here](#laravel_installation)   <br />
+  13. [How to Deploy Laravel Project with Apache on Ubuntu click here](#deploy_laravel)   <br />
 
 
 
