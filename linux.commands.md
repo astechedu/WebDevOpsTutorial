@@ -21,30 +21,7 @@ Topics: <br />
   15. [Node & Npm On Debian/Ubuntu, CentOS/RHEL click here](#nodejs_npm)   <br />
 
  
-   
-   
-<a name="apache_serve_laravel_site"></a>
-### 9. Configure Apache to serve Laravel site
-
-    sudo vim /etc/apache2/sites-available/laravel.conf
-
-    <VirtualHost *:80>
-    ServerName example.com
-    ServerAdmin admin@example.com
-    DocumentRoot /var/www/html/laravelapp/public
-    <Directory /var/www/html/laravelapp>
-    AllowOverride All
-    </Directory>
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-    </VirtualHost>
-
-   sudo a2ensite laravel.conf
-
-   sudo a2enmod rewrite
-
-   sudo systemctl restart apache2
- 
+    
 
 //Delete All Directories / Files
 
@@ -566,8 +543,34 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 ###### ------- X ------------
 
 
+
+   
+<a name="apache_serve_laravel_site"></a>
+### 9. Configure Apache to serve Laravel site
+
+    sudo vim /etc/apache2/sites-available/laravel.conf
+
+    <VirtualHost *:80>
+    ServerName example.com
+    ServerAdmin admin@example.com
+    DocumentRoot /var/www/html/laravelapp/public
+    <Directory /var/www/html/laravelapp>
+    AllowOverride All
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+
+   sudo a2ensite laravel.conf
+
+   sudo a2enmod rewrite
+
+   sudo systemctl restart apache2
+
+
+
 <a name="ubuntu20.04"></a> 
-### 9. Install nginx on Ubuntu
+### 10. Install nginx on Ubuntu
 
    Steps:
 
@@ -589,7 +592,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
           
           
 <a name="kali_linux"></a> 
-### 10. Install nginx on Kali Linux 2020.4 
+### 11. Install nginx on Kali Linux 2020.4 
 
       Steps:
 
@@ -615,7 +618,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 <a name="linux_mint"></a> 
-### 11. Install nginx on Linux Mint
+### 12. Install nginx on Linux Mint
 
      Steps:
 
@@ -631,7 +634,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 <a name="laravel_installation"></a>
-### 12. Install Laravel
+### 13. Install Laravel
 
      cd /var/www/html
     
@@ -652,7 +655,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
      
 
 <a name="deploy_laravel"></a>
-### 13. How to Deploy Laravel Project with Apache on Ubuntu: 
+### 14. How to Deploy Laravel Project with Apache on Ubuntu: 
 
 1. Prerequisites
 
@@ -761,7 +764,7 @@ Change the following lines:
 
 
 <a name="nodejs_npm"></a> 
-### 14. Step 1: Installing Nodejs and NPM in Linux:
+### 15. Step 1: Installing Nodejs and NPM in Linux:
 
 
 On Debian/Ubuntu
