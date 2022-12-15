@@ -542,6 +542,7 @@ Conclusion:
 
 Now you have learned how to install LAMP stack Ubuntu 20.04.
 
+
 ###### ------- X ------------
 
 
@@ -773,32 +774,32 @@ On Debian/Ubuntu
 
 ---------- Install Node.js v11.x ---------- 
 
-          $ curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-          $ sudo apt-get install -y nodejs
+           curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+           sudo apt-get install -y nodejs
 
           ---------- Install Node.js v10.x ----------
           
-          $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+           curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
           
-          $ sudo apt-get install -y nodejs
+           sudo apt-get install -y nodejs
 
 
 On CentOS/RHEL and Fedora
 
           ---------- Install Node.js v11.x ---------- 
           
-          $ curl -sL https://rpm.nodesource.com/setup_11.x | bash -
+           curl -sL https://rpm.nodesource.com/setup_11.x | bash -
 
           ---------- Install Node.js v10.x ----------
           
-          $ curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+           curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 
 
 
 <<<<< Step 2: Creating a Nodejs Application >>>>>>>
 
-          $ sudo mkdir -p /var/www/html/sysmon
-          $ sudo vim /var/www/html/sysmon/server.js
+           sudo mkdir -p /var/www/html/sysmon
+           sudo vim /var/www/html/sysmon/server.js
           
 
           const http = require('http');
@@ -820,9 +821,9 @@ On CentOS/RHEL and Fedora
 Now start your node application using the following command (press Ctrl+x to terminate it).
 
 
-          $ sudo node /var/www/html/sysmon/server.js
+           sudo node /var/www/html/sysmon/server.js
               OR
-          $ sudo node /var/www/html/sysmon/server.js &   #start it in the background to free up your terminal
+           sudo node /var/www/html/sysmon/server.js &   #start it in the background to free up your terminal
 
 Now open a browser and access your application at the URL http://198.168.43.31:5000
 
@@ -836,9 +837,9 @@ Create a file called /etc/apt/sources.list.d/nginx.list and add the following li
 deb http://nginx.org/packages/ubuntu/ bionic nginx
 deb-src http://nginx.org/packages/ubuntu/  bionic nginx
 
-          $ wget --quiet http://nginx.org/keys/nginx_signing.key && sudo apt-key add nginx_signing.key
-          $ sudo apt update
-          $ sudo apt install nginx
+           wget --quiet http://nginx.org/keys/nginx_signing.key && sudo apt-key add nginx_signing.key
+           sudo apt update
+           sudo apt install nginx
 
 
 
@@ -855,44 +856,44 @@ CentOS
           name=nginx repo
           baseurl=http://nginx.org/packages/rhel/$releasever/$basearch/ gpgcheck=0 enabled=1
 
-          # wget --quiet http://nginx.org/keys/nginx_signing.key && rpm --import nginx_signing.key
-          # yum install nginx
+           wget --quiet http://nginx.org/keys/nginx_signing.key && rpm --import nginx_signing.key
+           yum install nginx
 
 
 After successfully installing Nginx, start it, enable it to auto-start at system boot and check if it is up and running.
 
 ---------- On Debian/Ubuntu ---------- 
 
-          $ sudo systemctl status nginx
-          $ sudo systemctl enable nginx
-          $ sudo systemctl status nginx
+           sudo systemctl status nginx
+           sudo systemctl enable nginx
+           sudo systemctl status nginx
 
           ---------- On CentOS/RHEL ---------- 
 
-          # systemctl status nginx
-          # systemctl enable nginx
-          # systemctl status nginx
+           systemctl status nginx
+           systemctl enable nginx
+           systemctl status nginx
 
 If you are running a system firewall, you need to open port 80 (HTTP), 443 (HTTPS) and 5000 (Node app), which the web server listens on for client connection requests.
 
 
 ---------- On Debian/Ubuntu ---------- 
 
-          $ sudo ufw allow 80/tcp
-          $ sudo ufw allow 443/tcp
-          $ sudo ufw allow 5000/tcp
-          $ sudo ufw reload
+           sudo ufw allow 80/tcp
+           sudo ufw allow 443/tcp
+           sudo ufw allow 5000/tcp
+           sudo ufw reload
 
 ---------- On CentOS/RHEL ---------- 
 
-          # firewall-cmd --permanent --add-port=80/tcp
-          # firewall-cmd --permanent --add-port=443/tcp
-          # firewall-cmd --permanent --add-port=5000/tcp
-          # firewall-cmd --reload
+           firewall-cmd --permanent --add-port=80/tcp
+           firewall-cmd --permanent --add-port=443/tcp
+           firewall-cmd --permanent --add-port=5000/tcp
+           firewall-cmd --reload
 
 Step 4: Configure Nginx as Reverse Proxy For Nodejs Application
 
-          $ sudo vim /etc/nginx/conf.d/sysmon.conf 
+           sudo vim /etc/nginx/conf.d/sysmon.conf 
 
 
      server {
