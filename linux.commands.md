@@ -36,7 +36,7 @@ Topics: <br />
 ### 1. Linux Shell Scripting Steps: 
 
 
-Steps to execute a shell script in $\colorbox{red}Linux:
+Steps to execute a shell script in $\colorbox{red}Linux$ :
 
 The procedure is as follows:
 
