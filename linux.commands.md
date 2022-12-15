@@ -263,7 +263,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
  ###### ------ X -------        
           
 <a name="kali_linux"></a> 
-## >>>>>> Kali Linux 2020.4 <<<<<<<<<<<
+### 3. Kali Linux 2020.4 
 
 //Install nginx on Kali Linux All Steps:
 
@@ -289,7 +289,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 <a name="linux_mint"></a> 
-## >>>>>> Linux Mint <<<<<<<<<<<
+### 4. Linux Mint
 
 //Install nginx on Linux Mint  All Steps:
 
@@ -305,7 +305,8 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 <a name="nodejs_npm"></a> 
-<<<< Step 1: Installing Nodejs and NPM in Linux: >>>>>>
+
+### 5. Step 1: Installing Nodejs and NPM in Linux:
 
 
 On Debian/Ubuntu
