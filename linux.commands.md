@@ -475,9 +475,9 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 <a name="ubuntu20.04"></a> 
-### 2. Ubuntu 20.4 - Linux
+### 8. Install nginx on Ubuntu
 
-//Install nginx on Ubuntu All Steps:
+   Steps:
 
           sudo apt update
           sudo apt install nginx
@@ -495,10 +495,11 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
           
  ###### ------ X -------        
           
+          
 <a name="kali_linux"></a> 
-### 3. Kali Linux 2020.4 
+### 9. Install nginx on Kali Linux 2020.4 
 
-//Install nginx on Kali Linux All Steps:
+      Steps:
 
           sudo apt update
           sudo apt install nginx
@@ -522,9 +523,9 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 <a name="linux_mint"></a> 
-### 4. Linux Mint
+### 10. Install nginx on Linux Mint
 
-//Install nginx on Linux Mint  All Steps:
+     Steps:
 
           sudo apt-get install python-software-properties
           sudo add-apt-repository ppa:nginx/stable
