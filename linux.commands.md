@@ -13,7 +13,7 @@ Topics <br /> :
    7. [Debian click here](#Debian)   <br />
    8. [Fedoran click here](#Fedora)   <br />
    9. [Centos Commands click here](#Centos_Commands)   <br />
-  10. [Laravel Installation click here](#Laravel_Installation)   <br />
+  10. [Laravel Installation click here](#laravel_installation)   <br />
   11. [How to Deploy Laravel Project with Apache on Ubuntu click here](#deploy_laravel)   <br />
 
 
@@ -33,9 +33,8 @@ Topics <br /> :
 
 
  <a name="lamp_ubuntu"></a> 
-## On Ubuntu: 
 
-How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04:
+### 1. How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04:
 
 Step 1: Setup Initialization:
 
@@ -651,8 +650,8 @@ Alternetively:
 -------> Install Laravel <------------
 
 
-//How to Install Laravel on Ubuntu
-
+<a name="laravel_installation"></a>
+### 10. How to Install Laravel on Ubuntu
 
 
 //1. Install Apache Web Server
@@ -743,13 +742,8 @@ Adding in php file:
 
 
 
-------> Laravel Installed End <-----------------------
-
-
-
 <a name="deploy_laravel"></a>
-
-## How to Deploy Laravel Project with Apache on Ubuntu: 
+### 11. How to Deploy Laravel Project with Apache on Ubuntu: 
 
 1. Prerequisites
 
