@@ -237,9 +237,11 @@ Conclusion:
 
 Now you have learned how to install LAMP stack Ubuntu 20.04.
 
+###### ------- X ------------
+
 
 <a name="ubuntu20.04"></a> 
-## >>>>>>> Ubuntu 20.4 - Linux <<<<<<<<<<<
+### 2. Ubuntu 20.4 - Linux
 
 //Install nginx on Ubuntu All Steps:
 
@@ -256,6 +258,9 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
           ls sites-enabled/
           is sites-available/
           clean
+          
+ ###### ------ X -------        
+          
 <a name="#kali_linux"></a> 
 ## >>>>>> Kali Linux 2020.4 <<<<<<<<<<<
 
@@ -739,7 +744,8 @@ Adding in php file:
 //Uninstall Laravel and Composer
 
     sudo rm /usr/local/bin/composer
-
+    
+###### ------ x ------
 
 
 <a name="deploy_laravel"></a>
@@ -845,6 +851,7 @@ Change the following lines:
 
 
     sudo service apache2 restart
-
+    
+###### --------- X -------------------
 
 
