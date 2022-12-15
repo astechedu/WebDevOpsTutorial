@@ -17,6 +17,11 @@ Topics <br /> :
   12. [How to Deploy Laravel Project with Apache on Ubuntu click here](#deploy_laravel)   <br />
 
 
+[Install Composer On Ubuntu click here](#install_composer)  <br />  
+[Install Apache2 On Ubuntu click here](#install_apache2)  <br />  
+[Install PHP On Ubuntu click here](#install_php)  <br /> 
+[Install Mysql On Ubuntu click here](#install_mysql)  <br />  
+
 
 //Delete All Directories / Files
 
@@ -35,6 +40,7 @@ Topics <br /> :
 
 ### 1. How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04:
 
+<a name="install_apache2"></a>
 Step 1: Setup Initialization:
 
           sudo apt update
@@ -102,7 +108,7 @@ Output:
       Sun 12 04:58:34 apache systemd[1]: Starting The Apache HTTP Server…
       Sun 12 04:58:34 apache systemd[1]: Started The Apache HTTP Server.
 
-
+<a name="install_mysql"></a>
  Step 5: Install MySQL:
  
            sudo apt install mysql-server
@@ -126,7 +132,7 @@ Step 6: Secure MySQL:
 
           sudo mysql_secure_installation
 
-
+<a name="install_php"></a>
 Step 7: Install PHP:
 
 sudo apt install php libapache2-mod-php php7.4-mysql php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl -y 
@@ -535,7 +541,7 @@ For more info see Linux Shell Scripting Tutorial and bash command man page using
     man bash
     help read
 
---------> End of linux shell scirpts <-------------
+##### ------- X ----------
 
 
 
@@ -689,7 +695,7 @@ Adding in php file:
     Remove test database and access to it? [Y/n] y
     Reload privilege tables now? [Y/n] y
 
-
+<a name="install_composer"></a>
 //4. Install Composer
 
     curl -sS https://getcomposer.org/installer | php
