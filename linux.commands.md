@@ -39,6 +39,7 @@ Topics: <br />
 
 <a name="linux_cell_scripting"></a>
 ### 1. Linux Shell Scripting Step : 
+
      $\color{red}Shell \ Scripting$
 
 Steps to execute a shell script in Linux :
