@@ -768,7 +768,7 @@ Change the following lines:
 
 <a name="nodejs_npm"></a> 
 ### 15. Step 1: Installing Nodejs and NPM in Linux:
-
+    
 
 On Debian/Ubuntu
 
