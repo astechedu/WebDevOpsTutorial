@@ -33,10 +33,10 @@ Topics: <br />
 
 
 <a name="linux_cell_scripting"></a>
-### 1. Linux Shell Scripting Steps: 
+### 1. Linux Shell Scripting $\colorbox{red}Step$ : 
 
 
-Steps to execute a shell script in $\colorbox{red}Linux$ :
+Steps to execute a shell script in Linux:
 
 The procedure is as follows:
 
