@@ -22,7 +22,7 @@ Topics: <br />
   16. [PHP Composer Apache2 Laravel Config (Fix Problems)](#laravel_apache2_fixed)      
   17. [How to find my IP address on Ubuntu 20.04 Focal Fossa Linux](#id_address_linux)
   18. [How Do I Add a Directory to PATH in Linux?](#set_path_linux)
-  19. [](#del_path_linux)
+  19. [Remove Directory from PATH in Linux](#del_path_linux)
 
 //Delete All Directories / Files
 
