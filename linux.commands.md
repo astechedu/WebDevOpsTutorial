@@ -1137,6 +1137,10 @@ Editing the .bashrc file adds a directory for the current user only. To add the 
 Add directory to profile file in Vim
 	
 
+
+
+
+<a name="del_path_linux"></a>
 # 19. Remove Directory from PATH in Linux
 
 There is no single command to remove a directory from PATH. Still, several options enable the process.
