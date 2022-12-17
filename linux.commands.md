@@ -21,7 +21,7 @@ Topics: <br />
   15. [Node & Npm On Debian/Ubuntu, CentOS/RHEL click here](#nodejs_npm)   <br />
   16. [PHP Composer Apache2 Laravel Config (Fix Problems)](#laravel_apache2_fixed)      
   17. [How to find my IP address on Ubuntu 20.04 Focal Fossa Linux](#id_address_linux)
-
+  18. [How Do I Add a Directory to PATH in Linux?](#set_path_linux)
 
 
 //Delete All Directories / Files
@@ -1087,6 +1087,40 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
      ip r
 
 
+
+<a name="set_path_linux"></a>
+# How Do I Add a Directory to PATH in Linux?
+
+Specific directories are added to PATH by default. Users can add other directories to PATH either temporarily or permanently.
+Linux: Add to PATH Temporarily
+
+Temporarily adding a directory to PATH affects the current terminal session only. Once users close the terminal, the directory is removed.
+
+To temporarily add a directory to PATH, use the export PATH command:
+
+	export PATH="/Directory1:$PATH"
+
+	export PATH terminal output
+
+The command added Directory1 from the Home directory to PATH. Verify the result with:
+
+	echo $PATH
+
+	echo PATH Directory1 added terminal output
+
+The output shows that the directory was added to the variable. This configuration lasts during the current session only.
+Linux: Add to PATH Permanently
+
+Add a directory to PATH permanently by editing the .bashrc file located in the Home directory. Follow these steps:
+
+1. Open the .bashrc file using a text editor. The example below uses Vim.
+Opening .bashrc in Vim.
+
+2. Go to the end of the file.
+
+3. Paste the export syntax at the end of the file.
+
+	export PATH="/Directory1:$PATH"
 
 :end:
 
