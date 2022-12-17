@@ -1168,7 +1168,16 @@ Another option is to use the combination of tr, grep and paste to remove a direc
 	export PATH="$( echo $PATH| tr : '\n' |grep -v Directory1 | paste -s -d: )"
 	
 	
+# 20. How to View the Directories in PATH
+
+	echo $PATH
 	
+	printenv PATH
+	
+	which whoami
+
+
+
 :end:
 
 
