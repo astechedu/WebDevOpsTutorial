@@ -22,7 +22,7 @@ Topics: <br />
   16. [PHP Composer Apache2 Laravel Config (Fix Problems)](#laravel_apache2_fixed)      
   17. [How to find my IP address on Ubuntu 20.04 Focal Fossa Linux](#id_address_linux)
   18. [How Do I Add a Directory to PATH in Linux?](#set_path_linux)
-
+  19. [](#del_path_linux)
 
 //Delete All Directories / Files
 
@@ -1089,7 +1089,7 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
 
 
 <a name="set_path_linux"></a>
-# How Do I Add a Directory to PATH in Linux?
+# H18. How Do I Add a Directory to PATH in Linux?
 
 Specific directories are added to PATH by default. Users can add other directories to PATH either temporarily or permanently.
 Linux: Add to PATH Temporarily
@@ -1137,6 +1137,34 @@ Editing the .bashrc file adds a directory for the current user only. To add the 
 Add directory to profile file in Vim
 	
 
+# 19. Remove Directory from PATH in Linux
+
+There is no single command to remove a directory from PATH. Still, several options enable the process.
+Method 1: Exit the Terminal
+
+Removing a directory from PATH is simple when it's added temporarily. Adding the directory in the terminal works for the current session only. Once the current session ends, the directory is removed from PATH automatically.
+
+To delete a temporary directory from PATH, exit the terminal or reboot the system.
+Method 2: Edit Configuration Files
+
+If the directory export string was added to the .bashrc or .profile file, remove it using the same method. Open the file in a text editor, navigate to the end of the file, and remove the directory.
+Method 3: Apply the String Replacement Concept
+
+To remove a directory from PATH, use string replacement:
+
+	export PATH=${PATH/'/Directory1'/}
+
+String replacement terminal output
+
+The command only removes the string from the current session.
+Method 4: Use a One-Liner
+
+Another option is to use the combination of tr, grep and paste to remove a directory from PATH. For instance:
+
+	export PATH="$( echo $PATH| tr : '\n' |grep -v Directory1 | paste -s -d: )"
+	
+	
+	
 :end:
 
 
