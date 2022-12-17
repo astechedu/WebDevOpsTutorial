@@ -23,6 +23,7 @@ Topics: <br />
   17. [How to find my IP address on Ubuntu 20.04 Focal Fossa Linux](#id_address_linux)
   18. [How Do I Add a Directory to PATH in Linux?](#set_path_linux)
   19. [Remove Directory from PATH in Linux](#del_path_linux)
+  20. [How to View the Directories in PATH](#view_dir_path)
 
 //Delete All Directories / Files
 
@@ -1166,8 +1167,11 @@ Method 4: Use a One-Liner
 Another option is to use the combination of tr, grep and paste to remove a directory from PATH. For instance:
 
 	export PATH="$( echo $PATH| tr : '\n' |grep -v Directory1 | paste -s -d: )"
-	
-	
+
+
+
+
+<a name="view_dir_path"></a>
 # 20. How to View the Directories in PATH
 
 	echo $PATH
