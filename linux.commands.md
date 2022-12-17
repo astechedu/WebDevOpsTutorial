@@ -577,6 +577,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
    
    
+   
 <a name="apache_serve_laravel_site"></a>
 ### 9. Configure Apache to serve Laravel site
 
@@ -598,6 +599,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
    sudo a2enmod rewrite
 
    sudo systemctl restart apache2
+
 
 
 
@@ -653,6 +655,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 
+
 <a name="linux_mint"></a> 
 ### 12. Install nginx on Linux Mint
 
@@ -667,6 +670,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
           sudo sevice nginx stop
           sudo service nginx restart
          
+
 
 
 
@@ -688,6 +692,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
      cd laravelapp
      
      php artisan
+     
      
      
 
@@ -803,6 +808,7 @@ Change the following lines:
     sudo service apache2 restart
     
 ###### --------- X -------------------
+
 
 
 
@@ -966,6 +972,7 @@ http://sysmon.tecmint.lan
   192.168.43.31 sysmon.tecmint.lan
 
 ###### ------- X ..............
+
 
 
 
