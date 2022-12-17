@@ -709,13 +709,16 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
      cd /var/www/html
+     
      git clone https://github.com/laravel/laravel.git .
+     
      composer install
 
 
  Option 2: Deploy a new Laravel Project:
  
      cd /var/www/html
+     
      composer create-project --prefer-dist laravel/laravel .
 
 
@@ -733,7 +736,9 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 To copy the file from .env.example to .env and generate an encryption key, run the following commands.
 
     cd /var/www/html
+    
     cp .env.example .env
+    
     php artisan key:generate
 
 Next, edit the .env file and define your database:
@@ -743,26 +748,26 @@ Next, edit the .env file and define your database:
 
 Change the following lines:
 
-     APP_URL=https://techvblogs.com
+     APP_URL=https://www.youtube.com/astechedu
 
      DB_CONNECTION=mysql
      DB_HOST=YOUR_DB_HOST
      DB_PORT=3306
-     DB_DATABASE=techvblogs
+     DB_DATABASE=astechedu
      DB_USERNAME=admin
      DB_PASSWORD=YOUR_PASSWORD
 
 
  6. Configure Apache for Laravel
  
-     sudo nano /etc/apache2/sites-available/techvblogs.conf
+     sudo nano /etc/apache2/sites-available/astechedu.conf
  
  Add the following lines:
 
 <VirtualHost *:80>
 
-    ServerAdmin admin@techvblogs.com
-    ServerName techvblogs.com
+    ServerAdmin admin@astechedu.com
+    ServerName astechedu.com
     DocumentRoot /var/www/html/public
 
     <Directory /var/www/html/public>
@@ -778,7 +783,7 @@ Change the following lines:
 
 
     sudo a2enmod rewrite
-    sudo a2ensite techvblogs.conf
+    sudo a2ensite astechedu.conf
 
 
     sudo service apache2 restart
