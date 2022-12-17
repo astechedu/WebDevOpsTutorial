@@ -952,4 +952,117 @@ http://sysmon.tecmint.lan
 ###### ------- X ..............
 
 
+
+
+
+
+# PHP Composer Apache2 Laravel Config (Fix Problems)
+
+PHP: 
+
+//Checking which php modules enabled or disabled
+
+sudo a2query -m php8.2
+sudo a2query -m php8.1
+sudo a2query -m php8.0
+
+//Disable 
+sudo a2dismod  php8.0
+
+
+//Enable suitable php modules
+sudo a2enmod  php8.2
+
+sudo a2enmod rewrite
+sudo a2ensite laravel.com.conf     //ls /etc/apache2/sites-available/laravel.com.conf
+
+Apache2:
+
+sudo nano /etc/hosts
+127.0.0.1 localhost
+127.0.0.1 laravel.com www.laravel.conf
+
+
+Install Laravel 8 on Ubuntu:
+
+composer global require laravel/installer
+
+sudo nano ~/.bashrc
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+echo $PATH
+
+
+cd /var/www/html
+sudo composer create-project laravel/laravel laravelapp
+
+sudo chown -R www-data:www-data /var/www/html/laravelapp
+sudo chmod -R 775 /var/www/html/laravelapp/storage
+
+cd laravelapp
+php artisan
+
+
+
+
+# How to find my IP address on Ubuntu 20.04 Focal Fossa Linux:
+
+Method 1: Using the Graphical User Interface (GUI): 
+
+       
+Go to “Applications” and search for a network. Click on the network If you are connected 
+through ethernet or click on Wi-Fi if you are using a Wi-Fi connection.
+
+
+ Method 2: Using ifconfig command
+
+      Open the terminal by pressing Ctrl+Alt+T and install net-tools using the following command.
+
+      sudo apt install net-tools
+
+
+When you are done with the net-tools installation, type the following command and 
+it will show you the IP address against your interface.
+
+      ifconfig
+
+
+You can also execute the following command to get the same result.
+
+       /sbin/ifconfig
+
+
+Method 3: Using ip command:
+Open the terminal by pressing Ctrl+Alt+T and enter one of the following commands.
+
+        ip addr show
+        ip a
+        ip address
+        
+Method 4: Using hostname command
+
+Open the terminal by pressing Ctrl+Alt+T and enter the following hostname command.
+
+         hostname -I
+
+
+
+    To check for your internal IP address execute the following command:
+
+     ip a
+
+    Locate the requested network interface and check for assigned IP address. Additionally, the above command also reveals the network interface hardware address a.k.a MAC address.
+    To check for currently used DNS server IP address execute:
+
+     systemd-resolve --status | grep Current
+
+    To display default gateway IP address run:
+
+     ip r
+
+
+
+
 :end:
+
+
+
