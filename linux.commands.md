@@ -19,10 +19,8 @@ Topics: <br />
   13. [Laravel Installation click here](#laravel_installation)   <br />
   14. [How to Deploy Laravel Project with Apache on Ubuntu click here](#deploy_laravel)   <br />
   15. [Node & Npm On Debian/Ubuntu, CentOS/RHEL click here](#nodejs_npm)   <br />
-
-      [PHP Composer Apache2 Laravel Config (Fix Problems)](#laravel_apache2_fixed)
-      
-      [How to find my IP address on Ubuntu 20.04 Focal Fossa Linux](#id_address_linux)
+  16. [PHP Composer Apache2 Laravel Config (Fix Problems)](#laravel_apache2_fixed)      
+  17. [How to find my IP address on Ubuntu 20.04 Focal Fossa Linux](#id_address_linux)
 
 
 
@@ -957,7 +955,7 @@ http://sysmon.tecmint.lan
 
 
 <a name="laravel_apache2_fixed"></a>
-# PHP Composer Apache2 Laravel Config (Fix Problems)
+### 16. PHP Composer Apache2 Laravel Config (Fix Problems)
 
 PHP: 
 
@@ -1005,7 +1003,7 @@ php artisan
 
 
 <a name="id_address_linux"></a>
-# How to find my IP address on Ubuntu 20.04 Focal Fossa Linux
+### 17. How to find my IP address on Ubuntu 20.04 Focal Fossa Linux
 
 Method 1: Using the Graphical User Interface (GUI): 
 
