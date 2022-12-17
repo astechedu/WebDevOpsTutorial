@@ -228,6 +228,8 @@ Alternetively:
 
 
 
+
+
 <a name="install_php"></a>
 ### 3. Install PHP:
 
@@ -259,6 +261,7 @@ check the version:
       
       
       
+      
 <a name="install_composer"></a>          
 ### 4. Install Composer On Ubuntu:
 
@@ -267,6 +270,7 @@ check the version:
      sudo apt-get update
      sudo apt-get install git composer -y 
           
+       
        
        
 <a name="install_apache2"></a>
@@ -279,6 +283,8 @@ check the version:
           sudo apt install apache2
           
           
+	  
+	  
  <a name="install_mysql"></a> 
 ### 6. Install MySQL
  
@@ -289,6 +295,7 @@ check the version:
     Secure MySQL:
 
           sudo mysql_secure_installation 
+ 
  
  
  
@@ -353,6 +360,7 @@ check the version:
 	[user]
 	  name = Your Name
 	  email = youremail@domain.com
+
 
 
 
@@ -568,6 +576,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
    
+   
 <a name="apache_serve_laravel_site"></a>
 ### 9. Configure Apache to serve Laravel site
 
@@ -592,6 +601,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 
+
 <a name="ubuntu20.04"></a> 
 ### 10. Install nginx on Ubuntu
 
@@ -613,7 +623,9 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
           
  ###### ------ X -------        
           
-          
+
+
+
 <a name="kali_linux"></a> 
 ### 11. Install nginx on Kali Linux 2020.4 
 
@@ -640,6 +652,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 
+
 <a name="linux_mint"></a> 
 ### 12. Install nginx on Linux Mint
 
@@ -654,6 +667,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
           sudo sevice nginx stop
           sudo service nginx restart
          
+
 
 
 <a name="laravel_installation"></a>
@@ -676,6 +690,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
      php artisan
      
      
+
 
 <a name="deploy_laravel"></a>
 ### 14. How to Deploy Laravel Project with Apache on Ubuntu: 
@@ -788,6 +803,8 @@ Change the following lines:
     sudo service apache2 restart
     
 ###### --------- X -------------------
+
+
 
 
 
@@ -954,6 +971,7 @@ http://sysmon.tecmint.lan
 
 
 
+
 <a name="laravel_apache2_fixed"></a>
 ### 16. PHP Composer Apache2 Laravel Config (Fix Problems)
 
@@ -999,6 +1017,9 @@ sudo chmod -R 775 /var/www/html/laravelapp/storage
 
 cd laravelapp
 php artisan
+
+
+
 
 
 
@@ -1057,7 +1078,6 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
     To display default gateway IP address run:
 
      ip r
-
 
 
 
