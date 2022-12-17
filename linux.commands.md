@@ -233,31 +233,25 @@ Alternetively:
 ### 3. Install PHP:
 
    $\color{red}PHP \ Intallation$
-   
-sudo apt install php libapache2-mod-php php-mbstring php-cli php-bcmath php-json php-xml php-zip php-pdo php-common php-tokenizer php-mysql
-  
-sudo apt install php libapache2-mod-php php7.4-mysql php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl -y 
- 
- OR 
- 
-sudo apt install php8.0-cli php8.0-common php8.0-imap php8.0-redis php8.0-xml php8.0-zip php8.0-mbstring
- 
- OR
- 
+
 sudo apt install php8.2-cli php8.2-common php8.2-imap php8.2-redis php8.2-xml php8.2-zip php8.2-mbstring
 
- OR 
+OR 
+
+sudo apt install php8.1-cli php8.1-common php8.1-imap php8.1-redis php8.1-xml php8.1-zip php8.1-mbstring
+
+OR 
+
+sudo apt install php8.0-cli php8.0-common php8.0-imap php8.0-redis php8.0-xml php8.0-zip php8.0-mbstring
+
+OR 
+
+sudo apt install php libapache2-mod-php php7.4-mysql php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl -y 
+ 
+OR
  
 sudo apt install php libapache2-mod-php php-mbstring php-cli php-bcmath php-json php-xml php-zip php-pdo php-common php-tokenizer php-mysql
-  
- OR 
- 
-sudo apt install php8.0-cli php8.0-common php8.0-imap php8.0-redis php8.0-xml php8.0-zip php8.0-mbstring
- 
- OR
- 
-sudo apt install php8.2-cli php8.2-common php8.2-imap php8.2-redis php8.2-xml php8.2-zip php8.2-mbstring
- 
+
 
 check the version:
 
