@@ -1109,6 +1109,8 @@ The command added Directory1 from the Home directory to PATH. Verify the result 
 	echo PATH Directory1 added terminal output
 
 The output shows that the directory was added to the variable. This configuration lasts during the current session only.
+
+
 Linux: Add to PATH Permanently
 
 Add a directory to PATH permanently by editing the .bashrc file located in the Home directory. Follow these steps:
@@ -1121,6 +1123,19 @@ Opening .bashrc in Vim.
 3. Paste the export syntax at the end of the file.
 
 	export PATH="/Directory1:$PATH"
+
+Add directory to .bashrc file in Vim
+
+4. Save and exit.
+
+5. Execute the script or reboot the system to make the changes live.
+
+6. To verify the changes, run echo:
+echo PATH permanently added Directory1 terminal output
+
+Editing the .bashrc file adds a directory for the current user only. To add the directory to the PATH for all users, edit the .profile file:
+Add directory to profile file in Vim
+	
 
 :end:
 
