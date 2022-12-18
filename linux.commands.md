@@ -24,8 +24,8 @@ Topics: <br />
   18. [How Do I Add a Directory to PATH in Linux?](#set_path_linux)
   19. [Remove Directory from PATH in Linux](#del_path_linux)
   20. [How to View the Directories in PATH](#view_dir_path)
-  21. [Apache Allow Access IP Address](#ubuntu_appache_allow_ip_address)
-  22. []()
+  21. [Apache Allow Access IP Address](#ubuntu_apache_allow_ip_address)
+  22. [How to find my IP address on Ubuntu 20.04 Focal Fossa Linux](#find_ip_address_linux)
   23. [Network cmds on ubuntu](#network_cmds_linux)
 
 //Delete All Directories / Files
@@ -1187,7 +1187,7 @@ Another option is to use the combination of tr, grep and paste to remove a direc
 
 
 
-<a name="ubuntu_appache_allow_ip_address"></a>
+<a name="ubuntu_apache_allow_ip_address"></a>
 
 # 21. Apache Allow Access IP Address:
 
@@ -1271,7 +1271,7 @@ http://localhost
 
 
 
-<a name=""></a>
+<a name="find_ip_address_linux"></a>
 # 22. How to find my IP address on Ubuntu 20.04 Focal Fossa Linux:
 
 Method 1: Using the Graphical User Interface (GUI): 
@@ -1314,7 +1314,6 @@ Method 4: Using hostname command
 Open the terminal by pressing Ctrl+Alt+T and enter the following hostname command.
 
          hostname -I
-
 
 
 
