@@ -1185,9 +1185,9 @@ Another option is to use the combination of tr, grep and paste to remove a direc
 
 
 
-<a name="ubuntu_apache_allow_ip_address"></a>
-Apache Allow Access IP Address:
+<a name="ubuntu_appache_allow_ip_address"></a>
 
+Apache Allow Access IP Address:
 
 How to Access Allow by IP Address in Apache Ubuntu
 
@@ -1265,6 +1265,9 @@ http://your_server_ip
 OR
 
 http://localhost
+
+
+
 
 
 :end:
