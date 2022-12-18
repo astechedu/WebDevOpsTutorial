@@ -25,6 +25,8 @@ Topics: <br />
   19. [Remove Directory from PATH in Linux](#del_path_linux)
   20. [How to View the Directories in PATH](#view_dir_path)
   21. [Apache Allow Access IP Address](#ubuntu_appache_allow_ip_address)
+  22. []()
+  23. [](#network_cmds_linux)
 
 //Delete All Directories / Files
 
@@ -1268,7 +1270,9 @@ http://localhost
 
 
 
-# How to find my IP address on Ubuntu 20.04 Focal Fossa Linux:
+
+<a name=""></a>
+# 22. How to find my IP address on Ubuntu 20.04 Focal Fossa Linux:
 
 Method 1: Using the Graphical User Interface (GUI): 
 
@@ -1331,7 +1335,8 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
 
 
 
-# Network cmds on ubuntu: 
+<a name="network_cmds_linux"></a>
+# 23. Network cmds on ubuntu: 
 
 
 ip a
@@ -1363,9 +1368,9 @@ ls /etc/
    /etc/resolv.conf
   /etc/hosts
   /etc/nsswitch.conf
- /etc/netplan
- /etc/interfaces
- /etc/network/interfaces 
+  /etc/netplan
+  /etc/interfaces
+  /etc/network/interfaces 
 
 
 
