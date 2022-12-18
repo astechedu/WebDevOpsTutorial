@@ -1268,6 +1268,108 @@ http://localhost
 
 
 
+# How to find my IP address on Ubuntu 20.04 Focal Fossa Linux:
+
+Method 1: Using the Graphical User Interface (GUI): 
+
+       
+Go to “Applications” and search for a network. Click on the network If you are connected 
+through ethernet or click on Wi-Fi if you are using a Wi-Fi connection.
+
+
+
+ Method 2: Using ifconfig command
+
+      Open the terminal by pressing Ctrl+Alt+T and install net-tools using the following command.
+
+      sudo apt install net-tools
+
+
+When you are done with the net-tools installation, type the following command and 
+it will show you the IP address against your interface.
+
+      ifconfig
+
+
+
+You can also execute the following command to get the same result.
+
+       /sbin/ifconfig
+
+
+
+Method 3: Using ip command:
+Open the terminal by pressing Ctrl+Alt+T and enter one of the following commands.
+
+        ip addr show
+        ip a
+        ip address
+        
+Method 4: Using hostname command
+
+Open the terminal by pressing Ctrl+Alt+T and enter the following hostname command.
+
+         hostname -I
+
+
+
+
+    To check for your internal IP address execute the following command:
+
+    $ ip a
+
+    Locate the requested network interface and check for assigned IP address. Additionally, the above command also reveals the network interface hardware address a.k.a MAC address.
+    To check for currently used DNS server IP address execute:
+
+    $ systemd-resolve --status | grep Current
+
+    To display default gateway IP address run:
+
+    $ ip r
+
+
+
+
+
+# Network cmds on ubuntu: 
+
+
+ip a
+sudo lshw -class network
+
+sudo ip adder
+sudo ip addr add 10.102.66.200/24 dev enp0s25   //Temporary IP Address Assignment
+ip link set dev enp0s25 up
+ip link set dev enp0s25 down
+
+ip addr flush eth0
+ip address show dev enp0s25
+
+
+sudo ip route
+sudo ip route add default via 10.102.66.1
+ip route show
+sudo netplan 
+sudo netplan apply
+ip address show lo
+
+
+sudo ifconfig eth0 192.168.72.6 netmask 255.255.255.0
+sudo route add default gw 192.168.72.1 eth0
+
+
+
+ls /etc/
+   /etc/resolv.conf
+  /etc/hosts
+  /etc/nsswitch.conf
+ /etc/netplan
+ /etc/interfaces
+ /etc/network/interfaces 
+
+
+
+
 
 
 :end:
