@@ -1205,7 +1205,7 @@ Open 000-default.conf File
 
 Open your terminal and execute the following command on terminal to open 000-default.conf file; as follows:
 
-sudo nano /etc/apache2/sites-available/000-default.conf
+	sudo nano /etc/apache2/sites-available/000-default.conf
 
 
 Update 000-default.conf File
@@ -1256,7 +1256,7 @@ Restart Apache Web Server:
 
 Execute the following command on terminal to restart apache web server; as follows:
 
-sudo service apache2 reload
+	sudo service apache2 reload
 
 Test with IP Address
 
@@ -1319,16 +1319,16 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
 
     To check for your internal IP address execute the following command:
 
-    $ ip a
+    	ip a
 
     Locate the requested network interface and check for assigned IP address. Additionally, the above command also reveals the network interface hardware address a.k.a MAC address.
     To check for currently used DNS server IP address execute:
 
-    $ systemd-resolve --status | grep Current
+    	systemd-resolve --status | grep Current
 
     To display default gateway IP address run:
 
-    $ ip r
+    	ip r
 
 
 
@@ -1338,38 +1338,38 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
 # 23. Network cmds on ubuntu: 
 
 
-ip a
-sudo lshw -class network
+	ip a
+	sudo lshw -class network
 
-sudo ip adder
-sudo ip addr add 10.102.66.200/24 dev enp0s25   //Temporary IP Address Assignment
-ip link set dev enp0s25 up
-ip link set dev enp0s25 down
+	sudo ip adder
+	sudo ip addr add 10.102.66.200/24 dev enp0s25   //Temporary IP Address Assignment
+	ip link set dev enp0s25 up
+	ip link set dev enp0s25 down
 
-ip addr flush eth0
-ip address show dev enp0s25
-
-
-sudo ip route
-sudo ip route add default via 10.102.66.1
-ip route show
-sudo netplan 
-sudo netplan apply
-ip address show lo
+	ip addr flush eth0
+	ip address show dev enp0s25
 
 
-sudo ifconfig eth0 192.168.72.6 netmask 255.255.255.0
-sudo route add default gw 192.168.72.1 eth0
+	sudo ip route
+	sudo ip route add default via 10.102.66.1
+	ip route show
+	sudo netplan 
+	sudo netplan apply
+	ip address show lo
 
 
+	sudo ifconfig eth0 192.168.72.6 netmask 255.255.255.0
+	sudo route add default gw 192.168.72.1 eth0
 
-ls /etc/
-   /etc/resolv.conf
-  /etc/hosts
-  /etc/nsswitch.conf
-  /etc/netplan
-  /etc/interfaces
-  /etc/network/interfaces 
+
+ Files:
+	ls /etc/
+	   /etc/resolv.conf
+	  /etc/hosts
+	  /etc/nsswitch.conf
+	  /etc/netplan
+	  /etc/interfaces
+	  /etc/network/interfaces 
 
 
 
