@@ -1363,6 +1363,8 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
 
 
  Files:
+ 
+ 
 	ls /etc/
 	   /etc/resolv.conf
 	  /etc/hosts
