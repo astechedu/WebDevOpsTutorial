@@ -26,7 +26,7 @@ Topics: <br />
   20. [How to View the Directories in PATH](#view_dir_path)
   21. [Apache Allow Access IP Address](#ubuntu_appache_allow_ip_address)
   22. []()
-  23. [](#network_cmds_linux)
+  23. [Network cmds on ubuntu](#network_cmds_linux)
 
 //Delete All Directories / Files
 
