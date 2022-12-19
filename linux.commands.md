@@ -1041,49 +1041,53 @@ Install Laravel 8 on Ubuntu:
 
 
 //
-
  Laravel Project: 
  
  composer path: 
-   PATH="~/.config/composer/vendor/bin:$PATH"             //temporarily adding that PATH 
-   export PATH="$HOME/.config/composer/vendor/bin:$PATH"  //Permanently add your PATH
-   
-   composer global require laravel/installer
-   
- sudo chgrp -R www-data /var/www/html/example/
- sudo chown -R www-data:www-data /var/www/html/domainname
- sudo chmod -R 775 /var/www/html/example/storage
  
- cd /etc/apache2/sites-available
+	PATH="~/.config/composer/vendor/bin:$PATH"             //temporarily adding that PATH 
+	export PATH="$HOME/.config/composer/vendor/bin:$PATH"  //Permanently add your PATH
 
- sudo nano laravel_project.conf
+        composer global require laravel/installer
+
+	sudo chgrp -R www-data /var/www/html/example/
+	sudo chown -R www-data:www-data /var/www/html/domainname
+	sudo chmod -R 775 /var/www/html/example/storage
+
+ 	cd /etc/apache2/sites-available
+
+ 	sudo nano laravel_project.conf
  
-<VirtualHost *:80>
-   ServerName thedomain.com
-   ServerAdmin webmaster@thedomain.com
-   DocumentRoot /var/www/html/example/public
-
-   <Directory /var/www/html/example>
-       AllowOverride All
-   </Directory>
-   ErrorLog ${APACHE_LOG_DIR}/error.log
-   CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-
-
- sudo a2dissite 000-default.conf
- sudo a2ensite laravel_project
- sudo a2enmod rewrite
- sudo systemctl restart apache2
  
+	<VirtualHost *:80>
+	   ServerName thedomain.com
+	   ServerAdmin webmaster@thedomain.com
+	   DocumentRoot /var/www/html/example/public
+
+	   <Directory /var/www/html/example>
+	       AllowOverride All
+	   </Directory>
+	   ErrorLog ${APACHE_LOG_DIR}/error.log
+	   CustomLog ${APACHE_LOG_DIR}/access.log combined
+	</VirtualHost>
+
+
+	 sudo a2dissite 000-default.conf
+	 sudo a2ensite laravel_project
+	 sudo a2enmod rewrite
+	 sudo systemctl restart apache2
+
  
 Uninstall Laravel and Composer:
 
 To uninstall Laravel we only have to delete the folder of the generated project. In the case –  the Composer, the following command will be enough:
 
-sudo rm /usr/local/bin/composer
+
+	sudo rm /usr/local/bin/composer
+
 
 That’s it. Laravel is removed from your VPS. 
+
 
 
 
