@@ -994,47 +994,96 @@ http://sysmon.tecmint.lan
 
 PHP: 
 
-//Checking which php modules enabled or disabled
-
-sudo a2query -m php8.2
-sudo a2query -m php8.1
-sudo a2query -m php8.0
-
-//Disable 
-sudo a2dismod  php8.0
+Checking which php modules enabled or disabled:
 
 
-//Enable suitable php modules
-sudo a2enmod  php8.2
+	sudo a2query -m php8.2
+	sudo a2query -m php8.1
+	sudo a2query -m php8.0
 
-sudo a2enmod rewrite
-sudo a2ensite laravel.com.conf     //ls /etc/apache2/sites-available/laravel.com.conf
+Disable:
+
+	sudo a2dismod  php8.0
+
+
+Enable suitable php modules:
+
+	sudo a2enmod  php8.2
+
+	sudo a2enmod rewrite
+	
+	sudo a2ensite laravel.com.conf     //ls /etc/apache2/sites-available/laravel.com.conf
 
 Apache2:
 
-sudo nano /etc/hosts
-127.0.0.1 localhost
-127.0.0.1 laravel.com www.laravel.conf
+	sudo nano /etc/hosts
+	127.0.0.1 localhost
+	127.0.0.1 laravel.com www.laravel.conf
 
 
 Install Laravel 8 on Ubuntu:
 
-composer global require laravel/installer
+	composer global require laravel/installer
 
-sudo nano ~/.bashrc
-export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-echo $PATH
+	sudo nano ~/.bashrc
+	export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+	echo $PATH
 
 
-cd /var/www/html
-sudo composer create-project laravel/laravel laravelapp
+	cd /var/www/html
+	sudo composer create-project laravel/laravel laravelapp
 
-sudo chown -R www-data:www-data /var/www/html/laravelapp
-sudo chmod -R 775 /var/www/html/laravelapp/storage
+	sudo chown -R www-data:www-data /var/www/html/laravelapp
+	sudo chmod -R 775 /var/www/html/laravelapp/storage
 
-cd laravelapp
-php artisan
+	cd laravelapp
+	php artisan
 
+
+//
+
+ Laravel Project: 
+ 
+ composer path: 
+   PATH="~/.config/composer/vendor/bin:$PATH"             //temporarily adding that PATH 
+   export PATH="$HOME/.config/composer/vendor/bin:$PATH"  //Permanently add your PATH
+   
+   composer global require laravel/installer
+   
+ sudo chgrp -R www-data /var/www/html/example/
+ sudo chown -R www-data:www-data /var/www/html/domainname
+ sudo chmod -R 775 /var/www/html/example/storage
+ 
+ cd /etc/apache2/sites-available
+
+ sudo nano laravel_project.conf
+ 
+<VirtualHost *:80>
+   ServerName thedomain.com
+   ServerAdmin webmaster@thedomain.com
+   DocumentRoot /var/www/html/example/public
+
+   <Directory /var/www/html/example>
+       AllowOverride All
+   </Directory>
+   ErrorLog ${APACHE_LOG_DIR}/error.log
+   CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+ sudo a2dissite 000-default.conf
+ sudo a2ensite laravel_project
+ sudo a2enmod rewrite
+ sudo systemctl restart apache2
+ 
+ 
+Uninstall Laravel and Composer:
+
+To uninstall Laravel we only have to delete the folder of the generated project. In the case –  the Composer, the following command will be enough:
+
+sudo rm /usr/local/bin/composer
+
+That’s it. Laravel is removed from your VPS. 
 
 
 
