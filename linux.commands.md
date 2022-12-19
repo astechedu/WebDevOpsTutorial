@@ -1493,14 +1493,17 @@ Installing Composer:
 	curl -sS https://getcomposer.org/installer | php
 	sudo mv composer.phar /usr/local/bin/composer
 
+	sudo chmod +x /usr/local/bin/composer
+
 
 
 	Installing Yii: 
 
 	composer create-project --prefer-dist yiisoft/yii2-app-basic basic
-
-
-
+      
+          OR
+	  
+        sudo composer create-project --prefer-dist --ignore-platform-reqs yiisoft/yii2-app-basic projectyii
 
 
 :end:
