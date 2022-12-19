@@ -1481,6 +1481,7 @@ Install Symfony Components:
 
 
 
+[Go To Top](#top)
 <a name="yii_on_ubuntu"></a>
 # 25. yii2 installation: 
 
@@ -1503,4 +1504,5 @@ Installing Composer:
 
 
 :end:
+
 <a name="top"></a>
