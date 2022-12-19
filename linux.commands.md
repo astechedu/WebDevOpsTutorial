@@ -1336,6 +1336,7 @@ http://localhost
 
 
 
+
 [Go To Top](#top)
 <a name="find_ip_address_linux"></a>
 # 22. How to find my IP address on Ubuntu 20.04 Focal Fossa Linux:
@@ -1433,18 +1434,14 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
  
 	ls /etc/
 	   /etc/resolv.conf
-	  /etc/hosts
-	  /etc/nsswitch.conf
-	  /etc/netplan
-	  /etc/interfaces
-	  /etc/network/interfaces 
-
-
-
-
+	   /etc/hosts
+	   /etc/nsswitch.conf
+	   /etc/netplan
+	   /etc/interfaces
+	   /etc/network/interfaces 
 
 
 :end:
-
+<a name="top"></a>
 
 
