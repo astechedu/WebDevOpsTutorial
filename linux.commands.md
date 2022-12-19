@@ -28,6 +28,7 @@ Topics: <br />
   22. [How to find my IP address on Ubuntu 20.04 Focal Fossa Linux](#find_ip_address_linux)
   23. [Network cmds on ubuntu](#network_cmds_linux)
   24. [Symfony Installation](#symfony_on_ubuntu)
+  25. [Yii Framework](#yii_on_ubuntu)
 
 //Delete All Directories / Files
 
@@ -1472,6 +1473,30 @@ Install Symfony Components:
 
 
 	composer require symfony/asset
+
+
+
+
+
+
+
+
+<a name="yii_on_ubuntu"></a>
+# 24. yii2 installation: 
+
+
+Installing via Composer:
+
+Installing Composer:
+
+	curl -sS https://getcomposer.org/installer | php
+	sudo mv composer.phar /usr/local/bin/composer
+
+
+
+	Installing Yii: 
+
+	composer create-project --prefer-dist yiisoft/yii2-app-basic basic
 
 
 
