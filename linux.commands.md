@@ -1443,5 +1443,3 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
 
 :end:
 <a name="top"></a>
-
-
