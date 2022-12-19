@@ -27,6 +27,7 @@ Topics: <br />
   21. [Apache Allow Access IP Address](#ubuntu_apache_allow_ip_address)
   22. [How to find my IP address on Ubuntu 20.04 Focal Fossa Linux](#find_ip_address_linux)
   23. [Network cmds on ubuntu](#network_cmds_linux)
+  24. [Symfony Installation](#symfony_on_ubuntu)
 
 //Delete All Directories / Files
 
@@ -1439,6 +1440,41 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
 	   /etc/netplan
 	   /etc/interfaces
 	   /etc/network/interfaces 
+
+
+
+[Go To Top](#top)
+<a name="symfony_on_ubuntu"></a>
+# 23. Download Symfony: 
+
+Step 1. Install Symfony CLI 
+
+
+Debian/Ubuntu — APT based Linux:
+
+	curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | sudo -E bash
+	sudo apt install symfony-cli
+
+
+	wget https://get.symfony.com/cli/installer -O - | bash
+	OR
+	curl -sS https://get.symfony.com/cli/installer | bash
+
+
+Step 2. Create New Symfony Applications: 
+
+	symfony new --webapp my_project     //traditional web application
+	symfony new my_project              //microservice, console application or API
+	
+
+
+Install Symfony Components: 
+
+
+	composer require symfony/asset
+
+
+
 
 
 :end:
