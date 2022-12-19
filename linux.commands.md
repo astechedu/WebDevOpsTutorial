@@ -234,7 +234,7 @@ Alternetively:
 
 
 
-
+[Go To Top](#top)
 <a name="install_php"></a>
 ### 3. Install PHP:
 
@@ -266,7 +266,7 @@ check the version:
       
       
       
-      
+[Go To Top](#top)      
 <a name="install_composer"></a>          
 ### 4. Install Composer On Ubuntu:
 
@@ -277,7 +277,7 @@ check the version:
           
        
        
-       
+[Go To Top](#top)      
 <a name="install_apache2"></a>
 
 ### 5. Install Apache2
@@ -289,7 +289,7 @@ check the version:
           
           
 	  
-	  
+[Go To Top](#top)	  
  <a name="install_mysql"></a> 
 ### 6. Install MySQL
  
@@ -303,7 +303,7 @@ check the version:
  
  
  
- 
+[Go To Top](#top) 
  <a name="install_git"></a>
  ### 7. Install Git
  
@@ -369,7 +369,7 @@ check the version:
 
 
 
-
+[Go To Top](#top)
  <a name="lamp_ubuntu"></a> 
 ### 8. How to Install LAMP Apache, MySQL, PHP in Ubuntu 20.04
 
@@ -582,7 +582,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
    
    
-   
+[Go To Top](#top)   
 <a name="apache_serve_laravel_site"></a>
 ### 9. Configure Apache to serve Laravel site
 
@@ -608,7 +608,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 
-
+[Go To Top](#top)
 <a name="ubuntu20.04"></a> 
 ### 10. Install nginx on Ubuntu
 
@@ -633,6 +633,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 
+[Go To Top](#top)
 <a name="kali_linux"></a> 
 ### 11. Install nginx on Kali Linux 2020.4 
 
@@ -660,7 +661,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 
-
+[Go To Top](#top)
 <a name="linux_mint"></a> 
 ### 12. Install nginx on Linux Mint
 
@@ -679,6 +680,7 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
 
 
 
+[Go To Top](#top)
 <a name="laravel_installation"></a>
 ### 13. Install Laravel
 
@@ -699,9 +701,10 @@ Now you have learned how to install LAMP stack Ubuntu 20.04.
      php artisan
      
      
-     
+   
+   
 
-
+[Go To Top](#top)
 <a name="deploy_laravel"></a>
 ### 14. How to Deploy Laravel Project with Apache on Ubuntu: 
 
@@ -819,6 +822,8 @@ Change the following lines:
 
 
 
+
+[Go To Top](#top)
 <a name="nodejs_npm"></a> 
 ### 15. Step 1: Installing Nodejs and NPM in Linux:
     
@@ -983,7 +988,7 @@ http://sysmon.tecmint.lan
 
 
 
-
+[Go To Top](#top)
 <a name="laravel_apache2_fixed"></a>
 ### 16. PHP Composer Apache2 Laravel Config (Fix Problems)
 
@@ -1035,6 +1040,8 @@ php artisan
 
 
 
+
+[Go To Top](#top)
 <a name="id_address_linux"></a>
 ### 17. How to find my IP address on Ubuntu 20.04 Focal Fossa Linux
 
@@ -1092,7 +1099,7 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
      ip r
 
 
-
+[Go To Top](#top)
 <a name="set_path_linux"></a>
 # 18. How Do I Add a Directory to PATH in Linux?
 
@@ -1145,6 +1152,8 @@ Add directory to profile file in Vim
 
 
 
+
+[Go To Top](#top)
 <a name="del_path_linux"></a>
 # 19. Remove Directory from PATH in Linux
 
@@ -1175,6 +1184,7 @@ Another option is to use the combination of tr, grep and paste to remove a direc
 
 
 
+[Go To Top](#top)
 <a name="view_dir_path"></a>
 # 20. How to View the Directories in PATH
 
@@ -1188,8 +1198,9 @@ Another option is to use the combination of tr, grep and paste to remove a direc
 
 
 
-<a name="ubuntu_apache_allow_ip_address"></a>
 
+[Go To Top](#top)
+<a name="ubuntu_apache_allow_ip_address"></a>
 # 21. Apache Allow Access IP Address:
 
 How to Access Allow by IP Address in Apache Ubuntu
@@ -1272,6 +1283,7 @@ http://localhost
 
 
 
+[Go To Top](#top)
 <a name="find_ip_address_linux"></a>
 # 22. How to find my IP address on Ubuntu 20.04 Focal Fossa Linux:
 
@@ -1334,7 +1346,7 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
 
 
 
-
+[Go To Top](#top)
 <a name="network_cmds_linux"></a>
 # 23. Network cmds on ubuntu: 
 
