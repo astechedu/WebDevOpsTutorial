@@ -154,3 +154,5 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 # Windows Info :diamond_shape_with_a_dot_inside:
 
 :link:[Windows Info click here](windows.info.txt)
+
+:end:
