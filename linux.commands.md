@@ -1446,7 +1446,7 @@ Open the terminal by pressing Ctrl+Alt+T and enter the following hostname comman
 
 [Go To Top](#top)
 <a name="symfony_on_ubuntu"></a>
-# 23. Download Symfony: 
+# 24. Download Symfony: 
 
 Step 1. Install Symfony CLI 
 
@@ -1482,7 +1482,7 @@ Install Symfony Components:
 
 
 <a name="yii_on_ubuntu"></a>
-# 24. yii2 installation: 
+# 25. yii2 installation: 
 
 
 Installing via Composer:
