@@ -29,7 +29,7 @@ Topics: <br />
   23. [Network cmds on ubuntu](#network_cmds_linux)
   24. [Symfony Installation](#symfony_on_ubuntu)
   25. [Yii Framework](#yii_on_ubuntu)
-  26. [Cakephp](#cakephp_on_ubunut)
+  26. [Cakephp](#cakephp_on_ubuntu)
   27. [Codeigniter Installation](#codeigniter_on_ubuntu)
 
 //Delete All Directories / Files
@@ -1519,7 +1519,7 @@ Installing Composer:
 
 
 [Go To Top](#top)
-<a name="cakphp_on_ubuntu"></a>
+<a name="cakephp_on_ubuntu"></a>
 # 26. Cakephp Installation
 
 	sudo chown -R www-data:www-data /var/www/html/cakephp
@@ -1548,10 +1548,12 @@ Cakephp:
 	a2enmod rewrite 
 	sudo systemctl reload apache2
         
+	
+	
 
 [Go To Top](#top)
-<a name="codeigniter_on_ububtu"></a>
-# 25. How to Install CodeIgniter on Ubuntu 20.04
+<a name="codeigniter_on_ubuntu"></a>
+# 27. How to Install CodeIgniter on Ubuntu 20.04
 
 Installing Composer:
 
