@@ -1519,15 +1519,24 @@ Installing Composer:
  
  
 Cakephp: 
-
+       cd /var/www/html
+       
 	composer composer create-project --prefer-dist cakephp/app cakephp01  
 
 		OR
 
 	composer self-update && composer create-project --prefer-dist cakephp/app cakephp01  
+	
 
+	    <Directory /var/www/>  
+		    Options Indexes FollowSymLinks  
+		    AllowOverride All  
+		    Require all granted  
+	    </Directory> 
+	    
 
         a2ensite 000-default.conf
+	a2enmod rewrite 
 	sudo systemctl reload apache2
         
 
