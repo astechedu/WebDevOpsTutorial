@@ -30,7 +30,7 @@ Topics: <br />
   24. [Symfony Installation](#symfony_on_ubuntu)
   25. [Yii Framework](#yii_on_ubuntu)
   26. [Cakephp](#cakephp_on_ubuntu)
-  27. [Codeigniter Installation](#codeigniter_on_ubuntu)
+  27. [How to Install CodeIgniter on Ubuntu 20.04](#codeigniter_on_ubuntu)
 
 //Delete All Directories / Files
 
