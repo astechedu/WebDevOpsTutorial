@@ -278,7 +278,13 @@ check the version:
      sudo apt-get update
      sudo apt-get install git composer -y 
           
-       
+  OR
+
+	curl -sS https://getcomposer.org/installer | php
+
+	mv composer.phar /usr/local/bin/composer
+	chmod +x /usr/local/bin/composer
+
        
 [Go To Top](#top)      
 <a name="install_apache2"></a>
