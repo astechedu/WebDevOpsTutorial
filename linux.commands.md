@@ -29,6 +29,7 @@ Topics: <br />
   23. [Network cmds on ubuntu](#network_cmds_linux)
   24. [Symfony Installation](#symfony_on_ubuntu)
   25. [Yii Framework](#yii_on_ubuntu)
+  26. [Cakephp](#cakephp_on_ubunut)
 
 //Delete All Directories / Files
 
@@ -1504,6 +1505,30 @@ Installing Composer:
           OR
 	  
         sudo composer create-project --prefer-dist --ignore-platform-reqs yiisoft/yii2-app-basic projectyii
+
+
+
+
+[Go To Top](#top)
+<a name="cakphp_on_ubuntu"></a>
+# 26. Cakephp Installation
+
+	sudo chown -R www-data:www-data /var/www/html/cakephp
+	sudo chmod -R 775 /var/www/html/cakephp/storage
+ 
+ 
+ 
+Cakephp: 
+
+	composer composer create-project --prefer-dist cakephp/app cakephp01  
+
+		OR
+
+	composer self-update && composer create-project --prefer-dist cakephp/app cakephp01  
+
+
+
+
 
 
 :end:
