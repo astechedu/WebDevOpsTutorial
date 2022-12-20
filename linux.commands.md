@@ -1527,7 +1527,7 @@ Cakephp:
 	composer self-update && composer create-project --prefer-dist cakephp/app cakephp01  
 
 
-        a2ensite cakephp.com.conf
+        a2ensite 000-default.conf
 	sudo systemctl reload apache2
         
 
