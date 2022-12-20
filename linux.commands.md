@@ -30,6 +30,7 @@ Topics: <br />
   24. [Symfony Installation](#symfony_on_ubuntu)
   25. [Yii Framework](#yii_on_ubuntu)
   26. [Cakephp](#cakephp_on_ubunut)
+  27. [Codeigniter Installation](#codeigniter_on_ubuntu)
 
 //Delete All Directories / Files
 
@@ -1547,6 +1548,98 @@ Cakephp:
 	a2enmod rewrite 
 	sudo systemctl reload apache2
         
+
+[Go To Top](#top)
+<a name="codeigniter_on_ububtu"></a>
+# 25. How to Install CodeIgniter on Ubuntu 20.04
+
+Installing Composer:
+
+	curl -sS https://getcomposer.org/installer | php
+
+	mv composer.phar /usr/local/bin/composer
+	chmod +x /usr/local/bin/composer
+	
+	
+Create CodeIgniter Application:	
+
+	composer create-project codeigniter4/appstarter CodeApp
+
+
+Configure Database: 
+
+	mysql -u root -p
+	
+	
+		CREATE DATABASE codeigniter4;
+		CREATE USER 'dbuser'@'localhost' IDENTIFIED BY '_password_';
+		GRANT ALL ON codeigniter4.* to 'dbuser'@'localhost';
+		FLUSH PRIVILEGES;
+		quit	
+
+
+
+	  nano app/Config/Database.php
+	   
+		public $default = [
+			'DSN'      => '',
+			'hostname' => 'localhost',
+			'username' => 'dbuser',
+			'password' => 'm2n1shlko',
+			'database' => 'codeigniter4',
+			'DBDriver' => 'MySQLi',
+			'DBPrefix' => '',
+			'pConnect' => false,
+			'DBDebug'  => (ENVIRONMENT !== 'production'),
+			'cacheOn'  => false,
+			'cacheDir' => '',
+			'charset'  => 'utf8',
+			'DBCollat' => 'utf8_general_ci',
+			'swapPre'  => '',
+			'encrypt'  => false,
+			'compress' => false,
+			'strictOn' => false,
+			'failover' => [],
+			'port'     => 3306,
+		];	   
+	   
+	
+	
+	
+Configure Codeigniter Application: 
+
+
+	vi app/Config/App.php
+	public $baseURL = 'http://www.example.local/';
+
+        public $appTimezone = 'UTC';
+	
+	
+	
+
+Configure Apache for Codeigniter: 
+
+	vi /etc/apache2/sites-available/codeigniter4.conf
+
+	<VirtualHost *:80>
+	    ServerName example.local
+	    ServerAlias www.example.local
+	    DocumentRoot /var/www/CodeApp/public
+	    <Directory /var/www/CodeApp>
+		  Allowoverride All
+	    </Directory>
+	</VirtualHost>
+
+
+	 sudo a2ensite codeigniter4
+	 sudo systemctl restart apache2
+	 
+	 
+	 
+ Test Application: 
+ 
+	  http://www.example.local/
+
 
 
 :end:
