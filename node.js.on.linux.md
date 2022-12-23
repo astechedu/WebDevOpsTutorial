@@ -4,11 +4,11 @@
 <a name="top"></a>
 Topics:
 
- [How To Install Node.js on Ubuntu 20.04](#nodejs_on_linux)
- [Install NPM](#npm_on_linux)
- [How to Install ReactJS on Ubuntu 20.04?](#react_on_linux)
- [Install Vue Js](#vue_on_linux)
- [Install Angular](#angular_on_linux)
+ [How To Install Node.js on Ubuntu 20.04](#nodejs_on_linux) <br>
+ [Install NPM](#npm_on_linux) <br>
+ [How to Install ReactJS on Ubuntu 20.04?](#react_on_linux)<br>
+ [Install Vue Js](#vue_on_linux)<br>
+ [Install Angular](#angular_on_linux)<br>
     
   
   
