@@ -20,14 +20,14 @@ Topics:
 <a name="nodejs_on_linux">
 # How To Install Node.js on Ubuntu 20.04
 
-      sudo apt update
-      sudo apt install nodejs
+	sudo apt update
+	sudo apt install nodejs
 	
 	OR
 	
-      sudo apt install nodejs npm
+	sudo apt install nodejs npm
 	
-      node -v
+	node -v
 
 	
 	
