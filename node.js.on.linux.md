@@ -11,7 +11,7 @@ Topics:
     
   
   
-  [Go to Top](#nodejs_on_linux)
+  [Go to Top](#top)
   <a name="nodejs_on_linux">
 # How To Install Node.js on Ubuntu 20.04
 
@@ -22,7 +22,7 @@ Topics:
  
  
   [Go to Top](#nodejs_on_linux)
-  <a name="npm_on_linux">
+  <a name="top">
 # Install NPM on Ubuntu 20.04
    
        sudo apt update
@@ -40,9 +40,8 @@ Topics:
    
    
    
-   
-  [Go to Top](#nodejs_on_linux)
-  <a name="react_on_linux">
+ [Go to Top](#top)
+<a name="react_on_linux">
 # Install React App On Ubuntu 20.04
    
 
