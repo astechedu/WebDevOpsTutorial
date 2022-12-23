@@ -44,11 +44,12 @@ NodeSource is a company focused on providing enterprise-grade Node support. It m
 	curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
 	sudo apt-get install -y nodejs
 	
-        OR
+	OR
 	
 	curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
 	sudo apt-get install -y nodejs
 	
+	OR
 	
 	curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 	
