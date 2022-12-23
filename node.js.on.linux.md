@@ -92,7 +92,7 @@ If you're not a fan of curl <url> | bash -, or are using an unsupported distribu
 
 These instructions assume sudo is present, however some distributions do not include this command by default, particularly those focused on a minimal environment. In this case, you should install sudo or su to root to run the commands directly.
 
-1. Remove the old PPA if it exists
+       1. Remove the old PPA if it exists
 
 This step is only required if you previously used Chris Lea's Node.js PPA.
 
@@ -103,7 +103,7 @@ This step is only required if you previously used Chris Lea's Node.js PPA.
 	sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
 
 	
-2. Add the NodeSource package signing key
+        2. Add the NodeSource package signing key
 
 	KEYRING=/usr/share/keyrings/nodesource.gpg
 	curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null
@@ -111,10 +111,11 @@ This step is only required if you previously used Chris Lea's Node.js PPA.
 	# wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null
 	gpg --no-default-keyring --keyring "$KEYRING" --list-keys
 
+	
 The key ID is 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280.
 
 	
-3. Add the desired NodeSource repository
+        3. Add the desired NodeSource repository
 
 # Replace with the branch of Node.js or io.js you want to install: node_8.x, node_16.x, etc...
 	
@@ -125,11 +126,12 @@ The key ID is 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280.
 	# - For Debian distributions: jessie, sid, etc...
 	# - For Ubuntu distributions: xenial, bionic, etc...
 	# - For Debian or Ubuntu derived distributions your best option is to use the codename corresponding to the upstream release your distribution is based off. This is an advanced scenario and unsupported if your distribution is not listed as supported per earlier in this README.
+	
 	DISTRO="$(lsb_release -s -c)"
 	echo "deb [signed-by=$KEYRING] https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 	echo "deb-src [signed-by=$KEYRING] https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
 
-4. Update package lists and install Node.js
+        4. Update package lists and install Node.js
 
 	sudo apt-get update
 	sudo apt-get install nodejs
