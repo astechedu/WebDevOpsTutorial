@@ -91,7 +91,7 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
 :link:[Linux Basic CMDS md](linux.basic.cmds.md)
 
-:link:[Installations apache composer git php etc. click here md](linux.commands.md)
+:link:[Installations apache composer git php laravel etc. click here md](linux.commands.md)
 
 :link:[Linux Commands click here txt](linux.commands.txt)
 
