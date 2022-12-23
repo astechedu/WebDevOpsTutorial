@@ -182,6 +182,10 @@ Output:
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
+	
+	Confirm you have successfully installed NVM.
+
+        command -v nvm
 	nvm --version
 	nvm list-remote
 	nvm install node
@@ -261,6 +265,78 @@ Now using node v12.22.6 (npm v6.14.5)
 	 node -v
 	
 v12.22.6	
+	
+	
+	
+    #### Use NVM to Install Node
+	
+	nvm install node
+	nvm ls-remote
+	
+	nvm install 13.10.1 # Specific minor release
+	nvm install 14 # Specify major release only	
+	
+	
+    #### List Node Versions with NVM	
+	
+	nvm ls
+	
+    #### The NVM Use Command
+	
+	nvm use node
+	
+	or
+
+	nvm use 14
+
+	nvm current
+	
+	
+     #### NVM: Switch Node Version	
+	
+	nvm run node
+
+	
+     #### Creating NVM Aliases
+	
+	
+	nvm alias default 14
+	nvm alias maintenance 13.10.1
+	nvm ls
+
+	
+     #### Use NVM to Install Latest LTS Node.js Release
+	
+	
+	nvm install --lts
+	nvm install --lts=argon
+	nvm use --lts
+	nvm use lts/argon	
+	
+	
+      #### Additional NVM Capabilities
+	
+	nvm install node --reinstall-packages-from=default
+	nvm set-colors rgBcm
+	
+	
+      #### Use NVM to Uninstall Node
+	
+	nvm uninstall 13.10.1
+	Uninstalled node v13.10.1
+	
+      #### NVM Uninstall Steps
+       
+	nvm deactivate
+	nvm unload
+	
+	
+       Clean up your .bashrc file by removing the following lines:
+	
+	
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm	
 	
 	
 	
