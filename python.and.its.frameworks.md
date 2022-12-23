@@ -1,4 +1,4 @@
-$\color{purple}{Python And Its Framworks Installations}$
+$\color{purple}{Python \ And \ Its \ Framworks \ Installations}$
 
 <a name="top"></a>
 Topics:
