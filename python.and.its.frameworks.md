@@ -17,7 +17,7 @@ Topics:
   # How To Install Python 3 and Set Up a Programming Environment on an Ubuntu 20.04 Server
  
  
- Setting Up Python 3: 
+Setting Up Python 3: 
  
      sudo apt update
      sudo apt -y upgrade
@@ -28,7 +28,7 @@ Topics:
      sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
 
  
- Setting Up a Virtual Environment: 
+Setting Up a Virtual Environment: 
  
       sudo apt install -y python3-venv
       mkdir environments
@@ -38,7 +38,7 @@ Topics:
       source source my_env/bin/activate
       (my_env) ajay@sisaudiya:~/environment$
  
- Creating a “Hello, World” Program: 
+Creating a “Hello, World” Program: 
  
        (my_env) ajay@sisaudiya:~/environment$ nano hello.py
  
@@ -95,7 +95,7 @@ Topics:
    
    
   [Go to Top](#nodejs_on_linux)
-  <a name="flash_on_linux">
+  <a name="django_on_linux">
   # Install React App On Ubuntu 20.04
    
      Installed Python: 
@@ -109,7 +109,8 @@ Topics:
    
    
    
-   Install with pip in a Virtual Environment: 
+Install with pip in a Virtual Environment: 
+   
         sudo apt update
         python3 -V
         sudo apt install python3-pip python3-venv
@@ -122,6 +123,49 @@ Topics:
         (my_env) ajay@sisaudiya:~/myapp$ deactivate
         cd ~/newproject
         source my_env/bin/activate
+   
+   
+Development Version Install with Git:
+   
+       sudo apt update
+       python3 -V
+   
+       sudo apt install python3-pip python3-venv
+       git clone git://github.com/django/django ~/django-dev
+       cd ~/django-dev
+       python3 -m venv my_env
+       source my_env/bin/activate
+       (my_env)$ pip install -e ~/django-dev
+       django-admin --version
+   
+Creating a Sample Project: 
+   
+   
+        mkdir ~/django-test
+        cd ~/django-test 
+        python3 -m venv my_env
+        source my_env/bin/activate
+        (my_env)$ pip install django
+        (my_env)$ django-admin startproject djangoproject .
+        (my_env)$ python manage.py migrate       
+        (my_env)$ python manage.py createsuperuser
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
    
    
