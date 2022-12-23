@@ -153,7 +153,7 @@ The key ID is 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280.
 NVM (Node Version Manager) is a bash script that allows you to manage multiple Node.js versions on a per-user basis. With NVM you can install and uninstall any Node.js version that you want to use or test.
 	
 	
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 	
 	OR
 	
