@@ -3,9 +3,10 @@ $$\color{purple}{Python \ And \ Its \ Framworks \ Installations}$$
 <a name="top"></a>
 Topics:
 
- 1. [How To Install Python 3 and Set Up a Programming Environment on an Ubuntu 20.04 Server](#python_on_linux)
- 2. [How to Install virtualenv on Ubuntu 20.04 LTS (Focal Fossa)](#django_on_linux)
- 3. [Install React App](#flash_on_linux)
+ 1. [How To Install Python 3 and Set Up a Programming Environment on an Ubuntu 20.04 Server](#python_on_linux) <br>
+ 2. [How to Install virtualenv on Ubuntu 20.04 LTS (Focal Fossa)](#venv_on_linux) <br>
+ 3. [How To Install the Django Web Framework on Ubuntu 20.04](#django_on_linux) <br>
+ 4. [How To Install the Flask Web Framework on Ubuntu 20.04](#flash_on_linux) <br>
   
   
   
@@ -56,7 +57,7 @@ Topics:
  
  
   [Go to Top](#top)
-  <a name="django_on_linux">
+  <a name="venv_on_linux">
   # How to Install virtualenv on Ubuntu 20.04 LTS (Focal Fossa)
    
    Update Your Server:
