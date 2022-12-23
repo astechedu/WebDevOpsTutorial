@@ -452,11 +452,20 @@ If you want to upgrade to the latest stable version of Vue.js:
  	vue create demo-app
  	vue ui
    
-	  
-	  
-	  
-	  
+	
+  Uninstall vue cli:
+	
+	npm uninstall -g @vue/cli
 
+	#or
+
+	yarn global remove @vue/cli	  
+
+	npm clear cache --force 
+
+	
+	
+	
 	
 [Go to Top](#top)
 <a name="angular_on_linux">
@@ -496,7 +505,15 @@ Creating New Angular Application:
    
 	  
 	  
-	  
+Uninstall Angular CLI:
+
+	npm uninstall -g @angular/cli
+
+Clear Cache:
+
+	npm cache clean --force
+
+	npm cache verify	  
 	  
    
  :end:
