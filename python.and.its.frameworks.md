@@ -151,23 +151,27 @@ Creating a Sample Project:
         (my_env)$ python manage.py createsuperuser
    
    
+Modifying ALLOWED_HOSTS in the Django Settings:
+   
+    (my_env)$ nano ~/django-test/djangoproject/settings.py
+   
+   
+   
+~/django-test/djangoproject/settings.py
+
+ALLOWED_HOSTS = ['your_server_ip_or_domain', 'your_second_ip_or_domain', . . .]
+
+Testing the Development Server: 
+      
+     
+    (my_env)$ sudo ufw allow 8000
+    (my_env)$ python manage.py runserver your_server_ip:8000
+    http://your_server_ip:8000
    
    
    
    
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+    
    
    
    
