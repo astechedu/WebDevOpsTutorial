@@ -488,6 +488,8 @@ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 	 	
 Creating New Angular Application: 
 
+	ng --version
+	ng new hello-world
 	cd hello-world
 	ng serve 	
 	ng serve --host 0.0.0.0 --port 8080 	
