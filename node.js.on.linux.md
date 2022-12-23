@@ -11,18 +11,18 @@ Topics:
     
   
   
-  [Go to Top](#top)
-  <a name="nodejs_on_linux">
+[Go to Top](#top)
+<a name="nodejs_on_linux">
 # How To Install Node.js on Ubuntu 20.04
 
       sudo apt update
       sudo apt install nodejs
       node -v
- 
- 
- 
-  [Go to Top](#nodejs_on_linux)
-  <a name="top">
+
+	
+	
+[Go to Top](#top)
+<a name="npm_on_linux">
 # Install NPM on Ubuntu 20.04
    
        sudo apt update
@@ -40,7 +40,7 @@ Topics:
    
    
    
- [Go to Top](#top)
+[Go to Top](#top)
 <a name="react_on_linux">
 # Install React App On Ubuntu 20.04
    
@@ -77,8 +77,8 @@ Install Create-React-App tool:
    
    
    
-  [Go to Top](#nodejs_on_linux)
-  <a name="vue_on_linux">
+[Go to Top](#top)
+<a name="vue_on_linux">
 # Install Vue Js On Ubuntu 20.04
 
  Install Vue.js in Ubuntu 20.04:
@@ -128,8 +128,8 @@ If you want to upgrade to the latest stable version of Vue.js:
 	  
 	  
 	  
-  [Go to Top](#nodejs_on_linux)
-  <a name="angular_on_linux">
+[Go to Top](#top)
+<a name="angular_on_linux">
 # How to Install Angular CLI on Ubuntu 20.04:
 
 
