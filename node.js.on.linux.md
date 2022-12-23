@@ -4,10 +4,12 @@ $$\color{purple}{NodeJs \ Npm \ React \ Vue \ Angular \ etc \ Installations}$$
 Topics:
 
  1. [Install Node.js and npm from the Ubuntu repository](#nodejs_on_linux) <br>
- 2. [Install NPM](#npm_on_linux) <br>
- 3. [How to Install ReactJS on Ubuntu 20.04?](#react_on_linux)<br>
- 4. [Install Vue.js in Ubuntu 20.04](#vue_on_linux)<br>
- 5. [How to Install Angular CLI on Ubuntu 20.04](#angular_on_linux)<br>
+ 2. [Install Node.js and npm from the Ubuntu repository](#nodejs_on_linux) <br>
+ 3. [Install Node.js and npm from the Ubuntu repository](#nodejs_on_linux) <br>
+ 4. [Install NPM](#npm_on_linux) <br>
+ 5. [How to Install ReactJS on Ubuntu 20.04?](#react_on_linux)<br>
+ 6. [Install Vue.js in Ubuntu 20.04](#vue_on_linux)<br>
+ 7. [How to Install Angular CLI on Ubuntu 20.04](#angular_on_linux)<br>
     
   
   
