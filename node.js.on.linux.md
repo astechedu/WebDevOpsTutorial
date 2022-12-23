@@ -402,8 +402,12 @@ Install Create-React-App tool:
  And your browser will open-up and shows you that the app is up and running with local host-3000
    
    
+ Uninstall create-react-app:
+	
+	 npm uninstall -g create-react-app
    
-   
+	
+	
    
 	
 [Go to Top](#top)
