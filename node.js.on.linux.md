@@ -39,7 +39,7 @@ Topics:
 # Installing Node.js and npm from NodeSource	
 	
 NodeSource is a company focused on providing enterprise-grade Node support. It maintains an APT repository containing multiple Node.js versions. Use this repository if your application requires a specific version of Node.js.
-	
+		
 	
 	curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash - &&\
 	sudo apt-get install -y nodejs
@@ -75,6 +75,16 @@ NodeSource is a company focused on providing enterprise-grade Node support. It m
 	
 	
 
+	
+### Uninstall nodejs Ubuntu & Debian packages
+
+To completely remove Node.js installed from the deb.nodesource.com package methods above:
+use sudo on Ubuntu or run this as root on debian
+
+	apt-get purge nodejs &&\
+	rm -r /etc/apt/sources.list.d/nodesource.list	
+	
+	
 	
 	
 	
