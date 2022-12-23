@@ -89,7 +89,7 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
 # Linux :diamond_shape_with_a_dot_inside:
 
-:link:[Installations Node npm react vue etc. Basic CMDS md](node.js.on.linx.md)
+:link:[Installations Node npm react vue etc. Basic CMDS md](node.js.on.linux.md)
 
 :link:[Linux Basic CMDS md](linux.basic.cmds.md)
 
