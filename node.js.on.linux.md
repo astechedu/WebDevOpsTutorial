@@ -18,7 +18,7 @@ Topics:
  
 [Go to Top](#top)
 <a name="nodejs_on_linux">
-# How To Install Node.js on Ubuntu 20.04
+# 1. How To Install Node.js on Ubuntu 20.04
 
 	sudo apt update
 	sudo apt install nodejs
@@ -36,7 +36,7 @@ Topics:
 	
 [Go to Top](#top)
 <a name="nodejs_from_NodeSourceon_linux">	
-# Installing Node.js and npm from NodeSource	
+# 2. Installing Node.js and npm from NodeSource	
 	
 NodeSource is a company focused on providing enterprise-grade Node support. It maintains an APT repository containing multiple Node.js versions. Use this repository if your application requires a specific version of Node.js.
 		
@@ -143,7 +143,7 @@ The key ID is 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280.
 	
 [Go to Top](#top)
 <a name="nodejs_using_nvm_on_linux">		
-# Installing Node.js and npm using NVM
+# 3. Installing Node.js and npm using NVM
 	
 NVM (Node Version Manager) is a bash script that allows you to manage multiple Node.js versions on a per-user basis. With NVM you can install and uninstall any Node.js version that you want to use or test.
 	
@@ -268,7 +268,7 @@ v12.22.6
 	
 [Go to Top](#top)
 <a name="npm_on_linux">
-# Install NPM on Ubuntu 20.04
+# 4. Install NPM on Ubuntu 20.04
    
        sudo apt update
        sudo apt install npm
@@ -285,9 +285,11 @@ v12.22.6
    
    
    
+	
+	
 [Go to Top](#top)
 <a name="react_on_linux">
-# Install React App On Ubuntu 20.04
+# 6. Install React App On Ubuntu 20.04
    
 
 How to Install ReactJS on Ubuntu 20.04?
@@ -322,9 +324,10 @@ Install Create-React-App tool:
    
    
    
+	
 [Go to Top](#top)
 <a name="vue_on_linux">
-# Install Vue Js On Ubuntu 20.04
+# 7. Install Vue Js On Ubuntu 20.04
 
  Install Vue.js in Ubuntu 20.04:
  
@@ -372,10 +375,11 @@ If you want to upgrade to the latest stable version of Vue.js:
 	  
 	  
 	  
-	  
+
+	
 [Go to Top](#top)
 <a name="angular_on_linux">
-# How to Install Angular CLI on Ubuntu 20.04:
+# 8. How to Install Angular CLI on Ubuntu 20.04:
 
 
 Installing Node.js:
