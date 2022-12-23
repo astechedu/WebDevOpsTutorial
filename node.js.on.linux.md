@@ -41,9 +41,20 @@ Topics:
 NodeSource is a company focused on providing enterprise-grade Node support. It maintains an APT repository containing multiple Node.js versions. Use this repository if your application requires a specific version of Node.js.
 	
 	curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+	
+	OR 	
+
+	curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+	
 	sudo apt install nodejs
+	
+	OR
+	
+	sudo apt-get install -y nodejs
+	
 	node --version
 	npm --version
+	
 	sudo apt install build-essential
 	
 	
