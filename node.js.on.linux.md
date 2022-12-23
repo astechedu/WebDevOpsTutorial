@@ -289,7 +289,7 @@ v12.22.6
 	
 [Go to Top](#top)
 <a name="react_on_linux">
-# 6. Install React App On Ubuntu 20.04
+# 5. Install React App On Ubuntu 20.04
    
 
 How to Install ReactJS on Ubuntu 20.04?
@@ -327,7 +327,7 @@ Install Create-React-App tool:
 	
 [Go to Top](#top)
 <a name="vue_on_linux">
-# 7. Install Vue Js On Ubuntu 20.04
+# 6. Install Vue Js On Ubuntu 20.04
 
  Install Vue.js in Ubuntu 20.04:
  
@@ -379,7 +379,7 @@ If you want to upgrade to the latest stable version of Vue.js:
 	
 [Go to Top](#top)
 <a name="angular_on_linux">
-# 8. How to Install Angular CLI on Ubuntu 20.04:
+# 7. How to Install Angular CLI on Ubuntu 20.04:
 
 
 Installing Node.js:
