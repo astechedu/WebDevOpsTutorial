@@ -13,8 +13,7 @@ Topics:
   
   
   
-  
-<br>  
+ 
 [Go to Top](#top)
 <a name="nodejs_on_linux">
 # How To Install Node.js on Ubuntu 20.04
@@ -26,7 +25,6 @@ Topics:
 	
 	
 	
-<br>	
 [Go to Top](#top)
 <a name="npm_on_linux">
 # Install NPM on Ubuntu 20.04
