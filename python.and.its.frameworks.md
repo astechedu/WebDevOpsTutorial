@@ -10,9 +10,11 @@ Topics:
   
   
   
+  
   [Go to Top](#top)
   <a name="python_on_linux">
   # How To Install Python 3 and Set Up a Programming Environment on an Ubuntu 20.04 Server
+ 
  
  Setting Up Python 3: 
  
@@ -20,27 +22,27 @@ Topics:
      sudo apt -y upgrade
      python3 -V
 
-      sudo apt install -y python3-pip
-      pip3 install package_name
-      sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
+     sudo apt install -y python3-pip
+     pip3 install package_name
+     sudo apt install -y build-essential libssl-dev libffi-dev python3-dev
 
  
  Setting Up a Virtual Environment: 
  
-       sudo apt install -y python3-venv
-       mkdir environments
-       cd environments
-       python3 -m venv my_env
-       ls my_env
-       source source my_env/bin/activate
-       (my_env) ajay@sisaudiya:~/environment$
+      sudo apt install -y python3-venv
+      mkdir environments
+      cd environments
+      python3 -m venv my_env
+      ls my_env
+      source source my_env/bin/activate
+      (my_env) ajay@sisaudiya:~/environment$
  
  Creating a “Hello, World” Program: 
  
-        (my_env) ajay@sisaudiya:~/environment$ nano hello.py
+       (my_env) ajay@sisaudiya:~/environment$ nano hello.py
  
  
- hello.py
+  hello.py
 
         print("Hello, World!")
         (my_env) ajay@sisaudiya:~/environment$python hello.py
