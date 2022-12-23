@@ -13,7 +13,6 @@
    [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
 
 
-#### PYTHON: python app, django app, flask app
 
    Production:   
             [Dockrized App PHP-PFM NGINX Worked Click Here](#phpfpm_nginx)  
