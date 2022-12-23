@@ -97,7 +97,7 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
 :link:[Linux Permissions click here md](linux.permissions.md)
 
-:link:[Ubuntu Commands click here md](ubuntu.md)
+:link:[Apache, PHP, MySql, PHPMyadmin etc. click here md](ubuntu.md)
 
 :link:[Ubunut Commands click here txt](ubuntu.txt)
 
