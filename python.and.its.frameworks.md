@@ -98,6 +98,36 @@ Topics:
   <a name="flash_on_linux">
   # Install React App On Ubuntu 20.04
    
+     Installed Python: 
+   
+         python -v
+   
+      Django: 
+   
+       sudo apt install python3-django
+       django-admin --version
+   
+   
+   
+   Install with pip in a Virtual Environment: 
+        sudo apt update
+        python3 -V
+        sudo apt install python3-pip python3-venv
+        mkdir ~/newproject
+        cd ~/newproject
+        python3 -m venv my_env
+        source my_env/bin/activate
+        (my_env) ajay@sisaudiya:~/myapp$ pip install django
+        (my_env) ajay@sisaudiya:~/myapp$ django-admin --version
+        (my_env) ajay@sisaudiya:~/myapp$ deactivate
+        cd ~/newproject
+        source my_env/bin/activate
+   
+   
+   
+   
+   
+   
    
  :end:
               
