@@ -1,5 +1,4 @@
-# Node js
-$$\color{purple}{Node Js Npm React Vue Angular etc. Installations}$$
+$$\color{purple}{NodeJs \ Npm \ React \ Vue \ Angular \ etc \ Installations}$$
 
 <a name="top"></a>
 Topics:
