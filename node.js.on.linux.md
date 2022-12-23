@@ -145,6 +145,9 @@ The key ID is 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280.
 <a name="nodejs_using_nvm_on_linux">		
 # 3. Installing Node.js and npm using NVM
 	
+     Installing and Updating:
+	
+	
 NVM (Node Version Manager) is a bash script that allows you to manage multiple Node.js versions on a per-user basis. With NVM you can install and uninstall any Node.js version that you want to use or test.
 	
 	
