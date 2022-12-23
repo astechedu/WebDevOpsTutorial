@@ -379,22 +379,21 @@ How to Install ReactJS on Ubuntu 20.04?
 Installing NPM:
 
 	sudo apt install npm
+	
         npm --version
         
-        node --version
-        
+        node --version        
         
         
 Install Create-React-App tool: 
 
 	sudo npm -g install create-react-app
-        create-react-app --version
-        
+	
+        create-react-app --version        
         
         create-react-app appName
         
-        cd appName
-        
+        cd appName        
         
         npm start
         
@@ -419,9 +418,7 @@ Install Create-React-App tool:
 
  Install Vue.js in Ubuntu 20.04:
  
- 
- 
- 
+  
  Installation: 
  
  Using the CDN Package:
@@ -433,14 +430,15 @@ Install Create-React-App tool:
 Using NPM: 
 
 	#latest stable
-	npm install vue@next
-	 
+	npm install vue@next	 
 	 
  
  Using CLI: 
  
  	sudo yarn global add @vue/cli
+	
 	# OR
+	
  	sudo npm install -g @vue/cli
  
  
@@ -450,14 +448,17 @@ Using NPM:
 If you want to upgrade to the latest stable version of Vue.js: 
 
 	 sudo yarn global upgrade --latest @vue/cli
+	
 	 # OR
+	
 	 sudo npm update -g @vue/cli 
 	 
  
  Getting started with Vue.js: 
  
  	vue create demo-app
- 	vue ui
+	cd demo-app
+ 	npm run serve
    
 	
   Uninstall vue cli:
