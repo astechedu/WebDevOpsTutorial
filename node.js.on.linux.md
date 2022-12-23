@@ -3,7 +3,7 @@ $$\color{purple}{NodeJs \ Npm \ React \ Vue \ Angular \ etc \ Installations}$$
 <a name="top"></a>
 Topics:
 
- 1. [How To Install Node.js on Ubuntu 20.04](#nodejs_on_linux) <br>
+ 1. [Install Node.js and npm from the Ubuntu repository](#nodejs_on_linux) <br>
  2. [Install NPM](#npm_on_linux) <br>
  3. [How to Install ReactJS on Ubuntu 20.04?](#react_on_linux)<br>
  4. [Install Vue.js in Ubuntu 20.04](#vue_on_linux)<br>
@@ -20,8 +20,108 @@ Topics:
 
       sudo apt update
       sudo apt install nodejs
+	
+	OR
+	
+      sudo apt install nodejs npm
+	
       node -v
 
+	
+# Installing Node.js and npm from NodeSource	
+	
+NodeSource is a company focused on providing enterprise-grade Node support. It maintains an APT repository containing multiple Node.js versions. Use this repository if your application requires a specific version of Node.js.
+	
+	curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+	sudo apt install nodejs
+	node --version
+	npm --version
+	sudo apt install build-essential
+	
+	
+# Installing Node.js and npm using NVM
+	
+NVM (Node Version Manager) is a bash script that allows you to manage multiple Node.js versions on a per-user basis. With NVM you can install and uninstall any Node.js version that you want to use or test.
+	
+	
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+	
+	
+	The script will clone the project’s repository from Github to the ~/.nvm directory:
+Output: 
+	
+	=> Close and reopen your terminal to start using nvm or run the following to use it now:
+
+	export NVM_DIR="$HOME/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+	nvm --version
+	nvm list-remote
+	nvm install node
+	
+Output: 
+		
+	...
+	Checksums matched!
+	Now using node v14.2.0 (npm v6.14.4)
+	Creating default alias: default -> node (-> v14.2.0)
+
+	
+	node --version
+	
+	
+Let’s install two more versions, the latest LTS version and version 10.9.0:
+
+	nvm install --lts
+	nvm install 10.9.0
+
+	
+You can list the installed Node.js versions by typing:
+
+	nvm ls	
+	
+	
+	
+Output: 
+	
+	>      v10.9.0
+	       v12.16.3
+		v14.2.0
+	default -> node (-> v14.2.0)
+	node -> stable (-> v14.2.0) (default)
+	stable -> 14.2 (-> v14.2.0) (default)
+	iojs -> N/A (default)
+	unstable -> N/A (default)
+	lts/* -> lts/erbium (-> v12.16.3)
+	lts/argon -> v4.9.1 (-> N/A)
+	lts/boron -> v6.17.1 (-> N/A)
+	lts/carbon -> v8.17.0 (-> N/A)
+	lts/dubnium -> v10.20.1 (-> N/A)
+	lts/erbium -> v12.16.3
+
+	
+	nvm use 12.16.3
+	
+	nvm alias default 12.16.3
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
