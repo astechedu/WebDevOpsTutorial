@@ -6,7 +6,7 @@ Topics:
 
  [How To Install Node.js on Ubuntu 20.04](#nodejs_on_linux)
  [Install NPM](#npm_on_linux)
- [Install React App](#react_on_linux)
+ [How to Install ReactJS on Ubuntu 20.04?](#react_on_linux)
  [Install Vue Js](#vue_on_linux)
  [Install Angular](#angular_on_linux)
     
@@ -45,6 +45,39 @@ Topics:
   [Go to Top](#nodejs_on_linux)
   <a name="react_on_linux">
 # Install React App On Ubuntu 20.04
+   
+
+How to Install ReactJS on Ubuntu 20.04?
+
+
+Installing NPM:
+
+	sudo apt install npm
+        npm --version
+        
+        node --version
+        
+        
+        
+Install Create-React-App tool: 
+
+	sudo npm -g install create-react-app
+        create-react-app --version
+        
+        
+        create-react-app appName
+        
+        cd appName
+        
+        
+        npm start
+        
+        
+ And your browser will open-up and shows you that the app is up and running with local host-3000
+   
+   
+   
+   
    
   [Go to Top](#nodejs_on_linux)
   <a name="vue_on_linux">
