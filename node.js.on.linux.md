@@ -325,11 +325,12 @@ v12.22.6
 	nvm uninstall 13.10.1
 	Uninstalled node v13.10.1
 	
+	
       #### NVM Uninstall Steps
        
 	nvm deactivate
 	nvm unload
-	
+	rm -Rf ~/.nvm
 	
        Clean up your .bashrc file by removing the following lines:
 	
