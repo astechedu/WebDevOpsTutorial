@@ -4,7 +4,7 @@ $$\color{purple}{Python \ And \ Its \ Framworks \ Installations}$$
 Topics:
 
  1. [How To Install Python 3 and Set Up a Programming Environment on an Ubuntu 20.04 Server](#python_on_linux)
- 2. [Install NPM](#django_on_linux)
+ 2. [How to Install virtualenv on Ubuntu 20.04 LTS (Focal Fossa)](#django_on_linux)
  3. [Install React App](#flash_on_linux)
   
   
@@ -55,9 +55,41 @@ Topics:
  
  
  
-  [Go to Top](#nodejs_on_linux)
+  [Go to Top](#top)
   <a name="django_on_linux">
-  # Install NPM on Ubuntu 20.04
+  # How to Install virtualenv on Ubuntu 20.04 LTS (Focal Fossa)
+   
+   Update Your Server:
+   
+        sudo apt update
+        sudo apt upgrade
+
+   Install pip3:
+   
+         sudo apt install python3-pip
+   
+   Install virtualenv:
+   
+          pip3 install virtualenv
+   
+   Check Version: 
+   
+       virtualenv --version
+   
+   Create a Virtual environment: 
+          
+        virtualenv venv
+   
+   Activate or Deactivate environment: 
+   
+         ajay@sisaudiya:~$ source venv/bin/activate
+         (venv) ajay@sisaudiya:~$
+   
+         (venv) ajay@sisaudiya:~$ deactivate
+         ajay@sisaudiya:~$
+
+
+   
    
    
    
