@@ -1,2 +1,2 @@
 # Node js
-$\colorbox{red}{Node Js}$
+$\colorbox{purple}{Node Js}$
