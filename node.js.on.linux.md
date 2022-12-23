@@ -30,6 +30,12 @@ Topics:
       node -v
 
 	
+	
+	
+	
+	
+[Go to Top](#top)
+<a name="nodejs_from_NodeSourceon_linux">	
 # Installing Node.js and npm from NodeSource	
 	
 NodeSource is a company focused on providing enterprise-grade Node support. It maintains an APT repository containing multiple Node.js versions. Use this repository if your application requires a specific version of Node.js.
@@ -41,6 +47,12 @@ NodeSource is a company focused on providing enterprise-grade Node support. It m
 	sudo apt install build-essential
 	
 	
+
+	
+	
+	
+[Go to Top](#top)
+<a name="nodejs_using_nvm_on_linux">		
 # Installing Node.js and npm using NVM
 	
 NVM (Node Version Manager) is a bash script that allows you to manage multiple Node.js versions on a per-user basis. With NVM you can install and uninstall any Node.js version that you want to use or test.
@@ -107,12 +119,6 @@ Output:
 	nvm use 12.16.3
 	
 	nvm alias default 12.16.3
-	
-	
-	
-	
-	
-	
 	
 	
 	
