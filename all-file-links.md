@@ -91,6 +91,8 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
 :link:[Installations Node npm react vue etc. Basic CMDS md](node.js.on.linux.md)
 
+:link:[Python And Its Frameworks Basic CMDS md](python.and.its.frameworks.md)
+
 :link:[Linux Basic CMDS md](linux.basic.cmds.md)
 
 :link:[Installations apache composer git php laravel etc. click here md](linux.commands.md)
