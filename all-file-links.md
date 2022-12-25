@@ -170,7 +170,7 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 :link:[Windows Info click here](windows.info.txt)
 
  
-# Rouch Code Or Practice Code
+# Rough Code Or Practice Code
 
 :link:[Rouch Or Practice Code](any.practice.code.txt)
 
