@@ -32,9 +32,17 @@ Solutions:
   b. 
 
 
+
+
+
+
+
+
+
 ---------------------------------------------------------------------------
 
-Set Environment Path in linux: 
+
+# Set Environment Path in linux: 
 
 To put this folder on the PATH environment variable type
 
