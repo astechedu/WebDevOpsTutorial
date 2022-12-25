@@ -4,7 +4,7 @@
 
 
 
-Linkd: 
+Links: 
  Set Environment Variable:
  https://help.ubuntu.com/community/EnvironmentVariables
  
