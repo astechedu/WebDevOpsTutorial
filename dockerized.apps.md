@@ -12,6 +12,7 @@
    
    [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
 
+   [Dockerized Laravel & Symfony Apps Worked Click Here](#php_laravel_symfony)   
 
 
    Production:   
@@ -480,6 +481,12 @@ my site.conf
 
 
 
+
+
+
+
+
+
 ----------------------------------------------------------
 
 ===> Cakephp App <==========
@@ -490,9 +497,38 @@ my site.conf
 
 ----------------------------------------------------------
 
+<a name="php_laravel_symfony"></a>
 ===> Sysmfony App <==========
 
+
+Dockerfile: 
+
+
+
+
+docker-compose.yml: 
+
+version: "3"
+  web: 
+   build: 
+     context: ./
+     dockerfile: Dockerfile
+    container_name: laravel03
+    ports:
+     - 8080:80
+     
+     
+
+
+
+
+
+
+
+
 ===> End Symfony App <======
+
+
 
 ----------------------------------------------------------
 
