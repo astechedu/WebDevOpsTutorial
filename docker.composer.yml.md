@@ -23,9 +23,12 @@ Topics:
 
 
 
+
+
 [Got To Top](#top)
 <a name="build"></a>
-Docker Compose Version 3.9
+# Docker Compose Version 3.9
+
 
 
 # Build:
@@ -134,6 +137,7 @@ A list of images that the engine uses for cache resolution.
           - corp/web_app:3.14
 
 
+
 [Got To Top](#top)
 <a name="labels"></a>
 # labels
@@ -158,6 +162,7 @@ It’s recommended that you use reverse-DNS notation to prevent your labels from
           - "com.example.department=Finance"
           - "com.example.label-with-empty-value"
 
+
 [Got To Top](#top)
 <a name="network"></a>
 
@@ -180,6 +185,7 @@ Set the network containers connect to for the RUN instructions during build.
         build:
           context: .
           network: none
+
 
 [Got To Top](#top)
 <a name="shm_size"></a>
