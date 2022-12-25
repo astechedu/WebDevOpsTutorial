@@ -94,15 +94,118 @@ args:
 
 
 
+cache_from:
+
+    Added in version 3.2 file format
+
+A list of images that the engine uses for cache resolution.
+
+      build:
+        context: .
+        cache_from:
+          - alpine:latest
+          - corp/web_app:3.14
 
 
 
+labels:
+
+    Added in version 3.3 file format
+
+Add metadata to the resulting image using Docker labels. You can use either an array or a dictionary.
+
+It’s recommended that you use reverse-DNS notation to prevent your labels from conflicting with those used by other software.
+
+      build:
+        context: .
+        labels:
+          com.example.description: "Accounting webapp"
+          com.example.department: "Finance"
+          com.example.label-with-empty-value: ""
+
+      build:
+        context: .
+        labels:
+          - "com.example.description=Accounting webapp"
+          - "com.example.department=Finance"
+          - "com.example.label-with-empty-value"
+
+
+network:
+
+    Added in version 3.4 file format
+
+Set the network containers connect to for the RUN instructions during build.
+
+        build:
+          context: .
+          network: host
+
+        build:
+          context: .
+          network: custom_network_1
+
+        Use none to disable networking during build:
+
+        build:
+          context: .
+          network: none
+
+
+shm_size:
+
+    Added in version 3.5 file format
+
+Set the size of the /dev/shm partition for this build’s containers. Specify as an integer value representing the number of bytes or as a string expressing a byte value.
+
+      build:
+        context: .
+        shm_size: '2gb'
+
+      build:
+        context: .
+        shm_size: 10000000
 
 
 
+target:
+
+    Added in version 3.4 file format
+
+Build the specified stage as defined inside the Dockerfile. See the multi-stage build docs for details.
+
+      build:
+        context: .
+        target: prod
+
+      cap_add, cap_drop
+
+Add or drop container capabilities. See man 7 capabilities for a full list.
+
+      cap_add:
+        - ALL
+
+      cap_drop:
+        - NET_ADMIN
+        - SYS_ADMIN
 
 
+cgroup_parent:
 
+Specify an optional parent cgroup for the container.
+
+        cgroup_parent: m-executor-abcd
+
+
+command:
+
+        Override the default command.
+
+        command: bundle exec thin -p 3000
+
+        The command can also be a list, in a manner similar to dockerfile:
+
+        command: ["bundle", "exec", "thin", "-p", "3000"]
 
 
 
