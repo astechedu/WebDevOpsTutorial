@@ -232,3 +232,65 @@ Dockerfile:
 
 
 
+
+
+How to install PHP composer inside a docker container?
+
+The following is my Dockerfile:
+
+        FROM php:7.1.3-fpm
+
+        RUN apt-get update && apt-get install -y libmcrypt-dev \
+            mysql-client libmagickwand-dev --no-install-recommends \
+            && pecl install imagick \
+            && docker-php-ext-enable imagick \
+        && docker-php-ext-install mcrypt pdo_mysql
+        && chmod -R o+rw laravel-master/bootstrap laravel-master/storage
+
+
+
+When working with database migration, Laravel requires composer to perform composer dump-autoload. As a result, composer is required inside the Docker container.
+
+I tried this but:
+
+RUN curl -sS https://getcomposer.org/installer | php -- \
+--install-dir=/usr/bin --filename=composer
+
+
+
+Later, when I call it
+
+docker-compose up
+docker-compose exec app composer dump-autoload
+
+The following error is thrown:
+
+rpc error: code = 13 desc = invalid header field value "oci runtime error: exec failed: container_linux.go:247: starting container process caused \"exec: \\\"composer\\\": executable file not found in $PATH\"\n"
+
+
+I'd be grateful for any advise on how to add composer to the PATH in my dockerfile or what else I can do to get around this mistake.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
