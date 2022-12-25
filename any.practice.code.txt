@@ -4,8 +4,10 @@
 
 
 
+
 1. Trying to install laravel in docker container
 
+a.
 
 When I was trying to install laravel in docker container.
 
@@ -20,7 +22,11 @@ In GitDownloader.php line 82:
                                                             
   git was not found in your PATH, skipping source download 
 
+b. When I tryed to install laravel installer, Threw Errors (Path error)
+   composer require laravel/installer
+
 
 Solutions: 
 
-  1. Problem solved after installing zip and unzip using 'apt install zip unzip' command in docker container
+  a. Problem solved after installing zip and unzip using 'apt install zip unzip' command in docker container
+  b. 
