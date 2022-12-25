@@ -124,6 +124,10 @@ In Dockerfile :
           && docker-php-ext-enable imagick \
       && docker-php-ext-install mcrypt pdo_mysql
 
+
+
+
+
       # Install Composer
       RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
