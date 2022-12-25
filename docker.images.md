@@ -52,3 +52,94 @@ Topic:
 
 
 
+
+How to install PHP composer inside a docker container: 
+
+1. 
+    FROM php:7.1.3-fpm
+
+    RUN apt-get update && apt-get install -y libmcrypt-dev \
+        mysql-client libmagickwand-dev --no-install-recommends \
+        && pecl install imagick \
+        && docker-php-ext-enable imagick \
+    && docker-php-ext-install mcrypt pdo_mysql
+    && chmod -R o+rw laravel-master/bootstrap laravel-master/storage
+
+
+
+
+I try to work out a way to create a dev environment using docker and laravel.
+
+I have the following dockerfile:
+
+FROM php:7.1.3-fpm
+
+RUN apt-get update && apt-get install -y libmcrypt-dev \
+    mysql-client libmagickwand-dev --no-install-recommends \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick \
+&& docker-php-ext-install mcrypt pdo_mysql
+&& chmod -R o+rw laravel-master/bootstrap laravel-master/storage
+
+
+
+
+
+Laravel requires composer to call composer dump-autoload when working with database migration. Therefore, I need composer inside the docker container.
+I tried:
+
+
+RUN curl -sS https://getcomposer.org/installer | php -- \
+--install-dir=/usr/bin --filename=composer
+
+
+
+
+
+I try to work out a way to create a dev environment using docker and laravel.
+
+I have the following dockerfile:
+
+FROM php:7.1.3-fpm
+
+RUN apt-get update && apt-get install -y libmcrypt-dev \
+    mysql-client libmagickwand-dev --no-install-recommends \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick \
+&& docker-php-ext-install mcrypt pdo_mysql
+&& chmod -R o+rw laravel-master/bootstrap laravel-master/storage
+
+Laravel requires composer to call composer dump-autoload when working with database migration. Therefore, I need composer inside the docker container.
+
+I tried:
+
+RUN curl -sS https://getcomposer.org/installer | php -- \
+--install-dir=/usr/bin --filename=composer
+
+
+
+
+But when I call
+
+docker-compose up
+docker-compose exec app composer dump-autoload
+
+
+
+In Dockerfile :
+
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
