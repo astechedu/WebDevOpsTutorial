@@ -190,6 +190,20 @@ Alternatively, you should add the composer bin files path to the $PATH variable.
 
 
 
+Dockerfile:
+
+      FROM 8.1.4-fpm
+
+      RUN apt-get update && apt-get install -y \
+          git \
+          curl \
+          zip \
+          unzip
+
+      RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+      WORKDIR /var/www
+
 
 
 
