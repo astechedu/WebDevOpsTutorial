@@ -24,7 +24,7 @@ Topics:
 
 [Go To Top](#top)
 <a name="doc_django"></a>  
-
+# Django   (Not Working)
 Add the following content to the Dockerfile.
 
       # syntax=docker/dockerfile:1
@@ -35,6 +35,7 @@ Add the following content to the Dockerfile.
       COPY requirements.txt /code/
       RUN pip install -r requirements.txt
       COPY . /code/
+
 
 
 
@@ -69,6 +70,14 @@ Save and close the requirements.txt file.
           - POSTGRES_PASSWORD=postgres
         depends_on:
           - db
+
+
+# Showing Error
+
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+[notice] A new release of pip available: 22.3 -> 22.3.1
+[notice] To update, run: pip install --upgrade pip
 
 
 
