@@ -302,6 +302,61 @@ sub-options only takes effect when deploying to a swarm with docker stack deploy
 
 
 
+# endpoint_mode
+
+
+      version: "3.9"
+
+      services:
+        wordpress:
+          image: wordpress
+          ports:
+            - "8080:80"
+          networks:
+            - overlay
+          deploy:
+            mode: replicated
+            replicas: 2
+            endpoint_mode: vip
+
+        mysql:
+          image: mysql
+          volumes:
+             - db-data:/var/lib/mysql/data
+          networks:
+             - overlay
+          deploy:
+            mode: replicated
+            replicas: 2
+            endpoint_mode: dnsrr
+
+      volumes:
+        db-data:
+
+      networks:
+        overlay:
+
+
+
+# labels
+
+    version: "3.9"
+    services:
+      web:
+        image: web
+        deploy:
+          labels:
+            com.example.description: "This label will appear on the web service"
+
+
+
+
+      version: "3.9"
+      services:
+        web:
+          image: web
+          labels:
+            com.example.description: "This label will appear on all containers for the web service"
 
 
 
