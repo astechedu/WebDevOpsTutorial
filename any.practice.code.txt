@@ -34,7 +34,7 @@ Solutions:
 
 ---------------------------------------------------------------------------
 
-Set env Path in linux: 
+Set Environment Path in linux: 
 
 To put this folder on the PATH environment variable type
 
@@ -73,7 +73,15 @@ echo $PATH
 
 
 
+You probably wanted
 
+echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
+
+or just
+
+echo 'PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
+
+since PATH has almost certainly been exported into the environment already.
 
 
 
