@@ -47,4 +47,42 @@ If you want it to be automatically set, it depends on the shell you are using. F
 
 echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.bashrc
 
+In order to check if it worked, logout and login again or execute
+
+source ~/.bashrc
+
+
+
+Detailed instructions:
+
+in your ~/.bashrc add these lines:
+
+export PATH="$PATH:~/.composer/vendor/bin"
+
+
+Then reload:
+
+source ~/.bashrc
+
+
+Check if its added correctly:
+
+echo $PATH
+
+/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/web/bin:~/.compo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -----------------------------
