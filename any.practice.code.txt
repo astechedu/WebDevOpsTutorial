@@ -33,6 +33,9 @@ In GitDownloader.php line 82:
 b. When I tryed to install laravel installer, Threw Errors (Path error)
    composer global require laravel/installer
 
+c. Laravel default page not properly display on browser (Permissions error) 
+
+
 
 Solutions: 
 
