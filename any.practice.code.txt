@@ -44,6 +44,7 @@ Solutions:
   
   b. Run these commands in docker container
 
+
           root@5f864af62def:/var/www/html# export PATH="$PATH:$HOME/.composer/vendor/laravel/installer/bin"
           root@5f864af62def:/var/www/html# source ~/.bashrc
           root@5f864af62def:/var/www/html# laravel -v
@@ -66,7 +67,9 @@ Solutions:
 
 
 
-
+            cd into your Laravel project.
+            sudo chmod -R 755 storage
+            sudo chmod -R 755 bootstrap/cache
 
 
   
