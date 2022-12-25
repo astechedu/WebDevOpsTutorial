@@ -30,3 +30,14 @@ Solutions:
 
   a. Problem solved after installing zip and unzip using 'apt install zip unzip' command in docker container
   b. 
+
+
+
+
+
+To put this folder on the PATH environment variable type
+
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+
+
