@@ -12,7 +12,7 @@
    
    [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
 
-   [Dockerized Laravel & Symfony Apps Worked Click Here](#php_laravel_symfony)   
+   [Dockerized Laravel & Symfony Apps Same Code Worked 100% Click Here](#php_laravel_symfony)   
 
 
    Production:   
