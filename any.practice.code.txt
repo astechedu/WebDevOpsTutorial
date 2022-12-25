@@ -54,6 +54,28 @@ Solutions:
 
 ---------------------------------------------------------------------------
 
+# Apache2 sites-available: 
+
+
+ <VirtualHost *:80>
+  ServerAdmin admin@MyWebsite.com
+  DocumentRoot /var/www/html/laravel/public
+  ServerName laravel-local.com
+
+  <Directory /var/www/html/laravel/public>
+     Options +FollowSymlinks
+     AllowOverride All
+     Require all granted
+  </Directory>
+
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+
+
+----------------------------------------------------------------------------
+
 
 # Set Environment Path in linux: 
 
@@ -125,9 +147,5 @@ echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
 or just
 
 echo 'PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
-
-
-
-
 
 -----------------------------
