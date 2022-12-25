@@ -4,6 +4,14 @@
 
 
 
+Linkd: 
+ Set Environment Variable:
+ https://help.ubuntu.com/community/EnvironmentVariables
+ 
+ 
+ 
+ 
+ 
 
 1. Trying to install laravel in docker container
 
