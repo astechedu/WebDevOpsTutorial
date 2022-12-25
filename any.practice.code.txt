@@ -86,6 +86,12 @@ Dockerfile:
      RUN chown -R www-data:www-data /var/www
 
 
+
+his makes directory /var/www owned by www-data which is the default user for php-fpm.
+
+Since it is compiled with user www-data.
+
+
 ---------------------------------------------------------------------------
 
 
@@ -182,5 +188,7 @@ echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
 or just
 
 echo 'PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
+
+
 
 -----------------------------
