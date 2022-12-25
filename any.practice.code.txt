@@ -15,3 +15,7 @@ The php.ini used by your command-line PHP is:
       /usr/local/etc/php/conf.d/docker-php-ext-sodium.ini
       
     Now trying to download from source
+
+In GitDownloader.php line 82:
+                                                            
+  git was not found in your PATH, skipping source download 
