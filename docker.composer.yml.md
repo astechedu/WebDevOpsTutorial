@@ -209,6 +209,59 @@ command:
 
 
 
+config: 
+
+
+    Added in version 3.3 file format.
+
+    config definitions are only supported in version 3.3 and higher of the compose file format.
+
+        version: "3.9"
+        services:
+          redis:
+            image: redis:latest
+            deploy:
+              replicas: 1
+            configs:
+              - my_config
+              - my_other_config
+        configs:
+          my_config:
+            file: ./my_config.txt
+          my_other_config:
+            external: true
+
+
+# Long syntax (target etc.)
+
+      version: "3.9"
+      services:
+        redis:
+          image: redis:latest
+          deploy:
+            replicas: 1
+          configs:
+            - source: my_config
+              target: /redis_config
+              uid: '103'
+              gid: '103'
+              mode: 0440
+      configs:
+        my_config:
+          file: ./my_config.txt
+        my_other_config:
+          external: true
+
+
+
+container_name:
+
+Specify a custom container name, rather than a generated default name.
+
+container_name: my-web-container
+
+
+
 
 
 
