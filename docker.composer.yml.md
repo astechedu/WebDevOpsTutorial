@@ -244,7 +244,7 @@ command:
 
 [Got To Top](#top)
 <a name="config"></a>
-config: 
+# config: 
 
 
     Added in version 3.3 file format.
