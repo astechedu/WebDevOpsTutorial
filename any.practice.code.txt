@@ -193,3 +193,52 @@ echo 'PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
 
 
 -----------------------------
+
+Extra: 
+
+
+
+I tried all of these, and it didn't work. My Laravel storage folder had access. But /var/www/storage still didn't had permission.
+
+After reading multiple suggestions, with this in particular. I did the following (kindly note that php is the name of my container image, and i linked my laravel project directly to /var/www):
+
+    From my docker, I ran 
+    
+         docker-compose exec php ls -al /var/www/storage
+    
+        I saw that only root had access but i need 
+            
+          www-data to have access.
+        
+    Then I ran 
+    
+           docker-compose exec php chown -R $USER:www-data /var/www/storage
+    
+        This gives 
+        
+             www-data access to the storage folder
+        
+    Then I ran 
+    
+           docker-compose exec php chown -R $USER:www-data /var/www/bootstrap/cache
+           
+        This gives 
+        
+             www-data access to the bootstrap/cache folder
+
+If you run item 1 again, www-data should have access, and your Laravel app should be fine.
+
+
+
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
