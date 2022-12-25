@@ -98,15 +98,15 @@ I tried:
 
 But when I call
 
-docker-compose up
-docker-compose exec app composer dump-autoload
+    docker-compose up
+    docker-compose exec app composer dump-autoload
 
 
 
 
 In Dockerfile :
 
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+    COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 
 
