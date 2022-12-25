@@ -54,7 +54,7 @@ Solutions:
            This is working.
 
    c.
-  
+           sudo chown -R www-data:www-data /var/www
            sudo chown -R www-data:www-data /var/wwww/html/laravel
            
            
