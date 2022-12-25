@@ -97,6 +97,13 @@ export PATH="$PATH:$HOME/.config/composer/vendor/bin" >> ~/.profile
 than I did source ~/.bashrc and source ~/.profile to update those files. 
 
 
+You probably wanted:
+
+echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
+
+or just
+
+echo 'PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.bashrc
 
 
 
