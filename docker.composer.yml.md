@@ -256,9 +256,61 @@ config:
 
 container_name:
 
-Specify a custom container name, rather than a generated default name.
+    Specify a custom container name, rather than a generated default name.
 
-container_name: my-web-container
+    container_name: my-web-container
+
+
+
+
+# depends_on: 
+
+    version: "3.9"
+    services:
+      web:
+        build: .
+        depends_on:
+          - db
+          - redis
+      redis:
+        image: redis
+      db:
+        image: postgres
+
+
+
+# deploy
+
+    Added in version 3 file format.
+
+Specify configuration related to the deployment and running of services. The following
+sub-options only takes effect when deploying to a swarm with docker stack deploy, and is ignored by docker-compose up and docker-compose run, except for resources.
+
+      version: "3.9"
+      services:
+        redis:
+          image: redis:alpine
+          deploy:
+            replicas: 6
+            placement:
+              max_replicas_per_node: 1
+            update_config:
+              parallelism: 2
+              delay: 10s
+            restart_policy:
+              condition: on-failure
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
