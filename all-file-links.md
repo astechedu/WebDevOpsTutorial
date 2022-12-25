@@ -172,7 +172,7 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
  
 # Rough Code Or Practice Code
 
-:link:[Rouch Or Practice Code](any.practice.code.txt)
+:link:[Rough Or Practice Code](any.practice.code.txt)
 
 
 :end:
