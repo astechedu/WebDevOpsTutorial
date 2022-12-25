@@ -295,8 +295,36 @@ I'd be grateful for any advise on how to add composer to the PATH in my dockerfi
 
 
 
+ #
 
+    FROM php:fpm
 
+    # Arguments defined in docker-compose.yml
+    ARG user
+    ARG uid
+
+    # Install system dependencies
+    RUN apt-get update && apt-get install -y libmcrypt-dev mysql-client
+
+    # Install PHP extensions
+    RUN docker-php-ext-install mcrypt pdo_mysql
+
+    # Get latest Composer
+    COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+    # Create system user to run Composer and Artisan Commands
+    RUN useradd -G www-data,root -u $uid -d /home/$user $user
+    RUN mkdir -p /home/$user/.composer && \
+        chown -R $user:$user /home/$user
+
+    # Set working directory
+    WORKDIR /var/www
+
+    # Set the user
+    USER $user
+
+    # Copy your files
+    COPY . . # You can use "." as a destination since you already changed the workdir
 
 
 
