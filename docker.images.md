@@ -11,6 +11,27 @@ Topic:
 [Go To Top](#top)
 <a name="php_images"></a>  
 
+# 
+Dockerfile:
+
+      FROM 8.1.4-fpm
+
+      RUN apt-get update && apt-get install -y \
+          git \
+          curl \
+          zip \
+          unzip
+
+      RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+      WORKDIR /var/www
+
+
+
+
+
+
+
     FROM php:7.2-alpine3.8
 
     RUN apk update
@@ -190,21 +211,6 @@ Alternatively, you should add the composer bin files path to the $PATH variable.
 
 
 
-Dockerfile:
-
-      FROM 8.1.4-fpm
-
-      RUN apt-get update && apt-get install -y \
-          git \
-          curl \
-          zip \
-          unzip
-
-      RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-      WORKDIR /var/www
-
-
 
 
 
@@ -276,6 +282,14 @@ I'd be grateful for any advise on how to add composer to the PATH in my dockerfi
 
 
 
+
+
+# 
+    FROM php:7-fpm
+    WORKDIR /var/www
+    RUN apt-get update && apt-get install -y libmcrypt-dev mysql-client && docker-php-ext-install mcrypt pdo_mysql
+    ADD . /var/www
+    RUN chown -R www-data:www-data /var/www
 
 
 
