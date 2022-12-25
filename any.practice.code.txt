@@ -1,3 +1,17 @@
 ---> Any Practice Code In This File <---
 
 ---> Rough Code <------
+
+
+
+1. Trying to install laravel in docker container
+
+
+When I was trying to install laravel in docker container.
+
+Failed to download laravel/laravel from dist: The zip extension and unzip/7z commands are both missing, skipping.
+The php.ini used by your command-line PHP is: 
+
+      /usr/local/etc/php/conf.d/docker-php-ext-sodium.ini
+      
+    Now trying to download from source
