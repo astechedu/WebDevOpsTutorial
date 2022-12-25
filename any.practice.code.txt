@@ -40,7 +40,12 @@ Solutions:
   
   
   b. 
-  
+
+          root@5f864af62def:/var/www/html# export PATH="$PATH:$HOME/.composer/vendor/laravel/installer/bin"
+          root@5f864af62def:/var/www/html# source ~/.bashrc
+          root@5f864af62def:/var/www/html# laravel -v
+
+
         A) Make sure you have the latest Laravel installer:
 
         composer global require laravel/installer
