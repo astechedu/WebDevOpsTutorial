@@ -55,12 +55,14 @@ Solutions:
 
    c.
            sudo chown -R www-data:www-data /var/www
+           sudo chown -R www-data:www-data /var/wwww/laravel
            sudo chown -R www-data:www-data /var/wwww/html/laravel
            
-           
-           sudo chown -R www-data:www-data /path/to/your/project/vendor
-           sudo chown -R www-data:www-data /path/to/your/project/storage
-
+           sudo chown -R www-data:www-data /var/www/laravel/vendor
+           sudo chown -R www-data:www-data /var/www/laravel/storage
+         
+           sudo chown -R www-data:www-data /var/www/html/laravel/vendor
+           sudo chown -R www-data:www-data /var/www/html/laravel/storage
 
            sudo chgrp -R www-data storage bootstrap/cache
            sudo chmod -R ug+rwx storage bootstrap/cache
