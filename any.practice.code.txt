@@ -19,3 +19,8 @@ The php.ini used by your command-line PHP is:
 In GitDownloader.php line 82:
                                                             
   git was not found in your PATH, skipping source download 
+
+
+Solutions: 
+
+  1. Problem solved after installing zip and unzip using 'apt install zip unzip' command in docker container
