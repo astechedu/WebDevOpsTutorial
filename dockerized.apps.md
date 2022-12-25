@@ -505,7 +505,7 @@ my site.conf
 
 Dockerfile: 
 
-        FROM 8.1.4-fpm
+        FROM 8.0-apache
 
         RUN apt-get update && apt-get install -y \
             git \
@@ -514,7 +514,7 @@ Dockerfile:
             unzip
 
         RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-             
+            
         WORKDIR /var/www
 
 
