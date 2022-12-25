@@ -19,7 +19,7 @@ Topics:
      
 
    [Deploy](#deploy)<br>
-   [Endpoint Node](#endpoint_node)<br>
+   [Endpoint Mode](#endpoint_mode)<br>
 
 
 
@@ -28,7 +28,7 @@ Topics:
 Docker Compose Version 3.9
 
 
-build:
+# Build:
 
 Configuration options that are applied at build time.
 
@@ -69,7 +69,7 @@ Either a path to a directory containing a Dockerfile, or a url to a git reposito
 
 [Got To Top](#top)
 <a name="dockerfile"></a>
-dockerfile:
+# dockerfile
 
 Alternate Dockerfile.
 
@@ -82,7 +82,7 @@ Compose uses an alternate file to build with. A build path must also be specifie
 
 [Got To Top](#top)
 <a name="args"></a>
-args: 
+# args
 
 Add build arguments, which are environment variables accessible only during the build process.
 
@@ -121,7 +121,7 @@ args:
 
 [Got To Top](#top)
 <a name="cache_from"></a>
-cache_from:
+# cache_from
 
     Added in version 3.2 file format
 
@@ -136,7 +136,7 @@ A list of images that the engine uses for cache resolution.
 
 [Got To Top](#top)
 <a name="labels"></a>
-labels:
+# labels
 
     Added in version 3.3 file format
 
@@ -200,7 +200,7 @@ Set the size of the /dev/shm partition for this build’s containers. Specify as
 
 [Got To Top](#top)
 <a name="target"></a>
-# target:
+# target
 
     Added in version 3.4 file format
 
@@ -222,16 +222,17 @@ Add or drop container capabilities. See man 7 capabilities for a full list.
         - SYS_ADMIN
 
 
-cgroup_parent:
+# cgroup_parent
 
 Specify an optional parent cgroup for the container.
 
         cgroup_parent: m-executor-abcd
 
 
+
 [Got To Top](#top)
 <a name="command"></a>
-command:
+# command
 
         Override the default command.
 
@@ -244,7 +245,7 @@ command:
 
 [Got To Top](#top)
 <a name="config"></a>
-# config: 
+# config
 
 
     Added in version 3.3 file format.
