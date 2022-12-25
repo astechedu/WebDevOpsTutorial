@@ -497,31 +497,39 @@ my site.conf
 
 ----------------------------------------------------------
 
+[Go To Top](#top)
 <a name="php_laravel_symfony"></a>
 ===> Sysmfony App <==========
 
 
+
 Dockerfile: 
 
+        FROM 8.1.4-fpm
+
+        RUN apt-get update && apt-get install -y \
+            git \
+            curl \
+            zip \
+            unzip
+
+        RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+             
+        WORKDIR /var/www
 
 
 
-docker-compose.yml: 
-
-version: "3"
-  web: 
-   build: 
-     context: ./
-     dockerfile: Dockerfile
-    container_name: laravel03
-    ports:
-     - 8080:80
-     
-     
+docker-compose.yml:
 
 
-
-
+         version: "3"
+           web: 
+            build: 
+              context: ./
+              dockerfile: Dockerfile
+             container_name: laravel03
+             ports:
+              - 8080:80
 
 
 
