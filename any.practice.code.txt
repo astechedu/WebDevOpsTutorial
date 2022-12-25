@@ -32,12 +32,19 @@ Solutions:
   b. 
 
 
+---------------------------------------------------------------------------
 
-
+Set env Path in linux: 
 
 To put this folder on the PATH environment variable type
 
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 
+This appends the folder to your existing PATH, however, it is only active for your current terminal session.
 
+If you want it to be automatically set, it depends on the shell you are using. For bash, you can append this line to $HOME/.bashrc using your favorite editor or type the following on the shell
+
+echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> ~/.bashrc
+
+-----------------------------
