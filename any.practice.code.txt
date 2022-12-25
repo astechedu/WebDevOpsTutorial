@@ -72,6 +72,7 @@ Solutions:
             cd into your Laravel project.
             sudo chmod -R 755 storage
             sudo chmod -R 755 bootstrap/cache
+            sudo chmod -R 755 /var/www/html/storage
 
 
 
