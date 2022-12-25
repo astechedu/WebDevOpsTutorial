@@ -179,6 +179,16 @@ Create an executable of your composer file using
 
 
 
+We have basicly the same command running with the difference,
+
+        --install-dir=/usr/local/bin
+
+Alternatively, you should add the composer bin files path to the $PATH variable.
+
+        export PATH=$PATH":/usr/bin"
+
+
+
 
 
 
