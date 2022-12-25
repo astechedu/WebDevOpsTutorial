@@ -7,7 +7,7 @@ Topics:
 
   1. [Dockrized Python](#doc_python)<br>
   2. [Dockrized Django](#doc_django)<br>
-  3. [Dockrized Python](#doc_flash)<br>
+  3. [Dockrized Flask](#doc_flash)<br>
 
 
 
@@ -87,3 +87,50 @@ WARNING: Running pip as the 'root' user can result in broken permissions and con
 
 [Go To Top](#top)
 <a name="doc_flash"></a>  
+
+
+I don't like ignoring warnings, as one day you will oversee an important one.
+
+Here is a good explanation on best docker practices with python. Search for Example with virtualenv and you'll find this:
+
+# temp stage (Now Working)
+
+      FROM python:3.9-slim as builder
+
+      WORKDIR /app
+
+      ENV PYTHONDONTWRITEBYTECODE 1
+      ENV PYTHONUNBUFFERED 1
+
+      RUN apt-get update && \
+          apt-get install -y --no-install-recommends gcc
+
+      RUN python -m venv /opt/venv
+      ENV PATH="/opt/venv/bin:$PATH"
+
+      COPY requirements.txt .
+      RUN pip install -r requirements.txt
+
+
+      # final stage
+      FROM python:3.9-slim
+
+      COPY --from=builder /opt/venv /opt/venv
+
+      WORKDIR /app
+
+      ENV PATH="/opt/venv/bin:$PATH"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
