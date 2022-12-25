@@ -87,6 +87,12 @@ Then specify the arguments under the build key. You can pass a mapping or a list
 
 
 
+args:
+
+        - buildno
+        - gitcommithash
+
+
 
 
 
