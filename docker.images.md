@@ -236,6 +236,9 @@ Dockerfile:
 
 How to install PHP composer inside a docker container?
 
+I'm trying to figure out how to set up a development environment with Docker and Laravel.
+
+
 The following is my Dockerfile:
 
         FROM php:7.1.3-fpm
@@ -253,15 +256,16 @@ When working with database migration, Laravel requires composer to perform compo
 
 I tried this but:
 
-RUN curl -sS https://getcomposer.org/installer | php -- \
---install-dir=/usr/bin --filename=composer
+        RUN curl -sS https://getcomposer.org/installer | php -- \
+        --install-dir=/usr/bin --filename=composer
 
 
 
 Later, when I call it
 
-docker-compose up
-docker-compose exec app composer dump-autoload
+        docker-compose up
+        docker-compose exec app composer dump-autoload
+
 
 The following error is thrown:
 
