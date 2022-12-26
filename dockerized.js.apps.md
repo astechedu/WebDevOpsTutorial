@@ -110,6 +110,7 @@ Dockerfile:
 
 #### React App 
 
+#First creating app in local dir
 
 Dockerfile: 
 
@@ -133,6 +134,7 @@ Dockerfile:
       CMD npm start
 
 
+
    #Creating image
    
    docker build -f Dockerfile -t dockerreact01 . 
@@ -154,7 +156,7 @@ Dockerfile:
 #Run docker image docreact01
 docker run --name dr -p8080:3000 -d docreact01
 
-
+:end:
 
 
 
