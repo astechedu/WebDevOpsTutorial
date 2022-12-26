@@ -151,7 +151,8 @@ Dockerfile:
       .gitignore
 
 
-
+#Run docker image docreact01
+docker run --name dr -p8080:3000 -d docreact01
 
 
 
