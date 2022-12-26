@@ -24,6 +24,66 @@ Topics:
 
 #### Vuejs App 
 
+
+#First creating app in local dir (Worked)
+      vue create appName
+
+Dockerfile: 
+
+      # Fetching the latest node image on alpine linux
+      FROM node:18-alpine
+
+      # Declaring env
+      ENV NODE_ENV development
+
+      # Setting up the work directory
+      WORKDIR /react-app
+
+      # Installing dependencies
+      COPY ./package.json /react-app
+      RUN npm install
+
+      # Copying all the files in our project
+      COPY . .
+
+      # Starting our application
+      CMD npm start
+
+
+
+   #Creating image
+   
+   docker build -f Dockerfile -t dockerreact01 . 
+
+   
+   
+   #Dockerignore
+   .dockerignore
+   
+   
+      node_modules
+      npm-debug.log
+      build
+      .git
+      *.md
+      .gitignore
+
+
+#Run docker image docreact01
+docker run --name dr -p8080:3000 -d docreact01
+
+:end:
+
+
+
+
+
+
+
+
+
+
+
 Dockerfile: 
 
       FROM node:lts-alpine
@@ -111,6 +171,7 @@ Dockerfile:
 #### React App 
 
 #First creating app in local dir (Worked)
+      create-react-app appName
 
 Dockerfile: 
 
