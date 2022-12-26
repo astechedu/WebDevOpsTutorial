@@ -96,13 +96,20 @@ Dockerfile:
 
 ===> End Vuejs App <======
 
+
+
 ----------------------------------------------------------
+
+
+
+
 
 [Go To Top](#top)
 <a name="react_app"></a>
 ## 2.
 
 #### React App 
+
 
 Dockerfile: 
 
@@ -130,7 +137,18 @@ Dockerfile:
    
    docker build -f Dockerfile -t dockerreact01 . 
 
-
+   
+   
+   #Dockerignore
+   .dockerignore
+   
+   
+      node_modules
+      npm-debug.log
+      build
+      .git
+      *.md
+      .gitignore
 
 
 
