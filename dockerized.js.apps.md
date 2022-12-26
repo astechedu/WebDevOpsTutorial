@@ -9,7 +9,7 @@
 Topics: 
 
 1. [Dockerized Vue App](#vuejs_app)
-2. [Dockerized React App Workked](#react_app)
+2. [Dockerized React App Worked](#react_app)
 3. [Dockerized Angular App](#angular_app)
 
 
