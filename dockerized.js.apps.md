@@ -9,7 +9,7 @@
 Topics: 
 
 1. [Dockerized Vue App](#vuejs_app)
-2. [Dockerized React App](#react_app)
+2. [Dockerized React App Workked](#react_app)
 3. [Dockerized Angular App](#angular_app)
 
 
@@ -110,7 +110,7 @@ Dockerfile:
 
 #### React App 
 
-#First creating app in local dir
+#First creating app in local dir (Worked)
 
 Dockerfile: 
 
