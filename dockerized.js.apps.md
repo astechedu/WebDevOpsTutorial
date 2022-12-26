@@ -26,7 +26,9 @@ Topics:
 
 
 #First creating app in local dir (Worked)
-      vue create appName
+      
+      npm init vue@latest
+      
 
 Dockerfile: 
 
@@ -37,7 +39,7 @@ Dockerfile:
       ENV NODE_ENV development
 
       # Setting up the work directory
-      WORKDIR /react-app
+      WORKDIR /vue-app
 
       # Installing dependencies
       COPY ./package.json /react-app
@@ -47,7 +49,7 @@ Dockerfile:
       COPY . .
 
       # Starting our application
-      CMD npm start
+      CMD npm serve
 
 
 
