@@ -10,7 +10,7 @@ Topics:
 
 1. [Dockerized Vue App](#vuejs_app)
 2. [Dockerized React App Worked](#react_app)
-3. [Dockerized Angular App](#angular_app)
+3. [Dockerized Angular App Worked](#angular_app)
 
 
 
@@ -35,27 +35,33 @@ Dockerfile:
       # Fetching the latest node image on alpine linux
       FROM node:18-alpine
 
-      # Declaring env
-      ENV NODE_ENV development
+      # install simple http server for serving static content
+      RUN npm install -g http-server
 
-      # Setting up the work directory
-      WORKDIR /vue-app
+      # make the 'app' folder the current working directory
+      WORKDIR /app
 
-      # Installing dependencies
-      COPY ./package.json /react-app
+      # copy both 'package.json' and 'package-lock.json' (if available)
+      COPY package*.json ./
+
+      # install project dependencies
       RUN npm install
 
-      # Copying all the files in our project
+      # copy project files and folders to the current working directory (i.e. 'app' folder)
       COPY . .
 
-      # Starting our application
-      CMD npm serve
+      # build app for production with minification
+      RUN npm run build
+
+      EXPOSE 8080
+      CMD [ "http-server", "dist" ]
+
 
 
 
    #Creating image
    
-   docker build -f Dockerfile -t dockerreact01 . 
+   docker build -f Dockerfile -t dockervue . 
 
    
    
@@ -72,12 +78,9 @@ Dockerfile:
 
 
 #Run docker image docreact01
-docker run --name dr -p8080:3000 -d docreact01
+docker run --name dr -p8080:8080 -d dockervue
 
 :end:
-
-
-
 
 
 
