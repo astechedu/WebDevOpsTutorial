@@ -81,6 +81,16 @@ Dockerfile:
 #Run docker image docreact01
 docker run --name dr -p8080:8080 -d dockervue
 
+
+
+Pulling image from dockerhub:
+
+      docker pull astechedu/sample-vue-app-image:latest
+
+
+
+
+
 :end:
 
 
@@ -154,14 +164,15 @@ Dockerfile:
 #Run docker image docreact01
 docker run --name dr -p8080:3000 -d docreact01
 
+
+Pulling image from dockerhub:
+
+      docker pull astechedu/sample-react-app-image:latest
+
+
+
+
 :end:
-
-
-
-
-
-
-
 
 
 
