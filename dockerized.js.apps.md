@@ -9,8 +9,8 @@
 Topics: 
 
 1. [How To Dockerize an Vue App? Worked](#vuejs_app)
-2. [How To Dockerize an React Application Worked](#react_app)
-3. [How To Dockerize an Angular Application with Nginx Worked](#angular_app)
+2. [How To Dockerize an React App? Worked](#react_app)
+3. [How To Dockerize an Angular App? with Nginx Worked](#angular_app)
 4. [How To Dockerize an Express Web App Worked](#express_app)
 
 
