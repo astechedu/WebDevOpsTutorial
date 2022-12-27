@@ -10,7 +10,7 @@ Topics:
 
 1. [Dockerized Vue App](#vuejs_app)
 2. [Dockerized React App Worked](#react_app)
-3. [Dockerized Angular App Worked](#angular_app)
+3. [How To Dockerize an Angular Application with Nginx Worked](#angular_app)
 4. [Dockerized Express Web App Worked](#express_app)
 
 
@@ -383,9 +383,12 @@ Dockerfile:
 ----------------------------------------------------------
 
 
+
+
 [Go To Top](#top)
 <a name="angular_app"></a>
-## 3. 
+# 3
+# How To Dockerize an Angular Application with Nginx
 
 ##### ===> Angualr App <==========
 
@@ -429,12 +432,18 @@ Dockerfile:
 
 
 
+Running the Docker Container: 
+docker build -t krish186/sample-angular-app-image:latest  
+
+docker image ls
 
 
 
+docker run -d -p 8080:80 krish186/sample-angular-app-image:latest
+docker ps
 
-
-
+docker login -u <username> -p <password>
+docker push krish186/sample-angular-app-image:latest
 
 
 
