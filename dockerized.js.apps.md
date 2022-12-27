@@ -33,7 +33,7 @@ Topics:
 
 Dockerfile: 
 
-      # Fetching the latest node image on alpine linux
+      # Fetching the latest node (node:latest or node) image on alpine linux
       FROM node:18-alpine
 
       # install simple http server for serving static content
@@ -92,6 +92,8 @@ docker run --name dr -p8080:8080 -d dockervue
 
 Dockerfile: 
 
+      # Fetching the latest node (node:latest or node) image on alpine linux
+      
       FROM node:lts-alpine
 
       # install simple http server for serving static content
@@ -181,7 +183,7 @@ Dockerfile:
 
 Dockerfile: 
 
-      # Fetching the latest node image on alpine linux
+      # Fetching the latest node (node:latest or node) image on alpine linux
       FROM node:18-alpine
 
       # Declaring env
@@ -380,6 +382,7 @@ Dockerfile:
 
 ----------------------------------------------------------
 
+
 [Go To Top](#top)
 <a name="angular_app"></a>
 ## 3. 
@@ -437,6 +440,7 @@ Dockerfile
 
 Dockerfile: 
 
+           # Fetching the latest node (node:latest or node) image on alpine linux 
             FROM node:18-alpine
 
             # Create app directory
@@ -473,18 +477,6 @@ Dockerfile:
       *.md
       .gitignore
       
-      
-   #Dockerignore
-   .dockerignore
-   
-   
-      node_modules
-      npm-debug.log
-      build
-      .git
-      *.md
-      .gitignore
-
 
 #Building your image
 
@@ -533,19 +525,4 @@ a1ef82tkc
       curl -i localhost:8080
       
 curl: (7) Failed to connect to localhost port 8080: Connection refused
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
