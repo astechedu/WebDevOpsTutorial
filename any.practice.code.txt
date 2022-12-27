@@ -232,9 +232,15 @@ If you run item 1 again, www-data should have access, and your Laravel app shoul
 
 -------------------------------------------------------------------------
 
+FROM node:latest as build
+WORKDIR /user/local/app
+COPY ./ /user/local/app/
+RUN npm install
+RUN npm run build
 
-
-
+FROM nginx:latest
+COPY --from=build /user/local/app/dist/sample-angular-app /user/share/nginx/html
+EXPOSE
 
 
 
