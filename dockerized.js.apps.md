@@ -451,8 +451,31 @@ Running the Docker Container:
             docker ps
 
             docker login -u <username> -p <password>
-            docker push astechdun/sample-angular-app-image:latest
+            docker push astechedu/sample-angular-app-image:latest
 
+
+
+Pulling image from dockerhub:
+
+      docker pull astechedu/sample-angular-app-image:latest
+
+
+
+
+     #Dockerignore:
+     
+               .dockerignore
+
+
+                  node_modules
+                  npm-debug.log
+                  build
+                  .git
+                  *.md
+                  .gitignore
+
+
+:end:
 
 
 
