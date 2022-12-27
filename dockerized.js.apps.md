@@ -8,10 +8,10 @@
 <a name="top"></a>
 Topics: 
 
-1. [Dockerized Vue App](#vuejs_app)
-2. [Dockerized React App Worked](#react_app)
+1. [How To Dockerize an Vue App? Worked](#vuejs_app)
+2. [How To Dockerize an React Application Worked](#react_app)
 3. [How To Dockerize an Angular Application with Nginx Worked](#angular_app)
-4. [Dockerized Express Web App Worked](#express_app)
+4. [How To Dockerize an Express Web App Worked](#express_app)
 
 
 
