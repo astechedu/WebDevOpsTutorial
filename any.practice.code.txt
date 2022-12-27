@@ -246,11 +246,13 @@ EXPOSE 80
 
 
 
+
 Ex: 02
 
 # Stage 1
 FROM node:14.15.4 as node
-WORKDIR /appCOPY . .
+WORKDIR /app
+COPY . .
 RUN npm install
 RUN npm run build --prod
 
