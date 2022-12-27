@@ -520,13 +520,19 @@ Running on http://localhost:8080
 
 #Shut down the image
 
-# Kill our running container
-$ docker kill <container id>
-<container id>
+#Kill our running container: 
 
-# Confirm that the app has stopped
-$ curl -i localhost:8080
-curl: (7) Failed to connect to localhost port 49160: Connection refused
+      docker kill <container id>
+      docker kill a1ef82tkc
+      
+<container id>
+a1ef82tkc
+
+#Confirm that the app has stopped:
+
+      curl -i localhost:8080
+      
+curl: (7) Failed to connect to localhost port 8080: Connection refused
 
 
 
