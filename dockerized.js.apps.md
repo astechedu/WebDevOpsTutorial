@@ -432,14 +432,84 @@ Dockerfile
 
 
 [Go To Top](#top)
-<a name="vuejs_app"></a>
+<a name="express_app"></a>
 ## 4. Express Web App (Worked)
 
+Dockerfile: 
+
+            FROM node:18-alpine
+
+            # Create app directory
+            WORKDIR /usr/src/app
+
+            # Install app dependencies
+            # A wildcard is used to ensure both package.json AND package-lock.json are copied
+            # where available (npm@5+)
+            COPY package*.json ./
+
+            RUN npm install
+            # If you are building your code for production
+            # RUN npm ci --only=production
+
+            # Bundle app source
+            COPY . .
+
+            EXPOSE 8080
+            CMD [ "node", "server.js" ]
 
 
 
 
 
+   
+   #Dockerignore
+   .dockerignore
+   
+   
+      node_modules
+      npm-debug.log
+      build
+      .git
+      *.md
+      .gitignore
+      
+      
+   #Dockerignore
+   .dockerignore
+   
+   
+      node_modules
+      npm-debug.log
+      build
+      .git
+      *.md
+      .gitignore
+
+
+#Building your image
+
+      docker build . -t dnex01
+
+
+#Run the image:
+
+      docker run --name webapp -p 8080:8080 -d dnex01
+
+#Get container ID
+
+      docker ps
+
+#Print app output
+
+      docker logs <container id>
+
+#Example:
+      
+Running on http://localhost:8080
+
+#Enter the container
+      
+      docker exec -it <container id> /bin/bash
 
 
 
