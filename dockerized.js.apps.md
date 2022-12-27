@@ -392,6 +392,13 @@ Dockerfile:
 
 ##### ===> Angualr App <==========
 
+Contents:
+
+    * Creating an Angular Application
+    * Writing a Dockerfile
+    * Running the Docker Container
+
+
 Creating an Angular Application in dir:
 
       ng new sample-angular-app
@@ -433,27 +440,18 @@ Dockerfile:
 
 
 Running the Docker Container: 
-docker build -t krish186/sample-angular-app-image:latest  
 
-docker image ls
+            docker build -t astechedu/sample-angular-app-image:latest  
 
-
-
-docker run -d -p 8080:80 krish186/sample-angular-app-image:latest
-docker ps
-
-docker login -u <username> -p <password>
-docker push krish186/sample-angular-app-image:latest
+            docker image ls
 
 
 
+            docker run -d -p 8080:80 astechedu/sample-angular-app-image:latest
+            docker ps
 
-
-
-
-
-
-
+            docker login -u <username> -p <password>
+            docker push astechdun/sample-angular-app-image:latest
 
 
 
