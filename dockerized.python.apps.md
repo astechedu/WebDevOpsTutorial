@@ -82,8 +82,13 @@ requirements.txt:
     docker run --name django01 -p 8080:8000 -d astechutube/sample-django-app
 
 
+
 #Pull this image from Docker Hub 
     docker pull astechutube/sample-django-app
+
+
+
+So access the application at the address http://localhost:8080/
 
 
 :end:
