@@ -8,6 +8,8 @@
 
    [Dockrized App Composer Worked Click Here](#php_composer) 
    
+   [Dockrized App Laravel App Worked Click Here](#php_laravel)  
+   
    [Dockrized App PHP + MySql+ PHPMyAdmin Worked Click Here](#php_mysql_phpmyadmin)  
    
    [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
