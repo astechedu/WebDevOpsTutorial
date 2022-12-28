@@ -112,7 +112,7 @@ docker-compose.yml:
 [Go To Top](#top)
 ## 2. 
 
-<a name="php_laravel"></a>    
+<a name="php_symfony"></a>    
 ### Dockerized Symfony App  ( Worked )
 
 #Install Symfony in local dir:
