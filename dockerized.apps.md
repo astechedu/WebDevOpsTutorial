@@ -7,7 +7,8 @@
 #### PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app
 
    
-1. [Dockrized App Laravel App Worked Click Here](#php_laravel)  
+1. [Dockrized App Laravel 9.x App Worked Click Here](#php_laravel)
+2. [Dockrized App Symfony 6.x App Worked Click Here](#php_symfony)
    
    [Dockrized App Composer Worked Click Here](#php_composer) 
    
@@ -106,7 +107,83 @@ docker-compose.yml:
   :computer:
   
   
+
+
+[Go To Top](#top)
+## 2. 
+
+<a name="php_laravel"></a>    
+### Dockerized Symfony App  ( Worked )
+
+#Install Symfony in local dir:
+
+     symfony new symfony01
+
+
+
+  Dockerfile:
   
+       FROM php:8.1-apache
+
+        RUN apt update && apt install -y \
+            git \
+            curl \
+            zip \
+            unzip
+
+       # RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
+
+
+        WORKDIR /var/www/html
+        COPY . .
+        RUN chown -R www-data:www-data /var/www
+
+
+docker-compose.yml: 
+
+      version: "3"
+      services: 
+        web:
+         build: 
+          context: ./
+          dockerfile: Dockerfile
+         container_name: symfony01
+         volumes: 
+           - ./000-default.conf:/etc/apache2/sites-available/000-default.conf
+         ports: 
+          - 8080:80
+
+
+  
+  000-default.conf: 
+
+        <VirtualHost *:80>
+         ServerAdmin webmaster@localhost
+         DocumentRoot /var/www/html/public
+         #LogLevel info ssl:warn
+         ErrorLog ${APACHE_LOG_DIR}/error.log
+         CustomLog ${APACHE_LOG_DIR}/access.log combined
+         # after it has been globally disabled with "a2disconf".
+         #Include conf-available/serve-cgi-bin.conf
+      </VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+
+
+        docker-compose up -d 
+        docker-compose down
+        docker-compose stop
+        docker-compose restart
+
+
+
+  :computer:
+
+
+
+
+
+
   
   
   
@@ -114,7 +191,7 @@ docker-compose.yml:
   
 
 [Go To Top](#top)
-## 2. 
+## 3. 
 
 <a name="php_composer"></a>    
 ### Composer Installation  ( Worked )
