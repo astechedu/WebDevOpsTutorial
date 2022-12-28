@@ -52,6 +52,24 @@ requirements.txt:
   ents.txt:
 
 
+.dockerignore:
+
+  #Byte-compiled / optimized / DLL files
+  __pycache__/
+
+  **/migrations
+  src/media
+  src/db.sqlite3
+  Procfile
+  .git
+
+
+
+
+
+
+
+
 
 
 
