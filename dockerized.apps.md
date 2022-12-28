@@ -183,7 +183,6 @@ docker-compose.yml:
 
 
 
-
   
   
   
@@ -196,7 +195,7 @@ docker-compose.yml:
 <a name="php_composer"></a>    
 ### Composer Installation  ( Worked )
 
-  Dockerfile
+Dockerfile
 
       FROM php:7.3-fpm-alpine
       RUN docker-php-ext-install pdo pdo_mysql
