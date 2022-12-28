@@ -31,10 +31,8 @@
 ===> PHP App <==========
 
 [Go To Top](#top)
-## 1. 
-
 <a name="php_laravel"></a>    
-### Dockerized Laravel App  ( Worked )
+### 1. Dockerized Laravel App  ( Worked )
 
 #Install Laravel in local dir:
 
@@ -108,10 +106,8 @@ docker-compose.yml:
 
 
 [Go To Top](#top)
-## 2. 
-
 <a name="php_symfony"></a>    
-### Dockerized Symfony App  ( Worked )
+### 2. Dockerized Symfony App  ( Worked )
 
 #Install Symfony in local dir:
 
