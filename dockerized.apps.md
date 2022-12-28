@@ -28,6 +28,59 @@
 [Go To Top](#top)
 ## 1. 
 
+<a name="php_laravel"></a>    
+### Dockerized Laravel App  ( Worked )
+
+
+
+
+
+  Dockerfile:
+  
+       FROM php:8.1-apache
+
+        RUN apt update && apt install -y \
+            git \
+            curl \
+            zip \
+            unzip
+
+       # RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
+
+
+        WORKDIR /var/www/html
+        COPY . .
+        RUN chown -R www-data:www-data /var/www
+
+
+docker-compose.yml: 
+
+      version: "3"
+      services: 
+        web:
+         build: 
+          context: ./
+          dockerfile: Dockerfile
+         container_name: laravel01
+         volumes: 
+           - ./000-default.conf:/etc/apache2/sites-available/000-default.conf
+         ports: 
+          - 8080:80
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+[Go To Top](#top)
+## 1. 
+
 <a name="php_composer"></a>    
 ### Composer Installation  ( Worked )
 
