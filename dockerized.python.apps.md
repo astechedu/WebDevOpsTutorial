@@ -22,6 +22,11 @@ Topics:
 
 
 
+
+
+
+
+
 [Go To Top](#top)
 <a name="doc_django"></a>  
 # Django   (Worked)
@@ -58,7 +63,7 @@ requirements.txt:
 
 .dockerignore:
 
-  #Byte-compiled / optimized / DLL files
+#Byte-compiled / optimized / DLL files
   __pycache__/
 
   **/migrations
@@ -67,11 +72,22 @@ requirements.txt:
   Procfile
   .git
 
-#Building docker image
-docker build . -t astechutube/sample-django-app
 
-#Running Container
-docker run --name django01 -p 8080:8000 -d astechutube/sample-django-app
+#Building docker image:
+
+    docker build . -t astechutube/sample-django-app
+
+#Running Container:
+
+    docker run --name django01 -p 8080:8000 -d astechutube/sample-django-app
+
+
+#Pull this image from Docker Hub 
+    docker pull astechutube/sample-django-app
+
+
+:end:
+
 
 
 
