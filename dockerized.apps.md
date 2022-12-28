@@ -6,21 +6,25 @@
 
 #### PHP:    php app, laravel app, codeigniter app, cakephp app, symfony app
 
-   [Dockrized App Composer Worked Click Here](#php_composer) 
+      [Dockrized App Composer Worked Click Here](#php_composer) 
    
-   [Dockrized App Laravel App Worked Click Here](#php_laravel)  
+   1. [Dockrized App Laravel App Worked Click Here](#php_laravel)  
    
-   [Dockrized App PHP + MySql+ PHPMyAdmin Worked Click Here](#php_mysql_phpmyadmin)  
+      [Dockrized App PHP + MySql+ PHPMyAdmin Worked Click Here](#php_mysql_phpmyadmin)  
    
-   [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
+      [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
 
-   [Dockerized Laravel & Symfony Apps Same Code Worked 100% Click Here](#php_laravel_symfony)   
+      [Dockerized Laravel & Symfony Apps Same Code Worked 100% Click Here](#php_laravel_symfony)   
 
 
    Production:   
             [Dockrized App PHP-PFM NGINX Worked Click Here](#phpfpm_nginx)  
 
+
+
 ------------------------------------------------------------------------------------
+
+
 
 
 ===> PHP App <==========
