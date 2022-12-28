@@ -53,6 +53,22 @@ Ubuntu  Web Development Create React App Part-19
 :computer:
 
 
+# AWS
+:notebook: Playlist:
+
+https://youtube.com/playlist?list=PLxAEnUvHtm9MxPOi5xD9nG-H23cForkBp
+
+
+#Videos:
+
+
+
+
+
+:computer:
+
+
+
 
 
 
