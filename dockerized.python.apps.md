@@ -25,6 +25,10 @@ Topics:
 [Go To Top](#top)
 <a name="doc_django"></a>  
 # Django   (Worked)
+   Install Django in local dir: 
+      pip install django
+   
+   
 Add the following content to the Dockerfile.
 
     FROM python:3.8
