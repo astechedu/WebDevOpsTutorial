@@ -18,10 +18,8 @@
 
    [Dockerized Laravel & Symfony Apps Same Code Worked 100% Click Here](#php_laravel_symfony)   
 
-
-  Production: 
   
-            [Dockrized App PHP-PFM NGINX Worked Click Here](#phpfpm_nginx)  
+    [Dockrized App PHP-PFM NGINX Worked Click Here](#phpfpm_nginx)  
 
 
 
