@@ -9,6 +9,11 @@
 
 #Videos
 
+Ubuntu Web Development Install VNM NodeJs Part-18 | VNM Versions | Use vnm node
+https://youtu.be/ZscIMEVH-qc
+
+Ubuntu Web Development Install Django Part-14
+https://youtu.be/KignfWky9aw
 
 Ubuntu Web Development Install Python VENV Part-13 | Virtual Environment For Separate Projects
 
