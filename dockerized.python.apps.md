@@ -67,9 +67,11 @@ requirements.txt:
   Procfile
   .git
 
+#Building docker image
+docker build . -t astechutube/sample-django-app
 
-
-
+#Running Container
+docker run --name django01 -p 8080:8000 -d astechutube/sample-django-app
 
 
 
