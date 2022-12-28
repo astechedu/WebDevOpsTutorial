@@ -31,7 +31,13 @@
 <a name="php_laravel"></a>    
 ### Dockerized Laravel App  ( Worked )
 
+#Install Laravel in local dir:
 
+     composer create-project --prefer-dist laravel/laravel
+     
+     OR
+     
+     laravel new laravel02
 
 
 
@@ -67,8 +73,31 @@ docker-compose.yml:
          ports: 
           - 8080:80
 
+
   
-  
+  000-default.conf: 
+
+        <VirtualHost *:80>
+         ServerAdmin webmaster@localhost
+         DocumentRoot /var/www/html/public
+         #LogLevel info ssl:warn
+         ErrorLog ${APACHE_LOG_DIR}/error.log
+         CustomLog ${APACHE_LOG_DIR}/access.log combined
+         # after it has been globally disabled with "a2disconf".
+         #Include conf-available/serve-cgi-bin.conf
+      </VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+
+
+        docker-compose up -d 
+        docker-compose down
+        docker-compose stop
+        docker-compose restart
+
+
+
+  :computer:
   
   
   
@@ -79,7 +108,7 @@ docker-compose.yml:
   
 
 [Go To Top](#top)
-## 1. 
+## 2. 
 
 <a name="php_composer"></a>    
 ### Composer Installation  ( Worked )
