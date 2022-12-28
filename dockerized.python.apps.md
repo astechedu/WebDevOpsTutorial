@@ -6,7 +6,7 @@
 Topics: 
 
   1. [Dockrized Python](#doc_python)<br>
-  2. [Dockrized Django](#doc_django)<br>
+  2. [Dockrized Django (Worked)](#doc_django)<br>
   3. [Dockrized Flask](#doc_flash)<br>
 
 
@@ -43,6 +43,13 @@ Add the following content to the Dockerfile.
     CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 
+requirements.txt: 
+
+  requiremasgiref==3.6.0
+  backports.zoneinfo==0.2.1
+  Django==4.1.4
+  sqlparse==0.4.3
+  ents.txt:
 
 
 
