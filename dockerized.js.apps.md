@@ -89,6 +89,7 @@ Pulling image from dockerhub:
 
 
 
+So access the application at the address http://localhost:8080/
 
 
 :end:
@@ -170,6 +171,9 @@ Pulling image from dockerhub:
       docker pull astechedu/sample-react-app-image:latest
 
 
+
+
+So access the application at the address http://localhost:8080/
 
 
 :end:
@@ -282,6 +286,10 @@ Pulling image from dockerhub:
                   *.md
                   .gitignore
 
+
+
+
+So access the application at the address http://localhost:8080/
 
 :end:
 
