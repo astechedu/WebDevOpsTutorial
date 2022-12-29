@@ -166,6 +166,32 @@ WHERE NOT Country='Germany' AND NOT Country='USA';
 
 
 
+SQL ORDER BY Keyword:
+
+
+ORDER BY Syntax
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC; 
+
+
+SELECT * FROM Customers
+ORDER BY Country;
+
+
+
+SELECT * FROM Customers
+ORDER BY Country DESC; 
+
+
+SELECT * FROM Customers
+ORDER BY Country, CustomerName; 
+
+
+SELECT * FROM Customers
+ORDER BY Country ASC, CustomerName DESC; 
+
+
 
 
 
