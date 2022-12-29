@@ -59,6 +59,21 @@ CustomerID 	CustomerName 	                      ContactName 	       Address 	   
     DROP INDEX - deletes an index
 
 
+SQL SELECT Statement:
+
+    SELECT * FROM table_name;  
+    
+The following SQL statement selects all the records in the "Customers" table:
+
+    SELECT * FROM Customers;
+
+
+    SELECT column1, column2, ...
+    FROM table_name; 
+
+   
+    SELECT CustomerName, City FROM Customers;
+
 
 
 
