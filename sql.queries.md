@@ -27,6 +27,11 @@ $$\color{purple}{SQL \ Queries}$$
   
     
 
+Searching Key Words: 
+    [Create Table](#create_table)
+  
+
+    
 
 
 
@@ -1680,7 +1685,7 @@ Example
 	TO DISK = 'D:\backups\testDB.bak';
 
 
-
+<a name="create_table"></a>
 SQL CREATE TABLE Statement:
 
 Syntax
