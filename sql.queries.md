@@ -969,7 +969,7 @@ USING SUBSTRING
 
 <a name="top"></a>
 <a name="more_examples_on_highest_salarary"></a>
-##### More Examples On Highest Salary
+# More Examples On Highest Salary
 ____
 More examples on Highest Salary:
 
