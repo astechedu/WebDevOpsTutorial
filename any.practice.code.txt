@@ -265,9 +265,9 @@ EXPOSE 80
 
 --------------------------------------------------------------------------
 
+Worked: 
 
-Mysql: 
-
+Mysql with adminer:
 
 Dockerfile: 
 
@@ -277,7 +277,7 @@ services:
    container_name: mydb
    restart: always
    environment: 
-     MYSQL_ROOT_PASSWORD: example
+     MYSQL_ROOT_PASSWORD: ajay123
     
     
   adminer:
@@ -290,5 +290,17 @@ services:
 docker-compose up -d
 docker-compose down
 
+docker exex -it mydb bash
+
+abcd# mysql -u root -p
+   password: ajay123
+
+  mysql> .......
+  
+  
+  
+  
+
+---------------------------------------
 
 
