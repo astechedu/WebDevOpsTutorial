@@ -1635,19 +1635,22 @@ SQL Logical Operators
  
 SQL CREATE DATABASE Statement:
 
-CREATE DATABASE databasename; 
+	CREATE DATABASE databasename; 
 
 Example
-CREATE DATABASE testDB;
+
+	CREATE DATABASE testDB;
 
 
 SQL DROP DATABASE Statement: 
 
 Syntax
-DROP DATABASE databasename;
+
+	DROP DATABASE databasename;
 
 Example
-DROP DATABASE testDB;
+
+	DROP DATABASE testDB;
 
 
 
@@ -1655,126 +1658,146 @@ The SQL BACKUP DATABASE Statement:
 
 The BACKUP DATABASE statement is used in SQL Server to create a full back up of an existing SQL database.
 Syntax
-BACKUP DATABASE databasename
-TO DISK = 'filepath';
+
+	BACKUP DATABASE databasename
+	TO DISK = 'filepath';
+	
 The SQL BACKUP WITH DIFFERENTIAL Statement
 
 A differential back up only backs up the parts of the database that have changed since the last full database backup.
 Syntax
-BACKUP DATABASE databasename
-TO DISK = 'filepath'
-WITH DIFFERENTIAL;
+
+	BACKUP DATABASE databasename
+	TO DISK = 'filepath'
+	WITH DIFFERENTIAL;
+
 BACKUP DATABASE Example
 
 The following SQL statement creates a full back up of the existing database "testDB" to the D disk:
 Example
-BACKUP DATABASE testDB
-TO DISK = 'D:\backups\testDB.bak';
+
+	BACKUP DATABASE testDB
+	TO DISK = 'D:\backups\testDB.bak';
 
 
 
 SQL CREATE TABLE Statement:
 
 Syntax
-CREATE TABLE table_name (
-    column1 datatype,
-    column2 datatype,
-    column3 datatype,
-   ....
-);
+
+	CREATE TABLE table_name (
+	    column1 datatype,
+	    column2 datatype,
+	    column3 datatype,
+	   ....
+	);
 
 
 
 Example
-CREATE TABLE Persons (
-    PersonID int,
-    LastName varchar(255),
-    FirstName varchar(255),
-    Address varchar(255),
-    City varchar(255)
-);
+
+	CREATE TABLE Persons (
+	    PersonID int,
+	    LastName varchar(255),
+	    FirstName varchar(255),
+	    Address varchar(255),
+	    City varchar(255)
+	);
 
 
 Create Table Using Another Table:
 
 Syntax
-CREATE TABLE new_table_name AS
-    SELECT column1, column2,...
-    FROM existing_table_name
-    WHERE ....;
+
+	CREATE TABLE new_table_name AS
+	    SELECT column1, column2,...
+	    FROM existing_table_name
+	    WHERE ....;
 
 
 
 Example
-CREATE TABLE TestTable AS
-SELECT customername, contactname
-FROM customers; 
+
+	CREATE TABLE TestTable AS
+	SELECT customername, contactname
+	FROM customers; 
 
 
 SQL DROP TABLE Statement: 
 
 
 Syntax
-DROP TABLE table_name;
+
+	DROP TABLE table_name;
 
 Example
-DROP TABLE Shippers;
+
+	DROP TABLE Shippers;
 
 
 SQL TRUNCATE TABLE
 
 The TRUNCATE TABLE statement is used to delete the data inside a table, but not the table itself.
+
 Syntax
-TRUNCATE TABLE table_name;
+
+	TRUNCATE TABLE table_name;
 
 
 
 SQL ALTER TABLE Statement:
 
-ALTER TABLE - ADD Column
+	ALTER TABLE - ADD Column
 
 To add a column in a table, use the following syntax:
-ALTER TABLE table_name
-ADD column_name datatype; 
+
+	ALTER TABLE table_name
+	ADD column_name datatype; 
 
 Example
-ALTER TABLE Customers
-ADD Email varchar(255);
+
+	ALTER TABLE Customers
+	ADD Email varchar(255);
 
 
 ALTER TABLE - DROP COLUMN: 
 
-ALTER TABLE table_name
-DROP COLUMN column_name; 
+	ALTER TABLE table_name
+	DROP COLUMN column_name; 
 
 
 Example
-ALTER TABLE Customers
-DROP COLUMN Email;
+
+	ALTER TABLE Customers
+	DROP COLUMN Email;
 
 
 ALTER TABLE - RENAME COLUMN:
 
 To rename a column in a table, use the following syntax:
-ALTER TABLE table_name
-RENAME COLUMN old_name to new_name; 
+
+	ALTER TABLE table_name
+	RENAME COLUMN old_name to new_name; 
 
 ALTER TABLE - ALTER/MODIFY DATATYPE
 
 To change the data type of a column in a table, use the following syntax:
 
 SQL Server / MS Access:
-ALTER TABLE table_name
-ALTER COLUMN column_name datatype;
+
+	ALTER TABLE table_name
+	ALTER COLUMN column_name datatype;
 
 My SQL / Oracle (prior version 10G):
-ALTER TABLE table_name
-MODIFY COLUMN column_name datatype; 
+
+	ALTER TABLE table_name
+	MODIFY COLUMN column_name datatype; 
 
 
 Oracle 10G and later:
-ALTER TABLE table_name
-MODIFY column_name datatype; 
+
+	ALTER TABLE table_name
+	MODIFY column_name datatype; 
 
 
 SQL ALTER TABLE Example
@@ -1802,8 +1825,9 @@ Change Data Type Example:
 Now we want to change the data type of the column named "DateOfBirth" in the "Persons" table.
 
 We use the following SQL statement:
-ALTER TABLE Persons
-ALTER COLUMN DateOfBirth year; 
+
+	ALTER TABLE Persons
+	ALTER COLUMN DateOfBirth year; 
 
 
 DROP COLUMN Example:
@@ -1811,8 +1835,9 @@ DROP COLUMN Example:
 Next, we want to delete the column named "DateOfBirth" in the "Persons" table.
 
 We use the following SQL statement:
-ALTER TABLE Persons
-DROP COLUMN DateOfBirth; 
+
+	ALTER TABLE Persons
+	DROP COLUMN DateOfBirth; 
 
 The "Persons" table will now look like this:
 ID 	LastName 	FirstName 	Address 	City
@@ -1825,16 +1850,16 @@ ID 	LastName 	FirstName 	Address 	City
 
 SQL Constraints: 
 
-
 SQL Create Constraints: 
 
 Syntax
-CREATE TABLE table_name (
-    column1 datatype constraint,
-    column2 datatype constraint,
-    column3 datatype constraint,
-    ....
-);
+
+	CREATE TABLE table_name (
+	    column1 datatype constraint,
+	    column2 datatype constraint,
+	    column3 datatype constraint,
+	    ....
+	);
 
 SQL Constraints: 
 
@@ -1883,45 +1908,49 @@ SQL UNIQUE Constraint:
 
 SQL UNIQUE Constraint on CREATE TABLE:
 
-SQL Server / Oracle / MS Access:
-CREATE TABLE Persons (
-    ID int NOT NULL UNIQUE,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int
-);
+	SQL Server / Oracle / MS Access:
+	CREATE TABLE Persons (
+	    ID int NOT NULL UNIQUE,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int
+	);
 
 MySQL:
-CREATE TABLE Persons (
-    ID int NOT NULL,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int,
-    UNIQUE (ID)
-); 
+
+	CREATE TABLE Persons (
+	    ID int NOT NULL,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int,
+	    UNIQUE (ID)
+	); 
 
 
 MySQL / SQL Server / Oracle / MS Access:
-CREATE TABLE Persons (
-    ID int NOT NULL,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int,
-    CONSTRAINT UC_Person UNIQUE (ID,LastName)
-); 
+
+	CREATE TABLE Persons (
+	    ID int NOT NULL,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int,
+	    CONSTRAINT UC_Person UNIQUE (ID,LastName)
+	); 
 
 
 
 SQL UNIQUE Constraint on ALTER TABLE: 
 
 MySQL / SQL Server / Oracle / MS Access:
-ALTER TABLE Persons
-ADD UNIQUE (ID); 
+
+	ALTER TABLE Persons
+	ADD UNIQUE (ID); 
 
 
 MySQL / SQL Server / Oracle / MS Access:
-ALTER TABLE Persons
-ADD CONSTRAINT UC_Person UNIQUE (ID,LastName); 
+
+	ALTER TABLE Persons
+	ADD CONSTRAINT UC_Person UNIQUE (ID,LastName); 
 
 DROP a UNIQUE Constraint: 
 
@@ -1938,51 +1967,54 @@ SQL Server / Oracle / MS Access:
 
 SQL PRIMARY KEY Constraint: 
 
-SQL PRIMARY KEY on CREATE TABLE
+	SQL PRIMARY KEY on CREATE TABLE
 
 The following SQL creates a PRIMARY KEY on the "ID" column when the "Persons" table is created:
 
 MySQL:
-CREATE TABLE Persons (
-    ID int NOT NULL,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int,
-    PRIMARY KEY (ID)
-); 
+
+	CREATE TABLE Persons (
+	    ID int NOT NULL,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int,
+	    PRIMARY KEY (ID)
+	); 
 
 SQL Server / Oracle / MS Access:
-CREATE TABLE Persons (
-    ID int NOT NULL PRIMARY KEY,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int
-); 
+
+	CREATE TABLE Persons (
+	    ID int NOT NULL PRIMARY KEY,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int
+	); 
 
 
 MySQL / SQL Server / Oracle / MS Access:
-CREATE TABLE Persons (
-    ID int NOT NULL,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int,
-    CONSTRAINT PK_Person PRIMARY KEY (ID,LastName)
-); 
 
-
+	CREATE TABLE Persons (
+	    ID int NOT NULL,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int,
+	    CONSTRAINT PK_Person PRIMARY KEY (ID,LastName)
+	); 
 
 
 SQL PRIMARY KEY on ALTER TABLE: 
 
 
 MySQL / SQL Server / Oracle / MS Access:
-ALTER TABLE Persons
-ADD PRIMARY KEY (ID); 
+
+	ALTER TABLE Persons
+	ADD PRIMARY KEY (ID); 
 
 
 MySQL / SQL Server / Oracle / MS Access:
-ALTER TABLE Persons
-ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName); 
+
+	ALTER TABLE Persons
+	ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName); 
 
 
 DROP a PRIMARY KEY Constraint
@@ -1990,12 +2022,14 @@ DROP a PRIMARY KEY Constraint
 To drop a PRIMARY KEY constraint, use the following SQL:
 
 MySQL:
-ALTER TABLE Persons
-DROP PRIMARY KEY;
+
+	ALTER TABLE Persons
+	DROP PRIMARY KEY;
 
 SQL Server / Oracle / MS Access:
-ALTER TABLE Persons
-DROP CONSTRAINT PK_Person; 
+
+	ALTER TABLE Persons
+	DROP CONSTRAINT PK_Person; 
 
 
 SQL FOREIGN KEY Constraint: 
@@ -2021,120 +2055,131 @@ SQL FOREIGN KEY on CREATE TABLE
 The following SQL creates a FOREIGN KEY on the "PersonID" column when the "Orders" table is created:
 
 MySQL:
-CREATE TABLE Orders (
-    OrderID int NOT NULL,
-    OrderNumber int NOT NULL,
-    PersonID int,
-    PRIMARY KEY (OrderID),
-    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
-);
+
+	CREATE TABLE Orders (
+	    OrderID int NOT NULL,
+	    OrderNumber int NOT NULL,
+	    PersonID int,
+	    PRIMARY KEY (OrderID),
+	    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+	);
 
 SQL Server / Oracle / MS Access:
-CREATE TABLE Orders (
-    OrderID int NOT NULL PRIMARY KEY,
-    OrderNumber int NOT NULL,
-    PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
-);
+
+	CREATE TABLE Orders (
+	    OrderID int NOT NULL PRIMARY KEY,
+	    OrderNumber int NOT NULL,
+	    PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
+	);
 
 To allow naming of a FOREIGN KEY constraint, and for defining a FOREIGN KEY constraint on multiple columns, use the following SQL syntax:
 
 MySQL / SQL Server / Oracle / MS Access:
-CREATE TABLE Orders (
-    OrderID int NOT NULL,
-    OrderNumber int NOT NULL,
-    PersonID int,
-    PRIMARY KEY (OrderID),
-    CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID)
-    REFERENCES Persons(PersonID)
-);
+
+	CREATE TABLE Orders (
+	    OrderID int NOT NULL,
+	    OrderNumber int NOT NULL,
+	    PersonID int,
+	    PRIMARY KEY (OrderID),
+	    CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID)
+	    REFERENCES Persons(PersonID)
+	);
+	
 SQL FOREIGN KEY on ALTER TABLE
 
 To create a FOREIGN KEY constraint on the "PersonID" column when the "Orders" table is already created, use the following SQL:
 
 MySQL / SQL Server / Oracle / MS Access:
-ALTER TABLE Orders
-ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+	ALTER TABLE Orders
+	ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
 
 To allow naming of a FOREIGN KEY constraint, and for defining a FOREIGN KEY constraint on multiple columns, use the following SQL syntax:
 
 MySQL / SQL Server / Oracle / MS Access:
+
 ALTER TABLE Orders
 ADD CONSTRAINT FK_PersonOrder
-FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
-DROP a FOREIGN KEY Constraint
+	FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+	DROP a FOREIGN KEY Constraint
 
 To drop a FOREIGN KEY constraint, use the following SQL:
 
 MySQL:
-ALTER TABLE Orders
-DROP FOREIGN KEY FK_PersonOrder;
+
+	ALTER TABLE Orders
+	DROP FOREIGN KEY FK_PersonOrder;
 
 SQL Server / Oracle / MS Access:
-ALTER TABLE Orders
-DROP CONSTRAINT FK_PersonOrder;
 
-
+	ALTER TABLE Orders
+	DROP CONSTRAINT FK_PersonOrder;
 
 
 SQL CHECK Constraint:
 
 The CHECK constraint is used to limit the value range that can be placed in a column.
 
-
-
 SQL CHECK on CREATE TABLE: 
 
-
-
 MySQL:
-CREATE TABLE Persons (
-    ID int NOT NULL,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int,
-    CHECK (Age>=18)
-);
+
+	CREATE TABLE Persons (
+	    ID int NOT NULL,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int,
+	    CHECK (Age>=18)
+	);
 
 SQL Server / Oracle / MS Access:
-CREATE TABLE Persons (
-    ID int NOT NULL,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int CHECK (Age>=18)
-);
+
+	CREATE TABLE Persons (
+	    ID int NOT NULL,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int CHECK (Age>=18)
+	);
 
 To allow naming of a CHECK constraint, and for defining a CHECK constraint on multiple columns, use the following SQL syntax:
 
 MySQL / SQL Server / Oracle / MS Access:
-CREATE TABLE Persons (
-    ID int NOT NULL,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int,
-    City varchar(255),
-    CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes')
-);
+
+	CREATE TABLE Persons (
+	    ID int NOT NULL,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int,
+	    City varchar(255),
+	    CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes')
+	);
+
 ADVERTISEMENT
+
 SQL CHECK on ALTER TABLE
 
 To create a CHECK constraint on the "Age" column when the table is already created, use the following SQL:
 
 MySQL / SQL Server / Oracle / MS Access:
-ALTER TABLE Persons
-ADD CHECK (Age>=18);
+
+	ALTER TABLE Persons
+	ADD CHECK (Age>=18);
 
 To allow naming of a CHECK constraint, and for defining a CHECK constraint on multiple columns, use the following SQL syntax:
 
 MySQL / SQL Server / Oracle / MS Access:
-ALTER TABLE Persons
-ADD CONSTRAINT CHK_PersonAge CHECK (Age>=18 AND City='Sandnes');
+
+	ALTER TABLE Persons
+	ADD CONSTRAINT CHK_PersonAge CHECK (Age>=18 AND City='Sandnes');
+
 DROP a CHECK Constraint
 
 To drop a CHECK constraint, use the following SQL:
 
 SQL Server / Oracle / MS Access:
-ALTER TABLE Persons
-DROP CONSTRAINT CHK_PersonAge;
+
+	ALTER TABLE Persons
+	DROP CONSTRAINT CHK_PersonAge;
 
 MySQL:
 
@@ -2144,60 +2189,67 @@ MySQL:
 
 SQL DEFAULT Constraint: 
 
-SQL DEFAULT on CREATE TABLE: 
+	SQL DEFAULT on CREATE TABLE: 
 
 
 My SQL / SQL Server / Oracle / MS Access:
-CREATE TABLE Persons (
-    ID int NOT NULL,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int,
-    City varchar(255) DEFAULT 'Sandnes'
-); 
+
+	CREATE TABLE Persons (
+	    ID int NOT NULL,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int,
+	    City varchar(255) DEFAULT 'Sandnes'
+	); 
 
 
-
-CREATE TABLE Orders (
-    ID int NOT NULL,
-    OrderNumber int NOT NULL,
-    OrderDate date DEFAULT GETDATE()
-); 
+	CREATE TABLE Orders (
+	    ID int NOT NULL,
+	    OrderNumber int NOT NULL,
+	    OrderDate date DEFAULT GETDATE()
+	); 
 
 
 SQL DEFAULT on ALTER TABLE: 
 
 MySQL:
-ALTER TABLE Persons
-ALTER City SET DEFAULT 'Sandnes';
+
+	ALTER TABLE Persons
+	ALTER City SET DEFAULT 'Sandnes';
 
 SQL Server:
-ALTER TABLE Persons
-ADD CONSTRAINT df_City
-DEFAULT 'Sandnes' FOR City;
+
+	ALTER TABLE Persons
+	ADD CONSTRAINT df_City
+	DEFAULT 'Sandnes' FOR City;
 
 MS Access:
-ALTER TABLE Persons
-ALTER COLUMN City SET DEFAULT 'Sandnes';
+
+	ALTER TABLE Persons
+	ALTER COLUMN City SET DEFAULT 'Sandnes';
 
 Oracle:
-ALTER TABLE Persons
-MODIFY City DEFAULT 'Sandnes';
-DROP a DEFAULT Constraint
+
+	ALTER TABLE Persons
+	MODIFY City DEFAULT 'Sandnes';
+	DROP a DEFAULT Constraint
 
 To drop a DEFAULT constraint, use the following SQL:
 
 MySQL:
-ALTER TABLE Persons
-ALTER City DROP DEFAULT;
+
+	ALTER TABLE Persons
+	ALTER City DROP DEFAULT;
 
 SQL Server / Oracle / MS Access:
-ALTER TABLE Persons
-ALTER COLUMN City DROP DEFAULT;
+
+	ALTER TABLE Persons
+	ALTER COLUMN City DROP DEFAULT;
 
 SQL Server:
-ALTER TABLE Persons
-ALTER COLUMN City DROP DEFAULT;
+
+	ALTER TABLE Persons
+	ALTER COLUMN City DROP DEFAULT;
 
 
 SQL CREATE INDEX Statement:
@@ -2207,41 +2259,50 @@ The CREATE INDEX statement is used to create indexes in tables.
 CREATE INDEX Syntax
 
 Creates an index on a table. Duplicate values are allowed:
-CREATE INDEX index_name
-ON table_name (column1, column2, ...);
+
+	CREATE INDEX index_name
+	ON table_name (column1, column2, ...);
+
 CREATE UNIQUE INDEX Syntax
 
 Creates a unique index on a table. Duplicate values are not allowed:
-CREATE UNIQUE INDEX index_name
-ON table_name (column1, column2, ...); 
+
+	CREATE UNIQUE INDEX index_name
+	ON table_name (column1, column2, ...); 
 
 
 CREATE INDEX Example
 
 The SQL statement below creates an index named "idx_lastname" on the "LastName" column in the "Persons" table:
-CREATE INDEX idx_lastname
-ON Persons (LastName);
+	
+	CREATE INDEX idx_lastname
+	ON Persons (LastName);
 
 If you want to create an index on a combination of columns, you can list the column names within the parentheses, separated by commas:
-CREATE INDEX idx_pname
-ON Persons (LastName, FirstName); 
+	
+	CREATE INDEX idx_pname
+	ON Persons (LastName, FirstName); 
 
 DROP INDEX Statement
 
 The DROP INDEX statement is used to delete an index in a table.
 
 MS Access:
-DROP INDEX index_name ON table_name;
+
+	DROP INDEX index_name ON table_name;
 
 SQL Server:
-DROP INDEX table_name.index_name;
+
+	DROP INDEX table_name.index_name;
 
 DB2/Oracle:
-DROP INDEX index_name;
+
+	DROP INDEX index_name;
 
 MySQL:
-ALTER TABLE table_name
-DROP INDEX index_name;
+
+	ALTER TABLE table_name
+	DROP INDEX index_name;
 
 
 AUTO INCREMENT Field:
@@ -2253,59 +2314,60 @@ Auto-increment allows a unique number to be generated automatically when a new r
 Syntax for MySQL
 
 The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
-CREATE TABLE Persons (
-    Personid int NOT NULL AUTO_INCREMENT,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int,
-    PRIMARY KEY (Personid)
-); 
+	
+	CREATE TABLE Persons (
+	    Personid int NOT NULL AUTO_INCREMENT,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int,
+	    PRIMARY KEY (Personid)
+	); 
+
+	ALTER TABLE Persons AUTO_INCREMENT=100; 
 
 
-ALTER TABLE Persons AUTO_INCREMENT=100; 
-
-
-INSERT INTO Persons (FirstName,LastName)
-VALUES ('Lars','Monsen'); 
+	INSERT INTO Persons (FirstName,LastName)
+	VALUES ('Lars','Monsen'); 
 
 Syntax for SQL Server: 
 
-CREATE TABLE Persons (
-    Personid int IDENTITY(1,1) PRIMARY KEY,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int
-); 
+	CREATE TABLE Persons (
+	    Personid int IDENTITY(1,1) PRIMARY KEY,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int
+	); 
 
 
-INSERT INTO Persons (FirstName,LastName)
-VALUES ('Lars','Monsen'); 
+	INSERT INTO Persons (FirstName,LastName)
+	VALUES ('Lars','Monsen'); 
 
 
 Syntax for Access
 
 The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
-CREATE TABLE Persons (
-    Personid AUTOINCREMENT PRIMARY KEY,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Age int
-); 
+	
+	CREATE TABLE Persons (
+	    Personid AUTOINCREMENT PRIMARY KEY,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255),
+	    Age int
+	); 
 
 	INSERT INTO Persons (FirstName,LastName)
 	VALUES ('Lars','Monsen'); 
 
 Syntax for Oracle
 
-CREATE SEQUENCE seq_person
-MINVALUE 1
-START WITH 1
-INCREMENT BY 1
-CACHE 10;
+	CREATE SEQUENCE seq_person
+	MINVALUE 1
+	START WITH 1
+	INCREMENT BY 1
+	CACHE 10;
 
 
-INSERT INTO Persons (Personid,FirstName,LastName)
-VALUES (seq_person.nextval,'Lars','Monsen'); 
+	INSERT INTO Persons (Personid,FirstName,LastName)
+	VALUES (seq_person.nextval,'Lars','Monsen'); 
 
 
 SQL Working With Dates: 
@@ -2335,10 +2397,11 @@ OrderId 	ProductName 	OrderDate
 4 	Mascarpone Fabioli 	2008-10-29
 
 
- SELECT * FROM Orders WHERE OrderDate='2008-11-11'
+ 	SELECT * FROM Orders WHERE OrderDate='2008-11-11'
 
 
 The result-set will look like this:
+
 OrderId 	ProductName 	OrderDate
 1 	Geitost 	2008-11-11
 3 	Mozzarella di Giovanni 	2008-11-11
@@ -2354,61 +2417,69 @@ OrderId 	ProductName 	OrderDate
 4 	Mascarpone Fabioli 	2008-10-29 14:56:59
 
 If we use the same SELECT statement as above:
-SELECT * FROM Orders WHERE OrderDate='2008-11-11'
 
+	SELECT * FROM Orders WHERE OrderDate='2008-11-11'
 
 
 SQL Views: 
 
-
 SQL CREATE VIEW Statement: 
 
-CREATE VIEW Syntax
-CREATE VIEW view_name AS
-SELECT column1, column2, ...
-FROM table_name
-WHERE condition; 
+	CREATE VIEW Syntax
+	CREATE VIEW view_name AS
+	SELECT column1, column2, ...
+	FROM table_name
+	WHERE condition; 
 
 
 SQL CREATE VIEW Examples
 
 The following SQL creates a view that shows all customers from Brazil:
-Example
-CREATE VIEW [Brazil Customers] AS
-SELECT CustomerName, ContactName
-FROM Customers
-WHERE Country = 'Brazil'; 
-
 
 Example
-SELECT * FROM [Brazil Customers]; 
+
+	CREATE VIEW [Brazil Customers] AS
+	SELECT CustomerName, ContactName
+	FROM Customers
+	WHERE Country = 'Brazil'; 
 
 
 Example
-CREATE VIEW [Products Above Average Price] AS
-SELECT ProductName, Price
-FROM Products
-WHERE Price > (SELECT AVG(Price) FROM Products); 
+
+	SELECT * FROM [Brazil Customers]; 
+
 
 Example
-SELECT * FROM [Products Above Average Price]; 
+
+	CREATE VIEW [Products Above Average Price] AS
+	SELECT ProductName, Price
+	FROM Products
+	WHERE Price > (SELECT AVG(Price) FROM Products); 
+
+Example
+
+	SELECT * FROM [Products Above Average Price]; 
 
 
 SQL Updating a View
 
 A view can be updated with the CREATE OR REPLACE VIEW statement.
+
 SQL CREATE OR REPLACE VIEW Syntax
-CREATE OR REPLACE VIEW view_name AS
-SELECT column1, column2, ...
-FROM table_name
-WHERE condition;
+
+	CREATE OR REPLACE VIEW view_name AS
+	SELECT column1, column2, ...
+	FROM table_name
+	WHERE condition;
 
 The following SQL adds the "City" column to the "Brazil Customers" view:
+
 Example
-CREATE OR REPLACE VIEW [Brazil Customers] AS
-SELECT CustomerName, ContactName, City
-FROM Customers
-WHERE Country = 'Brazil'; 
+
+	CREATE OR REPLACE VIEW [Brazil Customers] AS
+	SELECT CustomerName, ContactName, City
+	FROM Customers
+	WHERE Country = 'Brazil'; 
 
 
 SQL Dropping a View
@@ -2426,24 +2497,25 @@ Example:
 SQL Injection: 
 
 
-SQL injection is a code injection technique that might destroy your database.
-SQL injection is one of the most common web hacking techniques.
-SQL injection is the placement of malicious code in SQL statements, via web page input.
+	SQL injection is a code injection technique that might destroy your database.
+	SQL injection is one of the most common web hacking techniques.
+	SQL injection is the placement of malicious code in SQL statements, via web page input.
 
 SQL in Web Pages:
 
 
 Example
-txtUserId = getRequestString("UserId");
-txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;
+
+	txtUserId = getRequestString("UserId");
+	txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;
 
 
 SQL Injection Based on 1=1 is Always True
 
-SELECT * FROM Users WHERE UserId = 105 OR 1=1; 
+	SELECT * FROM Users WHERE UserId = 105 OR 1=1; 
 
 
-SELECT UserId, Name, Password FROM Users WHERE UserId = 105 or 1=1; 
+	SELECT UserId, Name, Password FROM Users WHERE UserId = 105 or 1=1; 
 
 
 SQL Injection Based on ""="" is Always True
