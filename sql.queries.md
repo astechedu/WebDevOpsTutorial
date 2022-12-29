@@ -48,7 +48,7 @@ Table – EmployeeSalary:
 SQL Query Interview Questions for Freshers: 
 
 
-Ques.1. Write an SQL query to fetch the EmpId and FullName of all the employees working under the Manager with id – ‘986’.
+### Ques.1. Write an SQL query to fetch the EmpId and FullName of all the employees working under the Manager with id – ‘986’.
 
     SELECT  EmpId, FullName
     FROM EmployeeDetails
@@ -56,13 +56,13 @@ Ques.1. Write an SQL query to fetch the EmpId and FullName of all the employees 
 
 
 
-Ques.2. Write an SQL query to fetch the different projects available from the EmployeeSalary table.
+###  Ques.2. Write an SQL query to fetch the different projects available from the EmployeeSalary table.
 
     SELECT DISTINCT(Project)
     FROM EmployeeSalary;
 
 
-Ques.3. Write an SQL query to fetch the count of employees working in project ‘P1’.
+### Ques.3. Write an SQL query to fetch the count of employees working in project ‘P1’.
 
     SELECT COUNT(*) 
     FROM EmployeeSalary 
@@ -70,7 +70,7 @@ Ques.3. Write an SQL query to fetch the count of employees working in project �
 
 
 
-Ques.4. Write an SQL query to find the maximum, minimum, and average salary of the employees.
+### Ques.4. Write an SQL query to find the maximum, minimum, and average salary of the employees.
 
     SELECT Max(Salary), 
     Min(Salary), 
@@ -78,7 +78,7 @@ Ques.4. Write an SQL query to find the maximum, minimum, and average salary of t
     FROM EmployeeSalary;
 
 
-Ques.5. Write an SQL query to find the employee id whose salary lies in the range of 9000 and 15000.
+### Ques.5. Write an SQL query to find the employee id whose salary lies in the range of 9000 and 15000.
 
     SELECT EmpId, Salary
     FROM EmployeeSalary
@@ -86,20 +86,20 @@ Ques.5. Write an SQL query to find the employee id whose salary lies in the rang
 
 
 
-Ques.6. Write an SQL query to fetch those employees who live in Toronto and work under the manager with ManagerId – 321.
+### Ques.6. Write an SQL query to fetch those employees who live in Toronto and work under the manager with ManagerId – 321.
 
     SELECT EmpId, City, ManagerId
     FROM EmployeeDetails
     WHERE City='Toronto' AND ManagerId='321';
 
-Ques.7. Write an SQL query to fetch all the employees who either live in California or work under a manager with ManagerId – 321.
+### Ques.7. Write an SQL query to fetch all the employees who either live in California or work under a manager with ManagerId – 321.
 
     SELECT EmpId, City, ManagerId
     FROM EmployeeDetails
     WHERE City='California' OR ManagerId='321';
     
 
-Ques.8. Write an SQL query to fetch all those employees who work on Projects other than P1.
+### Ques.8. Write an SQL query to fetch all those employees who work on Projects other than P1.
 
     SELECT EmpId
     FROM EmployeeSalary
@@ -116,7 +116,7 @@ For the difference between NOT and <> SQL operators, check this link – Differe
 
 
 
-Ques.9. Write an SQL query to display the total salary of each employee adding the Salary with Variable value.
+### Ques.9. Write an SQL query to display the total salary of each employee adding the Salary with Variable value.
 
     SELECT EmpId,
     Salary+Variable as TotalSalary 
@@ -124,14 +124,14 @@ Ques.9. Write an SQL query to display the total salary of each employee adding t
 
 
 
-Ques.10. Write an SQL query to fetch the employees whose name begins with any two characters, followed by a text “hn” and ends with any sequence of characters.
+### Ques.10. Write an SQL query to fetch the employees whose name begins with any two characters, followed by a text “hn” and ends with any sequence of characters.
 
     SELECT FullName
     FROM EmployeeDetails
     WHERE FullName LIKE ‘__hn%’;
 
 
-Ques.11. Write an SQL query to fetch all the EmpIds which are present in either of the tables – ‘EmployeeDetails’ and ‘EmployeeSalary’.
+### Ques.11. Write an SQL query to fetch all the EmpIds which are present in either of the tables – ‘EmployeeDetails’ and ‘EmployeeSalary’.
 
 
     SELECT EmpId FROM EmployeeDetails
@@ -140,7 +140,7 @@ Ques.11. Write an SQL query to fetch all the EmpIds which are present in either 
 
 
 
-Ques.12. Write an SQL query to fetch common records between two tables.
+### Ques.12. Write an SQL query to fetch common records between two tables.
 
     SELECT * FROM EmployeeSalary
     INTERSECT
@@ -155,7 +155,7 @@ MySQL – Since MySQL doesn’t have INTERSECT operator so we can use the subque
     (SELECT EmpId from ManagerSalary);
 
 
-Ques.13. Write an SQL query to fetch records that are present in one table but not in another table.
+### Ques.13. Write an SQL query to fetch records that are present in one table but not in another table.
 
     SELECT * FROM EmployeeSalary
     MINUS
@@ -172,7 +172,7 @@ MySQL – Since MySQL doesn’t have a MINUS operator so we can use LEFT join-
 
 
 
-Ques.14. Write an SQL query to fetch the EmpIds that are present in both the tables –   ‘EmployeeDetails’ and ‘EmployeeSalary.
+### Ques.14. Write an SQL query to fetch the EmpIds that are present in both the tables –   ‘EmployeeDetails’ and ‘EmployeeSalary.
 
     SELECT EmpId FROM 
     EmployeeDetails 
@@ -181,7 +181,7 @@ Ques.14. Write an SQL query to fetch the EmpIds that are present in both the tab
 
 
 
-Ques.15. Write an SQL query to fetch the EmpIds that are present in EmployeeDetails but not in EmployeeSalary.
+### Ques.15. Write an SQL query to fetch the EmpIds that are present in EmployeeDetails but not in EmployeeSalary.
 
 
     SELECT EmpId FROM 
@@ -191,27 +191,27 @@ Ques.15. Write an SQL query to fetch the EmpIds that are present in EmployeeDeta
 
 
 
-Ques.16. Write an SQL query to fetch the employee’s full names and replace the space with ‘-’.
+### Ques.16. Write an SQL query to fetch the employee’s full names and replace the space with ‘-’.
 
     SELECT REPLACE(FullName, ' ', '-') 
     FROM EmployeeDetails;
 
 
 
-Ques.17. Write an SQL query to fetch the position of a given character(s) in a field.
+### Ques.17. Write an SQL query to fetch the position of a given character(s) in a field.
 
     SELECT INSTR(FullName, 'Snow')
     FROM EmployeeDetails;
 
 
 
-Ques.18. Write an SQL query to display both the EmpId and ManagerId together.
+### Ques.18. Write an SQL query to display both the EmpId and ManagerId together.
 
     SELECT CONCAT(EmpId, ManagerId) as NewId
     FROM EmployeeDetails;
 
 
-Ques.19. Write a query to fetch only the first name(string before space) from the FullName column of the EmployeeDetails table.
+### Ques.19. Write a query to fetch only the first name(string before space) from the FullName column of the EmployeeDetails table.
 
 MySQL – using MID
 
@@ -226,13 +226,13 @@ SQL Server – using SUBSTRING
 
 
 
-Ques.20. Write an SQL query to uppercase the name of the employee and lowercase the city values.
+### Ques.20. Write an SQL query to uppercase the name of the employee and lowercase the city values.
 
     SELECT UPPER(FullName), LOWER(City) 
     FROM EmployeeDetails;
 
 
-Ques.21. Write an SQL query to find the count of the total occurrences of a particular character – ‘n’ in the FullName field.
+### Ques.21. Write an SQL query to find the count of the total occurrences of a particular character – ‘n’ in the FullName field.
 
     SELECT FullName, 
     LENGTH(FullName) - LENGTH(REPLACE(FullName, 'n', ''))
@@ -240,20 +240,20 @@ Ques.21. Write an SQL query to find the count of the total occurrences of a part
 
 
 
-Ques.22. Write an SQL query to update the employee names by removing leading and trailing spaces.
+### Ques.22. Write an SQL query to update the employee names by removing leading and trailing spaces.
 
     UPDATE EmployeeDetails 
     SET FullName = LTRIM(RTRIM(FullName));
 
 
-Ques.23. Fetch all the employees who are not working on any project.
+### Ques.23. Fetch all the employees who are not working on any project.
 
     SELECT EmpId 
     FROM EmployeeSalary 
     WHERE Project IS NULL;
 
 
-Ques.24. Write an SQL query to fetch employee names having a salary greater than or equal to 5000 and less than or equal to 10000.
+### Ques.24. Write an SQL query to fetch employee names having a salary greater than or equal to 5000 and less than or equal to 10000.
 
     SELECT FullName 
     FROM EmployeeDetails 
@@ -263,7 +263,7 @@ Ques.24. Write an SQL query to fetch employee names having a salary greater than
 
 
 
-Ques.25. Write an SQL query to find the current date-time.
+### Ques.25. Write an SQL query to find the current date-time.
 
 MySQL-
 
@@ -280,7 +280,7 @@ Oracle-
     SELECT SYSDATE FROM DUAL;
 
 
-Ques.26. Write an SQL query to fetch all the Employee details from the EmployeeDetails table who joined in the Year 2020.
+### Ques.26. Write an SQL query to fetch all the Employee details from the EmployeeDetails table who joined in the Year 2020.
 
     SELECT * FROM EmployeeDetails
     WHERE DateOfJoining BETWEEN '2020/01/01'
@@ -293,7 +293,7 @@ Also, we can extract the year part from the joining date (using YEAR in MySQL)-
     WHERE YEAR(DateOfJoining) = '2020';
 
 
-Ques.27. Write an SQL query to fetch all employee records from the EmployeeDetails table who have a salary record in the EmployeeSalary table.
+### Ques.27. Write an SQL query to fetch all employee records from the EmployeeDetails table who have a salary record in the EmployeeSalary table.
 
     SELECT * FROM EmployeeDetails E
     WHERE EXISTS
@@ -301,7 +301,7 @@ Ques.27. Write an SQL query to fetch all employee records from the EmployeeDetai
     WHERE  E.EmpId = S.EmpId);
 
 
-Ques.28. Write an SQL query to fetch the project-wise count of employees sorted by project’s count in descending order.
+### Ques.28. Write an SQL query to fetch the project-wise count of employees sorted by project’s count in descending order.
 
     SELECT Project, count(EmpId) EmpProjectCount
     FROM EmployeeSalary
@@ -309,7 +309,7 @@ Ques.28. Write an SQL query to fetch the project-wise count of employees sorted 
     ORDER BY EmpProjectCount DESC;
 
 
-Ques.29. Write a query to fetch employee names and salary records. Display the employee details even if the salary record is not present for the employee.
+### Ques.29. Write a query to fetch employee names and salary records. Display the employee details even if the salary record is not present for the employee.
 
     SELECT E.FullName, S.Salary 
     FROM EmployeeDetails E 
@@ -319,7 +319,7 @@ Ques.29. Write a query to fetch employee names and salary records. Display the e
 
 
 
-Ques.30. Write an SQL query to join 3 tables.
+### Ques.30. Write an SQL query to join 3 tables.
 
     SELECT column1, column2
     FROM TableA
@@ -330,7 +330,7 @@ Ques.30. Write an SQL query to join 3 tables.
 SQL Query Interview Questions for Experienced: 
 
 
-Ques. 31. Write an SQL query to fetch all the Employees who are also managers from the EmployeeDetails table.
+### Ques. 31. Write an SQL query to fetch all the Employees who are also managers from the EmployeeDetails table.
 
     SELECT DISTINCT E.FullName
     FROM EmployeeDetails E
@@ -338,7 +338,7 @@ Ques. 31. Write an SQL query to fetch all the Employees who are also managers fr
     ON E.EmpID = M.ManagerID;
 
 
-Ques.32. Write an SQL query to fetch duplicate records from EmployeeDetails (without considering the primary key – EmpId).
+### Ques.32. Write an SQL query to fetch duplicate records from EmployeeDetails (without considering the primary key – EmpId).
 
     SELECT FullName, ManagerId, DateOfJoining, City, COUNT(*)
     FROM EmployeeDetails
@@ -347,7 +347,7 @@ Ques.32. Write an SQL query to fetch duplicate records from EmployeeDetails (wit
 
 
 
-Ques.33. Write an SQL query to remove duplicates from a table without using a temporary table.
+### Ques.33. Write an SQL query to remove duplicates from a table without using a temporary table.
 
 
     DELETE E1 FROM EmployeeDetails E1
@@ -359,7 +359,7 @@ Ques.33. Write an SQL query to remove duplicates from a table without using a te
     AND E1.City = E2.City;
 
 
-Ques.34. Write an SQL query to fetch only odd rows from the table.
+### Ques.34. Write an SQL query to fetch only odd rows from the table.
 
     SELECT * FROM EmployeeDetails 
     WHERE MOD (EmpId, 2) <> 0;
@@ -389,7 +389,7 @@ Using a user-defined variable in MySQL-
 
 
 
-Ques.35. Write an SQL query to fetch only even rows from the table.
+### Ques.35. Write an SQL query to fetch only even rows from the table.
 
     SELECT * FROM EmployeeDetails 
     WHERE MOD (EmpId, 2) = 0;
@@ -419,7 +419,7 @@ Using a user-defined variable in MySQL-
 
 
 
-Ques.36. Write an SQL query to create a new table with data and structure copied from another table.
+### Ques.36. Write an SQL query to create a new table with data and structure copied from another table.
 Ans.
 
     CREATE TABLE NewTable 
@@ -427,14 +427,14 @@ Ans.
 
 
 
-Ques.37. Write an SQL query to create an empty table with the same structure as some other table.
+### Ques.37. Write an SQL query to create an empty table with the same structure as some other table.
 
     CREATE TABLE NewTable 
     SELECT * FROM EmployeeSalary where 1=0;
 
 
 
-Ques.38. Write an SQL query to fetch top n records.
+### Ques.38. Write an SQL query to fetch top n records.
 
     SELECT *
     FROM EmployeeSalary
@@ -449,7 +449,7 @@ In SQL server using TOP command-
 
 
 
-Ques.39. Write an SQL query to find the nth highest salary from a table.
+### Ques.39. Write an SQL query to find the nth highest salary from a table.
 Ans. Using Top keyword (SQL Server)-
 
     SELECT TOP 1 Salary
@@ -468,7 +468,7 @@ Using limit clause(MySQL)-
     ORDER BY Salary DESC LIMIT N-1,1;
 
 
-Ques.40. Write SQL query to find the 3rd highest salary from a table without using the TOP/limit keyword.
+### Ques.40. Write SQL query to find the 3rd highest salary from a table without using the TOP/limit keyword.
 
     SELECT Salary
     FROM EmployeeSalary Emp1
@@ -492,11 +492,9 @@ For nth highest salary-
 
 
 
-
-
-
-
 :end: 
+
+
 
 
 
