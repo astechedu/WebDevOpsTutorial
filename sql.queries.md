@@ -184,12 +184,65 @@ SELECT * FROM Customers
 ORDER BY Country DESC; 
 
 
-SELECT * FROM Customers
-ORDER BY Country, CustomerName; 
+    SELECT * FROM Customers
+    ORDER BY Country, CustomerName; 
 
 
-SELECT * FROM Customers
-ORDER BY Country ASC, CustomerName DESC; 
+    SELECT * FROM Customers
+    ORDER BY Country ASC, CustomerName DESC; 
+
+
+
+SQL INSERT INTO Statement:
+
+
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...); 
+
+
+
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...); 
+
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+
+
+INSERT INTO Customers (CustomerName, City, Country)
+VALUES ('Cardinal', 'Stavanger', 'Norway');
+
+
+SQL NULL Values:
+
+
+IS NULL Syntax:
+
+    SELECT column_names
+    FROM table_name
+    WHERE column_name IS NULL;
+
+IS NOT NULL Syntax:
+
+    SELECT column_names
+    FROM table_name
+    WHERE column_name IS NOT NULL; 
+
+
+    SELECT CustomerName, ContactName, Address
+    FROM Customers
+    WHERE Address IS NULL;
+
+
+    SELECT CustomerName, ContactName, Address
+    FROM Customers
+    WHERE Address IS NOT NULL;
+
+
+
+
+
+
 
 
 
