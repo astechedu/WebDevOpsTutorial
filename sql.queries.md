@@ -6,12 +6,15 @@ $$\color{purple}{SQL \ Queries}$$
 
 
 
+
 <a name="top"></a>
  [Go To Bottom](#bottom)
  
+ 
 # Topics
- [Go To Top](#top)
 
+   [Go To Top](#top)
+   [SQL Interviews Questions](#sql_interviews_questions)
 
 
 
