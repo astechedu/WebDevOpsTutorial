@@ -32,18 +32,18 @@ $$\color{purple}{SQL \ Queries}$$
 
 Table – EmployeeDetails:
 
-EmpId	 FullName	    ManagerId	  DateOfJoining	 City
-121  	 John Snow	   321	        01/31/2019	    Toronto
-321	   Walter White	986	        01/30/2020	    California
-421	   Kuldeep Rana	876	        27/11/2021	    New Delhi
+    EmpId	 FullName	    ManagerId	  DateOfJoining	 City
+    121  	 John Snow	   321	        01/31/2019	    Toronto
+    321	   Walter White	986	        01/30/2020	    California
+    421	   Kuldeep Rana	876	        27/11/2021	    New Delhi
 
 
 Table – EmployeeSalary:
 
-EmpId	Project	Salary	 Variable
-121	  P1	     8000	   500
-321	  P2	     10000	  1000
-421	  P1	     12000	  0
+    EmpId	Project	Salary	 Variable
+    121	  P1	     8000	   500
+    321	  P2	     10000	  1000
+    421	  P1	     12000	  0
 
 SQL Query Interview Questions for Freshers: 
 
