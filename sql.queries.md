@@ -1638,6 +1638,7 @@ SQL Logical Operators
  # SQL Advanced Queries (SQL Database)
  
  
+  [Go To Top](#top)
  <a name="drop_databse"></a>
 SQL CREATE DATABASE Statement:
 
@@ -1646,7 +1647,8 @@ SQL CREATE DATABASE Statement:
 Example:
 
 	CREATE DATABASE testDB;
-
+	
+ [Go To Top](#top)
 <a name="drop_database"></a>
 SQL DROP DATABASE Statement: 
 
@@ -1752,7 +1754,7 @@ Syntax
 
 	TRUNCATE TABLE table_name;
 
-
+ [Go To Top](#top)
 <a name="alter_table"></a>
 SQL ALTER TABLE Statement:
 
