@@ -263,10 +263,32 @@ COPY --from=build /usr/local/app/dist/dockerangular01 /usr/share/nginx/html
 EXPOSE 80
 
 
+--------------------------------------------------------------------------
 
 
+Mysql: 
 
 
+Dockerfile: 
+
+services:
+  db: 
+   image: mysql:latest
+   container_name: mydb
+   restart: always
+   environment: 
+     MYSQL_ROOT_PASSWORD: example
+    
+    
+  adminer:
+   image: adminer
+   restart: always
+   ports:
+     - 8080:8080
+ 
+ 
+docker-compose up -d
+docker-compose down
 
 
 
