@@ -2,9 +2,7 @@
 
 $$\color{purple}{SQL \ Queries}$$
 
-<button>
 :link:[Home](all-file-links.md)     
-</button>
 
 
 <a name="top"></a>
