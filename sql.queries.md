@@ -1583,29 +1583,6 @@ SOME 	TRUE if any of the subquery values meet the condition
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  :end: 
  
  
@@ -1615,7 +1592,78 @@ SOME 	TRUE if any of the subquery values meet the condition
  
  [Go To Top](#top)
 <a name="sql_advanced_queries"></a>
- # SQL Advanced Queries
+ # SQL Advanced Queries (SQL Database)
+ 
+ 
+ 
+SQL CREATE DATABASE Statement:
+
+CREATE DATABASE databasename; 
+
+Example
+CREATE DATABASE testDB;
+
+
+SQL DROP DATABASE Statement: 
+
+Syntax
+DROP DATABASE databasename;
+
+Example
+DROP DATABASE testDB;
+
+
+
+The SQL BACKUP DATABASE Statement: 
+
+The BACKUP DATABASE statement is used in SQL Server to create a full back up of an existing SQL database.
+Syntax
+BACKUP DATABASE databasename
+TO DISK = 'filepath';
+The SQL BACKUP WITH DIFFERENTIAL Statement
+
+A differential back up only backs up the parts of the database that have changed since the last full database backup.
+Syntax
+BACKUP DATABASE databasename
+TO DISK = 'filepath'
+WITH DIFFERENTIAL;
+BACKUP DATABASE Example
+
+The following SQL statement creates a full back up of the existing database "testDB" to the D disk:
+Example
+BACKUP DATABASE testDB
+TO DISK = 'D:\backups\testDB.bak';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
