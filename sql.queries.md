@@ -14,7 +14,10 @@ $$\color{purple}{SQL \ Queries}$$
 # Topics
 
    [Go To Top](#top)
-   [SQL Interviews Questions](#sql_interviews_questions)
+   
+   [0 SQL Interviews Questions](#sql_interviews_questions)
+
+   [30 SQL Interviews Questions](#sql_interviews_questions_30)
 
 
 
@@ -23,7 +26,7 @@ $$\color{purple}{SQL \ Queries}$$
 
 
 [Go To Top](#top)
-<a name="sql_interviews_questions"></a>
+<a name="sql_interviews_questions_30"></a>
          
 #SQL Interviews Questions
          
