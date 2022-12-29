@@ -1,6 +1,6 @@
 # SQL Queries
 
-[Home](#all.pages.links.md)
+[Home](#all.file.links.md)
 
 <a name="top"></a>
  [Go To Bottom](#bottom)
