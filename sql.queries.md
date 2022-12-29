@@ -54,13 +54,18 @@ ProductID 	ProductName 	SupplierID 	CategoryID 	Unit 	Price
 5 	Chef Anton's Gumbo Mix 	2 	2 	36 boxes 	21.35
 
 
+OrderDetailID 	OrderID 	ProductID 	Quantity
+1 	10248 	11 	12
+2 	10248 	42 	10
+3 	10248 	72 	5
+4 	10249 	14 	9
+5 	10249 	51 	40
 
 
 
 
 
-
- #Some of The Most Important SQL Commands
+ #Some of The Most Important SQL Commands:
 
     SELECT - extracts data from a database
     UPDATE - updates data in a database
@@ -393,6 +398,60 @@ MAX() Syntax:
 
     SELECT MAX(Price) AS LargestPrice
     FROM Products; 
+
+
+
+
+
+SQL COUNT(), AVG() and SUM() Functions:
+
+
+
+
+COUNT() Syntax:
+
+    SELECT COUNT(column_name)
+    FROM table_name
+    WHERE condition; 
+
+AVG() Syntax:
+
+    SELECT AVG(column_name)
+    FROM table_name
+    WHERE condition; 
+
+SUM() Syntax:
+
+    SELECT SUM(column_name)
+    FROM table_name
+    WHERE condition; 
+
+COUNT() :
+
+SELECT COUNT(ProductID)
+FROM Products;
+
+AVG() : 
+
+SELECT AVG(Price)
+FROM Products;
+
+
+SUM(): 
+
+SELECT SUM(Quantity)
+FROM OrderDetails; 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
