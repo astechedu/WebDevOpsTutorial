@@ -520,13 +520,39 @@ SELECT * FROM Customers
 WHERE City LIKE '[a-c]%';
 
 
-SELECT * FROM Customers
-WHERE City LIKE '[!bsp]%'; 
+    SELECT * FROM Customers
+    WHERE City LIKE '[!bsp]%'; 
+
+    SELECT * FROM Customers
+    WHERE City NOT LIKE '[bsp]%'; 
+
+
+
+
+SQL IN Operator: 
+
+
+    SELECT column_name(s)
+    FROM table_name
+    WHERE column_name IN (value1, value2, ...); 
+
+
+or:
+
+    SELECT column_name(s)
+    FROM table_name
+    WHERE column_name IN (SELECT STATEMENT); 
+
 
 SELECT * FROM Customers
-WHERE City NOT LIKE '[bsp]%'; 
+WHERE Country IN ('Germany', 'France', 'UK');
+
+SELECT * FROM Customers
+WHERE Country NOT IN ('Germany', 'France', 'UK');
 
 
+SELECT * FROM Customers
+WHERE Country IN (SELECT Country FROM Suppliers);
 
 
 
