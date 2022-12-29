@@ -2164,6 +2164,175 @@ ALTER COLUMN City DROP DEFAULT;
 
 
 SQL CREATE INDEX Statement:
+The CREATE INDEX statement is used to create indexes in tables.
+
+
+CREATE INDEX Syntax
+
+Creates an index on a table. Duplicate values are allowed:
+CREATE INDEX index_name
+ON table_name (column1, column2, ...);
+CREATE UNIQUE INDEX Syntax
+
+Creates a unique index on a table. Duplicate values are not allowed:
+CREATE UNIQUE INDEX index_name
+ON table_name (column1, column2, ...); 
+
+
+CREATE INDEX Example
+
+The SQL statement below creates an index named "idx_lastname" on the "LastName" column in the "Persons" table:
+CREATE INDEX idx_lastname
+ON Persons (LastName);
+
+If you want to create an index on a combination of columns, you can list the column names within the parentheses, separated by commas:
+CREATE INDEX idx_pname
+ON Persons (LastName, FirstName); 
+
+DROP INDEX Statement
+
+The DROP INDEX statement is used to delete an index in a table.
+
+MS Access:
+DROP INDEX index_name ON table_name;
+
+SQL Server:
+DROP INDEX table_name.index_name;
+
+DB2/Oracle:
+DROP INDEX index_name;
+
+MySQL:
+ALTER TABLE table_name
+DROP INDEX index_name;
+
+
+AUTO INCREMENT Field:
+
+Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
+
+
+
+Syntax for MySQL
+
+The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
+CREATE TABLE Persons (
+    Personid int NOT NULL AUTO_INCREMENT,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (Personid)
+); 
+
+
+ALTER TABLE Persons AUTO_INCREMENT=100; 
+
+
+INSERT INTO Persons (FirstName,LastName)
+VALUES ('Lars','Monsen'); 
+
+Syntax for SQL Server: 
+
+CREATE TABLE Persons (
+    Personid int IDENTITY(1,1) PRIMARY KEY,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+); 
+
+
+INSERT INTO Persons (FirstName,LastName)
+VALUES ('Lars','Monsen'); 
+
+
+Syntax for Access
+
+The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
+CREATE TABLE Persons (
+    Personid AUTOINCREMENT PRIMARY KEY,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+); 
+
+	INSERT INTO Persons (FirstName,LastName)
+	VALUES ('Lars','Monsen'); 
+
+Syntax for Oracle
+
+CREATE SEQUENCE seq_person
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1
+CACHE 10;
+
+
+INSERT INTO Persons (Personid,FirstName,LastName)
+VALUES (seq_person.nextval,'Lars','Monsen'); 
+
+
+SQL Working With Dates: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
