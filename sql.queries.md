@@ -13,9 +13,22 @@ $$\color{purple}{SQL \ Queries}$$
 
    [Go To Top](#top)
    
-   [0 SQL Interviews Questions](#sql_interviews_questions)
+   [Top 40 SQL Query Interview Questions and Answers for Practice](#sql_interviews_questions_40)
 
    [30 SQL Interviews Questions](#sql_interviews_questions_30)
+
+
+
+
+
+
+
+[Go To Top](#top)
+<a name="sql_interviews_questions_40"></a>
+         
+# Top 40 SQL Query Interview Questions and Answers for Practice
+    
+
 
 
 
