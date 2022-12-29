@@ -927,60 +927,67 @@ WHERE Country='Germany'
 ORDER BY City;
 
 
+Another UNION Example:
+
+SELECT 'Customer' AS Type, ContactName, City, Country
+FROM Customers
+UNION
+SELECT 'Supplier', ContactName, City, Country
+FROM Suppliers;
 
 
 
+SQL GROUP BY Statement:
+
+GROUP BY Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s); 
 
 
+CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
+1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
+2 	Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
+3 	Antonio Moreno Taquería 	Antonio Moreno 	Mataderos 2312 	México D.F. 	05023 	Mexico
+4	Around the Horn 	Thomas Hardy 	120 Hanover Sq. 	London 	WA1 1DP 	UK
+5 	Berglunds snabbköp 	Christina Berglund 	Berguvsvägen 8 	Luleå 	S-958 22 	Sweden
 
 
+SQL GROUP BY: 
+
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country;
 
 
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+ORDER BY COUNT(CustomerID) DESC;
 
 
+OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
+10248 	90 	5 	1996-07-04 	3
+10249 	81 	6 	1996-07-05 	1
+10250 	34 	4 	1996-07-08 	2
 
 
+And a selection from the "Shippers" table:
+
+ShipperID 	ShipperName
+1 	Speedy Express
+2 	United Package
+3 	Federal Shipping
 
 
+GROUP BY With JOIN:
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FROM Orders
+LEFT JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
+GROUP BY ShipperName;
 
 
 
