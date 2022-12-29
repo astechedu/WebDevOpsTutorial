@@ -30,7 +30,7 @@ $$\color{purple}{SQL \ Queries}$$
 Searching Key Words: 
   [Create Database](#create_database) [Drop Database](#drop_database) 
   [Create Table](#create_table) [Select Table](#select_table) [Drop Table](#drop_table) [Alter Table](#alter_table)
-  [Truncate Table](#truncate_table)
+  [Truncate Table](#truncate_table) [Truncate Table](#check_constraint)
   
   
 
@@ -1640,16 +1640,16 @@ SQL Logical Operators
  # SQL Advanced Queries (SQL Database)
  
  
- 
+ <a name="drop_databse"></a>
 SQL CREATE DATABASE Statement:
 
 	CREATE DATABASE databasename; 
 
-Example
+Example:
 
 	CREATE DATABASE testDB;
 
-
+<a name="drop_database"></a>
 SQL DROP DATABASE Statement: 
 
 Syntax
@@ -1665,6 +1665,7 @@ Example
 The SQL BACKUP DATABASE Statement: 
 
 The BACKUP DATABASE statement is used in SQL Server to create a full back up of an existing SQL database.
+
 Syntax
 
 	BACKUP DATABASE databasename
@@ -1730,19 +1731,20 @@ Example
 	SELECT customername, contactname
 	FROM customers; 
 
-
+<a name="drop_table"></a>
 SQL DROP TABLE Statement: 
 
 
-Syntax
+Syntax:
 
 	DROP TABLE table_name;
 
-Example
+Example:
 
 	DROP TABLE Shippers;
+	
 
-
+<a name="truncate_table"></a>
 SQL TRUNCATE TABLE
 
 The TRUNCATE TABLE statement is used to delete the data inside a table, but not the table itself.
@@ -1752,7 +1754,7 @@ Syntax
 	TRUNCATE TABLE table_name;
 
 
-
+<a name="alter_table"></a>
 SQL ALTER TABLE Statement:
 
 	ALTER TABLE - ADD Column
@@ -2162,8 +2164,7 @@ MySQL / SQL Server / Oracle / MS Access:
 	    CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes')
 	);
 
-ADVERTISEMENT
-
+<a name="check_constraint"></a>
 SQL CHECK on ALTER TABLE
 
 To create a CHECK constraint on the "Age" column when the table is already created, use the following SQL:
