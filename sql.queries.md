@@ -1677,6 +1677,164 @@ FROM customers;
 SQL DROP TABLE Statement: 
 
 
+Syntax
+DROP TABLE table_name;
+
+Example
+DROP TABLE Shippers;
+
+
+SQL TRUNCATE TABLE
+
+The TRUNCATE TABLE statement is used to delete the data inside a table, but not the table itself.
+Syntax
+TRUNCATE TABLE table_name;
+
+
+
+SQL ALTER TABLE Statement:
+
+ALTER TABLE - ADD Column
+
+To add a column in a table, use the following syntax:
+ALTER TABLE table_name
+ADD column_name datatype; 
+
+Example
+ALTER TABLE Customers
+ADD Email varchar(255);
+
+
+ALTER TABLE - DROP COLUMN: 
+
+ALTER TABLE table_name
+DROP COLUMN column_name; 
+
+
+Example
+ALTER TABLE Customers
+DROP COLUMN Email;
+
+
+ALTER TABLE - RENAME COLUMN:
+
+To rename a column in a table, use the following syntax:
+ALTER TABLE table_name
+RENAME COLUMN old_name to new_name; 
+
+ALTER TABLE - ALTER/MODIFY DATATYPE
+
+To change the data type of a column in a table, use the following syntax:
+
+SQL Server / MS Access:
+ALTER TABLE table_name
+ALTER COLUMN column_name datatype;
+
+My SQL / Oracle (prior version 10G):
+ALTER TABLE table_name
+MODIFY COLUMN column_name datatype; 
+
+
+Oracle 10G and later:
+ALTER TABLE table_name
+MODIFY column_name datatype; 
+
+
+SQL ALTER TABLE Example
+
+Look at the "Persons" table:
+ID 	LastName 	FirstName 	Address 	City
+1 	Hansen 	Ola 	Timoteivn 10 	Sandnes
+2 	Svendson 	Tove 	Borgvn 23 	Sandnes
+3 	Pettersen 	Kari 	Storgt 20 	Stavanger
+
+
+ALTER TABLE Persons
+ADD DateOfBirth date; 
+
+
+ID 	LastName 	FirstName 	Address 	City 	DateOfBirth
+1 	Hansen 	Ola 	Timoteivn 10 	Sandnes 	 
+2 	Svendson 	Tove 	Borgvn 23 	Sandnes 	 
+3 	Pettersen 	Kari 	Storgt 20 	Stavanger
+
+
+
+Change Data Type Example:
+
+Now we want to change the data type of the column named "DateOfBirth" in the "Persons" table.
+
+We use the following SQL statement:
+ALTER TABLE Persons
+ALTER COLUMN DateOfBirth year; 
+
+
+DROP COLUMN Example:
+
+Next, we want to delete the column named "DateOfBirth" in the "Persons" table.
+
+We use the following SQL statement:
+ALTER TABLE Persons
+DROP COLUMN DateOfBirth; 
+
+The "Persons" table will now look like this:
+ID 	LastName 	FirstName 	Address 	City
+1 	Hansen 	Ola 	Timoteivn 10 	Sandnes
+2 	Svendson 	Tove 	Borgvn 23 	Sandnes
+3 	Pettersen 	Kari 	Storgt 20 	Stavanger
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
