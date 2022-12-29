@@ -54,58 +54,65 @@ Patient ID	BP	Weight	Consultation Fees
 ### Q1.  Write an SQL query to fetch the current date-time from the system.
 
  TO fetch the CURRENT DATE IN SQL Server
- SELECT GETDATE();
+ 
+   SELECT GETDATE();
+   
  TO fetch the CURRENT DATE IN MYSQL
- SELECT NOW();
+ 
+   SELECT NOW();
+   
  TO fetch the CURRENT DATE IN Oracle
- SELECT SYSDATE FROM DUAL();
+ 
+   SELECT SYSDATE FROM DUAL();
 
 ### Q2. Write a SQL query to fetch the PatientName in uppercase and state as lowercase. Also use the ALIAS name for the result-set as PatName and NewState.
 
- TO fetch the CURRENT DATE IN SQL Server
- SELECT GETDATE();
- TO fetch the CURRENT DATE IN MYSQL
- SELECT NOW();
- TO fetch the CURRENT DATE IN Oracle
- SELECT SYSDATE FROM DUAL();
+   TO fetch the CURRENT DATE IN SQL Server
+   SELECT GETDATE();
+   TO fetch the CURRENT DATE IN MYSQL
+   SELECT NOW();
+   TO fetch the CURRENT DATE IN Oracle
+   SELECT SYSDATE FROM DUAL();
 
 ### Q3. Find the Nth highest consultation fees from the PatientsCheckup table with and without using the TOP/LIMIT keywords.
 
 Nth highest consultation fees from the PatientsCheckup table with using the TOP keywords
 
-SELECT TOP 1 ConsultationFees
-FROM(
-SELECT TOP N ConsultationFees
-FROM PatientsCheckup
-ORDER BY ConsultationFees DESC) AS FEES
-ORDER BY ConsultationFees ASC;
+  SELECT TOP 1 ConsultationFees
+  FROM(
+  SELECT TOP N ConsultationFees
+  FROM PatientsCheckup
+  ORDER BY ConsultationFees DESC) AS FEES
+  ORDER BY ConsultationFees ASC;
 
 The Nth highest consultation fees from the PatientsCheckup table using the LIMIT keywords.
 
-<code>
-SELECT ConsultationFees
-FROM PatientsCheckup
-ORDER BY ConsultationFees DESC LIMIT N-1,1;
-</code>
+  <code>
+  SELECT ConsultationFees
+  FROM PatientsCheckup
+  ORDER BY ConsultationFees DESC LIMIT N-1,1;
+  </code>
 
 Nth highest consultation fees from the PatientsCheckup table without using the TOP/LIMIT keywords.
 
-SELECT ConsultationFees
-FROM PatientsCheckup F1
-WHERE N-1 = (
-      SELECT COUNT( DISTINCT ( F2.ConsultationFees ) )
-      FROM PatientsCheckup F2
-      WHERE F2.ConsultationFees >  F1.ConsultationFees );
+  <code>
+  SELECT ConsultationFees
+  FROM PatientsCheckup F1
+  WHERE N-1 = (
+        SELECT COUNT( DISTINCT ( F2.ConsultationFees ) )
+        FROM PatientsCheckup F2
+        WHERE F2.ConsultationFees >  F1.ConsultationFees );
+  </code>
 
 ### Q4. Write a query to fetch top N records using the TOP/LIMIT, ordered by ConsultationFees.
 
 TOP Command – SQL Server
 
-SELECT TOP N * FROM PatientsCheckup ORDER BY ConsultationFees DESC;
+  SELECT TOP N * FROM PatientsCheckup ORDER BY ConsultationFees DESC;
  
 LIMIT Command - MySQL
 
-SELECT * FROM PatientsCheckup ORDER BY ConsultationFees DESC LIMIT N;
+  SELECT * FROM PatientsCheckup ORDER BY ConsultationFees DESC LIMIT N;
 
 ### Q5. Write a SQL query to create a table where the structure is copied from other table.
 
@@ -114,126 +121,132 @@ SELECT * FROM PatientsCheckup ORDER BY ConsultationFees DESC LIMIT N;
 
 To create an Empty table
 
-CREATE TABLE NewPatientsTable 
-SELECT * FROM Patients WHERE 1=0;
+  CREATE TABLE NewPatientsTable 
+  SELECT * FROM Patients WHERE 1=0;
 
 
 
 Create a table consisting of data
 
 -USING SELECT command
-SELECT * INTO NewPatientsTable FROM Patients WHERE 1 = 0;
+
+  SELECT * INTO NewPatientsTable FROM Patients WHERE 1 = 0;
 
  – USING CREATE command IN MySQL 
-CREATE TABLE NewPatientsTable AS SELECT * FROM Patients;
+ 
+  CREATE TABLE NewPatientsTable AS SELECT * FROM Patients;
 
 
 ### Q6. Write a query to fetch even and odd rows from a table.
 
 If you have an auto-increment field like PatientID then you can use the MOD() function:
 
-Fetch even rows using MOD() function:
+  Fetch even rows using MOD() function:
 
-SELECT * FROM Patients WHERE MOD(PatientID,2)=0;
+  SELECT * FROM Patients WHERE MOD(PatientID,2)=0;
 
-Fetch odd rows using MOD() function:
+  Fetch odd rows using MOD() function:
 
-SELECT * FROM Patients WHERE MOD(PatientID,2)=1;
+  SELECT * FROM Patients WHERE MOD(PatientID,2)=1;
 
 In case there are no auto-increment fields then you can use the Row_number in SQL Server or a user-defined variable in MySQL. Then, check the remainder when divided by 2.
 
 Fetch even rows in SQL Server
 
-SELECT * FROM (
-    SELECT *, ROW_NUMBER() OVER(ORDER BY PatientId) AS RowNumber
-    FROM Patients
-) P
-WHERE P.RowNumber % 2 = 0;
-
-Fetch even rows in MySQL
-
-SELECT * FROM (
-      SELECT *, @rowNumber := @rowNumber+ 1 rn
+  SELECT * FROM (
+      SELECT *, ROW_NUMBER() OVER(ORDER BY PatientId) AS RowNumber
       FROM Patients
-      JOIN (SELECT @rowNumber:= 0) r
-     ) p 
-WHERE rn % 2 = 0;
+  ) P
+  WHERE P.RowNumber % 2 = 0;
+
+  Fetch even rows in MySQL
+
+  SELECT * FROM (
+        SELECT *, @rowNumber := @rowNumber+ 1 rn
+        FROM Patients
+        JOIN (SELECT @rowNumber:= 0) r
+       ) p 
+  WHERE rn % 2 = 0;
 
 In case you wish to find the odd rows, then the remainder when divided by 2 should be 1.
 
 ### Q7. Write an SQL query to fetch duplicate records from Patients, without considering the primary key.
 
-SELECT PatientName, DoctorID, RegDate, State, COUNT(*)
-FROM Patients
-GROUP BY PatientName, DoctorID, RegDate, State
-HAVING COUNT(*) > 1;
+  SELECT PatientName, DoctorID, RegDate, State, COUNT(*)
+  FROM Patients
+  GROUP BY PatientName, DoctorID, RegDate, State
+  HAVING COUNT(*) > 1;
 
 ### Q8. Write a query to fetch the number of patients whose weight is greater than 68.
 
-SELECT COUNT(*) FROM PatientsCheckup WHERE Weight > '68';
+  SELECT COUNT(*) FROM PatientsCheckup WHERE Weight > '68';
 
 ### Q9. Write a query to retrieve the list of patients from the same state.
 
-SELECT DISTINCT P.PatientID, P.PatientName, P.State
-FROM Patients P, Patient P1
-WHERE P.State = P1.State AND P.PatientID != P1.PatientID;
+  SELECT DISTINCT P.PatientID, P.PatientName, P.State
+  FROM Patients P, Patient P1
+  WHERE P.State = P1.State AND P.PatientID != P1.PatientID;
 
 ### Q10. Write a query to retrieve two minimum and maximum consultation fees from the PatientsCheckup Table.
 
-[code]
-– TWO MINIMUM CONSULTATION FEES
-SELECT DISTINCT ConsultationFees FROM PatientsCheckup P1
- WHERE 2 >= (SELECT COUNT(DISTINCT ConsultationFees)FROM PatientsCheckup P2
-  WHERE P1.ConsultationFees >= P2.ConsultationFees) ORDER BY P1.SConsultationFees DESC;
- 
-– TWO MAXIMUM CONSULTATION FEES
-SELECT DISTINCT ConsultationFees FROM PatientsCheckup P1
- WHERE 2 >= (SELECT COUNT(DISTINCT ConsultationFees)FROM PatientsCheckup P2
-  WHERE P1.ConsultationFees <= P2.ConsultationFees) ORDER BY P1.ConsultationFees DESC;
-[/code]
+  
+  – TWO MINIMUM CONSULTATION FEES
+  
+    SELECT DISTINCT ConsultationFees FROM PatientsCheckup P1
+     WHERE 2 >= (SELECT COUNT(DISTINCT ConsultationFees)FROM PatientsCheckup P2
+      WHERE P1.ConsultationFees >= P2.ConsultationFees) ORDER BY P1.SConsultationFees DESC;
+
+  – TWO MAXIMUM CONSULTATION FEES
+
+    SELECT DISTINCT ConsultationFees FROM PatientsCheckup P1
+     WHERE 2 >= (SELECT COUNT(DISTINCT ConsultationFees)FROM PatientsCheckup P2
+      WHERE P1.ConsultationFees <= P2.ConsultationFees) ORDER BY P1.ConsultationFees DESC;
+
 
 
 ### Q11. Write a query to fetch patient details along with the weight fees, even if the details are missing.
 
-SELECT P.PatientName, C.ConsultationFees
-FROM Patients P 
-LEFT JOIN 
-PatientsCheckup C
-ON P.PatientId = C.PatientId;
+  SELECT P.PatientName, C.ConsultationFees
+  FROM Patients P 
+  LEFT JOIN 
+  PatientsCheckup C
+  ON P.PatientId = C.PatientId;
 
 ### Q12. Write a SQL query to fetch doctor wise count of patients sorted by the doctors.
 
-SELECT DoctorID, COUNT(PatientID) AS DocPat
-FROM Patients GROUP BY DoctorID
-ORDER BY DocPat;
+  SELECT DoctorID, COUNT(PatientID) AS DocPat
+  FROM Patients GROUP BY DoctorID
+  ORDER BY DocPat;
 
 ### Q13. Write a SQL query to fetch the first and last record of the Patients table.
 
-–FETCH FIRST RECORD
-SELECT * FROM Patients WHERE PatientID = (SELECT MIN(PatientID) FROM Patients);
- 
-–FETCH LAST RECORD
-SELECT * FROM Patients WHERE PatientID = (SELECT MAX(PatientID) FROM Patients);
+  –FETCH FIRST RECORD
+  
+    SELECT * FROM Patients WHERE PatientID = (SELECT MIN(PatientID) FROM Patients);
+
+  –FETCH LAST RECORD
+  
+    SELECT * FROM Patients WHERE PatientID = (SELECT MAX(PatientID) FROM Patients);
 
 ### Q14. Write a SQL query to fetch consultation fees – wise count and sort them in descending order.
 
-SELECT ConsultationFees, COUNT(PatientId) CFCount
-FROM PatientsCheckup 
-GROUP BY ConsultationFees
-ORDER BY CFCount DESC;
+  SELECT ConsultationFees, COUNT(PatientId) CFCount
+  FROM PatientsCheckup 
+  GROUP BY ConsultationFees
+  ORDER BY CFCount DESC;
 
 ### Q15. Write a SQL query to retrieve patient details from the Patients table who have a weight in the PatientsCheckup table.
 
-SELECT * FROM Patients P
-WHERE EXISTS
-(SELECT * FROM PatientsCheckup C WHERE P.PatientID = C.PatientID);
+  SELECT * FROM Patients P
+  WHERE EXISTS
+  (SELECT * FROM PatientsCheckup C WHERE P.PatientID = C.PatientID);
 
 ### Q16. Write a SQL query to retrieve the last 2 records from the Patients table.
 
-SELECT * FROM Patients WHERE
-PatientID <=2 UNION SELECT * FROM
-(SELECT * FROM Patients P ORDER BY P.PatientID DESC)
-AS P1 WHERE P1.PatientID <=2;
+  SELECT * FROM Patients WHERE
+  PatientID <=2 UNION SELECT * FROM
+  (SELECT * FROM Patients P ORDER BY P.PatientID DESC)
+  AS P1 WHERE P1.PatientID <=2;
 
 ### Q17. Write a SQL query  to find all the patients who joined in the year 2022.
 
