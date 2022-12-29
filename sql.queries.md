@@ -13,7 +13,7 @@ $$\color{purple}{SQL \ Queries}$$
 
    [Go To Top](#top)
    
-   [Top 0 SQL Query Interview Questions and Answers for Practice](#sql_interviews_questions_0)
+   [Top 10 Frequently asked SQL Query Interview Questions](#sql_interviews_questions_10)
 
    [Top 40 SQL Query Interview Questions and Answers for Practice](#sql_interviews_questions_40)
 
@@ -22,7 +22,15 @@ $$\color{purple}{SQL \ Queries}$$
 
 
 
-
+[Go To Top](#top)
+<a name="sql_interviews_questions_10"></a>
+ # Top 10 Frequently asked SQL Query Interview Questions
+ 
+ 
+ 
+ 
+ 
+ :end:
 
 
 
