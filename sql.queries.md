@@ -2525,13 +2525,16 @@ Here is an example of a user login on a web site:
 Username:
 
 Password:
-Example
-uName = getRequestString("username");
-uPass = getRequestString("userpassword");
 
-sql = 'SELECT * FROM Users WHERE Name ="' + uName + '" AND Pass ="' + uPass + '"'
+Example
+	uName = getRequestString("username");
+	uPass = getRequestString("userpassword");
+
+	sql = 'SELECT * FROM Users WHERE Name ="' + uName + '" AND Pass ="' + uPass + '"'
+
 Result
-SELECT * FROM Users WHERE Name ="John Doe" AND Pass ="myPass"
+
+	SELECT * FROM Users WHERE Name ="John Doe" AND Pass ="myPass"
 
  A hacker might get access to user names and passwords in a database by simply inserting " OR ""=" into the user name or password text box:
 
@@ -2540,8 +2543,10 @@ User Name:
 Password:
 
 The code at the server will create a valid SQL statement like this:
+
 Result
-SELECT * FROM Users WHERE Name ="" or ""="" AND Pass ="" or ""=""
+
+	SELECT * FROM Users WHERE Name ="" or ""="" AND Pass ="" or ""=""
 
 
 
@@ -2553,61 +2558,74 @@ Most databases support batched SQL statement.
 A batch of SQL statements is a group of two or more SQL statements, separated by semicolons.
 
 The SQL statement below will return all rows from the "Users" table, then delete the "Suppliers" table.
+
 Example
-SELECT * FROM Users; DROP TABLE Suppliers
+
+	SELECT * FROM Users; DROP TABLE Suppliers
 
 Look at the following example:
+
 Example
-txtUserId = getRequestString("UserId");
-txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;
+	
+	txtUserId = getRequestString("UserId");
+	txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;
 
 And the following input:
 
 User id:
 
 The valid SQL statement would look like this:
+
 Result
-SELECT * FROM Users WHERE UserId = 105; DROP TABLE Suppliers;
-Use SQL Parameters for Protection
+
+	SELECT * FROM Users WHERE UserId = 105; DROP TABLE Suppliers;
+	Use SQL Parameters for Protection
 
 To protect a web site from SQL injection, you can use SQL parameters.
 
 SQL parameters are values that are added to an SQL query at execution time, in a controlled manner.
+
 ASP.NET Razor Example
-txtUserId = getRequestString("UserId");
-txtSQL = "SELECT * FROM Users WHERE UserId = @0";
-db.Execute(txtSQL,txtUserId);
+
+	txtUserId = getRequestString("UserId");
+	txtSQL = "SELECT * FROM Users WHERE UserId = @0";
+	db.Execute(txtSQL,txtUserId);
 
 Note that parameters are represented in the SQL statement by a @ marker.
 
 The SQL engine checks each parameter to ensure that it is correct for its column and are treated literally, and not as part of the SQL to be executed.
+
 Another Example
-txtNam = getRequestString("CustomerName");
-txtAdd = getRequestString("Address");
-txtCit = getRequestString("City");
-txtSQL = "INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)";
-db.Execute(txtSQL,txtNam,txtAdd,txtCit);
+
+	txtNam = getRequestString("CustomerName");
+	txtAdd = getRequestString("Address");
+	txtCit = getRequestString("City");
+	txtSQL = "INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)";
+	db.Execute(txtSQL,txtNam,txtAdd,txtCit);
+
 Examples
 
 The following examples shows how to build parameterized queries in some common web languages.
 
 SELECT STATEMENT IN ASP.NET:
-txtUserId = getRequestString("UserId");
-sql = "SELECT * FROM Customers WHERE CustomerId = @0";
-command = new SqlCommand(sql);
-command.Parameters.AddWithValue("@0",txtUserId);
-command.ExecuteReader();
+
+	txtUserId = getRequestString("UserId");
+	sql = "SELECT * FROM Customers WHERE CustomerId = @0";
+	command = new SqlCommand(sql);
+	command.Parameters.AddWithValue("@0",txtUserId);
+	command.ExecuteReader();
 
 INSERT INTO STATEMENT IN ASP.NET:
-txtNam = getRequestString("CustomerName");
-txtAdd = getRequestString("Address");
-txtCit = getRequestString("City");
-txtSQL = "INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)";
-command = new SqlCommand(txtSQL);
-command.Parameters.AddWithValue("@0",txtNam);
-command.Parameters.AddWithValue("@1",txtAdd);
-command.Parameters.AddWithValue("@2",txtCit);
-command.ExecuteNonQuery();
+
+	txtNam = getRequestString("CustomerName");
+	txtAdd = getRequestString("Address");
+	txtCit = getRequestString("City");
+	txtSQL = "INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)";
+	command = new SqlCommand(txtSQL);
+	command.Parameters.AddWithValue("@0",txtNam);
+	command.Parameters.AddWithValue("@1",txtAdd);
+	command.Parameters.AddWithValue("@2",txtCit);
+	command.ExecuteNonQuery();
 
 
 INSERT INTO STATEMENT IN PHP:
