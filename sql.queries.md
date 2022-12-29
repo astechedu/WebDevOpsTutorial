@@ -362,38 +362,38 @@ Older Oracle Syntax (with ORDER BY):
 SQL TOP, LIMIT and FETCH FIRST Examples:
 
 
-SELECT TOP 3 * FROM Customers;
+	SELECT TOP 3 * FROM Customers;
 
-SELECT * FROM Customers
-LIMIT 3; 
+	SELECT * FROM Customers
+	LIMIT 3; 
 
 
-SELECT * FROM Customers
-FETCH FIRST 3 ROWS ONLY; 
+	SELECT * FROM Customers
+	FETCH FIRST 3 ROWS ONLY; 
 
 
 
 SELECT TOP 50 PERCENT * FROM Customers;
 
 
-SELECT * FROM Customers
-FETCH FIRST 50 PERCENT ROWS ONLY;
+	SELECT * FROM Customers
+	FETCH FIRST 50 PERCENT ROWS ONLY;
 
 
 
-SELECT TOP 3 * FROM Customers
-WHERE Country='Germany';
+	SELECT TOP 3 * FROM Customers
+	WHERE Country='Germany';
 
 
-SELECT * FROM Customers
-WHERE Country='Germany'
-LIMIT 3; 
+	SELECT * FROM Customers
+	WHERE Country='Germany'
+	LIMIT 3; 
 
 
 
-    SELECT * FROM Customers
-    WHERE Country='Germany'
-    FETCH FIRST 3 ROWS ONLY;
+        SELECT * FROM Customers
+        WHERE Country='Germany'
+        FETCH FIRST 3 ROWS ONLY;
 
 
 
@@ -422,11 +422,7 @@ MAX() Syntax:
 
 
 
-
-
 SQL COUNT(), AVG() and SUM() Functions:
-
-
 
 
 COUNT() Syntax:
@@ -449,41 +445,41 @@ SUM() Syntax:
 
 COUNT() :
 
-SELECT COUNT(ProductID)
-FROM Products;
+	SELECT COUNT(ProductID)
+	FROM Products;
 
 AVG() : 
 
-SELECT AVG(Price)
-FROM Products;
+	SELECT AVG(Price)
+	FROM Products;
 
 
 SUM(): 
 
-SELECT SUM(Quantity)
-FROM OrderDetails; 
+	SELECT SUM(Quantity)
+	FROM OrderDetails; 
 
 
 
 SQL LIKE Operator: 
 
-LIKE Syntax
-SELECT column1, column2, ...
-FROM table_name
-WHERE columnN LIKE pattern; 
+	LIKE Syntax
+	SELECT column1, column2, ...
+	FROM table_name
+	WHERE columnN LIKE pattern; 
 
 
 SQL LIKE: 
 
-SELECT * FROM Customers
-WHERE CustomerName LIKE 'a%'; 
+	SELECT * FROM Customers
+	WHERE CustomerName LIKE 'a%'; 
 
-SELECT * FROM Customers
-WHERE CustomerName LIKE '%a'; 
+	SELECT * FROM Customers
+	WHERE CustomerName LIKE '%a'; 
 
 
-SELECT * FROM Customers
-WHERE CustomerName LIKE '%or%';
+	SELECT * FROM Customers
+	WHERE CustomerName LIKE '%or%';
 
 
     SELECT * FROM Customers
@@ -506,30 +502,29 @@ WHERE CustomerName LIKE '%or%';
 SQL Wildcard Characters: 
 
 
-Using the % Wildcard
+Using the % Wildcard:
+
+   	SELECT * FROM Customers
+   	WHERE City LIKE 'ber%'; 
 
 
-    SELECT * FROM Customers
-    WHERE City LIKE 'ber%'; 
+	SELECT * FROM Customers
+	WHERE City LIKE '%es%';
 
 
-SELECT * FROM Customers
-WHERE City LIKE '%es%';
+	SELECT * FROM Customers
+	WHERE City LIKE '_ondon';
+
+	SELECT * FROM Customers
+	WHERE City LIKE 'L_n_on';
 
 
-SELECT * FROM Customers
-WHERE City LIKE '_ondon';
-
-SELECT * FROM Customers
-WHERE City LIKE 'L_n_on';
+	SELECT * FROM Customers
+	WHERE City LIKE '[bsp]%';
 
 
-SELECT * FROM Customers
-WHERE City LIKE '[bsp]%';
-
-
-SELECT * FROM Customers
-WHERE City LIKE '[a-c]%';
+	SELECT * FROM Customers
+	WHERE City LIKE '[a-c]%';
 
 
     SELECT * FROM Customers
@@ -539,10 +534,7 @@ WHERE City LIKE '[a-c]%';
     WHERE City NOT LIKE '[bsp]%'; 
 
 
-
-
 SQL IN Operator: 
-
 
     SELECT column_name(s)
     FROM table_name
@@ -556,44 +548,43 @@ or:
     WHERE column_name IN (SELECT STATEMENT); 
 
 
-SELECT * FROM Customers
-WHERE Country IN ('Germany', 'France', 'UK');
+    SELECT * FROM Customers
+    WHERE Country IN ('Germany', 'France', 'UK');
 
-SELECT * FROM Customers
-WHERE Country NOT IN ('Germany', 'France', 'UK');
+    SELECT * FROM Customers
+    WHERE Country NOT IN ('Germany', 'France', 'UK');
 
 
-SELECT * FROM Customers
-WHERE Country IN (SELECT Country FROM Suppliers);
+    SELECT * FROM Customers
+    WHERE Country IN (SELECT Country FROM Suppliers);
 
 
 
 SQL BETWEEN Operator: 
 
 
+	SELECT column_name(s)
+	FROM table_name
+	WHERE column_name BETWEEN value1 AND value2; 
 
-SELECT column_name(s)
-FROM table_name
-WHERE column_name BETWEEN value1 AND value2; 
-
-SELECT * FROM Products
-WHERE Price BETWEEN 10 AND 20;
+	SELECT * FROM Products
+	WHERE Price BETWEEN 10 AND 20;
 
 
-SELECT * FROM Products
-WHERE Price NOT BETWEEN 10 AND 20;
+	SELECT * FROM Products
+	WHERE Price NOT BETWEEN 10 AND 20;
 
-SELECT * FROM Products
-WHERE Price BETWEEN 10 AND 20
-AND CategoryID NOT IN (1,2,3);
+	SELECT * FROM Products
+	WHERE Price BETWEEN 10 AND 20
+	AND CategoryID NOT IN (1,2,3);
 
-SELECT * FROM Products
-WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
-ORDER BY ProductName;
+	SELECT * FROM Products
+	WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+	ORDER BY ProductName;
 
-SELECT * FROM Products
-WHERE ProductName BETWEEN "Carnarvon Tigers" AND "Chef Anton's Cajun Seasoning"
-ORDER BY ProductName;
+	SELECT * FROM Products
+	WHERE ProductName BETWEEN "Carnarvon Tigers" AND "Chef Anton's Cajun Seasoning"
+	ORDER BY ProductName;
 
     SELECT * FROM Products
     WHERE ProductName NOT BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
@@ -624,30 +615,30 @@ Alias Table Syntax:
 
 Alias for Columns: 
 
-SELECT CustomerID AS ID, CustomerName AS Customer
-FROM Customers; 
+	SELECT CustomerID AS ID, CustomerName AS Customer
+	FROM Customers; 
 
-SELECT CustomerName AS Customer, ContactName AS [Contact Person]
-FROM Customers;
+	SELECT CustomerName AS Customer, ContactName AS [Contact Person]
+	FROM Customers;
 
-SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address
-FROM Customers; 
+	SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address
+	FROM Customers; 
 
-SELECT CustomerName, CONCAT(Address,', ',PostalCode,', ',City,', ',Country) AS Address
-FROM Customers; 
+	SELECT CustomerName, CONCAT(Address,', ',PostalCode,', ',City,', ',Country) AS Address
+	FROM Customers; 
 
-SELECT CustomerName, (Address || ', ' || PostalCode || ' ' || City || ', ' || Country) AS Address
-FROM Customers; 
-
-
-SELECT o.OrderID, o.OrderDate, c.CustomerName
-FROM Customers AS c, Orders AS o
-WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
+	SELECT CustomerName, (Address || ', ' || PostalCode || ' ' || City || ', ' || Country) AS Address
+	FROM Customers; 
 
 
-SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName
-FROM Customers, Orders
-WHERE Customers.CustomerName='Around the Horn' AND Customers.CustomerID=Orders.CustomerID;
+	SELECT o.OrderID, o.OrderDate, c.CustomerName
+	FROM Customers AS c, Orders AS o
+	WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
+
+
+	SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName
+	FROM Customers, Orders
+	WHERE Customers.CustomerName='Around the Horn' AND Customers.CustomerID=Orders.CustomerID;
 
 
 
@@ -695,11 +686,11 @@ Here are the different types of the JOINs in SQL:
 SQL INNER JOIN Keyword: 
 
 
-INNER JOIN Syntax
-SELECT column_name(s)
-FROM table1
-INNER JOIN table2
-ON table1.column_name = table2.column_name;
+	INNER JOIN Syntax
+	SELECT column_name(s)
+	FROM table1
+	INNER JOIN table2
+	ON table1.column_name = table2.column_name;
 
 
 OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
@@ -795,10 +786,10 @@ EmployeeID 	LastName 	FirstName 	BirthDate 	Photo
 
 SQL RIGHT JOIN Example:
 
-SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
-FROM Orders
-RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
-ORDER BY Orders.OrderID; 
+	SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+	FROM Orders
+	RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+	ORDER BY Orders.OrderID; 
 
 
 
@@ -807,11 +798,11 @@ SQL FULL OUTER JOIN Keyword:
 
 FULL OUTER JOIN Syntax:
 
-SELECT column_name(s)
-FROM table1
-FULL OUTER JOIN table2
-ON table1.column_name = table2.column_name
-WHERE condition; 
+	SELECT column_name(s)
+	FROM table1
+	FULL OUTER JOIN table2
+	ON table1.column_name = table2.column_name
+	WHERE condition; 
 
 
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
@@ -828,20 +819,20 @@ OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
 
 SQL FULL OUTER JOIN Example: 
 
-SELECT Customers.CustomerName, Orders.OrderID
-FROM Customers
-FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
-ORDER BY Customers.CustomerName;
+	SELECT Customers.CustomerName, Orders.OrderID
+	FROM Customers
+	FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
+	ORDER BY Customers.CustomerName;
 
 
 SQL Self Join: 
 
 A self join is a regular join, but the table is joined with itself.
 
-Self Join Syntax
-SELECT column_name(s)
-FROM table1 T1, table1 T2
-WHERE condition;
+	Self Join Syntax
+	SELECT column_name(s)
+	FROM table1 T1, table1 T2
+	WHERE condition;
 
 
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
@@ -866,16 +857,16 @@ SQL UNION Operator:
 
 UNION Syntax:
 
-SELECT column_name(s) FROM table1
-UNION
-SELECT column_name(s) FROM table2;
+	SELECT column_name(s) FROM table1
+	UNION
+	SELECT column_name(s) FROM table2;
 
 
 UNION ALL Syntax:
 
-SELECT column_name(s) FROM table1
-UNION ALL
-SELECT column_name(s) FROM table2; 
+	SELECT column_name(s) FROM table1
+	UNION ALL
+	SELECT column_name(s) FROM table2; 
 
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
@@ -893,58 +884,58 @@ SupplierID 	SupplierName 	ContactName 	Address 	City 	PostalCode 	Country
 SQL UNION Example:
 
 
-SELECT City FROM Customers
-UNION
-SELECT City FROM Suppliers
-ORDER BY City;
+	SELECT City FROM Customers
+	UNION
+	SELECT City FROM Suppliers
+	ORDER BY City;
 
 
 SQL UNION ALL: 
 
-SELECT City FROM Customers
-UNION ALL
-SELECT City FROM Suppliers
-ORDER BY City;
+	SELECT City FROM Customers
+	UNION ALL
+	SELECT City FROM Suppliers
+	ORDER BY City;
 
 
 SQL UNION With WHERE:
 
-SELECT City, Country FROM Customers
-WHERE Country='Germany'
-UNION
-SELECT City, Country FROM Suppliers
-WHERE Country='Germany'
-ORDER BY City;
+	SELECT City, Country FROM Customers
+	WHERE Country='Germany'
+	UNION
+	SELECT City, Country FROM Suppliers
+	WHERE Country='Germany'
+	ORDER BY City;
 
 
 SQL UNION ALL With WHERE: 
 
-SELECT City, Country FROM Customers
-WHERE Country='Germany'
-UNION ALL
-SELECT City, Country FROM Suppliers
-WHERE Country='Germany'
-ORDER BY City;
+	SELECT City, Country FROM Customers
+	WHERE Country='Germany'
+	UNION ALL
+	SELECT City, Country FROM Suppliers
+	WHERE Country='Germany'
+	ORDER BY City;
 
 
 Another UNION Example:
 
-SELECT 'Customer' AS Type, ContactName, City, Country
-FROM Customers
-UNION
-SELECT 'Supplier', ContactName, City, Country
-FROM Suppliers;
+	SELECT 'Customer' AS Type, ContactName, City, Country
+	FROM Customers
+	UNION
+	SELECT 'Supplier', ContactName, City, Country
+	FROM Suppliers;
 
 
 
 SQL GROUP BY Statement:
 
-GROUP BY Syntax
-SELECT column_name(s)
-FROM table_name
-WHERE condition
-GROUP BY column_name(s)
-ORDER BY column_name(s); 
+	GROUP BY Syntax
+	SELECT column_name(s)
+	FROM table_name
+	WHERE condition
+	GROUP BY column_name(s)
+	ORDER BY column_name(s); 
 
 
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
@@ -957,15 +948,15 @@ CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 
 SQL GROUP BY: 
 
-SELECT COUNT(CustomerID), Country
-FROM Customers
-GROUP BY Country;
+	SELECT COUNT(CustomerID), Country
+	FROM Customers
+	GROUP BY Country;
 
 
-SELECT COUNT(CustomerID), Country
-FROM Customers
-GROUP BY Country
-ORDER BY COUNT(CustomerID) DESC;
+	SELECT COUNT(CustomerID), Country
+	FROM Customers
+	GROUP BY Country
+	ORDER BY COUNT(CustomerID) DESC;
 
 
 OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
@@ -985,20 +976,20 @@ ShipperID 	ShipperName
 GROUP BY With JOIN:
 
 
-SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FROM Orders
-LEFT JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
-GROUP BY ShipperName;
+	SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FROM Orders
+	LEFT JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
+	GROUP BY ShipperName;
 
 
 SQL HAVING Clause: 
 
-HAVING Syntax
-SELECT column_name(s)
-FROM table_name
-WHERE condition
-GROUP BY column_name(s)
-HAVING condition
-ORDER BY column_name(s); 
+	HAVING Syntax
+	SELECT column_name(s)
+	FROM table_name
+	WHERE condition
+	GROUP BY column_name(s)
+	HAVING condition
+	ORDER BY column_name(s); 
 
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
@@ -1010,16 +1001,16 @@ CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 
 SQL HAVING Examples
 
-SELECT COUNT(CustomerID), Country
-FROM Customers
-GROUP BY Country
-HAVING COUNT(CustomerID) > 5;
+	SELECT COUNT(CustomerID), Country
+	FROM Customers
+	GROUP BY Country
+	HAVING COUNT(CustomerID) > 5;
 
-SELECT COUNT(CustomerID), Country
-FROM Customers
-GROUP BY Country
-HAVING COUNT(CustomerID) > 5
-ORDER BY COUNT(CustomerID) DESC;
+	SELECT COUNT(CustomerID), Country
+	FROM Customers
+	GROUP BY Country
+	HAVING COUNT(CustomerID) > 5
+	ORDER BY COUNT(CustomerID) DESC;
 
 OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
 10248 	90 	5 	1996-07-04 	3
@@ -1039,32 +1030,32 @@ More HAVING Examples:
 
 Example:
 
-SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders
-FROM (Orders
-INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID)
-GROUP BY LastName
-HAVING COUNT(Orders.OrderID) > 10;
+	SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders
+	FROM (Orders
+	INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID)
+	GROUP BY LastName
+	HAVING COUNT(Orders.OrderID) > 10;
 
 
 Example:
 
-SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders
-FROM Orders
-INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
-WHERE LastName = 'Davolio' OR LastName = 'Fuller'
-GROUP BY LastName
-HAVING COUNT(Orders.OrderID) > 25;
+	SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders
+	FROM Orders
+	INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+	WHERE LastName = 'Davolio' OR LastName = 'Fuller'
+	GROUP BY LastName
+	HAVING COUNT(Orders.OrderID) > 25;
 
 
 
 SQL EXISTS Operator: 
 
 
-EXISTS Syntax
-SELECT column_name(s)
-FROM table_name
-WHERE EXISTS
-(SELECT column_name FROM table_name WHERE condition); 
+	EXISTS Syntax
+	SELECT column_name(s)
+	FROM table_name
+	WHERE EXISTS
+	(SELECT column_name FROM table_name WHERE condition); 
 
 ProductID 	ProductName 	SupplierID 	CategoryID 	Unit 	Price
 1 	Chais 	1 	1 	10 boxes x 20 bags 	18
@@ -1103,29 +1094,29 @@ SQL ANY and ALL Operators:
 
 ANY Syntax:
 
-SELECT column_name(s)
-FROM table_name
-WHERE column_name operator ANY
-  (SELECT column_name
-  FROM table_name
-  WHERE condition); 
-  
+	SELECT column_name(s)
+	FROM table_name
+	WHERE column_name operator ANY
+	  (SELECT column_name
+	  FROM table_name
+	  WHERE condition); 
+
   
 ALL Syntax With SELECT:
 
-SELECT ALL column_name(s)
-FROM table_name
-WHERE condition;
+	SELECT ALL column_name(s)
+	FROM table_name
+	WHERE condition;
 
 ALL Syntax With WHERE or HAVING:
 
-SELECT column_name(s)
-FROM table_name
-WHERE column_name operator ALL
-  (SELECT column_name
-  FROM table_name
-  WHERE condition);   
-  
+	SELECT column_name(s)
+	FROM table_name
+	WHERE column_name operator ALL
+	  (SELECT column_name
+	  FROM table_name
+	  WHERE condition);   
+
 
 ProductID 	ProductName 	SupplierID 	CategoryID 	Unit 	Price
 1 	Chais 	1 	1 	10 boxes x 20 bags 	18
@@ -1156,73 +1147,78 @@ OrderDetailID 	OrderID 	ProductID 	Quantity
 SQL ANY Examples: 
 
 
-Example
-SELECT ProductName
-FROM Products
-WHERE ProductID = ANY
-  (SELECT ProductID
-  FROM OrderDetails
-  WHERE Quantity = 10); 
+Example:
+
+	SELECT ProductName
+	FROM Products
+	WHERE ProductID = ANY
+	  (SELECT ProductID
+	  FROM OrderDetails
+	  WHERE Quantity = 10); 
+
+
   
+  Example:
   
-  
-  Example
-SELECT ProductName
-FROM Products
-WHERE ProductID = ANY
-  (SELECT ProductID
-  FROM OrderDetails
-  WHERE Quantity > 99); 
-  
- Example
-SELECT ProductName
-FROM Products
-WHERE ProductID = ANY
-  (SELECT ProductID
-  FROM OrderDetails
-  WHERE Quantity > 1000);  
-  
+	SELECT ProductName
+	FROM Products
+	WHERE ProductID = ANY
+	  (SELECT ProductID
+	  FROM OrderDetails
+	  WHERE Quantity > 99); 
+
+ Example:
+
+	SELECT ProductName
+	FROM Products
+	WHERE ProductID = ANY
+	  (SELECT ProductID
+	  FROM OrderDetails
+	  WHERE Quantity > 1000);  
+
  
  SQL ALL Examples:
 
 The following SQL statement lists ALL the product names:
-Example
-SELECT ALL ProductName
-FROM Products
-WHERE TRUE; 
-  
 
 Example:
 
-SELECT ProductName
-FROM Products
-WHERE ProductID = ALL
-  (SELECT ProductID
-  FROM OrderDetails
-  WHERE Quantity = 10); 
+	SELECT ALL ProductName
+	FROM Products
+	WHERE TRUE; 
+
+
+Example:
+
+	SELECT ProductName
+	FROM Products
+	WHERE ProductID = ALL
+	  (SELECT ProductID
+	  FROM OrderDetails
+	  WHERE Quantity = 10); 
 
 
 
 SQL SELECT INTO Statement: 
 
-SELECT INTO Syntax:
+	SELECT INTO Syntax:
 
 Copy all columns into a new table:
 
-SELECT *
-INTO newtable [IN externaldb]
-FROM oldtable
-WHERE condition;
+	SELECT *
+	INTO newtable [IN externaldb]
+	FROM oldtable
+	WHERE condition;
 
 Copy only some columns into a new table:
 
-SELECT column1, column2, column3, ...
-INTO newtable [IN externaldb]
-FROM oldtable
-WHERE condition; 
+	SELECT column1, column2, column3, ...
+	INTO newtable [IN externaldb]
+	FROM oldtable
+	WHERE condition; 
 
 
-SQL SELECT INTO Examples
+SQL SELECT INTO Examples:
 
 The following SQL statement creates a backup copy of Customers:
 
@@ -1261,21 +1257,23 @@ The following SQL statement copies data from more than one table into a new tabl
 
 SQL INSERT INTO SELECT Statement: 
 
-INSERT INTO SELECT Syntax
+INSERT INTO SELECT Syntax:
 
 Copy all columns from one table to another table:
-INSERT INTO table2
-SELECT * FROM table1
-WHERE condition;
+	
+	INSERT INTO table2
+	SELECT * FROM table1
+	WHERE condition;
 
 Copy only some columns from one table into another table:
-INSERT INTO table2 (column1, column2, column3, ...)
-SELECT column1, column2, column3, ...
-FROM table1
-WHERE condition;
+
+	INSERT INTO table2 (column1, column2, column3, ...)
+	SELECT column1, column2, column3, ...
+	FROM table1
+	WHERE condition;
 
 
-Demo Database
+Demo Database:
 
 In this tutorial we will use the well-known Northwind sample database.
 
@@ -1292,38 +1290,45 @@ SupplierID 	SupplierName 	ContactName 	Address 	City 	Postal Code 	Country
 3 	Grandma Kelly's Homestead 	Regina Murphy 	707 Oxford Rd. 	Ann Arbor 	48104 	USA
 
 
-SQL INSERT INTO SELECT Examples
+SQL INSERT INTO SELECT Examples:
 
 The following SQL statement copies "Suppliers" into "Customers" (the columns that are not filled with data, will contain NULL):
-Example
-INSERT INTO Customers (CustomerName, City, Country)
-SELECT SupplierName, City, Country FROM Suppliers;
+
+Example:
+
+
+	INSERT INTO Customers (CustomerName, City, Country)
+	SELECT SupplierName, City, Country FROM Suppliers;
 
 The following SQL statement copies "Suppliers" into "Customers" (fill all columns):
-Example
-INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
-SELECT SupplierName, ContactName, Address, City, PostalCode, Country FROM Suppliers;
+
+Example:
+
+	INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+	SELECT SupplierName, ContactName, Address, City, PostalCode, Country FROM Suppliers;
 
 The following SQL statement copies only the German suppliers into "Customers":
-Example
-INSERT INTO Customers (CustomerName, City, Country)
-SELECT SupplierName, City, Country FROM Suppliers
-WHERE Country='Germany';
+
+Example:
+
+	INSERT INTO Customers (CustomerName, City, Country)
+	SELECT SupplierName, City, Country FROM Suppliers
+	WHERE Country='Germany';
 
 
 SQL CASE Expression: 
 
-CASE Syntax
-CASE
-    WHEN condition1 THEN result1
-    WHEN condition2 THEN result2
-    WHEN conditionN THEN resultN
-    ELSE result
-END; 
+	CASE Syntax
+	CASE
+	    WHEN condition1 THEN result1
+	    WHEN condition2 THEN result2
+	    WHEN conditionN THEN resultN
+	    ELSE result
+	END; 
 
 
 
-Demo Database
+Demo Database:
 
 Below is a selection from the "OrderDetails" table in the Northwind sample database:
 OrderDetailID 	OrderID 	ProductID 	Quantity
@@ -1337,14 +1342,16 @@ OrderDetailID 	OrderID 	ProductID 	Quantity
 SQL CASE Examples
 
 The following SQL goes through conditions and returns a value when the first condition is met:
-Example
-SELECT OrderID, Quantity,
-CASE
-    WHEN Quantity > 30 THEN 'The quantity is greater than 30'
-    WHEN Quantity = 30 THEN 'The quantity is 30'
-    ELSE 'The quantity is under 30'
-END AS QuantityText
-FROM OrderDetails; 
+
+Example:
+
+	SELECT OrderID, Quantity,
+	CASE
+	    WHEN Quantity > 30 THEN 'The quantity is greater than 30'
+	    WHEN Quantity = 30 THEN 'The quantity is 30'
+	    ELSE 'The quantity is under 30'
+	END AS QuantityText
+	FROM OrderDetails; 
 
 
 Example:
@@ -1366,52 +1373,57 @@ P_Id 	ProductName 	UnitPrice 	UnitsInStock 	UnitsOnOrder
 3 	Gorgonzola 	15.67 	9 	20
 
 Look at the following SELECT statement:
-SELECT ProductName, UnitPrice * (UnitsInStock + UnitsOnOrder)
-FROM Products;
 
-Solutions
+	SELECT ProductName, UnitPrice * (UnitsInStock + UnitsOnOrder)
+	FROM Products;
+
+Solutions:
 
 MySQL
 
 The MySQL IFNULL() function lets you return an alternative value if an expression is NULL:
-SELECT ProductName, UnitPrice * (UnitsInStock + IFNULL(UnitsOnOrder, 0))
-FROM Products;
+
+	SELECT ProductName, UnitPrice * (UnitsInStock + IFNULL(UnitsOnOrder, 0))
+	FROM Products;
 
 or we can use the COALESCE() function, like this:
-SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
-FROM Products; 
 
-SQL Server
+	SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
+	FROM Products; 
+
+SQL Server:
 
 The SQL Server ISNULL() function lets you return an alternative value when an expression is NULL:
-SELECT ProductName, UnitPrice * (UnitsInStock + ISNULL(UnitsOnOrder, 0))
-FROM Products;
+
+	SELECT ProductName, UnitPrice * (UnitsInStock + ISNULL(UnitsOnOrder, 0))
+	FROM Products;
 
 or we can use the COALESCE() function, like this:
-SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
-FROM Products;
+
+	SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
+	FROM Products;
 
 MS Access
 
 The MS Access IsNull() function returns TRUE (-1) if the expression is a null value, otherwise FALSE (0):
-SELECT ProductName, UnitPrice * (UnitsInStock + IIF(IsNull(UnitsOnOrder), 0, UnitsOnOrder))
-FROM Products;
+
+	SELECT ProductName, UnitPrice * (UnitsInStock + IIF(IsNull(UnitsOnOrder), 0, UnitsOnOrder))
+	FROM Products;
 
 Oracle
 
 The Oracle NVL() function achieves the same result:
-SELECT ProductName, UnitPrice * (UnitsInStock + NVL(UnitsOnOrder, 0))
-FROM Products;
+
+	SELECT ProductName, UnitPrice * (UnitsInStock + NVL(UnitsOnOrder, 0))
+	FROM Products;
 
 or we can use the COALESCE() function, like this:
-SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
-FROM Products; 
 
+	SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
+	FROM Products; 
 
 
 SQL Stored Procedures for SQL Server: 
-
-
 
 
 What is a Stored Procedure?
@@ -1419,18 +1431,20 @@ What is a Stored Procedure?
 A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
 
 
-Stored Procedure Syntax
-CREATE PROCEDURE procedure_name
-AS
-sql_statement
-GO; 
+Stored Procedure Syntax:
+
+	CREATE PROCEDURE procedure_name
+	AS
+	sql_statement
+	GO; 
 
 
-Execute a Stored Procedure
-EXEC procedure_name; 
+Execute a Stored Procedure:
+
+	EXEC procedure_name; 
 
 
-Demo Database
+Demo Database:
 
 Below is a selection from the "Customers" table in the Northwind sample database:
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
@@ -1445,41 +1459,52 @@ CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 5 	Berglunds snabbköp 	Christina Berglund 	Berguvsvägen 8 	Luleå 	S-958 22 	Sweden
 
 
-Stored Procedure Example
+Stored Procedure Example:
 
 The following SQL statement creates a stored procedure named "SelectAllCustomers" that selects all records from the "Customers" table:
-Example
-CREATE PROCEDURE SelectAllCustomers
-AS
-SELECT * FROM Customers
-GO;
+
+Example:
+
+	CREATE PROCEDURE SelectAllCustomers
+	AS
+	SELECT * FROM Customers
+	GO;
 
 Execute the stored procedure above as follows:
-Example
-EXEC SelectAllCustomers;
 
-Stored Procedure With One Parameter
+Example:
+
+	EXEC SelectAllCustomers;
+
+Stored Procedure With One Parameter:
 
 The following SQL statement creates a stored procedure that selects Customers from a particular City from the "Customers" table:
-Example
-CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
-AS
-SELECT * FROM Customers WHERE City = @City
-GO;
+
+Example:
+
+	CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
+	AS
+	SELECT * FROM Customers WHERE City = @City
+	GO;
 
 Execute the stored procedure above as follows:
-Example
-EXEC SelectAllCustomers @City = 'London';
+
+Example:
+
+	EXEC SelectAllCustomers @City = 'London';
+	
 Stored Procedure With Multiple Parameters
 
 Setting up multiple parameters is very easy. Just list each parameter and the data type separated by a comma as shown below.
 
 The following SQL statement creates a stored procedure that selects Customers from a particular City with a particular PostalCode from the "Customers" table:
-Example
-CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
-AS
-SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
-GO;
+
+Example:
+
+	CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
+	AS
+	SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
+	GO;
 
 Execute the stored procedure above as follows:
 
@@ -1488,43 +1513,51 @@ Example:
 	EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
 
 
-
 SQL Comments:
 
 Example
---Select all:
-SELECT * FROM Customers;
+
+	--Select all:
+	SELECT * FROM Customers;
 
 
 Example
-SELECT * FROM Customers -- WHERE City='Berlin'; 
 
---SELECT * FROM Customers;
-SELECT * FROM Products;
+	SELECT * FROM Customers -- WHERE City='Berlin'; 
+
+	--SELECT * FROM Customers;
+	SELECT * FROM Products;
 
 
 Example
+
 /*Select all the columns
 of all the records
-in the Customers table:*/
-SELECT * FROM Customers;
+
+	in the Customers table:*/
+	SELECT * FROM Customers;
 
 Example
+
 /*SELECT * FROM Customers;
-SELECT * FROM Products;
-SELECT * FROM Orders;
-SELECT * FROM Categories;*/
-SELECT * FROM Suppliers;
+
+	SELECT * FROM Products;
+	SELECT * FROM Orders;
+	SELECT * FROM Categories;*/
+	SELECT * FROM Suppliers;
 
 Example
-SELECT CustomerName, /*City,*/ Country FROM Customers;
+
+	SELECT CustomerName, /*City,*/ Country FROM Customers;
 
 Example
+
 SELECT * FROM Customers WHERE (CustomerName LIKE 'L%'
-OR CustomerName LIKE 'R%' /*OR CustomerName LIKE 'S%'
-OR CustomerName LIKE 'T%'*/ OR CustomerName LIKE 'W%')
-AND Country='USA'
-ORDER BY CustomerName; 
+
+	OR CustomerName LIKE 'R%' /*OR CustomerName LIKE 'S%'
+	OR CustomerName LIKE 'T%'*/ OR CustomerName LIKE 'W%')
+	AND Country='USA'
+	ORDER BY CustomerName; 
 
 
 
@@ -1532,53 +1565,57 @@ SQL Operators:
 
 
 SQL Arithmetic Operators
-Operator 	Description 	Example
-+ 	Add 	
-- 	Subtract 	
-* 	Multiply 	
-/ 	Divide 	
-% 	Modulo
+
+	Operator 	Description 	Example
+	+ 	Add 	
+	- 	Subtract 	
+	* 	Multiply 	
+	/ 	Divide 	
+	% 	Modulo
 
 
 SQL Bitwise Operators
-Operator 	Description
-& 	Bitwise AND
-| 	Bitwise OR
-^ 	Bitwise exclusive OR
-SQL Comparison Operators
-Operator 	Description 	Example
-= 	Equal to 	
-> 	Greater than 	
-< 	Less than 	
->= 	Greater than or equal to 	
-<= 	Less than or equal to 	
-<> 	Not equal to
+
+	Operator 	Description
+	& 	Bitwise AND
+	| 	Bitwise OR
+	^ 	Bitwise exclusive OR
+	SQL Comparison Operators
+	Operator 	Description 	Example
+	= 	Equal to 	
+	> 	Greater than 	
+	< 	Less than 	
+	>= 	Greater than or equal to 	
+	<= 	Less than or equal to 	
+	<> 	Not equal to
 
 
 SQL Compound Operators
-Operator 	Description
-+= 	Add equals
--= 	Subtract equals
-*= 	Multiply equals
-/= 	Divide equals
-%= 	Modulo equals
-&= 	Bitwise AND equals
-^-= 	Bitwise exclusive equals
-|*= 	Bitwise OR equals
+
+	Operator 	Description
+	+= 	Add equals
+	-= 	Subtract equals
+	*= 	Multiply equals
+	/= 	Divide equals
+	%= 	Modulo equals
+	&= 	Bitwise AND equals
+	^-= 	Bitwise exclusive equals
+	|*= 	Bitwise OR equals
 
 
 SQL Logical Operators
-Operator 	Description 	Example
-ALL 	TRUE if all of the subquery values meet the condition 	
-AND 	TRUE if all the conditions separated by AND is TRUE 	
-ANY 	TRUE if any of the subquery values meet the condition 	
-BETWEEN 	TRUE if the operand is within the range of comparisons 	
-EXISTS 	TRUE if the subquery returns one or more records 	
-IN 	TRUE if the operand is equal to one of a list of expressions 	
-LIKE 	TRUE if the operand matches a pattern 	
-NOT 	Displays a record if the condition(s) is NOT TRUE 	
-OR 	TRUE if any of the conditions separated by OR is TRUE 	
-SOME 	TRUE if any of the subquery values meet the condition
+
+	Operator 	Description 	Example
+	ALL 	TRUE if all of the subquery values meet the condition 	
+	AND 	TRUE if all the conditions separated by AND is TRUE 	
+	ANY 	TRUE if any of the subquery values meet the condition 	
+	BETWEEN 	TRUE if the operand is within the range of comparisons 	
+	EXISTS 	TRUE if the subquery returns one or more records 	
+	IN 	TRUE if the operand is equal to one of a list of expressions 	
+	LIKE 	TRUE if the operand matches a pattern 	
+	NOT 	Displays a record if the condition(s) is NOT TRUE 	
+	OR 	TRUE if any of the conditions separated by OR is TRUE 	
+	SOME 	TRUE if any of the subquery values meet the condition
 
 
 
