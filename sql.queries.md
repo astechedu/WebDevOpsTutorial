@@ -76,6 +76,27 @@ The following SQL statement selects all the records in the "Customers" table:
 
 
 
+SQL SELECT DISTINCT Statement:
+
+    SELECT DISTINCT column1, column2, ...
+    FROM table_name; 
+
+
+
+SELECT Example Without DISTINCT
+
+    SELECT Country FROM Customers;
+    
+    SELECT DISTINCT Country FROM Customers;
+    
+    SELECT COUNT(DISTINCT Country) FROM Customers;
+
+
+
+
+
+
+
 
 
  :end: 
