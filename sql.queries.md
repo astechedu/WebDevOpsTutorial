@@ -28,9 +28,6 @@ $$\color{purple}{SQL \ Queries}$$
 <a name="sql_interviews_questions_40"></a>
          
 # Top 40 SQL Query Interview Questions and Answers for Practice
-    
-    https://artoftesting.com/sql-queries-for-interview
-
 
 
 Table – EmployeeDetails:
