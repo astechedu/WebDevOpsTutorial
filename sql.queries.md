@@ -1482,12 +1482,49 @@ SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
 GO;
 
 Execute the stored procedure above as follows:
+
+Example:
+
+	EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
+
+
+
+SQL Comments:
+
 Example
-EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
+--Select all:
+SELECT * FROM Customers;
 
 
+Example
+SELECT * FROM Customers -- WHERE City='Berlin'; 
+
+--SELECT * FROM Customers;
+SELECT * FROM Products;
 
 
+Example
+/*Select all the columns
+of all the records
+in the Customers table:*/
+SELECT * FROM Customers;
+
+Example
+/*SELECT * FROM Customers;
+SELECT * FROM Products;
+SELECT * FROM Orders;
+SELECT * FROM Categories;*/
+SELECT * FROM Suppliers;
+
+Example
+SELECT CustomerName, /*City,*/ Country FROM Customers;
+
+Example
+SELECT * FROM Customers WHERE (CustomerName LIKE 'L%'
+OR CustomerName LIKE 'R%' /*OR CustomerName LIKE 'S%'
+OR CustomerName LIKE 'T%'*/ OR CustomerName LIKE 'W%')
+AND Country='USA'
+ORDER BY CustomerName; 
 
 
 
