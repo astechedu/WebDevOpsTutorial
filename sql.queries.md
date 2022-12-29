@@ -72,6 +72,18 @@ CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
 7	Blondel père et fils	Frédérique Citeaux	24, place Kléber	Strasbourg	67000	France
 
 
+Sample Table:
+
+Below is a selection from the "Orders" table in the Northwind sample database:
+OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
+10248 	90 	5 	7/4/1996 	3
+10249 	81 	6 	7/5/1996 	1
+10250 	34 	4 	7/8/1996 	2
+10251 	84 	3 	7/9/1996 	1
+10252 	76 	4 	7/10/1996 	2
+
+
+
 
 
  #Some of The Most Important SQL Commands:
@@ -553,6 +565,54 @@ WHERE Country NOT IN ('Germany', 'France', 'UK');
 
 SELECT * FROM Customers
 WHERE Country IN (SELECT Country FROM Suppliers);
+
+
+
+SQL BETWEEN Operator: 
+
+
+
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2; 
+
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
+
+
+SELECT * FROM Products
+WHERE Price NOT BETWEEN 10 AND 20;
+
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20
+AND CategoryID NOT IN (1,2,3);
+
+SELECT * FROM Products
+WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+ORDER BY ProductName;
+
+SELECT * FROM Products
+WHERE ProductName BETWEEN "Carnarvon Tigers" AND "Chef Anton's Cajun Seasoning"
+ORDER BY ProductName;
+
+    SELECT * FROM Products
+    WHERE ProductName NOT BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+    ORDER BY ProductName;
+
+
+    SELECT * FROM Orders
+    WHERE OrderDate BETWEEN #07/01/1996# AND #07/31/1996#;
+
+OR:
+
+    SELECT * FROM Orders
+    WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+
+
+
+
+
+
 
 
 
