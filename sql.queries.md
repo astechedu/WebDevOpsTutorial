@@ -43,12 +43,12 @@ Patient ID	Patient Name	Sex	Age	Address	                                 Postal 
 
 PatientsCheckup Table: 
 
-Patient ID	BP	Weight	Consultation Fees
-01	121/80	67	300
-02	142/76	78	400
-03	151/75	55	300
-04	160/81	61	550
-05	143/67	78	700
+Patient ID	 BP	      Weight	 Consultation Fees
+01	         121/80	  67	     300
+02	         142/76	  78	     400
+03	         151/75	  55	     300
+04	         160/81	  61	     550
+05	         143/67	  78	     700
 
 
 ### Q1.  Write an SQL query to fetch the current date-time from the system.
