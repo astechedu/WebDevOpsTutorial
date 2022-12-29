@@ -331,173 +331,163 @@ SQL Query Interview Questions for Experienced:
 
 
 Ques. 31. Write an SQL query to fetch all the Employees who are also managers from the EmployeeDetails table.
-Ans. Here, we have to use Self-Join as the requirement wants us to analyze the EmployeeDetails table as two tables. We will use different aliases ‘E’ and ‘M’ for the same EmployeeDetails table.
 
-SELECT DISTINCT E.FullName
-FROM EmployeeDetails E
-INNER JOIN EmployeeDetails M
-ON E.EmpID = M.ManagerID;
-
+    SELECT DISTINCT E.FullName
+    FROM EmployeeDetails E
+    INNER JOIN EmployeeDetails M
+    ON E.EmpID = M.ManagerID;
 
 
 Ques.32. Write an SQL query to fetch duplicate records from EmployeeDetails (without considering the primary key – EmpId).
-Ans. In order to find duplicate records from the table, we can use GROUP BY on all the fields and then use the HAVING clause to return only those fields whose count is greater than 1 i.e. the rows having duplicate records.
 
-SELECT FullName, ManagerId, DateOfJoining, City, COUNT(*)
-FROM EmployeeDetails
-GROUP BY FullName, ManagerId, DateOfJoining, City
-HAVING COUNT(*) > 1;
+    SELECT FullName, ManagerId, DateOfJoining, City, COUNT(*)
+    FROM EmployeeDetails
+    GROUP BY FullName, ManagerId, DateOfJoining, City
+    HAVING COUNT(*) > 1;
 
 
 
 Ques.33. Write an SQL query to remove duplicates from a table without using a temporary table.
-Ans. Here, we can use delete with alias and inner join. We will check for the equality of all the matching records and then remove the row with a higher EmpId.
 
-DELETE E1 FROM EmployeeDetails E1
-INNER JOIN EmployeeDetails E2 
-WHERE E1.EmpId > E2.EmpId 
-AND E1.FullName = E2.FullName 
-AND E1.ManagerId = E2.ManagerId
-AND E1.DateOfJoining = E2.DateOfJoining
-AND E1.City = E2.City;
+
+    DELETE E1 FROM EmployeeDetails E1
+    INNER JOIN EmployeeDetails E2 
+    WHERE E1.EmpId > E2.EmpId 
+    AND E1.FullName = E2.FullName 
+    AND E1.ManagerId = E2.ManagerId
+    AND E1.DateOfJoining = E2.DateOfJoining
+    AND E1.City = E2.City;
 
 
 Ques.34. Write an SQL query to fetch only odd rows from the table.
-Ans. In case we have an auto-increment field e.g. EmpId then we can simply use the below query-
 
-SELECT * FROM EmployeeDetails 
-WHERE MOD (EmpId, 2) <> 0;
+    SELECT * FROM EmployeeDetails 
+    WHERE MOD (EmpId, 2) <> 0;
 
 
 In case we don’t have such a field then we can use the below queries.
 
 Using Row_number in SQL server and checking that the remainder when divided by 2 is 1-
 
-SELECT E.EmpId, E.Project, E.Salary
-FROM (
-    SELECT *, Row_Number() OVER(ORDER BY EmpId) AS RowNumber
-    FROM EmployeeSalary
-) E
-WHERE E.RowNumber % 2 = 1;
+    SELECT E.EmpId, E.Project, E.Salary
+    FROM (
+        SELECT *, Row_Number() OVER(ORDER BY EmpId) AS RowNumber
+        FROM EmployeeSalary
+    ) E
+    WHERE E.RowNumber % 2 = 1;
 
 
 Using a user-defined variable in MySQL-
 
-SELECT *
-FROM (
-      SELECT *, @rowNumber := @rowNumber+ 1 rn
-      FROM EmployeeSalary
-      JOIN (SELECT @rowNumber:= 0) r
-     ) t 
-WHERE rn % 2 = 1;
+    SELECT *
+    FROM (
+          SELECT *, @rowNumber := @rowNumber+ 1 rn
+          FROM EmployeeSalary
+          JOIN (SELECT @rowNumber:= 0) r
+         ) t 
+    WHERE rn % 2 = 1;
 
 
 
 Ques.35. Write an SQL query to fetch only even rows from the table.
-Ans. In case we have an auto-increment field e.g. EmpId then we can simply use the below query-
 
-SELECT * FROM EmployeeDetails 
-WHERE MOD (EmpId, 2) = 0;
+    SELECT * FROM EmployeeDetails 
+    WHERE MOD (EmpId, 2) = 0;
 
 
 In case we don’t have such a field then we can use the below queries.
 
 Using Row_number in SQL server and checking that the remainder, when divided by 2, is 1-
 
-SELECT E.EmpId, E.Project, E.Salary
-FROM (
-    SELECT *, Row_Number() OVER(ORDER BY EmpId) AS RowNumber
-    FROM EmployeeSalary
-) E
-WHERE E.RowNumber % 2 = 0;
+    SELECT E.EmpId, E.Project, E.Salary
+    FROM (
+        SELECT *, Row_Number() OVER(ORDER BY EmpId) AS RowNumber
+        FROM EmployeeSalary
+    ) E
+    WHERE E.RowNumber % 2 = 0;
 
 
 Using a user-defined variable in MySQL-
 
-SELECT *
-FROM (
-      SELECT *, @rowNumber := @rowNumber+ 1 rn
-      FROM EmployeeSalary
-      JOIN (SELECT @rowNumber:= 0) r
-     ) t 
-WHERE rn % 2 = 0;
+    SELECT *
+    FROM (
+          SELECT *, @rowNumber := @rowNumber+ 1 rn
+          FROM EmployeeSalary
+          JOIN (SELECT @rowNumber:= 0) r
+         ) t 
+    WHERE rn % 2 = 0;
 
 
 
 Ques.36. Write an SQL query to create a new table with data and structure copied from another table.
 Ans.
 
-CREATE TABLE NewTable 
-SELECT * FROM EmployeeSalary;
+    CREATE TABLE NewTable 
+    SELECT * FROM EmployeeSalary;
 
 
 
 Ques.37. Write an SQL query to create an empty table with the same structure as some other table.
-Ans. Here, we can use the same query as above with the False ‘WHERE’ condition-
 
-CREATE TABLE NewTable 
-SELECT * FROM EmployeeSalary where 1=0;
+    CREATE TABLE NewTable 
+    SELECT * FROM EmployeeSalary where 1=0;
 
 
 
 Ques.38. Write an SQL query to fetch top n records.
-Ans. In MySQL using LIMIT-
 
-SELECT *
-FROM EmployeeSalary
-ORDER BY Salary DESC LIMIT N;
+    SELECT *
+    FROM EmployeeSalary
+    ORDER BY Salary DESC LIMIT N;
 
 
 In SQL server using TOP command-
 
-SELECT TOP N *
-FROM EmployeeSalary
-ORDER BY Salary DESC;
+    SELECT TOP N *
+    FROM EmployeeSalary
+    ORDER BY Salary DESC;
 
 
 
 Ques.39. Write an SQL query to find the nth highest salary from a table.
 Ans. Using Top keyword (SQL Server)-
 
-SELECT TOP 1 Salary
-FROM (
-      SELECT DISTINCT TOP N Salary
-      FROM Employee
-      ORDER BY Salary DESC
-      )
-ORDER BY Salary ASC;
+    SELECT TOP 1 Salary
+    FROM (
+          SELECT DISTINCT TOP N Salary
+          FROM Employee
+          ORDER BY Salary DESC
+          )
+    ORDER BY Salary ASC;
 
 
 Using limit clause(MySQL)-
 
-SELECT Salary
-FROM Employee
-ORDER BY Salary DESC LIMIT N-1,1;
+    SELECT Salary
+    FROM Employee
+    ORDER BY Salary DESC LIMIT N-1,1;
 
 
 Ques.40. Write SQL query to find the 3rd highest salary from a table without using the TOP/limit keyword.
-Ans. This is one of the most commonly asked interview questions. For this, we will use a correlated subquery.
 
-In order to find the 3rd highest salary, we will find the salary value until the inner query returns a count of 2 rows having the salary greater than other distinct salaries.
-
-SELECT Salary
-FROM EmployeeSalary Emp1
-WHERE 2 = (
-                SELECT COUNT( DISTINCT ( Emp2.Salary ) )
-                FROM EmployeeSalary Emp2
-                WHERE Emp2.Salary > Emp1.Salary
-            )
+    SELECT Salary
+    FROM EmployeeSalary Emp1
+    WHERE 2 = (
+                    SELECT COUNT( DISTINCT ( Emp2.Salary ) )
+                    FROM EmployeeSalary Emp2
+                    WHERE Emp2.Salary > Emp1.Salary
+                )
 
 
 For nth highest salary-
 
-SELECT Salary
-FROM EmployeeSalary Emp1
-WHERE N-1 = (
-                SELECT COUNT( DISTINCT ( Emp2.Salary ) )
-                FROM EmployeeSalary Emp2
-                WHERE Emp2.Salary > Emp1.Salary
-            )
+    SELECT Salary
+    FROM EmployeeSalary Emp1
+    WHERE N-1 = (
+                    SELECT COUNT( DISTINCT ( Emp2.Salary ) )
+                    FROM EmployeeSalary Emp2
+                    WHERE Emp2.Salary > Emp1.Salary
+                )
 
 
 
