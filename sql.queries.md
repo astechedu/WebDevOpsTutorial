@@ -2,11 +2,9 @@
 
 $$\color{purple}{SQL \ Queries}$$
 
+<button>
 :link:[Home](all-file-links.md)     
-
-<table>
- <tr><td>ajay</tr></tr>
- </table>
+</button>
 
 
 <a name="top"></a>
