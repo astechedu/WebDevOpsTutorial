@@ -1,6 +1,10 @@
 # SQL Queries
 
-[Home](#all-file-links.md)
+$$\color{purple}{NodeJs \ Npm \ React \ Vue \ Angular \ etc \ Installations}$$
+
+:link:[Home](all-file-links.md)     
+
+
 
 <a name="top"></a>
  [Go To Bottom](#bottom)
