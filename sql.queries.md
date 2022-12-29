@@ -83,7 +83,7 @@ SQL SELECT DISTINCT Statement:
 
 
 
-SELECT Example Without DISTINCT
+SELECT Example Without DISTINCT:
 
     SELECT Country FROM Customers;
     
@@ -92,7 +92,25 @@ SELECT Example Without DISTINCT
     SELECT COUNT(DISTINCT Country) FROM Customers;
 
 
+    SELECT Count(*) AS DistinctCountries
+    FROM (SELECT DISTINCT Country FROM Customers);
 
+
+SQL WHERE Clause:
+
+
+    SELECT column1, column2, ...
+    FROM table_name
+    WHERE condition; 
+
+
+
+    SELECT * FROM Customers
+    WHERE Country='Mexico'; 
+
+
+SELECT * FROM Customers
+WHERE CustomerID=1; 
 
 
 
