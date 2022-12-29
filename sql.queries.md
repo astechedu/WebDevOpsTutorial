@@ -1225,32 +1225,90 @@ WHERE condition;
 SQL SELECT INTO Examples
 
 The following SQL statement creates a backup copy of Customers:
-SELECT * INTO CustomersBackup2017
-FROM Customers;
+
+	SELECT * INTO CustomersBackup2017
+	FROM Customers;
 
 The following SQL statement uses the IN clause to copy the table into a new table in another database:
-SELECT * INTO CustomersBackup2017 IN 'Backup.mdb'
-FROM Customers;
+
+	SELECT * INTO CustomersBackup2017 IN 'Backup.mdb'
+	FROM Customers;
 
 The following SQL statement copies only a few columns into a new table:
-SELECT CustomerName, ContactName INTO CustomersBackup2017
-FROM Customers;
+
+	SELECT CustomerName, ContactName INTO CustomersBackup2017
+	FROM Customers;
 
 The following SQL statement copies only the German customers into a new table:
-SELECT * INTO CustomersGermany
-FROM Customers
-WHERE Country = 'Germany';
+
+	SELECT * INTO CustomersGermany
+	FROM Customers
+	WHERE Country = 'Germany';
 
 The following SQL statement copies data from more than one table into a new table:
-SELECT Customers.CustomerName, Orders.OrderID
-INTO CustomersOrderBackup2017
-FROM Customers
-LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
 
-Tip: SELECT INTO can also be used to create a new, empty table using the schema of another. Just add a WHERE clause that causes the query to return no data:
-SELECT * INTO newtable
-FROM oldtable
-WHERE 1 = 0;
+	SELECT Customers.CustomerName, Orders.OrderID
+	INTO CustomersOrderBackup2017
+	FROM Customers
+	LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+	SELECT * INTO newtable
+	FROM oldtable
+	WHERE 1 = 0;
+
+
+
+
+SQL INSERT INTO SELECT Statement: 
+
+INSERT INTO SELECT Syntax
+
+Copy all columns from one table to another table:
+INSERT INTO table2
+SELECT * FROM table1
+WHERE condition;
+
+Copy only some columns from one table into another table:
+INSERT INTO table2 (column1, column2, column3, ...)
+SELECT column1, column2, column3, ...
+FROM table1
+WHERE condition;
+
+
+Demo Database
+
+In this tutorial we will use the well-known Northwind sample database.
+
+Below is a selection from the "Customers" table:
+CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
+1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
+2 	Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
+3 	Antonio Moreno Taquería 	Antonio Moreno 	Mataderos 2312 	México D.F. 	05023 	Mexico
+
+And a selection from the "Suppliers" table:
+SupplierID 	SupplierName 	ContactName 	Address 	City 	Postal Code 	Country
+1 	Exotic Liquid 	Charlotte Cooper 	49 Gilbert St. 	Londona 	EC1 4SD 	UK
+2 	New Orleans Cajun Delights 	Shelley Burke 	P.O. Box 78934 	New Orleans 	70117 	USA
+3 	Grandma Kelly's Homestead 	Regina Murphy 	707 Oxford Rd. 	Ann Arbor 	48104 	USA
+
+
+SQL INSERT INTO SELECT Examples
+
+The following SQL statement copies "Suppliers" into "Customers" (the columns that are not filled with data, will contain NULL):
+Example
+INSERT INTO Customers (CustomerName, City, Country)
+SELECT SupplierName, City, Country FROM Suppliers;
+
+The following SQL statement copies "Suppliers" into "Customers" (fill all columns):
+Example
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+SELECT SupplierName, ContactName, Address, City, PostalCode, Country FROM Suppliers;
+
+The following SQL statement copies only the German suppliers into "Customers":
+Example
+INSERT INTO Customers (CustomerName, City, Country)
+SELECT SupplierName, City, Country FROM Suppliers
+WHERE Country='Germany';
 
 
 
