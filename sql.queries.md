@@ -651,6 +651,104 @@ WHERE Customers.CustomerName='Around the Horn' AND Customers.CustomerID=Orders.C
 
 
 
+SQL Joins: 
+
+
+OrderID 	CustomerID 	OrderDate
+10308 	2 	1996-09-18
+10309 	37 	1996-09-19
+10310 	77 	1996-09-20
+
+CustomerID 	CustomerName 	ContactName 	Country
+1 	Alfreds Futterkiste 	Maria Anders 	Germany
+2 	Ana Trujillo Emparedados y helados 	Ana Trujillo 	Mexico
+3 	Antonio Moreno Taquería 	Antonio Moreno 	Mexico
+
+
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+
+and it will produce something like this:
+
+OrderID 	CustomerName 	OrderDate
+10308 	Ana Trujillo Emparedados y helados 	9/18/1996
+10365 	Antonio Moreno Taquería 	11/27/1996
+10383 	Around the Horn 	12/16/1996
+10355 	Around the Horn 	11/15/1996
+10278 	Berglunds snabbköp 	8/12/1996
+
+
+
+Different Types of SQL JOINs: 
+
+Here are the different types of the JOINs in SQL:
+
+    (INNER) JOIN: Returns records that have matching values in both tables
+    LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+    RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+    FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+
+
+
+SQL INNER JOIN Keyword: 
+
+
+INNER JOIN Syntax
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+
+
+OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
+10308 	2 	7 	1996-09-18 	3
+10309 	37 	3 	1996-09-19 	1
+10310 	77 	8 	1996-09-20 	2
+
+
+CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
+
+1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
+2 Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
+3 Antonio Moreno Taquería 	Antonio Moreno 	Mataderos 2312 	México D.F. 	05023 	Mexico
+
+
+
+Example:
+
+    SELECT Orders.OrderID, Customers.CustomerName
+    FROM Orders
+    INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID; 
+
+
+JOIN Three Tables: 
+
+Example:
+
+    SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName
+    FROM ((Orders
+    INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
+    INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
