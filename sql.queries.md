@@ -2273,6 +2273,264 @@ VALUES (seq_person.nextval,'Lars','Monsen');
 
 SQL Working With Dates: 
 
+SQL Date Data Types:
+
+MySQL comes with the following data types for storing a date or a date/time value in the database:
+
+    DATE - format YYYY-MM-DD
+    DATETIME - format: YYYY-MM-DD HH:MI:SS
+    TIMESTAMP - format: YYYY-MM-DD HH:MI:SS
+    YEAR - format YYYY or YY
+
+SQL Server comes with the following data types for storing a date or a date/time value in the database:
+
+    DATE - format YYYY-MM-DD
+    DATETIME - format: YYYY-MM-DD HH:MI:SS
+    SMALLDATETIME - format: YYYY-MM-DD HH:MI:SS
+    TIMESTAMP - format: a unique number
+
+
+Orders Table
+OrderId 	ProductName 	OrderDate
+1 	Geitost 	2008-11-11
+2 	Camembert Pierrot 	2008-11-09
+3 	Mozzarella di Giovanni 	2008-11-11
+4 	Mascarpone Fabioli 	2008-10-29
+
+
+ SELECT * FROM Orders WHERE OrderDate='2008-11-11'
+
+
+The result-set will look like this:
+OrderId 	ProductName 	OrderDate
+1 	Geitost 	2008-11-11
+3 	Mozzarella di Giovanni 	2008-11-11
+
+
+
+Now, assume that the "Orders" table looks like this (notice the added time-component in the "OrderDate" column):
+
+OrderId 	ProductName 	OrderDate
+1 	Geitost 	2008-11-11 13:23:44
+2 	Camembert Pierrot 	2008-11-09 15:45:21
+3 	Mozzarella di Giovanni 	2008-11-11 11:12:01
+4 	Mascarpone Fabioli 	2008-10-29 14:56:59
+
+If we use the same SELECT statement as above:
+SELECT * FROM Orders WHERE OrderDate='2008-11-11'
+
+
+
+SQL Views: 
+
+
+SQL CREATE VIEW Statement: 
+
+CREATE VIEW Syntax
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition; 
+
+
+SQL CREATE VIEW Examples
+
+The following SQL creates a view that shows all customers from Brazil:
+Example
+CREATE VIEW [Brazil Customers] AS
+SELECT CustomerName, ContactName
+FROM Customers
+WHERE Country = 'Brazil'; 
+
+
+Example
+SELECT * FROM [Brazil Customers]; 
+
+
+Example
+CREATE VIEW [Products Above Average Price] AS
+SELECT ProductName, Price
+FROM Products
+WHERE Price > (SELECT AVG(Price) FROM Products); 
+
+Example
+SELECT * FROM [Products Above Average Price]; 
+
+
+SQL Updating a View
+
+A view can be updated with the CREATE OR REPLACE VIEW statement.
+SQL CREATE OR REPLACE VIEW Syntax
+CREATE OR REPLACE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+The following SQL adds the "City" column to the "Brazil Customers" view:
+Example
+CREATE OR REPLACE VIEW [Brazil Customers] AS
+SELECT CustomerName, ContactName, City
+FROM Customers
+WHERE Country = 'Brazil'; 
+
+
+SQL Dropping a View
+
+A view is deleted with the DROP VIEW statement.
+
+	SQL DROP VIEW Syntax
+	DROP VIEW view_name; 
+
+Example:
+
+	DROP VIEW [Brazil Customers]; 
+
+
+SQL Injection: 
+
+
+SQL injection is a code injection technique that might destroy your database.
+SQL injection is one of the most common web hacking techniques.
+SQL injection is the placement of malicious code in SQL statements, via web page input.
+
+SQL in Web Pages:
+
+
+Example
+txtUserId = getRequestString("UserId");
+txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;
+
+
+SQL Injection Based on 1=1 is Always True
+
+SELECT * FROM Users WHERE UserId = 105 OR 1=1; 
+
+
+SELECT UserId, Name, Password FROM Users WHERE UserId = 105 or 1=1; 
+
+
+SQL Injection Based on ""="" is Always True
+
+Here is an example of a user login on a web site:
+
+Username:
+
+Password:
+Example
+uName = getRequestString("username");
+uPass = getRequestString("userpassword");
+
+sql = 'SELECT * FROM Users WHERE Name ="' + uName + '" AND Pass ="' + uPass + '"'
+Result
+SELECT * FROM Users WHERE Name ="John Doe" AND Pass ="myPass"
+
+ A hacker might get access to user names and passwords in a database by simply inserting " OR ""=" into the user name or password text box:
+
+User Name:
+
+Password:
+
+The code at the server will create a valid SQL statement like this:
+Result
+SELECT * FROM Users WHERE Name ="" or ""="" AND Pass ="" or ""=""
+
+
+
+
+SQL Injection Based on Batched SQL Statements 
+
+Most databases support batched SQL statement.
+
+A batch of SQL statements is a group of two or more SQL statements, separated by semicolons.
+
+The SQL statement below will return all rows from the "Users" table, then delete the "Suppliers" table.
+Example
+SELECT * FROM Users; DROP TABLE Suppliers
+
+Look at the following example:
+Example
+txtUserId = getRequestString("UserId");
+txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;
+
+And the following input:
+
+User id:
+
+The valid SQL statement would look like this:
+Result
+SELECT * FROM Users WHERE UserId = 105; DROP TABLE Suppliers;
+Use SQL Parameters for Protection
+
+To protect a web site from SQL injection, you can use SQL parameters.
+
+SQL parameters are values that are added to an SQL query at execution time, in a controlled manner.
+ASP.NET Razor Example
+txtUserId = getRequestString("UserId");
+txtSQL = "SELECT * FROM Users WHERE UserId = @0";
+db.Execute(txtSQL,txtUserId);
+
+Note that parameters are represented in the SQL statement by a @ marker.
+
+The SQL engine checks each parameter to ensure that it is correct for its column and are treated literally, and not as part of the SQL to be executed.
+Another Example
+txtNam = getRequestString("CustomerName");
+txtAdd = getRequestString("Address");
+txtCit = getRequestString("City");
+txtSQL = "INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)";
+db.Execute(txtSQL,txtNam,txtAdd,txtCit);
+Examples
+
+The following examples shows how to build parameterized queries in some common web languages.
+
+SELECT STATEMENT IN ASP.NET:
+txtUserId = getRequestString("UserId");
+sql = "SELECT * FROM Customers WHERE CustomerId = @0";
+command = new SqlCommand(sql);
+command.Parameters.AddWithValue("@0",txtUserId);
+command.ExecuteReader();
+
+INSERT INTO STATEMENT IN ASP.NET:
+txtNam = getRequestString("CustomerName");
+txtAdd = getRequestString("Address");
+txtCit = getRequestString("City");
+txtSQL = "INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)";
+command = new SqlCommand(txtSQL);
+command.Parameters.AddWithValue("@0",txtNam);
+command.Parameters.AddWithValue("@1",txtAdd);
+command.Parameters.AddWithValue("@2",txtCit);
+command.ExecuteNonQuery();
+
+INSERT INTO STATEMENT IN PHP:
+$stmt = $dbh->prepare("INSERT INTO Customers (CustomerName,Address,City)
+VALUES (:nam, :add, :cit)");
+$stmt->bindParam(':nam', $txtNam);
+$stmt->bindParam(':add', $txtAdd);
+$stmt->bindParam(':cit', $txtCit);
+$stmt->execute();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
