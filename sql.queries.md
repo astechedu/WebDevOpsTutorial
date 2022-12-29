@@ -251,33 +251,35 @@ In case you wish to find the odd rows, then the remainder when divided by 2 shou
 ### Q17. Write a SQL query  to find all the patients who joined in the year 2022.
 
 –USING BETWEEN
-SELECT * FROM Patients
-WHERE RegDate BETWEEN '2021/01/01' AND '2021/12/31';
- 
-– USING YEAR
-SELECT * FROM Patients WHERE YEAR(RegDate ) = '2021'; 
+
+  SELECT * FROM Patients
+  
+    WHERE RegDate BETWEEN '2021/01/01' AND '2021/12/31';
+
+  – USING YEAR
+
+    SELECT * FROM Patients WHERE YEAR(RegDate ) = '2021'; 
 
 ### Q18. Write a SQL query to fetch 50% records from the PatientsCheckup table.
 
-SELECT *
-FROM PatientsCheckup WHERE
-PatientID <= (SELECT COUNT(PatientD)/2 FROM PatientsCheckup);
+  SELECT *
+  FROM PatientsCheckup WHERE
+  PatientID <= (SELECT COUNT(PatientD)/2 FROM PatientsCheckup);
 
 ### Q19. Write a query to find those patients who have paid consultation fees between 400 to 700.
 
-SELECT * FROM Patients WHERE PatientID IN 
-(SELECT PatientID FROM PatientsCheckup WHERE ConsultationFees BETWEEN '400' AND '700');
+  SELECT * FROM Patients WHERE PatientID IN   
+  (SELECT PatientID FROM PatientsCheckup WHERE ConsultationFees BETWEEN '400' AND '700');
 
-Copy code
 
 ### Q20. Write a query to update the patient names by removing the leading and trailing spaces.
 
-UPDATE Patients 
-SET PatientName = LTRIM(RTRIM(PatientName));
+  UPDATE Patients 
+  SET PatientName = LTRIM(RTRIM(PatientName));
 
 ### Q21. Write a query to add email validation to your database.
 
-SELECT email FROM Patients WHERE NOT REGEXP_LIKE(email, ‘[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}’, ‘i’);
+  SELECT email FROM Patients WHERE NOT REGEXP_LIKE(email, ‘[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}’, ‘i’);
 
 ### Q22. Write a query to find all patient names whose name:
 
@@ -285,100 +287,66 @@ SELECT email FROM Patients WHERE NOT REGEXP_LIKE(email, ‘[A-Z0-9._%+-]+@[A-Z0-
     Ends with S and contains 3 alphabets
     Staying in the state Telangana
 
-SELECT * FROM Patients WHERE PatientName LIKE 'A%';
-SELECT * FROM Patients WHERE PatientName LIKE '___S';
-SELECT * FROM Patients WHERE State LIKE 'Telangana%’;
+  SELECT * FROM Patients WHERE PatientName LIKE 'A%';
+  SELECT * FROM Patients WHERE PatientName LIKE '___S';
+  SELECT * FROM Patients WHERE State LIKE 'Telangana%’;
 
 ### Q23. Write a SQL query to fetch details of all patients excluding patients with name  “Sheela” and “Anay”.
 
-SELECT * FROM Patients WHERE PatientName NOT IN ('Sheela','Anay'); 
+  SELECT * FROM Patients WHERE PatientName NOT IN ('Sheela','Anay'); 
 
 ### Q24. Write a query to fetch the total count of occurrences of a particular character – ‘x’ in the PatientName.
 
-SELECT PatientName, PatientID 
-LENGTH(PatientName) - LENGTH(REPLACE(PatientName, 'x', ''))
-FROM Patients;
+  SELECT PatientName, PatientID 
+  LENGTH(PatientName) - LENGTH(REPLACE(PatientName, 'x', ''))
+  FROM Patients;
 
 ### Q25. Write a query to retrieve the first three characters of  PatientName from the Patients table.
 
-SELECT SUBSTRING(PatientName, 1, 3) FROM Patients; 
+  SELECT SUBSTRING(PatientName, 1, 3) FROM Patients; 
 
 ### Q26. Write a query to fetch only the Address (string before space).
 
 USING the MID FUNCTION IN MySQL
-SELECT MID(Address, 0, LOCATE(' ',Address)) FROM Patients;
+
+  SELECT MID(Address, 0, LOCATE(' ',Address)) FROM Patients;
  
 USING SUBSTRING
-SELECT SUBSTRING(Address, 1, CHARINDEX(' ',Address)) FROM Patients;
+
+  SELECT SUBSTRING(Address, 1, CHARINDEX(' ',Address)) FROM Patients;
 
 ### Q27. Write a query to combine Address and state into a new column – NewAddress.
 
-SELECT CONCAT(Address, ' ', State) AS 'NewAddress' FROM Patients; 
+  SELECT CONCAT(Address, ' ', State) AS 'NewAddress' FROM Patients; 
 
 ### Q28. Write a query to fetch PatientIDs  which are present in: 
 
     Both tables
     One of the table. Let us say, patients present in Patients and not in the PatientsCheckup table.
 
-–Present IN BOTH TABLES
-SELECT PatientId FROM Patients 
-WHERE PatientId IN 
-(SELECT PatientId FROM PatientsCheckup);
- 
-– Present IN One OF the TABLE
-SELECT PatientId FROM Patients 
-WHERE PatientId NOT IN 
-(SELECT PatientId FROM PatientsCheckup);
+  –Present IN BOTH TABLES
+  
+    SELECT PatientId FROM Patients 
+    WHERE PatientId IN 
+    (SELECT PatientId FROM PatientsCheckup);
+
+  – Present IN One OF the TABLE
+  
+    SELECT PatientId FROM Patients 
+    WHERE PatientId NOT IN 
+    (SELECT PatientId FROM PatientsCheckup);
 
 ### Q29. Write a query to find the number of patients whose RegDate is between 01/04/2021 to 31/12/2022 and are grouped according to state.
 
-SELECT COUNT(*), State FROM Patients WHERE RegDate BETWEEN '01/04/2021' AND '31/12/2022' GROUP BY State;
+  SELECT COUNT(*), State FROM Patients WHERE RegDate BETWEEN '01/04/2021' AND '31/12/2022' GROUP BY State;
 
 ### Q30. Write a query to fetch all records from the Patients table; ordered by PatientName in ascending order, State in descending order.
 
-SELECT * FROM Patients ORDER BY PatientName ASC, State DESC;
+  SELECT * FROM Patients ORDER BY PatientName ASC, State DESC;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+:end:
 
 
 
