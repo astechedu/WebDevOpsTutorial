@@ -1813,6 +1813,352 @@ SQL Constraints:
 
 SQL NOT NULL Constraint:
 
+Example:
+
+	CREATE TABLE Persons (
+	    ID int NOT NULL,
+	    LastName varchar(255) NOT NULL,
+	    FirstName varchar(255) NOT NULL,
+	    Age int
+	); 
+
+
+SQL NOT NULL on ALTER TABLE:
+
+	SQL Server / MS Access:
+	ALTER TABLE Persons
+	ALTER COLUMN Age int NOT NULL;
+
+My SQL / Oracle (prior version 10G):
+
+	ALTER TABLE Persons
+	MODIFY COLUMN Age int NOT NULL;
+
+
+Oracle 10G and later:
+
+	ALTER TABLE Persons
+	MODIFY Age int NOT NULL; 
+
+
+
+SQL UNIQUE Constraint: 
+
+SQL UNIQUE Constraint on CREATE TABLE:
+
+SQL Server / Oracle / MS Access:
+CREATE TABLE Persons (
+    ID int NOT NULL UNIQUE,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+);
+
+MySQL:
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    UNIQUE (ID)
+); 
+
+
+MySQL / SQL Server / Oracle / MS Access:
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CONSTRAINT UC_Person UNIQUE (ID,LastName)
+); 
+
+
+
+SQL UNIQUE Constraint on ALTER TABLE: 
+
+MySQL / SQL Server / Oracle / MS Access:
+ALTER TABLE Persons
+ADD UNIQUE (ID); 
+
+
+MySQL / SQL Server / Oracle / MS Access:
+ALTER TABLE Persons
+ADD CONSTRAINT UC_Person UNIQUE (ID,LastName); 
+
+DROP a UNIQUE Constraint: 
+
+MySQL:
+
+	ALTER TABLE Persons
+	DROP INDEX UC_Person;
+
+SQL Server / Oracle / MS Access:
+
+	ALTER TABLE Persons
+	DROP CONSTRAINT UC_Person; 
+
+
+SQL PRIMARY KEY Constraint: 
+
+SQL PRIMARY KEY on CREATE TABLE
+
+The following SQL creates a PRIMARY KEY on the "ID" column when the "Persons" table is created:
+
+MySQL:
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (ID)
+); 
+
+SQL Server / Oracle / MS Access:
+CREATE TABLE Persons (
+    ID int NOT NULL PRIMARY KEY,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+); 
+
+
+MySQL / SQL Server / Oracle / MS Access:
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CONSTRAINT PK_Person PRIMARY KEY (ID,LastName)
+); 
+
+
+
+
+SQL PRIMARY KEY on ALTER TABLE: 
+
+
+MySQL / SQL Server / Oracle / MS Access:
+ALTER TABLE Persons
+ADD PRIMARY KEY (ID); 
+
+
+MySQL / SQL Server / Oracle / MS Access:
+ALTER TABLE Persons
+ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName); 
+
+
+DROP a PRIMARY KEY Constraint
+
+To drop a PRIMARY KEY constraint, use the following SQL:
+
+MySQL:
+ALTER TABLE Persons
+DROP PRIMARY KEY;
+
+SQL Server / Oracle / MS Access:
+ALTER TABLE Persons
+DROP CONSTRAINT PK_Person; 
+
+
+SQL FOREIGN KEY Constraint: 
+
+Persons Table:
+
+PersonID 	LastName 	FirstName 	Age
+1 	Hansen 	Ola 	30
+2 	Svendson 	Tove 	23
+3 	Pettersen 	Kari 	20
+
+
+Orders Table
+OrderID 	OrderNumber 	PersonID
+1 	77895 	3
+2 	44678 	3
+3 	22456 	2
+4 	24562 	1
+
+
+SQL FOREIGN KEY on CREATE TABLE
+
+The following SQL creates a FOREIGN KEY on the "PersonID" column when the "Orders" table is created:
+
+MySQL:
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+SQL Server / Oracle / MS Access:
+CREATE TABLE Orders (
+    OrderID int NOT NULL PRIMARY KEY,
+    OrderNumber int NOT NULL,
+    PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
+);
+
+To allow naming of a FOREIGN KEY constraint, and for defining a FOREIGN KEY constraint on multiple columns, use the following SQL syntax:
+
+MySQL / SQL Server / Oracle / MS Access:
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID)
+    REFERENCES Persons(PersonID)
+);
+SQL FOREIGN KEY on ALTER TABLE
+
+To create a FOREIGN KEY constraint on the "PersonID" column when the "Orders" table is already created, use the following SQL:
+
+MySQL / SQL Server / Oracle / MS Access:
+ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+To allow naming of a FOREIGN KEY constraint, and for defining a FOREIGN KEY constraint on multiple columns, use the following SQL syntax:
+
+MySQL / SQL Server / Oracle / MS Access:
+ALTER TABLE Orders
+ADD CONSTRAINT FK_PersonOrder
+FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+DROP a FOREIGN KEY Constraint
+
+To drop a FOREIGN KEY constraint, use the following SQL:
+
+MySQL:
+ALTER TABLE Orders
+DROP FOREIGN KEY FK_PersonOrder;
+
+SQL Server / Oracle / MS Access:
+ALTER TABLE Orders
+DROP CONSTRAINT FK_PersonOrder;
+
+
+
+
+SQL CHECK Constraint:
+
+The CHECK constraint is used to limit the value range that can be placed in a column.
+
+
+
+SQL CHECK on CREATE TABLE: 
+
+
+
+MySQL:
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CHECK (Age>=18)
+);
+
+SQL Server / Oracle / MS Access:
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int CHECK (Age>=18)
+);
+
+To allow naming of a CHECK constraint, and for defining a CHECK constraint on multiple columns, use the following SQL syntax:
+
+MySQL / SQL Server / Oracle / MS Access:
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255),
+    CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes')
+);
+ADVERTISEMENT
+SQL CHECK on ALTER TABLE
+
+To create a CHECK constraint on the "Age" column when the table is already created, use the following SQL:
+
+MySQL / SQL Server / Oracle / MS Access:
+ALTER TABLE Persons
+ADD CHECK (Age>=18);
+
+To allow naming of a CHECK constraint, and for defining a CHECK constraint on multiple columns, use the following SQL syntax:
+
+MySQL / SQL Server / Oracle / MS Access:
+ALTER TABLE Persons
+ADD CONSTRAINT CHK_PersonAge CHECK (Age>=18 AND City='Sandnes');
+DROP a CHECK Constraint
+
+To drop a CHECK constraint, use the following SQL:
+
+SQL Server / Oracle / MS Access:
+ALTER TABLE Persons
+DROP CONSTRAINT CHK_PersonAge;
+
+MySQL:
+ALTER TABLE Persons
+DROP CHECK CHK_PersonAge;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
