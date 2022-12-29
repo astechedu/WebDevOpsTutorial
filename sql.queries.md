@@ -82,9 +82,11 @@ ORDER BY ConsultationFees ASC;
 
 The Nth highest consultation fees from the PatientsCheckup table using the LIMIT keywords.
 
+<code>
 SELECT ConsultationFees
 FROM PatientsCheckup
 ORDER BY ConsultationFees DESC LIMIT N-1,1;
+</code>
 
 Nth highest consultation fees from the PatientsCheckup table without using the TOP/LIMIT keywords.
 
