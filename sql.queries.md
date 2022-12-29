@@ -4,7 +4,9 @@ $$\color{purple}{SQL \ Queries}$$
 
 :link:[Home](all-file-links.md)     
 
-
+<table>
+ <tr><td>ajay</tr></tr>
+ </table>
 
 
 <a name="top"></a>
