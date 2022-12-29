@@ -81,6 +81,8 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
 # Databases :diamond_shape_with_a_dot_inside:
 
+:link:[SQL Queries click here](sql.queries.md)
+
 :link:[Databases Commands click here](databases.commands.md)
 
 :link:[Databases Commands click here](databases.commands.txt)
