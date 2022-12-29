@@ -28,8 +28,10 @@ $$\color{purple}{SQL \ Queries}$$
     
 
 Searching Key Words: 
-    [Create Table](#create_table),[Select Table](#select_table),[Drop Table](#drop_table),[Alter Table](#alter_table)
-    
+  [Create Database](#create_database) [Drop Database](#drop_database) 
+  [Create Table](#create_table) [Select Table](#select_table) [Drop Table](#drop_table) [Alter Table](#alter_table)
+  [Truncate Table](#truncate_table)
+  
   
 
     
