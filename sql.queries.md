@@ -474,20 +474,91 @@ SELECT * FROM Customers
 WHERE CustomerName LIKE '%or%';
 
 
-SELECT * FROM Customers
-WHERE CustomerName LIKE '_r%';
+    SELECT * FROM Customers
+    WHERE CustomerName LIKE '_r%';
+
+
+    SELECT * FROM Customers
+    WHERE CustomerName LIKE 'a__%'; 
+
+
+    SELECT * FROM Customers
+    WHERE ContactName LIKE 'a%o'; 
+
+
+    SELECT * FROM Customers
+    WHERE CustomerName NOT LIKE 'a%';
+
+
+
+SQL Wildcard Characters: 
+
+
+Using the % Wildcard
+
+
+    SELECT * FROM Customers
+    WHERE City LIKE 'ber%'; 
 
 
 SELECT * FROM Customers
-WHERE CustomerName LIKE 'a__%'; 
+WHERE City LIKE '%es%';
 
 
 SELECT * FROM Customers
-WHERE ContactName LIKE 'a%o'; 
+WHERE City LIKE '_ondon';
+
+SELECT * FROM Customers
+WHERE City LIKE 'L_n_on';
 
 
 SELECT * FROM Customers
-WHERE CustomerName NOT LIKE 'a%';
+WHERE City LIKE '[bsp]%';
+
+
+SELECT * FROM Customers
+WHERE City LIKE '[a-c]%';
+
+
+SELECT * FROM Customers
+WHERE City LIKE '[!bsp]%'; 
+
+SELECT * FROM Customers
+WHERE City NOT LIKE '[bsp]%'; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
