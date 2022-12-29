@@ -44,6 +44,22 @@ CustomerID 	CustomerName 	                      ContactName 	       Address 	   
 5 	         Berglunds snabbköp 	                Christina Berglund 	Berguvsvägen 8 	               Luleå 	     S-958 22 	   Sweden
 
 
+
+
+ProductID 	ProductName 	SupplierID 	CategoryID 	Unit 	Price
+1 	Chais 	1 	1 	10 boxes x 20 bags 	18
+2 	Chang 	1 	1 	24 - 12 oz bottles 	19
+3 	Aniseed Syrup 	1 	2 	12 - 550 ml bottles 	10
+4 	Chef Anton's Cajun Seasoning 	2 	2 	48 - 6 oz jars 	22
+5 	Chef Anton's Gumbo Mix 	2 	2 	36 boxes 	21.35
+
+
+
+
+
+
+
+
  #Some of The Most Important SQL Commands
 
     SELECT - extracts data from a database
@@ -349,9 +365,35 @@ LIMIT 3;
 
 
 
-SELECT * FROM Customers
-WHERE Country='Germany'
-FETCH FIRST 3 ROWS ONLY;
+    SELECT * FROM Customers
+    WHERE Country='Germany'
+    FETCH FIRST 3 ROWS ONLY;
+
+
+
+The SQL MIN() and MAX() Functions:
+
+
+MIN() Syntax: 
+
+    SELECT MIN(column_name)
+    FROM table_name
+    WHERE condition;
+
+MAX() Syntax: 
+
+    SELECT MAX(column_name)
+    FROM table_name
+    WHERE condition; 
+
+
+    SELECT MIN(Price) AS SmallestPrice
+    FROM Products;
+
+
+    SELECT MAX(Price) AS LargestPrice
+    FROM Products; 
+
 
 
 
