@@ -29,6 +29,31 @@ $$\color{purple}{SQL \ Queries}$$
 
 
 
+
+[Go To Top](#top)
+<a name="sql_basic_queries"></a>
+ # SQL Basic Queries
+ 
+ :end: 
+ 
+ 
+ 
+ 
+ 
+ 
+ [Go To Top](#top)
+<a name="sql_advanced_queries"></a>
+ # SQL Advanced Queries
+ 
+ :end:
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
 [Go To Top](#top)
 <a name="sql_interviews_questions_14"></a>
  # Top 14 Frequently asked SQL Query Interview Questions
