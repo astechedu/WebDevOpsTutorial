@@ -34,6 +34,35 @@ $$\color{purple}{SQL \ Queries}$$
 <a name="sql_basic_queries"></a>
  # SQL Basic Queries
  
+ Below is a selection from the "Customers" table:
+ 
+CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
+1	          Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany 
+2          	Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
+3 	         Antonio Moreno Taquería 	Antonio Moreno 	Mataderos 2312 	México D.F. 	05023 	Mexico
+4 	         Around the Horn 	Thomas Hardy 	120 Hanover Sq. 	London 	WA1 1DP 	UK
+5 	         Berglunds snabbköp 	Christina Berglund 	Berguvsvägen 8 	Luleå 	S-958 22 	Sweden
+
+
+ #Some of The Most Important SQL Commands
+
+    SELECT - extracts data from a database
+    UPDATE - updates data in a database
+    DELETE - deletes data from a database
+    INSERT INTO - inserts new data into a database
+    CREATE DATABASE - creates a new database
+    ALTER DATABASE - modifies a database
+    CREATE TABLE - creates a new table
+    ALTER TABLE - modifies a table
+    DROP TABLE - deletes a table
+    CREATE INDEX - creates an index (search key)
+    DROP INDEX - deletes an index
+
+
+
+
+
+
  :end: 
  
  
@@ -44,6 +73,10 @@ $$\color{purple}{SQL \ Queries}$$
  [Go To Top](#top)
 <a name="sql_advanced_queries"></a>
  # SQL Advanced Queries
+ 
+ 
+ 
+ 
  
  :end:
  
