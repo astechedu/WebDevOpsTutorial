@@ -10,8 +10,6 @@ $$\color{purple}{SQL \ Queries}$$
  
  
 # Topics
-
-   [Go To Top](#top)
    
    [SQL Basic Queries](#sql_basic_queries) 
    
@@ -1688,7 +1686,7 @@ Example
 	BACKUP DATABASE testDB
 	TO DISK = 'D:\backups\testDB.bak';
 
-
+ [Go To Top](#top)
 <a name="create_table"></a>
 SQL CREATE TABLE Statement:
 
@@ -1730,7 +1728,8 @@ Example
 	CREATE TABLE TestTable AS
 	SELECT customername, contactname
 	FROM customers; 
-
+	
+ [Go To Top](#top)
 <a name="drop_table"></a>
 SQL DROP TABLE Statement: 
 
@@ -1743,7 +1742,7 @@ Example:
 
 	DROP TABLE Shippers;
 	
-
+ [Go To Top](#top)
 <a name="truncate_table"></a>
 SQL TRUNCATE TABLE
 
@@ -2163,7 +2162,8 @@ MySQL / SQL Server / Oracle / MS Access:
 	    City varchar(255),
 	    CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes')
 	);
-
+	
+ [Go To Top](#top)
 <a name="check_constraint"></a>
 SQL CHECK on ALTER TABLE
 
