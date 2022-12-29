@@ -97,6 +97,14 @@ Generic query will be
     FROM employee ORDER BY salary DESC LIMIT n-1,1);
 
 
+// EMPLOYEE WITH HIGHEST SALARY
+SELECT name, salary FROM employee ORDER BY salary DESC LIMIT 1; 
+
+// EMPLOYEE WITH SECOND HIGHEST SALARY
+SELECT name, salary FROM employee WHERE salary < (SELECT MAX(salary) FROM employee) ORDER BY sal DESC LIMIT 1;
+
+// EMPLOYEE WITH Nth HIGHEST SALARY
+SELECT name, salary FROM employee ORDER BY salary DESC LIMIT (N-1), 1;
 
 
     _____
