@@ -240,8 +240,40 @@ IS NOT NULL Syntax:
 
 
 
+SQL UPDATE Statement:
 
 
+
+    UPDATE Syntax
+    UPDATE table_name
+    SET column1 = value1, column2 = value2, ...
+    WHERE condition; 
+
+
+    UPDATE Customers
+    SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+    WHERE CustomerID = 1;
+
+
+     UPDATE Customers
+     SET ContactName='Juan'
+     WHERE Country='Mexico';
+
+
+     UPDATE Customers
+     SET ContactName='Juan';
+
+
+SQL DELETE Statement:
+
+
+      DELETE FROM table_name WHERE condition;
+    
+      DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+
+      DELETE FROM table_name;
+
+      DELETE FROM Customers;
 
 
 
