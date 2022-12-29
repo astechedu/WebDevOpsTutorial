@@ -1,6 +1,6 @@
 # SQL Queries
 
-$$\color{purple}{NodeJs \ Npm \ React \ Vue \ Angular \ etc \ Installations}$$
+$$\color{purple}{SQL \ Queries}$$
 
 :link:[Home](all-file-links.md)     
 
