@@ -19,98 +19,8 @@ $$\color{purple}{SQL \ Queries}$$
 
    [30 SQL Interviews Questions](#sql_interviews_questions_30)
 
-
-____
-Examples On Highest Salary:
-
-Below is simple query to find the employee whose salary is highest. 
-
-    select *from employee where salary=(select Max(salary) from employee);
-
-We can nest the above query to find the second largest salary. 
-
-    select *from employee 
-    group by salary 
-    order by  salary desc limit 1,1;
-
-There are other ways :
-
-    SELECT name, MAX(salary) AS salary 
-    FROM employee 
-    WHERE salary IN
-    (SELECT salary FROM employee MINUS SELECT MAX(salary) 
-    FROM employee); 
-
- 
-
-    SELECT name, MAX(salary) AS salary 
-    FROM employee 
-    WHERE salary <> (SELECT MAX(salary) 
-    FROM employee);
-    
-    IN SQL Server using Common Table Expression or CTE, we can find the second highest salary: 
-
-    WITH T AS
-    (
-    SELECT *
-       DENSE_RANK() OVER (ORDER BY Salary Desc) AS Rnk
-    FROM Employees
-    )
-    SELECT Name
-    FROM T
-    WHERE Rnk=2;
-
-How to find the third largest salary? 
-Simple, we can do one more nesting.  
-
-    SELECT name, MAX(salary) AS salary
-      FROM employee
-     WHERE salary < (SELECT MAX(salary) 
-                     FROM employee
-                     WHERE salary < (SELECT MAX(salary)
-                     FROM employee)
-                    ); 
-
-Note that instead of nesting for second, third, etc largest salary, we can find nth salary using general query like in MySQL: 
-
-    SELECT salary 
-    FROM employee 
-    ORDER BY salary desc limit n-1,1
-
-    SELECT name, salary
-    FROM employee A
-    WHERE n-1 = (SELECT count(1) 
-                 FROM employee B 
-                 WHERE B.salary>A.salary)
-
-If multiple employee have same salary. 
-Suppose you have to find 4th highest salary 
-
-    SELECT * FROM employee 
-    WHERE salary= (SELECT DISTINCT(salary) 
-    FROM employee ORDER BY salary DESC LIMIT 3,1);
-
-Generic query will be 
-
-    SELECT * FROM employee 
-    WHERE salary= (SELECT DISTINCT(salary) 
-    FROM employee ORDER BY salary DESC LIMIT n-1,1);
-
-
-// EMPLOYEE WITH HIGHEST SALARY
-SELECT name, salary FROM employee ORDER BY salary DESC LIMIT 1; 
-
-// EMPLOYEE WITH SECOND HIGHEST SALARY
-SELECT name, salary FROM employee WHERE salary < (SELECT MAX(salary) FROM employee) ORDER BY sal DESC LIMIT 1;
-
-// EMPLOYEE WITH Nth HIGHEST SALARY
-SELECT name, salary FROM employee ORDER BY salary DESC LIMIT (N-1), 1;
-
-
-    _____
-    
-    
-    
+   [Top 14 Frequently asked SQL Query Interview Questions](#more_examples_on_highest_salarary)
+  
     
 
 
@@ -1053,6 +963,110 @@ USING SUBSTRING
 
 
 :end:
+
+
+
+
+<a name="top"></a>
+<a name="more_examples_on_highest_salarary"></a>
+##### More Examples On Highest Salary
+____
+More examples on Highest Salary:
+
+Below is simple query to find the employee whose salary is highest. 
+
+    select *from employee where salary=(select Max(salary) from employee);
+
+We can nest the above query to find the second largest salary. 
+
+    select *from employee 
+    group by salary 
+    order by  salary desc limit 1,1;
+
+There are other ways :
+
+    SELECT name, MAX(salary) AS salary 
+    FROM employee 
+    WHERE salary IN
+    (SELECT salary FROM employee MINUS SELECT MAX(salary) 
+    FROM employee); 
+
+ 
+
+    SELECT name, MAX(salary) AS salary 
+    FROM employee 
+    WHERE salary <> (SELECT MAX(salary) 
+    FROM employee);
+    
+    IN SQL Server using Common Table Expression or CTE, we can find the second highest salary: 
+
+    WITH T AS
+    (
+    SELECT *
+       DENSE_RANK() OVER (ORDER BY Salary Desc) AS Rnk
+    FROM Employees
+    )
+    SELECT Name
+    FROM T
+    WHERE Rnk=2;
+
+How to find the third largest salary? 
+Simple, we can do one more nesting.  
+
+    SELECT name, MAX(salary) AS salary
+      FROM employee
+     WHERE salary < (SELECT MAX(salary) 
+                     FROM employee
+                     WHERE salary < (SELECT MAX(salary)
+                     FROM employee)
+                    ); 
+
+Note that instead of nesting for second, third, etc largest salary, we can find nth salary using general query like in MySQL: 
+
+    SELECT salary 
+    FROM employee 
+    ORDER BY salary desc limit n-1,1
+
+    SELECT name, salary
+    FROM employee A
+    WHERE n-1 = (SELECT count(1) 
+                 FROM employee B 
+                 WHERE B.salary>A.salary)
+
+If multiple employee have same salary. 
+Suppose you have to find 4th highest salary 
+
+    SELECT * FROM employee 
+    WHERE salary= (SELECT DISTINCT(salary) 
+    FROM employee ORDER BY salary DESC LIMIT 3,1);
+
+Generic query will be 
+
+    SELECT * FROM employee 
+    WHERE salary= (SELECT DISTINCT(salary) 
+    FROM employee ORDER BY salary DESC LIMIT n-1,1);
+
+
+// EMPLOYEE WITH HIGHEST SALARY
+SELECT name, salary FROM employee ORDER BY salary DESC LIMIT 1; 
+
+// EMPLOYEE WITH SECOND HIGHEST SALARY
+SELECT name, salary FROM employee WHERE salary < (SELECT MAX(salary) FROM employee) ORDER BY sal DESC LIMIT 1;
+
+// EMPLOYEE WITH Nth HIGHEST SALARY
+SELECT name, salary FROM employee ORDER BY salary DESC LIMIT (N-1), 1;
+
+:end: 
+    
+
+
+
+
+
+
+
+
+
 
 
 
