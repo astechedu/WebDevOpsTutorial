@@ -13,6 +13,10 @@ $$\color{purple}{SQL \ Queries}$$
 
    [Go To Top](#top)
    
+   [SQL Basic Queries](#sql_basic_queries) 
+   
+   [SQL Advanced Queries](#sql_advanced_queries)    
+    
    [Top 14 Frequently asked SQL Query Interview Questions](#sql_interviews_questions_14)
 
    [Top 40 SQL Query Interview Questions and Answers for Practice](#sql_interviews_questions_40)
