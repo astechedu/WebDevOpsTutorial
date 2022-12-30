@@ -335,7 +335,7 @@ docker-compose down
   prac03/php/src/index.php
   
   
-  version: "3.5"
+version: "3.5"
 services:
   db: 
    image: mysql:latest
@@ -382,29 +382,22 @@ echo "Connected successfully";
 
 docker=compose up -d
 docker-compose down
-docker-compose restart
 
 
 
-4. php mysql & phpmyadmin
-
-Dir Structure: 
-
-  prac04/Dockerfile
-  prac04/docker-compose.yml
-  prac04/php/src/index.php
-  
-  Dockerfile: 
-  
-   FROM php:8.0-apache
-   RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
-   RUN apt-get update && apt-get upgrade -y
 
 
-  
-  
-  docker-compose.yml:
-  
+4. php mysql & phpmyadmin 
+
+Dockerfile: 
+
+  FROM php:8.0-apache
+  RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+  RUN apt-get update && apt-get upgrade -y
+
+
+
+docker-compose.yml
 
   version: "3.5"
   services:
@@ -437,28 +430,31 @@ Dir Structure:
          ports: 
            - 8080:80
 
-  
-  
-  
-  index.php:
-  
-  
-  
-docker=compose up -d
-docker-compose down
-docker-compose restart
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+index.php:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
