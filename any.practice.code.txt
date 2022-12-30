@@ -330,6 +330,11 @@ docker-compose down
   
   3. php and mysql (worked)
   
+  prac03/Dockerfile
+  prac03/docker-compose.yml
+  prac03/php/src/index.php
+  
+  
   version: "3.5"
 services:
   db: 
@@ -354,7 +359,7 @@ services:
        - 8000:80
 
 
-
+//Dir
 php/src/index.php:
 
 <?php
