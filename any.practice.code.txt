@@ -382,6 +382,85 @@ echo "Connected successfully";
 
 docker=compose up -d
 docker-compose down
+docker-compose restart
+
+
+
+4. php mysql & phpmyadmin
+
+Dir Structure: 
+
+  prac04/Dockerfile
+  prac04/docker-compose.yml
+  prac04/php/src/index.php
+  
+  Dockerfile: 
+  
+   FROM php:8.0-apache
+   RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+   RUN apt-get update && apt-get upgrade -y
+
+
+  
+  
+  docker-compose.yml:
+  
+
+  version: "3.5"
+  services:
+    db: 
+     image: mysql:latest
+     container_name: mydb
+     restart: always
+     environment: 
+       MYSQL_ROOT_PASSWORD: example
+     ports: 
+      - 3306:3306
+
+    web: 
+      build: 
+       context: ./
+       dockerfile: Dockerfile
+      container_name: phpserver
+      depends_on: 
+         - db
+      volumes: 
+         - ./php/src:/var/www/html
+      ports: 
+         - 8000:80
+
+    phpmyadmin: 
+         image: phpmyadmin
+         container_name: phpmyadmin
+         environment: 
+            PMA_HOST: db
+         ports: 
+           - 8080:80
+
+  
+  
+  
+  index.php:
+  
+  
+  
+docker=compose up -d
+docker-compose down
+docker-compose restart
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
 
 ---------------------------------------
 
