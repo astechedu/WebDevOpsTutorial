@@ -474,9 +474,11 @@ docker-compose restart
 
 
 
+Directory Structure:
 
-
-
+prac04/Dockerfile
+prac04/docker-compose.yml
+prac04/php/src/index.php
 
 
 
