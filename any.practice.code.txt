@@ -265,9 +265,19 @@ EXPOSE 80
 
 --------------------------------------------------------------------------
 
+Docker: 
+
 Worked: 
 
 1. Mysql with adminer:
+
+Directory Structure:
+
+ prac04/Dockerfile
+ prac04/docker-compose.yml
+ prac04/php/src/index.php
+
+
 
 docker-compose.yml: 
 
@@ -302,6 +312,15 @@ abcd# mysql -u root -p
  
   2. phpmyadmin & mysql (Worked)
   
+
+  Directory Structure:
+
+  prac04/Dockerfile
+  prac04/docker-compose.yml
+  prac04/php/src/index.php
+
+
+
     docker-compose.yml: 
     
      version: "3"
@@ -388,6 +407,15 @@ docker-compose restart
 
 
 4. php mysql & phpmyadmin 
+
+ Directory Structure:
+
+  prac04/Dockerfile
+  prac04/docker-compose.yml
+  prac04/php/src/index.php
+
+
+
 
 Dockerfile: 
 
