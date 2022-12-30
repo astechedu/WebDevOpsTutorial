@@ -273,9 +273,10 @@ Worked:
 
 Directory Structure:
 
- prac04/Dockerfile
- prac04/docker-compose.yml
- prac04/php/src/index.php
+ project/Dockerfile
+ project/docker-compose.yml
+ project/php/src/index.php
+
 
 
 
@@ -312,12 +313,11 @@ abcd# mysql -u root -p
  
   2. phpmyadmin & mysql (Worked)
   
-
   Directory Structure:
 
-  prac04/Dockerfile
-  prac04/docker-compose.yml
-  prac04/php/src/index.php
+   project/Dockerfile
+   project/docker-compose.yml
+   project/php/src/index.php
 
 
 
@@ -349,9 +349,12 @@ docker-compose down
   
   3. php and mysql (worked)
   
-  prac03/Dockerfile
-  prac03/docker-compose.yml
-  prac03/php/src/index.php
+  Directory Structure:
+
+   project/Dockerfile
+   project/docker-compose.yml
+   project/php/src/index.php
+
   
   
 version: "3.5"
@@ -408,11 +411,11 @@ docker-compose restart
 
 4. php mysql & phpmyadmin 
 
- Directory Structure:
+  Directory Structure:
 
-  prac04/Dockerfile
-  prac04/docker-compose.yml
-  prac04/php/src/index.php
+   project/Dockerfile
+   project/docker-compose.yml
+   project/php/src/index.php
 
 
 
@@ -463,24 +466,24 @@ docker-compose.yml
 index.php:
 
 
-<?php
-echo "php and mysql";
+ <?php
+ echo "php and mysql";
 
-$servername = "db";
-$username = "root";
-$password = "example";
+ $servername = "db";
+ $username = "root";
+ $password = "example";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
+ // Create connection
+ $conn = new mysqli($servername, $username, $password);
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-$conn->query('create database ajay');
-echo "Connected successfully";
+ // Check connection
+ if ($conn->connect_error) {
+   die("Connection failed: " . $conn->connect_error);
+ }
+ $conn->query('create database ajay');
+ echo "Connected successfully";
 
-?>
+ ?>
 
 
 docker=compose up -d
@@ -495,18 +498,6 @@ docker-compose restart
 
 
 
-
-
-
-
-
-
-
-Directory Structure:
-
-prac04/Dockerfile
-prac04/docker-compose.yml
-prac04/php/src/index.php
 
 
 
