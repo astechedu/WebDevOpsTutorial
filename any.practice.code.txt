@@ -558,6 +558,8 @@ create collection:  db.createCollection("users")
 insert document   : 
 db.users.insertOne( { name: "mark" } );
 
+showing recores(documents):
+db.users.find()
 
 
 
