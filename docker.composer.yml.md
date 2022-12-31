@@ -855,7 +855,7 @@ docker-compose restart
 
 ### 6. mongo & mongo-express 
 
-
+<code>
 #Use root/example as user/password credentials
 version: '3.1'
 services:
@@ -877,17 +877,12 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
-
+  </code>
 
  
 docker=compose up -d
 docker-compose down
 docker-compose restart
-
-
-
-
-
 
 
 
