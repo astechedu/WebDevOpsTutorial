@@ -541,7 +541,12 @@ https://mattkomarnicki.com/articles/docker-laravel-environment-with-php-nginx-my
 
 
 
+Docker mongo container login: 
 
+docker exec -it contId bash
+abcdefff# mongo -u root -p
+ password: password
+ >
 
 
 
