@@ -709,6 +709,7 @@ docker-compose.yml:
 
 
 
+
 #### 7. Create phpmyadmin container
 
 
@@ -727,41 +728,12 @@ docker-compose.yml:
            </code>
 
 
-#### 8. Create redis container
-
-docker-compose.yml: 
-
-#### 9. Create php container
-
-docker-compose.yml: 
-
-
-#### 10. Create postgre container
-
-docker-compose.yml: 
-
-
-#### 11. Create mongo container
-
-docker-compose.yml: 
-
-#### 12. Create redis container
-
-docker-compose.yml: 
-
-
-#### 13. Create php container
-
-
-docker-compose.yml: 
-
-
 
 
 
 [Got To Top](#top)
 <a name="mysql"></a>
-#### 1. Mysql with adminer:
+#### 8. Mysql with adminer:
 
 
 Directory Structure:
@@ -811,7 +783,7 @@ docker-compose.yml:
  
  [Got To Top](#top)
  <a name="phpmyadmin"></a>
-  ### 2. phpmyadmin & mysql (Worked)
+  ### 9. phpmyadmin & mysql (Worked)
   
   Directory Structure:
 
@@ -854,7 +826,7 @@ docker-compose.yml:
 
 [Got To Top](#top)
   <a name="php"></a>
-  ### 3. php and mysql (worked)
+  ### 10. php and mysql (worked)
   
   Directory Structure:
 
@@ -925,7 +897,7 @@ php/src/index.php:
 
 [Got To Top](#top)
 <a name="php_mysql_phpmyadmin"></a>
-### 4. php mysql & phpmyadmin 
+### 11. php mysql & phpmyadmin 
 
   Directory Structure:
 
@@ -1016,7 +988,7 @@ index.php:
 
 [Got To Top](#top)
 <a name="postgre"></a>
-### 5. postgreSQL & adminer
+### 12. postgreSQL & adminer
 
 Dockerfile:
 
@@ -1056,7 +1028,7 @@ docker-compose.yml:
 
 [Got To Top](#top)
 <a name="mongo"></a>
-### 6. mongo & mongo-express 
+### 13. mongo & mongo-express 
 
       <code>
       #Use root/example as user/password credentials
@@ -1092,11 +1064,4 @@ docker-compose.yml:
 
 
 :end:
-
-
-
-
-
-
-
 
