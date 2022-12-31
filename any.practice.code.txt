@@ -531,11 +531,47 @@ docker-compose restart
 
 
 
-
-
-
 -----------------------------------------------------------------
+:
+Download Redis Image:
 
+Redis Docker Steps: 
+
+
+docker pull redis
+docker images
+
+Create a Redis Container:
+docker run -it --name redis-container -d redis
+
+docker ps
+
+docker logs redis-container
+
+Connect to Redis Conainer: 
+
+docker exec -it redis-container bash
+
+
+root@64163c8ed78d:/data#
+
+root@64163c8ed78d:/data# redis-cli
+
+127.0.0.1:6379> ping
+
+127.0.0.1:6379> exit
+root@64163c8ed78d:/data# exit
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------
 
 
 
