@@ -492,6 +492,34 @@ docker-compose restart
 
 
 
+
+
+5. postgreSQL & adminer
+
+Dockerfile:
+
+
+
+
+
+docker-compose.yml:
+
+
+
+
+
+
+ 
+docker=compose up -d
+docker-compose down
+docker-compose restart
+
+
+
+
+
+
+
 -----------------------------------------------------------------
 
 
