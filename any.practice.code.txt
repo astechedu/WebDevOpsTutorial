@@ -594,6 +594,23 @@ db.users.find()
 
 
 
+
+REDIS:
+
+version: '3.5'
+services:
+  cache:
+    image: redis:latest
+    command: ["redis-server", "/etc/redis/redis.conf"]
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf
+    ports:
+      - "6379:6379"
+
+
+
+
+
 Redis: 
 
 docker pull redis
