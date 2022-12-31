@@ -15,9 +15,8 @@ Tested Containers:
 [Create mysql cotainer](#mysql); [Create postgre cotainer](#postgre); [Create mongo cotainer](#mongo); [Create redis cotainer](#redis);
 [Create php cotainer](#php); [Create phpmyadmin cotainer](#phpmyadmin); [Create adminer cotainer](#adminer);
 
-[Create php_mysql cotainer](#php_mysql); [Create php_mysql_adminer cotainer](#php_mysql_adminer); [Create php_mysql_phpmyadmin cotainer](#php_mysql_phpmyadmin); [Create postgreSQL & adminer cotainer](#postgre); [Create mongo & mongo-express cotainer](#postgre); 
-[Create mongo & mongo-express cotainer](#postgre); [Create php mysql & phpmyadmin  cotainer](#postgre);
-[Create phpmyadmin & mysql cotainer](#postgre); [Create Mysql with adminer cotainer](#postgre); 
+[Create php_mysql cotainer](#php_mysql); [Create php_mysql_adminer cotainer](#php_mysql_adminer); [Create php_mysql_phpmyadmin cotainer](#php_mysql_phpmyadmin); [Create postgre & adminer cotainer](#postgre_adminer); [Create mongo & mongo-express cotainer](#mongo_mongo-express); 
+[Create mysql & phpmyadmin cotainer](#mysql_phpmyadmin); [Create Mysql & adminer cotainer](#mysql_adminer); 
 
 
 
