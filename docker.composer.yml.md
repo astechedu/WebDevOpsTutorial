@@ -9,9 +9,10 @@ Topics:
    [Deploy](#deploy); [Endpoint Mode](#endpoint_mode)
 
 
+
 Tested Containers: 
 
-[Create mysql cotainer](#mysql); [Create postgre cotainer](#postgre); [Create mongo cotainer](#mongo);
+[Create mysql cotainer](#mysql); [Create postgre cotainer](#postgre); [Create mongo cotainer](#mongo); [Create redis cotainer](#redis);
 [Create php cotainer](#php); [Create phpmyadmin cotainer](#phpmyadmin); [Create adminer cotainer](#adminer);
 [Create php_mysql cotainer](#php_mysql); [Create php_mysql_adminer cotainer](#php_mysql_adminer); [Create php_mysql_phpmyadmin cotainer](#php_mysql_phpmyadmin); [Create mongo cotainer](#mongo); [Create mysql cotainer](#mysql); [Create postgre cotainer](#postgre);
 
