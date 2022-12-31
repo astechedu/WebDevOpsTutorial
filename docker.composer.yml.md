@@ -11,9 +11,9 @@ Topics:
 
 Tested Containers: 
 
-[Create mongo cotainer](#mongo); [Create mysql cotainer](#mysql); [Create postgre cotainer](#postgre);
-[Create mongo cotainer](#mongo); [Create mysql cotainer](#mysql); [Create postgre cotainer](#postgre);
-[Create mongo cotainer](#mongo); [Create mysql cotainer](#mysql); [Create postgre cotainer](#postgre);
+[Create mongo cotainer](#mysql); [Create mysql cotainer](#postgre); [Create postgre cotainer](#mongo);
+[Create mongo cotainer](#php); [Create mysql cotainer](#phpmyadmin); [Create postgre cotainer](#adminer);
+[Create mongo cotainer](#php_mysql); [Create mysql cotainer](#php_mysql_adminer); [Create postgre cotainer](#php_mysql_phpmyadmin);
 [Create mongo cotainer](#mongo); [Create mysql cotainer](#mysql); [Create postgre cotainer](#postgre);
 
 
