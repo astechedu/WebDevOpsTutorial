@@ -599,19 +599,61 @@ docker-compose.yml:
 
 
 #### 2. Create postgre container
+
+docker-compose.yml: 
+
 #### 3. Create mongo container
+
+docker-compose.yml: 
+
 #### 4. Create redis container
+
+docker-compose.yml: 
+
 #### 5. Create php container
 
+docker-compose.yml: 
+
+
+
 #### 6. Create postgre container
+
+docker-compose.yml: 
+
 #### 7. Create mongo container
+
+docker-compose.yml: 
+
+
 #### 8. Create redis container
+
+docker-compose.yml: 
+
 #### 9. Create php container
 
+docker-compose.yml: 
+
+
 #### 10. Create postgre container
+
+docker-compose.yml: 
+
+
 #### 11. Create mongo container
+
+docker-compose.yml: 
+
 #### 12. Create redis container
+
+docker-compose.yml: 
+
+
 #### 13. Create php container
+
+
+docker-compose.yml: 
+
+
 
 
 
