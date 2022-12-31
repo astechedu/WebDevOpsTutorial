@@ -309,8 +309,7 @@ abcd# mysql -u root -p
   mysql> .......
   
  
- 
- 
+  
   2. phpmyadmin & mysql (Worked)
   
   Directory Structure:
