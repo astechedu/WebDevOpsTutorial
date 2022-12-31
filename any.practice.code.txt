@@ -541,12 +541,27 @@ https://mattkomarnicki.com/articles/docker-laravel-environment-with-php-nginx-my
 
 
 
+
+
 Docker mongo container login: 
 
 docker exec -it contId bash
 abcdefff# mongo -u root -p
  password: password
  >
+
+
+create db: use dbName      ex: use mydb
+show db: db              // output:  mydb
+create collection:  db.createCollection("users")
+insert document   : db.users.insertone()
+
+
+
+
+
+
+
 
 
 
