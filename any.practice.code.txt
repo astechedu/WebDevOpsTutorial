@@ -533,9 +533,11 @@ docker-compose restart
 
 
 -----------------------------------------------------------------
+//Redis nginx
 
+https://mattkomarnicki.com/articles/docker-laravel-environment-with-php-nginx-mysql-redis-and-scheduler
 
-
+-----------------------------------------------------------
 
 
 
