@@ -583,8 +583,7 @@ volumes:
 # Docker Compose Yml (Tested)
 
 
-
-1. Mysql with adminer:
+#### 1. Mysql with adminer:
 
 Directory Structure:
 
@@ -596,7 +595,7 @@ Directory Structure:
 
 
 docker-compose.yml: 
-
+<code>
  services:
    db: 
     image: mysql:latest
@@ -611,7 +610,9 @@ docker-compose.yml:
     restart: always
     ports:
       - 8080:8080
-
+</dode>
+ 
+ 
  
 docker-compose up -d
 docker-compose down
@@ -626,7 +627,7 @@ abcd# mysql -u root -p
  
  
  
-  2. phpmyadmin & mysql (Worked)
+  ### 2. phpmyadmin & mysql (Worked)
   
   Directory Structure:
 
@@ -638,6 +639,8 @@ abcd# mysql -u root -p
 
     docker-compose.yml: 
     
+    
+   <code>
      version: "3"
      services:
        db: 
@@ -655,7 +658,7 @@ abcd# mysql -u root -p
           - PMA_HOST:db
         ports:
           - 8080:80
-
+     </code>
   
 docker-compose up -d
 docker-compose down 
@@ -671,7 +674,7 @@ docker-compose down
    project/php/src/index.php
 
   
-  
+<code>
 version: "3.5"
 services:
   db: 
@@ -694,6 +697,8 @@ services:
        - ./php/src:/var/www/html
     ports: 
        - 8000:80
+  </code>
+
 
 
 //Dir
@@ -724,7 +729,7 @@ docker-compose restart
 
 
 
-4. php mysql & phpmyadmin 
+### 4. php mysql & phpmyadmin 
 
   Directory Structure:
 
@@ -737,14 +742,16 @@ docker-compose restart
 
 Dockerfile: 
 
+<code>
   FROM php:8.0-apache
   RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
   RUN apt-get update && apt-get upgrade -y
-
+ </code>
 
 
 docker-compose.yml
 
+<code>
   version: "3.5"
   services:
     db: 
@@ -775,7 +782,7 @@ docker-compose.yml
             PMA_HOST: db
          ports: 
            - 8080:80
-
+   </code>
 
 
 index.php:
@@ -809,7 +816,7 @@ docker-compose restart
 
 
 
-5. postgreSQL & adminer
+### 5. postgreSQL & adminer
 
 Dockerfile:
 
@@ -819,7 +826,8 @@ No
 
 docker-compose.yml:
 
-# Use postgres/example user/password credentials
+<code>
+#Use postgres/example user/password credentials
 version: '3.1'
 
 services:
@@ -835,7 +843,7 @@ services:
     restart: always
     ports:
       - 8080:8080
-
+  </code>
 
 
  
@@ -845,10 +853,10 @@ docker-compose restart
 
 
 
-6. mongo & mongo-express 
+### 6. mongo & mongo-express 
 
 
-# Use root/example as user/password credentials
+#Use root/example as user/password credentials
 version: '3.1'
 services:
   mongo:
