@@ -1,4 +1,4 @@
-$$\color{red} {Docker \ Composer \ Yaml \ File}$$
+$$\color{red} {Docker \ Compose (docker-compose.yml)}$$
 
 :link:[Home](all-file-links.md) 
 
