@@ -616,7 +616,48 @@ Or
 127.0.0.1:6379> set name ajay
 127.0.0.1:6379> get name
 "ajay"
-127.0.0.1:6379>
+127.0.0.1:6379> incr counter
+(integer) 1
+127.0.0.1:6379> incr counter
+(integer) 2
+127.0.0.1:6379> get counter
+"2"
+127.0.0.1:6379> exit
+# exit
+
+
+Connect from another linked container
+
+docker run -it --rm --link redis1:redis --name client1 redis sh
+
+# redis-cli -h redis
+redis:6379>
+
+redis:6379> get name
+"mark"
+redis:6379> get counter
+"2"
+
+redis:6379> exit
+# exit
+
+Clean up
+
+docker stop redis1
+docker rm redis1
+
+docker image ls
+
+
+docker image rm redis
+
+
+
+
+
+
+
+
 
 
 
