@@ -15,11 +15,21 @@ Tested Containers:
 [Create mysql cotainer](#mysql); [Create postgre cotainer](#postgre); [Create mongo cotainer](#mongo); [Create redis cotainer](#redis);
 [Create php cotainer](#php); [Create phpmyadmin cotainer](#phpmyadmin); [Create adminer cotainer](#adminer);
 [Create php_mysql cotainer](#php_mysql); [Create php_mysql_adminer cotainer](#php_mysql_adminer); [Create php_mysql_phpmyadmin cotainer](#php_mysql_phpmyadmin); [Create mongo cotainer](#mongo); [Create mysql cotainer](#mysql); [Create postgre cotainer](#postgre);
+[Create postgreSQL & adminer cotainer](#postgre); [Create mongo & mongo-express cotainer](#postgre);
+
+[Create mongo & mongo-express cotainer](#postgre); [Create php mysql & phpmyadmin  cotainer](#postgre); [Create php and mysql cotainer](#postgre);
+[Create phpmyadmin & mysql cotainer](#postgre); [Create Mysql with adminer cotainer](#postgre); 
 
 
 
 
 
+
+
+
+
+ 
+ 
 
 
 
@@ -731,6 +741,8 @@ docker-compose.yml:
 
 
 
+ 
+
 [Got To Top](#top)
 <a name="mysql"></a>
 #### 8. Mysql with adminer:
@@ -780,6 +792,7 @@ docker-compose.yml:
  
  
  
+
  
  [Got To Top](#top)
  <a name="phpmyadmin"></a>
@@ -819,6 +832,7 @@ docker-compose.yml:
 
       docker-compose up -d
       docker-compose down 
+
 
 
 
@@ -889,7 +903,6 @@ php/src/index.php:
       docker=compose up -d
       docker-compose down
       docker-compose restart
-
 
 
 
@@ -980,8 +993,6 @@ index.php:
    docker=compose up -d
    docker-compose down
    docker-compose restart
-
-
 
 
 
