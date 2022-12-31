@@ -590,7 +590,8 @@ volumes:
 
 
 
-# Docker Compose Yml (Tested Containers)
+# Docker Compose (Tested Containers)
+
 
 [Go To Top](#top)
 <a name="mysql"></a>
@@ -611,6 +612,13 @@ docker-compose.yml:
 
 
 
+        docker=compose up -d
+        docker-compose down
+        docker-compose restart
+         
+         
+         
+
 
 [Go To Top](#top)
 <a name="postgre"></a>
@@ -630,12 +638,19 @@ docker-compose.yml:
 
 
 
+         docker=compose up -d
+         docker-compose down
+         docker-compose restart
+         
+
+
 
 [Go To Top](#top)
 <a name="mongo"></a>
 #### 3. Create mongo container
 
 docker-compose.yml: 
+
 
       <code>
       #Use root/example as user/password credentials
@@ -649,7 +664,14 @@ docker-compose.yml:
             MONGO_INITDB_ROOT_PASSWORD: example
         </code>
         
-        
+
+
+
+         docker=compose up -d
+         docker-compose down
+         docker-compose restart
+         
+         
         
         
 [Go To Top](#top)
@@ -662,11 +684,13 @@ docker-compose.yml:
 
 
 
+
 [Go To Top](#top)
 <a name="php"></a>
 #### 5. Create php container
 
 docker-compose.yml: 
+
 
 Dockerfile: 
 
@@ -675,6 +699,7 @@ Dockerfile:
         RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
         RUN apt-get update && apt-get upgrade -y
        </code>
+
 
 
   docker-compose.yml
@@ -721,6 +746,12 @@ index.php:
 
 
 
+         docker=compose up -d
+         docker-compose down
+         docker-compose restart
+         
+         
+
 
 [Go To Top](#top)
 <a name="adminer"></a>
@@ -743,6 +774,12 @@ docker-compose.yml:
 
 
 
+         docker=compose up -d
+         docker-compose down
+         docker-compose restart
+
+
+
 
 [Go To Top](#top)
 <a name="phpmyadmin"></a>
@@ -750,6 +787,7 @@ docker-compose.yml:
 
 
 docker-compose.yml: 
+
 
          <code>
            version: "3"
@@ -765,6 +803,10 @@ docker-compose.yml:
 
 
 
+
+         docker=compose up -d
+         docker-compose down
+         docker-compose restart
 
 
  
@@ -786,7 +828,7 @@ Directory Structure:
 docker-compose.yml: 
 
 
-      <code>
+     <code>
        services:
          db: 
           image: mysql:latest
@@ -816,6 +858,11 @@ docker-compose.yml:
         mysql> .......
 
  
+ 
+ 
+         docker=compose up -d
+         docker-compose down
+         docker-compose restart
  
  
  
@@ -857,9 +904,11 @@ docker-compose.yml:
            </code>
 
 
-      docker-compose up -d
-      docker-compose down 
 
+
+          docker=compose up -d
+          docker-compose down
+          docker-compose restart
 
 
 
@@ -869,12 +918,14 @@ docker-compose.yml:
 [Got To Top](#top)
   <a name="php_mysql"></a>
   ### 10. php and mysql (worked)
-  
+
+
   Directory Structure:
 
    project/Dockerfile
    project/docker-compose.yml
    project/php/src/index.php
+
 
   
       <code>
@@ -927,7 +978,9 @@ php/src/index.php:
       ?>
       </code>
       
-
+      
+      
+      
       docker=compose up -d
       docker-compose down
       docker-compose restart
@@ -941,6 +994,7 @@ php/src/index.php:
 [Got To Top](#top)
 <a name="php_mysql_phpmyadmin"></a>
 ### 11. php mysql & phpmyadmin 
+
 
   Directory Structure:
 
@@ -960,7 +1014,9 @@ Dockerfile:
        </code>
 
 
+
   docker-compose.yml
+
 
       <code>
         version: "3.5"
@@ -996,6 +1052,16 @@ Dockerfile:
          </code>
 
 
+
+
+
+         docker=compose up -d
+         docker-compose down
+         docker-compose restart
+
+
+
+
 index.php:
 
 
@@ -1020,10 +1086,6 @@ index.php:
     ?>
    </code>
 
-   docker=compose up -d
-   docker-compose down
-   docker-compose restart
-
 
 
 
@@ -1033,13 +1095,10 @@ index.php:
 <a name="postgre_adminer"></a>
 ### 12. postgre & adminer
 
-Dockerfile:
-
-No
-
 
 
 docker-compose.yml:
+
 
       <code>
       #Use postgres/example user/password credentials
@@ -1062,9 +1121,10 @@ docker-compose.yml:
 
 
  
-      docker=compose up -d
-      docker-compose down
-      docker-compose restart
+ 
+         docker=compose up -d
+         docker-compose down
+         docker-compose restart
 
 
 
@@ -1074,6 +1134,7 @@ docker-compose.yml:
 [Got To Top](#top)
 <a name="mongo_mongo-express"></a>
 ### 13. mongo & mongo-express 
+
 
       <code>
       #Use root/example as user/password credentials
@@ -1099,6 +1160,7 @@ docker-compose.yml:
             ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
         </code>
 
+ 
  
          docker=compose up -d
          docker-compose down
