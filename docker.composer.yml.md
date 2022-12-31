@@ -585,6 +585,7 @@ volumes:
 
 #### 1. Mysql with adminer:
 
+
 Directory Structure:
 
  project/Dockerfile
@@ -595,35 +596,37 @@ Directory Structure:
 
 
 docker-compose.yml: 
-<code>
- services:
-   db: 
-    image: mysql:latest
-    container_name: mydb
-    restart: always
-    environment: 
-      MYSQL_ROOT_PASSWORD: ajay123
 
 
-   adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-</dode>
+      <code>
+       services:
+         db: 
+          image: mysql:latest
+          container_name: mydb
+          restart: always
+          environment: 
+            MYSQL_ROOT_PASSWORD: ajay123
+
+
+         adminer:
+          image: adminer
+          restart: always
+          ports:
+            - 8080:8080
+      </dode>
+
  
  
- 
-docker-compose up -d
-docker-compose down
+      docker-compose up -d
+      docker-compose down
 
-docker exex -it mydb bash
+      docker exex -it mydb bash
 
-abcd# mysql -u root -p
-   password: ajay123
+      abcd# mysql -u root -p
+         password: ajay123
 
-  mysql> .......
-  
+        mysql> .......
+
  
  
  
@@ -637,35 +640,36 @@ abcd# mysql -u root -p
 
 
 
-    docker-compose.yml: 
+   docker-compose.yml: 
     
     
-   <code>
-     version: "3"
-     services:
-       db: 
-        image: mysql:latest
-        container_name: mydb
-        restart: always
-        environment: 
-          MYSQL_ROOT_PASSWORD: example
+         <code>
+           version: "3"
+           services:
+             db: 
+              image: mysql:latest
+              container_name: mydb
+              restart: always
+              environment: 
+                MYSQL_ROOT_PASSWORD: example
 
 
-       phpmyadmin:
-        image: phpmyadmin
-        restart: always
-        environment: 
-          - PMA_HOST:db
-        ports:
-          - 8080:80
-     </code>
+             phpmyadmin:
+              image: phpmyadmin
+              restart: always
+              environment: 
+                - PMA_HOST:db
+              ports:
+                - 8080:80
+           </code>
+
+
+      docker-compose up -d
+      docker-compose down 
+
+
   
-docker-compose up -d
-docker-compose down 
-  
-  
-  
-  3. php and mysql (worked)
+  ### 3. php and mysql (worked)
   
   Directory Structure:
 
@@ -674,57 +678,60 @@ docker-compose down
    project/php/src/index.php
 
   
-<code>
-version: "3.5"
-services:
-  db: 
-   image: mysql:latest
-   container_name: mydb
-   restart: always
-   environment: 
-     MYSQL_ROOT_PASSWORD: example
-   ports: 
-    - 3306:3306
- 
-  web: 
-    build: 
-     context: ./
-     dockerfile: Dockerfile
-    container_name: phpserver
-    depends_on: 
-       - db
-    volumes: 
-       - ./php/src:/var/www/html
-    ports: 
-       - 8000:80
-  </code>
+      <code>
+      version: "3.5"
+      services:
+        db: 
+         image: mysql:latest
+         container_name: mydb
+         restart: always
+         environment: 
+           MYSQL_ROOT_PASSWORD: example
+         ports: 
+          - 3306:3306
+
+        web: 
+          build: 
+           context: ./
+           dockerfile: Dockerfile
+          container_name: phpserver
+          depends_on: 
+             - db
+          volumes: 
+             - ./php/src:/var/www/html
+          ports: 
+             - 8000:80
+        </code>
 
 
 
 //Dir
 php/src/index.php:
 
-<?php
-echo "php and mysql";
+      <code>
+      <?php
+      echo "php and mysql";
 
-$servername = "db";
-$username = "root";
-$password = "example";
+      $servername = "db";
+      $username = "root";
+      $password = "example";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password);
+      // Create connection
+      $conn = new mysqli($servername, $username, $password);
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
+      // Check connection
+      if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+      }
+      echo "Connected successfully";
 
-?>
+      ?>
+      </code>
+      
 
-docker=compose up -d
-docker-compose down
-docker-compose restart
+      docker=compose up -d
+      docker-compose down
+      docker-compose restart
 
 
 
@@ -742,75 +749,76 @@ docker-compose restart
 
 Dockerfile: 
 
-<code>
-  FROM php:8.0-apache
-  RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
-  RUN apt-get update && apt-get upgrade -y
- </code>
+       <code>
+        FROM php:8.0-apache
+        RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+        RUN apt-get update && apt-get upgrade -y
+       </code>
 
 
-docker-compose.yml
+  docker-compose.yml
 
-<code>
-  version: "3.5"
-  services:
-    db: 
-     image: mysql:latest
-     container_name: mydb
-     restart: always
-     environment: 
-       MYSQL_ROOT_PASSWORD: example
-     ports: 
-      - 3306:3306
+      <code>
+        version: "3.5"
+        services:
+          db: 
+           image: mysql:latest
+           container_name: mydb
+           restart: always
+           environment: 
+             MYSQL_ROOT_PASSWORD: example
+           ports: 
+            - 3306:3306
 
-    web: 
-      build: 
-       context: ./
-       dockerfile: Dockerfile
-      container_name: phpserver
-      depends_on: 
-         - db
-      volumes: 
-         - ./php/src:/var/www/html
-      ports: 
-         - 8000:80
+          web: 
+            build: 
+             context: ./
+             dockerfile: Dockerfile
+            container_name: phpserver
+            depends_on: 
+               - db
+            volumes: 
+               - ./php/src:/var/www/html
+            ports: 
+               - 8000:80
 
-    phpmyadmin: 
-         image: phpmyadmin
-         container_name: phpmyadmin
-         environment: 
-            PMA_HOST: db
-         ports: 
-           - 8080:80
-   </code>
+          phpmyadmin: 
+               image: phpmyadmin
+               container_name: phpmyadmin
+               environment: 
+                  PMA_HOST: db
+               ports: 
+                 - 8080:80
+         </code>
 
 
 index.php:
 
 
- <?php
- echo "php and mysql";
+   <code>
+    <?php
+    echo "php and mysql";
 
- $servername = "db";
- $username = "root";
- $password = "example";
+    $servername = "db";
+    $username = "root";
+    $password = "example";
 
- // Create connection
- $conn = new mysqli($servername, $username, $password);
+    // Create connection
+    $conn = new mysqli($servername, $username, $password);
 
- // Check connection
- if ($conn->connect_error) {
-   die("Connection failed: " . $conn->connect_error);
- }
- $conn->query('create database ajay');
- echo "Connected successfully";
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    $conn->query('create database ajay');
+    echo "Connected successfully";
 
- ?>
+    ?>
+   </code>
 
-
-docker=compose up -d
-docker-compose down
-docker-compose restart
+   docker=compose up -d
+   docker-compose down
+   docker-compose restart
 
 
 
@@ -826,63 +834,63 @@ No
 
 docker-compose.yml:
 
-<code>
-#Use postgres/example user/password credentials
-version: '3.1'
+      <code>
+      #Use postgres/example user/password credentials
+      version: '3.1'
 
-services:
-  postgre:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_USER: ajay
-      POSTGRES_PASSWORD: ajay123
+      services:
+        postgre:
+          image: postgres
+          restart: always
+          environment:
+            POSTGRES_USER: ajay
+            POSTGRES_PASSWORD: ajay123
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-  </code>
+        adminer:
+          image: adminer
+          restart: always
+          ports:
+            - 8080:8080
+        </code>
 
 
  
-docker=compose up -d
-docker-compose down
-docker-compose restart
+      docker=compose up -d
+      docker-compose down
+      docker-compose restart
 
 
 
 ### 6. mongo & mongo-express 
 
-<code>
-#Use root/example as user/password credentials
-version: '3.1'
-services:
-  mongo:
-    image: mongo:4
-    restart: always
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      <code>
+      #Use root/example as user/password credentials
+      version: '3.1'
+      services:
+        mongo:
+          image: mongo:4
+          restart: always
+          environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: example
 
-  mongo-express:
-    image: mongo-express
-    restart: always
-   # depends_on:
-    #  - mongo
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
-      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
-  </code>
+        mongo-express:
+          image: mongo-express
+          restart: always
+         # depends_on:
+          #  - mongo
+          ports:
+            - 8081:8081
+          environment:
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            ME_CONFIG_MONGODB_ADMINPASSWORD: example
+            ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+        </code>
 
  
-docker=compose up -d
-docker-compose down
-docker-compose restart
+         docker=compose up -d
+         docker-compose down
+         docker-compose restart
 
 
 
