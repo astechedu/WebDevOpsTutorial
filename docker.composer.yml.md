@@ -691,13 +691,40 @@ index.php:
 
 
 
-#### 6. Create postgre container
+#### 6. Create adminer container
 
 docker-compose.yml: 
 
-#### 7. Create mongo container
+
+      <code>
+      #Use postgres/example user/password credentials
+      version: '3.1'
+      services: 
+        adminer:
+          image: adminer
+          restart: always
+          ports:
+            - 8080:8080
+        </code>
+
+
+
+#### 7. Create phpmyadmin container
+
 
 docker-compose.yml: 
+
+         <code>
+           version: "3"
+           services:
+             phpmyadmin:
+              image: phpmyadmin
+              restart: always
+              environment: 
+                - PMA_HOST:db
+              ports:
+                - 8080:80
+           </code>
 
 
 #### 8. Create redis container
