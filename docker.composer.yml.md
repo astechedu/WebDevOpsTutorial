@@ -641,6 +641,8 @@ docker-compose.yml:
 
 docker-compose.yml: 
 
+
+
 #### 5. Create php container
 
 docker-compose.yml: 
@@ -742,7 +744,7 @@ docker-compose.yml:
  
 
 [Got To Top](#top)
-<a name="mysql"></a>
+<a name="mysql_adminer"></a>
 #### 8. Mysql with adminer:
 
 
@@ -790,11 +792,12 @@ docker-compose.yml:
  
  
  
+ 
 
  
  [Got To Top](#top)
- <a name="phpmyadmin"></a>
-  ### 9. phpmyadmin & mysql (Worked)
+ <a name="mysql_phpmyadmin"></a>
+  ### 9. mysql & phpmyadmin (Worked)
   
   Directory Structure:
 
@@ -836,8 +839,9 @@ docker-compose.yml:
 
 
 
+
 [Got To Top](#top)
-  <a name="php"></a>
+  <a name="php_mysql"></a>
   ### 10. php and mysql (worked)
   
   Directory Structure:
@@ -901,6 +905,8 @@ php/src/index.php:
       docker=compose up -d
       docker-compose down
       docker-compose restart
+
+
 
 
 
@@ -995,9 +1001,11 @@ index.php:
 
 
 
+
+
 [Got To Top](#top)
-<a name="postgre"></a>
-### 12. postgreSQL & adminer
+<a name="postgre_adminer"></a>
+### 12. postgre & adminer
 
 Dockerfile:
 
@@ -1035,8 +1043,10 @@ docker-compose.yml:
 
 
 
+
+
 [Got To Top](#top)
-<a name="mongo"></a>
+<a name="mongo_mongo-express"></a>
 ### 13. mongo & mongo-express 
 
       <code>
