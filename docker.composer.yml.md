@@ -1,4 +1,4 @@
-$$\color{red} {<u>Docker \ Compose</u>}$$
+$$\color{red} {<u> Docker \ Compose </u>}$$
 
 :link:[Home](all-file-links.md) 
 
