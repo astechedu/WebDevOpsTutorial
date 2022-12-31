@@ -870,7 +870,7 @@ docker-compose.yml:
  
  [Got To Top](#top)
  <a name="mysql_phpmyadmin"></a>
-  ### 9. mysql & phpmyadmin (Worked)
+  ### 9. mysql & phpmyadmin 
   
   Directory Structure:
 
@@ -917,7 +917,7 @@ docker-compose.yml:
 
 [Got To Top](#top)
   <a name="php_mysql"></a>
-  ### 10. php and mysql (worked)
+  ### 10. php and mysql 
 
 
   Directory Structure:
