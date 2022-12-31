@@ -554,7 +554,10 @@ abcdefff# mongo -u root -p
 create db: use dbName      ex: use mydb
 show db: db              // output:  mydb
 create collection:  db.createCollection("users")
-insert document   : db.users.insertone()
+
+insert document   : 
+db.users.insertOne( { name: "mark" } );
+
 
 
 
