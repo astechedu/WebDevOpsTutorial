@@ -743,6 +743,9 @@ docker-compose.yml:
 
 
 
+
+[Go To Top](#top)
+<a name="phpmyadmin"></a>
 #### 7. Create phpmyadmin container
 
 
