@@ -498,12 +498,28 @@ docker-compose restart
 
 Dockerfile:
 
-
+No
 
 
 
 docker-compose.yml:
 
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+  postgre:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ajay
+      POSTGRES_PASSWORD: ajay123
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
 
 
 
