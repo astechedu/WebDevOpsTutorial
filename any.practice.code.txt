@@ -594,6 +594,21 @@ db.users.find()
 
 
 
+Redis: 
+
+docker pull redis
+docker run -it --name redis-container -d redis
+docker logs redis-container
+
+docker exec -it redis-container bash
+
+
+root@64163c8ed78d:/data#
+root@64163c8ed78d:/data# redis-cli
+
+127.0.0.1:6379> ping
+127.0.0.1:6379> exit
+root@64163c8ed78d:/data# exit
 
 
 
