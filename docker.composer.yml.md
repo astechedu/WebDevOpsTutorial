@@ -601,10 +601,33 @@ docker-compose.yml:
 #### 2. Create postgre container
 
 docker-compose.yml: 
+     
+        <code>
+        postgre:
+          image: postgres
+          restart: always
+          environment:
+            POSTGRES_USER: ajay
+            POSTGRES_PASSWORD: ajay123
+         </code>
+
 
 #### 3. Create mongo container
 
 docker-compose.yml: 
+
+      <code>
+      #Use root/example as user/password credentials
+      version: '3.1'
+      services:
+        mongo:
+          image: mongo:4
+          restart: always
+          environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: example
+        </code>
+        
 
 #### 4. Create redis container
 
@@ -613,6 +636,58 @@ docker-compose.yml:
 #### 5. Create php container
 
 docker-compose.yml: 
+
+Dockerfile: 
+
+       <code>
+        FROM php:8.0-apache
+        RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+        RUN apt-get update && apt-get upgrade -y
+       </code>
+
+
+  docker-compose.yml
+
+      <code>
+        version: "3.5"
+        services:
+          web: 
+            build: 
+             context: ./
+             dockerfile: Dockerfile
+            container_name: phpserver
+            depends_on: 
+               - db
+            volumes: 
+               - ./php/src:/var/www/html
+            ports: 
+               - 8000:80      
+         </code>
+
+index.php:
+
+
+   <code>
+    <?php
+    echo "php and mysql";
+
+    $servername = "db";
+    $username = "root";
+    $password = "example";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password);
+
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    $conn->query('create database ajay');
+    echo "Connected successfully";
+
+    ?>
+   </code>
+
 
 
 
