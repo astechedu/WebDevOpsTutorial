@@ -579,8 +579,39 @@ volumes:
   
 
 
-# Docker Compose Yml (Tested)
 
+# Docker Compose Yml (Tested Containers)
+
+
+#### 1. Create mysql container
+
+docker-compose.yml: 
+
+      <code>
+       services:
+         db: 
+          image: mysql:latest
+          container_name: mydb
+          restart: always
+          environment: 
+            MYSQL_ROOT_PASSWORD: ajay123
+      </dode>
+
+
+#### 2. Create postgre container
+#### 3. Create mongo container
+#### 4. Create redis container
+#### 5. Create php container
+
+#### 6. Create postgre container
+#### 7. Create mongo container
+#### 8. Create redis container
+#### 9. Create php container
+
+#### 10. Create postgre container
+#### 11. Create mongo container
+#### 12. Create redis container
+#### 13. Create php container
 
 
 
