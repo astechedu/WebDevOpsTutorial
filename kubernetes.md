@@ -6,7 +6,7 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 
 
 
-
+<a name="top"></a>
 ## Topics 
 
 
@@ -24,6 +24,8 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
   
 	
 
+
+[Go To Top](#top)
 <!----><a name="basic_commands"></a>
 ### Basic Commands 
 
@@ -71,6 +73,8 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 	   kubectl rollout undo deployment <deploymentName> --to-revision=1
 	   
      	   
+	   
+[Go To Top](#top)	   
 ## Minikube & KubeCTL
 
 	What is Minikube
@@ -88,16 +92,23 @@ Requirements:
 	  1. Virtual Box Or Hiper-V or docker ( as a driver )
 
 
-<!----><a name="minikube"></a>
 
+
+
+[Go To Top](#top)
+<!----><a name="minikube"></a>
 ### 1. Minikube Installation ( minikube.exe )
 
 	   Usually used to run k8s cluster in your local machine/computer.
 	   Minikube runs a single-node Kubernetes cluster on your machine so that you can try out Kubernetes for your daily development work.
 	   Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one  node.
-	   
+	
+	
+	
+	
+	
+[Go To Top](#top)	
 <!----><a name="kubectl"></a>
-
 ### 2. KubeCtl Installation ( Kubectl.exe )
 
 	kubectl. The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For more information including a complete list of kubectl operations, see the kubectl reference documentation.
@@ -123,9 +134,10 @@ Requirements:
 		    
 		    
  
- <!----><a name="create_yml_file"></a>
  
-### Create Yaml File
+ [Go To Top](#top)
+ <!----><a name="create_yml_file"></a>
+ ### Create Yaml File
 
    MyFirst Yaml File:
 
@@ -201,8 +213,10 @@ This is heading
 		- containerPort: 80 
  
  
+ 
+ 
+ [Go To Top](#top)
 <!----><a name="micro8ks_cmds"></a>
-
  ### Microk8s CMDS
  
 	 sudo snap install microk8s --classic --channel=1.25   //Install MicroK8s
@@ -219,6 +233,9 @@ This is heading
 
 	 microk8s enable dns storage           //Use add-ons
 
+
+
+[Go To Top](#top)
   //microk8s
 	
 	  microk8s stop
@@ -238,6 +255,9 @@ This is heading
 	  microk8s kubectl rollout undo deployment <deploymentName> --to-revision=1
 
 
+
+
+[Go To Top](#top)
 //In Pod's container
 	
 	kubectl get pods
@@ -290,6 +310,10 @@ Some CMDS:
 
 
 
+
+
+
+[Go To Top](#top)
   ###### Kubernetes Short Commands:
   
   Minikube vs Kind vs K3s 
@@ -317,8 +341,10 @@ Some CMDS:
  
    
 
-<!----><a name="install_minikube"></a>
 
+
+[Go To Top](#top)
+<!----><a name="install_minikube"></a>
  Installation Minikube on ubuntu
  
  Minikube System Requirements
@@ -407,3 +433,6 @@ Step 4) Install Kubectl utility
 
 
 
+
+:end:
+[Go To Top](#top)
