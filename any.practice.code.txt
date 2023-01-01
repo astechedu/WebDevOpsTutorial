@@ -381,6 +381,16 @@ docker image ls
 docker image rm redis
 
 
+------------------------------------------
+
+Docker nginx: 
+
+Volume: 
+docker run --name ngx -v "$(pwd)"/php:/usr/share/nginx/html -p8080:80 -d nginx
+
+
+
+
 
 
 
