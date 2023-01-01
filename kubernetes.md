@@ -74,6 +74,7 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 	   
      	   
 	   
+	   
 [Go To Top](#top)	   
 ## Minikube & KubeCTL
 
@@ -132,7 +133,8 @@ Requirements:
 		    > docker images
 		    > ........... more
 		    
-		    
+		
+		
  
  
  [Go To Top](#top)
@@ -211,6 +213,7 @@ This is heading
 		image: nginx:1.7.9
 		ports:
 		- containerPort: 80 
+ 
  
  
  
