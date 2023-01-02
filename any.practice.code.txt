@@ -390,10 +390,36 @@ docker run --name ngx -v "$(pwd)"/php:/usr/share/nginx/html -p8080:80 -d nginx
 
 
 
+
+
 //https://www.docker.com/blog/how-to-use-the-official-nginx-docker-image/
 
+Running a basic web server: 
+$ docker run -it --rm -d -p 8080:80 --name web nginx
 
+Adding Custom HTML:
 docker run -it --rm -d -p 8080:80 --name web -v ~/site-content:/usr/share/nginx/html nginx
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Docker Nginx</title>
+</head>
+<body>
+  <h2>Hello from Nginx container</h2>
+</body>
+</html>
+
+
+Build Custom NGINX Image: 
+
+FROM nginx:latest
+COPY ./index.html /usr/share/nginx/html/index.html
+
+
+
 
 
 
