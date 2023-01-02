@@ -29,24 +29,25 @@ Check firewall status.
 
     sudo ufw status
 
-Bash
+
 
     root@ultimateakash:~# sudo ufw status
     Status: inactive
 
-Bash
+
 
 If firewall's status is inactive, activate it by hitting the below command.
 
     sudo ufw enable
 
-Bash
 
-root@ultimateakash:~# sudo ufw enable
+
+  root@ultimateakash:~# sudo ufw enable
+  
 Command may disrupt existing ssh connections. Proceed with operation (y|n)? y
 Firewall is active and enabled on system startup
 
-Bash
+
 
 5. Update ufw application profiles.
 
@@ -54,11 +55,12 @@ List the ufw application profiles.
 
     sudo ufw app list
 
-Bash
+
 
     root@ultimateakash:~# sudo ufw app list
     
 Available applications:
+
       Nginx Full
       Nginx HTTP
       Nginx HTTPS
@@ -67,16 +69,17 @@ Available applications:
 
     sudo ufw allow OpenSSH
 
-Bash
 
-    Check ufw status.
+  Check ufw status.
 
     sudo ufw status
 
-Bash
 
-    root@ultimateakash:~# sudo ufw status
-    Status: active
+
+      root@ultimateakash:~# sudo ufw status
+    
+    
+  Status: active
 
 To                         Action      From
 --                         ------      ----
@@ -86,7 +89,7 @@ Nginx Full (v6)            ALLOW       Anywhere (v6)
 OpenSSH (v6)               ALLOW       Anywhere (v6)
 
 
-Bash
+
 
 6. Check nginx status
 
@@ -97,35 +100,37 @@ Open your domain/server IP in the browser. You will see the default nginx instal
 
 Nginx has one server block enabled by default that is configured to serve documents from the /var/www/html directory.  
 
+
 7. Setup Server Blocks.
 
 Create the directory for your domains.
 
     sudo mkdir /var/www/example1.com
 
-Bash
+
 
     sudo mkdir /var/www/example2.com
 
-Bash
+
 
 Assign ownership of the directory with the $USER environment variable.
 
     sudo chown -R $USER:$USER /var/www/example1.com
 
-Bash
+
 
     sudo chown -R $USER:$USER /var/www/example2.com
 
-Bash
+
 
     Grant 775 permission to www directory.
 
     sudo chmod -R 755 /var/www
 
-Bash
+
 
 Create a sample index.html for example1.com
+
 
     sudo nano /var/www/example1.com/index.html
 
@@ -155,15 +160,14 @@ Create a sample index.html for example2.com
       </body>
   </html>
 
-Markup
 
 press ctrl + x and press y then hit enter.
 
 Create a config file for example1.com.
 
+
     sudo nano /etc/nginx/sites-available/example1.com
 
-Bash
 
     server {
         listen 80;
@@ -179,7 +183,7 @@ Bash
         }
     }
 
-Bash
+
 
 press ctrl + x and press y then hit enter.
 
@@ -187,7 +191,8 @@ Create a config file for example2.com.
 
     sudo nano /etc/nginx/sites-available/example2.com
 
-Bash
+
+
 
     server {
         listen 80;
@@ -203,14 +208,15 @@ Bash
         }
     }
 
-Bash
+
 
 These two lines
 
     root /var/www/your_domain;
     server_name your_domain www.your_domain;
 
-Bash
+
+
 
 press ctrl + x and press y then hit enter.
 
@@ -218,19 +224,20 @@ Enable this new configuration by creating a link from it to the sites-enabled di
 
     sudo ln -s /etc/nginx/sites-available/example1.com /etc/nginx/sites-enabled/
 
-Bash
+
 
     sudo ln -s /etc/nginx/sites-available/example2.com /etc/nginx/sites-enabled/
 
-Bash
+
 
 Uncomment bucket size.
 
-    sudo nano /etc/nginx/nginx.conf
+     sudo nano /etc/nginx/nginx.conf
 
-Bash
+
 
 Find server_names_hash_bucket_size directive and remove the # symbol to uncomment the line.
+
 
     http {
 
@@ -247,31 +254,32 @@ Find server_names_hash_bucket_size directive and remove the # symbol to uncommen
 
             server_names_hash_bucket_size 64;
 
-Bash
+
 
 Test configuration.
 
-    sudo nginx -t
+     sudo nginx -t
 
-Bash
 
-    root@ultimateakash:~# sudo nginx -t
+
+       root@ultimateakash:~# sudo nginx -t
+    
     nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
     nginx: configuration file /etc/nginx/nginx.conf test is successful
 
-Bash
+
 
 Reload nginx to implement the changes.
 
-    sudo systemctl reload nginx
+     sudo systemctl reload nginx
 
-Bash
+
 
 8. Next, open your domains in the browser. you will see our sample index.html
 
-    http://example1.com
+     http://example1.com
 
-    http://example2.com
+     http://example2.com
 
 9. Install SSL certificates.
 
@@ -279,19 +287,19 @@ Install Certbot
 
     sudo apt install certbot python3-certbot-nginx
 
-Bash
+
 
 Obtaining SSL certificates.
 
     sudo certbot --nginx -d example1.com -d www.example1.com -d example2.com -d www.example2.com
 
-Bash
+
 
 you can pass multiple domains with -d option. you can even use wildcards.
 
     -d *.example1.com
 
-Bash
+
 
 After hitting the above command you need to pass your email also you need to provide a few answers.
 
@@ -301,18 +309,20 @@ After completing the above step SSL certificates will be installed on your domai
 
 https protocol.
 
-    https://example1.com
 
-    https://example2.com
+     https://example1.com
+
+     https://example2.com
+
 
 Let’s Encrypt’s certificates are only valid for 90 days. but don't worry certbot takes care of renewals.
 
 Check certbot's renewal service status.
 
-    sudo systemctl status certbot.timer
+      sudo systemctl status certbot.timer
 
 
-Bash
+
 
     Install SSL on Nginx
     Let's Encrypt on Ubuntu
