@@ -1,7 +1,7 @@
 # Servers On Linux
 
 
-[Home](all_file_links.md)
+[Home](all-file-links.md)
 
 [Got To Bottom](#botton)
 <a name="top"></a>
