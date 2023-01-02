@@ -390,7 +390,7 @@ docker run --name ngx -v "$(pwd)"/php:/usr/share/nginx/html -p8080:80 -d nginx
 
 
 
-
+docker run -it --rm -d -p 8080:80 --name web -v ~/site-content:/usr/share/nginx/html nginx
 
 
 
