@@ -28,7 +28,7 @@ How to Host Multiple Domains With Nginx Ubuntu Web Server
 
 
 2. Log into your server via SSH.
-3. 
+
 
         ssh root@your_server_ip
 
