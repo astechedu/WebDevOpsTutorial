@@ -6,8 +6,9 @@
 <a name="top"></a>
 Topics: 
 
-[Nginx Mulit Domains on ubuntu 20.04](#nginx_multi_domains)
-[Nginx Reverse Proxxy Stream](#nginx_reverse_proxxy)
+   [Nginx Mulit Domains on ubuntu 20.04](#nginx_multi_domains)
+
+   [Nginx Reverse Proxxy Stream](#nginx_reverse_proxxy)
 
 
 
@@ -17,7 +18,7 @@ Topics:
 
 
 [Got To Top](#top)
-
+<a name="nginx_multi_domains"></a>
 # Nginx Multi domains
 #Nginx Mulit Domains on ubuntu 20.04
 
@@ -362,6 +363,7 @@ Check certbot's renewal service status.
 
 
 [Got To Top](#top)
+<a name="nginx_reverse_proxxy"</a>
 # Reverse Proxy
 
 
