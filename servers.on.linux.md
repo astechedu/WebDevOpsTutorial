@@ -4,11 +4,13 @@
 
 [Got To Bottom](#botton)
 <a name="top"></a>
+
+
 Topics: 
 
    [Nginx Mulit Domains on ubuntu 20.04](#nginx_multi_domains)
 
-   [Nginx Reverse Proxxy Stream](#nginx_reverse_proxxy)
+   [Docker compose : NGINX reverse proxy with multiple containers](#nginx_reverse_proxxy)
 
 
 
@@ -838,79 +840,6 @@ services:
       - "80"
 
 
-For other files, please check git II
-
-
-
-Docker & K8s
-
-    Docker install on Amazon Linux AMI
-    Docker install on EC2 Ubuntu 14.04
-    Docker container vs Virtual Machine
-    Docker install on Ubuntu 14.04
-    Docker Hello World Application
-    Nginx image - share/copy files, Dockerfile
-    Working with Docker images : brief introduction
-    Docker image and container via docker commands (search, pull, run, ps, restart, attach, and rm)
-    More on docker run command (docker run -it, docker run --rm, etc.)
-    Docker Networks - Bridge Driver Network
-    Docker Persistent Storage
-    File sharing between host and container (docker run -d -p -v)
-    Linking containers and volume for datastore
-    Dockerfile - Build Docker images automatically I - FROM, MAINTAINER, and build context
-    Dockerfile - Build Docker images automatically II - revisiting FROM, MAINTAINER, build context, and caching
-    Dockerfile - Build Docker images automatically III - RUN
-    Dockerfile - Build Docker images automatically IV - CMD
-    Dockerfile - Build Docker images automatically V - WORKDIR, ENV, ADD, and ENTRYPOINT
-    Docker - Apache Tomcat
-    Docker - NodeJS
-    Docker - NodeJS with hostname
-    Docker Compose - NodeJS with MongoDB
-    Docker - Prometheus and Grafana with Docker-compose
-    Docker - StatsD/Graphite/Grafana
-    Docker - Deploying a Java EE JBoss/WildFly Application on AWS Elastic Beanstalk Using Docker Containers
-    Docker : NodeJS with GCP Kubernetes Engine
-    Docker : Jenkins Multibranch Pipeline with Jenkinsfile and Github
-    Docker : Jenkins Master and Slave
-    Docker - ELK : ElasticSearch, Logstash, and Kibana
-    Docker - ELK 7.6 : Elasticsearch on Centos 7
-    Docker - ELK 7.6 : Filebeat on Centos 7
-    Docker - ELK 7.6 : Logstash on Centos 7
-    Docker - ELK 7.6 : Kibana on Centos 7
-    Docker - ELK 7.6 : Elastic Stack with Docker Compose
-    Docker - Deploy Elastic Cloud on Kubernetes (ECK) via Elasticsearch operator on minikube
-    Docker - Deploy Elastic Stack via Helm on minikube
-    Docker Compose - A gentle introduction with WordPress
-    Docker Compose - MySQL
-    MEAN Stack app on Docker containers : micro services
-    MEAN Stack app on Docker containers : micro services via docker-compose
-    Docker Compose - Hashicorp's Vault and Consul Part A (install vault, unsealing, static secrets, and policies)
-    Docker Compose - Hashicorp's Vault and Consul Part B (EaaS, dynamic secrets, leases, and revocation)
-    Docker Compose - Hashicorp's Vault and Consul Part C (Consul)
-    Docker Compose with two containers - Flask REST API service container and an Apache server container
-    Docker compose : Nginx reverse proxy with multiple containers
-    Docker & Kubernetes : Envoy - Getting started
-    Docker & Kubernetes : Envoy - Front Proxy
-    Docker & Kubernetes : Ambassador - Envoy API Gateway on Kubernetes
-    Docker Packer
-    Docker Cheat Sheet
-    Docker Q & A #1
-    Kubernetes Q & A - Part I
-    Kubernetes Q & A - Part II
-    Docker - Run a React app in a docker
-    Docker - Run a React app in a docker II (snapshot app with nginx)
-    Docker - NodeJS and MySQL app with React in a docker
-    Docker - Step by Step NodeJS and MySQL app with React - I
-    Installing LAMP via puppet on Docker
-    Docker install via Puppet
-    Nginx Docker install via Ansible
-    Apache Hadoop CDH 5.8 Install with QuickStarts Docker
-    Docker - Deploying Flask app to ECS
-    Docker Compose - Deploying WordPress to AWS
-    Docker - WordPress Deploy to ECS with Docker-Compose (ECS-CLI EC2 type)
-    Docker - WordPress Deploy to ECS with Docker-Compose (ECS-CLI Fargate type)
-    Docker - ECS Fargate
-    Docker - AWS ECS service discovery wit
 
 :end:
 
