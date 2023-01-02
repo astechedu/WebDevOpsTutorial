@@ -28,16 +28,17 @@ How to Host Multiple Domains With Nginx Ubuntu Web Server
 
 
 2. Log into your server via SSH.
+3. 
 
-    ssh root@your_server_ip
+        ssh root@your_server_ip
 
 
 
 3. Update apt and install nginx.
 
-    sudo apt update
 
-    sudo apt install nginx
+        sudo apt update
+        sudo apt install nginx
 
 
 
@@ -46,23 +47,22 @@ How to Host Multiple Domains With Nginx Ubuntu Web Server
 
 Check firewall status.
 
-    sudo ufw status
 
+        sudo ufw status
 
-      root@ultimateakash:~# sudo ufw status
+        root@ultimateakash:~# sudo ufw status
     
     
-    Status: inactive
+ Status: inactive
 
 
 
 If firewall's status is inactive, activate it by hitting the below command.
 
-    sudo ufw enable
 
+        sudo ufw enable
 
-
-    root@ultimateakash:~# sudo ufw enable
+        root@ultimateakash:~# sudo ufw enable
     
   
 Firewall is active and enabled on system startup
@@ -73,13 +73,15 @@ Firewall is active and enabled on system startup
 
 List the ufw application profiles.
 
-      sudo ufw app list
 
+         sudo ufw app list
 
-      root@ultimateakash:~# sudo ufw app list
+         root@ultimateakash:~# sudo ufw app list
+
 
 
 Available applications:
+
 
       Nginx Full
       Nginx HTTP
@@ -87,16 +89,16 @@ Available applications:
       OpenSSH
 
 
-     sudo ufw allow OpenSSH
+        sudo ufw allow OpenSSH
 
 
   Check ufw status.
+  
+    
+            sudo ufw status
 
-      sudo ufw status
-
-
-
-      root@ultimateakash:~# sudo ufw status
+          root@ultimateakash:~# sudo ufw status
+    
     
     
   Status: active
