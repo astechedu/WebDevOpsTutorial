@@ -18,17 +18,20 @@ Topics:
 
 
 # Nginx Multi domains
-
- #Nginx Mulit Domains on ubuntu 20.04
+#Nginx Mulit Domains on ubuntu 20.04
 
 How to Host Multiple Domains With Nginx Ubuntu Web Server
 
+
 1. Create A record on DNS records that points to your server.
+
 
 
 2. Log into your server via SSH.
 
     ssh root@your_server_ip
+
+
 
 3. Update apt and install nginx.
 
