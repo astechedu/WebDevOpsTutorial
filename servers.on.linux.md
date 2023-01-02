@@ -23,6 +23,22 @@ Topics:
 
 How to Host Multiple Domains With Nginx Ubuntu Web Server
 
+1. Create A record on DNS records that points to your server.
+
+
+2. Log into your server via SSH.
+
+    ssh root@your_server_ip
+
+3. Update apt and install nginx.
+
+    sudo apt update
+
+    sudo apt install nginx
+
+
+
+    
 4. Enable firewall.
 
 Check firewall status.
