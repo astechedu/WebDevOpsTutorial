@@ -356,7 +356,6 @@ Or
 
 
 Connect from another linked container
-
 docker run -it --rm --link redis1:redis --name client1 redis sh
 
 # redis-cli -h redis
@@ -394,8 +393,10 @@ docker run --name ngx -v "$(pwd)"/php:/usr/share/nginx/html -p8080:80 -d nginx
 
 //https://www.docker.com/blog/how-to-use-the-official-nginx-docker-image/
 
+// --rm (container remove after exited Or stopped it
 Running a basic web server: 
 $ docker run -it --rm -d -p 8080:80 --name web nginx
+
 
 Adding Custom HTML:
 docker run -it --rm -d -p 8080:80 --name web -v ~/site-content:/usr/share/nginx/html nginx
@@ -496,6 +497,10 @@ Shipping Our Image:
 $ docker login
 $ docker tag nginx-frontend <dockerid>/nginx-frontend
 $ docker push <dockerid>/nginx-frontend
+
+
+
+
 
 
 
