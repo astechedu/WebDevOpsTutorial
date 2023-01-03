@@ -101,7 +101,7 @@ Creating a “Hello, World” Program:
    
   [Go to Top](#nodejs_on_linux)
   <a name="django_on_linux">
-  # Install React App On Ubuntu 20.04
+  # Install Django App On Ubuntu 20.04
    
      Installed Python: 
    
