@@ -450,6 +450,9 @@ Step 4) Install Kubectl utility
 # Deployment Services(svc) Replicaset(rc)
 
 
+	microk8s kubectl get all -o wide
+
+
 Pods:
 
 	microk8s kubectl run tif-nginx --image=nginx:alpine --port=80
@@ -465,12 +468,17 @@ Pods:
 	microk8s kubectl apply -f abcd.yml --dry-run  //Check yml file is ok or not
 	microk8s kubectl create -f abcd.yml
 	microk8s kubectl get pod -n test
+	
+In Pod:
+
+	microk8s kubectl exec -it webserver --bash
+
 
 
 
 Devpoyment ():
 
-
+	microk8s kubectl get deployment  --all-namespaces
 	microk8s kubectl explain --recursive deploy
 	microk8s kubectl get deployments   //Create deployment
 	microk8s kubectl                   //Delete deployment
@@ -491,24 +499,26 @@ Services (svc):
 	microk8s kubectl                   //Create service
 	microk8s kubectl                   //Delete service
 	microk8s kubectl get svc           //Listing namespace
-	microk8s kubectl get svc    //Service
-
-
+	microk8s kubectl get svc    	   //Service
+	microk8s kubectl get services  --all-namespaces
 
 
 ReplicaSet (rc): 
 
 	microk8s kubectl get rc     //Replicaset
+	microk8s kubectl get replicasets  --all-namespaces 
 
 
+NameSpaces (ns): 
 
-Name Space (ns): 
 
+	microk8s kubectl create ns test   		//Create namespace
+	microk8s kubectl delete ns test  		 //Delete namespace
+	microk8s kubectl get ns          		 // Listing namespace
+	microk8s kubectl create -f abcd.yml -n test  	 //test namespace
+	microk8s kubectl delete ns test   		 //Delete namespace
+	microk8s kubectl get all -o wide
 
-	microk8s kubectl create ns test   //Create namespace
-	microk8s kubectl delete ns test   //Delete namespace
-	microk8s kubectl get ns           // Listing namespace
-        
 
 
 
@@ -586,31 +596,11 @@ microk8s:
  
 
 
-microk8s kubectl get deployment  --all-namespaces
-
-microk8s kubectl get services  --all-namespaces
-
-microk8s kubectl get replicasets  --all-namespaces
-
- 
-
-microk8s kubectl delete ns test   //Delete namespace
-microk8s kubectl get all -o wide
 
 
 
-NameSpaces:
-
-microk8s kubectl create -f abcd.yml -n test   //test namespace
 
 
-
-microk8s kubectl explain --recursive deploy
-microk8s kubectl get ns     //namespace
-microk8s kubectl get rc     //Replica
-
-In Pod:
-microk8s kubectl exec -it webserver --bash
 
 
 DSN - Domain Name Server (Convert hostname to ip)
