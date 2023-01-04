@@ -29,7 +29,7 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 
 ###### 8. Microk8s CMDS [Go To Pods on Ubuntu click here](#pods)
 
-###### 9. Microk8s CMDS [Go To Deployment on Ubuntu click here](#deployment)
+###### 9. Microk8s CMDS [Go To Deployment(deploy) on Ubuntu click here](#deployment)
 
 ###### 10. Microk8s CMDS [Go To Services(svc) on Ubuntu click here](#services)
   
@@ -464,7 +464,7 @@ Step 4) Install Kubectl utility
 
 
 	microk8s kubectl get all -o wide
-
+        microk8s kubectl get po,svc,deploy
 
 [Go To Top](#top)
 <a name="pods"></a>
@@ -472,6 +472,7 @@ Pods:
 
 	microk8s kubectl run tif-nginx --image=nginx:alpine --port=80
 	microk8s kubectl get pods
+	microk8s kubectl get ps -o wide
 	microk8s kubectl get pods -o wide
 	microk8s kubectl describe pod NAME
 	microk8s kubectl exec pod_name  env
@@ -484,6 +485,11 @@ Pods:
 	microk8s kubectl create -f abcd.yml
 	microk8s kubectl get pod -n test
 	
+How to verify 2 containers running in a pod
+
+	microk8s kubectl describe pod
+	
+
 In Pod:
 
 	microk8s kubectl exec -it webserver --bash
