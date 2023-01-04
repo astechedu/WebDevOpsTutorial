@@ -27,7 +27,7 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 
 ###### 7. Microk8s CMDS [Go To Namespaces(nc) on Ubuntu click here](#namespaces)
 
-###### 8. Microk8s CMDS [Go To Pods on Ubuntu click here](#pods)
+###### 8. Microk8s CMDS [Go To Pods(po) on Ubuntu click here](#pods)
 
 ###### 9. Microk8s CMDS [Go To Deployment(deploy) on Ubuntu click here](#deployment)
 
@@ -476,6 +476,7 @@ Pods:
 	microk8s kubectl get pods -o wide
 	microk8s kubectl describe pod NAME
 	microk8s kubectl exec pod_name  env
+	microk8s kubectl exec -it webserver -c webwatcher --/bin/bash
 	microk8s kubectl describe pod nginx
 	microk8s kubectl get pods --all-namespaces
 	microk8s kubectl run nginx --image=nginx --restart=Never
@@ -488,7 +489,7 @@ Pods:
 How to verify 2 containers running in a pod
 
 	microk8s kubectl describe pod
-	
+	microk8s kubectl describe pod|more
 
 In Pod:
 
