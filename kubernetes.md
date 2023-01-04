@@ -450,7 +450,7 @@ Step 4) Install Kubectl utility
 # Deployment Services(svc) Replicaset(rc)
 
 
-    Pods:
+Pods:
 
 	microk8s kubectl run tif-nginx --image=nginx:alpine --port=80
 	microk8s kubectl get pods
@@ -471,6 +471,7 @@ Step 4) Install Kubectl utility
 Devpoyment ():
 
 
+	microk8s kubectl explain --recursive deploy
 	microk8s kubectl get deployments   //Create deployment
 	microk8s kubectl                   //Delete deployment
 	microk8s kubectl                   // Listing deployment
@@ -493,6 +494,8 @@ Services (svc):
 	microk8s kubectl get svc    //Service
 
 
+
+
 ReplicaSet (rc): 
 
 	microk8s kubectl get rc     //Replicaset
@@ -505,7 +508,7 @@ Name Space (ns):
 	microk8s kubectl create ns test   //Create namespace
 	microk8s kubectl delete ns test   //Delete namespace
 	microk8s kubectl get ns           // Listing namespace
-
+        
 
 
 
@@ -603,18 +606,17 @@ microk8s kubectl create -f abcd.yml -n test   //test namespace
 
 
 microk8s kubectl explain --recursive deploy
-
 microk8s kubectl get ns     //namespace
-
 microk8s kubectl get rc     //Replica
 
+In Pod:
 microk8s kubectl exec -it webserver --bash
+
 
 DSN - Domain Name Server (Convert hostname to ip)
 
 
 servicename.namespacename.svc.cluster.local
-
 curl myfirstservice.default.svc.cluster.local
 
 
