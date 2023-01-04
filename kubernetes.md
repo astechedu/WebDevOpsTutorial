@@ -444,21 +444,7 @@ Step 4) Install Kubectl utility
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
----- Extra Not Linked above ------
-
+# Deployment Services(svc) Replicaset(rc)
 
 Devpoyment ():
 
@@ -505,9 +491,9 @@ Nodes:
 
 ##All the nodes are fine. microk8s kubectl get all --all-namespaces
 
-	microk8s add-node .
-	microk8s inspect
-	microk8s kubectl get node
+	 microk8s add-node .
+	 microk8s inspect
+	 microk8s kubectl get node
 
 
 ##Microk8s: how to get the node external-ip, like “minikube ip”? 
