@@ -22,7 +22,7 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 
 ###### 5. Microk8s CMDS [Go to Installation Minikube on Ubuntu click here](#install_minikube)
   
-###### 6. Microk8s CMDS [Deployment Services(svc) Replicas(rc) on Ubuntu click here](#d_svc_rc)
+###### 6. Microk8s CMDS [Go To Deployment Services(svc) Replicas(rc) on Ubuntu click here](#d_svc_rc)
   
 	
 
