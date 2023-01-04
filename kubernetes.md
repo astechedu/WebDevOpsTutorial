@@ -502,7 +502,10 @@ Services (svc):
 	microk8s kubectl get svc    	   //Service
 	microk8s kubectl get services  --all-namespaces
 
-
+	servicename.namespacename.svc.cluster.local
+	curl myfirstservice.default.svc.cluster.local
+	
+	
 ReplicaSet (rc): 
 
 	microk8s kubectl get rc     //Replicaset
@@ -533,7 +536,7 @@ Nodes:
 
 ##Microk8s: how to get the node external-ip, like “minikube ip”? 
 
-	microk8s.kubectl cluster-info
+	  microk8s.kubectl cluster-info
 
 microk8s.kubectl describe node $(microk8s.kubectl get nodes --no-headers | cut -f 1 -d " ")
 
@@ -591,23 +594,9 @@ OPERATION:
 
 
 
-microk8s: 
- //Single line commands
- 
+	DSN - Domain Name Server (Convert hostname to ip)
 
-
-
-
-
-
-
-
-
-DSN - Domain Name Server (Convert hostname to ip)
-
-
-servicename.namespacename.svc.cluster.local
-curl myfirstservice.default.svc.cluster.local
+	
 
 
 :end:
