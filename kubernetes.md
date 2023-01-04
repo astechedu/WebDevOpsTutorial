@@ -27,6 +27,10 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 ###### 7. Microk8s CMDS [Go To Services(svc) on Ubuntu click here](#services)
   
 ###### 8. Microk8s CMDS [Go To Replicas(rc) on Ubuntu click here](#replicas)
+###### 9. Microk8s CMDS [Go To Namespaces(nc) on Ubuntu click here](#replicas)
+###### 10. Microk8s CMDS [Go To Nodes on Ubuntu click here](#replicas)
+###### 11. Microk8s CMDS [Go To Pods on Ubuntu click here](#replicas)
+###### 12. Microk8s CMDS [Go To Errors on Ubuntu click here](#replicas)
   
 	
 
