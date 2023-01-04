@@ -542,10 +542,12 @@ microk8s.kubectl describe node $(microk8s.kubectl get nodes --no-headers | cut -
 
 
 ENV:
+
 host : mac
 
     multipass ubuntu:20.04 * 2 (one: microk8s-vm-0 the other one: microk8s-vm-1)
     microk8s 1.19/stable
+
 
 OPERATION:
 
@@ -554,14 +556,15 @@ OPERATION:
 	sudo usermod -a -G microk8s $USER
 	sudo chown -f -R $USER ~/.kube
 
-    microk8s status 
-    microk8s insepct
+	 microk8s status 
+	 microk8s insepct
 
-//All the nodes are fine. microk8s kubectl get all --all-namespaces
 
-microk8s add-node .
-microk8s inspect
-microk8s kubectl get node
+##All the nodes are fine. microk8s kubectl get all --all-namespaces
+
+	microk8s add-node .
+	microk8s inspect
+	microk8s kubectl get node
 
 
 
