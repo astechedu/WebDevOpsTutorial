@@ -506,6 +506,23 @@ Name Space (ns):
 
 
 
+Nodes: 
+
+##All the nodes are fine. microk8s kubectl get all --all-namespaces
+
+	microk8s add-node .
+	microk8s inspect
+	microk8s kubectl get node
+
+
+##Microk8s: how to get the node external-ip, like “minikube ip”? 
+
+	microk8s.kubectl cluster-info
+
+microk8s.kubectl describe node $(microk8s.kubectl get nodes --no-headers | cut -f 1 -d " ")
+
+ 
+ 
 
 
 
@@ -524,22 +541,16 @@ OR
 
 
 
-##Microk8s: how to get the node external-ip, like “minikube ip”? 
-
-	microk8s.kubectl cluster-info
-
-
-
-microk8s.kubectl describe node $(microk8s.kubectl get nodes --no-headers | cut -f 1 -d " ")
 
  
- 
- //Adding a worker node only with MicroK8s 
+##Adding a worker node only with MicroK8s
+    .  waiting.....
 
 
-------------------------------------------------------------------
 
 
+
+Error: 
 
 ##The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? #1916 
 
@@ -561,12 +572,6 @@ OPERATION:
 	 microk8s status 
 	 microk8s insepct
 
-
-##All the nodes are fine. microk8s kubectl get all --all-namespaces
-
-	microk8s add-node .
-	microk8s inspect
-	microk8s kubectl get node
 
 
 
