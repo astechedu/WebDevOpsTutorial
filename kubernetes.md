@@ -443,6 +443,9 @@ Step 4) Install Kubectl utility
 
 
 
+
+---- Extra Not Linked above ------
+
 Devpoyment ():
 microk8s kubectl get deployments   //Create deployment
 microk8s kubectl                   //Delete deployment
