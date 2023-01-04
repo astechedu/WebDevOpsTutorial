@@ -22,15 +22,20 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 
 ###### 5. Microk8s CMDS [Go to Installation Minikube on Ubuntu click here](#install_minikube)
   
-###### 6. Microk8s CMDS [Go To Deployment on Ubuntu click here](#deployment)
-
-###### 7. Microk8s CMDS [Go To Services(svc) on Ubuntu click here](#services)
   
-###### 8. Microk8s CMDS [Go To Replicas(rc) on Ubuntu click here](#replicas)
-###### 9. Microk8s CMDS [Go To Namespaces(nc) on Ubuntu click here](#replicas)
-###### 10. Microk8s CMDS [Go To Nodes on Ubuntu click here](#replicas)
-###### 11. Microk8s CMDS [Go To Pods on Ubuntu click here](#replicas)
-###### 12. Microk8s CMDS [Go To Errors on Ubuntu click here](#replicas)
+###### 6. Microk8s CMDS [Go To Nodes on Ubuntu click here](#nodes)
+
+###### 7. Microk8s CMDS [Go To Namespaces(nc) on Ubuntu click here](#namespaces)
+
+###### 8. Microk8s CMDS [Go To Pods on Ubuntu click here](#pods)
+
+###### 9. Microk8s CMDS [Go To Deployment on Ubuntu click here](#deployment)
+
+###### 10. Microk8s CMDS [Go To Services(svc) on Ubuntu click here](#services)
+  
+###### 11. Microk8s CMDS [Go To Replicas(rc) on Ubuntu click here](#replicas)
+
+###### 12. Microk8s CMDS [The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? on Ubuntu click here](#replicas)
   
 	
 
