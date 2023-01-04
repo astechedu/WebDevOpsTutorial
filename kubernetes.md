@@ -500,7 +500,7 @@ In Pod:
 	microk8s kubectl exec -it webserver --bash
         microk8s kubectl exec -it webserver -c webwatcher --/bin/bash
 	microk8s kubectl exec mc1 -c 1st --/bin /cat/user/share/nginx/html/index.html
-	
+	microk8s kubectl exec mc1 -c 2nd --/bin/cat /html/index.html
 	
 	
 
