@@ -478,7 +478,7 @@ Pods:
 	microk8s kubectl describe pod NAME|more
 	microk8s kubectl describe pod|more
 	microk8s kubectl exec pod_name env
-	microk8s kubectl exec -it webserver -c webwatcher --/bin/bash
+	
 	microk8s kubectl describe pod nginx
 	microk8s kubectl get pods --all-namespaces
 	microk8s kubectl run nginx --image=nginx --restart=Never
@@ -488,6 +488,8 @@ Pods:
 	microk8s kubectl create -f abcd.yml
 	microk8s kubectl get pod -n test
 	
+	
+	
 How to verify 2 containers running in a pod
 
 	microk8s kubectl describe pod
@@ -496,7 +498,11 @@ How to verify 2 containers running in a pod
 In Pod:
 
 	microk8s kubectl exec -it webserver --bash
-
+        microk8s kubectl exec -it webserver -c webwatcher --/bin/bash
+	microk8s kubectl exec mc1 -c 1st --/bin /cat/user/share/nginx/html/index.html
+	
+	
+	
 
 [Go To Top](#top)
 <a name="deployment"></a>
