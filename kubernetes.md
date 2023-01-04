@@ -460,8 +460,6 @@ Step 4) Install Kubectl utility
 ---- Extra Not Linked above ------
 
 
-
-
 Devpoyment ():
 
 
@@ -478,7 +476,6 @@ Devpoyment ():
 
 
 
-
 Services (svc):
 
 
@@ -488,11 +485,9 @@ Services (svc):
 
 
 
-
 ReplicaSet (rc): 
 
 	microk8s kubectl get rc     //Replicaset
-
 
 
 
@@ -521,9 +516,6 @@ Nodes:
 
 microk8s.kubectl describe node $(microk8s.kubectl get nodes --no-headers | cut -f 1 -d " ")
 
- 
- 
-
 
 
 
@@ -542,6 +534,7 @@ OR
 
 
 
+
  
 ##Adding a worker node only with MicroK8s
     .  waiting.....
@@ -554,12 +547,13 @@ Error:
 
 ##The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? #1916 
 
+
 ENV:
 
 host : mac
 
-      multipass ubuntu:20.04 * 2 (one: microk8s-vm-0 the other one: microk8s-vm-1)
-      microk8s 1.19/stable
+       multipass ubuntu:20.04 * 2 (one: microk8s-vm-0 the other one: microk8s-vm-1)
+       microk8s 1.19/stable
 
 
 OPERATION:
@@ -575,34 +569,8 @@ OPERATION:
 
 
 
------------------------------------------------------------------
-
-
-
-
-
-
-
-
------ Extra -------
-
-
-
-
-
-
-
-
 
 :end:
-
-
-
-
-
-
-
-
 
 
 
