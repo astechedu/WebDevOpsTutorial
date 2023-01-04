@@ -22,7 +22,11 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 
 ###### 5. Microk8s CMDS [Go to Installation Minikube on Ubuntu click here](#install_minikube)
   
-###### 6. Microk8s CMDS [Go To Deployment Services(svc) Replicas(rc) on Ubuntu click here](#d_svc_rc)
+###### 6. Microk8s CMDS [Go To Deployment on Ubuntu click here](#deployment)
+
+###### 7. Microk8s CMDS [Go To Services(svc) on Ubuntu click here](#services)
+  
+###### 8. Microk8s CMDS [Go To Replicas(rc) on Ubuntu click here](#replicas)
   
 	
 
@@ -475,7 +479,7 @@ In Pod:
 
 
 
-
+<a name="deployment"></a>
 Devpoyment ():
 
 	microk8s kubectl get deployment  --all-namespaces
@@ -493,6 +497,7 @@ Devpoyment ():
 
 
 
+<a name="services"></a>
 Services (svc):
 
 
@@ -506,10 +511,13 @@ Services (svc):
 	curl myfirstservice.default.svc.cluster.local
 	
 	
+	
+<a name="replicas"></a>
 ReplicaSet (rc): 
 
 	microk8s kubectl get rc     //Replicaset
 	microk8s kubectl get replicasets  --all-namespaces 
+
 
 
 NameSpaces (ns): 
