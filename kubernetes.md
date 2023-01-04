@@ -504,28 +504,34 @@ Name Space (ns):
 
 
 //Pod's environment and not visible to the outside world.
-microk8s.kubectl expose deployment tjf-nginx --type=NodePort --name=tjf2-nginx
+
+	microk8s.kubectl expose deployment tjf-nginx --type=NodePort --name=tjf2-nginx
+
 
 //IP address to access my nginx server. I ascertained my nginx IP port by entering 
-microk8s.kubectl get service
+
+	microk8s.kubectl get service
+
 
 
 sudo apt install lynx   //After I entered 
-lynx 10.0.0.177:80  // I was presented with the nginx welcome screen
+
+	lynx 10.0.0.177:80  // I was presented with the nginx welcome screen
 OR
-10.0.0.177:80       //Type on browser (mozilla firefox)
+	10.0.0.177:80       //Type on browser (mozilla firefox)
 
 
 
 //Microk8s: how to get the node external-ip, like “minikube ip”? 
-microk8s.kubectl cluster-info
+
+	microk8s.kubectl cluster-info
+
 
 microk8s.kubectl describe node $(microk8s.kubectl get nodes --no-headers | cut -f 1 -d " ")
 
  
  
- //
-Adding a worker node only with MicroK8s 
+ //Adding a worker node only with MicroK8s 
 
 
 ------------------------------------------------------------------
