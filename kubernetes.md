@@ -472,12 +472,20 @@ Devpoyment ():
 	microk8s kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1    //Update Deployment
 
 
+##Pod's environment and not visible to the outside world.
+
+	microk8s.kubectl expose deployment tjf-nginx --type=NodePort --name=tjf2-nginx
+
+
+
 
 Services (svc):
+
 
 	microk8s kubectl                   //Create service
 	microk8s kubectl                   //Delete service
 	microk8s kubectl get svc           //Listing namespace
+
 
 
 
@@ -500,11 +508,6 @@ Name Space (ns):
 
 
 
-
-
-##Pod's environment and not visible to the outside world.
-
-	microk8s.kubectl expose deployment tjf-nginx --type=NodePort --name=tjf2-nginx
 
 
 ##IP address to access my nginx server. I ascertained my nginx IP port by entering 
@@ -538,15 +541,14 @@ microk8s.kubectl describe node $(microk8s.kubectl get nodes --no-headers | cut -
 
 
 
-//The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? #1916 
-
+##The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? #1916 
 
 ENV:
 
 host : mac
 
-    multipass ubuntu:20.04 * 2 (one: microk8s-vm-0 the other one: microk8s-vm-1)
-    microk8s 1.19/stable
+      multipass ubuntu:20.04 * 2 (one: microk8s-vm-0 the other one: microk8s-vm-1)
+      microk8s 1.19/stable
 
 
 OPERATION:
