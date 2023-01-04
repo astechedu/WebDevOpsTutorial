@@ -457,6 +457,8 @@ Step 4) Install Kubectl utility
 	microk8s kubectl get all -o wide
 
 
+[Go To Top](#top)
+<a name="pods"></a>
 Pods:
 
 	microk8s kubectl run tif-nginx --image=nginx:alpine --port=80
@@ -478,7 +480,7 @@ In Pod:
 	microk8s kubectl exec -it webserver --bash
 
 
-
+[Go To Top](#top)
 <a name="deployment"></a>
 Devpoyment ():
 
@@ -497,6 +499,8 @@ Devpoyment ():
 
 
 
+
+[Go To Top](#top)
 <a name="services"></a>
 Services (svc):
 
@@ -512,6 +516,8 @@ Services (svc):
 	
 	
 	
+
+[Go To Top](#top)	
 <a name="replicas"></a>
 ReplicaSet (rc): 
 
@@ -520,6 +526,9 @@ ReplicaSet (rc):
 
 
 
+
+[Go To Top](#top)
+<a name="namespaces"></a>
 NameSpaces (ns): 
 
 
@@ -533,6 +542,8 @@ NameSpaces (ns):
 
 
 
+[Go To Top](#top)
+<a name="nodes"></a>
 Nodes: 
 
 ##All the nodes are fine. microk8s kubectl get all --all-namespaces
@@ -575,6 +586,8 @@ OR
 
 
 
+[Go To Top](#top)
+<a name="error"></a>
 Error: 
 
 ##The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? #1916 
