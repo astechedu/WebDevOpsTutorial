@@ -459,27 +459,41 @@ Step 4) Install Kubectl utility
 
 ---- Extra Not Linked above ------
 
+
+
+
 Devpoyment ():
-microk8s kubectl get deployments   //Create deployment
-microk8s kubectl                   //Delete deployment
-microk8s kubectl                   // Listing deployment
-microk8s kubectl apply -f https://k8s.io/examples/controllers/nginx-deployment.yaml
-microk8s kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1    //Update Deployment
+
+
+	microk8s kubectl get deployments   //Create deployment
+	microk8s kubectl                   //Delete deployment
+	microk8s kubectl                   // Listing deployment
+	microk8s kubectl apply -f https://k8s.io/examples/controllers/nginx-deployment.yaml
+	microk8s kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1    //Update Deployment
+
+
 
 Services (svc):
-microk8s kubectl                   //Create service
-microk8s kubectl                   //Delete service
-microk8s kubectl get svc           //Listing namespace
+
+	microk8s kubectl                   //Create service
+	microk8s kubectl                   //Delete service
+	microk8s kubectl get svc           //Listing namespace
+
 
 
 ReplicaSet (rc): 
-microk8s kubectl get rc     //Replicaset
+
+	microk8s kubectl get rc     //Replicaset
+
+
 
 
 Name Space (ns): 
-microk8s kubectl create ns test   //Create namespace
-microk8s kubectl delete ns test   //Delete namespace
-microk8s kubectl get ns           // Listing namespace
+
+
+	microk8s kubectl create ns test   //Create namespace
+	microk8s kubectl delete ns test   //Delete namespace
+	microk8s kubectl get ns           // Listing namespace
 
 
 
