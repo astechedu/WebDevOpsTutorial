@@ -475,7 +475,9 @@ Pods:
 	microk8s kubectl get ps -o wide
 	microk8s kubectl get pods -o wide
 	microk8s kubectl describe pod NAME
-	microk8s kubectl exec pod_name  env
+	microk8s kubectl describe pod NAME|more
+	microk8s kubectl describe pod|more
+	microk8s kubectl exec pod_name env
 	microk8s kubectl exec -it webserver -c webwatcher --/bin/bash
 	microk8s kubectl describe pod nginx
 	microk8s kubectl get pods --all-namespaces
@@ -489,7 +491,7 @@ Pods:
 How to verify 2 containers running in a pod
 
 	microk8s kubectl describe pod
-	microk8s kubectl describe pod|more
+	
 
 In Pod:
 
