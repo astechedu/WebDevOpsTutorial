@@ -449,6 +449,25 @@ Step 4) Install Kubectl utility
 <a name="d_svc_rc"></a>
 # Deployment Services(svc) Replicaset(rc)
 
+
+    Pods:
+
+	microk8s kubectl run tif-nginx --image=nginx:alpine --port=80
+	microk8s kubectl get pods
+	microk8s kubectl get pods -o wide
+	microk8s kubectl describe pod NAME
+	microk8s kubectl exec pod_name  env
+	microk8s kubectl describe pod nginx
+	microk8s kubectl get pods --all-namespaces
+	microk8s kubectl run nginx --image=nginx --restart=Never
+	microk8s kubectl delete pod nginx
+	microk8s kubectl get pods --show-labels
+	microk8s kubectl apply -f abcd.yml --dry-run  //Check yml file is ok or not
+	microk8s kubectl create -f abcd.yml
+	microk8s kubectl get pod -n test
+
+
+
 Devpoyment ():
 
 
@@ -471,7 +490,7 @@ Services (svc):
 	microk8s kubectl                   //Create service
 	microk8s kubectl                   //Delete service
 	microk8s kubectl get svc           //Listing namespace
-
+	microk8s kubectl get svc    //Service
 
 
 ReplicaSet (rc): 
@@ -562,21 +581,6 @@ OPERATION:
 microk8s: 
  //Single line commands
  
-//Creating a pod
-microk8s kubectl run tif-nginx --image=nginx:alpine --port=80
-microk8s kubectl get pods
-microk8s kubectl get pods -o wide
-microk8s kubectl describe pod NAME
-microk8s kubectl exec pod_name  env
-microk8s kubectl describe pod nginx
-microk8s kubectl get pods --all-namespaces
-microk8s kubectl run nginx --image=nginx --restart=Never
-microk8s kubectl delete pod nginx
-microk8s kubectl get pods --show-labels
-microk8s kubectl apply -f abcd.yml --dry-run  //Check yml file is ok or not
-microk8s kubectl create -f abcd.yml
-microk8s kubectl get pod -n test
-
 
 
 microk8s kubectl get deployment  --all-namespaces
@@ -590,6 +594,8 @@ microk8s kubectl get replicasets  --all-namespaces
 microk8s kubectl delete ns test   //Delete namespace
 microk8s kubectl get all -o wide
 
+
+
 NameSpaces:
 
 microk8s kubectl create -f abcd.yml -n test   //test namespace
@@ -599,7 +605,7 @@ microk8s kubectl create -f abcd.yml -n test   //test namespace
 microk8s kubectl explain --recursive deploy
 
 microk8s kubectl get ns     //namespace
-microk8s kubectl get svc    //Service
+
 microk8s kubectl get rc     //Replica
 
 microk8s kubectl exec -it webserver --bash
