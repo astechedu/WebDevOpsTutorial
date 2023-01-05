@@ -23,17 +23,18 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 ###### 9. Microk8s CMDS [Go To Deployment(deploy) on Ubuntu click here](#deployment)
 ###### 10. Microk8s CMDS [Go To Services(svc) on Ubuntu click here](#services)
 ###### 11. Microk8s CMDS [Go To Replicas(rc) on Ubuntu click here](#replicas)
+###### 12. Microk8s CMDS [Go To Ingress on Ubuntu click here](#ingress)
 
-###### 12. Microk8s CMDS [Node yml file click here](#yml_nodes)
-###### 13. Microk8s CMDS [Pod yml file click here](#yml_pods)
-###### 14. Microk8s CMDS [Deployment yml click here](#yml_deployments)
-###### 15. Microk8s CMDS [Service yml file click here](#yml_services)
-###### 16. Microk8s CMDS [Replicaset yml file click here](#yml_replicasets)
-###### 17. Microk8s CMDS [Namespaces yml file click here](#yml_namespaces)
+###### 13. Microk8s CMDS [Node yml file click here](#yml_nodes)
+###### 14. Microk8s CMDS [Pod yml file click here](#yml_pods)
+###### 15. Microk8s CMDS [Deployment yml click here](#yml_deployments)
+###### 16. Microk8s CMDS [Service yml file click here](#yml_services)
+###### 17. Microk8s CMDS [Replicaset yml file click here](#yml_replicasets)
+###### 18. Microk8s CMDS [Namespaces yml file click here](#yml_namespaces)
 
-###### 18. Microk8s CMDS [The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? on Ubuntu click here](#replicas)
+###### 19. Microk8s CMDS [The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? on Ubuntu click here](#replicas)
 
-###### 19. Microk8s CMDS [First App click here](#k-first-app)
+###### 20. Microk8s CMDS [First App click here](#k-first-app)
 
 	
 
@@ -1485,6 +1486,20 @@ my-namespace.yaml:
 :end:
 
 
+
+
+[Go To Top](#top)
+<a name="ingress"></a>
+# Ingress
+
+
+
+
+
+
+
+
+:end:
 
 
 
