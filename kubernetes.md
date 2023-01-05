@@ -600,16 +600,27 @@ OR
 
 
 
+
 [Go To Top](#top)
 <a name="yml_files"></a>
-# Pod yml,deployment yml,service yml file click here
+# 12. Pod yml,deployment yml,service yml file click here
+
 
 Pods: 
 
+
+
 Deployment: 
 
-Services
 
+
+Services:
+
+
+Replicaset:
+
+
+Volume: 
 
 
 
