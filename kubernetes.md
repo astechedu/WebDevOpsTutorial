@@ -670,7 +670,44 @@ Pods:
 
 Deployment: 
 
+   1. Creating a Deployment
+      
+      Command Create Deployment:
+      
+              kubectl apply -f https://k8s.io/examples/controllers/nginx-deployment.yaml
+	      
+      Update Deployment: 
+	      
+	      kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1
 
+
+
+	apiVersion: apps/v1
+	kind: Deployment
+	metadata:
+	  name: nginx-deployment
+	  labels:
+	    app: nginx
+	spec:
+	  replicas: 3
+	  selector:
+	    matchLabels:
+	      app: nginx
+	  template:
+	    metadata:
+	      labels:
+		app: nginx
+	    spec:
+	      containers:
+	      - name: nginx
+		image: nginx:1.14.2
+		ports:
+		- containerPort: 80	      
+	      
+	      
+	      
+	      
+	      
 
 Services:
 
