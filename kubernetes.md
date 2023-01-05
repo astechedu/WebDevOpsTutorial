@@ -599,6 +599,27 @@ OR
 
 
 
+
+[Go To Top](#top)
+<a name="yml_files"></a>
+# Pod yml,deployment yml,service yml file click here
+
+Pods: 
+
+Deployment: 
+
+Services
+
+
+
+
+
+:end:
+
+
+
+
+
 [Go To Top](#top)
 <a name="error"></a>
 Error: 
