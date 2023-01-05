@@ -627,8 +627,36 @@ Replicaset:
 
 
 Volumes: 
+   
+  1 hostPath configuration example
+  
 
-  1. emptyDir configuration example
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: test-pd
+	spec:
+	  containers:
+	  - image: registry.k8s.io/test-webserver
+	    name: test-container
+	    volumeMounts:
+	    - mountPath: /test-pd
+	      name: test-volume
+	  volumes:
+	  - name: test-volume
+	    hostPath:
+	      # directory location on host
+	      path: /data
+	      # this field is optional
+	      type: Directory
+
+  
+  
+
+
+
+
+  2. EmptyDir configuration example
   
 	apiVersion: v1
 	kind: Pod
@@ -648,7 +676,7 @@ Volumes:
 
 
 
-       2. AWS EBS configuration example
+       3. AWS EBS configuration example
        
 	Before you can use an EBS volume with a pod, you need to create it.
 
