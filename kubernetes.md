@@ -915,25 +915,63 @@ deployment.apps/nginx-deployment resumed
 
 Watch the status of the rollout until it's done.
 
-kubectl get rs -w
+	kubectl get rs -w
 
 Get the status of the latest rollout:
 
-kubectl get rs
+	kubectl get rs
 	
 	
 	
 	
+#Deployment status:
 	
+Progressing Deployment:
+	
+    The Deployment creates a new ReplicaSet.
+    The Deployment is scaling up its newest ReplicaSet.
+    The Deployment is scaling down its older ReplicaSet(s).
+    New Pods become ready or available (ready for at least MinReadySeconds).
+	
+Complete Deployment
+	
+	kubectl rollout status deployment/nginx-deployment
+	echo $?
+	
+	
+Failed Deployment:
+	
+	
+    Insufficient quota
+    Readiness probe failures
+    Image pull errors
+    Insufficient permissions
+    Limit ranges
+    Application runtime misconfiguration	
+	
+	
+	kubectl patch deployment/nginx-deployment -p '{"spec":{"progressDeadlineSeconds":600}}'
 
 	
+The output is similar to this:
+
+	deployment.apps/nginx-deployment patched
+	kubectl describe deployment nginx-deployment
+	kubectl get deployment nginx-deployment -o yaml
+	kubectl rollout status deployment/nginx-deployment
+	echo $?\
+	1
+	
+	
+Clean up Policy	
+	.spec.revisionHistoryLimit
 	
 	
 	
 	
 
 Services:
-
+	
 
 
 
