@@ -762,6 +762,39 @@ Volumes:
 	      persistentVolumeClaim:
 		claimName: my-lamp-site-data
 
+
+
+
+   6. Using subPath with expanded environment variables
+	
+
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: pod1
+	spec:
+	  containers:
+	  - name: container1
+	    env:
+	    - name: POD_NAME
+	      valueFrom:
+		fieldRef:
+		  apiVersion: v1
+		  fieldPath: metadata.name
+	    image: busybox:1.28
+	    command: [ "sh", "-c", "while [ true ]; do echo 'Hello'; sleep 10; done | tee -a /logs/hello.txt" ]
+	    volumeMounts:
+	    - name: workdir1
+	      mountPath: /logs
+	      # The variable expansion uses round brackets (not curly brackets).
+	      subPathExpr: $(POD_NAME)
+	  restartPolicy: Never
+	  volumes:
+	  - name: workdir1
+	    hostPath:
+	      path: /var/log/pods	
+	
+	
 	
 	
 :end:
