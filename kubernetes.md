@@ -606,6 +606,27 @@ OR
 # 12. Pod yml,deployment yml,service yml file click here
 
 
+Nodes: 
+
+
+    1. to create a Node from the following JSON manifest:
+
+
+	{
+	  "kind": "Node",
+	  "apiVersion": "v1",
+	  "metadata": {
+	    "name": "10.240.79.157",
+	    "labels": {
+	      "name": "my-first-k8s-node"
+	    }
+	  }
+	}
+
+
+
+
+
 Pods: 
 
 
