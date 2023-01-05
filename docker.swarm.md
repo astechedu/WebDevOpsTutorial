@@ -6,20 +6,32 @@ Topics:
 
 [Installation to click here](#docker_swarm_installations)
 
+[Installation to click here](#docker_swarm_installations)
+
+
+
+
+
+
+
+
 
 
 
 
 
 Docker Swarm (installation): 
-master node, worker1 worker2 & workder3
 
-docker info | head -50   //Docker info; check swarm active or inactive
+docker info | head -50                   //Docker info; check swarm active or inactive
 
-docker swarm init    //In master node
+docker swarm init                        //In master node
 
 doker node ls
 
+
+
+
+master node, worker1 worker2 & workder3
 
 
 master node:
