@@ -20,16 +20,18 @@ Topics:
 
 
 
-Docker Swarm (installation): 
+# Docker Swarm (installation): 
 
-docker info | head -50                   //Docker info; check swarm active or inactive
+        docker info | head -50                   //Docker info; check swarm active or inactive
 
-docker swarm init                        //In master node
+        docker swarm init                        //In master node
 
-doker node ls
+        doker node ls
 
 
 
+
+# Creating three virtual machines (vm)
 
 master node, worker1 worker2 & workder3
 
