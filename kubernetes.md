@@ -679,7 +679,7 @@ Pods:
        
 
 [Go to Top](#top)
-<a name="yml_deployment"></a>
+<a name="yml_deployments"></a>
 Deployment: 
 
    1. Creating a Deployment
@@ -1147,7 +1147,7 @@ Type LoadBalancer:
 	
 	
 [Go to Top](#top)	
-<a name="yml_replicaset"></a>	
+<a name="yml_replicasets"></a>	
 Replicaset:
 
 1. controllers/frontend.yaml
@@ -1262,7 +1262,7 @@ kubectl get pods
 	
 	
 	
-[Go to Top](#top)
+[Go To Top](#top)	
 <a name="yml_volumes"></a>
 Volumes: 
 
