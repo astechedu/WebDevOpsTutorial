@@ -135,20 +135,48 @@ You will also need to install the Docker engine on both nodes. By default, Docke
 sudo apt-get install apt-transport-https software-properties-common ca-certificates -y 
 
 Next, add the GPG key for Docker: 
-wget https://download.docker.com/linux/ubuntu/gpg && sudo apt-key add gpg 
+
+        wget https://download.docker.com/linux/ubuntu/gpg && sudo apt-key add gpg 
 
 Then, add the Docker repository and update the package cache: 
 
-sudo echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" >> /etc/apt/sources.list sudo apt-get update -y 
+sudo echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable" >> /etc/apt/sources.list 
+
+        sudo apt-get update -y 
+        
 Finally, install the Docker engine using the following command: 
 
-sudo apt-get install docker-ce -y 
+        sudo apt-get install docker-ce -y 
 
 Once the Docker is installed, start the Docker service and enable it to start on boot time: 
-sudo systemctl start docker && sudo systemctl enable docker By default, 
+
+        sudo systemctl start docker && sudo systemctl enable docker By default, 
 
 
 
+Configure firewall
+
+
+
+You will need to configure firewall rules for a swarm cluster to work properly on both nodes. Allow the ports 7946, 4789, 2376, 2376, 2377, and 80 using the UFW firewall with the following command:
+
+
+sudo ufw allow 2376/tcp && sudo ufw allow 7946/udp && sudo ufw allow 7946/tcp && sudo ufw allow 80/tcp && sudo ufw allow 2377/tcp && sudo ufw allow 4789/udp Next, reload the UFW firewall and enable it to start on boot: sudo ufw reload && sudo ufw enable Restart the Docker service to affect the Docker rules: sudo systemctl restart docker
+
+
+
+ Create Docker Swarm cluster:
+
+First, you will need to initialize the cluster with the IP address, so your node acts as a Manager node. On the Manager Node, run the following command for advertising IP address:
+
+docker swarm init --advertise-addr 192.168.0.103 You should see the following output:
+
+Swarm initialized: current node (iwjtf6u951g7rpx6ugkty3ksa) is now a manager.
+
+To add a worker to this swarm, run the following command:
+    docker swarm join --token SWMTKN-1-5p5f6p6tv1cmjzq9ntx3zmck9kpgt355qq0uaqoj2ple629dl4-5880qso8jio78djpx5mzbqcfu 192.168.0.103:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
 
 
 
