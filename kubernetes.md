@@ -26,11 +26,13 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 
 ###### 12. Microk8s CMDS [Node yml file click here](#yml_nodes)
 ###### 13. Microk8s CMDS [Pod yml file click here](#yml_pods)
-###### 14. Microk8s CMDS [Deployment yml click here](#yml_deployment)
-###### 15. Microk8s CMDS [Service yml file click here](#yml_service)
-###### 16. Microk8s CMDS [Replicaset yml file click here](#yml_replicaset)
+###### 14. Microk8s CMDS [Deployment yml click here](#yml_deployments)
+###### 15. Microk8s CMDS [Service yml file click here](#yml_services)
+###### 16. Microk8s CMDS [Replicaset yml file click here](#yml_replicasets)
+###### 17. Microk8s CMDS [Namespaces yml file click here](#yml_namespaces)
 
-###### 13. Microk8s CMDS [The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? on Ubuntu click here](#replicas)
+
+###### 18. Microk8s CMDS [The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? on Ubuntu click here](#replicas)
 
 	
 
@@ -607,13 +609,13 @@ OR
 
 
 
-[Go To Top](#top)
-<a name="yml_files"></a>
+
+
 # 12. Pod yml,deployment yml,service yml file click here
 
 
 [Go to Top](#top)
-<a name="file_nodes"></a>
+<a name="yml_nodes"></a>
 Nodes: 
 
 
@@ -635,7 +637,7 @@ Nodes:
 
 
 [Go to Top](#top)
-<a name="file_pods"></a>
+<a name="yml_pods"></a>
 Pods: 
 
    1.  pods/simple-pod.yaml:
@@ -677,7 +679,7 @@ Pods:
        
 
 [Go to Top](#top)
-<a name="file_deployment"></a>
+<a name="yml_deployment"></a>
 Deployment: 
 
    1. Creating a Deployment
@@ -984,7 +986,7 @@ Clean up Policy
 	
 	
 [Go to Top](#top)
-<a name="file_services"></a>
+<a name="yml_services"></a>
 Services:
 	
 	
@@ -1144,9 +1146,8 @@ Type LoadBalancer:
 	
 	
 	
-	
-[Go to Top](#top)
-<a name="file_replicaset"></a>	
+[Go to Top](#top)	
+<a name="yml_replicaset"></a>	
 Replicaset:
 
 1. controllers/frontend.yaml
@@ -1262,7 +1263,7 @@ kubectl get pods
 	
 	
 [Go to Top](#top)
-<a name="file_volumes"></a>
+<a name="yml_volumes"></a>
 Volumes: 
 
    
