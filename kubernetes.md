@@ -626,7 +626,7 @@ Replicaset:
 
 
 
-Volume: 
+Volumes: 
 
   1. emptyDir configuration example
   
@@ -648,8 +648,30 @@ Volume:
 
 
 
+       2. AWS EBS configuration example
+       
+	Before you can use an EBS volume with a pod, you need to create it.
+
+		aws ec2 create-volume --availability-zone=eu-west-1a --size=10 --volume-type=gp2
 
 
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: test-ebs
+		spec:
+		  containers:
+		  - image: registry.k8s.io/test-webserver
+		    name: test-container
+		    volumeMounts:
+		    - mountPath: /test-ebs
+		      name: test-volume
+		  volumes:
+		  - name: test-volume
+		    # This AWS EBS volume must already exist.
+		    awsElasticBlockStore:
+		      volumeID: "<volume id>"
+		      fsType: ext4
 
 :end:
 
