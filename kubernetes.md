@@ -1488,11 +1488,59 @@ OPERATION:
 	DSN - Domain Name Server (Convert hostname to ip)
 
 	
-
-
 :end:
 
 
+
+[Go To Top](#top)
+<a name="k-fisrst-app"></a>
+# Kubernetes First App
+
+
+
+Docker: 
+
+docker node js:
+
+FROM node:7
+ADD app.js /app.js
+ENTRYPOINT ["node","app.js"]
+
+
+
+dockercontainer# ps aux //command
+
+sudo ps aux | grep app.js
+
+sudo docker tag kubia img/name  //Same img diff tag
+
+sudo docker images | head
+
+sudo docker login -u abc -p 
+
+
+Kubernetes: 
+
+sudo kubectl create deployment --image img/name kubia   //from docker hub
+sudo kubectl scale deployment kubia --replicas 3
+sudo kubectl expose deployment kubia --type=NodePort --port 8080
+
+sudo kubectl get pods
+sudo kubectl get services
+
+
+
+
+
+
+
+
+
+
+
+
+
+:end:
 
 
 
