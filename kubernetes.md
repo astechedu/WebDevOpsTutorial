@@ -1467,15 +1467,15 @@ my-namespace.yaml:
 	kubectl get namespace	
 	
 	
-How to switch between Kubernetes namespaces?
+ How to switch between Kubernetes namespaces?
 
 	kubectl config set-context –current –namespace=K21
 
 
-How to delete a Kubernetes namespace?
+ How to delete a Kubernetes namespace?
 
 
-Delete a namespace with the below command:
+ Delete a namespace with the below command:
 
 
 	kubectl delete namespaces <name>
