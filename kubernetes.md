@@ -848,6 +848,87 @@ Proportional scaling:
 	     
 
 	
+Pausing and Resuming a rollout of a Deployment 
+
+
+For example, with a Deployment that was created:
+
+Get the Deployment details:
+
+kubectl get deploy
+
+Get the rollout status:
+
+kubectl get rs
+
+
+Pause by running the following command:
+
+kubectl rollout pause deployment/nginx-deployment
+
+
+The output is similar to this:
+
+deployment.apps/nginx-deployment paused
+
+Then update the image of the Deployment:
+
+kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
+
+The output is similar to this:
+
+deployment.apps/nginx-deployment image updated
+
+Notice that no new rollout started:
+
+kubectl rollout history deployment/nginx-deployment
+
+The output is similar to this:
+
+deployments "nginx"
+REVISION  CHANGE-CAUSE
+1   <none>
+
+Get the rollout status to verify that the existing ReplicaSet has not changed:
+
+kubectl get rs
+
+	
+	
+You can make as many updates as you wish, for example, update the resources that will be used:
+
+kubectl set resources deployment/nginx-deployment -c=nginx --limits=cpu=200m,memory=512Mi
+
+The output is similar to this:
+
+deployment.apps/nginx-deployment resource requirements updated
+	
+	
+	
+Eventually, resume the Deployment rollout and observe a new ReplicaSet coming up with all the new updates:
+
+kubectl rollout resume deployment/nginx-deployment
+
+The output is similar to this:
+
+deployment.apps/nginx-deployment resumed
+
+Watch the status of the rollout until it's done.
+
+kubectl get rs -w
+
+Get the status of the latest rollout:
+
+kubectl get rs
+	
+	
+	
+	
+	
+
+	
+	
+	
 	
 	
 
