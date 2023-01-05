@@ -61,11 +61,14 @@ worker3:
 
 
 
-docker node ls 
+        docker node ls 
 
 
 worker2:
-        docker swarm leave  //This node is out from cluster
+
+//This node is out from cluster
+
+        docker swarm leave  
         docker node ls
 
         docker swarm | head -50
@@ -73,7 +76,7 @@ worker2:
 
 
 
-        Manager: 
+  Manager: 
         
         docker node ls
         docker node rm 
