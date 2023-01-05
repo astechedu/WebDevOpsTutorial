@@ -629,7 +629,7 @@ Nodes:
 
 Pods: 
 
-     pods/simple-pod.yaml 
+   1.  pods/simple-pod.yaml:
 
 
 	apiVersion: v1
@@ -644,7 +644,28 @@ Pods:
 	    - containerPort: 80
 
 
+     2. Pod templates:
+       
 
+	apiVersion: batch/v1
+	kind: Job
+	metadata:
+	  name: hello
+	spec:
+	  template:
+	    # This is the pod template
+	    spec:
+	      containers:
+	      - name: hello
+		image: busybox:1.28
+		command: ['sh', '-c', 'echo "Hello, Kubernetes!" && sleep 3600']
+	      restartPolicy: OnFailure
+	    # The pod template ends here      
+
+
+
+
+       
 
 
 Deployment: 
