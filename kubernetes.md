@@ -797,7 +797,59 @@ Rolling Back to a Previous Revision
 		deployment.apps/nginx-deployment rolled back
 	  
 	  
-	  
+
+		kubectl get deployment nginx-deployment
+		kubectl describe deployment nginx-deployment
+
+
+Scaling a Deployment:
+
+	
+	You can scale a Deployment by using the following command:
+
+		kubectl scale deployment/nginx-deployment --replicas=10
+
+	The output is similar to this:
+
+		deployment.apps/nginx-deployment scaled
+
+
+	to run based on the CPU utilization of your existing Pods.
+
+		kubectl autoscale deployment/nginx-deployment --min=10 --max=15 --cpu-percent=80
+
+	The output is similar to this:
+
+		deployment.apps/nginx-deployment scaled
+
+
+	
+Proportional scaling:
+
+
+	For example, you are running a Deployment with 10 replicas, maxSurge=3, and maxUnavailable=2.
+
+	    Ensure that the 10 replicas in your Deployment are running.
+
+		 kubectl get deploy
+
+	You update to a new image which happens to be unresolvable from inside the cluster.
+
+		kubectl set image deployment/nginx-deployment nginx=nginx:sometag
+
+	The output is similar to this:
+
+		deployment.apps/nginx-deployment image updated
+
+
+             kubectl get rs
+	     kubectl get deploy
+	     kubectl get rs
+	     
+
+	
+	
+	
 
 Services:
 
