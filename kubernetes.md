@@ -612,6 +612,8 @@ OR
 # 12. Pod yml,deployment yml,service yml file click here
 
 
+[Go to Top](#top)
+<a name="file_nodes"></a>
 Nodes: 
 
 
@@ -632,7 +634,8 @@ Nodes:
 
 
 
-
+[Go to Top](#top)
+<a name="file_pods"></a>
 Pods: 
 
    1.  pods/simple-pod.yaml:
@@ -673,7 +676,8 @@ Pods:
 
        
 
-
+[Go to Top](#top)
+<a name="file_deployment"></a>
 Deployment: 
 
    1. Creating a Deployment
@@ -975,7 +979,12 @@ Clean up Policy
 	
 	
 	
-
+	
+	
+	
+	
+[Go to Top](#top)
+<a name="file_services"></a>
 Services:
 	
 	
@@ -1134,6 +1143,10 @@ Type LoadBalancer:
 	
 	
 	
+	
+	
+[Go to Top](#top)
+<a name="file_replicaset"></a>	
 Replicaset:
 
 1. controllers/frontend.yaml
@@ -1248,8 +1261,8 @@ kubectl get pods
 	
 	
 	
-
-
+[Go to Top](#top)
+<a name="file_volumes"></a>
 Volumes: 
 
    
