@@ -167,15 +167,16 @@ sudo ufw allow 2376/tcp && sudo ufw allow 7946/udp && sudo ufw allow 7946/tcp &&
 
  Create Docker Swarm cluster:
 
-First, you will need to initialize the cluster with the IP address, so your node acts as a Manager node. On the Manager Node, run the following command for advertising IP address:
+First, you will need to initialize the cluster with the IP address, so your node acts as a Manager node. On the Manager Node, run the following command for 
 
-docker swarm init --advertise-addr 192.168.0.103 You should see the following output:
+advertising IP address:
+
+    docker swarm init --advertise-addr 192.168.0.103 You should see the following output:
+    
 
 Swarm initialized: current node (iwjtf6u951g7rpx6ugkty3ksa) is now a manager.
-
 To add a worker to this swarm, run the following command:
-    docker swarm join --token SWMTKN-1-5p5f6p6tv1cmjzq9ntx3zmck9kpgt355qq0uaqoj2ple629dl4-5880qso8jio78djpx5mzbqcfu 192.168.0.103:2377
-
+           docker swarm join --token SWMTKN-1-5p5f6p6tv1cmjzq9ntx3zmck9kpgt355qq0uaqoj2ple629dl4-5880qso8jio78djpx5mzbqcfu 192.168.0.103:2377
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
 
 
