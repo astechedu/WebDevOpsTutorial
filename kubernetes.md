@@ -755,7 +755,7 @@ Deployment:
 	      
 	      
 	      
-Rolling Back a Deployment:     
+ Rolling Back a Deployment:     
 	      
 	      
 	Suppose that you made a typo while updating the Deployment, by putting the image name as nginx:1.161 instead of nginx:1.16.1:
@@ -780,17 +780,17 @@ Rolling Back a Deployment:
 	  kubectl describe deployment
 	  
 	  
-Checking Rollout History of a Deployment  
+ Checking Rollout History of a Deployment  
 
 	  kubectl rollout history deployment/nginx-deployment
 	  
-To see the details of each revision, run:
+  To see the details of each revision, run:
 
 	  kubectl rollout history deployment/nginx-deployment --revision=2
 	  
 	
 	
-Rolling Back to a Previous Revision	  
+ Rolling Back to a Previous Revision	  
 
 	Now you've decided to undo the current rollout and rollback to the previous revision:
 
@@ -814,7 +814,7 @@ Rolling Back to a Previous Revision
 		kubectl describe deployment nginx-deployment
 
 
-Scaling a Deployment:
+ Scaling a Deployment:
 
 	
 	You can scale a Deployment by using the following command:
@@ -836,7 +836,7 @@ Scaling a Deployment:
 
 
 	
-Proportional scaling:
+ Proportional scaling:
 
 
 	For example, you are running a Deployment with 10 replicas, maxSurge=3, and maxUnavailable=2.
@@ -860,98 +860,99 @@ Proportional scaling:
 	     
 
 	
-Pausing and Resuming a rollout of a Deployment 
+ Pausing and Resuming a rollout of a Deployment 
 
 
-For example, with a Deployment that was created:
+	For example, with a Deployment that was created:
 
-Get the Deployment details:
+	Get the Deployment details:
 
-kubectl get deploy
+		kubectl get deploy
 
-Get the rollout status:
+	Get the rollout status:
 
-kubectl get rs
-
-
-Pause by running the following command:
-
-kubectl rollout pause deployment/nginx-deployment
+		kubectl get rs
 
 
-The output is similar to this:
+	Pause by running the following command:
 
-deployment.apps/nginx-deployment paused
+		kubectl rollout pause deployment/nginx-deployment
 
-Then update the image of the Deployment:
 
-kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
+	The output is similar to this:
 
-The output is similar to this:
+		deployment.apps/nginx-deployment paused
 
-deployment.apps/nginx-deployment image updated
+	Then update the image of the Deployment:
 
-Notice that no new rollout started:
+		kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
 
-kubectl rollout history deployment/nginx-deployment
+	The output is similar to this:
 
-The output is similar to this:
+		deployment.apps/nginx-deployment image updated
 
-deployments "nginx"
-REVISION  CHANGE-CAUSE
-1   <none>
+	Notice that no new rollout started:
 
-Get the rollout status to verify that the existing ReplicaSet has not changed:
+	kubectl rollout history deployment/nginx-deployment
 
-kubectl get rs
+	The output is similar to this:
 
-	
-	
-You can make as many updates as you wish, for example, update the resources that will be used:
+	deployments "nginx"
+	REVISION  CHANGE-CAUSE
+	1   <none>
 
-kubectl set resources deployment/nginx-deployment -c=nginx --limits=cpu=200m,memory=512Mi
-
-The output is similar to this:
-
-deployment.apps/nginx-deployment resource requirements updated
-	
-	
-	
-Eventually, resume the Deployment rollout and observe a new ReplicaSet coming up with all the new updates:
-
-kubectl rollout resume deployment/nginx-deployment
-
-The output is similar to this:
-
-deployment.apps/nginx-deployment resumed
-
-Watch the status of the rollout until it's done.
-
-	kubectl get rs -w
-
-Get the status of the latest rollout:
+	Get the rollout status to verify that the existing ReplicaSet has not changed:
 
 	kubectl get rs
-	
-	
-	
+
+
+
+	You can make as many updates as you wish, for example, update the resources that will be used:
+
+	kubectl set resources deployment/nginx-deployment -c=nginx --limits=cpu=200m,memory=512Mi
+
+	The output is similar to this:
+
+	deployment.apps/nginx-deployment resource requirements updated
+
+
+
+	Eventually, resume the Deployment rollout and observe a new ReplicaSet coming up with all the new updates:
+
+	kubectl rollout resume deployment/nginx-deployment
+
+	The output is similar to this:
+
+	deployment.apps/nginx-deployment resumed
+
+	Watch the status of the rollout until it's done.
+
+		kubectl get rs -w
+
+	Get the status of the latest rollout:
+
+		kubectl get rs
+
+
+
 	
 #Deployment status:
-	
-Progressing Deployment:
-	
-    The Deployment creates a new ReplicaSet.
-    The Deployment is scaling up its newest ReplicaSet.
-    The Deployment is scaling down its older ReplicaSet(s).
-    New Pods become ready or available (ready for at least MinReadySeconds).
-	
-Complete Deployment
+
+	Progressing Deployment:
+
+	    The Deployment creates a new ReplicaSet.
+	    The Deployment is scaling up its newest ReplicaSet.
+	    The Deployment is scaling down its older ReplicaSet(s).
+	    New Pods become ready or available (ready for at least MinReadySeconds).
+
+
+ Complete Deployment
 	
 	kubectl rollout status deployment/nginx-deployment
 	echo $?
 	
 	
-Failed Deployment:
+ Failed Deployment:
 	
 	
     Insufficient quota
@@ -1173,21 +1174,21 @@ Replicaset:
 	
 	
 
-	
-kubectl apply -f https://kubernetes.io/examples/controllers/frontend.yaml
 
-You can then get the current ReplicaSets deployed:
+	kubectl apply -f https://kubernetes.io/examples/controllers/frontend.yaml
 
-kubectl get rs
+	You can then get the current ReplicaSets deployed:
 
-You can also check on the state of the ReplicaSet:
+	kubectl get rs
 
-kubectl describe rs/frontend
+	You can also check on the state of the ReplicaSet:
 
-kubectl get pods
-	
-kubectl get pods frontend-b2zdv -o yaml
-	
+	kubectl describe rs/frontend
+
+	kubectl get pods
+
+	kubectl get pods frontend-b2zdv -o yaml
+
 	
 
 	apiVersion: v1
@@ -1210,7 +1211,7 @@ kubectl get pods frontend-b2zdv -o yaml
 	
 	
 	
-Non-Template Pod acquisitions:
+ Non-Template Pod acquisitions:
 	
    pods/pod-rs.yaml 
 	
@@ -1239,18 +1240,18 @@ Non-Template Pod acquisitions:
 	  - name: hello2
 	    image: gcr.io/google-samples/hello-app:1.0	
 	
-	
-kubectl apply -f https://kubernetes.io/examples/pods/pod-rs.yaml
-kubectl get pods	
-	
-If you create the Pods first:
 
-kubectl apply -f https://kubernetes.io/examples/pods/pod-rs.yaml
+		kubectl apply -f https://kubernetes.io/examples/pods/pod-rs.yaml
+		kubectl get pods	
 
-And then create the ReplicaSet however:
+	If you create the Pods first:
 
-kubectl apply -f https://kubernetes.io/examples/controllers/frontend.yaml
-kubectl get pods
+		kubectl apply -f https://kubernetes.io/examples/pods/pod-rs.yaml
+
+	And then create the ReplicaSet however:
+
+		kubectl apply -f https://kubernetes.io/examples/controllers/frontend.yaml
+		kubectl get pods
 	
 	
 	
