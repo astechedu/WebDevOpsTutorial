@@ -1444,12 +1444,43 @@ Volumes:
 <a name="yml_namespaces"></a>
 NameSpaces:
 	
+    Create a new Kubernetes namespace:
+	
+	kubectl create namespace <name>
 	
 	
 	
+my-namespace.yaml:
+
+
+	apiVersion: v1
+	kind: Namespace
+	metadata:
+	  name: <insert-namespace-name-here>
+
+	Then run:
+
+	kubectl create -f my-namespace.yaml
+
+	The command to display all namespaces in the cluster is:
+
+	kubectl get namespace	
 	
 	
-	
+How to switch between Kubernetes namespaces?
+
+	kubectl config set-context –current –namespace=K21
+
+
+How to delete a Kubernetes namespace?
+
+
+Delete a namespace with the below command:
+
+
+	kubectl delete namespaces <name>
+
+
 	
 :end:
 
@@ -1490,6 +1521,10 @@ OPERATION:
 
 	
 :end:
+
+
+
+
 
 
 
