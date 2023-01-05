@@ -972,14 +972,276 @@ Clean up Policy
 
 Services:
 	
+	
+Defining a Service:
+
+	apiVersion: v1
+	kind: Service
+	metadata:
+	  name: my-service
+	spec:
+	  selector:
+	    app.kubernetes.io/name: MyApp
+	  ports:
+	    - protocol: TCP
+	      port: 80
+	      targetPort: 9376
+
+
+2. 
+
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: nginx
+	  labels:
+	    app.kubernetes.io/name: proxy
+	spec:
+	  containers:
+	  - name: nginx
+	    image: nginx:stable
+	    ports:
+	      - containerPort: 80
+		name: http-web-svc
+
+	---
+	apiVersion: v1
+	kind: Service
+	metadata:
+	  name: nginx-service
+	spec:
+	  selector:
+	    app.kubernetes.io/name: proxy
+	  ports:
+	  - name: name-of-service-port
+	    protocol: TCP
+	    port: 80
+	    targetPort: http-web-svc
+	
+	
+	
+Services without selectors: 
+	
+	
+	apiVersion: v1
+	kind: Service
+	metadata:
+	  name: my-service
+	spec:
+	  ports:
+	    - protocol: TCP
+	      port: 80
+	      targetPort: 9376	
 
 
 
+	
+	apiVersion: discovery.k8s.io/v1
+	kind: EndpointSlice
+	metadata:
+	  name: my-service-1 # by convention, use the name of the Service
+			     # as a prefix for the name of the EndpointSlice
+	  labels:
+	    # You should set the "kubernetes.io/service-name" label.
+	    # Set its value to match the name of the Service
+	    kubernetes.io/service-name: my-service
+	addressType: IPv4
+	ports:
+	  - name: '' # empty because port 9376 is not assigned as a well-known
+		     # port (by IANA)
+	    appProtocol: http
+	    protocol: TCP
+	    port: 9376
+	endpoints:
+	  - addresses:
+	      - "10.4.5.6" # the IP addresses in this list can appear in any order
+	      - "10.1.2.3"	
+	
+	
+	
+	
+	
+Multi-Port Services: 
+	
+	
+	apiVersion: v1
+	kind: Service
+	metadata:
+	  name: my-service
+	spec:
+	  selector:
+	    app.kubernetes.io/name: MyApp
+	  ports:
+	    - name: http
+	      protocol: TCP
+	      port: 80
+	      targetPort: 9376
+	    - name: https
+	      protocol: TCP
+	      port: 443
+	      targetPort: 9377	
+
+	
+	
+
+	apiVersion: v1
+	kind: Service
+	metadata:
+	  name: my-service
+	spec:
+	  type: NodePort
+	  selector:
+	    app.kubernetes.io/name: MyApp
+	  ports:
+	      # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+	    - port: 80
+	      targetPort: 80
+	      # Optional field
+	      # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+	      nodePort: 30007	
+
+	
+
+	
+Type LoadBalancer:
+	
+	
+	apiVersion: v1
+	kind: Service
+	metadata:
+	  name: my-service
+	spec:
+	  selector:
+	    app.kubernetes.io/name: MyApp
+	  ports:
+	    - protocol: TCP
+	      port: 80
+	      targetPort: 9376
+	  clusterIP: 10.0.171.239
+	  type: LoadBalancer
+	status:
+	  loadBalancer:
+	    ingress:
+	    - ip: 192.0.2.127	
+	
+	
+	
+	
+	
 Replicaset:
 
+1. controllers/frontend.yaml
 
+	apiVersion: apps/v1
+	kind: ReplicaSet
+	metadata:
+	  name: frontend
+	  labels:
+	    app: guestbook
+	    tier: frontend
+	spec:
+	  # modify replicas according to your case
+	  replicas: 3
+	  selector:
+	    matchLabels:
+	      tier: frontend
+	  template:
+	    metadata:
+	      labels:
+		tier: frontend
+	    spec:
+	      containers:
+	      - name: php-redis
+		image: gcr.io/google_samples/gb-frontend:v3
+	
+	
 
+	
+kubectl apply -f https://kubernetes.io/examples/controllers/frontend.yaml
 
+You can then get the current ReplicaSets deployed:
+
+kubectl get rs
+
+You can also check on the state of the ReplicaSet:
+
+kubectl describe rs/frontend
+
+kubectl get pods
+	
+kubectl get pods frontend-b2zdv -o yaml
+	
+	
+
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  creationTimestamp: "2020-02-12T07:06:16Z"
+	  generateName: frontend-
+	  labels:
+	    tier: frontend
+	  name: frontend-b2zdv
+	  namespace: default
+	  ownerReferences:
+	  - apiVersion: apps/v1
+	    blockOwnerDeletion: true
+	    controller: true
+	    kind: ReplicaSet
+	    name: frontend
+	    uid: f391f6db-bb9b-4c09-ae74-6a1f77f3d5cf
+	...	
+	
+	
+	
+Non-Template Pod acquisitions:
+	
+   pods/pod-rs.yaml 
+	
+	
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: pod1
+	  labels:
+	    tier: frontend
+	spec:
+	  containers:
+	  - name: hello1
+	    image: gcr.io/google-samples/hello-app:2.0
+
+	---
+
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: pod2
+	  labels:
+	    tier: frontend
+	spec:
+	  containers:
+	  - name: hello2
+	    image: gcr.io/google-samples/hello-app:1.0	
+	
+	
+kubectl apply -f https://kubernetes.io/examples/pods/pod-rs.yaml
+kubectl get pods	
+	
+If you create the Pods first:
+
+kubectl apply -f https://kubernetes.io/examples/pods/pod-rs.yaml
+
+And then create the ReplicaSet however:
+
+kubectl apply -f https://kubernetes.io/examples/controllers/frontend.yaml
+kubectl get pods
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 Volumes: 
