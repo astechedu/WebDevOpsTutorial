@@ -667,6 +667,9 @@ Volumes:
    
   1 hostPath configuration example
   
+  
+     Command Create Pod :  kubectl apply -f https://k8s.io/examples/pods/simple-pod.yaml
+
 
 	apiVersion: v1
 	kind: Pod
