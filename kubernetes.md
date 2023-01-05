@@ -776,6 +776,27 @@ To see the details of each revision, run:
 
 	  kubectl rollout history deployment/nginx-deployment --revision=2
 	  
+	
+	
+Rolling Back to a Previous Revision	  
+
+	Now you've decided to undo the current rollout and rollback to the previous revision:
+
+		kubectl rollout undo deployment/nginx-deployment
+
+	The output is similar to this:
+
+		deployment.apps/nginx-deployment rolled back
+
+	Alternatively, you can rollback to a specific revision by specifying it with --to-revision:
+
+		kubectl rollout undo deployment/nginx-deployment --to-revision=2
+
+	The output is similar to this:
+
+		deployment.apps/nginx-deployment rolled back
+	  
+	  
 	  
 
 Services:
