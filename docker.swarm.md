@@ -54,6 +54,7 @@ worker2:
         paster token2 from master here
         docker swarm join-token master
 
+worker3:
 
         paster token3 from master here
         docker swarm join-token manager
