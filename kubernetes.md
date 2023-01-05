@@ -672,14 +672,6 @@ Deployment:
 
    1. Creating a Deployment
       
-      Command Create Deployment:
-      
-              kubectl apply -f https://k8s.io/examples/controllers/nginx-deployment.yaml
-	      
-      Update Deployment: 
-	      
-	      kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1
-
 
 
 	apiVersion: apps/v1
@@ -703,6 +695,47 @@ Deployment:
 		image: nginx:1.14.2
 		ports:
 		- containerPort: 80	      
+	      
+
+
+      Command Create Deployment:
+      
+              kubectl apply -f https://k8s.io/examples/controllers/nginx-deployment.yaml
+	      
+      Update Deployment: 
+	      
+	      kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1
+
+
+
+	or use the following command:
+
+		kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
+
+	The output is similar to:
+
+	deployment.apps/nginx-deployment image updated
+
+	Alternatively, you can edit the Deployment and change .spec.template.spec.containers[0].image from nginx:1.14.2 to nginx:1.16.1:
+
+		kubectl edit deployment/nginx-deployment
+
+	The output is similar to:
+
+	deployment.apps/nginx-deployment edited
+
+	To see the rollout status, run:
+
+		kubectl rollout status deployment/nginx-deployment
+
+	The output is similar to this:
+
+	Waiting for rollout to finish: 2 out of 3 new replicas have been updated...
+
+	or
+
+	deployment "nginx-deployment" successfully rolled out
+	      
 	      
 	      
 	      
