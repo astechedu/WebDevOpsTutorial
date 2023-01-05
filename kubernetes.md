@@ -980,10 +980,7 @@ Clean up Policy
 	
 	
 	
-	
-	
-	
-	
+
 	
 [Go to Top](#top)
 <a name="yml_services"></a>
@@ -1146,7 +1143,7 @@ Type LoadBalancer:
 	
 	
 	
-[Go to Top](#top)	
+[Go To Top](#top)	
 <a name="yml_replicasets"></a>	
 Replicaset:
 
@@ -1434,6 +1431,17 @@ Volumes:
 	  - name: workdir1
 	    hostPath:
 	      path: /var/log/pods	
+	
+
+	
+	
+[Go To Top](#top)
+<a name="namespaces"></a>
+NameSpaces:
+	
+	
+	
+	
 	
 	
 	
