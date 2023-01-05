@@ -17,9 +17,6 @@ Topics:
 
 
 
-
-
-
 # Docker Swarm (installation): 
 
         docker info | head -50                   //Docker info; check swarm active or inactive
@@ -33,7 +30,9 @@ Topics:
 
 # Creating three virtual machines (vm)
 
- 1. master node (vm), worker1(vm) & worker2(vm) 
+ 1. master node (vm) 
+ 2. worker1(vm) 
+ 3. worker2(vm) 
 
 
 master node:
