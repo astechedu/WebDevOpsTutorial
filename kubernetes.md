@@ -24,6 +24,13 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 ###### 10. Microk8s CMDS [Go To Services(svc) on Ubuntu click here](#services)
 ###### 11. Microk8s CMDS [Go To Replicas(rc) on Ubuntu click here](#replicas)
 ###### 12. Microk8s CMDS [Pod yml,deployment yml,service yml file click here](#yml_files)
+
+###### 12. Microk8s CMDS [Node yml file click here](#yml_nodes)
+###### 12. Microk8s CMDS [Pod yml file click here](#yml_pods)
+###### 12. Microk8s CMDS [Deployment yml click here](#yml_deployment)
+###### 12. Microk8s CMDS [Service yml file click here](#yml_service)
+###### 12. Microk8s CMDS [Replicaset yml file click here](#yml_replicaset)
+
 ###### 13. Microk8s CMDS [The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? on Ubuntu click here](#replicas)
 
 	
