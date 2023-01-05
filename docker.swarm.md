@@ -6,7 +6,7 @@ Topics:
 
 [Installation to click here](#docker_swarm_installations)
 
-[Installation to click here](#docker_swarm_installations)
+[Creating three virtual machines & more cmds to click here](#threen_swm_cmds)
 
 
 
@@ -15,15 +15,16 @@ Topics:
 
 
 
-
+<a name="docker_swarm_installations"></a>
 
 # Docker Swarm (installation): 
 
-//Docker info; check swarm active or inactive
+  Docker info; check swarm active or inactive
 
         docker info | head -50   
         
- //In master node
+        
+   In master node
  
         docker swarm init                       
 
@@ -32,6 +33,7 @@ Topics:
 
 
 
+<a name="threen_swm_cmds"></a>
 # Creating three virtual machines (vm)
 
  1. master node (vm) 
