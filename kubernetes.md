@@ -13,26 +13,16 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 ###### 1. Basic Commands [Go to Basic Commands click here](#basic_commands) 
 ###### 2. Minikube [Go to Minikube click here](#minikube)
 ###### 3. KubeCTL [Go to Kubectl click here](#kubectl)
-
 ###### 4. Create YML File [Go to Create YML File click here](#create_yml_file)
-
 ###### 5. Microk8s CMDS [Go to Microk8s click here](#micro8ks_cmds)
-
 ###### 5. Microk8s CMDS [Go to Installation Minikube on Ubuntu click here](#install_minikube)
   
-  
 ###### 6. Microk8s CMDS [Go To Nodes on Ubuntu click here](#nodes)
-
 ###### 7. Microk8s CMDS [Go To Namespaces(nc) on Ubuntu click here](#namespaces)
-
 ###### 8. Microk8s CMDS [Go To Pods(po) on Ubuntu click here](#pods)
-
 ###### 9. Microk8s CMDS [Go To Deployment(deploy) on Ubuntu click here](#deployment)
-
 ###### 10. Microk8s CMDS [Go To Services(svc) on Ubuntu click here](#services)
-  
 ###### 11. Microk8s CMDS [Go To Replicas(rc) on Ubuntu click here](#replicas)
-
 ###### 12. Microk8s CMDS [The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? on Ubuntu click here](#replicas)
 ###### 13. Microk8s CMDS [Pod yml,deployment yml,service yml file click here](#yml_files)
 
