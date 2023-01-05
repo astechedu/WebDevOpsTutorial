@@ -737,7 +737,7 @@ Deployment:
 	deployment "nginx-deployment" successfully rolled out
 	      
 	      
-	      
+	 kubectl get rs
 	      
 	      
 	      
@@ -755,6 +755,7 @@ Replicaset:
 
 
 Volumes: 
+
    
   1 hostPath configuration example
   
@@ -781,8 +782,7 @@ Volumes:
 	      # this field is optional
 	      type: Directory
 
-  
-  
+    
 
 
 
