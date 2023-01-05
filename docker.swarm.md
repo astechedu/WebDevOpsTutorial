@@ -19,9 +19,13 @@ Topics:
 
 # Docker Swarm (installation): 
 
-        docker info | head -50                   //Docker info; check swarm active or inactive
+//Docker info; check swarm active or inactive
 
-        docker swarm init                        //In master node
+        docker info | head -50   
+        
+ //In master node
+ 
+        docker swarm init                       
 
         doker node ls
 
