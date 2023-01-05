@@ -1533,10 +1533,11 @@ OPERATION:
 # Kubernetes First App
 
 
+Step 1:
 
 Docker: 
 
-Creating docker image:
+  Creating docker image:
 
 
 	FROM node:7
@@ -1556,9 +1557,24 @@ Creating docker image:
 	sudo docker login -u abc -p 
 
 
+  app.js
+ 
+	<code>
+	var http = require('http');
+
+	//create a server object:
+	http.createServer(function (req, res) {
+	  res.write('Hello World!'); //write a response to the client
+	  res.end(); //end the response
+	}).listen(8080); //the server object listens on port 8080 
+	</code>
 
 
-Kubernetes: 
+
+Step: 2
+
+ Kubernetes: 
+
 
 Creating First App:
 
@@ -1568,14 +1584,6 @@ Creating First App:
 
 	sudo kubectl get pods
 	sudo kubectl get services
-
-
-
-
-
-
-
-
 
 
 
