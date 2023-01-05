@@ -41,7 +41,7 @@ Topics:
 
 master node:
 
-getting a token from master nodee......copy this token and  paste it in worker1 and other token in worker2
+getting a token from master nodee......copy this token and  paste it in worker1 and other token in worker2 and save these tokens for future
 
 
 workder1:
