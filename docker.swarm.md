@@ -182,5 +182,37 @@ To add a manager to this swarm, run 'docker swarm join-token manager' and follow
 
 
 
+Add Worker Node to swarm cluster:
+
+        docker swarm join --token SWMTKN-1-5p5f6p6tv1cmjzq9ntx3zmck9kpgt355qq0uaqoj2ple629dl4-5880qso8jio78djpx5mzbqcfu 192.168.0.103:2377
+
+
+        docker node ls
+
+
+Launch web service in Docker Swarm:
+
+        docker service create --name webserver -p 80:80 httpd
+        docker service ls
+        docker service scale webserver=2
+        docker service ps webserver
+        
+        
+Test Docker Swarm:
+    type on browser
+    
+        192.168.0.103
+        
+
+
+:end:
+
+
+
+
+
+
+
+
 
 
