@@ -739,8 +739,44 @@ Deployment:
 	      
 	 kubectl get rs
 	      
+	 kubectl describe deployments
 	      
 	      
+	      
+Rolling Back a Deployment:     
+	      
+	      
+	Suppose that you made a typo while updating the Deployment, by putting the image name as nginx:1.161 instead of nginx:1.16.1:
+
+		kubectl set image deployment/nginx-deployment nginx=nginx:1.161 
+
+	The output is similar to this:
+
+	deployment.apps/nginx-deployment image updated
+
+	The rollout gets stuck. You can verify it by checking the rollout status:
+
+		kubectl rollout status deployment/nginx-deployment
+
+	The output is similar to this:
+
+	Waiting for rollout to finish: 1 out of 3 new replicas have been updated.	      
+
+	  
+	  kubectl get rs
+	  kubectl get pods
+	  kubectl describe deployment
+	  
+	  
+Checking Rollout History of a Deployment  
+
+	  kubectl rollout history deployment/nginx-deployment
+	  
+To see the details of each revision, run:
+
+	  kubectl rollout history deployment/nginx-deployment --revision=2
+	  
+	  
 
 Services:
 
