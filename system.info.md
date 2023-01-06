@@ -199,6 +199,10 @@ To launch Ubuntu’s system monitor, enter the following in a terminal window:
 
 
 
+ps
+ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10 
+
+
 
 
 
