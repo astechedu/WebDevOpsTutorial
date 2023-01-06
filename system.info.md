@@ -176,12 +176,25 @@ Ways to Check Available Memory in Ubuntu 22.04
     top            command.
     htop           command.
     cat /proc/meminfo
+    lscpu
+    
+    
+    
+    top –i
+
+    M – sort task list by memory usage
+    P – sort task list by processor usage
+    N – sort task list by process ID
+    T – sort task list by run time
+
+man top
 
 
+Graphical Utility Option:
 
+To launch Ubuntu’s system monitor, enter the following in a terminal window:
 
-
-
+      gnome-system-monitor
 
 
 
