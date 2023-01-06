@@ -46,7 +46,9 @@ lshw –List Hardware
   A general purpose utility, that reports detailed and brief information about multiple different hardware units such as cpu, memory, disk, usb controllers, network adapters etc.
   
   
-           sudo lshw $ sudo lshw –short
+           sudo lshw
+           
+           sudo lshw –short
   
   
   Generate report in html/xml format
