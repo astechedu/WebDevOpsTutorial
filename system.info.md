@@ -19,8 +19,7 @@ Topics
   [Got To Top](#top)
   <a name=""></a>
   # Linux
-  
-  
+    
 # Basic Linux Commands to Check Hardware and System Information
 
 
@@ -47,7 +46,7 @@ lshw –List Hardware
   A general purpose utility, that reports detailed and brief information about multiple different hardware units such as cpu, memory, disk, usb controllers, network adapters etc.
   
   
-         sudo lshw $ sudo lshw –short
+           sudo lshw $ sudo lshw –short
   
   
   Generate report in html/xml format
@@ -68,6 +67,7 @@ We can also export lshw reports in html, xml and json formats.
 
 
 3. lspci- List PCI
+ 
 
              lspci
 
@@ -82,12 +82,16 @@ We can also export lshw reports in html, xml and json formats.
 
 
              lsusb
+             
 
 6. lsblk- List block devices
 
+
              lsblk
+             
 
 7. df-disk space of file systems
+
 
              df -H
 
@@ -124,19 +128,19 @@ Many of the virtual files in the /proc directory contain information about hardw
 
 CPU/Memory information
 
-             cat /proc/cpuinfo
+                cat /proc/cpuinfo
 
 Version
 
-              cat /proc/version
+                cat /proc/version
 
 SCSI/Sata devices
 
-              cat /proc/scsi/scsi 
+                cat /proc/scsi/scsi 
 
 Partitions
 
-              cat /proc/partitions
+                 cat /proc/partitions
 
 
 
@@ -145,54 +149,12 @@ Partitions
 The hdparm command gets information about sata devices like hard disks. Each of the command has a slightly different method of extracting information.
 
 
-              hdparm
+                hdparm
 
 
 13. Inxi
 
-              inxi –Fx
+                inxi –Fx
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+:end:  
