@@ -93,6 +93,67 @@ $ sudo fdisk –l
  
  
  
+10. Dmidecode
+
+The dmidecode command is different from all other commands. It extracts hardware information by reading data from the SMBOIS data structures (also called DMI tables). # display information about the processor/cpu
+
+
+$ sudo dmidecode -t processor # memory/ram information
+
+$ sudo dmidecode -t memory # bios details
+
+$ sudo dmidecode -t bios
+
+
+11. /proc files
+
+Many of the virtual files in the /proc directory contain information about hardware and configurations. Here are some of them
+
+
+CPU/Memory information
+
+$ cat /proc/cpuinfo
+
+Version
+
+$ cat /proc/version
+
+SCSI/Sata devices
+
+$ cat /proc/scsi/scsi 
+
+Partitions
+
+$ cat /proc/partitions
+
+
+
+12. hdparm
+
+The hdparm command gets information about sata devices like hard disks. Each of the command has a slightly different method of extracting information.
+
+
+hdparm
+
+
+13. Inxi
+
+inxi –Fx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
