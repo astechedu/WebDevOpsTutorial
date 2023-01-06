@@ -159,4 +159,37 @@ The hdparm command gets information about sata devices like hard disks. Each of 
                 inxi –Fx
 
 
+
+
+
+
+
+
+
+
+///
+Ways to Check Available Memory in Ubuntu 22.04
+
+    free           command.
+    vmstat         command.
+    /proc/meminfo  command.
+    top            command.
+    htop           command.
+    cat /proc/meminfo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :end:  
