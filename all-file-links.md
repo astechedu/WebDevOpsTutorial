@@ -5,7 +5,7 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
 ## System Information :diamond_shape_with_a_dot_inside:
 
-:link:[Windows Linux etc click here](system.info.txt)     
+:link:[Windows Linux etc click here](system.info.md)     
 
 ## CSS :diamond_shape_with_a_dot_inside:
 
