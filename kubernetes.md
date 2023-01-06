@@ -1269,10 +1269,8 @@ Replicaset:
 Volumes: 
 
    
-   
+1. Empty Directory:
 
-Kubernetes : Volume
-1.
 	apiVersion: v1
 	kind: pod
 	metadata:
@@ -1290,7 +1288,8 @@ Kubernetes : Volume
 
 
 
-2.
+2. Host Path
+
 	apiVersion: v1
 	kind: pod
 	metadata:
@@ -1313,7 +1312,7 @@ Kubernetes : Volume
 
 
 
-  1 hostPath configuration example
+  3 hostPath configuration example
   
   
      Command Create Pod :  kubectl apply -f https://k8s.io/examples/pods/simple-pod.yaml
@@ -1343,7 +1342,7 @@ Kubernetes : Volume
 
 
 
-  2. EmptyDir configuration example
+  4. EmptyDir configuration example
   
 	apiVersion: v1
 	kind: Pod
@@ -1363,7 +1362,7 @@ Kubernetes : Volume
 
 
 
-       3. AWS EBS configuration example
+       5. AWS EBS configuration example
        
 	Before you can use an EBS volume with a pod, you need to create it.
 
@@ -1391,7 +1390,7 @@ Kubernetes : Volume
 
 
 
-   4. hostPath FileOrCreate configuration example
+   6. hostPath FileOrCreate configuration example
 
 
 	apiVersion: v1
@@ -1420,7 +1419,7 @@ Kubernetes : Volume
 
 
 
-    5. Using subPath
+    7. Using subPath
 
 
 	apiVersion: v1
@@ -1452,7 +1451,7 @@ Kubernetes : Volume
 
 
 
-   6. Using subPath with expanded environment variables
+   8. Using subPath with expanded environment variables
 	
 
 	apiVersion: v1
