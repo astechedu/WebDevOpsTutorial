@@ -1269,6 +1269,50 @@ Replicaset:
 Volumes: 
 
    
+   
+
+Kubernetes : Volume
+1.
+	apiVersion: v1
+	kind: pod
+	metadata:
+	  name: test-vol
+	spec:
+	  containers:
+	  - image: myimg/name
+	    name: text-container
+	    volumeMounts: 
+	    - mountPath: /data
+	      name: first-volume
+	   volumes: 
+	   - name: first-volume
+	     emptyDir: {}   
+
+
+
+2.
+	apiVersion: v1
+	kind: pod
+	metadata:
+	  name: test-vol
+	spec:
+	  containers:
+	  - image: myimg/name
+	    name: text-container
+	    volumeMounts: 
+	     - mountPath: /data
+	      name: first-volume
+	   volumes: 
+	   - name: first-volume
+	     hostPath: 
+	      path: /tmp/data
+
+
+
+
+
+
+
   1 hostPath configuration example
   
   
