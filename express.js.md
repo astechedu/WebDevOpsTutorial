@@ -63,22 +63,27 @@ Express application generator:
      express
      express -h
 
+
 Usage: express [options] [dir]
 
-express --view=pug myapp
+    express --view=pug myapp
 
 
 
 Then install dependencies:
 
-$ cd myapp
-$ npm install
+        cd myapp
+        npm install
+
 
 On MacOS or Linux, run the app with this command:
 
-$ DEBUG=myapp:* npm start
+
+    DEBUG=myapp:* npm start
+
 
 On Windows Command Prompt, use this command:
+
 
 > set DEBUG=myapp:* & npm start
 
@@ -90,25 +95,25 @@ Then load http://localhost:3000/ in your browser to access the app.
 
 The generated app has the following directory structure:
 
-.
-├── app.js
-├── bin
-│   └── www
-├── package.json
-├── public
-│   ├── images
-│   ├── javascripts
-│   └── stylesheets
-│       └── style.css
-├── routes
-│   ├── index.js
-│   └── users.js
-└── views
-    ├── error.pug
-    ├── index.pug
-    └── layout.pug
+        .
+        ├── app.js
+        ├── bin
+        │   └── www
+        ├── package.json
+        ├── public
+        │   ├── images
+        │   ├── javascripts
+        │   └── stylesheets
+        │       └── style.css
+        ├── routes
+        │   ├── index.js
+        │   └── users.js
+        └── views
+            ├── error.pug
+            ├── index.pug
+            └── layout.pug
 
-7 directories, 9 files
+
 
 
 
