@@ -201,6 +201,11 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
 
 
+# Resume 
+
+:link:[Added Points to resume](resume.md)
+
+
 
 
 
