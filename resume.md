@@ -8,6 +8,9 @@ Topics:
 
 
 
+
+
+
 Points: 
 
 
@@ -17,3 +20,6 @@ Added Points to resume:
 
 Watch this video: 
         https://youtu.be/Tevxhn6Odc8?t=1309
+
+
+2. Done : Personal Access Token, Jenkins & Github Integration, CI/CD Pipeline
