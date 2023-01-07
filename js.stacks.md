@@ -37,29 +37,15 @@ How To Get Started with the MERN Stack
 Let’s start with the setup. Open your terminal and create a new file directory in any convenient location on your local machine. You can name it anything but in this example, it is called mern-todo.
 
     mkdir mern-todo
-
-Now, enter into that file directory:
-
     cd mern-todo
-
-The next step is to initialize the project with a package.json file. This file will contain some information about your app and the dependencies that it needs to run.
-
-You can use:
 
     npm init
 
-And follow the instructions when prompted. Or you can use:
-
     npm init -y
 
-To use the default values.
-
-
-Step 2 — Setting Up the Node Server
-
-To run your JavaScript code on the backend, you need to spin up a server that will compile your code.
 
     npm install express
+    
 
 Now, create a file index.js and type the following code into it and save:
 
@@ -84,6 +70,8 @@ index.js
      app.listen(port, () => {
        console.log(`Server running on port ${port}`);
      });
+     
+     
 
      This snippet from the preceeding code helps handle CORS related issues that you might face when trying to access the API from different domains during development and testing:
 
@@ -94,24 +82,18 @@ index.js
      });
 
 
-It’s time to start your server to see if it works. Open your terminal in the same directory as your index.js file and type:
-
     node index.js
 
-If everything goes well, you will see Server running on port 5000 in your terminal.
 
-
-Step 3 — Creating the Routes
-
-There are three things that the app needs to do:
+Creating the Routes
 
     create a task
     view all tasks
     delete a completed task
 
-For each task, you will need to create routes that will define multiple endpoints that the todo app will depend on. So let’s create a folder routes and create a file api.js with the following code in it.
 
-    mkdir routes
+     mkdir routes
+
 
      Edit api.js and paste the following code in it:
      routes/api.js
@@ -132,6 +114,7 @@ For each task, you will need to create routes that will define multiple endpoint
      });
 
      module.exports = router;
+     
 
 This provides placeholder routes for GET, POST, and DELETE.
 
@@ -143,6 +126,7 @@ Step 4 — Defining the Models
 To create a schema and a model, install Mongoose which is a Node package that makes working with MongoDB easier.
 
     # ensure that you are in the `mern-todo` project directory
+    
     npm install mongoose
 
 Create a new folder in your root directory and name it models. Inside it create a file and name it todo.js with the following code in it:
@@ -209,9 +193,8 @@ models/todo.js
 
 Step 5 — Connecting to a Database
 
-You will need a database where you will store your data. For this, you will make use of mLab. Follow the documentation to get started with mLab.
-
 After setting up your database you need to update index.js file with the following code:
+
 index.js
 
 
@@ -252,10 +235,9 @@ index.js
      app.listen(port, () => {
        console.log(`Server running on port ${port}`);
      });
+     
+     
 
-Note: In versions prior to Express 4.16+ it was necessary to rely upon middleware like body-parser. However, it is now possible to use the built-in parser.
-
-If you are using an older version of Express, use npm to install body-parser:
 
     npm install body-parser
 
@@ -264,32 +246,21 @@ In the preceeding code made use of process.env to access environment variables, 
 
      DB = 'mongodb://<USER>:<PASSWORD>@example.mlab.com:port/todo'
 
-Make sure you use your own MongoDB URL from mLab after you created your database and user. Replace <USER> with the username and <PASSWORD> with the password of the user you created.
-
-To work with environment variable you will have to install a Node package called dotenv that makes sure you have access to environment variable stored in the .env file.
-
     # ensure that you are in the `mern-todo` project directory
     npm install dotenv
 
-Then require and configure it in index.js:
-
      require('dotenv').config()
-
-Using environment variables instead of writing credentials to the application code directly can hide sensitive information from your versioning system. It is considered a best practice to separate configuration and secret data from application code in this manner.
-\
  
  
  Step 6 — Testing the API
 
-This is the part we start trying out things to make sure your RESTful API is working. Since your frontend is not ready yet, you can make use of some API development clients to test your code.
 
-You can use Postman or Insomnia or your preferred client for testing APIs.
-
-Start your server using the command:
 
     node index.js
 
 Now, open your client, create a GET method and navigate to http://localhost:5000/api/todos.
+
+
 
 A screenshot of the Insomnia REST client testing endpoints
 
@@ -337,20 +308,13 @@ In the same root directory as your backend code, which is the mern-todo director
 
     npx create-react-app client
 
-This will create a new folder in your mern-todo directory called client, where you will add all the React code.
-
- 
-
  
  Step 8 — Running the React App
 
 Before testing the React app, there are many dependencies that need to be installed in the project root directory.
-
 First, install concurrently as a dev dependency:
 
       npm install concurrently --save-dev
-
-Concurrently is used to run more than one command simultaneously from the same terminal window.
 
 Then, install nodemon as a dev dependency:
 
@@ -391,8 +355,6 @@ Your app will be open and running on localhost:3000.
  
 Step 9 — Creating the React Components
 
-
-Inside your src folder create another folder called components and inside it create three files Input.js, ListTodo.js, and Todo.js.
 
 Open Input.js file and paste the following:
  
@@ -445,8 +407,7 @@ client/src/components/Input.js
 
      export default Input;
 
- 
-To make use of axios, which is a Promise-based HTTP client for the browser and Node.js, you will need to navigate to your client directory from your terminal:
+
 
     cd client
 
@@ -669,9 +630,6 @@ client/src/index.css
      code {
        font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
      }
-
-Assuming no errors when saving all these files, the todo app will be ready and fully functional with the functionality discussed earlier: creating a task, deleting a task, and viewing all your tasks.
-Conclusion
 
 
 
