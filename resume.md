@@ -9,8 +9,9 @@
 Points: 
 
 
-Added in Resume:
+Added Points to resume:
 
-Ceated CI/CD pipeline of a webapp using doker, jenkins and aws.
+1. Ceated CI/CD pipeline of a webapp using doker, jenkins and aws.
 
-Watch this video: https://youtu.be/Tevxhn6Odc8?t=1309
+Watch this video: 
+        https://youtu.be/Tevxhn6Odc8?t=1309
