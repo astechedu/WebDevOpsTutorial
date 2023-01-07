@@ -66,7 +66,7 @@ Express application generator:
 
 Usage: express [options] [dir]
 
-    express --view=pug myapp
+     express --view=pug myapp
 
 
 
@@ -87,11 +87,17 @@ On Windows Command Prompt, use this command:
 
 > set DEBUG=myapp:* & npm start
 
+
 On Windows PowerShell, use this command:
 
-PS> $env:DEBUG='myapp:*'; npm start
+
+PS> $env:DEBUG='myapp:*'; 
+
+        npm start
 
 Then load http://localhost:3000/ in your browser to access the app.
+
+
 
 The generated app has the following directory structure:
 
