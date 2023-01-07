@@ -1,6 +1,6 @@
 # Resume
 
-[Home](all-files-links.md)
+[Home](all-file-links.md)
 Topics: 
 
 
