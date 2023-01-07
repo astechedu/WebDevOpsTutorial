@@ -18,11 +18,7 @@ Topics
 
 Setting Up the Project:
 
- 
- Viewtutorial
-// Tutorial //
 How To Get Started with the MERN Stack
-Published on December 12, 2019 · Updated on August 31, 2021
 
     JavaScript
     React
