@@ -38,12 +38,8 @@ Let’s start with the setup. Open your terminal and create a new file directory
 
     mkdir mern-todo
     cd mern-todo
-
     npm init
-
     npm init -y
-
-
     npm install express
     
 
@@ -85,7 +81,7 @@ index.js
     node index.js
 
 
-Creating the Routes
+Creating the Routes:
 
     create a task
     view all tasks
@@ -116,11 +112,9 @@ Creating the Routes
      module.exports = router;
      
 
-This provides placeholder routes for GET, POST, and DELETE.
 
 
-
-Step 4 — Defining the Models
+ Defining the Models:
 
 
 To create a schema and a model, install Mongoose which is a Node package that makes working with MongoDB easier.
@@ -128,8 +122,6 @@ To create a schema and a model, install Mongoose which is a Node package that ma
     # ensure that you are in the `mern-todo` project directory
     
     npm install mongoose
-
-Create a new folder in your root directory and name it models. Inside it create a file and name it todo.js with the following code in it:
 
     mkdir models
 
@@ -191,7 +183,7 @@ models/todo.js
 
 
 
-Step 5 — Connecting to a Database
+ Connecting to a Database:
 
 After setting up your database you need to update index.js file with the following code:
 
@@ -264,7 +256,6 @@ Now, open your client, create a GET method and navigate to http://localhost:5000
 
 A screenshot of the Insomnia REST client testing endpoints
 
-Test all the API endpoints and make sure they are working. For the endpoints that require body, send JSON back with the necessary fields since it’s what you set up in your code.
 
 Sample POST request:
 
@@ -301,15 +292,14 @@ Test and observe the results of GET, POST, and DELETE.
  
  
  
-Step 7 — Creating the Frontend
-
+Creating the Frontend:
 
 In the same root directory as your backend code, which is the mern-todo directory, run:
 
     npx create-react-app client
 
  
- Step 8 — Running the React App
+  Running the React App:
 
 Before testing the React app, there are many dependencies that need to be installed in the project root directory.
 First, install concurrently as a dev dependency:
@@ -323,37 +313,38 @@ Then, install nodemon as a dev dependency:
 Nodemon is used to run the server and monitor it as well. If there is any change in the server code, Nodemon will restart it automatically with the new changes.
 
 Next, open your package.json file in the root folder of the app project, and paste the following code:
-package.json
 
-     {
-       // ...
-       "scripts": {
-         "start": "node index.js",
-         "start-watch": "nodemon index.js",
-         "dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
-       },
-       // ...
-     }
+
+     package.json
+
+          {
+            // ...
+            "scripts": {
+              "start": "node index.js",
+              "start-watch": "nodemon index.js",
+              "dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
+            },
+            // ...
+          }
 
 Enter into the client folder, then locate the package.json file and add the following key-value pair inside it.
 
  
-client/package.json
+  client/package.json
 
-     {
-       // ...
-       "proxy": "http://localhost:5000"
-     }
+         {
+           // ...
+           "proxy": "http://localhost:5000"
+         }
+
 
 This proxy setup in our package.json file will enable you to make API calls without having to type the full URL, just /api/todos will get all your todos
-
 Open your terminal and run npm run dev and make sure you are in the todo directory and not in the client directory.
-
 Your app will be open and running on localhost:3000.
  
  
  
-Step 9 — Creating the React Components
+Creating the React Components:
 
 
 Open Input.js file and paste the following:
