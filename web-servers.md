@@ -114,9 +114,13 @@ By default, Nginx stores different configuration and log files in the following 
           proxy_pass http://127.0.0.1:8080/;
        }
 
-   4. cd /etc/nginx
-   5. ls 
-   6. vi nginx.conf
+   4. sudo systemctl enable nginx.services
+   5. sudo systemctl stop nginx.service
+   6. Check the logs
+      /var/log/nginx
+      sudo cat /var/log/audit/audit.log | grep nginx | grep denied
+      
+      
 
 
 
