@@ -7,7 +7,7 @@ Topics:
 
 
 
-[Different Ways to fetch data from API in Reactjs]
+[Different Ways to fetch data from API in Reactjs](#)
 
 1. [Fetch Api](#fetch_api)
 
