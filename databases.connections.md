@@ -26,7 +26,18 @@ Topics:
 # MongoDB Database
 
 
-Setting up MongoDB Atlas Nodejs Integration Simplified:
+###### Setting up MongoDB Atlas Nodejs Integration Simplified:
+
+
+What is MongoDB Atlas?
+
+MongoDB Atlas is a Multi-Cloud Database Service offered by MongoDB that simplifies Database Deployment and Management while providing the flexibility required to build resilient and performant global applications on the Cloud providers of your choice. Atlas provides all of MongoDB’s features while automating database administration tasks such as Database Configuration, Infrastructure Provisioning, Patches, Scaling Events, Backups, and more, allowing developers to focus on what matters the most to them.
+Key Features of MongoDB
+
+    Operational Efficiency: MongoDB Atlas comes with built-in operational best practices, that allows the user to focus on delivering business value and accelerating application development rather than managing databases.
+    Multi-Cloud Clusters: With MongoDB Atlas’ Multi-Cloud Clusters, you can take advantage of unique tools and services native to all three major Cloud providers (AWS, Google Cloud, and Azure) without adding any unnecessary complexity to your Data Management experience.
+    Performance: MongoDB Atlas performs admirably with most of the applications. Since it can be co-located with any Cloud provider of your choice, there is no additional network latency, and the boxes are nicely tuned to ensure MongoDB runs smoothly.
+
 
 
 The database industry has undergone a number of changes in recent years, resulting in a greater shift toward a Database as a Service (DBaaS) model versus On-Premise Infrastructure. Most business apps rely on Databases, and Cloud-based DBaaS services provide users with a Flexible, Scalable, and On-demand Platform that eliminates the need to set up costly physical hardware. MongoDB Atlas is one such fully Cloud-based Database Service that hosts your data on MongoDB Instances. On the other hand, the Node.js driver provides an interface for connecting to and communicating with MongoDB Instances. 
