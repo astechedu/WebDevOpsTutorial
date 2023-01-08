@@ -679,9 +679,143 @@ The app.js is the entry point for the application.
 Open and check package.json file
 
 
+Setting the entry point
+
+Now, create a file named app.js for our entry point. You can create this from the project folder with the 
+     
+       touch app.js command 
 
 
 
+
+/ app.js
+
+
+        const express = require('express');
+
+        const app = express();
+
+        app.get('/', (req, res) => res.send('Hello world!'));
+
+        const port = process.env.PORT || 8082;
+
+        app.listen(port, () => console.log(`Server running on port ${port}`));
+
+
+
+
+After that, run the $ node app command. You will see Server running on port 8082. You can also check it from the browser by opening the browser and entering http://localhost:8082.
+
+
+// package.json
+
+{
+  "name": "mern_a_to_z",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "app": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nurislam03/MERN_A_to_Z.git"
+  },
+  "author": "Nur Islam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nurislam03/MERN_A_to_Z/issues"
+  },
+  "homepage": "https://github.com/nurislam03/MERN_A_to_Z#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.5.15",
+    "validation": "0.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
+
+
+
+
+      npm install
+      npm run app
+      
+      
+      
+  Database management with MongoDB:
+  
+  
+  
+  Adding the database to our project: 
+  
+  
+  
+  
+  Add the following code:
+
+// default.json
+
+{
+  "mongoURI":
+    "mongodb+srv://mern123:<password>@mernatoz-9kdpd.mongodb.net/test?retryWrites=true&w=majority"
+}
+ /* Replace <password> with your database password */
+// db.js
+
+const mongoose = require('mongoose');
+const config = require('config');
+const db = config.get('mongoURI');
+
+const connectDB = async () => {
+  try {
+    mongoose.set('strictQuery', true);
+    await mongoose.connect(db, {
+      useNewUrlParser: true,
+    });
+
+    console.log('MongoDB is Connected...');
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
+ 
+ 
+ 
+// app.js
+
+const express = require('express');
+const connectDB = require('./config/db');
+
+const app = express();
+
+// Connect Database
+connectDB();
+
+app.get('/', (req, res) => res.send('Hello world!'));
+
+const port = process.env.PORT || 8082;
+
+app.listen(port, () => console.log(`Server running on port ${port}`));
+
+
+ 
+ 
+ 
+ npm run app
+ 
+ 
+ 
+ 
+      
 
 
 
