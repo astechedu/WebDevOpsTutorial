@@ -25,8 +25,15 @@ Topics:
 [Different Ways to fetch data from API in Vuejs](#)
 
 
+1. [Fetch Api](#fetch_api1)
 
+2. [Axios Library](#axios_library1)
 
+3. [async-await](#async_await1)
+
+4. [Custom Hoks](#custom_hooks1)
+
+5. [React Query](#react_query1)
 
 
 
