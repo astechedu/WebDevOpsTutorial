@@ -1122,6 +1122,8 @@ Inside the src folder (mern_a_to_z_client/src/), create another folder called co
     Explore Tauri, a new framework for building binaries
     Compare NestJS vs. Express.js
 
+ 
+ 
 Functional components and React Hooks
 
 React functional components are a comparatively newer addition to the framework. Earlier, we only had class-based components. A functional component in React is essentially a JavaScript function that returns the React element or JSX. A functional component can be written using the conventional keyword or arrow function. Props are based on function arguments. A functional component can be used on other files only after exporting them:
@@ -1130,6 +1132,9 @@ function Hello(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 
+ 
+ 
+ 
 export default Welcome;
 
 The function shown above is a valid React functional component. In this tutorial, we will be using React functional components. To dive deeper into React functional components, check out this article to learn more.
@@ -1164,6 +1169,10 @@ const App = () => {
   );
 };
 
+ 
+ 
+ 
+ 
 export default App;
 
 Here, we define all the routes. For a specific path definition, its corresponding component will be rendered. We have not implemented these files and components yet — we’ve just completed the path setup.
@@ -1269,6 +1278,9 @@ Next, update a CSS file called App.css in the src folder with the following code
   padding: 10px 0 10px 0;
 }
 
+ 
+ 
+ 
 Adding our feature components
 
 Now, it’s time to add feature components to our MERN stack project. Our CreateBook.js file is responsible for adding, creating, or saving a new book or a book’s info.
@@ -1416,6 +1428,10 @@ const CreateBook = (props) => {
 
 export default CreateBook;
 
+ 
+ 
+ 
+ 
 ShowBookList.js
 
 The ShowBookList.js component will be responsible for showing all the books we already have stored in our database. Update ShowBookList.js with this code:
@@ -1475,6 +1491,9 @@ function ShowBookList() {
 
 export default ShowBookList;
 
+ 
+ 
+ 
 BookCard.js
 
 Here, we use a functional component called BookCard.js, which takes a book’s info from ShowBookList.js and makes a card for each book. Write the following code to update your BookCard.js file:
@@ -1506,6 +1525,9 @@ const BookCard = (props) => {
 
 export default BookCard;
 
+ 
+ 
+ 
     NOTE: Here, I used the same img src for each book, since each book’s respective image may not always be available. Change the image source, and you can also use a different image for each book.
 
 The ShowBookDetails component has one task: it shows all the info we have about any book. We have both delete and edit buttons here to get access:
@@ -1527,7 +1549,8 @@ function ShowBookDetails(props) {
       .then((res) => {
         setBook(res.data);
       })
-      .catch((err) => {
+ 
+ .catch((err) => {
         console.log('Error from ShowBookDetails');
       });
   }, [id]);
@@ -1626,6 +1649,11 @@ function ShowBookDetails(props) {
 
 export default ShowBookDetails;
 
+ 
+ 
+ 
+ 
+ 
 UpdateBookInfo.js
 
 UpdateBookInfo.js, as its name indicates, is responsible for updating a book’s info. An Edit Book button will trigger this component to perform. After clicking Edit Book, we will see a form with the old info, which we will be able to edit or replace:
@@ -1802,13 +1830,10 @@ function UpdateBookInfo(props) {
 }
 
 export default UpdateBookInfo;
- 
- 
- 
 
+ 
+ 
 # Connecting and running the frontend to the backend
- 
- 
 
 We just implemented all of our components! Now, we need a little change in our server side backend project.
 
@@ -1816,12 +1841,14 @@ If we try to call our backend API from the frontend part, it gets an error:
 
 "Access to XMLHttpRequest at 'http://localhost:8082/api/books' from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource."
 
+ 
+ 
 To solve this, we need to install cors in our backend server side project. Go to the project folder and run $ npm install cors.
 
- 
- 
 Now, update app.js, the backend’s entry point with the following code:
 
+ 
+ 
  
  
 // app.js
@@ -1830,22 +1857,36 @@ const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
 
+ 
+ 
+ 
 // routes
 const books = require('./routes/api/books');
 
 const app = express();
 
+ 
+ 
 // Connect Database
 connectDB();
 
+ 
+ 
 // cors
 app.use(cors({ origin: true, credentials: true }));
 
+ 
+ 
 // Init Middleware
 app.use(express.json({ extended: false }));
 
 app.get('/', (req, res) => res.send('Hello world!'));
 
+ 
+ 
+ 
+ 
+ 
 // use Routes
 app.use('/api/books', books);
 
@@ -1854,24 +1895,22 @@ const port = process.env.PORT || 8082;
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
  
- 
- 
- 
 It is also important that you add this line, app.use(express.json({ extended: false }));. The express.json method allows Express to read data sent using a POST or PUT request. It is used for recognizing incoming objects as JSON objects.
 Running the frontend and backend
 
  
  
  
+ 
 Follow the steps below to run both the frontend and backend of our MERN stack example.
 
- 
- 
  
 First, run the server (inside the project folder):
 
 $ npm run app
 
+ 
+ 
  
  
 If you get any errors, then follow the commands below (inside the project folder):
@@ -1881,11 +1920,11 @@ $ npm run app
 
  
  
+ 
 To run the client, run the command below from the frontend project directory:
 
 $ npm start
 
- 
  
  
 If you get an error again, follow the same commands below:
@@ -1895,12 +1934,10 @@ $ npm start
 
  
  
- 
 Testing our MERN stack app in the browser
 
 Let’s check everything in the browser. Open http://localhost:3000 in your browser. Now, you can add a book, delete a book, show the list of books, and edit books. The following routes should perform accordingly:
 
- 
  
  
  
@@ -1910,23 +1947,20 @@ http://localhost:3000/create-book
 
 MERN Stack Books One
 
- 
- 
- 
 Show the list of books:
 
 http://localhost:3000/
 
+ 
+ 
+ 
 MERN Stack Books Two
 
- 
- 
 Show any book’s info:
 
 http://localhost:3000/show-book/:id
 
 MERN Stack Books Three
-
  
  
 Update a book’s info:
@@ -1943,12 +1977,58 @@ MERN Stack Books Four
  
  
  
-  
  
  
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ https://blog.logrocket.com/mern-stack-tutorial/
  
  
  
