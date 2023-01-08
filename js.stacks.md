@@ -27,10 +27,10 @@ Setting Up the Project:
 
 How To Get Started with the MERN Stack
 
-    JavaScript
-    React
-    MongoDB
-    Node.js
+   JavaScript
+   React
+   MongoDB
+   Node.js
 
 
 
