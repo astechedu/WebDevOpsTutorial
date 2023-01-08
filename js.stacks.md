@@ -2052,7 +2052,18 @@ MERN Stack Books Four
      server.js
  
     frontend
-       
+        node_modules
+        public
+        src
+           components
+           redux
+           App.css
+           App.js
+           App.test.js
+          
+        package.json
+        package-lock.json
+        README.md
  
  
       
