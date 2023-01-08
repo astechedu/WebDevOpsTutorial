@@ -398,16 +398,9 @@ So, in invalidateQueries, we are passing fetch query name (‘getUser’) that w
 
 
 
-How to Interact With an API from a Vue.js Application
-June 19, 2021
+# How to Interact With an API from a Vue.js Application
 
-    Topics:
-    API
-
-AddThis Sharing Buttons
-Share to Facebook
-Share to Twitter
-Share to LinkedIn
+ API
 
 A lot of developers build applications using JavaScript and this constitutes the fact that most web applications have JavaScript as one of their main programming languages. JavaScript frameworks were built to make the development process easier and quicker for developers. Vue.js is one of many popular JavaScript frameworks. Others of which include React and Angular.
 What is Vue.js
@@ -433,10 +426,12 @@ Overview
     Using Axios to consume an API
     Using the Fetch API method
     Using APIs in Vuex
-    Conclusion
+    
 
 If you don’t know how to create a Vue project, check out this documentation to walk you through the process.
-Using Axios to consume APIs
+
+
+# Using Axios to consume APIs
 
 Axios is a promise-based HTTP client which makes it suitable for fetching data during server-side display. It works on both browser and Node apps. Axios is a library that is built around the Fetch API.
 Axios Installation
@@ -449,16 +444,18 @@ To use Axios in your project, you should install it. This can be done in two way
 
 With npm:
 
-npm i axios
+`           npm i axios
 
 With yarn:
 
-yarn add axios
+             yarn add axios
 
 Next, you should import Axios in your src/main.js file
 
-import axios from 'axios';
-Vue.prototype.$http = axios;
+
+            import axios from 'axios';
+            Vue.prototype.$http = axios;
+
 
 How to make an API request and display data using Axios
 
@@ -470,333 +467,338 @@ We also need to test for errors using the try/catch method. try is used to check
 
 Copy the code below to your App.vue file:
 
-<template></template>
 
-<script>
-export default {
-  data() {
-    return {
-      posts: [],
-    };
-  },
+        <template></template>
 
-  methods: {
-    async getData() {
-      try {
-        const response = await this.$http.get(
-          "http://jsonplaceholder.typicode.com/posts"
-        );
-        // JSON responses are automatically parsed.
-        this.posts = response.data;
-      } catch (error) {
-        console.log(error);
-      }
-    },
-  },
-};
-</script>
+        <script>
+        export default {
+          data() {
+            return {
+              posts: [],
+            };
+          },
+
+          methods: {
+            async getData() {
+              try {
+                const response = await this.$http.get(
+                  "http://jsonplaceholder.typicode.com/posts"
+                );
+                // JSON responses are automatically parsed.
+                this.posts = response.data;
+              } catch (error) {
+                console.log(error);
+              }
+            },
+          },
+        };
+        </script>
 
 The above block of code in the methods property will be explained line by line.
 
-async getData (){
+
+        async getData (){
+
 
 Here a function named getData() is created. In this function, the API will be called. The async keyword is prepended on the getData function to show that the function will make use of promises and we’ll be using it to await to pause the execution of the function until the promise is resolved.
 
-try {
-    const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
+
+        try {
+            const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
+
 
 try property defines a block of code to be tested for errors as the code is executed. In the block of code const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');, a get request is made with the get keyword using axios i.e.$http to get data from the URL.
 
 await is prepended to the request because the get function will return a promise. The data returned from the API after the promise is resolved and will be stored in the variable response.
 
-this.posts = response.data
+            this.posts = response.data
 
 The data we get from the request is then saved to the posts array which is created in the data property.
 
-catch (error) {
-    console.log(error);
-}
+            catch (error) {
+                console.log(error);
+            }
 
 If any error occurs during the execution, the error will be caught and logged in the console.
 
 After requesting data from the API, you will need to call it on a lifecycle hook. Here we will use the created() lifecycle hook, this is because we will be able to retrieve sensitive data and events that are active with the created hook.
 
-<template></template>
 
-<script>
-export default {
-  data() {
-    return {
-      posts: [],
-    };
-  },
 
-  methods: {
-    async getData() {
-      try {
-        const response = await this.$http.get(
-          "http://jsonplaceholder.typicode.com/posts"
-        );
-        // JSON responses are automatically parsed.
-        this.posts = response.data;
-        console.log(posts);
-      } catch (error) {
-        console.log(error);
-      }
-    },
-  },
+        <template></template>
 
-  created() {
-    this.getData();
-  },
-};
-</script>
+        <script>
+        export default {
+          data() {
+            return {
+              posts: [],
+            };
+          },
+
+          methods: {
+            async getData() {
+              try {
+                const response = await this.$http.get(
+                  "http://jsonplaceholder.typicode.com/posts"
+                );
+                // JSON responses are automatically parsed.
+                this.posts = response.data;
+                console.log(posts);
+              } catch (error) {
+                console.log(error);
+              }
+            },
+          },
+
+          created() {
+            this.getData();
+          },
+        };
+        </script>
+
 
 We can now display the data in the template by looping through the posts using v-for directive.
 
-<template>
-  <div>
-    <div v-for="post in posts" v-bind:key="post.id">
-      <h2>{{ post.title }}</h2>
-      <p>{{ post.body }}</p>
-    </div>
-  </div>
-</template>
 
-<script>
-export default {
-  data() {
-    return {
-      posts: [],
-    };
-  },
+        <template>
+          <div>
+            <div v-for="post in posts" v-bind:key="post.id">
+              <h2>{{ post.title }}</h2>
+              <p>{{ post.body }}</p>
+            </div>
+          </div>
+        </template>
 
-  methods: {
-    async getData() {
-      try {
-        const response = await this.$http.get(
-          "http://jsonplaceholder.typicode.com/posts"
-        );
-        this.posts = response.data;
-      } catch (error) {
-        console.log(error);
-      }
-    },
-  },
+        <script>
+        export default {
+          data() {
+            return {
+              posts: [],
+            };
+          },
 
-  created() {
-    this.getData();
-  },
-};
-</script>
+          methods: {
+            async getData() {
+              try {
+                const response = await this.$http.get(
+                  "http://jsonplaceholder.typicode.com/posts"
+                );
+                this.posts = response.data;
+              } catch (error) {
+                console.log(error);
+              }
+            },
+          },
 
-Using Fetch API method
+          created() {
+            this.getData();
+          },
+        };
+        </script>
+
+
+
+# Using Fetch API method
+
+
 
 Fetch API is a powerful and flexible method of flexible APIs. It produces a global fetch() method that provides a simple and rational way to fetch resources asynchronously over the network.
 
 To request with the Fetch API, you just have to make the request directly with the fetch object and follow all other steps used in the Axios call above.
 
-<template>
-  <div>
-    <ul v-for="post in posts" v-bind:key="post.id">
-      <li>{{ post.title }}</li>
-      <p>{{ post.body }}</p>
-    </ul>
-  </div>
-</template>
+        <template>
+          <div>
+            <ul v-for="post in posts" v-bind:key="post.id">
+              <li>{{ post.title }}</li>
+              <p>{{ post.body }}</p>
+            </ul>
+          </div>
+        </template>
 
-<script>
-export default {
-  data() {
-    return {
-      posts: [],
-    };
-  },
+        <script>
+        export default {
+          data() {
+            return {
+              posts: [],
+            };
+          },
 
-  methods: {
-    async getData() {
-      try {
-        let response = await fetch("http://jsonplaceholder.typicode.com/posts");
-        this.posts = await response.json();;
-      } catch (error) {
-        console.log(error);
-      }
-    },
-  },
+          methods: {
+            async getData() {
+              try {
+                let response = await fetch("http://jsonplaceholder.typicode.com/posts");
+                this.posts = await response.json();;
+              } catch (error) {
+                console.log(error);
+              }
+            },
+          },
 
-  created() {
-    this.getData();
-  },
-};
-</script>
+          created() {
+            this.getData();
+          },
+        };
+        </script>
 
-Creating APIs in Vuex
+
+
+# Creating APIs in Vuex
+
 
 Vuex is a state management library for Vue.js applications. It provides a centralized store for all elements in an application.
+
 Installing Vuex
 
 To make use of Vuex, you will first need to install the Vuex package on your Vue application.
 
-vue create project
+        vue create project
 
 OR
 
-npm install vuex --save
+        npm install vuex --save
+
 
 Then, in your store folder, access the index.js file and write the following code
 
-import Vue from 'vue'
-import Vuex from 'vuex'
-import axios from "axios";
 
-Vue.use(Vuex);
+        import Vue from 'vue'
+        import Vuex from 'vuex'
+        import axios from "axios";
+
+
+        Vue.use(Vuex);
+
+
 
 Making the API request
 
 We will be working with the store/index.js file. First, we create a state object which will contain all the application-level state. It serves as the data object for the store in a vuex project.
 
-export default new Vuex.Store({
- state: {
-    posts: [],
-  },
-}) 
+
+        export default new Vuex.Store({
+         state: {
+            posts: [],
+          },
+        }) 
+
 
 Next, we create a getters property. Getters are like computed properties for stores. It is used to determine derived states based on store states. In this tutorial, we will use it to return posts in the state.
 
-  getters: {
-    posts: state => {
-      return state.posts;
-    }
-  },
+
+      getters: {
+        posts: state => {
+          return state.posts;
+        }
+      },
+
+
 
 Next, we create a mutation property. The mutation property is where we can change the state in the Vuex store. There are very similar to events where we carry out actual state alterations.
 
-  mutations: {
-    SET_ITEMS (state, posts) {
-      state.posts = posts
-    }
-  },
+
+          mutations: {
+            SET_ITEMS (state, posts) {
+              state.posts = posts
+            }
+          },
+
 
 Now we can call our API in the actions property. Actions are equivalent to mutations only that actions commit mutations rather than mutating the state and also actions can hold asynchronous operations. Let’s go ahead with the API call.
 
-  actions: {
-   async loadPosts ({ commit }) {
-     try {
-        const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
-        // JSON responses are automatically parsed.
-        commit('SET_ITEMS', response.data)
-      }
-      catch (error) {
-       console.log(error);
-     }
-   }
-  },
+
+
+          actions: {
+           async loadPosts ({ commit }) {
+             try {
+                const response = await this.$http.get('http://jsonplaceholder.typicode.com/posts');
+                // JSON responses are automatically parsed.
+                commit('SET_ITEMS', response.data)
+              }
+              catch (error) {
+               console.log(error);
+             }
+           }
+          },
+
 
 Now, we should import the store in src/main.js and pass it to our Vue app.
 
-import store from "../store/index";
 
-new Vue({
-  render: (h) => h(App),
-  store,
-}).$mount("#app");
+
+        import store from "../store/index";
+
+        new Vue({
+          render: (h) => h(App),
+          store,
+        }).$mount("#app");
+
+
 
 Now, we can display the data in our vue file. To do that, some steps need to be taken:
 
     Using the computed property, we access the content of the getters method in the store.
 
-<script>
-export default {
-  computed: {
-      posts() {
-           return this.$store.getters.posts;
-        },
-    },
+
+        <script>
+        export default {
+          computed: {
+              posts() {
+                   return this.$store.getters.posts;
+                },
+            },
+
 
     Call the API on a lifecycle hook created and employ the dispatch method to call the action.
 
-  created() {
-    this.$store.dispatch('loadPosts');
-  },
-}
-</script>
+
+          created() {
+            this.$store.dispatch('loadPosts');
+          },
+        }
+        </script>
+
 
     Finally display data on your template.
 
-<template>
-  <div>
-    <div v-for="post in posts" v-bind:key="post.id">
-      <h2>{{ post.title }}</h2>
-      <p>{{ post.body }}</p>
-    </div>
-  </div>
-</template>
+
+        <template>
+          <div>
+            <div v-for="post in posts" v-bind:key="post.id">
+              <h2>{{ post.title }}</h2>
+              <p>{{ post.body }}</p>
+            </div>
+          </div>
+        </template>
+
 
 Here is the whole code snippet:
 
+
 For the store file:
 
-import Vue from 'vue'
-import Vuex from 'vuex'
-import axios from "axios";
 
-Vue.use(Vuex);
+        import Vue from 'vue'
+        import Vuex from 'vuex'
+        import axios from "axios";
 
-export default new Vuex.Store({
- state: {
-    posts: [],
-  },
+        Vue.use(Vuex);
 
-getters: {
-    posts: state => {
-        return state.posts;
-    }
-},
-mutations: {
-        SET_ITEMS (state, posts) {
-            state.posts = posts
+
+        export default {
+          computed: {
+            posts() {
+                 return this.$store.getters.posts;
+              },
+          },
+          created() {
+            this.$store.dispatch('loadPosts');  
+          },
         }
-},
-actions: {
-   async loadPosts ({ commit }) {
-     try {
-           const response = await axios.get('http://jsonplaceholder.typicode.com/posts');
-          commit('SET_ITEMS', response.data)
-       }
-      catch (error) {
-         console.log(error);
-     }
-   }
-},
-}) 
-
-For your Vue file:
-
-<template>
-  <div>
-    <div v-for="post in posts" v-bind:key="post.id">
-      <h2>{{ post.title }}</h2>
-      <p>{{ post.body }}</p>
-    </div>
-  </div>
-</template>
-
-<script>
-export default {
-  computed: {
-    posts() {
-         return this.$store.getters.posts;
-      },
-  },
-  created() {
-    this.$store.dispatch('loadPosts');  
-  },
-}
-</script>
-
-Conclusion
+        </script>
 
 
+
+:end:
 
 
 [Go To Top](#top)
