@@ -2000,31 +2000,32 @@ MERN Stack Books Four
   
  MERN FOLDERS & FILES STRUCTURE:
  
- mern
-   /node_modules
-   /backend
-   /models
-   /controllers
-   /routes
-   index.js
-   database.js
-   /helper
-      library.js
-    package.js
-    package-lock.js
-   
-    /frontend
-      node_modules
-      /public
-      /src
-         /components
-         /pages
-         app.jsx
+      mernstack
+
+      /backend
+         /node_modules
+         /models
+         /controllers
+         /routes
          index.js
-       package.js
-       package-lock.js         
- 
-  
+         database.js
+         /helper
+            library.js
+          package.js
+          package-lock.js
+
+       /frontend
+           node_modules
+           /public
+           /src
+              /components
+              /pages
+              app.jsx
+              index.js
+            package.js
+            package-lock.js         
+
+
  
 
  
