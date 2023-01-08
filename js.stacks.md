@@ -1994,6 +1994,25 @@ MERN Stack Books Four
 
  
  
+ 
+ 
+  
+ MERN FOLDERS & FILES STRUCTURE:
+ 
+ mern
+   /node_modules
+   /backend
+   /models
+   /controllers
+   /routes
+   index.js
+   database.js
+   /helper
+      library.js
+    package.js
+    package-lock.js
+   
+    /frontend
   
  
   
