@@ -1,7 +1,19 @@
 # Javascipt Apis 
 
-[Go To Top](#top)
+<a name="top"></a>
 
+
+Topics:
+
+[Fetch Api](#fetch_api)
+
+[Axios Library](#axios_library)
+
+[async-await](#async-await)
+
+[Custom Hoks](#custom_hooks)
+
+[React Query](#react_query)
 
 
 
@@ -40,6 +52,11 @@ There are different of fetching data:
 
 
 
+
+
+
+[Go To Top](#top)
+<a name="fetch_api"></a>
 # 1. Fetch API
 
 We can fetch data by using javascript fetch() method. It will request sever and load the information on the web pages. It will return a promise.
@@ -78,6 +95,11 @@ Let’s start with the example. We will create a fetchData() method. It will cal
 
 
 
+
+
+
+[Go To Top](#top)
+<a name="axios_library"></a>
 # 2. Axios
 
 Axios is a javascript library that we use to make HTTP requests same as fetch(). There is a difference between these two as in fetch() we have to convert the result to a JSON object but in Axios it already returns the result as a JSON object, so we don’t need to convert it.
@@ -101,7 +123,11 @@ Let’s take the example of Axios library. First, we have to install the Axios l
 
 
 
-4. Using async and await
+
+
+[Go To Top](#top)
+<a name="await_async"></a>
+# 3. Using async and await
 
 We use Async-Await as it is an asynchronous technique that is operated via an event loop. Async functions will always return a value. It is the preferred way of fetching the data from an API as it enables us to remove our .then() callbacks and return asynchronously resolved data. In the async block, we can use Await function to wait for the promise.
 
@@ -120,7 +146,11 @@ We use Async-Await as it is an asynchronous technique that is operated via an ev
 
 
 
-4. Custom Hooks
+
+
+[Go To Top](#top)
+<a name="custom_hooks"></a>
+# 4. Custom Hooks
 
 Let’s have a brief understanding that what are custom hooks. So, we use custom hooks when we have a component logic that can be used by other components in our application. It is basically a React functional component whose name will start with “use” like useFetch. Custom Hooks can use one or more React hooks inside them.
 
@@ -190,6 +220,12 @@ App.js
               );
 
 
+
+
+
+
+[Go To Top](#top)
+<a name="react_query"></a>
 # 5. React Query
 
 For optimizing the request operations in our application we use React Query library which helps us to handle complex application caching. It is far simpler to write in React Query than React-Redux. It performs pre-fetching of data so that the application can update stale data in the background.
@@ -218,6 +254,7 @@ So to configure react-query in our React.js application, we need to wrap our com
               </React.StrictMode>,
               rootElement
             );
+
 
 Let’s see how we fetch data by useQuery
 
@@ -253,6 +290,8 @@ First, we have to import useQuery from react-query. The useQuery hook returns so
             }
 
             export default App;
+
+
 
 We will create a functional component and import useQuery in that. Then we will create an async function fetchUser() that will return an array of users.
 For updating data, we use useMutation hook
@@ -294,6 +333,8 @@ First, we will see how to use useMutation,
             }
 
             export default App;
+
+
 
 So now we will invalidate our fetch query in onSuccess. First, we have to declare a new query client to have access to the cache.
 
