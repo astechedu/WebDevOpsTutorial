@@ -5,23 +5,25 @@
 
 Topics:
 
-[Fetch Api](#fetch_api)
+1. [Fetch Api](#fetch_api)
 
-[Axios Library](#axios_library)
+2. [Axios Library](#axios_library)
 
-[async-await](#async_await)
+3. [async-await](#async_await)
 
-[Custom Hoks](#custom_hooks)
+4. [Custom Hoks](#custom_hooks)
 
-[React Query](#react_query)
-
-
+5. [React Query](#react_query)
 
 
 
 
 
-Different Ways to fetch data from API in Reactjs
+
+
+# Different Ways to fetch data from API in Reactjs
+
+
 Introduction
 
     In this blog, we will cover the basics of Web API.
