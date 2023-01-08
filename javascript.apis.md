@@ -319,26 +319,12 @@ So now we will invalidate our fetch query in onSuccess. First, we have to declar
                 },
               });
 
+
+
 So, in invalidateQueries, we are passing fetch query name (‘getUser’) that will fetch the data.
 
-Conclusion
 
-In this blog, we have covered different API fetch practices.
-
-In our upcoming blog, we will try to learn about React Hooks.
-
-For more interesting blogs visit- StatusNeo Blogs
-
-Thanks for reading, Ba-Bye for now.
-0 Comments
-Like
-Different Ways to fetch data from API in Reactjs, React, react js, utkarsh chaturvedi blogs, Web Development
-
-Utkarsh Chaturvedi
-
-I am always eager to learn new tech stacks to overcome my challenges in every field. I love playing games, bike riding, and recharging in nature.
-Utkarsh Shukla blogs	
-A complete guide to SQL from scratch
+:end:
 
 
-
+[Go To Top](#top)
