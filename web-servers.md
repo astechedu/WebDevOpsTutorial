@@ -135,7 +135,7 @@ By default, Nginx stores different configuration and log files in the following 
        
           #setsebool httpd_can_network_connect on -P
 
-
+       4. Refress Browser
 
 
 
