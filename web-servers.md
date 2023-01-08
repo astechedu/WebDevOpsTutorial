@@ -13,6 +13,10 @@ Topics
  
  
  
+ 
+ 
+ 
+ 
  [Go To Top](#top)
  <a name="nginx_server"></a>
 ## Inginx On Ubuntu 20.04
@@ -109,7 +113,7 @@ By default, Nginx stores different configuration and log files in the following 
 
 [Go To Top](#top)
 <a name="proxy_server"></a>
-# Reverse Proxy using nginx(proxy server) and apache2
+# Reverse Proxy nginx (proxy server) and apache2
 
 
        Client  <------->  Reverse Proxy ( nginx )   <------->   Original Server ( Ex. apache2 )
