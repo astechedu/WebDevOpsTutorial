@@ -2060,7 +2060,11 @@ MERN Stack Books Four
            App.css
            App.js
            App.test.js
-          
+           index.css
+           index.js
+           logo.svg
+           reportWebVitals.js
+           setupTests.js
         package.json
         package-lock.json
         README.md
