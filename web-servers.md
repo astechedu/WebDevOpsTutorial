@@ -123,7 +123,15 @@ By default, Nginx stores different configuration and log files in the following 
       ls -ltr
       less error.log
       
-
+      Permission denied
+      
+      Solutions: 
+       1. List of all the httpd SELinex boolean
+       
+          #getsebool -a grep httpd
+          
+       3. Enable the network connect boolean 
+          
 
 
 
