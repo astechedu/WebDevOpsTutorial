@@ -5,6 +5,10 @@
 
 Topics:
 
+
+
+[Different Ways to fetch data from API in Reactjs]
+
 1. [Fetch Api](#fetch_api)
 
 2. [Axios Library](#axios_library)
