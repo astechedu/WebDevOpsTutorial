@@ -102,7 +102,7 @@ Install Node.js
 First, make sure you have a supported version of Node.js installed. The current version of MongoDB Node.js Driver requires Node 4.x or greater. For these examples, I've used Node.js 14.15.4. See the MongoDB Compatability docs for more information on which version of Node.js is required for each version of the Node.js driver.
 
 
-******Install the MongoDB Node.js Driver:
+*Install the MongoDB Node.js Driver:
 
 
 The MongoDB Node.js Driver allows you to easily interact with MongoDB databases from within Node.js applications. You'll need the driver in order to connect to your database and execute the queries described in this Quick Start series.
@@ -117,7 +117,7 @@ At the time of writing, this installed version 3.6.4 of the driver. Running npm 
 
 
 
-******Connect to your database from a Node.js application:
+*Connect to your database from a Node.js application:*
 
 
 Now that everything is set up, it’s time to code! Let’s write a Node.js script that connects to your database and lists the databases in your cluster.
@@ -130,7 +130,7 @@ The MongoDB module exports MongoClient, and that’s what we’ll use to connect
       
       
       
- Create our main function:
+ *Create our main function:
 
 
 Once we have our main() function written, we need to call it. Let’s send the errors to the console.
@@ -175,8 +175,26 @@ main().catch(console.error);
 
 
  
+ *List the databases in our cluster
+
+
+In the previous section, we referenced the listDatabases() function. Let’s implement it!
+
+This function will retrieve a list of databases in our cluster and print the results in the console.
+
+
+Connection.js
+
+
+      async function listDatabases(client){
+          databasesList = await client.db().admin().listDatabases();
+
+          console.log("Databases:");
+          databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+      };
  
- 
+
+ :end:
 
 
 
