@@ -25,6 +25,7 @@ Topics:
 [Different Ways to fetch data from API in Vuejs](#)
 
 
+
 1. [Using Axios to consume an API](#axios_consume)
 
 2. [Using the Fetch API method](#fetch_api)
@@ -811,6 +812,7 @@ For the store file:
 
 
 :end:
+
 
 
 [Go To Top](#top)
