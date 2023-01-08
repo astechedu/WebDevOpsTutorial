@@ -90,9 +90,93 @@ Replace password with your own password and dbname with the name that you would 
 
 
 
+##### 2. Connect to a MongoDB Database Using Node.js
 
 
 
+Set up
+
+Before we begin, we need to ensure you’ve completed a few prerequisite steps.
+Install Node.js
+
+First, make sure you have a supported version of Node.js installed. The current version of MongoDB Node.js Driver requires Node 4.x or greater. For these examples, I've used Node.js 14.15.4. See the MongoDB Compatability docs for more information on which version of Node.js is required for each version of the Node.js driver.
+
+
+******Install the MongoDB Node.js Driver:
+
+
+The MongoDB Node.js Driver allows you to easily interact with MongoDB databases from within Node.js applications. You'll need the driver in order to connect to your database and execute the queries described in this Quick Start series.
+
+If you don't have the MongoDB Node.js Driver installed, you can install it with the following command.
+
+
+      npm install mongodb
+
+
+At the time of writing, this installed version 3.6.4 of the driver. Running npm list mongodb will display the currently installed driver version number. For more details on the driver and installation, see the official documentation.
+
+
+
+******Connect to your database from a Node.js application:
+
+
+Now that everything is set up, it’s time to code! Let’s write a Node.js script that connects to your database and lists the databases in your cluster.
+Import MongoClient
+
+The MongoDB module exports MongoClient, and that’s what we’ll use to connect to a MongoDB database. We can use an instance of MongoClient to connect to a cluster, access the database in that cluster, and close the connection to that cluster.
+
+
+      const {MongoClient} = require('mongodb');
+      
+      
+      
+ Create our main function:
+
+
+Once we have our main() function written, we need to call it. Let’s send the errors to the console.
+
+      main().catch(console.error);
+
+
+
+Putting it all together, our main() function and our call to it will look something like the following.
+
+
+
+
+    async function main(){
+        /**
+         * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
+         * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
+         */
+        const uri = "mongodb+srv://<username>:<password>@<your-cluster-url>/test?retryWrites=true&w=majority";
+
+
+        const client = new MongoClient(uri);
+
+        try {
+            // Connect to the MongoDB cluster
+            await client.connect();
+
+            // Make the appropriate DB calls
+            await  listDatabases(client);
+
+        } catch (e) {
+            console.error(e);
+        } finally {
+            await client.close();
+        }
+    }
+
+
+ 
+ 
+main().catch(console.error);
+
+
+ 
+ 
+ 
 
 
 
