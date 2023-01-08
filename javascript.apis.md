@@ -22,10 +22,10 @@ Web APIs
 
 API stands for Application Programming Interface. The most popular Web Api used is a Representational state transfer API or RESTful API. Web APIs are used to fetch data from a database and save data back to the database. Using Web APIs requires the use of HTTP request methods there are different HTTP request methods like GET,POST,PUT,DELETE, etc. Let’s have a brief description of the mentioned HTTP request.
 
-    GET: Used to request data from an endpoint
-    POST: Sends data to an endpoint
+    GET   : Used to request data from an endpoint
+    POST  : Sends data to an endpoint
     DELETE: Remove data from an endpoint.
-    PUT: Update a record or data value at an endpoint.
+    PUT   : Update a record or data value at an endpoint.
 
 
 Ways of Fetching Data from API
