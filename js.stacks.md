@@ -2016,8 +2016,8 @@ MERN Stack Books Four
 
        /frontend
            node_modules
-           /public
-           /src
+            /public
+            /src
               /components
               /pages
               app.jsx
