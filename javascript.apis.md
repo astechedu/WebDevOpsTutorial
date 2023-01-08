@@ -9,7 +9,7 @@ Topics:
 
 [Axios Library](#axios_library)
 
-[async-await](#async-await)
+[async-await](#async_await)
 
 [Custom Hoks](#custom_hooks)
 
@@ -125,8 +125,9 @@ Let’s take the example of Axios library. First, we have to install the Axios l
 
 
 
+
 [Go To Top](#top)
-<a name="await_async"></a>
+<a name="async_await"></a>
 # 3. Using async and await
 
 We use Async-Await as it is an asynchronous technique that is operated via an event loop. Async functions will always return a value. It is the preferred way of fetching the data from an API as it enables us to remove our .then() callbacks and return asynchronously resolved data. In the async block, we can use Await function to wait for the promise.
