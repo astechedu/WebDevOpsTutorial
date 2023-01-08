@@ -761,8 +761,7 @@ After that, run the $ node app command. You will see Server running on port 8082
   
   Adding the database to our project: 
   
-  
-  
+    
   
   Add the following code:
 
