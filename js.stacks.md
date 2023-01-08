@@ -1996,6 +1996,7 @@ MERN Stack Books Four
  
  
  
+ 
   
  MERN FOLDERS & FILES STRUCTURE:
  
@@ -2013,7 +2014,15 @@ MERN Stack Books Four
     package-lock.js
    
     /frontend
-  
+      node_modules
+      /public
+      /src
+         /components
+         /pages
+         app.jsx
+         index.js
+       package.js
+       package-lock.js         
  
   
  
