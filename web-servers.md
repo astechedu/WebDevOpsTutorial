@@ -114,7 +114,9 @@ By default, Nginx stores different configuration and log files in the following 
           proxy_pass http://127.0.0.1:8080/;
        }
 
-   4. 
+   4. cd /etc/nginx
+   5. ls 
+   6. vi nginx.conf
 
 
 
