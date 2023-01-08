@@ -239,7 +239,7 @@ In the preceeding code made use of process.env to access environment variables, 
      DB = 'mongodb://<USER>:<PASSWORD>@example.mlab.com:port/todo'
 
     # ensure that you are in the `mern-todo` project directory
-    npm install dotenv
+          npm install dotenv
 
      require('dotenv').config()
  
@@ -248,7 +248,7 @@ In the preceeding code made use of process.env to access environment variables, 
 
 
 
-    node index.js
+          node index.js
 
 Now, open your client, create a GET method and navigate to http://localhost:5000/api/todos.
 
@@ -259,34 +259,34 @@ A screenshot of the Insomnia REST client testing endpoints
 
 Sample POST request:
 
-POST localhost:5000/api/todos
-Body
-raw
+      POST localhost:5000/api/todos
+      Body
+      raw
 
-Sample POST value:
+      Sample POST value:
 
-     {
-       "action": "build a mern stack application"
-     }
+           {
+             "action": "build a mern stack application"
+           }
 
-Sample GET request:
+      Sample GET request:
 
-     GET localhost:5000/api/todos
+           GET localhost:5000/api/todos
 
-Sample GET response:
+      Sample GET response:
 
-  Output
- 
-     [
-       {
-         "id": "5bd4edfc89d4c3228e1bbe0a",
-         "action": "build a mern stack application"
-       }
-     ]
+        Output
+
+           [
+             {
+               "id": "5bd4edfc89d4c3228e1bbe0a",
+               "action": "build a mern stack application"
+             }
+           ]
 
 Sample DELETE request:
 
-DELETE localhost:5000/api/todos/5bd4edfc89d4c3228e1bbe0ad
+    DELETE localhost:5000/api/todos/5bd4edfc89d4c3228e1bbe0ad
 
 Test and observe the results of GET, POST, and DELETE.
  
@@ -296,7 +296,7 @@ Creating the Frontend:
 
 In the same root directory as your backend code, which is the mern-todo directory, run:
 
-    npx create-react-app client
+        npx create-react-app client
 
  
   Running the React App:
@@ -304,11 +304,11 @@ In the same root directory as your backend code, which is the mern-todo director
 Before testing the React app, there are many dependencies that need to be installed in the project root directory.
 First, install concurrently as a dev dependency:
 
-      npm install concurrently --save-dev
+          npm install concurrently --save-dev
 
 Then, install nodemon as a dev dependency:
 
-      npm install nodemon --save-dev
+          npm install nodemon --save-dev
 
 Nodemon is used to run the server and monitor it as well. If there is any change in the server code, Nodemon will restart it automatically with the new changes.
 
@@ -353,50 +353,50 @@ Open Input.js file and paste the following:
  
 client/src/components/Input.js
 
-     import React, { Component } from 'react';
-     import axios from 'axios';
+       import React, { Component } from 'react';
+       import axios from 'axios';
 
-     class Input extends Component {
-       state = {
-         action: '',
-       };
+       class Input extends Component {
+         state = {
+           action: '',
+         };
 
-       addTodo = () => {
-         const task = { action: this.state.action };
+         addTodo = () => {
+           const task = { action: this.state.action };
 
-         if (task.action && task.action.length > 0) {
-           axios
-             .post('/api/todos', task)
-             .then((res) => {
-               if (res.data) {
-                 this.props.getTodos();
-                 this.setState({ action: '' });
-               }
-             })
-             .catch((err) => console.log(err));
-         } else {
-           console.log('input field required');
+           if (task.action && task.action.length > 0) {
+             axios
+               .post('/api/todos', task)
+               .then((res) => {
+                 if (res.data) {
+                   this.props.getTodos();
+                   this.setState({ action: '' });
+                 }
+               })
+               .catch((err) => console.log(err));
+           } else {
+             console.log('input field required');
+           }
+         };
+
+         handleChange = (e) => {
+           this.setState({
+             action: e.target.value,
+           });
+         };
+
+         render() {
+           let { action } = this.state;
+           return (
+             <div>
+               <input type="text" onChange={this.handleChange} value={action} />
+               <button onClick={this.addTodo}>add todo</button>
+             </div>
+           );
          }
-       };
-
-       handleChange = (e) => {
-         this.setState({
-           action: e.target.value,
-         });
-       };
-
-       render() {
-         let { action } = this.state;
-         return (
-           <div>
-             <input type="text" onChange={this.handleChange} value={action} />
-             <button onClick={this.addTodo}>add todo</button>
-           </div>
-         );
        }
-     }
 
-     export default Input;
+       export default Input;
 
 
 
@@ -404,223 +404,225 @@ client/src/components/Input.js
 
 And run npm install axios:
 
-    npm install axios
+          npm install axios
 
 After that, open your ListTodo.js file and paste the following code:
  
  
 client/src/components/ListTodo.js
  
-import React from 'react';
 
-     const ListTodo = ({ todos, deleteTodo }) => {
-       return (
-         <ul>
-           {todos && todos.length > 0 ? (
-             todos.map((todo) => {
-               return (
-                 <li key={todo._id} onClick={() => deleteTodo(todo._id)}>
-                   {todo.action}
-                 </li>
-               );
-             })
-           ) : (
-             <li>No todo(s) left</li>
-           )}
-         </ul>
-       );
-     };
+    import React from 'react';
 
-     export default ListTodo;
+         const ListTodo = ({ todos, deleteTodo }) => {
+           return (
+             <ul>
+               {todos && todos.length > 0 ? (
+                 todos.map((todo) => {
+                   return (
+                     <li key={todo._id} onClick={() => deleteTodo(todo._id)}>
+                       {todo.action}
+                     </li>
+                   );
+                 })
+               ) : (
+                 <li>No todo(s) left</li>
+               )}
+             </ul>
+           );
+         };
+
+         export default ListTodo;
 
 Then, in your Todo.js file you write the following code:
  
  
 client/src/components/Todo.js
 
-     import React, { Component } from 'react';
-     import axios from 'axios';
-     import Input from './Input';
-     import ListTodo from './ListTodo';
+        import React, { Component } from 'react';
+        import axios from 'axios';
+        import Input from './Input';
+        import ListTodo from './ListTodo';
 
-     class Todo extends Component {
-       state = {
-         todos: [],
-       };
+        class Todo extends Component {
+          state = {
+            todos: [],
+          };
 
-       componentDidMount() {
-         this.getTodos();
-       }
+          componentDidMount() {
+            this.getTodos();
+          }
 
-       getTodos = () => {
-         axios
-           .get('/api/todos')
-           .then((res) => {
-             if (res.data) {
-               this.setState({
-                 todos: res.data,
-               });
-             }
-           })
-           .catch((err) => console.log(err));
-       };
+          getTodos = () => {
+            axios
+              .get('/api/todos')
+              .then((res) => {
+                if (res.data) {
+                  this.setState({
+                    todos: res.data,
+                  });
+                }
+              })
+              .catch((err) => console.log(err));
+          };
 
-       deleteTodo = (id) => {
-         axios
-           .delete(`/api/todos/${id}`)
-           .then((res) => {
-             if (res.data) {
-               this.getTodos();
-             }
-           })
-           .catch((err) => console.log(err));
-       };
+          deleteTodo = (id) => {
+            axios
+              .delete(`/api/todos/${id}`)
+              .then((res) => {
+                if (res.data) {
+                  this.getTodos();
+                }
+              })
+              .catch((err) => console.log(err));
+          };
 
-       render() {
-         let { todos } = this.state;
+          render() {
+            let { todos } = this.state;
 
-         return (
-           <div>
-             <h1>My Todo(s)</h1>
-             <Input getTodos={this.getTodos} />
-             <ListTodo todos={todos} deleteTodo={this.deleteTodo} />
-           </div>
-         );
-       }
-     }
+            return (
+              <div>
+                <h1>My Todo(s)</h1>
+                <Input getTodos={this.getTodos} />
+                <ListTodo todos={todos} deleteTodo={this.deleteTodo} />
+              </div>
+            );
+          }
+        }
 
-     export default Todo;
+        export default Todo;
 
 You will need to make a little adjustment to your React code. Delete the logo and adjust your App.js to look like this:
 
  client/src/App.js
 
-     import React from 'react';
-     import Todo from './components/Todo';
-     import './App.css';
+        import React from 'react';
+        import Todo from './components/Todo';
+        import './App.css';
 
-     const App = () => {
-       return (
-         <div className="App">
-           <Todo />
-         </div>
-       );
-     };
+        const App = () => {
+          return (
+            <div className="App">
+              <Todo />
+            </div>
+          );
+        };
 
-     export default App;
+        export default App;
 
 Then paste the following code into App.css:
  
- 
-client/src/App.css
 
-     .App {
-       text-align: center;
-       font-size: calc(10px + 2vmin);
-       width: 60%;
-       margin-left: auto;
-       margin-right: auto;
-     }
+     client/src/App.css
 
-     input {
-       height: 40px;
-       width: 50%;
-       border: none;
-       border-bottom: 2px #101113 solid;
-       background: none;
-       font-size: 1.5rem;
-       color: #787a80;
-     }
+          .App {
+            text-align: center;
+            font-size: calc(10px + 2vmin);
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+          }
 
-     input:focus {
-       outline: none;
-     }
+          input {
+            height: 40px;
+            width: 50%;
+            border: none;
+            border-bottom: 2px #101113 solid;
+            background: none;
+            font-size: 1.5rem;
+            color: #787a80;
+          }
 
-     button {
-       width: 25%;
-       height: 45px;
-       border: none;
-       margin-left: 10px;
-       font-size: 25px;
-       background: #101113;
-       border-radius: 5px;
-       color: #787a80;
-       cursor: pointer;
-     }
+          input:focus {
+            outline: none;
+          }
 
-     button:focus {
-       outline: none;
-     }
+          button {
+            width: 25%;
+            height: 45px;
+            border: none;
+            margin-left: 10px;
+            font-size: 25px;
+            background: #101113;
+            border-radius: 5px;
+            color: #787a80;
+            cursor: pointer;
+          }
 
-     ul {
-       list-style: none;
-       text-align: left;
-       padding: 15px;
-       background: #171a1f;
-       border-radius: 5px;
-     }
+          button:focus {
+            outline: none;
+          }
 
-     li {
-       padding: 15px;
-       font-size: 1.5rem;
-       margin-bottom: 15px;
-       background: #282c34;
-       border-radius: 5px;
-       overflow-wrap: break-word;
-       cursor: pointer;
-     }
+          ul {
+            list-style: none;
+            text-align: left;
+            padding: 15px;
+            background: #171a1f;
+            border-radius: 5px;
+          }
 
-     @media only screen and (min-width: 300px) {
-       .App {
-         width: 80%;
-       }
+          li {
+            padding: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            background: #282c34;
+            border-radius: 5px;
+            overflow-wrap: break-word;
+            cursor: pointer;
+          }
 
-       input {
-         width: 100%
-       }
+          @media only screen and (min-width: 300px) {
+            .App {
+              width: 80%;
+            }
 
-       button {
-         width: 100%;
-         margin-top: 15px;
-         margin-left: 0;
-       }
-     }
+            input {
+              width: 100%
+            }
 
-     @media only screen and (min-width: 640px) {
-       .App {
-         width: 60%;
-       }
+            button {
+              width: 100%;
+              margin-top: 15px;
+              margin-left: 0;
+            }
+          }
 
-       input {
-         width: 50%;
-       }
+          @media only screen and (min-width: 640px) {
+            .App {
+              width: 60%;
+            }
 
-       button {
-         width: 30%;
-         margin-left: 10px;
-         margin-top: 0;
-       }
-     }
+            input {
+              width: 50%;
+            }
+
+            button {
+              width: 30%;
+              margin-left: 10px;
+              margin-top: 0;
+            }
+          }
 
 Also in index.css add the following rules:
  
  
 client/src/index.css
 
-     body {
-       margin: 0;
-       padding: 0;
-       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-       -webkit-font-smoothing: antialiased;
-       -moz-osx-font-smoothing: grayscale;
-       box-sizing: border-box;
-       background-color: #282c34;
-       color: #787a80;
-     }
 
-     code {
-       font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-     }
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          box-sizing: border-box;
+          background-color: #282c34;
+          color: #787a80;
+        }
+
+        code {
+          font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+        }
 
 
 
@@ -664,6 +666,7 @@ Here’s what we get in the code above:
     mongoose: Is used to connect and interact with MongoDB
     config: 
 
+
 npm i -D nodemon
 
 
@@ -673,7 +676,7 @@ Now, we’ll add nodemon as a dev dependency. If you don’t want to add this, y
 The app.js is the entry point for the application.
 
 
-"start": "node app.js"
+      "start": "node app.js"
 
 
 Open and check package.json file
@@ -688,7 +691,7 @@ Now, create a file named app.js for our entry point. You can create this from th
 
 
 
-/ app.js
+// app.js
 
 
         const express = require('express');
@@ -709,42 +712,42 @@ After that, run the $ node app command. You will see Server running on port 8082
 
 // package.json
 
-{
-  "name": "mern_a_to_z",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "app": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nurislam03/MERN_A_to_Z.git"
-  },
-  "author": "Nur Islam",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nurislam03/MERN_A_to_Z/issues"
-  },
-  "homepage": "https://github.com/nurislam03/MERN_A_to_Z#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.5.15",
-    "validation": "0.0.1"
-  },
-  "devDependencies": {
-    "nodemon": "^1.19.1"
-  }
-}
+      {
+        "name": "mern_a_to_z",
+        "version": "1.0.0",
+        "description": "",
+        "main": "app.js",
+        "scripts": {
+          "start": "node app.js",
+          "app": "nodemon app.js",
+          "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "repository": {
+          "type": "git",
+          "url": "git+https://github.com/nurislam03/MERN_A_to_Z.git"
+        },
+        "author": "Nur Islam",
+        "license": "MIT",
+        "bugs": {
+          "url": "https://github.com/nurislam03/MERN_A_to_Z/issues"
+        },
+        "homepage": "https://github.com/nurislam03/MERN_A_to_Z#readme",
+        "dependencies": {
+          "body-parser": "^1.19.0",
+          "express": "^4.17.1",
+          "mongoose": "^5.5.15",
+          "validation": "0.0.1"
+        },
+        "devDependencies": {
+          "nodemon": "^1.19.1"
+        }
+      }
 
 
 
 
-      npm install
-      npm run app
+            npm install
+            npm run app
       
       
       
@@ -761,56 +764,56 @@ After that, run the $ node app command. You will see Server running on port 8082
 
 // default.json
 
-{
-  "mongoURI":
-    "mongodb+srv://mern123:<password>@mernatoz-9kdpd.mongodb.net/test?retryWrites=true&w=majority"
-}
- /* Replace <password> with your database password */
-// db.js
+      {
+        "mongoURI":
+          "mongodb+srv://mern123:<password>@mernatoz-9kdpd.mongodb.net/test?retryWrites=true&w=majority"
+      }
+       /* Replace <password> with your database password */
+      // db.js
 
-const mongoose = require('mongoose');
-const config = require('config');
-const db = config.get('mongoURI');
+      const mongoose = require('mongoose');
+      const config = require('config');
+      const db = config.get('mongoURI');
 
-const connectDB = async () => {
-  try {
-    mongoose.set('strictQuery', true);
-    await mongoose.connect(db, {
-      useNewUrlParser: true,
-    });
+      const connectDB = async () => {
+        try {
+          mongoose.set('strictQuery', true);
+          await mongoose.connect(db, {
+            useNewUrlParser: true,
+          });
 
-    console.log('MongoDB is Connected...');
-  } catch (err) {
-    console.error(err.message);
-    process.exit(1);
-  }
-};
+          console.log('MongoDB is Connected...');
+        } catch (err) {
+          console.error(err.message);
+          process.exit(1);
+        }
+      };
 
-module.exports = connectDB;
- 
+      module.exports = connectDB;
+
  
  
 // app.js
 
-const express = require('express');
-const connectDB = require('./config/db');
+      const express = require('express');
+      const connectDB = require('./config/db');
 
-const app = express();
+      const app = express();
 
-// Connect Database
-connectDB();
+      // Connect Database
+      connectDB();
 
-app.get('/', (req, res) => res.send('Hello world!'));
+      app.get('/', (req, res) => res.send('Hello world!'));
 
-const port = process.env.PORT || 8082;
+      const port = process.env.PORT || 8082;
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+      app.listen(port, () => console.log(`Server running on port ${port}`));
 
 
- 
- 
- 
- npm run app
+
+
+
+       npm run app
  
  
  
@@ -828,65 +831,65 @@ app.listen(port, () => console.log(`Server running on port ${port}`));
 
 // routes/api/books.js
 
-const express = require('express');
-const router = express.Router();
+       const express = require('express');
+       const router = express.Router();
 
-// Load Book model
-const Book = require('../../models/Book');
+       // Load Book model
+       const Book = require('../../models/Book');
 
-// @route GET api/books/test
-// @description tests books route
-// @access Public
-router.get('/test', (req, res) => res.send('book route testing!'));
+       // @route GET api/books/test
+       // @description tests books route
+       // @access Public
+       router.get('/test', (req, res) => res.send('book route testing!'));
 
-// @route GET api/books
-// @description Get all books
-// @access Public
-router.get('/', (req, res) => {
-  Book.find()
-    .then(books => res.json(books))
-    .catch(err => res.status(404).json({ nobooksfound: 'No Books found' }));
-});
+       // @route GET api/books
+       // @description Get all books
+       // @access Public
+       router.get('/', (req, res) => {
+         Book.find()
+           .then(books => res.json(books))
+           .catch(err => res.status(404).json({ nobooksfound: 'No Books found' }));
+       });
 
-// @route GET api/books/:id
-// @description Get single book by id
-// @access Public
-router.get('/:id', (req, res) => {
-  Book.findById(req.params.id)
-    .then(book => res.json(book))
-    .catch(err => res.status(404).json({ nobookfound: 'No Book found' }));
-});
+       // @route GET api/books/:id
+       // @description Get single book by id
+       // @access Public
+       router.get('/:id', (req, res) => {
+         Book.findById(req.params.id)
+           .then(book => res.json(book))
+           .catch(err => res.status(404).json({ nobookfound: 'No Book found' }));
+       });
 
-// @route GET api/books
-// @description add/save book
-// @access Public
-router.post('/', (req, res) => {
-  Book.create(req.body)
-    .then(book => res.json({ msg: 'Book added successfully' }))
-    .catch(err => res.status(400).json({ error: 'Unable to add this book' }));
-});
+       // @route GET api/books
+       // @description add/save book
+       // @access Public
+       router.post('/', (req, res) => {
+         Book.create(req.body)
+           .then(book => res.json({ msg: 'Book added successfully' }))
+           .catch(err => res.status(400).json({ error: 'Unable to add this book' }));
+       });
 
-// @route GET api/books/:id
-// @description Update book
-// @access Public
-router.put('/:id', (req, res) => {
-  Book.findByIdAndUpdate(req.params.id, req.body)
-    .then(book => res.json({ msg: 'Updated successfully' }))
-    .catch(err =>
-      res.status(400).json({ error: 'Unable to update the Database' })
-    );
-});
+       // @route GET api/books/:id
+       // @description Update book
+       // @access Public
+       router.put('/:id', (req, res) => {
+         Book.findByIdAndUpdate(req.params.id, req.body)
+           .then(book => res.json({ msg: 'Updated successfully' }))
+           .catch(err =>
+             res.status(400).json({ error: 'Unable to update the Database' })
+           );
+       });
 
-// @route GET api/books/:id
-// @description Delete book by id
-// @access Public
-router.delete('/:id', (req, res) => {
-  Book.findByIdAndRemove(req.params.id, req.body)
-    .then(book => res.json({ mgs: 'Book entry deleted successfully' }))
-    .catch(err => res.status(404).json({ error: 'No such a book' }));
-});
+       // @route GET api/books/:id
+       // @description Delete book by id
+       // @access Public
+       router.delete('/:id', (req, res) => {
+         Book.findByIdAndRemove(req.params.id, req.body)
+           .then(book => res.json({ mgs: 'Book entry deleted successfully' }))
+           .catch(err => res.status(404).json({ error: 'No such a book' }));
+       });
 
-module.exports = router;
+       module.exports = router;
 
  
  
@@ -900,37 +903,37 @@ Database model:
  
 // models/Book.js
 
-const mongoose = require('mongoose');
+      const mongoose = require('mongoose');
 
-const BookSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true
-  },
-  isbn: {
-    type: String,
-    required: true
-  },
-  author: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String
-  },
-  published_date: {
-    type: Date
-  },
-  publisher: {
-    type: String
-  },
-  updated_date: {
-    type: Date,
-    default: Date.now
-  }
-});
+      const BookSchema = new mongoose.Schema({
+        title: {
+          type: String,
+          required: true
+        },
+        isbn: {
+          type: String,
+          required: true
+        },
+        author: {
+          type: String,
+          required: true
+        },
+        description: {
+          type: String
+        },
+        published_date: {
+          type: Date
+        },
+        publisher: {
+          type: String
+        },
+        updated_date: {
+          type: Date,
+          default: Date.now
+        }
+      });
 
-module.exports = Book = mongoose.model('book', BookSchema);
+      module.exports = Book = mongoose.model('book', BookSchema);
 
 
  
@@ -949,7 +952,7 @@ module.exports = Book = mongoose.model('book', BookSchema);
  
  Setting up Create React App
  
-       npx create-react-app my-app
+        npx create-react-app my-app
  
  
  
@@ -973,59 +976,59 @@ module.exports = Book = mongoose.model('book', BookSchema);
  
  Open the file called index.html, which is in the public folder mern_a_to_z_client/public/index.html, and replace everything with the following code:
  
- 
- 
- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
 
-    <!-- bootstrap css cdn -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <!DOCTYPE html>
+     <html lang="en">
+       <head>
+         <meta charset="utf-8" />
+         <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+         <meta name="viewport" content="width=device-width, initial-scale=1" />
+         <meta name="theme-color" content="#000000" />
+         <!--
+           manifest.json provides metadata used when your web app is installed on a
+           user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+         -->
+         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+         <!--
+           Notice the use of %PUBLIC_URL% in the tags above.
+           It will be replaced with the URL of the `public` folder during the build.
+           Only files inside the `public` folder can be referenced from the HTML.
 
-    <!-- fontawesome cdn -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+           Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+           work correctly both with client-side routing and a non-root public URL.
+           Learn how to configure a non-root public URL by running `npm run build`.
+         -->
 
-    <title>MERN A to Z</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+         <!-- bootstrap css cdn -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+         <!-- fontawesome cdn -->
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+         <title>MERN A to Z</title>
+       </head>
+       <body>
+         <noscript>You need to enable JavaScript to run this app.</noscript>
+         <div id="root"></div>
+         <!--
+           This HTML file is a template.
+           If you open it directly in the browser, you will see an empty page.
 
-    <!-- bootstrap JS cdn -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+           You can add webfonts, meta tags, or analytics to this file.
+           The build step will place the bundled scripts into the <body> tag.
 
-  </body>
-</html>
+           To begin the development, run `npm start` or `yarn start`.
+           To create a production bundle, use `npm run build` or `yarn build`.
+         -->
+
+         <!-- bootstrap JS cdn -->
+         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+       </body>
+     </html>
 
 
  
@@ -1052,53 +1055,54 @@ module.exports = Book = mongoose.model('book', BookSchema);
  
  // MERN_A_to_Z_Client - package.json
 
-{
-  "name": "mern_a_to_z_client",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.5",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
-}
- 
+     {
+       "name": "mern_a_to_z_client",
+       "version": "0.1.0",
+       "private": true,
+       "dependencies": {
+         "@testing-library/jest-dom": "^5.16.5",
+         "@testing-library/react": "^13.4.0",
+         "@testing-library/user-event": "^13.5.0",
+         "axios": "^1.2.1",
+         "react": "^18.2.0",
+         "react-dom": "^18.2.0",
+         "react-router-dom": "^6.4.5",
+         "react-scripts": "5.0.1",
+         "web-vitals": "^2.1.4"
+       },
+       "scripts": {
+         "start": "react-scripts start",
+         "build": "react-scripts build",
+         "test": "react-scripts test",
+         "eject": "react-scripts eject"
+       },
+       "eslintConfig": {
+         "extends": [
+           "react-app",
+           "react-app/jest"
+         ]
+       },
+       "browserslist": {
+         "production": [
+           ">0.2%",
+           "not dead",
+           "not op_mini all"
+         ],
+         "development": [
+           "last 1 chrome version",
+           "last 1 firefox version",
+           "last 1 safari version"
+         ]
+       }
+     }
+
  
  
  
  
  
 Creating the component file
+
 
 Inside the src folder (mern_a_to_z_client/src/), create another folder called components, and inside it, create five different files:
 
@@ -1146,192 +1150,200 @@ Setting up routes
 
 Open the App.js folder inside the src folder (mern_a_to_z_client/src/App.js), and replace it with the following code:
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
 
-import CreateBook from './components/CreateBook';
-import ShowBookList from './components/ShowBookList';
-import ShowBookDetails from './components/ShowBookDetails';
-import UpdateBookInfo from './components/UpdateBookInfo';
 
-const App = () => {
-  return (
-    <Router>
-      <div>
-        <Routes>
-          <Route exact path='/' element={<ShowBookList />} />
-          <Route path='/create-book' element={<CreateBook />} />
-          <Route path='/edit-book/:id' element={<UpdateBookInfo />} />
-          <Route path='/show-book/:id' element={<ShowBookDetails />} />
-        </Routes>
-      </div>
-    </Router>
-  );
-};
+      import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+      import './App.css';
 
- 
- 
- 
- 
-export default App;
+      import CreateBook from './components/CreateBook';
+      import ShowBookList from './components/ShowBookList';
+      import ShowBookDetails from './components/ShowBookDetails';
+      import UpdateBookInfo from './components/UpdateBookInfo';
+
+      const App = () => {
+        return (
+          <Router>
+            <div>
+              <Routes>
+                <Route exact path='/' element={<ShowBookList />} />
+                <Route path='/create-book' element={<CreateBook />} />
+                <Route path='/edit-book/:id' element={<UpdateBookInfo />} />
+                <Route path='/show-book/:id' element={<ShowBookDetails />} />
+              </Routes>
+            </div>
+          </Router>
+        );
+      };
+
+
+
+
+
+      export default App;
+
+
+
 
 Here, we define all the routes. For a specific path definition, its corresponding component will be rendered. We have not implemented these files and components yet — we’ve just completed the path setup.
 Updating the CSS file
 
 Next, update a CSS file called App.css in the src folder with the following code:
 
-.App {
-  text-align: center;
-}
+      .App {
+        text-align: center;
+      }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
+      .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+        height: 40vmin;
+        pointer-events: none;
+      }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+      .App-header {
+        background-color: #282c34;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        color: white;
+      }
 
-.App-link {
-  color: #61dafb;
-}
+      .App-link {
+        color: #61dafb;
+      }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+      @keyframes App-logo-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
 
-.CreateBook {
-  background-color: #2c3e50;
-  min-height: 100vh;
-  color: white;
-}
+      .CreateBook {
+        background-color: #2c3e50;
+        min-height: 100vh;
+        color: white;
+      }
 
-.ShowBookDetails {
-  background-color: #2c3e50;
-  min-height: 100vh;
-  color: white;
-}
+      .ShowBookDetails {
+        background-color: #2c3e50;
+        min-height: 100vh;
+        color: white;
+      }
 
-.UpdateBookInfo {
-  background-color: #2c3e50;
-  min-height: 100vh;
-  color: white;
-}
+      .UpdateBookInfo {
+        background-color: #2c3e50;
+        min-height: 100vh;
+        color: white;
+      }
 
-.ShowBookList {
-  background-color: #2c3e50;
-  height: 100%;
-  width: 100%;
-  min-height: 100vh;
-  min-width: 100px;
-  color: white;
-}
+      .ShowBookList {
+        background-color: #2c3e50;
+        height: 100%;
+        width: 100%;
+        min-height: 100vh;
+        min-width: 100px;
+        color: white;
+      }
 
-/* BookList Styles */
-.list {
-  display: grid;
-  margin: 20px 0 50px 0;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 1fr;
-  grid-gap: 2em;
-}
+      /* BookList Styles */
+      .list {
+        display: grid;
+        margin: 20px 0 50px 0;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 1fr;
+        grid-gap: 2em;
+      }
 
-.card-container {
-  width: 250px;
-  border: 1px solid rgba(0,0,.125);
-  margin: 0 auto;
-  border-radius: 5px;
-  overflow: hidden;
-}
+      .card-container {
+        width: 250px;
+        border: 1px solid rgba(0,0,.125);
+        margin: 0 auto;
+        border-radius: 5px;
+        overflow: hidden;
+      }
 
-.desc {
-  height: 130px;
-  padding: 10px;
-}
+      .desc {
+        height: 130px;
+        padding: 10px;
+      }
 
-.desc h2 {
-  font-size: 1em;
-  font-weight: 400;
-}
+      .desc h2 {
+        font-size: 1em;
+        font-weight: 400;
+      }
 
-.desc h3, p {
-  font-weight: 300;
-}
+      .desc h3, p {
+        font-weight: 300;
+      }
 
-.desc h3 {
-  color: #6c757d;
-  font-size: 1em;
-  padding: 10px 0 10px 0;
-}
+      .desc h3 {
+        color: #6c757d;
+        font-size: 1em;
+        padding: 10px 0 10px 0;
+      }
 
- 
+
  
  
 Adding our feature components
 
 Now, it’s time to add feature components to our MERN stack project. Our CreateBook.js file is responsible for adding, creating, or saving a new book or a book’s info.
+
+
 CreateBook.js
 
 So, update CreateBook.js with the following code:
 
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 
-import { useNavigate } from 'react-router-dom';
+    import React, { useState } from 'react';
+    import { Link } from 'react-router-dom';
+    import axios from 'axios';
 
-const CreateBook = (props) => {
-  // Define the state with useState hook
-  const navigate = useNavigate();
-  const [book, setBook] = useState({
-    title: '',
-    isbn: '',
-    author: '',
-    description: '',
-    published_date: '',
-    publisher: '',
-  });
+    import { useNavigate } from 'react-router-dom';
 
-  const onChange = (e) => {
-    setBook({ ...book, [e.target.name]: e.target.value });
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    axios
-      .post('http://localhost:8082/api/books', book)
-      .then((res) => {
-        setBook({
-          title: '',
-          isbn: '',
-          author: '',
-          description: '',
-          published_date: '',
-          publisher: '',
-        });
-
-        // Push to /
-        navigate('/');
-      })
-      .catch((err) => {
-        console.log('Error in CreateBook!');
+    const CreateBook = (props) => {
+      // Define the state with useState hook
+      const navigate = useNavigate();
+      const [book, setBook] = useState({
+        title: '',
+        isbn: '',
+        author: '',
+        description: '',
+        published_date: '',
+        publisher: '',
       });
-  };
+
+      const onChange = (e) => {
+        setBook({ ...book, [e.target.name]: e.target.value });
+      };
+
+      const onSubmit = (e) => {
+        e.preventDefault();
+
+        axios
+          .post('http://localhost:8082/api/books', book)
+          .then((res) => {
+            setBook({
+              title: '',
+              isbn: '',
+              author: '',
+              description: '',
+              published_date: '',
+              publisher: '',
+            });
+
+            // Push to /
+            navigate('/');
+          })
+          .catch((err) => {
+            console.log('Error in CreateBook!');
+          });
+      };
 
   return (
     <div className='CreateBook'>
