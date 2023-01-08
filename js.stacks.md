@@ -1112,6 +1112,793 @@ Inside the src folder (mern_a_to_z_client/src/), create another folder called co
  
  
  
+ More great articles from LogRocket:
+
+    Don't miss a moment with The Replay, a curated newsletter from LogRocket
+    Learn how LogRocket's Galileo cuts through the noise to proactively resolve issues in your app
+    Use React's useEffect to optimize your application's performance
+    Switch between multiple versions of Node
+    Discover how to animate your React app with AnimXYZ
+    Explore Tauri, a new framework for building binaries
+    Compare NestJS vs. Express.js
+
+Functional components and React Hooks
+
+React functional components are a comparatively newer addition to the framework. Earlier, we only had class-based components. A functional component in React is essentially a JavaScript function that returns the React element or JSX. A functional component can be written using the conventional keyword or arrow function. Props are based on function arguments. A functional component can be used on other files only after exporting them:
+
+function Hello(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+export default Welcome;
+
+The function shown above is a valid React functional component. In this tutorial, we will be using React functional components. To dive deeper into React functional components, check out this article to learn more.
+
+Before React v16.8, developers were only allowed to manage state, and other React features in class-based components. In React v16.8, the React team introduced Hooks. Hooks allow the developers to manage code and other React features inside a functional component.
+
+Check out our cheat sheet for more information on React Hooks.
+Setting up routes
+
+Open the App.js folder inside the src folder (mern_a_to_z_client/src/App.js), and replace it with the following code:
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.css';
+
+import CreateBook from './components/CreateBook';
+import ShowBookList from './components/ShowBookList';
+import ShowBookDetails from './components/ShowBookDetails';
+import UpdateBookInfo from './components/UpdateBookInfo';
+
+const App = () => {
+  return (
+    <Router>
+      <div>
+        <Routes>
+          <Route exact path='/' element={<ShowBookList />} />
+          <Route path='/create-book' element={<CreateBook />} />
+          <Route path='/edit-book/:id' element={<UpdateBookInfo />} />
+          <Route path='/show-book/:id' element={<ShowBookDetails />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
+
+export default App;
+
+Here, we define all the routes. For a specific path definition, its corresponding component will be rendered. We have not implemented these files and components yet — we’ve just completed the path setup.
+Updating the CSS file
+
+Next, update a CSS file called App.css in the src folder with the following code:
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.CreateBook {
+  background-color: #2c3e50;
+  min-height: 100vh;
+  color: white;
+}
+
+.ShowBookDetails {
+  background-color: #2c3e50;
+  min-height: 100vh;
+  color: white;
+}
+
+.UpdateBookInfo {
+  background-color: #2c3e50;
+  min-height: 100vh;
+  color: white;
+}
+
+.ShowBookList {
+  background-color: #2c3e50;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100px;
+  color: white;
+}
+
+/* BookList Styles */
+.list {
+  display: grid;
+  margin: 20px 0 50px 0;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  grid-gap: 2em;
+}
+
+.card-container {
+  width: 250px;
+  border: 1px solid rgba(0,0,.125);
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.desc {
+  height: 130px;
+  padding: 10px;
+}
+
+.desc h2 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.desc h3, p {
+  font-weight: 300;
+}
+
+.desc h3 {
+  color: #6c757d;
+  font-size: 1em;
+  padding: 10px 0 10px 0;
+}
+
+Adding our feature components
+
+Now, it’s time to add feature components to our MERN stack project. Our CreateBook.js file is responsible for adding, creating, or saving a new book or a book’s info.
+CreateBook.js
+
+So, update CreateBook.js with the following code:
+
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+
+import { useNavigate } from 'react-router-dom';
+
+const CreateBook = (props) => {
+  // Define the state with useState hook
+  const navigate = useNavigate();
+  const [book, setBook] = useState({
+    title: '',
+    isbn: '',
+    author: '',
+    description: '',
+    published_date: '',
+    publisher: '',
+  });
+
+  const onChange = (e) => {
+    setBook({ ...book, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post('http://localhost:8082/api/books', book)
+      .then((res) => {
+        setBook({
+          title: '',
+          isbn: '',
+          author: '',
+          description: '',
+          published_date: '',
+          publisher: '',
+        });
+
+        // Push to /
+        navigate('/');
+      })
+      .catch((err) => {
+        console.log('Error in CreateBook!');
+      });
+  };
+
+  return (
+    <div className='CreateBook'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-8 m-auto'>
+            <br />
+            <Link to='/' className='btn btn-outline-warning float-left'>
+              Show BooK List
+            </Link>
+          </div>
+          <div className='col-md-8 m-auto'>
+            <h1 className='display-4 text-center'>Add Book</h1>
+            <p className='lead text-center'>Create new book</p>
+
+            <form noValidate onSubmit={onSubmit}>
+              <div className='form-group'>
+                <input
+                  type='text'
+                  placeholder='Title of the Book'
+                  name='title'
+                  className='form-control'
+                  value={book.title}
+                  onChange={onChange}
+                />
+              </div>
+              <br />
+
+              <div className='form-group'>
+                <input
+                  type='text'
+                  placeholder='ISBN'
+                  name='isbn'
+                  className='form-control'
+                  value={book.isbn}
+                  onChange={onChange}
+                />
+              </div>
+
+              <div className='form-group'>
+                <input
+                  type='text'
+                  placeholder='Author'
+                  name='author'
+                  className='form-control'
+                  value={book.author}
+                  onChange={onChange}
+                />
+              </div>
+
+              <div className='form-group'>
+                <input
+                  type='text'
+                  placeholder='Describe this book'
+                  name='description'
+                  className='form-control'
+                  value={book.description}
+                  onChange={onChange}
+                />
+              </div>
+
+              <div className='form-group'>
+                <input
+                  type='date'
+                  placeholder='published_date'
+                  name='published_date'
+                  className='form-control'
+                  value={book.published_date}
+                  onChange={onChange}
+                />
+              </div>
+              <div className='form-group'>
+                <input
+                  type='text'
+                  placeholder='Publisher of this Book'
+                  name='publisher'
+                  className='form-control'
+                  value={book.publisher}
+                  onChange={onChange}
+                />
+              </div>
+
+              <input
+                type='submit'
+                className='btn btn-outline-warning btn-block mt-4'
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CreateBook;
+
+ShowBookList.js
+
+The ShowBookList.js component will be responsible for showing all the books we already have stored in our database. Update ShowBookList.js with this code:
+
+import React, { useState, useEffect } from 'react';
+import '../App.css';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import BookCard from './BookCard';
+
+function ShowBookList() {
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:8082/api/books')
+      .then((res) => {
+        setBooks(res.data);
+      })
+      .catch((err) => {
+        console.log('Error from ShowBookList');
+      });
+  }, []);
+
+  const bookList =
+    books.length === 0
+      ? 'there is no book record!'
+      : books.map((book, k) => <BookCard book={book} key={k} />);
+
+  return (
+    <div className='ShowBookList'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-12'>
+            <br />
+            <h2 className='display-4 text-center'>Books List</h2>
+          </div>
+
+          <div className='col-md-11'>
+            <Link
+              to='/create-book'
+              className='btn btn-outline-warning float-right'
+            >
+              + Add New Book
+            </Link>
+            <br />
+            <br />
+            <hr />
+          </div>
+        </div>
+
+        <div className='list'>{bookList}</div>
+      </div>
+    </div>
+  );
+}
+
+export default ShowBookList;
+
+BookCard.js
+
+Here, we use a functional component called BookCard.js, which takes a book’s info from ShowBookList.js and makes a card for each book. Write the following code to update your BookCard.js file:
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../App.css';
+
+const BookCard = (props) => {
+  const book = props.book;
+
+  return (
+    <div className='card-container'>
+      <img
+        src='https://images.unsplash.com/photo-1495446815901-a7297e633e8d'
+        alt='Books'
+        height={200}
+      />
+      <div className='desc'>
+        <h2>
+          <Link to={`/show-book/${book._id}`}>{book.title}</Link>
+        </h2>
+        <h3>{book.author}</h3>
+        <p>{book.description}</p>
+      </div>
+    </div>
+  );
+};
+
+export default BookCard;
+
+    NOTE: Here, I used the same img src for each book, since each book’s respective image may not always be available. Change the image source, and you can also use a different image for each book.
+
+The ShowBookDetails component has one task: it shows all the info we have about any book. We have both delete and edit buttons here to get access:
+
+import React, { useState, useEffect } from 'react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import '../App.css';
+import axios from 'axios';
+
+function ShowBookDetails(props) {
+  const [book, setBook] = useState({});
+
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8082/api/books/${id}`)
+      .then((res) => {
+        setBook(res.data);
+      })
+      .catch((err) => {
+        console.log('Error from ShowBookDetails');
+      });
+  }, [id]);
+
+  const onDeleteClick = (id) => {
+    axios
+      .delete(`http://localhost:8082/api/books/${id}`)
+      .then((res) => {
+        navigate('/');
+      })
+      .catch((err) => {
+        console.log('Error form ShowBookDetails_deleteClick');
+      });
+  };
+
+  const BookItem = (
+    <div>
+      <table className='table table-hover table-dark'>
+        <tbody>
+          <tr>
+            <th scope='row'>1</th>
+            <td>Title</td>
+            <td>{book.title}</td>
+          </tr>
+          <tr>
+            <th scope='row'>2</th>
+            <td>Author</td>
+            <td>{book.author}</td>
+          </tr>
+          <tr>
+            <th scope='row'>3</th>
+            <td>ISBN</td>
+            <td>{book.isbn}</td>
+          </tr>
+          <tr>
+            <th scope='row'>4</th>
+            <td>Publisher</td>
+            <td>{book.publisher}</td>
+          </tr>
+          <tr>
+            <th scope='row'>5</th>
+            <td>Published Date</td>
+            <td>{book.published_date}</td>
+          </tr>
+          <tr>
+            <th scope='row'>6</th>
+            <td>Description</td>
+            <td>{book.description}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+
+  return (
+    <div className='ShowBookDetails'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-10 m-auto'>
+            <br /> <br />
+            <Link to='/' className='btn btn-outline-warning float-left'>
+              Show Book List
+            </Link>
+          </div>
+          <br />
+          <div className='col-md-8 m-auto'>
+            <h1 className='display-4 text-center'>Book's Record</h1>
+            <p className='lead text-center'>View Book's Info</p>
+            <hr /> <br />
+          </div>
+          <div className='col-md-10 m-auto'>{BookItem}</div>
+          <div className='col-md-6 m-auto'>
+            <button
+              type='button'
+              className='btn btn-outline-danger btn-lg btn-block'
+              onClick={() => {
+                onDeleteClick(book._id);
+              }}
+            >
+              Delete Book
+            </button>
+          </div>
+          <div className='col-md-6 m-auto'>
+            <Link
+              to={`/edit-book/${book._id}`}
+              className='btn btn-outline-info btn-lg btn-block'
+            >
+              Edit Book
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ShowBookDetails;
+
+UpdateBookInfo.js
+
+UpdateBookInfo.js, as its name indicates, is responsible for updating a book’s info. An Edit Book button will trigger this component to perform. After clicking Edit Book, we will see a form with the old info, which we will be able to edit or replace:
+
+import React, { useState, useEffect } from 'react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import '../App.css';
+
+function UpdateBookInfo(props) {
+  const [book, setBook] = useState({
+    title: '',
+    isbn: '',
+    author: '',
+    description: '',
+    published_date: '',
+    publisher: '',
+  });
+
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8082/api/books/${id}`)
+      .then((res) => {
+        setBook({
+          title: res.data.title,
+          isbn: res.data.isbn,
+          author: res.data.author,
+          description: res.data.description,
+          published_date: res.data.published_date,
+          publisher: res.data.publisher,
+        });
+      })
+      .catch((err) => {
+        console.log('Error from UpdateBookInfo');
+      });
+  }, [id]);
+
+  const onChange = (e) => {
+    setBook({ ...book, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      title: book.title,
+      isbn: book.isbn,
+      author: book.author,
+      description: book.description,
+      published_date: book.published_date,
+      publisher: book.publisher,
+    };
+
+    axios
+      .put(`http://localhost:8082/api/books/${id}`, data)
+      .then((res) => {
+        navigate(`/show-book/${id}`);
+      })
+      .catch((err) => {
+        console.log('Error in UpdateBookInfo!');
+      });
+  };
+
+  return (
+    <div className='UpdateBookInfo'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-8 m-auto'>
+            <br />
+            <Link to='/' className='btn btn-outline-warning float-left'>
+              Show BooK List
+            </Link>
+          </div>
+          <div className='col-md-8 m-auto'>
+            <h1 className='display-4 text-center'>Edit Book</h1>
+            <p className='lead text-center'>Update Book's Info</p>
+          </div>
+        </div>
+
+        <div className='col-md-8 m-auto'>
+          <form noValidate onSubmit={onSubmit}>
+            <div className='form-group'>
+              <label htmlFor='title'>Title</label>
+              <input
+                type='text'
+                placeholder='Title of the Book'
+                name='title'
+                className='form-control'
+                value={book.title}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+
+            <div className='form-group'>
+              <label htmlFor='isbn'>ISBN</label>
+              <input
+                type='text'
+                placeholder='ISBN'
+                name='isbn'
+                className='form-control'
+                value={book.isbn}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+
+            <div className='form-group'>
+              <label htmlFor='author'>Author</label>
+              <input
+                type='text'
+                placeholder='Author'
+                name='author'
+                className='form-control'
+                value={book.author}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+
+            <div className='form-group'>
+              <label htmlFor='description'>Description</label>
+              <textarea
+                type='text'
+                placeholder='Description of the Book'
+                name='description'
+                className='form-control'
+                value={book.description}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+
+            <div className='form-group'>
+              <label htmlFor='published_date'>Published Date</label>
+              <input
+                type='text'
+                placeholder='Published Date'
+                name='published_date'
+                className='form-control'
+                value={book.published_date}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+
+            <div className='form-group'>
+              <label htmlFor='publisher'>Publisher</label>
+              <input
+                type='text'
+                placeholder='Publisher of the Book'
+                name='publisher'
+                className='form-control'
+                value={book.publisher}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+
+            <button
+              type='submit'
+              className='btn btn-outline-info btn-lg btn-block'
+            >
+              Update Book
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default UpdateBookInfo;
+
+Connecting and running the frontend to the backend
+
+We just implemented all of our components! Now, we need a little change in our server side backend project.
+
+If we try to call our backend API from the frontend part, it gets an error:
+
+"Access to XMLHttpRequest at 'http://localhost:8082/api/books' from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource."
+
+To solve this, we need to install cors in our backend server side project. Go to the project folder and run $ npm install cors.
+
+Now, update app.js, the backend’s entry point with the following code:
+
+// app.js
+
+const express = require('express');
+const connectDB = require('./config/db');
+const cors = require('cors');
+
+// routes
+const books = require('./routes/api/books');
+
+const app = express();
+
+// Connect Database
+connectDB();
+
+// cors
+app.use(cors({ origin: true, credentials: true }));
+
+// Init Middleware
+app.use(express.json({ extended: false }));
+
+app.get('/', (req, res) => res.send('Hello world!'));
+
+// use Routes
+app.use('/api/books', books);
+
+const port = process.env.PORT || 8082;
+
+app.listen(port, () => console.log(`Server running on port ${port}`));
+
+It is also important that you add this line, app.use(express.json({ extended: false }));. The express.json method allows Express to read data sent using a POST or PUT request. It is used for recognizing incoming objects as JSON objects.
+Running the frontend and backend
+
+Follow the steps below to run both the frontend and backend of our MERN stack example.
+
+First, run the server (inside the project folder):
+
+$ npm run app
+
+If you get any errors, then follow the commands below (inside the project folder):
+
+$ npm install
+$ npm run app
+
+To run the client, run the command below from the frontend project directory:
+
+$ npm start
+
+If you get an error again, follow the same commands below:
+
+$ npm install
+$ npm start
+
+Testing our MERN stack app in the browser
+
+Let’s check everything in the browser. Open http://localhost:3000 in your browser. Now, you can add a book, delete a book, show the list of books, and edit books. The following routes should perform accordingly:
+
+Add a new book:
+
+http://localhost:3000/create-book
+
+MERN Stack Books One
+
+Show the list of books:
+
+http://localhost:3000/
+
+MERN Stack Books Two
+
+Show any book’s info:
+
+http://localhost:3000/show-book/:id
+
+MERN Stack Books Three
+
+Update a book’s info:
+
+http://localhost:3000/edit-book/:id
+
+MERN Stack Books Four
+Conclusion
+ 
+ 
+ 
+ 
  
  
  
