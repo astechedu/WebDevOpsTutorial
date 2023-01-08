@@ -26,7 +26,7 @@ Topics:
 # MongoDB Database
 
 
-###### Setting up MongoDB Atlas Nodejs Integration Simplified:
+###### 1. Setting up MongoDB Atlas Nodejs Integration Simplified:
 
 
 What is MongoDB Atlas?
@@ -46,14 +46,21 @@ Upon a complete walkthrough of this article, you will gain a holistic understand
 
 
 
+What is Node.js?
 
-Connect to your Database
+
+Node.js is an Open-Source Server-Side Runtime Environment that is solely based on the V8 JavaScript Chrome Engine. It offers an Event-driven, Non-Blocking (Asynchronous) I/O and Cross-Platform runtime environment for developing highly scalable Server-Side JavaScript applications. Node.js can be used to create a variety of applications, including Command-Line Applications, Web Applications, Real-time Chat Applications, REST API Servers, and so on. Its Event-Driven Runtime handles all types of HTTP requests and sleeps when not required. This allows developers to leverage JavaScript and write Server-Side scripts to generate Dynamic Web Content before it is delivered to the user’s web browser. 
+
+
+
+Connect to your Database:
 
     Head back to the home page of MongoDB Atlas and select the Clusters option.
     Now, click on the Connect Your Application option to set up a connection between your application and cluster using MongoDB’s native drivers.
     Select Node.js as the native driver and save the Connection String provided by MongoDB Atlas 
 
 It’s now time to use Mongoose to create your database connection. Install Mongoose in your project by using the npm install mongoose command. Copy and paste the code below into db.js.
+
 
 
 
