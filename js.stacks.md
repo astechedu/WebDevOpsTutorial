@@ -1802,8 +1802,13 @@ function UpdateBookInfo(props) {
 }
 
 export default UpdateBookInfo;
+ 
+ 
+ 
 
-Connecting and running the frontend to the backend
+# Connecting and running the frontend to the backend
+ 
+ 
 
 We just implemented all of our components! Now, we need a little change in our server side backend project.
 
@@ -1813,8 +1818,12 @@ If we try to call our backend API from the frontend part, it gets an error:
 
 To solve this, we need to install cors in our backend server side project. Go to the project folder and run $ npm install cors.
 
+ 
+ 
 Now, update app.js, the backend’s entry point with the following code:
 
+ 
+ 
 // app.js
 
 const express = require('express');
@@ -1844,57 +1853,88 @@ const port = process.env.PORT || 8082;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
+ 
+ 
+ 
+ 
 It is also important that you add this line, app.use(express.json({ extended: false }));. The express.json method allows Express to read data sent using a POST or PUT request. It is used for recognizing incoming objects as JSON objects.
 Running the frontend and backend
 
+ 
+ 
+ 
 Follow the steps below to run both the frontend and backend of our MERN stack example.
 
+ 
+ 
+ 
 First, run the server (inside the project folder):
 
 $ npm run app
 
+ 
+ 
 If you get any errors, then follow the commands below (inside the project folder):
 
 $ npm install
 $ npm run app
 
+ 
+ 
 To run the client, run the command below from the frontend project directory:
 
 $ npm start
 
+ 
+ 
+ 
 If you get an error again, follow the same commands below:
 
 $ npm install
 $ npm start
 
+ 
+ 
+ 
 Testing our MERN stack app in the browser
 
 Let’s check everything in the browser. Open http://localhost:3000 in your browser. Now, you can add a book, delete a book, show the list of books, and edit books. The following routes should perform accordingly:
 
+ 
+ 
+ 
+ 
 Add a new book:
 
 http://localhost:3000/create-book
 
 MERN Stack Books One
 
+ 
+ 
+ 
 Show the list of books:
 
 http://localhost:3000/
 
 MERN Stack Books Two
 
+ 
+ 
 Show any book’s info:
 
 http://localhost:3000/show-book/:id
 
 MERN Stack Books Three
 
+ 
+ 
 Update a book’s info:
 
 http://localhost:3000/edit-book/:id
 
 MERN Stack Books Four
-Conclusion
+
  
  
  
@@ -1903,58 +1943,12 @@ Conclusion
  
  
  
+  
  
  
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- https://blog.logrocket.com/mern-stack-tutorial/
  
  
  
