@@ -1510,34 +1510,34 @@ BookCard.js
 
 Here, we use a functional component called BookCard.js, which takes a book’s info from ShowBookList.js and makes a card for each book. Write the following code to update your BookCard.js file:
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../App.css';
+      import React from 'react';
+      import { Link } from 'react-router-dom';
+      import '../App.css';
 
-const BookCard = (props) => {
-  const book = props.book;
+      const BookCard = (props) => {
+        const book = props.book;
 
-  return (
-    <div className='card-container'>
-      <img
-        src='https://images.unsplash.com/photo-1495446815901-a7297e633e8d'
-        alt='Books'
-        height={200}
-      />
-      <div className='desc'>
-        <h2>
-          <Link to={`/show-book/${book._id}`}>{book.title}</Link>
-        </h2>
-        <h3>{book.author}</h3>
-        <p>{book.description}</p>
-      </div>
-    </div>
-  );
-};
+        return (
+          <div className='card-container'>
+            <img
+              src='https://images.unsplash.com/photo-1495446815901-a7297e633e8d'
+              alt='Books'
+              height={200}
+            />
+            <div className='desc'>
+              <h2>
+                <Link to={`/show-book/${book._id}`}>{book.title}</Link>
+              </h2>
+              <h3>{book.author}</h3>
+              <p>{book.description}</p>
+            </div>
+          </div>
+        );
+      };
 
-export default BookCard;
+      export default BookCard;
 
- 
+
  
  
     NOTE: Here, I used the same img src for each book, since each book’s respective image may not always be available. Change the image source, and you can also use a different image for each book.
