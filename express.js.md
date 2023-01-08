@@ -105,7 +105,13 @@ On Windows PowerShell, use this command:
 PS> $env:DEBUG='myapp:*'; 
 
         npm start
+                
+    OR
+        
+        DEBUG=backend:* npm start
 
+
+        
 Then load http://localhost:3000/ in your browser to access the app.
 
 
