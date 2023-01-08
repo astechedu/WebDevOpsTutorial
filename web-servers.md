@@ -1,15 +1,20 @@
 # Web Servers Installation
 
-## Topics
- 1. Inginx On Ubuntu 20.04
- 2. Nginx Reverse Proxxy (as a proxy server) & apache2 (Origina Server)
+
+<a name="all-file-links.md"></a>
+ <a name="top"></a>
+ 
+Topics
+
+ 1. [Inginx On Ubuntu 20.04](#nginx_server)
+ 2. [Nginx Reverse Proxxy (as a proxy server) & apache2 (Origina Server)](#reverse_proxy)
  
  
  
  
  
- 
- 
+ [Go To Top](#top)
+ <a name="nginx_server"></a>
 ## Inginx On Ubuntu 20.04
 
     sudo apt-get update
@@ -99,6 +104,11 @@ By default, Nginx stores different configuration and log files in the following 
 
 
 
+
+
+
+[Go To Top](#top)
+<a name="proxy_server"></a>
 # Reverse Proxy using nginx(proxy server) and apache2
 
 
