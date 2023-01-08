@@ -25,15 +25,11 @@ Topics:
 [Different Ways to fetch data from API in Vuejs](#)
 
 
-1. [Fetch Api](#fetch_api1)
+1. [Using Axios to consume an API](#axios_consume)
 
-2. [Axios Library](#axios_library1)
+2. [Using the Fetch API method](#fetch_api)
 
-3. [async-await](#async_await1)
-
-4. [Custom Hoks](#custom_hooks1)
-
-5. [React Query](#react_query1)
+3. [Using APIs in Vuex](#api_in_vuex)
 
 
 
@@ -431,6 +427,11 @@ Overview
 If you don’t know how to create a Vue project, check out this documentation to walk you through the process.
 
 
+
+
+
+[Go To Top](#top)
+<a name="axios_consume"></a>
 # Using Axios to consume APIs
 
 Axios is a promise-based HTTP client which makes it suitable for fetching data during server-side display. It works on both browser and Node apps. Axios is a library that is built around the Fetch API.
@@ -598,6 +599,11 @@ We can now display the data in the template by looping through the posts using v
 
 
 
+
+
+
+[Go To Top](#top)
+<a name="fetch_api"></a>
 # Using Fetch API method
 
 
@@ -642,6 +648,12 @@ To request with the Fetch API, you just have to make the request directly with t
 
 
 
+
+
+
+
+[Go To Top](#top)
+<a name="api_in_vuex"></a>
 # Creating APIs in Vuex
 
 
