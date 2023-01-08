@@ -2,7 +2,10 @@
 
 <a name="top"></a>
 Topics
- [MERN STACK Installation](#mern_stack)
+
+ [MERN STACK Installation Ex. 1](#mern_stack)
+ 
+ [MERN STACK Installation Ex. 2](#mern_stack2)
  
  [MEVN Stack Installation](#mevn_stack)
  
@@ -633,8 +636,9 @@ client/src/index.css
 
 
 
-2.
+
 [Go To Top](#top)
+<a name="mern_stack2"></a>
 # Mern Stack 
 
 What is the MERN:
@@ -1132,9 +1136,10 @@ Functional components and React Hooks
 
 React functional components are a comparatively newer addition to the framework. Earlier, we only had class-based components. A functional component in React is essentially a JavaScript function that returns the React element or JSX. A functional component can be written using the conventional keyword or arrow function. Props are based on function arguments. A functional component can be used on other files only after exporting them:
 
-function Hello(props) {
-  return <h1>Hello, {props.name}</h1>;
-}
+
+      function Hello(props) {
+        return <h1>Hello, {props.name}</h1>;
+      }
 
  
  
