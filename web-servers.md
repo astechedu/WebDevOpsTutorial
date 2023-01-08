@@ -2,7 +2,7 @@
 
 ## Topics
  1. Inginx On Ubuntu 20.04
- 2. Reverse Proxxy nginx (as a proxy server) & apache2
+ 2. Nginx Reverse Proxxy (as a proxy server) & apache2
  
  
  
