@@ -116,7 +116,7 @@ By default, Nginx stores different configuration and log files in the following 
 # Reverse Proxy nginx (proxy server) and apache2
 
 
-       Client  <------->  Reverse Proxy ( nginx )   <------->   Original Server ( Ex. apache2 )
+       Internet (Client)  <------->  Reverse Proxy ( nginx )   <------->   Original Server ( Ex. apache2 )
  
 
  Steps: 
