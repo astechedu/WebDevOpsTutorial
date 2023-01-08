@@ -2,7 +2,7 @@
 
 ## Topics
  1. Inginx On Ubuntu 20.04
- 2. Nginx Reverse Proxxy (as a proxy server) & apache2
+ 2. Nginx Reverse Proxxy (as a proxy server) & apache2 (Origina Server)
  
  
  
@@ -102,7 +102,7 @@ By default, Nginx stores different configuration and log files in the following 
 # Reverse Proxy using nginx(proxy server) and apache2
 
 
-       Client  <------->  Proxy ( using nginx)   <------->   Server( using apache2)
+       Client  <------->  Reverse Proxy ( nginx )   <------->   Original Server ( Ex. apache2 )
  
 
  Steps: 
@@ -126,6 +126,7 @@ By default, Nginx stores different configuration and log files in the following 
       Permission denied
       
       Solutions: 
+      
        1. List of all the httpd SELinex boolean
        
           #getsebool -a grep httpd
