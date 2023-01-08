@@ -102,6 +102,9 @@ By default, Nginx stores different configuration and log files in the following 
 # Reverse Proxy using nginx(proxy server) and apache2
 
 
+       Client        Proxy ( using nginx)         Server( using apache2)
+ 
+
  Steps: 
   1. Enable and start nginx and apache2 
   2. Change port of apache2 in httpd file 80 to 8080
