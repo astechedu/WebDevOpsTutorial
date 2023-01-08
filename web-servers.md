@@ -2,6 +2,12 @@
 
 ## Topics
  1. Inginx On Ubuntu 20.04
+ 2. Reverse Proxxy nginx (as a proxy server) & apache2
+ 
+ 
+ 
+ 
+ 
  
  
 ## Inginx On Ubuntu 20.04
@@ -89,5 +95,55 @@ By default, Nginx stores different configuration and log files in the following 
     /var/log/ngins/error.log – A log of any errors generated in Nginx.
 
 
+
+
+
+
+# Reverse Proxy using nginx(proxy server) and apache2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ###### Install apache nginx php mysql etc
 [Ubuntu File click here](ubuntu.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
