@@ -631,15 +631,52 @@ client/src/index.css
 
 
 
+2.
+[Go To Top](#top)
+# Mern Stack 
+
+What is the MERN:
+
+    MongoDB: A cross-platform document-oriented database program
+    Express.js: A web application framework for Node.js
+    React: JavaScript library for building user interfaces
+    Node.js: An open source, cross-platform, JavaScript run-time environment that executes JavaScript code outside of a browser
 
 
 
+Server setup with Express.js and Node.js:
+
+
+npm package initialization:
+
+      npm init
+
+Installing the dependencies:
+
+      npm i express mongoose body-parser config
 
 
 
+Here’s what we get in the code above:
+
+    body-parser: Allows us to get the data throughout the request
+    express: Is our main framework
+    mongoose: Is used to connect and interact with MongoDB
+    config: 
+
+npm i -D nodemon
 
 
+Now, we’ll add nodemon as a dev dependency. If you don’t want to add this, you can skip it — it’s optional. Install it with $ npm i -D nodemon. To use nodemon, add "app": "nodemon app.js" to your scripts tag under the package.json file.
 
+
+The app.js is the entry point for the application.
+
+
+"start": "node app.js"
+
+
+Open and check package.json file
 
 
 
