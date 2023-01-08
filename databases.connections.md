@@ -67,7 +67,8 @@ It’s now time to use Mongoose to create your database connection. Install Mong
           })
 
 
-    Replace password with your own password and dbname with the name that you would like to give to your database. Once you have successfully executed the above code, you will see a Connected to the Database message on your console.
+
+Replace password with your own password and dbname with the name that you would like to give to your database. Once you have successfully executed the above code, you will see a Connected to the Database message on your console.
 
 
 
