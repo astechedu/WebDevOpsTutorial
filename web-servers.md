@@ -119,7 +119,9 @@ By default, Nginx stores different configuration and log files in the following 
    6. Check the logs
       /var/log/nginx
       sudo cat /var/log/audit/audit.log | grep nginx | grep denied
-      
+      cd /var/log/nginx/
+      ls -ltr
+      less error.log
       
 
 
