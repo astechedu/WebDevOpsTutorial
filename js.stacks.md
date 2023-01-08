@@ -1532,124 +1532,124 @@ export default BookCard;
 
 The ShowBookDetails component has one task: it shows all the info we have about any book. We have both delete and edit buttons here to get access:
 
-import React, { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
-import '../App.css';
-import axios from 'axios';
+      import React, { useState, useEffect } from 'react';
+      import { Link, useParams, useNavigate } from 'react-router-dom';
+      import '../App.css';
+      import axios from 'axios';
 
-function ShowBookDetails(props) {
-  const [book, setBook] = useState({});
+      function ShowBookDetails(props) {
+        const [book, setBook] = useState({});
 
-  const { id } = useParams();
-  const navigate = useNavigate();
+        const { id } = useParams();
+        const navigate = useNavigate();
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8082/api/books/${id}`)
-      .then((res) => {
-        setBook(res.data);
-      })
- 
- .catch((err) => {
-        console.log('Error from ShowBookDetails');
-      });
-  }, [id]);
+        useEffect(() => {
+          axios
+            .get(`http://localhost:8082/api/books/${id}`)
+            .then((res) => {
+              setBook(res.data);
+            })
 
-  const onDeleteClick = (id) => {
-    axios
-      .delete(`http://localhost:8082/api/books/${id}`)
-      .then((res) => {
-        navigate('/');
-      })
-      .catch((err) => {
-        console.log('Error form ShowBookDetails_deleteClick');
-      });
-  };
+       .catch((err) => {
+              console.log('Error from ShowBookDetails');
+            });
+        }, [id]);
 
-  const BookItem = (
-    <div>
-      <table className='table table-hover table-dark'>
-        <tbody>
-          <tr>
-            <th scope='row'>1</th>
-            <td>Title</td>
-            <td>{book.title}</td>
-          </tr>
-          <tr>
-            <th scope='row'>2</th>
-            <td>Author</td>
-            <td>{book.author}</td>
-          </tr>
-          <tr>
-            <th scope='row'>3</th>
-            <td>ISBN</td>
-            <td>{book.isbn}</td>
-          </tr>
-          <tr>
-            <th scope='row'>4</th>
-            <td>Publisher</td>
-            <td>{book.publisher}</td>
-          </tr>
-          <tr>
-            <th scope='row'>5</th>
-            <td>Published Date</td>
-            <td>{book.published_date}</td>
-          </tr>
-          <tr>
-            <th scope='row'>6</th>
-            <td>Description</td>
-            <td>{book.description}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
+        const onDeleteClick = (id) => {
+          axios
+            .delete(`http://localhost:8082/api/books/${id}`)
+            .then((res) => {
+              navigate('/');
+            })
+            .catch((err) => {
+              console.log('Error form ShowBookDetails_deleteClick');
+            });
+        };
 
-  return (
-    <div className='ShowBookDetails'>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-md-10 m-auto'>
-            <br /> <br />
-            <Link to='/' className='btn btn-outline-warning float-left'>
-              Show Book List
-            </Link>
+        const BookItem = (
+          <div>
+            <table className='table table-hover table-dark'>
+              <tbody>
+                <tr>
+                  <th scope='row'>1</th>
+                  <td>Title</td>
+                  <td>{book.title}</td>
+                </tr>
+                <tr>
+                  <th scope='row'>2</th>
+                  <td>Author</td>
+                  <td>{book.author}</td>
+                </tr>
+                <tr>
+                  <th scope='row'>3</th>
+                  <td>ISBN</td>
+                  <td>{book.isbn}</td>
+                </tr>
+                <tr>
+                  <th scope='row'>4</th>
+                  <td>Publisher</td>
+                  <td>{book.publisher}</td>
+                </tr>
+                <tr>
+                  <th scope='row'>5</th>
+                  <td>Published Date</td>
+                  <td>{book.published_date}</td>
+                </tr>
+                <tr>
+                  <th scope='row'>6</th>
+                  <td>Description</td>
+                  <td>{book.description}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <br />
-          <div className='col-md-8 m-auto'>
-            <h1 className='display-4 text-center'>Book's Record</h1>
-            <p className='lead text-center'>View Book's Info</p>
-            <hr /> <br />
-          </div>
-          <div className='col-md-10 m-auto'>{BookItem}</div>
-          <div className='col-md-6 m-auto'>
-            <button
-              type='button'
-              className='btn btn-outline-danger btn-lg btn-block'
-              onClick={() => {
-                onDeleteClick(book._id);
-              }}
-            >
-              Delete Book
-            </button>
-          </div>
-          <div className='col-md-6 m-auto'>
-            <Link
-              to={`/edit-book/${book._id}`}
-              className='btn btn-outline-info btn-lg btn-block'
-            >
-              Edit Book
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+        );
 
-export default ShowBookDetails;
+        return (
+          <div className='ShowBookDetails'>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-md-10 m-auto'>
+                  <br /> <br />
+                  <Link to='/' className='btn btn-outline-warning float-left'>
+                    Show Book List
+                  </Link>
+                </div>
+                <br />
+                <div className='col-md-8 m-auto'>
+                  <h1 className='display-4 text-center'>Book's Record</h1>
+                  <p className='lead text-center'>View Book's Info</p>
+                  <hr /> <br />
+                </div>
+                <div className='col-md-10 m-auto'>{BookItem}</div>
+                <div className='col-md-6 m-auto'>
+                  <button
+                    type='button'
+                    className='btn btn-outline-danger btn-lg btn-block'
+                    onClick={() => {
+                      onDeleteClick(book._id);
+                    }}
+                  >
+                    Delete Book
+                  </button>
+                </div>
+                <div className='col-md-6 m-auto'>
+                  <Link
+                    to={`/edit-book/${book._id}`}
+                    className='btn btn-outline-info btn-lg btn-block'
+                  >
+                    Edit Book
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
 
- 
+      export default ShowBookDetails;
+
+
  
  
  
@@ -1658,180 +1658,181 @@ UpdateBookInfo.js
 
 UpdateBookInfo.js, as its name indicates, is responsible for updating a book’s info. An Edit Book button will trigger this component to perform. After clicking Edit Book, we will see a form with the old info, which we will be able to edit or replace:
 
-import React, { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import '../App.css';
-
-function UpdateBookInfo(props) {
-  const [book, setBook] = useState({
-    title: '',
-    isbn: '',
-    author: '',
-    description: '',
-    published_date: '',
-    publisher: '',
-  });
-
-  const { id } = useParams();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8082/api/books/${id}`)
-      .then((res) => {
-        setBook({
-          title: res.data.title,
-          isbn: res.data.isbn,
-          author: res.data.author,
-          description: res.data.description,
-          published_date: res.data.published_date,
-          publisher: res.data.publisher,
-        });
-      })
-      .catch((err) => {
-        console.log('Error from UpdateBookInfo');
-      });
-  }, [id]);
-
-  const onChange = (e) => {
-    setBook({ ...book, [e.target.name]: e.target.value });
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    const data = {
-      title: book.title,
-      isbn: book.isbn,
-      author: book.author,
-      description: book.description,
-      published_date: book.published_date,
-      publisher: book.publisher,
-    };
-
-    axios
-      .put(`http://localhost:8082/api/books/${id}`, data)
-      .then((res) => {
-        navigate(`/show-book/${id}`);
-      })
-      .catch((err) => {
-        console.log('Error in UpdateBookInfo!');
-      });
-  };
-
-  return (
-    <div className='UpdateBookInfo'>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-md-8 m-auto'>
-            <br />
-            <Link to='/' className='btn btn-outline-warning float-left'>
-              Show BooK List
-            </Link>
-          </div>
-          <div className='col-md-8 m-auto'>
-            <h1 className='display-4 text-center'>Edit Book</h1>
-            <p className='lead text-center'>Update Book's Info</p>
-          </div>
-        </div>
-
-        <div className='col-md-8 m-auto'>
-          <form noValidate onSubmit={onSubmit}>
-            <div className='form-group'>
-              <label htmlFor='title'>Title</label>
-              <input
-                type='text'
-                placeholder='Title of the Book'
-                name='title'
-                className='form-control'
-                value={book.title}
-                onChange={onChange}
-              />
-            </div>
-            <br />
-
-            <div className='form-group'>
-              <label htmlFor='isbn'>ISBN</label>
-              <input
-                type='text'
-                placeholder='ISBN'
-                name='isbn'
-                className='form-control'
-                value={book.isbn}
-                onChange={onChange}
-              />
-            </div>
-            <br />
-
-            <div className='form-group'>
-              <label htmlFor='author'>Author</label>
-              <input
-                type='text'
-                placeholder='Author'
-                name='author'
-                className='form-control'
-                value={book.author}
-                onChange={onChange}
-              />
-            </div>
-            <br />
-
-            <div className='form-group'>
-              <label htmlFor='description'>Description</label>
-              <textarea
-                type='text'
-                placeholder='Description of the Book'
-                name='description'
-                className='form-control'
-                value={book.description}
-                onChange={onChange}
-              />
-            </div>
-            <br />
-
-            <div className='form-group'>
-              <label htmlFor='published_date'>Published Date</label>
-              <input
-                type='text'
-                placeholder='Published Date'
-                name='published_date'
-                className='form-control'
-                value={book.published_date}
-                onChange={onChange}
-              />
-            </div>
-            <br />
-
-            <div className='form-group'>
-              <label htmlFor='publisher'>Publisher</label>
-              <input
-                type='text'
-                placeholder='Publisher of the Book'
-                name='publisher'
-                className='form-control'
-                value={book.publisher}
-                onChange={onChange}
-              />
-            </div>
-            <br />
-
-            <button
-              type='submit'
-              className='btn btn-outline-info btn-lg btn-block'
-            >
-              Update Book
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default UpdateBookInfo;
-
  
+     import React, { useState, useEffect } from 'react';
+     import { Link, useParams, useNavigate } from 'react-router-dom';
+     import axios from 'axios';
+     import '../App.css';
+
+     function UpdateBookInfo(props) {
+       const [book, setBook] = useState({
+         title: '',
+         isbn: '',
+         author: '',
+         description: '',
+         published_date: '',
+         publisher: '',
+       });
+
+       const { id } = useParams();
+       const navigate = useNavigate();
+
+       useEffect(() => {
+         axios
+           .get(`http://localhost:8082/api/books/${id}`)
+           .then((res) => {
+             setBook({
+               title: res.data.title,
+               isbn: res.data.isbn,
+               author: res.data.author,
+               description: res.data.description,
+               published_date: res.data.published_date,
+               publisher: res.data.publisher,
+             });
+           })
+           .catch((err) => {
+             console.log('Error from UpdateBookInfo');
+           });
+       }, [id]);
+
+       const onChange = (e) => {
+         setBook({ ...book, [e.target.name]: e.target.value });
+       };
+
+       const onSubmit = (e) => {
+         e.preventDefault();
+
+         const data = {
+           title: book.title,
+           isbn: book.isbn,
+           author: book.author,
+           description: book.description,
+           published_date: book.published_date,
+           publisher: book.publisher,
+         };
+
+         axios
+           .put(`http://localhost:8082/api/books/${id}`, data)
+           .then((res) => {
+             navigate(`/show-book/${id}`);
+           })
+           .catch((err) => {
+             console.log('Error in UpdateBookInfo!');
+           });
+       };
+
+       return (
+         <div className='UpdateBookInfo'>
+           <div className='container'>
+             <div className='row'>
+               <div className='col-md-8 m-auto'>
+                 <br />
+                 <Link to='/' className='btn btn-outline-warning float-left'>
+                   Show BooK List
+                 </Link>
+               </div>
+               <div className='col-md-8 m-auto'>
+                 <h1 className='display-4 text-center'>Edit Book</h1>
+                 <p className='lead text-center'>Update Book's Info</p>
+               </div>
+             </div>
+
+             <div className='col-md-8 m-auto'>
+               <form noValidate onSubmit={onSubmit}>
+                 <div className='form-group'>
+                   <label htmlFor='title'>Title</label>
+                   <input
+                     type='text'
+                     placeholder='Title of the Book'
+                     name='title'
+                     className='form-control'
+                     value={book.title}
+                     onChange={onChange}
+                   />
+                 </div>
+                 <br />
+
+                 <div className='form-group'>
+                   <label htmlFor='isbn'>ISBN</label>
+                   <input
+                     type='text'
+                     placeholder='ISBN'
+                     name='isbn'
+                     className='form-control'
+                     value={book.isbn}
+                     onChange={onChange}
+                   />
+                 </div>
+                 <br />
+
+                 <div className='form-group'>
+                   <label htmlFor='author'>Author</label>
+                   <input
+                     type='text'
+                     placeholder='Author'
+                     name='author'
+                     className='form-control'
+                     value={book.author}
+                     onChange={onChange}
+                   />
+                 </div>
+                 <br />
+
+                 <div className='form-group'>
+                   <label htmlFor='description'>Description</label>
+                   <textarea
+                     type='text'
+                     placeholder='Description of the Book'
+                     name='description'
+                     className='form-control'
+                     value={book.description}
+                     onChange={onChange}
+                   />
+                 </div>
+                 <br />
+
+                 <div className='form-group'>
+                   <label htmlFor='published_date'>Published Date</label>
+                   <input
+                     type='text'
+                     placeholder='Published Date'
+                     name='published_date'
+                     className='form-control'
+                     value={book.published_date}
+                     onChange={onChange}
+                   />
+                 </div>
+                 <br />
+
+                 <div className='form-group'>
+                   <label htmlFor='publisher'>Publisher</label>
+                   <input
+                     type='text'
+                     placeholder='Publisher of the Book'
+                     name='publisher'
+                     className='form-control'
+                     value={book.publisher}
+                     onChange={onChange}
+                   />
+                 </div>
+                 <br />
+
+                 <button
+                   type='submit'
+                   className='btn btn-outline-info btn-lg btn-block'
+                 >
+                   Update Book
+                 </button>
+               </form>
+             </div>
+           </div>
+         </div>
+       );
+     }
+
+     export default UpdateBookInfo;
+
+
  
 # Connecting and running the frontend to the backend
 
@@ -1853,9 +1854,9 @@ Now, update app.js, the backend’s entry point with the following code:
  
 // app.js
 
-const express = require('express');
-const connectDB = require('./config/db');
-const cors = require('cors');
+      const express = require('express');
+      const connectDB = require('./config/db');
+      const cors = require('cors');
 
  
  
@@ -1868,31 +1869,37 @@ const app = express();
  
  
 // Connect Database
-connectDB();
+ 
+        connectDB();
 
  
  
 // cors
-app.use(cors({ origin: true, credentials: true }));
+ 
+       app.use(cors({ origin: true, credentials: true }));
 
+ 
  
  
 // Init Middleware
-app.use(express.json({ extended: false }));
-
-app.get('/', (req, res) => res.send('Hello world!'));
-
  
+       app.use(express.json({ extended: false }));
+
+       app.get('/', (req, res) => res.send('Hello world!'));
+
+
  
  
  
  
 // use Routes
-app.use('/api/books', books);
+ 
+      app.use('/api/books', books);
 
-const port = process.env.PORT || 8082;
+      const port = process.env.PORT || 8082;
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+      app.listen(port, () => console.log(`Server running on port ${port}`));
+
 
  
 It is also important that you add this line, app.use(express.json({ extended: false }));. The express.json method allows Express to read data sent using a POST or PUT request. It is used for recognizing incoming objects as JSON objects.
@@ -1906,8 +1913,8 @@ Follow the steps below to run both the frontend and backend of our MERN stack ex
 
  
 First, run the server (inside the project folder):
-
-$ npm run app
+ 
+      npm run app
 
  
  
@@ -1915,22 +1922,22 @@ $ npm run app
  
 If you get any errors, then follow the commands below (inside the project folder):
 
-$ npm install
-$ npm run app
+     npm install
+     npm run app
 
  
  
  
 To run the client, run the command below from the frontend project directory:
 
-$ npm start
+      npm start
 
  
  
 If you get an error again, follow the same commands below:
 
-$ npm install
-$ npm start
+       npm install
+       npm start
 
  
  
@@ -1971,22 +1978,7 @@ MERN Stack Books Four
 
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+  
  
  
  
