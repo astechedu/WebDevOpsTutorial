@@ -439,3 +439,29 @@ git commit --amend           //Opening vi editor to change old commit message
 
 -------------------------------------------------------------------------
 
+Working wiht git: 
+
+
+Untracked  ---->  Unmodified  ---->   Modified  ---->  Staged 
+
+
+
+git status
+git add .
+git commit -m "message"
+git commit -a -m "message"
+
+
+
+
+
+
+
+
+
+
+:end:
+
+
+
+
