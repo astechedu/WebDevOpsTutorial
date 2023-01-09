@@ -487,6 +487,12 @@ git rm --cached index.html
 
 git status -s
 
+//Adding feature1 branch this is seperate branch from master or main branch
+git branch feature1
+
+git branch
+
+git chckout feature1
 
 
 
