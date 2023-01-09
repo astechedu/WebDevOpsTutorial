@@ -454,6 +454,8 @@ git commit -a -m "message"
 //Match working directory with last commit (get back last commit)
 git checkout contact.html
 
+//Match All working directory(files) with last commit (get back last commit)
+
 git checkout -f 
 
 
