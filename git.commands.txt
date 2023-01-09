@@ -477,6 +477,7 @@ git checkout -f
 //Remove files from staging area and working area
 git rm 
 
+//File remove from staging area only
 git rm --cached
 
 
