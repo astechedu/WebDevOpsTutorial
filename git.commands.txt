@@ -494,7 +494,7 @@ git branch
 
 git chckout feature1
 
-//Adding two comments in master from feature1 branch
+//Adding commits OR merge in master from feature1 branch
 git log -p -2
 git checkout master
 git merge feature1 
