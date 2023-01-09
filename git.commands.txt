@@ -478,7 +478,7 @@ git checkout -f
 git rm 
 
 //File remove from staging area only
-git rm --cached
+git rm --cached index.html
 
 
 
