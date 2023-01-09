@@ -194,6 +194,30 @@ Connection.js
       };
  
 
+
+
+OR
+  Atlas Database Connection:
+  
+  
+      const url = `mongodb+srv://astechutube:astech123@cluster0.qkx1fxx.mongodb.net/?retryWrites=true&w=majority`;
+
+        //connect mongodb 
+        mongoose.set('strictQuery', false);
+
+        mongoose.connect(url, {
+
+            useUnifiedTopology: true,
+            useNewUrlParser: true,
+
+        }).then(console.log('connect sucess to mongodb'));
+
+
+
+
+
+
+
  :end:
 
 
