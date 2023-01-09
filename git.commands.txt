@@ -485,7 +485,7 @@ git rm
 //File remove from staging area only
 git rm --cached index.html
 
-
+git status -s
 
 
 
