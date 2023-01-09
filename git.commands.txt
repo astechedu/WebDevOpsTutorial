@@ -470,7 +470,7 @@ press q
 git diff
 
 //Compare staging area with last commit
-git diff --stage
+git diff --staged
 
 
 
