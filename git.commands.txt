@@ -511,6 +511,13 @@ git push -u oringin main
 git push 
 
 
+//Delete untracked files
+git clean -Xfd
+
+
+
+
+
 :end:
 
 
