@@ -452,6 +452,8 @@ git commit -m "message"
 git commit -a -m "message"
 
 //Match working directory with last commit (get back last commit)
+git checkout contact.html
+
 git checkout -f 
 
 
