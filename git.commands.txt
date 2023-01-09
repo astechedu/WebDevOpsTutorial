@@ -500,6 +500,17 @@ git checkout master
 git merge feature1 
 git log -p -2
 
+
+
+//Creating new branch and enter it 
+git branch -b flask (new branch)
+
+
+//Only one time give this commnd next time git push only in same repo
+git push -u oringin main
+git push 
+
+
 :end:
 
 
