@@ -474,6 +474,8 @@ git diff --staged
 
 git checkout -f 
 
+//Remove files from staging area and working area
+git rm 
 
 git rm --cached
 
