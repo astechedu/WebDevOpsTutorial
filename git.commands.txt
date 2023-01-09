@@ -466,7 +466,8 @@ got log -p -1
 //Come out
 press q 
 
-
+//Comparing with staging area (after file unmodified)
+git diff
 
 
 
