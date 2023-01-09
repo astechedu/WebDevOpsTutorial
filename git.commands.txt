@@ -469,7 +469,8 @@ press q
 //Comparing with staging area (after file unmodified)
 git diff
 
-
+//Compare staging area with last commit
+git diff --stage
 
 
 
