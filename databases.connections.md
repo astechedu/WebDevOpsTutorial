@@ -198,7 +198,10 @@ Connection.js
 
 OR
   Atlas Database Connection:
-  
+   
+   
+      const mongoose = require("mongoose");
+
   
       const url = `mongodb+srv://astechutube:astech123@cluster0.qkx1fxx.mongodb.net/?retryWrites=true&w=majority`;
 
