@@ -514,6 +514,7 @@ git push
 //Delete untracked files
 git clean -Xfd
 
+
 //Reverting last commit to current file
 git revert HEAD 
 
@@ -521,6 +522,8 @@ OR
 git revert <last commit Id>
 
 
+//Seeing diff between two commits
+git difftool <olderId> <latestId>
 
 :end:
 
