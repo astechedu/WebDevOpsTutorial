@@ -156,6 +156,8 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
 # Jenkins :diamond_shape_with_a_dot_inside:
 
+:link:[Jenkins Installation Commands More](jenkins.commandss.md)   
+
 :link:[Jenkins Commands](jenkin.commands.txt)   
 
 # Ansible :diamond_shape_with_a_dot_inside:
