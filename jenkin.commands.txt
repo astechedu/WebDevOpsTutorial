@@ -455,29 +455,6 @@ Hollie's Hub for Good
 Working on improving health and education, reducing inequality, and spurring economic growth? We'd like to help.
 Become a contributor
 
-You get paid; we donate to tech nonprofits.
-Featured on Community
-Kubernetes Course
-Learn Python 3
-Machine Learning in Python
-Getting started with Go
-Intro to Kubernetes
-DigitalOcean Products
-Virtual Machines
-Managed Databases
-Managed Kubernetes
-Block Storage
-Object Storage
-Marketplace
-VPC
-Load Balancers
-Welcome to the developer cloud
-
-DigitalOcean makes it simple to launch in the cloud and scale up as you grow – whether you’re running one virtual machine or ten thousand.
-Learn More
-DigitalOcean Cloud Control Panel
-
-
 
 
 
