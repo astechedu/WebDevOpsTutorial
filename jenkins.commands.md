@@ -12,28 +12,30 @@ Keys:
 
 
 
-                     Jenkin Pipeline: 
+			     Jenkin Pipeline: 
 
-                   /             	  \
-                  /                	   \               
- Pipeline Plugings               Using Groovy Script
-           /                                \
-          /                                  \
- Job-1   Job-2   Job-3   Job-4                \
- Build   Text    QA      Deploy                \
+			   /             	  \
+			  /                	   \               
+	 Pipeline Plugings               Using Groovy Script
+		   /                                \
+		  /                                  \
+	 Job-1   Job-2   Job-3   Job-4                \
+	 Build   Text    QA      Deploy                \
 
-                                              Job-1     __ stage-1
-                                              Pipeline     Build
-                                                       \
-                                                        \   
-                                                         stage-2
-                                                      \  Text
-                                                       \
-                                                        stage-3
-                                                    \   QA
-                                                     \
-                                                      stage-4
-                                                      Deploy
+						      Job-1     __ stage-1
+						      Pipeline     Build
+							       \
+								\   
+								 stage-2
+							      \  Text
+							       \
+								stage-3
+							    \   QA
+							     \
+							      stage-4
+							      Deploy
+
+
 
 
 Using Groovy Script:
@@ -43,71 +45,79 @@ Using Groovy Script:
 
 ------------------------------------------
 
+
 1) Scripted Pipeline
 
-node{
-	
-	stage["build"]{
-		echo "Welcome to Build Stage"
+
+	node{
+
+		stage["build"]{
+			echo "Welcome to Build Stage"
+		}
+
+		stage["Text"]{
+			echo "Welcome to Build Stage"
+		}
+
+		stage["QA"]{
+			echo "Welcome to Build Stage"
+		}
+
+		stage["Deploy"]{
+			echo "Welcome to Build Stage"
+		}
+
 	}
 
-	stage["Text"]{
-		echo "Welcome to Build Stage"
-	}
-
-	stage["QA"]{
-		echo "Welcome to Build Stage"
-	}
-
-	stage["Deploy"]{
-		echo "Welcome to Build Stage"
-	}
-	
-}
 
 ------------------------------------------
 
 
+
 2) Decripted Pipeline
 
-pipeline{
-	
-	agent any	
-	stages{
 
-		stage{"build"}{
 
-			steps{
-			  echo "Welcome to Build Stage";
+	pipeline{
+
+		agent any	
+		stages{
+
+			stage{"build"}{
+
+				steps{
+				  echo "Welcome to Build Stage";
+				}
 			}
+
+			stage{"Test"}{
+
+				steps{
+				  echo "Welcome to Test Stage";
+				}
+			}
+
+			stage{"QA"}{
+
+				steps{
+				  echo "Welcome to Test Stage";
+				}
+			}
+
+			stage{"Deploy"}{
+
+				steps{
+				  echo "Welcome to Test Stage";
+				}
+			}				
+
 		}
-
-		stage{"Test"}{
-
-			steps{
-			  echo "Welcome to Test Stage";
-			}
-		}
-
-		stage{"QA"}{
-
-			steps{
-			  echo "Welcome to Test Stage";
-			}
-		}
-
-		stage{"Deploy"}{
-
-			steps{
-			  echo "Welcome to Test Stage";
-			}
-		}				
 
 	}
 
-}
 
 -----------------------------------------------------------------------------------------------------
+
 
 >>>> Jenkins Notes <<<<<<<<<<<
 
@@ -120,11 +130,16 @@ cdc3d4d3881f4077a6adeb0ac57abe97
 
 This may also be found at: 
 
-	C:\Users\Ajay\.jenkins\secrets\initialAdminPassword
 
-    java -jar D:\Softwares\jenkin\jenkins.war  //Type in cmd to start jenkins
+		C:\Users\Ajay\.jenkins\secrets\initialAdminPassword
+
+
+   		java -jar D:\Softwares\jenkin\jenkins.war  //Type in cmd to start jenkins
+
+
 
 Type On Browser: 
+
 
 	127.0.0.1:8080    //Type of Browser's address bar
 
@@ -160,53 +175,57 @@ There are two types of pipelines in Jenkins:
 
 Jenkins Pipeline Concepts:
 
-1.
-	pipeline{  
-	}  
 
-2.
-	node{  
-	}  
+	1.
+		pipeline{  
+		}  
+
+	2.
+		node{  
+		}  
 
 
 
-    pipeline {  
-        agent any  
-        stages {  
-                stage ('Build') {  
-                    ...  
-                }  
-                stage ('Test') {  
-                    ...  
-                }  
-                stage ('QA') {  
-                    ...  
-                }  
-                stage ('Deploy') {  
-                    ...  
-                }  
-                stage ('Monitor') {  
-                    ...  
-                }  
-        }  
-    }  
+	    pipeline {  
+		agent any  
+		stages {  
+			stage ('Build') {  
+			    ...  
+			}  
+			stage ('Test') {  
+			    ...  
+			}  
+			stage ('QA') {  
+			    ...  
+			}  
+			stage ('Deploy') {  
+			    ...  
+			}  
+			stage ('Monitor') {  
+			    ...  
+			}  
+		}  
+	    }  
+
 
 
 ----------------
 
+
 Step: A step is a single task that executes a specific process at a defined time. A pipeline involves a series of steps defined within a stage block.
 
 
-    pipeline {  
-        agent any  
-        stages {  
-                stage ('Build') {  
-                    steps {  
-                            echo 'Running build phase...'  
-                    }  
-                }  
-        }  
-    }  
+	    pipeline {  
+		agent any  
+		stages {  
+			stage ('Build') {  
+			    steps {  
+				    echo 'Running build phase...'  
+			    }  
+			}  
+		}  
+	    }  
+
 
 
 ------------------
