@@ -525,6 +525,11 @@ git revert <last commit Id>
 //Seeing diff between two commits
 git difftool <olderId> <latestId>
 
+OR
+
+//Seeing diff between two commits (position: 0 1 2 3 4 5 ......) : 0 - latest commit(HEAD) & 2 - 3rd commit from last(HEAD~2)
+git difftool HEAD~2 HEAD
+
 :end:
 
 
