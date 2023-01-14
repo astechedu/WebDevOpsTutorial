@@ -6,6 +6,7 @@
 
 Topics: 
 
+[Resume PHP Developer](#developer_resume.md)
 
 
 
@@ -34,8 +35,8 @@ Watch this video:
 
 
 
-[Go To Top](#developer_resume)
-<a name=""></a>
+[Go To Top](#top)
+<a name="developer_resume"></a>
 # Resume (PHP Developer)
 
 
