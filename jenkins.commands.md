@@ -8,7 +8,7 @@ Topics:
       
 [Jenkins Installation](#jenkins_installation)
 
-
+[Install Jenkins On Ubuntu 20.04](#jenkins_install_ubuntu20.02)
 
 
 
@@ -434,6 +434,55 @@ At this point, you have completed a successful installation of Jenkins.
 
 
 :end:
+
+
+
+
+
+# How to install Jenkins on Ubuntu 20.04
+
+The steps followed and the commands used to install Jenkins on Ubuntu 20 are as follows:
+
+    sudo apt-get update
+
+    sudo apt-get install openjdk-8-jdk
+
+    wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+
+    sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+    sudo apt-get update
+
+    sudo apt-get install jenkins
+
+    sudo apt install git
+
+Note that a Git install is not a requirement for Jenkins on Ubuntu 20.04, but without some mechanism to pull source code, Jenkins is pretty useless. So Git was installed as well.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
