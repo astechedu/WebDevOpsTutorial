@@ -42,7 +42,7 @@ Watch this video:
 <code>
 Ajay Sisaudiya                                                                                                                                                                                                                  	                                 	                                                                                                                                                                                                                                                           Email : example@gmail.com
      (PHP Developer)                                                                                            Phone | +91 0000000000, 0000000000  
-                                                                                                                                                                             Address | Nakronda Road Balawala Dehradun      
+                                                                                                                                                                             Address | Nehrucolony Road Balawala Meetut      
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Career Objective:
 Seeking a responsible career in an organization where I can utilize my skills, knowledge to work at my level best. To grow with the organization and deliver best possible services.
