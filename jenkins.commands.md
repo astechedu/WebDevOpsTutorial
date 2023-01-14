@@ -441,7 +441,7 @@ At this point, you have completed a successful installation of Jenkins.
 
 
 [Go To Top](#top)
-<a name="jenkins_install_ubuntu20.04"></a>
+<a name="jenkins_install_ubuntu20.02"></a>
 # How to install Jenkins on Ubuntu 20.04
 
 The steps followed and the commands used to install Jenkins on Ubuntu 20 are as follows:
