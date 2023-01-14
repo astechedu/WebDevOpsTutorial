@@ -40,7 +40,7 @@ Watch this video:
 # Resume (PHP Developer)
 
 
-Ajay Sisaudiya                                                                                                                                                                                                                  	                                 	                                                                                                                                                                                                                                                           Email |  ajaysisaudiya@gmail.com
+Ajay Sisaudiya                                                                                                                                                                                                                  	                                 	                                                                                                                                                                                                                                                           Email : example@gmail.com
      (PHP Developer)                                                                                            Phone | +91 0000000000, 0000000000  
                                                                                                                                                                              Address | Nakronda Road Balawala Dehradun      
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
