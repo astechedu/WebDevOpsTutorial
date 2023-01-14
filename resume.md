@@ -39,7 +39,7 @@ Watch this video:
 <a name="developer_resume"></a>
 # Resume (PHP Developer)
 
-
+<code>
 Ajay Sisaudiya                                                                                                                                                                                                                  	                                 	                                                                                                                                                                                                                                                           Email : example@gmail.com
      (PHP Developer)                                                                                            Phone | +91 0000000000, 0000000000  
                                                                                                                                                                              Address | Nakronda Road Balawala Dehradun      
@@ -78,7 +78,7 @@ Education:
 ->One Year Diploma in Computer Software
 ->Three Months Computer Hardware Certificate
 ->Master Degree in Mathematics from D.A.V (P.G) College, Dehradun
-
+</code>
 
 
 
