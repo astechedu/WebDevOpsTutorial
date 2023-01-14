@@ -87,6 +87,20 @@ DevOps Tools Details:
 
 
 
+<<<<<<<<<<<   Cloud Computing  >>>>>>>>>>>>>>>
+
+
+--------------------------------------------------------------------------
+1. AWS (Amazon Web Services)
+2. Microsoft Azure
+3. Google Cloud 
+4. Alibaba Coud
+5. Oracle Cloud
+6. IBM Cloud
+7. Tencent Cloud
+
+
+
 
 
 
