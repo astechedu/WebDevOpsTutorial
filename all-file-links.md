@@ -210,7 +210,7 @@ $$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
 
 :link:[Added Points to resume](resume.md)
 
-
+:link:[Developers Requirement And More](developers.requirements.and.more.md)
 
 
 
