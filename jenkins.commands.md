@@ -462,6 +462,12 @@ The steps followed and the commands used to install Jenkins on Ubuntu 20 are as 
 
 
 
+    Getting Password to unlock jenkins type on ubuntu terminal:
+    
+    cat /var/lib/jenkins/secrets/initialAdminPassword
+    
+    
+
 :end:
 
 
