@@ -1,7 +1,7 @@
 # developers.requirements.and.more.md
 
 
-[Home](all.files.links.md)
+[Home](all-file-links.md)
 
 
 
