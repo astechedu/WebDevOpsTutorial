@@ -41,7 +41,7 @@ Watch this video:
 
 
 Ajay Sisaudiya                                                                                                                                                                                                                  	                                 	                                                                                                                                                                                                                                                           Email |  ajaysisaudiya@gmail.com
-     (PHP Developer)                                                                                            Phone | +91 9897346613,  9808412203  
+     (PHP Developer)                                                                                            Phone | +91 0000000000, 0000000000  
                                                                                                                                                                              Address | Nakronda Road Balawala Dehradun      
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Career Objective:
