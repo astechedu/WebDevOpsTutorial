@@ -1,5 +1,5 @@
 <!-- # Kubernetes Commands & Examples For Beginners -->
-$$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ For \ Beginners}}$$
+$$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ For \ Beginners}}$$
 
 :link:[Home](all-file-links.md)     
 
