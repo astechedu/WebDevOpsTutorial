@@ -1846,6 +1846,29 @@ Now you are ready to access your deployed web service by pointing the following 
 
 Deploying the Dashboard UI:
 
+	microk8s enable dashboard
+	microk8s kubectl create token default
+ 
+ 
+ kubernetes-dashboard   service/kubernetes-dashboard   ClusterIP   10.152.183.51   <none>   443/TCP  37m
+
+	On Browser: 
+	
+	 https://ip:port
+	
+	 https://10.152.183.51:443
+
+
+	On Borwser (UI):
+	
+	 login: Paste toke here
+	
+	
+	
+OR	
+
+Deploying the Dashboard UI:
+
 The Dashboard UI is not deployed by default. To deploy it, run the following command:
 
 	kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
@@ -1861,7 +1884,6 @@ You can enable access to the Dashboard using the kubectl command-line tool, by r
 
         kubectl proxy --help
 	kubectl proxy
-
 
 
 
