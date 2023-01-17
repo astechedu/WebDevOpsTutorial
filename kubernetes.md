@@ -76,7 +76,7 @@ $\color{green}3. \ Services$
 
 	   kubectl get services
 
-4. $\color{green}4. \ Deployment$
+$\color{green}4. \ Deployment$
 
 	   kubectl get pods
 	   kubectl create deployment <deploymentName> --image=nginx
@@ -1715,6 +1715,7 @@ Managing a Minukube cluster on Linux is exactly the same as managing it on Windo
 
 
 
+$\large{\color{green}4. \ Deployment}$
 
 $$\large{\colorbox{black}{\color{yellow}
 Microk8s: 
