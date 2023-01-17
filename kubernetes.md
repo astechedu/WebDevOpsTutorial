@@ -4,7 +4,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 :link:[Home](all-file-links.md)     
 
 <!--$\color{blue}ajay$-->
-
+<!--Minikube:-->
 
 <a name="top"></a>
 [Go To Bottom](#bottom)
