@@ -61,13 +61,11 @@ $\color{green}1. \ Run \ a \ yamal \ file$
 	   kubectl create -f firstpod.yml
 
 $\color{green}2. \ Pods$
-
-           $\color{green}
+           
 	   kubectl get pods
 	   kubectl delete pod myfirstpod
 	   kubectl explain pod --recursive !less
-           $
-	   
+           	   
 	   kubectl run secondpod --generator=run-pod/v1 --image=coolgaurab147/nginx-custom
 	   //Client side run 
 	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom
