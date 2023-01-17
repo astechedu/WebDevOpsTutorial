@@ -1678,7 +1678,7 @@ Creating First App:
 
 
 $$\large{\colorbox{black}{\color{white}
-#### Minikube: 
+Minikube: 
 }}$$
 
 Minikube runs a single-node Kubernetes cluster inside a VM (e.g. Virtualbox ) in your local development environment. The result is a local Kubernetes endpoint that you can use with the kubectl client. Minikube supports most typical Kubernetes features such as DNS, Dashboards, CNI, NodePorts, Config Maps, etc. . It also supports multiple hypervisors, such as Virtualbox, kvm, etc.
