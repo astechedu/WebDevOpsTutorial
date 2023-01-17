@@ -40,9 +40,14 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 ###### 23 Microk8s CMDS [Deploy and Access the Kubernetes Dashboard](#k8-dashboard)
 
 
+
+
 [Go To Top](#top)
 <!----><a name="basic_commands"></a>
-### Basic Commands 
+
+$\color{blue} \ Basic \ Commands$
+
+
 
 $\color{green}0. \ Display \ all \ list \ (pods, \ services, \ deployments \ and \ riplicaSets)$
 	
