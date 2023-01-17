@@ -1708,7 +1708,7 @@ minikube start
 
 ###### Management and Deployment
 
-Managing a Minukube cluster on Linux is exactly the same as managing it on Windows. (See the previous article on Windows for an Nginx deployment example).
+Managing a Minukube cluster on Linux is exactly the same as managing it on Windows.
 
 
 
