@@ -10,7 +10,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 [Go To Bottom](#bottom)
 ## Topics 
 
-$\color{blue}ajay ###### 1. Basic Commands [Go to Basic Commands click here](#basic_commands)$
+$\color{blue}ajay 1. Basic Commands [Go to Basic Commands click here](#basic_commands)$
 ###### 2. Minikube [Go to Minikube click here](#minikube)
 ###### 3. KubeCTL [Go to Kubectl click here](#kubectl)
 ###### 4. Create YML File [Go to Create YML File click here](#create_yml_file)
