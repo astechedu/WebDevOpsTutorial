@@ -50,6 +50,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 
 
 
+
 $\color{green}1. \ Run \ a \ yamal \ file$
 
 	   //Output redirect to new yaml file
