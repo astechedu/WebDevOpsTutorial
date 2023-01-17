@@ -534,10 +534,11 @@ Services (svc):
 	microk8s kubectl get svc           //Listing namespace
 	microk8s kubectl get svc    	   //Service
 	microk8s kubectl get services  --all-namespaces
-
+        
 	servicename.namespacename.svc.cluster.local
 	curl myfirstservice.default.svc.cluster.local
 	
+	minikube service <service-name> --url 
 	
 	
 
