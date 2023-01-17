@@ -1715,11 +1715,7 @@ Managing a Minukube cluster on Linux is exactly the same as managing it on Windo
 
 
 
-$\large{\colorbox{black}{\color{green}Deployment}}$
-
-$$\large{\colorbox{black}{\color{yellow}
-Microk8s: 
-}}$$
+$\large{\colorbox{black}{\color{yellow}Microk8s:}}$
 
 Microk8s is a new solution for running a lightweight Kubernetes local cluster. It was developed by the Kubernetes team at Canonical. It is designed to be a fast and lightweight upstream Kubernetes installation isolated from your local environment. This isolation is achieved by packaging all the binaries for Kubernetes, Docker.io, iptables, and CNI in a single snap package (available only in Ubuntu and compatible distributions).
 
