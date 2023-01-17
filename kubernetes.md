@@ -1678,10 +1678,7 @@ Creating First App:
 # 7. Installation Local Kubernetes for Linux – MiniKube vs MicroK8s
 
 
-
-$$\large{\colorbox{black}{\color{yellow}
-Minikube: 
-}}$$
+$\large{\colorbox{black}{\color{yellow}Minikube:}}$
 
 Minikube runs a single-node Kubernetes cluster inside a VM (e.g. Virtualbox ) in your local development environment. The result is a local Kubernetes endpoint that you can use with the kubectl client. Minikube supports most typical Kubernetes features such as DNS, Dashboards, CNI, NodePorts, Config Maps, etc. . It also supports multiple hypervisors, such as Virtualbox, kvm, etc.
 
