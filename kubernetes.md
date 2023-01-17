@@ -1676,14 +1676,14 @@ Creating First App:
 
 
 
-###### Minikube: 
+#### Minikube: 
 
 
 Minikube runs a single-node Kubernetes cluster inside a VM (e.g. Virtualbox ) in your local development environment. The result is a local Kubernetes endpoint that you can use with the kubectl client. Minikube supports most typical Kubernetes features such as DNS, Dashboards, CNI, NodePorts, Config Maps, etc. . It also supports multiple hypervisors, such as Virtualbox, kvm, etc.
 
 
 
-###### Installation:
+##### Installation:
 
 In order to install Minikube to Linux, you can follow the steps described in the official documentation. In our evaluation we used Ubuntu 18.04 LTS with VirtualBox support using the following commands:
 
@@ -1712,7 +1712,7 @@ Managing a Minukube cluster on Linux is exactly the same as managing it on Windo
 
 
 
-###### Microk8s
+#### Microk8s
 
 Microk8s is a new solution for running a lightweight Kubernetes local cluster. It was developed by the Kubernetes team at Canonical. It is designed to be a fast and lightweight upstream Kubernetes installation isolated from your local environment. This isolation is achieved by packaging all the binaries for Kubernetes, Docker.io, iptables, and CNI in a single snap package (available only in Ubuntu and compatible distributions).
 
@@ -1736,7 +1736,7 @@ command. The list of available services are:
     Metrics Server
 
 
-###### Installation
+##### Installation
 
 Microk8s can be installed as a single snap command, directly from the Snap store.
 
