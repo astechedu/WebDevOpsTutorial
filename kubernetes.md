@@ -3,15 +3,15 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 
 :link:[Home](all-file-links.md)     
 
-$\color{blue}ajay$
+<!--$\color{blue}ajay$-->
 
 
 <a name="top"></a>
 [Go To Bottom](#bottom)
 ## Topics 
 
-
-###### 1. Basic Commands [Go to Basic Commands click here](#basic_commands) 
+$\color{blue}ajay
+###### 1. Basic Commands [Go to Basic Commands click here](#basic_commands)$
 ###### 2. Minikube [Go to Minikube click here](#minikube)
 ###### 3. KubeCTL [Go to Kubectl click here](#kubectl)
 ###### 4. Create YML File [Go to Create YML File click here](#create_yml_file)
