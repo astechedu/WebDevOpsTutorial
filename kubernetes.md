@@ -1684,7 +1684,7 @@ Creating First App:
 [G0 To Top](#top)
 <a name="k8-on-local"></a>
 	
-# 7. Installation Local Kubernetes for Linux – MiniKube vs MicroK8s
+$\large{\color{blue}7. \ Installation \ Local \ Kubernetes \ for \ Linux \ – \ MiniKube \ vs \ MicroK8s}$
 
 
 $\large{\colorbox{black}{\color{yellow}Minikube:}}$
