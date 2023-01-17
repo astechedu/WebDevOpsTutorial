@@ -16,26 +16,26 @@ $$\large{\colorbox{black}{\color{red}Kubernetes \ Commands \ and \ Examples \ Fo
 ###### 4. Create YML File [Go to Create YML File click here](#create_yml_file)
 ###### 5. Microk8s CMDS [Go to Microk8s click here](#micro8ks_cmds)
 ###### 5. Microk8s CMDS [Go to Installation Minikube on Ubuntu click here](#install_minikube)
-  
-###### 6. Microk8s CMDS [Go To Nodes on Ubuntu click here](#nodes)
-###### 7. Microk8s CMDS [Go To Namespaces(nc) on Ubuntu click here](#namespaces)
-###### 8. Microk8s CMDS [Go To Pods(po) on Ubuntu click here](#pods)
-###### 9. Microk8s CMDS [Go To Deployment(deploy) on Ubuntu click here](#deployment)
-###### 10. Microk8s CMDS [Go To Services(svc) on Ubuntu click here](#services)
-###### 11. Microk8s CMDS [Go To Replicas(rc) on Ubuntu click here](#replicas)
-###### 12. Microk8s CMDS [Go To Ingress on Ubuntu click here](#ingress)
+###### 6. Microk8s CMDS [Go To Nodes on Ubuntu click here](#nodes)  
+###### 7. Microk8s CMDS [Go To Installation Local Kubernetes for Linux – MiniKube vs MicroK8s click here](#k8-on-local)
+###### 8. Microk8s CMDS [Go To Namespaces(nc) on Ubuntu click here](#namespaces)
+###### 9. Microk8s CMDS [Go To Pods(po) on Ubuntu click here](#pods)
+###### 10. Microk8s CMDS [Go To Deployment(deploy) on Ubuntu click here](#deployment)
+###### 11. Microk8s CMDS [Go To Services(svc) on Ubuntu click here](#services)
+###### 12. Microk8s CMDS [Go To Replicas(rc) on Ubuntu click here](#replicas)
+###### 13 Microk8s CMDS [Go To Ingress on Ubuntu click here](#ingress)
 
-###### 13. Microk8s CMDS [Node yml file click here](#yml_nodes)
-###### 14. Microk8s CMDS [Pod yml file click here](#yml_pods)
-###### 15. Microk8s CMDS [Deployment yml click here](#yml_deployments)
-###### 16. Microk8s CMDS [Service yml file click here](#yml_services)
-###### 17. Microk8s CMDS [Replicaset yml file click here](#yml_replicasets)
-###### 18. Microk8s CMDS [Namespaces yml file click here](#yml_namespaces)
-###### 18. Microk8s CMDS [Ingress yml file click here](#yml_ingress)
+###### 14 Microk8s CMDS [Node yml file click here](#yml_nodes)
+###### 15 Microk8s CMDS [Pod yml file click here](#yml_pods)
+###### 16 Microk8s CMDS [Deployment yml click here](#yml_deployments)
+###### 17 Microk8s CMDS [Service yml file click here](#yml_services)
+###### 18 Microk8s CMDS [Replicaset yml file click here](#yml_replicasets)
+###### 19 Microk8s CMDS [Namespaces yml file click here](#yml_namespaces)
+###### 20Microk8s CMDS [Ingress yml file click here](#yml_ingress)
 
-###### 19. Microk8s CMDS [The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? on Ubuntu click here](#replicas)
+###### 21crok8s CMDS [The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? on Ubuntu click here](#replicas)
 
-###### 20. Microk8s CMDS [First App click here](#k-first-app)
+###### 22 Microk8s CMDS [First App click here](#k-first-app)
 
 	
 
