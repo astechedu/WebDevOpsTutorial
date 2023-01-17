@@ -1677,9 +1677,9 @@ Creating First App:
 
 
 
-$$\large{\colorbox{black}{\color{white}
+$\large{\colorbox{black}{\color{yellow}
 Minikube: 
-}}$$
+}}$
 
 Minikube runs a single-node Kubernetes cluster inside a VM (e.g. Virtualbox ) in your local development environment. The result is a local Kubernetes endpoint that you can use with the kubectl client. Minikube supports most typical Kubernetes features such as DNS, Dashboards, CNI, NodePorts, Config Maps, etc. . It also supports multiple hypervisors, such as Virtualbox, kvm, etc.
 
@@ -1714,7 +1714,9 @@ Managing a Minukube cluster on Linux is exactly the same as managing it on Windo
 
 
 
-#### Microk8s
+$\large{\colorbox{black}{\color{yellow}
+Microk8s: 
+}}$
 
 Microk8s is a new solution for running a lightweight Kubernetes local cluster. It was developed by the Kubernetes team at Canonical. It is designed to be a fast and lightweight upstream Kubernetes installation isolated from your local environment. This isolation is achieved by packaging all the binaries for Kubernetes, Docker.io, iptables, and CNI in a single snap package (available only in Ubuntu and compatible distributions).
 
