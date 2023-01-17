@@ -59,7 +59,7 @@ $\color{green}0. \ Display \ all \ list \ (pods, \ services, \ deployments \ and
 $\color{green}1. \ Run \ a \ yamal \ file$
 
 	   //Output redirect to new yaml file
-	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml > mysecondpd.yml
+	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=astechutube/nginx-custom -o yaml > mysecondpd.yml
 
 	   kubectl create -f firstpod.yml --dry-run
 	   kubectl apply -f firstpod.yml
@@ -72,10 +72,10 @@ $\color{green}2. \ Pods$
 	   kubectl delete pod myfirstpod
 	   kubectl explain pod --recursive !less
            	   
-	   kubectl run secondpod --generator=run-pod/v1 --image=coolgaurab147/nginx-custom
+	   kubectl run secondpod --generator=run-pod/v1 --image=astechutube/nginx-custom
 	   //Client side run 
-	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom
-	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml
+	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=astechutube/nginx-custom
+	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=astechutube/nginx-custom -o yaml
            
 
 $\color{green}3. \ Services$
@@ -204,14 +204,14 @@ This is heading
 
  //Create k8s pod
  
-	 kubectl run secondpod --generator=run-pod/v1 --image=coolgaurab147/nginx-custom
+	 kubectl run secondpod --generator=run-pod/v1 --image=astechutube/nginx-custom
 	 //Client side run 
-	 kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom
-	 kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml
+	 kubectl run secondpod --dry-run --generator=run-pod/v1 --image=astechutube/nginx-custom
+	 kubectl run secondpod --dry-run --generator=run-pod/v1 --image=astechutube/nginx-custom -o yaml
 
  //Output redirect to new yaml file
  
-  	kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml > mysecondpd.yml
+  	kubectl run secondpod --dry-run --generator=run-pod/v1 --image=astechutube/nginx-custom -o yaml > mysecondpd.yml
     
   Commands: 
 	  kubectl get pods
@@ -325,7 +325,7 @@ Some CMDS:
 	
 	 initContainers:
 	  - name: initcontainer
-	    image: coolgourav147/nginx-custom
+	    image: astechutube/nginx-custom
 	    env:
 	     - name: myname
 	       value: Gaurav
@@ -333,7 +333,7 @@ Some CMDS:
 	       value: Jaipur
 	    args: ["sleep","3600"]
 	  - name: secondcontainer
-	    image: coolgourav147/nginx-custom  
+	    image: astechutube/nginx-custom  
 
 	kubectl apply -f firtpod.yml
 	kubectl get pods -w
