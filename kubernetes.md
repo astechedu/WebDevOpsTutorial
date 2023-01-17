@@ -1715,7 +1715,7 @@ Managing a Minukube cluster on Linux is exactly the same as managing it on Windo
 
 
 
-$\large{\color{green}4. \ Deployment}$
+$\large{\colorbox{black}{\color{green}Deployment}}$
 
 $$\large{\colorbox{black}{\color{yellow}
 Microk8s: 
