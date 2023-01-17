@@ -50,7 +50,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 
 
 
-1. $\color{blue}Run a yamal file$
+1. $\color{blue}Run \ a \ yamal \ file$
 
 	   //Output redirect to new yaml file
 	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml > mysecondpd.yml
