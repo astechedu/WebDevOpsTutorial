@@ -3,7 +3,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 
 :link:[Home](all-file-links.md)     
 
-\color{blue} ajay
+$$\color{blue}ajay$$
 
 
 <a name="top"></a>
