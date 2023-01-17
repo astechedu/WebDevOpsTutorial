@@ -31,13 +31,13 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 ###### 17 Microk8s CMDS [Service yml file click here](#yml_services)
 ###### 18 Microk8s CMDS [Replicaset yml file click here](#yml_replicasets)
 ###### 19 Microk8s CMDS [Namespaces yml file click here](#yml_namespaces)
-###### 20Microk8s CMDS [Ingress yml file click here](#yml_ingress)
+###### 20 Microk8s CMDS [Ingress yml file click here](#yml_ingress)
 
-###### 21crok8s CMDS [The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? on Ubuntu click here](#replicas)
+###### 21 crok8s CMDS [The connection to the server 127.0.0.1:16443 was refused - did you specify the right host or port? on Ubuntu click here](#replicas)
 
 ###### 22 Microk8s CMDS [First App click here](#k-first-app)
 
-###### 23Microk8s CMDS [Deploy and Access the Kubernetes Dashboard](#k8-dashboard)
+###### 23 Microk8s CMDS [Deploy and Access the Kubernetes Dashboard](#k8-dashboard)
 
 
 [Go To Top](#top)
