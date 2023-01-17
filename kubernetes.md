@@ -1677,8 +1677,9 @@ Creating First App:
 
 
 
+$$\large{\colorbox{black}{\color{white}
 #### Minikube: 
-
+}}$$
 
 Minikube runs a single-node Kubernetes cluster inside a VM (e.g. Virtualbox ) in your local development environment. The result is a local Kubernetes endpoint that you can use with the kubectl client. Minikube supports most typical Kubernetes features such as DNS, Dashboards, CNI, NodePorts, Config Maps, etc. . It also supports multiple hypervisors, such as Virtualbox, kvm, etc.
 
@@ -1832,9 +1833,8 @@ You can monitor your deployed services using the command:
 	NAME                               DESIRED   CURRENT   READY     AGE
 	replicaset.apps/nginx-64f497f8fd   3         3         3         2m
 
-$$\large{\colorbox{black}{\color{white}
 Now you are ready to access your deployed web service by pointing the following web url to your preferred web browser: http://10.152.183.125
-}}$$
+
 
 
 
