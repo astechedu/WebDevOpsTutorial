@@ -50,7 +50,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 
 
 
-1. $\color{green}1. \ Run \ a \ yamal \ file$
+$\color{green}1. \ Run \ a \ yamal \ file$
 
 	   //Output redirect to new yaml file
 	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml > mysecondpd.yml
@@ -60,7 +60,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 	   cat myfirstpod.yml
 	   kubectl create -f firstpod.yml
 
-2. $\color{green}Pods$
+$\color{green}2. \ Pods$
 
 	   kubectl get pods
 	   kubectl delete pod myfirstpod
@@ -72,11 +72,11 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml
 
 
-3. $\color{green}Services$
+$\color{green}3. \ Services$
 
 	   kubectl get services
 
-4. $\color{green}Deployment$
+4. $\color{green}4. \ Deployment$
 
 	   kubectl get pods
 	   kubectl create deployment <deploymentName> --image=nginx
