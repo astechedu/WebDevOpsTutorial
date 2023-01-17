@@ -45,7 +45,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 [Go To Top](#top)
 <!----><a name="basic_commands"></a>
 
-$\color{blue} \ Basic \ Commands$
+$\large{\color{blue} \ Basic \ Commands}$
 
 
 
