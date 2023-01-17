@@ -44,7 +44,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 <!----><a name="basic_commands"></a>
 ### Basic Commands 
 
-$\color{green}0. \ Display \ all \ list \ pods \ , \ services \ deployments$
+$\color{green}0. \ Display \ all \ list \ (pods, \ services, \ deployments \ and \ riplicaSets)$
 
 	0. Display all list (pods,services,deployments & riplicaSets)
 	
