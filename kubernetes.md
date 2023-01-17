@@ -50,7 +50,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 
 
 
-1. $\color{blue}Run \a \yamal \file$
+1. $\color{blue}Run a yamal file$
 
 	   //Output redirect to new yaml file
 	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml > mysecondpd.yml
@@ -61,6 +61,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 	   kubectl create -f firstpod.yml
 
 2. $\color{blue}Pods$
+
 	   kubectl get pods
 	   kubectl delete pod myfirstpod
 	   kubectl explain pod --recursive !less
@@ -72,6 +73,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 
 
 3. $\color{blue}Services$
+
 	   kubectl get services
 
 4. $\color{blue}Deployment$
