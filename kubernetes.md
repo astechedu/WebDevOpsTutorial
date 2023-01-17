@@ -44,7 +44,10 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 <!----><a name="basic_commands"></a>
 ### Basic Commands 
 
+$\color{green}0. Display all list (pods,services,deployments & riplicaSets)$
+
 	0. Display all list (pods,services,deployments & riplicaSets)
+	
 	   kubectl get all --all-namespaces  
 	   microk8s enable dns storage           //Use add-ons
 
