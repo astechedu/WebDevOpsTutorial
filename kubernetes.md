@@ -37,7 +37,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 
 ###### 22 Microk8s CMDS [First App click here](#k-first-app)
 
-	
+###### 23Microk8s CMDS [Deploy and Access the Kubernetes Dashboard](#k8-dashboard)
 
 
 [Go To Top](#top)
@@ -1834,13 +1834,41 @@ You can monitor your deployed services using the command:
 Now you are ready to access your deployed web service by pointing the following web url to your preferred web browser: http://10.152.183.125
 
 
-
-
-
-
-
-
 :end:
+
+
+
+
+<a name="k8-dashboard"></a>
+# Deploy and Access the Kubernetes Dashboard
+
+
+Deploying the Dashboard UI:
+
+The Dashboard UI is not deployed by default. To deploy it, run the following command:
+
+	kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
+
+
+Accessing the Dashboard UI:
+
+
+Command line proxy
+
+You can enable access to the Dashboard using the kubectl command-line tool, by running the following command:
+
+        kubectl proxy --help
+	kubectl proxy
+
+
+
+
+
+
+
+
+
 
 
 [Go To Top](#top)
