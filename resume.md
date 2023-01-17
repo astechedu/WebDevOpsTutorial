@@ -32,6 +32,12 @@ Watch this video:
 
 
 
+Added Points to resume (Kubernetes:
+
+1. Build Kubernetes cluster on AWS from scratch with Minikube
+2. Setup and managed docker containers for Django and React Applications into Kubernetes Pods.
+3. Managed Deployment, Replication, Autohealing, auto scaling for Kubernetes Cluster
+4. 
 
 
 
