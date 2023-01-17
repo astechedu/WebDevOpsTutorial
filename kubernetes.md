@@ -1703,7 +1703,9 @@ by adding a new APT repository using the following command:
 
 Finally, after successful installation, you can start your minikube by issuing the command:
 minikube start 
-Management and Deployment
+
+
+###### Management and Deployment
 
 Managing a Minukube cluster on Linux is exactly the same as managing it on Windows. (See the previous article on Windows for an Nginx deployment example).
 
@@ -1733,6 +1735,7 @@ command. The list of available services are:
     Registry
     Metrics Server
 
+
 ###### Installation
 
 Microk8s can be installed as a single snap command, directly from the Snap store.
@@ -1748,47 +1751,49 @@ with Microk8s. To verify that installation was successful, you can use the follo
 	microk8s.kubectl get services
 	
 	
-Management
+###### Management
 
 As mentioned above, Microk8s installs a barebones upstream Kubernetes. This means just the api-server, controller-manager, scheduler, kubelet, cni, and kube-proxy are installed and run. Additional services such as kube-dns and the dashboard can be run using the microk8s.enable command.
 microk8s.enable dns dashboard
 
 You can verify that all services are up and running with the following command:
-pliakas@zouzou:~$ microk8s.kubectl get all --all-namespaces
-NAMESPACE     NAME                                                  READY     STATUS    RESTARTS   AGE
-kube-system   pod/heapster-v1.5.2-84f5c8795f-n8dmd                  4/4       Running   8          11h
-kube-system   pod/kube-dns-864b8bdc77-8d8lk                         2/3       Running   191        11h
-kube-system   pod/kubernetes-dashboard-6948bdb78-z4knb              1/1       Running   97         11h
-kube-system   pod/monitoring-influxdb-grafana-v4-7ffdc569b8-g6nrv   2/2       Running   4          11h
+
+	pliakas@zouzou:~$ microk8s.kubectl get all --all-namespaces
+
+	NAMESPACE     NAME                                                  READY     STATUS    RESTARTS   AGE
+	kube-system   pod/heapster-v1.5.2-84f5c8795f-n8dmd                  4/4       Running   8          11h
+	kube-system   pod/kube-dns-864b8bdc77-8d8lk                         2/3       Running   191        11h
+	kube-system   pod/kubernetes-dashboard-6948bdb78-z4knb              1/1       Running   97         11h
+	kube-system   pod/monitoring-influxdb-grafana-v4-7ffdc569b8-g6nrv   2/2       Running   4          11h
 
 
-NAMESPACE     NAME                           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE
-default       service/kubernetes             ClusterIP   10.152.183.1             443/TCP             12h
-kube-system   service/heapster               ClusterIP   10.152.183.58            80/TCP              11h
-kube-system   service/kube-dns               ClusterIP   10.152.183.10            53/UDP,53/TCP       11h
-kube-system   service/kubernetes-dashboard   ClusterIP   10.152.183.77            443/TCP             11h
-kube-system   service/monitoring-grafana     ClusterIP   10.152.183.253           80/TCP              11h
-kube-system   service/monitoring-influxdb    ClusterIP   10.152.183.15            8083/TCP,8086/TCP   11h
+	NAMESPACE     NAME                           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)             AGE
+	default       service/kubernetes             ClusterIP   10.152.183.1             443/TCP             12h
+	kube-system   service/heapster               ClusterIP   10.152.183.58            80/TCP              11h
+	kube-system   service/kube-dns               ClusterIP   10.152.183.10            53/UDP,53/TCP       11h
+	kube-system   service/kubernetes-dashboard   ClusterIP   10.152.183.77            443/TCP             11h
+	kube-system   service/monitoring-grafana     ClusterIP   10.152.183.253           80/TCP              11h
+	kube-system   service/monitoring-influxdb    ClusterIP   10.152.183.15            8083/TCP,8086/TCP   11h
 
 
-NAMESPACE     NAME                                             DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-kube-system   deployment.apps/heapster-v1.5.2                  1         1         1            1           11h
-kube-system   deployment.apps/kube-dns                         1         1         1            0           11h
-kube-system   deployment.apps/kubernetes-dashboard             1         1         1            1           11h
-kube-system   deployment.apps/monitoring-influxdb-grafana-v4   1         1         1            1           11h
+	NAMESPACE     NAME                                             DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+	kube-system   deployment.apps/heapster-v1.5.2                  1         1         1            1           11h
+	kube-system   deployment.apps/kube-dns                         1         1         1            0           11h
+	kube-system   deployment.apps/kubernetes-dashboard             1         1         1            1           11h
+	kube-system   deployment.apps/monitoring-influxdb-grafana-v4   1         1         1            1           11h
 
 
-NAMESPACE     NAME                                                        DESIRED   CURRENT   READY     AGE
-kube-system   replicaset.apps/heapster-v1.5.2-84f5c8795f                  1         1         1         11h
-kube-system   replicaset.apps/kube-dns-864b8bdc77                         1         1         0         11h
-kube-system   replicaset.apps/kubernetes-dashboard-6948bdb78              1         1         1         11h
-kube-system   replicaset.apps/monitoring-influxdb-grafana-v4-7ffdc569b8   1         1         1         11h
+	NAMESPACE     NAME                                                        DESIRED   CURRENT   READY     AGE
+	kube-system   replicaset.apps/heapster-v1.5.2-84f5c8795f                  1         1         1         11h
+	kube-system   replicaset.apps/kube-dns-864b8bdc77                         1         1         0         11h
+	kube-system   replicaset.apps/kubernetes-dashboard-6948bdb78              1         1         1         11h
+	kube-system   replicaset.apps/monitoring-influxdb-grafana-v4-7ffdc569b8   1         1         1         11h
 
 You can access any service by pointing the correct CLUSTER_IP
 to your browser. For example, you can access the dashboard by using the following web address, https://10.152.183.77. See image below for the dashboard:
 
 
-Kubernetes dashboard
+###### Kubernetes dashboard
 
 At any time, you can pause and restart all Kubernetes services and installed containers without losing any of your configurations by issuing the following command. (Note that this will also disable all commands prefixed with Microk8s.)
 snap disable microk8s
@@ -1798,7 +1803,7 @@ microk8s.disable dashboard dns
 sudo snap remove microk8s
 
 
-Deployment
+###### Deployment
 
 Deploying a nginx service is what you would expect, with the addition of the Microk8s prefix:
 
@@ -1810,17 +1815,22 @@ You can monitor your deployed services using the command:
 	pliakas@zouzou:~$ microk8s.kubectl get all
 	
 
-NAME                         READY     STATUS    RESTARTS   AGE
-pod/nginx-64f497f8fd-86xlj   1/1       Running   0          2m
-pod/nginx-64f497f8fd-976c4   1/1       Running   0          2m
-pod/nginx-64f497f8fd-r2tsv   1/1       Running   0          2m
-NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
-service/kubernetes   ClusterIP   10.152.183.1             443/TCP   13h
-service/nginx        ClusterIP   10.152.183.125           80/TCP    1m
-NAME                    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/nginx   3         3         3            3           2m
-NAME                               DESIRED   CURRENT   READY     AGE
-replicaset.apps/nginx-64f497f8fd   3         3         3         2m
+	NAME                         READY     STATUS    RESTARTS   AGE
+	
+	pod/nginx-64f497f8fd-86xlj   1/1       Running   0          2m
+	pod/nginx-64f497f8fd-976c4   1/1       Running   0          2m
+	pod/nginx-64f497f8fd-r2tsv   1/1       Running   0          2m
+	
+	NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+	service/kubernetes   ClusterIP   10.152.183.1             443/TCP   13h
+	service/nginx        ClusterIP   10.152.183.125           80/TCP    1m
+	
+	NAME                    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+	deployment.apps/nginx   3         3         3            3           2m
+	
+	NAME                               DESIRED   CURRENT   READY     AGE
+	replicaset.apps/nginx-64f497f8fd   3         3         3         2m
+
 
 Now you are ready to access your deployed web service by pointing the following web url to your preferred web browser: http://10.152.183.125
 
