@@ -10,7 +10,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 [Go To Bottom](#bottom)
 ## Topics 
 
-$\color{blue}ajay 1. Basic Commands [Go to Basic Commands click here](#basic_commands)$
+###### 1. Basic Commands [Go to Basic Commands click here](#basic_commands)
 ###### 2. Minikube [Go to Minikube click here](#minikube)
 ###### 3. KubeCTL [Go to Kubectl click here](#kubectl)
 ###### 4. Create YML File [Go to Create YML File click here](#create_yml_file)
@@ -49,7 +49,8 @@ $\color{blue}ajay 1. Basic Commands [Go to Basic Commands click here](#basic_com
 	   microk8s enable dns storage           //Use add-ons
 
 
-	1. Run a yamal file
+
+	1. $\color{blue}Run a yamal file$
 
 	   //Output redirect to new yaml file
 	   kubectl run secondpod --dry-run --generator=run-pod/v1 --image=coolgaurab147/nginx-custom -o yaml > mysecondpd.yml
