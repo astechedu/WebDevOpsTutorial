@@ -100,7 +100,9 @@ $\color{green}4. \ Deployment$
 	   
 	   
 [Go To Top](#top)	   
-## Minikube & KubeCTL
+
+$\large{\color{blue} \ Minikube \ and \ KubeCTL}$
+
 
 	What is Minikube
 	Minikube installation steps in windows
@@ -122,7 +124,8 @@ Requirements:
 
 [Go To Top](#top)
 <!----><a name="minikube"></a>
-### 1. Minikube Installation ( minikube.exe )
+
+$\large{\color{blue} \ Minikube \ Installation ( minikube.exe )}$
 
 	   Usually used to run k8s cluster in your local machine/computer.
 	   Minikube runs a single-node Kubernetes cluster on your machine so that you can try out Kubernetes for your daily development work.
