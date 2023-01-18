@@ -6,7 +6,7 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 :computer:
 
 
-$\large{\color{brown}System \ Information \ diamond_shape_with_a_dot_inside}$
+$\large{\color{green}System \ Information \ diamond_shape_with_a_dot_inside}$
 
 ## System Information :diamond_shape_with_a_dot_inside:
 
