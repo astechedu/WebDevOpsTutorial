@@ -6,7 +6,8 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 :computer:
 
 
-$\large{\color{brown}System \ Information \ :diamond_shape_with_a_dot_inside:}$
+$\large{\color{brown}System \ Information \ diamond_shape_with_a_dot_inside}$
+
 ## System Information :diamond_shape_with_a_dot_inside:
 
 :link:[Windows Linux etc click here](system.info.md)     
