@@ -2,7 +2,6 @@ $$\large{\color{purple} All \ File \ Links \ Of \ This \ Repository}$$ <br />
 
 $\large{\color{red} Ajay \ Sisaudiya }$
 
-<font size="7">***Ajay Sisaudiya***</font>
 
 <a name="top"></a>    
 :computer:
