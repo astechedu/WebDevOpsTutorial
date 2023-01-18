@@ -1,6 +1,6 @@
 $$\large{\color{purple} All \ File \ Links \ Of \ This \ Repository}$$ <br />
 
-$\color{red} ** Ajay ** $
+$\color{red} **Ajay**$
 
 <a name="top"></a>    
 :computer:
