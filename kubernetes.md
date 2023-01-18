@@ -187,7 +187,7 @@ $\large{\color{blue} \ Minikube \ Installation ( minikube.exe )}$
 	spec:
 	 containers:
 	  - name: containername
-	    image: coolgaurab147/nginx-custom
+	    image: astechutube/nginx-custom
 
 
 	 Run Yamal File: 
@@ -671,7 +671,42 @@ Pods:
 	    - containerPort: 80
 
 
-     2. Pod templates:
+     2.
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: nginx
+	  labels:
+	    env: dev
+	spec:
+	  containers:
+	  - name: nginx
+	    image: nginx:1.14.2
+	    ports:
+	    - containerPort: 80
+	    
+
+     3.
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: nginx
+	  labels:
+	    env: dev
+	spec:
+	  containers:
+	  - name: nginx
+	    image: nginx:1.14.2
+	    ports:
+	    - containerPort: 80
+	    env: 
+	     - name: myname
+	       value: ajay
+	     - name: city
+	       value: Dehradun
+	    
+
+     4. Pod templates:
        
 
 	apiVersion: batch/v1
