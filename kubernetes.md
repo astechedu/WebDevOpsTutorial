@@ -297,7 +297,8 @@ This is heading
 	kucbctl get pods
 	kubectl exec <podName> <containerName> -it bash
 	kubectl exec <podName> -c <containerName> -it bash
-	kubectl exec <podName> -c <containerName> -it ls /   
+	kubectl exec <podName> -c <containerName> -it ls / 
+	kubectl logs <podName> --all-containers
 
 Some CMDS: 
 	
