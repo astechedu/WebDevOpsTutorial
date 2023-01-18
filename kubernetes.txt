@@ -381,8 +381,8 @@ Orchestration
 Auto Scaling
 Auto Healing
 Load Balancing
-Plateform Independent
-Fault Tolerance
+Plateform Independent (Cloud, Virtual, Physical)
+Fault Tolerance  (node/pod failure)
 Rollback (Going back to pervious version)
 Health monitoring of container
 Batch Execution
