@@ -377,8 +377,8 @@ container had to be manage carefully
 
 Features of Kubernetes : 
 
-Orchestration
-Auto Scaling
+Orchestration (Clustering of any no. of containers running of different network)
+Auto Scaling  (Vertically and Horizontally)
 Auto Healing
 Load Balancing
 Plateform Independent (Cloud, Virtual, Physical)
