@@ -299,6 +299,7 @@ This is heading
 	kubectl exec <podName> -c <containerName> -it bash
 	kubectl exec <podName> -c <containerName> -it ls / 
 	kubectl logs <podName> --all-containers
+	kubectl logs <podName> -c <containerName>
 
 Some CMDS: 
 	
