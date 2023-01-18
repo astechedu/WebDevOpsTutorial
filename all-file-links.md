@@ -1,4 +1,5 @@
-$$\color{purple} All \ File \ Links \ Of \ This \ Rrpository$$ <br />
+$$\large{\color{purple} All \ File \ Links \ Of \ This \ Rrpository}$$ <br />
+
 
 <a name="top"></a>    
 :computer:
