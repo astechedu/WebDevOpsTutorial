@@ -7,7 +7,7 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 
 
-## System Information :diamond_shape_with_a_dot_inside:
+## System ***Information*** :diamond_shape_with_a_dot_inside:
 
 :link:[Windows Linux etc click here](system.info.md)     
 
