@@ -364,9 +364,7 @@ Step 4) Install Kubectl utility
   -------------------------------------------------
 
 
-
 Docker: 
-
 
 Containers can not communicate each other
 Auto scaling and load balancing
@@ -374,16 +372,15 @@ Was not possible
 container had to be manage carefully
 
 
-
 Features of Kubernetes : 
 
-Orchestration (Clustering of any no. of containers running of different network)
-Auto Scaling  (Vertically and Horizontally)
+Orchestration        (Clustering of any no. of containers running of different network)
+Auto Scaling         (Vertically and Horizontally)
 Auto Healing
 Load Balancing
 Plateform Independent (Cloud, Virtual, Physical)
-Fault Tolerance  (node/pod failure)
-Rollback (Going back to pervious version)
+Fault Tolerance       (node/pod failure)
+Rollback              (Going back to pervious version)
 Health monitoring of container
 Batch Execution
 
