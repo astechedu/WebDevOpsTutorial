@@ -705,8 +705,40 @@ Pods:
 	     - name: city
 	       value: Dehradun
 	    
+	    
 
-     4. Pod templates:
+     4.
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: nginx
+	spec:
+	  containers:
+	  - name: server1
+	    image: nginx:1.14.2    
+	  - name: server2
+	    image: nginx:1.14.2
+
+
+     2.
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: nginx
+	spec:
+	  containers:
+	  - name: server1
+	    image: nginx:1.14.2
+	    ports:
+	    - containerPort: 80
+	  - name: server2
+	    image: nginx:1.14.2
+	    ports:
+	    - containerPort: 80
+	    	    
+	    
+	    
+     6. Pod templates:
        
 
 	apiVersion: batch/v1
