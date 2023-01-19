@@ -387,7 +387,7 @@ Batch Execution
 
 ubuntu: 
 natstat -nltp
-
+netcat -l -p 8000   //To listen
 
 
 
