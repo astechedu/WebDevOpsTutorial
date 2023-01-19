@@ -390,7 +390,8 @@ netstat -nltp
 netcat -l -p 8000   //To listen
 telnet localhost 8000
 ifconfig
-
+Enter into container
+grep name abcd.yml
 
 
 
