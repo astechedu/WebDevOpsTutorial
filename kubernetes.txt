@@ -385,7 +385,8 @@ Health monitoring of container
 Batch Execution
 
 
-
+ubuntu: 
+natstat -nltp
 
 
 
