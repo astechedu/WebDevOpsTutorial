@@ -388,7 +388,7 @@ Batch Execution
 ubuntu: 
 netstat -nltp
 netcat -l -p 8000   //To listen
-
+telnet localhost 8000
 
 
 
