@@ -760,7 +760,8 @@ Pods:
 
 
 
-    7.
+    7. Volumes: 
+    
 	apiVersion: v1
 	kind: Pod
 	metadata:
