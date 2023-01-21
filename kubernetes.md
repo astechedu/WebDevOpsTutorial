@@ -760,6 +760,30 @@ Pods:
 
 
 
+    7.
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: textvols2
+	spec:
+	  containers:
+	   - name: server2
+	     image: nginx
+
+	     volumeMounts:
+	      - name: txtvols
+		#mountPath: /data
+		mountPath: /usr/share/nginx/html
+
+	  volumes:
+	   - name: txtvols
+	     hostPath:
+	      # directory location on host
+	      path: /tmp/data
+	      # this field is optional
+	      type: Directory
+
+
 
        
 
@@ -773,7 +797,7 @@ Deployment:
 
 	apiVersion: apps/v1
 	kind: Deployment
-	metadata:
+	metadata:	
 	  name: nginx-deployment
 	  labels:
 	    app: nginx
