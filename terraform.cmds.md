@@ -21,9 +21,11 @@ $\Large{\color{purple} How \ to \ Install \ Terraform \ on \ Ubuntu \ Server \ 2
      
 Terraform Basic Programs for Beginner: 
 
-   :notes: [6 Terraform Variables ? :link: ](#variables)<br />    
+   :notes: [6 Terraform Variables :link: ](#variables)<br />    
      
+   :notes: [7 Terraform Functions :link: ](#functions)<br />    
      
+        
      
      
      
@@ -367,6 +369,37 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
         terraform plan  -var name="astechedu" -var age=23 -var city="meerut"
         
        
+     8. variable.tf
+     
+         variable "name" {
+           type = string
+           default = "astechedu"
+         }
+
+         variable "age" {
+           type = number
+           default = 88
+         }
+
+       
+         print-variable.tf
+         
+         output "print_name" {
+           value = "My name is ${var.name} and age is ${var.age}"
+         }
+
+
+
+
+
+<a name="functions"></a>
+# Functions
+
+
+
+
+
+
 
 
 
