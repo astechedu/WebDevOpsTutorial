@@ -261,7 +261,8 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
       value = "My name is ${var.name}"
     }
 
-  2. 
+
+  2. print-variable.tf (file)
 
     variable "phone" {}
     
@@ -270,7 +271,7 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
     }
 
 
-  3. 
+  3. print-variable.tf (file)
 
     variable "phone" {}
     
@@ -279,8 +280,28 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
     }
 
 
+  4. variable.tf (file1)
+    
+     variable "name" {}
+     
+    
+    print-variable.tf (file2)   
+    
+    output "print_name" {
+      value = "My name is ${var.name}"
+    }
 
 
+  5. variable.tf (file1)
+    
+     variable "phone" {}
+     
+    
+    print-variable.tf (file2)   
+    
+    output "print_name" {
+      value = "My name is ${var.phone}"
+    }
 
 
 
