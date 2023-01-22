@@ -304,7 +304,27 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
     }
 
 
+    6. variable.tf (file1)
+    
+         variable "name" {
+           default="astechedu"
+         }
 
+         variable "age" {
+           default = 33
+         }
+
+         variable "city" {
+           default="dehradun"
+         }
+         
+         
+         print-variable.tf
+
+
+         output "print_name" {
+           value = "My name is ${var.name}, age is ${var.age} and city is ${var.city} "
+         }
 
 
 
