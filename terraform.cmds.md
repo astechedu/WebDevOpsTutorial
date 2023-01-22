@@ -262,6 +262,15 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
     }
 
 
+    CMDS: 
+    
+     terraform plan
+        OR
+     terraform plan -var name="astechedu"
+     
+    
+
+
   2. print-variable.tf (file)
 
     variable "phone" {}
@@ -271,16 +280,15 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
     }
 
 
-  3. print-variable.tf (file)
-
-    variable "phone" {}
+    CMDS: 
     
-    output "print_name" {
-      value = "My name is ${var.phone}"
-    }
-
-
-  4. variable.tf (file1)
+     terraform plan
+        OR
+     terraform plan -var phone=89898998
+     
+    
+  
+  5. variable.tf (file1)
     
      variable "name" {}
      
