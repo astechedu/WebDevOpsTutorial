@@ -247,6 +247,19 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
 
 
 
+<a name="variables"></a>
+[Go To Top](#top)
+
+# Variables
+
+
+  1.
+   
+    variable "name" {}
+    
+    output "print_name" {
+      value = "My name is ${var.name}"
+    }
 
 
 
@@ -262,3 +275,11 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
 
 
 
+
+
+
+
+
+
+
+[Go To Top](#top)
