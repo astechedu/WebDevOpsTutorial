@@ -421,8 +421,11 @@ CMDS:
 
 docker images
 docker image save logstash > logstash.tar
-
-
+ls
+docker image history logstash
+docker image rm logstash
+ls
+docker image load < logstash.tar
 
 
 
