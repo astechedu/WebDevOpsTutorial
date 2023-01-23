@@ -152,7 +152,7 @@ http {
 
 [Go To Top](#top)
 <a name="load_balancer2"></a>
-# Nginx Load Balander 
+# Nginx Load Balancer 
 
 http://nginx.org/en/docs/http/load_balancing.html
 
