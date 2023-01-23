@@ -6,8 +6,11 @@
 
 <a name="top"></a>
 Topic: 
+
   [PHP Docker Images](#php_images)
   
+  [Dockerfile (run,env,label,WORKDIR](#label_env_workdir_run)
+   
   
   
   
@@ -331,6 +334,11 @@ I'd be grateful for any advise on how to add composer to the PATH in my dockerfi
     COPY . . # You can use "." as a destination since you already changed the workdir
 
 
+
+
+
+<a name="label_env_workdir_run"></a>
+# Dockeerfile env,run,label
 
 
 
