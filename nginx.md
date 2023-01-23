@@ -8,11 +8,11 @@ $$\colorbox{green}{\large{\color{white}**Nginx**}}$$
 Topics: 
 
 1. [Downlod 'runHiddenConsole.exe' from internet in C:\WebServer]()
-2. 
+
 3. [Download nginx (Binary)   in C:\WebServer   //Set Environment variable in System]() 
-4. 
+
 5. [Download php (Binary)     in C:\WebServer   //Set Environment variable in System]()
-6. 
+
 7. [Download mysql (Binary)   in C:\WebServer   //Set Environment variable in System]()
 
 5. [Create nginx start, stop & restart .ba]()
