@@ -21,6 +21,8 @@ Topics:
 
 7. [Create 3 files nginx-start, nginx-stop & nginx-restart in C:\WebServer]()
 
+8. [Load Balancer](#load_balancer)
+
 
 
 Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe port same as in nginx.conf 
@@ -230,6 +232,9 @@ Weighted load balancing
 
 
 
+
+[Go To Top](#top)
+<a name="load_balancer1"></a>
 # Nginx Load Balancing More: 
 
 https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/
