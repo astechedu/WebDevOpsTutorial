@@ -7,6 +7,8 @@ $$\colorbox{green}{\large{\color{white}**Nginx**}}$$
 
 Topics: 
 
+***Windows***
+
 1. [Downlod 'runHiddenConsole.exe' from internet in C:\WebServer](#binaries)
 
 3. [Download nginx (Binary) in C:\WebServer   //Set Environment variable in System](#binaries) 
@@ -20,6 +22,11 @@ Topics:
 6. [Check version: nginx -v, php -v, & mysql -v  //All all succeed](#binaries)
 
 7. [Create 3 files nginx-start, nginx-stop & nginx-restart in C:\WebServer](#binaries)
+
+
+
+
+
 
 8. [Load Balancer Notes 1](#load_balancer1)
 
