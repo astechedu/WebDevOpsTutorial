@@ -397,7 +397,6 @@ CMDS:
 <a name="docker_export"></a>  
 # Docker export, immport and .tar file
 
-    docker run --name server -d ubuntu
     docker exec -it <containerId> /bin/bash
 
     <containerId># apt-get update
