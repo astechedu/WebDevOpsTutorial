@@ -1,5 +1,5 @@
 
-$$\larage{\color{green} Nginx}$$
+$$\large{\color{green} Nginx}$$
 
 
 
