@@ -7,13 +7,13 @@ $$\colorbox{green}{\large{\color{white}**Nginx**}}$$
 
 Topics: 
 
-1. [Downlod 'runHiddenConsole.exe' from internet in C:\WebServer]()
+1. [Downlod 'runHiddenConsole.exe' from internet in C:\WebServer](#binaryes)
 
-3. [Download nginx (Binary)   in C:\WebServer   //Set Environment variable in System]() 
+3. [Download nginx (Binary) in C:\WebServer   //Set Environment variable in System]() 
 
-5. [Download php (Binary)     in C:\WebServer   //Set Environment variable in System]()
+5. [Download php (Binary)  in C:\WebServer   //Set Environment variable in System]()
 
-7. [Download mysql (Binary)   in C:\WebServer   //Set Environment variable in System]()
+7. [Download mysql (Binary) in C:\WebServer   //Set Environment variable in System]()
 
 5. [Create nginx start, stop & restart .ba]()
 
@@ -37,6 +37,10 @@ Topics:
 
 
 
+
+
+[Go To Top](#top)
+<a name="binaries"></a>
 Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe port same as in nginx.conf 
 
 //C:\WebServer\nginx-start.bat
