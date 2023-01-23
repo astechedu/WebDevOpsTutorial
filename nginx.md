@@ -21,7 +21,9 @@ Topics:
 
 7. [Create 3 files nginx-start, nginx-stop & nginx-restart in C:\WebServer]()
 
-8. [Load Balancer](#load_balancer)
+8. [Load Balancer Notes 1](#load_balancer1)
+
+9. [Load Balancer Notes 2](#load_balancer2)
 
 
 
@@ -145,12 +147,11 @@ http {
 
 
 
--------------------------------------
 
 
 
-
-
+[Go To Top](#top)
+<a name="load_balancer2"></a>
 # Nginx Load Balander 
 
 http://nginx.org/en/docs/http/load_balancing.html
