@@ -9,9 +9,9 @@ Topics:
 
 ***Load Balancing***
 
-8. [Load Balancer Notes 1](#load_balancer1)
+1. [Load Balancer Notes 1 only code](#load_balancer1)
 
-9. [Load Balancer Notes 2](#load_balancer2)
+2. [Load Balancer Notes 2 code with details](#load_balancer2)
 
 
 ***Windows***
