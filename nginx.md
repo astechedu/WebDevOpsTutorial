@@ -7,6 +7,13 @@ $$\colorbox{green}{\large{\color{white}**Nginx**}}$$
 
 Topics: 
 
+***Load Balancing***
+
+8. [Load Balancer Notes 1](#load_balancer1)
+
+9. [Load Balancer Notes 2](#load_balancer2)
+
+
 ***Windows***
 
 1. [Downlod 'runHiddenConsole.exe' from internet in C:\WebServer](#binaries)
@@ -27,10 +34,6 @@ Topics:
 
 
 
-
-8. [Load Balancer Notes 1](#load_balancer1)
-
-9. [Load Balancer Notes 2](#load_balancer2)
 
 
 
