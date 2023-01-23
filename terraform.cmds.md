@@ -413,7 +413,7 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
     CMDS: 
     
      terraform plan
-     
+
      
      2. print-variable.tf (file1)
    
@@ -433,7 +433,7 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
     CMDS: 
     
      terraform plan
-      
+    
 
 
      3. print-variable.tf (file1)
@@ -453,6 +453,9 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
     CMDS: 
     
      terraform plan
+     
+     Enter users: ["ajay","amit","sonu"]
+    
       
       
      4. print-variable.tf (file1)
@@ -472,7 +475,8 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
     CMDS: 
     
      terraform plan
-      
+     
+     Enter users: ["ajay","amit","sonu"]
 
 
 
