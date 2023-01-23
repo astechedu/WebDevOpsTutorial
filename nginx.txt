@@ -162,6 +162,28 @@ http {
 
 http://nginx.org/en/docs/http/load_balancing.html
 
+Introduction
+
+Load balancing across multiple application instances is a commonly used technique for optimizing resource utilization, maximizing throughput, reducing latency, and ensuring fault-tolerant configurations.
+
+It is possible to use nginx as a very efficient HTTP load balancer to distribute traffic to several application servers and to improve performance, scalability and reliability of web applications with nginx.
+Load balancing methods
+
+The following load balancing mechanisms (or methods) are supported in nginx:
+
+    round-robin — requests to the application servers are distributed in a round-robin fashion,
+    least-connected — next request is assigned to the server with the least number of active connections,
+    ip-hash — a hash-function is used to determine what server should be selected for the next request (based on the client’s IP address).
+
+
+Load balancing methods
+Default load balancing configuration
+Least connected load balancing
+Session persistence
+Weighted load balancing
+Health checks
+Further reading
+
 
 Default load balancing configuration
 
