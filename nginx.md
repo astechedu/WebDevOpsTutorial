@@ -7,19 +7,19 @@ $$\colorbox{green}{\large{\color{white}**Nginx**}}$$
 
 Topics: 
 
-1. [Downlod 'runHiddenConsole.exe' from internet in C:\WebServer](#binaryes)
+1. [Downlod 'runHiddenConsole.exe' from internet in C:\WebServer](#binaries)
 
-3. [Download nginx (Binary) in C:\WebServer   //Set Environment variable in System]() 
+3. [Download nginx (Binary) in C:\WebServer   //Set Environment variable in System](#binaries) 
 
-5. [Download php (Binary)  in C:\WebServer   //Set Environment variable in System]()
+5. [Download php (Binary)  in C:\WebServer   //Set Environment variable in System](#binaries)
 
-7. [Download mysql (Binary) in C:\WebServer   //Set Environment variable in System]()
+7. [Download mysql (Binary) in C:\WebServer   //Set Environment variable in System](#binaries)
 
-5. [Create nginx start, stop & restart .ba]()
+5. [Create nginx start, stop & restart .ba](#binaries)
 
-6. [Check version: nginx -v, php -v, & mysql -v  //All all succeed]()
+6. [Check version: nginx -v, php -v, & mysql -v  //All all succeed](#binaries)
 
-7. [Create 3 files nginx-start, nginx-stop & nginx-restart in C:\WebServer]()
+7. [Create 3 files nginx-start, nginx-stop & nginx-restart in C:\WebServer](#binaries)
 
 8. [Load Balancer Notes 1](#load_balancer1)
 
