@@ -36,7 +36,8 @@ Topics:
 
 
 #
-
+#
+#
 [Go To Top](#top)
 <a name="binaries"></a>
 
@@ -57,7 +58,7 @@ Steps:
   7. Create 3 files nginx-start, nginx-stop & nginx-restart in C:\WebServer
 
 #
-
+#
 
 
 Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe port same as in nginx.conf 
