@@ -402,8 +402,10 @@ CMDS:
 
     <containerId># apt-get update
     <containerId># apt install git tree
-    <containerId># docker export <containerId> >my_ubuntu.tar
-    <containerId># docker import <containerId> 
+     docker export <containerId> > my_ubuntu.tar
+     docker export <containerId> -o my_ubuntu.tar
+     
+    docker image import my_ubuntu.tar my_ubuntu_img
     ls -lh
 
   
