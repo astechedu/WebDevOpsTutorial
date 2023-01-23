@@ -39,20 +39,22 @@ Topics:
 [Go To Top](#top)
 <a name="binaries"></a>
 
-#Steps:
+Steps:
 
-        Downlod 'runHiddenConsole.exe' from internet in C:\WebServer
+  1. Downlod 'runHiddenConsole.exe' from internet in C:\WebServer
 
-        Download nginx (Binary) in C:\WebServer   //Set Environment variable in System 
+  2. Download nginx (Binary) in C:\WebServer   //Set Environment variable in System 
 
-        Download php (Binary)  in C:\WebServer   //Set Environment variable in System
-        Download mysql (Binary) in C:\WebServer   //Set Environment variable in System
+  3. Download php (Binary)  in C:\WebServer   //Set Environment variable in System
+  
+  4. Download mysql (Binary) in C:\WebServer   //Set Environment variable in System
 
-        Create nginx start, stop & restart .ba
+  5. Create nginx start, stop & restart .ba
 
-        Check version: nginx -v, php -v, & mysql -v  //All all succeed
+  6. Check version: nginx -v, php -v, & mysql -v  //All all succeed
+  
+  7. Create 3 files nginx-start, nginx-stop & nginx-restart in C:\WebServer
 
-        Create 3 files nginx-start, nginx-stop & nginx-restart in C:\WebServer
 
 
 
