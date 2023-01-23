@@ -15,6 +15,8 @@ Topic:
    
   [Docker Export, Import and .tar file](#docker_export)
    
+  [Docker save/docker load ](#docker-save-load)
+   
   
   
   
@@ -410,7 +412,33 @@ CMDS:
   
   
 
-  
+#
+#
+[Go To Top](#top)
+<a name="docker-save-load"></a>  
+# Docker save / docker load 
+
+
+docker images
+docker image save logstash > logstash.tar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
 
