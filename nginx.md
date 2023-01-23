@@ -1,6 +1,5 @@
 
->>>>> Nginx <<<<<<<<
-$$\color{red} Ajay$$
+$$\larage{\color{green} Nginx}$$
 
 
 
