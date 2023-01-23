@@ -407,7 +407,7 @@ CMDS:
      
     docker image import my_ubuntu.tar my_ubuntu_img
     ls -lh
-
+    docker run -it my_ubuntu_img /bin/bash
   
   
 
