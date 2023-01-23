@@ -160,6 +160,9 @@ http {
 
 # Nginx Load Balander 
 
+http://nginx.org/en/docs/http/load_balancing.html
+
+
 Default load balancing configuration
 
 The simplest configuration for load balancing with nginx may look like the following:
@@ -182,6 +185,35 @@ The simplest configuration for load balancing with nginx may look like the follo
 
 
 
+Least connected load balancing
+
+
+    upstream myapp1 {
+        least_conn;
+        server srv1.example.com;
+        server srv2.example.com;
+        server srv3.example.com;
+    }
+    
+    
+Session persistence
+
+
+upstream myapp1 {
+    ip_hash;
+    server srv1.example.com;
+    server srv2.example.com;
+    server srv3.example.com;
+}
+
+    
+Weighted load balancing    
+    
+    upstream myapp1 {
+        server srv1.example.com weight=3;
+        server srv2.example.com;
+        server srv3.example.com;
+    }
 
 
 
