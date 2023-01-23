@@ -34,7 +34,9 @@ Topics:
 
 
 
-
+#
+#
+#
 #
 #
 #
@@ -59,7 +61,9 @@ Steps:
 
 #
 #
-
+#
+#
+#
 
 Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe port same as in nginx.conf 
 
@@ -79,7 +83,10 @@ Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe 
 
 
  -- OR--
- 
+
+#
+#
+#
 
  //C:\WebServer\nginx-start.bat
 
@@ -101,8 +108,9 @@ Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe 
     EXIT /b 
 
 
-
-
+#
+#
+#
 
 Create file "nginx-stop.bat", edit with this:
 
@@ -114,7 +122,9 @@ Create file "nginx-stop.bat", edit with this:
     EXIT /b
 
 
-   
+#
+#
+#   
 
 Create file "nginx-restart.bat":
 
@@ -128,8 +138,9 @@ Create file "nginx-restart.bat":
 
 
 
-
-
+#
+#
+#
 --------> Nginx Config <-------------
 
 
