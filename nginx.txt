@@ -239,8 +239,7 @@ Weighted load balancing
 
 
 
-
-More: 
+# Nginx Load Balancing More: 
 
 https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/
 
@@ -613,32 +612,6 @@ For more information about configuring Microsoft Exchange and NGINX Plus, see th
 Dynamic Configuration Using the NGINX Plus API
 
 With NGINX Plus, the configuration of an upstream server group can be modified dynamically using the NGINX Plus API. A configuration command can be used to view all servers or a particular server in a group, modify parameter for a particular server, and add or remove servers. For more information and instructions, see Configuring Dynamic Load Balancing with the NGINX Plus API.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
