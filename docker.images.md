@@ -19,7 +19,9 @@ Topic:
   
   
   
-  
+#
+#
+
 [Go To Top](#top)
 <a name="php_images"></a>  
 
@@ -43,7 +45,8 @@ Dockerfile:
 
 
 
-
+#
+#
 
     FROM php:7.2-alpine3.8
 
@@ -371,13 +374,24 @@ CMDS:
 <a name="docker_diff"></a>  
 # Docker diff
 
-
-
-
+docker run --name server -p 8000:80 -d nginx:latest
+docker exec -it <containerId> /bin/bash
+ 
+<containerId># touch /tmp/ajay.html 
+  
+docker diff <containerId>
+watch docker diff <containerId>
 
 
   
   
+  
+  
+  
+  
+  
+#
+#
   
 [Go To Top](#top)
 <a name="docker_export"></a>  
@@ -385,6 +399,9 @@ CMDS:
 
 
 
+  
+  
 
 
 
+:end:
