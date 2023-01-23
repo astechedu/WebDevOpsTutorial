@@ -2,12 +2,7 @@
 $$\colorbox{green}{\large{\color{white}**Nginx**}}$$
 
 
-
-
-
-    ( WEB SERVER )
-
-
+[Home](all-files-links.md)
 
 1. Downlod 'runHiddenConsole.exe' from internet in C:\WebServer
 2. Download nginx (Binary)   in C:\WebServer   //Set Environment variable in System  
