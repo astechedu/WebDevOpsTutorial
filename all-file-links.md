@@ -181,6 +181,8 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 :link:[Web Servers Installation Commands click here](web-servers.md)
 
+:link:[Nginx click here](nginx.md)
+
 :link:[Web Servers click here](web-servers.txt)
 
 :link:[Nginx click here](nginx.txt)
