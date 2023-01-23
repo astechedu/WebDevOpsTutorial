@@ -343,11 +343,11 @@ I'd be grateful for any advise on how to add composer to the PATH in my dockerfi
 
 Dockerfile:
 
-  FROM ubuntu:latest
-  LABEL name="ajaysisaudiya"
-  LABEL email="sample@gmail.com"
-  ENV NAME ajaysisaudiya
-  ENV PASS password
+    FROM ubuntu:latest
+    LABEL name="ajaysisaudiya"
+    LABEL email="sample@gmail.com"
+    ENV NAME ajaysisaudiya
+    ENV PASS password
 
 
 CMDS:
