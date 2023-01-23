@@ -1,22 +1,14 @@
 
 >>>>> Nginx <<<<<<<<
-
----------------------------------------
-
-
-----------------------------------------
-keys: load balancer
-----------------------------------------
-----------------------------------------
+$$\color{red} Ajay$$
 
 
-------->>>> Nginx Setting for windows <<<<------------
 
------------------------------------------
+
 
     ( WEB SERVER )
 
------------------------------------------
+
 
 1. Downlod 'runHiddenConsole.exe' from internet in C:\WebServer
 2. Download nginx (Binary)   in C:\WebServer   //Set Environment variable in System  
