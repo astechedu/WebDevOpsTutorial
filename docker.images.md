@@ -350,8 +350,13 @@ Dockerfile:
   ENV PASS password
 
 
-
-
+CMDS:
+  
+  docker build . -t myimage:1
+  
+  docker run myimage:1 -it bash
+  
+  roote@abcd3838# env
 
 
 
