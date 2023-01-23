@@ -614,65 +614,6 @@ Dynamic Configuration Using the NGINX Plus API
 
 With NGINX Plus, the configuration of an upstream server group can be modified dynamically using the NGINX Plus API. A configuration command can be used to view all servers or a particular server in a group, modify parameter for a particular server, and add or remove servers. For more information and instructions, see Configuring Dynamic Load Balancing with the NGINX Plus API.
 
-What's on this Page
-
-    Overview
-    Proxying HTTP Traffic to a Group of Servers
-    Choosing a Load-Balancing Method
-    Server Weights
-    Server Slow-Start
-    Enabling Session Persistence
-    Limiting the Number of Connections
-    Configuring Health Checks
-    Sharing Data with Multiple Worker Processes
-        Setting the Zone Size
-    Configuring HTTP Load Balancing Using DNS
-    Load Balancing of Microsoft Exchange Servers
-        Complete NTLM Example
-    Dynamic Configuration Using the NGINX Plus API
-
-Found a bug? Looking for something new?
-Company
-
-    About F5 NGINX
-    Events
-
-
-Resources
-
-    Blog
-    FAQ
-    Professional Services
-    Training
-
-Products
-
-    NGINX Plus
-    NGINX App Protect
-    NGINX Amplify
-    NGINX Management Suite
-    NGINX Ingress Controller
-    NGINX Service Mesh
-    NGINX Unit
-
-NGINX on GitHub
-
-    NGINX Open Source
-    NGINX Unit
-    NGINX Amplify
-    NGINX Kubernetes Ingress Controller
-    NGINX Microservices Reference Architecture
-    NGINX Crossplane
-
-Social
-
-Facebook
-Twitter
-LinkedIn
-YouTube
-
-
-
 
 
 
