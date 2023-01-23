@@ -395,7 +395,64 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
 <a name="functions"></a>
 # Functions
 
+  1. print-variable.tf (file1)
+   
+    variable "users" {
+       type = list
+       default = ["ajay","amit","rohit"]
+    }
+    
+    
+    print-variable.tf (file2)
+    
+    output "print_name" {
+      value = join(", ",var.users)
+    }
 
+
+    CMDS: 
+    
+     terraform plan
+     
+     
+     2. print-variable.tf (file1)
+   
+    variable "users" {
+       type = list
+       default = ["ajay","amit","rohit"]
+    }
+    
+    
+    print-variable.tf (file2)
+    
+    output "print_name" {
+      value = upper(var.users[0])
+    }
+
+
+    CMDS: 
+    
+     terraform plan
+      
+
+     3. print-variable.tf (file1)
+   
+    variable "users" {
+       type = list      
+    }
+    
+    
+    print-variable.tf (file2)
+    
+    output "print_name" {
+      value = upper(var.users[0])
+    }
+
+
+    CMDS: 
+    
+     terraform plan
+      
 
 
 
