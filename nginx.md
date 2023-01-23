@@ -20,23 +20,6 @@ Topics:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#
-#
-#
 #
 #
 #
@@ -61,9 +44,6 @@ Steps:
 
 #
 #
-#
-#
-#
 
 Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe port same as in nginx.conf 
 
@@ -86,7 +66,6 @@ Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe 
 
 #
 #
-#
 
  //C:\WebServer\nginx-start.bat
 
@@ -107,8 +86,6 @@ Create file "nginx-start.bat", edit file with down below, make your php-cgi.exe 
     popd
     EXIT /b 
 
-
-#
 #
 #
 
@@ -124,7 +101,6 @@ Create file "nginx-stop.bat", edit with this:
 
 #
 #
-#   
 
 Create file "nginx-restart.bat":
 
@@ -137,8 +113,6 @@ Create file "nginx-restart.bat":
 
 
 
-
-#
 #
 #
 --------> Nginx Config <-------------
@@ -196,6 +170,9 @@ http {
 
 
 
+#
+#
+#
 
 [Go To Top](#top)
 <a name="load_balancer2"></a>
@@ -280,6 +257,10 @@ Weighted load balancing
 
 
 
+
+#
+#
+#
 
 [Go To Top](#top)
 <a name="load_balancer1"></a>
