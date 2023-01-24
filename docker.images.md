@@ -45,8 +45,6 @@ Dockerfile:
 
 
 
-
-#
 #
 
     FROM php:7.2-alpine3.8
@@ -64,14 +62,12 @@ Dockerfile:
     
     
     
-    
     FROM php:8.0.2-apache
     RUN apt-get update && apt-get upgrade -y
     RUN apt-get install -y mariadb-client libxml2-dev
     RUN apt-get autoremove -y && apt-get autoclean
     RUN docker-php-ext-install mysqli pdo pdo_mysql xml
     COPY --from=composer /usr/bin/composer /usr/bin/composer
-
 
 
 
@@ -148,7 +144,7 @@ In Dockerfile :
 
 
 
-
+#
 # Install Composer
 
       RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
@@ -166,7 +162,8 @@ In Dockerfile :
 
 
 
-      # Install Composer
+# Install Composer
+
       RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 
@@ -174,7 +171,6 @@ It works for me, to test if the composer are installed i access to my container 
 
       composer --version
       Composer version 1.6.5 2018-05-04 11:44:59
-
 
 
 
@@ -300,7 +296,6 @@ I'd be grateful for any advise on how to add composer to the PATH in my dockerfi
 
 
 
-
 # 
     FROM php:7-fpm
     WORKDIR /var/www
@@ -387,11 +382,6 @@ CMDS:
   
   
   
-  
-  
-  
-  
-#
 #
   
 [Go To Top](#top)
@@ -410,8 +400,6 @@ CMDS:
     docker run -it my_ubuntu_img /bin/bash
   
   
-
-#
 #
 [Go To Top](#top)
 <a name="docker-save-load"></a>  
