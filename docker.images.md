@@ -19,8 +19,7 @@ Topic:
    
   
   
-  
-#
+
 #
 
 [Go To Top](#top)
@@ -41,7 +40,6 @@ Dockerfile:
       RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
           chown -R www-data:www-data /var/www #It may be added
       WORKDIR /var/www
-
 
 
 
@@ -72,7 +70,7 @@ Dockerfile:
 
 
 
-
+#
     FROM php:7.3-fpm-alpine
     RUN docker-php-ext-install pdo pdo_mysql
     RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
@@ -86,7 +84,7 @@ Dockerfile:
 
 
 
-
+#
 How to install PHP composer inside a docker container: 
 
 1. 
