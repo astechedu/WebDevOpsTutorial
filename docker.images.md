@@ -1,4 +1,3 @@
-# Docker Images
 $$\colorbox{pink}{\large{\color{blue}{Docker \ Images}}}$$
 
 
