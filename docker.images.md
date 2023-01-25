@@ -4,7 +4,6 @@ $$\colorbox{Cyan}{\largCyane{\color{white}{Docker \ Images}}}$$
 :link:[Home](all-file-links.md)     
 
 
-
 <a name="top"></a>
 Topic: 
 
