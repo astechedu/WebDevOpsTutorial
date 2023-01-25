@@ -643,6 +643,10 @@ server {
 
 Mysql Container: 
 
+docker create network mynetwork --driver bridge
+docker network ls
+docker inspect network mynetwork
+
 Dockerfile:  myproject/Dockerfile
 
 FROM php:8.0-apache
