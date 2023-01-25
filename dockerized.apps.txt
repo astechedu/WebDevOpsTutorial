@@ -652,13 +652,45 @@ Only Commands:
 Starting Your MySQL Container
 
 
-docker run --name mysql -d \
-    -p 3306:3306 \
-    -e MYSQL_ROOT_PASSWORD=change-me \
-    --restart unless-stopped \
-    mysql:8
+      docker run --name mysql -d \
+          -p 3306:3306 \
+          -e MYSQL_ROOT_PASSWORD=change-me \
+          --restart unless-stopped \
+          mysql:8
 
 
+
+You can do this at any time by using docker exec to get a shell inside the container:
+
+
+      docker exec -it mysql mysql -p
+
+
+
+Persisting Data With Volumes
+
+
+
+Stop and remove your earlier container to avoid naming conflicts:
+
+
+      docker stop mysql
+      docker rm mysql
+
+
+Then start a new container with the revised configuration:
+
+
+        docker run --name mysql -d \
+          -p 3306:3306 \
+          -e MYSQL_ROOT_PASSWORD=change-me \
+          -v mysql:/var/lib/mysql \
+          mysql:8
+
+
+
+         docker stop mysql
+         docker rm mysql
 
 
 
