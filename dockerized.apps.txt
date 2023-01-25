@@ -639,7 +639,8 @@ server {
 
 
 
-# PHP MySql Network
+# PHP MySql and Network
+//When both containers in same network, No need any link between them
 
 Mysql Container: 
 
