@@ -1,6 +1,6 @@
 $$\colorbox{Cyan}{\large{\color{white}{Docker \ Images}}}$$
 
-<img src="https://miro.medium.com/proxy/1*9hGvYE5jegHm1r_97gH-jQ.png" width="20%">
+<img src="https://miro.medium.com/proxy/1*9hGvYE5jegHm1r_97gH-jQ.png" width="10%">
 
 :link:[Home](all-file-links.md)     
 
