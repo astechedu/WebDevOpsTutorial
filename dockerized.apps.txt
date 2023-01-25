@@ -753,16 +753,33 @@ Docker secrets or volumes to inject values as files.
 
 Creating a Custom Image
 
+Here’s an example my.cnf that changes some MySQL settings:
+
+      my.cnf[mysqld]
+      innodb-ft-enable-stopword = 0
+      innodb-ft-min-token-size = 1
 
 
+Dockerfile
+
+      FROM mysql:8
+      COPY my.cnf /etc/mysql/conf.d/my.cnf
+
+   
+   
+Build your image:
+
+      docker build -t custom-mysql:latest .   
+    
+    
+Now you can run your image to start a MySQL instance that automatically uses your config file:
 
 
-    
-    
-    
-    
-    
-    
+      docker run --name custom-mysql -d \
+          -p 3306:3306 \
+          -e MYSQL_ROOT_PASSWORD=change-me \
+          -v mysql:/var/lib/mysql \
+          custom-mysql:latest    
     
     
     
