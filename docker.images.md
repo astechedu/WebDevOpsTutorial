@@ -1,6 +1,6 @@
 $$\colorbox{Cyan}{\large{\color{white}{Docker \ Images}}}$$
 
-$$<img src="https://avatars.githubusercontent.com/u/5429470?s=280&v=4" width="10%">$$
+<img src="https://avatars.githubusercontent.com/u/5429470?s=280&v=4" alt="Docker Image Loading....."width="10%">
 
 :link:[Home](all-file-links.md)     
 
