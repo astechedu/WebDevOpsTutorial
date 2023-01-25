@@ -179,7 +179,7 @@ Now you can run your image to start a MySQL instance that automatically uses you
           custom-mysql:latest    
     
       
-  
+# 
 #
 
 [Go To Top](#top)
