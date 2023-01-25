@@ -8,6 +8,11 @@ $$\colorbox{pink}{\large{\color{blue}{Docker \ Images}}}$$
 <a name="top"></a>
 Topic: 
 
+  ***Docker Base Images***
+  
+  [MySql Base Image](#mysql_base_image)
+  
+  
   [PHP Docker Images](#php_images)
   
   [Dockerfile (run,env,label,WORKDIR)](#label_env_workdir_run)
@@ -19,6 +24,156 @@ Topic:
   [Docker save/docker load ](#docker-save-load)
    
   
+  
+  
+  
+   
+  
+# 
+  
+# Running Docker Containers from docker images
+
+https://earthly.dev/blog/docker-mysql/
+
+Only Commands: 
+
+
+
+1 MySql 
+
+Starting Your MySQL Container
+
+
+      docker run --name mysql -d \
+          -p 3306:3306 \
+          -e MYSQL_ROOT_PASSWORD=change-me \
+          --restart unless-stopped \
+          mysql:8
+
+
+
+You can do this at any time by using docker exec to get a shell inside the container:
+
+
+      docker exec -it mysql mysql -p
+
+
+
+Persisting Data With Volumes
+
+
+
+Stop and remove your earlier container to avoid naming conflicts:
+
+
+      docker stop mysql
+      docker rm mysql
+
+
+Then start a new container with the revised configuration:
+
+
+        docker run --name mysql -d \
+          -p 3306:3306 \
+          -e MYSQL_ROOT_PASSWORD=change-me \
+          -v mysql:/var/lib/mysql \
+          mysql:8
+
+
+
+         docker stop mysql
+         docker rm mysql
+
+
+Using Container Networks
+
+
+First create a Docker network for your application:
+
+
+      docker network create example-app
+
+
+Specify this network when starting your MySQL container:
+
+
+      docker run --name mysql -d \
+          -e MYSQL_ROOT_PASSWORD=change-me \
+          -v mysql:/var/lib/mysql \
+          --network example-app \
+          mysql:8
+
+
+Connect another container to the same network:
+
+
+      docker run --name api-server -d \
+          -p 80:80 \
+          --network example-app \
+          example-api-server:latest
+
+
+
+MySQL Configuration:
+
+      -e
+         MYSQL_DATABASE
+         MYSQL_USER and MYSQL_PASSWORD
+         MYSQL_RANDOM_ROOT_PASSWORD
+         MYSQL_ROOT_PASSWORD
+         MYSQL_ALLOW_EMPTY_PASSWORD
+         MYSQL_ROOT_PASSWORD_FILE
+
+
+
+
+
+Docker secrets or volumes to inject values as files.
+
+
+      mkdir secrets
+      echo "P@$$w0rd" > secrets/mysql-root-password
+
+      docker run --name mysql -d \
+          -p 3306:3306 \
+          -e MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql-root-password \
+          -v ./secrets:/run/secrets \
+          --restart unless-stopped \
+          mysql:8
+
+
+
+Creating a Custom Image
+
+Here’s an example my.cnf that changes some MySQL settings:
+
+      my.cnf[mysqld]
+      innodb-ft-enable-stopword = 0
+      innodb-ft-min-token-size = 1
+
+
+Dockerfile
+
+      FROM mysql:8
+      COPY my.cnf /etc/mysql/conf.d/my.cnf
+
+   
+   
+Build your image:
+
+      docker build -t custom-mysql:latest .   
+    
+    
+Now you can run your image to start a MySQL instance that automatically uses your config file:
+
+
+      docker run --name custom-mysql -d \
+          -p 3306:3306 \
+          -e MYSQL_ROOT_PASSWORD=change-me \
+          -v mysql:/var/lib/mysql \
+          custom-mysql:latest    
+    
+      
   
 #
 
