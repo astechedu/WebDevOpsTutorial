@@ -589,4 +589,3 @@ CMDS:
 
 :end:
 
-<img src="" width="10%">
