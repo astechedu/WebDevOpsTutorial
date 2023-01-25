@@ -730,11 +730,45 @@ MySQL Configuration:
          MYSQL_RANDOM_ROOT_PASSWORD
          MYSQL_ROOT_PASSWORD
          MYSQL_ALLOW_EMPTY_PASSWORD
+         MYSQL_ROOT_PASSWORD_FILE
 
 
 
 
 
+Docker secrets or volumes to inject values as files.
+
+
+      mkdir secrets
+      echo "P@$$w0rd" > secrets/mysql-root-password
+
+      docker run --name mysql -d \
+          -p 3306:3306 \
+          -e MYSQL_ROOT_PASSWORD_FILE=/run/secrets/mysql-root-password \
+          -v ./secrets:/run/secrets \
+          --restart unless-stopped \
+          mysql:8
+
+
+
+Creating a Custom Image
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
