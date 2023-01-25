@@ -722,7 +722,14 @@ Connect another container to the same network:
 
 
 
+MySQL Configuration:
 
+      -e
+         MYSQL_DATABASE
+         MYSQL_USER and MYSQL_PASSWORD
+         MYSQL_RANDOM_ROOT_PASSWORD
+         MYSQL_ROOT_PASSWORD
+         MYSQL_ALLOW_EMPTY_PASSWORD
 
 
 
