@@ -636,4 +636,27 @@ server {
 
 
 
+# PHP MySql Network
+
+Mysql Container: 
+
+docker run --name mydb -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v mysql:/var/lib/mysql -p 3306:3306 -d --network mynetwork  mysql:latest
+
+
+PHP Container: 
+
+docker run --name myserver --network mynetwork -p 8000:80 -v "$PWD"/src:/var/www/html -d server01
+
+
+
+
+
+
+
+
+
+
+
+
+
 
