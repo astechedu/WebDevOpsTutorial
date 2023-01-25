@@ -633,3 +633,57 @@ server {
 }
 
 -----------------------------------------------------------
+
+
+
+
+
+
+# Running Docker Containers from docker images
+
+https://earthly.dev/blog/docker-mysql/
+
+Only Commands: 
+
+
+
+1 MySql 
+
+Starting Your MySQL Container
+
+
+docker run --name mysql -d \
+    -p 3306:3306 \
+    -e MYSQL_ROOT_PASSWORD=change-me \
+    --restart unless-stopped \
+    mysql:8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
