@@ -693,7 +693,32 @@ Then start a new container with the revised configuration:
          docker rm mysql
 
 
+Using Container Networks
 
+
+First create a Docker network for your application:
+
+
+      docker network create example-app
+
+
+Specify this network when starting your MySQL container:
+
+
+      docker run --name mysql -d \
+          -e MYSQL_ROOT_PASSWORD=change-me \
+          -v mysql:/var/lib/mysql \
+          --network example-app \
+          mysql:8
+
+
+Connect another container to the same network:
+
+
+      docker run --name api-server -d \
+          -p 80:80 \
+          --network example-app \
+          example-api-server:latest
 
 
 
