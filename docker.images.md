@@ -31,7 +31,12 @@ Topic:
   
 # 
   
-# Running Docker Containers from docker images
+***Running Docker Containers from docker images***
+
+
+[Go To Top](#top)
+<a name="mysql_base_image"></a>  
+
 
 https://earthly.dev/blog/docker-mysql/
 
