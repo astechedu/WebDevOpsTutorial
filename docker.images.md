@@ -1,6 +1,6 @@
 $$\colorbox{Cyan}{\large{\color{white}{Docker \ Images}}}$$
 
-![Docker Images](https://developers.redhat.com/sites/default/files/styles/article_feature/public/blog/2014/05/homepage-docker-logo.png?itok=zx0e-vcP)
+![Docker Images](https://miro.medium.com/proxy/1*9hGvYE5jegHm1r_97gH-jQ.png)
 
 
 :link:[Home](all-file-links.md)     
