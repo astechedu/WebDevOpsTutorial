@@ -42,13 +42,9 @@ Topic:
 <a name="mysql_base_image"></a>  
 
 
-https://earthly.dev/blog/docker-mysql/
-
-Only Commands: 
 
 
-
-1 MySql 
+1. MySql 
 
 Starting Your MySQL Container
 
