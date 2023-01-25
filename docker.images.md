@@ -1,4 +1,4 @@
-$$\colorbox{BrightCyan}{\large{\color{white}{Docker \ Images}}}$$
+$$\colorbox{Cyan}{\large{\color{white}{Docker \ Images}}}$$
 
 
 :link:[Home](all-file-links.md)     
