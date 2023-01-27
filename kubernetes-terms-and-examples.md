@@ -606,9 +606,62 @@ controllers/nginx-deployment.yaml
 Updating a Deployment
 
         kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1
+        Or
+        kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
+        kubectl edit deployment/nginx-deployment
+
+        kubectl rollout status deployment/nginx-deployment
+        or
+
+        deployment "nginx-deployment" successfully rolled out
+
+        kubectl get rs
+        kubectl get pods
+        kubectl describe deployments
 
 
+        kubectl set image deployment/nginx-deployment nginx=nginx:1.161 
+        kubectl rollout status deployment/nginx-deployment
 
+        kubectl get rs
+        kubectl get pods
+        kubectl describe deployment
+
+        kubectl rollout history deployment/nginx-deployment
+        kubectl rollout history deployment/nginx-deployment --revision=2
+
+        kubectl rollout undo deployment/nginx-deployment
+
+        or
+        kubectl rollout undo deployment/nginx-deployment --to-revision=2
+        kubectl get deployment nginx-deployment
+
+        kubectl describe deployment nginx-deployment
+
+        kubectl scale deployment/nginx-deployment --replicas=10
+        kubectl autoscale deployment/nginx-deployment --min=10 --max=15 --cpu-percent=80
+
+        kubectl get deploy
+        kubectl set image deployment/nginx-deployment nginx=nginx:sometag
+        kubectl get rs
+        kubectl get deploy
+        kubectl get rs
+        kubectl get deploy
+        kubectl get rs
+        kubectl rollout pause deployment/nginx-deployment
+        kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1
+        kubectl rollout history deployment/nginx-deployment
+        kubectl get rs
+        kubectl set resources deployment/nginx-deployment -c=nginx --limits=cpu=200m,memory=512Mi
+        kubectl rollout resume deployment/nginx-deployment
+        kubectl get rs -w
+
+        kubectl get rs
+        kubectl rollout status deployment/nginx-deployment
+
+        kubectl patch deployment/nginx-deployment -p '{"spec":{"progressDeadlineSeconds":600}}'
+        kubectl describe deployment nginx-deployment
+        kubectl rollout status deployment/nginx-deployment
 
 
 
