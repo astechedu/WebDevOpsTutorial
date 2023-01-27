@@ -10,6 +10,8 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 [Go To Bottom](#bottom)
 ## Topics 
 
+Kubernest Terms: Pod, Node, ConfigMap, Ingress, Service, deployment, 
+
 ###### 1. Basic Commands [Go to Basic Commands click here](#basic_commands)
 ###### 2. Minikube [Go to Minikube click here](#minikube)
 ###### 3. KubeCTL [Go to Kubectl click here](#kubectl)
