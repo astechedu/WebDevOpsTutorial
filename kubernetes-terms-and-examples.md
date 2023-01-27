@@ -5,13 +5,23 @@
 
 Topics
 
-Kubernetes Terms: Pod, Node, Ingress, Service, deployment, StatefullSet
+Kubernetes Terms:
+
+[Pods](#pods), [Nodes](#nodes), [Ingress](#ingress), [Services](#services)j, [Deployment](#deployment), [StatefullSet](#statefullset)
+
 
 Main Kubernetes Components summarized: ConfigMap, Secrets, Volumes
+[Pods](#pods), [Pods](#pods), [Pods](#pods), [Pods](#pods)j, [Pods](#pods), [Pods](#pods), [Pods](#pods)
+
+
 
 Kubernetes Expernal Configration: ConfigMap, Secrets, Volumes
+[Pods](#pods), [Pods](#pods), [Pods](#pods), [Pods](#pods)j, [Pods](#pods), [Pods](#pods), [Pods](#pods)
+
 
 Kubernetes Services: ClusterIP,Headless,Multi-Port,NodePort,LoadBalancer
+[Pods](#pods), [Pods](#pods), [Pods](#pods), [Pods](#pods)j, [Pods](#pods), [Pods](#pods), [Pods](#pods)
+
 
 
 
