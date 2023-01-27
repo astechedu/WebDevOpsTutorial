@@ -154,6 +154,20 @@ The corresponding kubelet config YAML configuration would be:
 
 
 
+        Pod priority class value	Shutdown period
+        
+        100000	300 seconds
+        1000	120 seconds
+        0	60 seconds
+
+
+
+        memorySwap:
+          swapBehavior: LimitedSwap
+
+
+
+
 # Services
 
 # Deployment
