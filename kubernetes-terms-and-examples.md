@@ -15,8 +15,6 @@ Main Kubernetes Components summarized:
 
 [Volumes](#volumes), [ConfigMap](#configmap), [Sectets](#secrets)
 
-Kubernetes Services: ,Headless,Multi-Port,NodePort,LoadBalancer
-
 [ClusterIP](#clusterip), [Headless](#headless), [Multi-Port](#multi-port), [NodePort](#nodeport), [LoadBalancer](#loadbalancer)
 
 
