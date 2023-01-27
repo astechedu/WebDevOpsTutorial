@@ -170,6 +170,369 @@ The corresponding kubelet config YAML configuration would be:
 
 # Services
 
+An abstract way to expose an application running on a set of Pods as a network service.
+
+With Kubernetes you don't need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives Pods their own IP addresses and a single DNS name for a set of Pods, and can load-balance across them.
+
+Defining a Service:
+
+A Service in Kubernetes is a REST object, similar to a Pod. 
+
+
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: my-service
+        spec:
+          selector:
+            app.kubernetes.io/name: MyApp
+          ports:
+            - protocol: TCP
+              port: 80
+              targetPort: 9376
+
+
+
+
+
+            apiVersion: v1
+            kind: Pod
+            metadata:
+              name: nginx
+              labels:
+                app.kubernetes.io/name: proxy
+            spec:
+              containers:
+              - name: nginx
+                image: nginx:stable
+                ports:
+                  - containerPort: 80
+                    name: http-web-svc
+
+            ---
+            apiVersion: v1
+            kind: Service
+            metadata:
+              name: nginx-service
+            spec:
+              selector:
+                app.kubernetes.io/name: proxy
+              ports:
+              - name: name-of-service-port
+                protocol: TCP
+                port: 80
+                targetPort: http-web-svc
+
+
+
+ Services without selectors: 
+ 
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: my-service
+        spec:
+          ports:
+            - protocol: TCP
+              port: 80
+              targetPort: 9376    
+
+
+
+
+        apiVersion: discovery.k8s.io/v1
+        kind: EndpointSlice
+        metadata:
+          name: my-service-1 # by convention, use the name of the Service
+                             # as a prefix for the name of the EndpointSlice
+          labels:
+            # You should set the "kubernetes.io/service-name" label.
+            # Set its value to match the name of the Service
+            kubernetes.io/service-name: my-service
+        addressType: IPv4
+        ports:
+          - name: '' # empty because port 9376 is not assigned as a well-known
+                     # port (by IANA)
+            appProtocol: http
+            protocol: TCP
+            port: 9376
+        endpoints:
+          - addresses:
+              - "10.4.5.6" # the IP addresses in this list can appear in any order
+              - "10.1.2.3"
+
+
+
+Multi-Port Services:
+
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: my-service
+        spec:
+          selector:
+            app.kubernetes.io/name: MyApp
+          ports:
+            - name: http
+              protocol: TCP
+              port: 80
+              targetPort: 9376
+            - name: https
+              protocol: TCP
+              port: 443
+              targetPort: 9377
+
+
+
+Environment variables:
+
+        REDIS_PRIMARY_SERVICE_HOST=10.0.0.11
+        REDIS_PRIMARY_SERVICE_PORT=6379
+        REDIS_PRIMARY_PORT=tcp://10.0.0.11:6379
+        REDIS_PRIMARY_PORT_6379_TCP=tcp://10.0.0.11:6379
+        REDIS_PRIMARY_PORT_6379_TCP_PROTO=tcp
+        REDIS_PRIMARY_PORT_6379_TCP_PORT=6379
+        REDIS_PRIMARY_PORT_6379_TCP_ADDR=10.0.0.11
+
+
+
+NodePort:
+
+Choosing your own port
+
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: my-service
+        spec:
+          type: NodePort
+          selector:
+            app.kubernetes.io/name: MyApp
+          ports:
+              # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
+            - port: 80
+              targetPort: 80
+              # Optional field
+              # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
+              nodePort: 30007
+
+
+
+Type LoadBalancer:
+
+
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: my-service
+        spec:
+          selector:
+            app.kubernetes.io/name: MyApp
+          ports:
+            - protocol: TCP
+              port: 80
+              targetPort: 9376
+          clusterIP: 10.0.171.239
+          type: LoadBalancer
+        status:
+          loadBalancer:
+            ingress:
+            - ip: 192.0.2.127
+
+
+
+TLS support on AWS
+
+For partial TLS / SSL support on clusters running on AWS, you can add three annotations to a LoadBalancer service:
+
+        metadata:
+          name: my-service
+          annotations:
+            service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012
+
+
+
+        metadata:
+          name: my-service
+          annotations:
+            service.beta.kubernetes.io/aws-load-balancer-backend-protocol: (https|http|ssl|tcp)
+
+
+
+
+         metadata:
+              name: my-service
+              annotations:
+                service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+                service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443,8443"
+
+
+
+         metadata:
+              name: my-service
+              annotations:
+                service.beta.kubernetes.io/aws-load-balancer-ssl-negotiation-policy: "ELBSecurityPolicy-TLS-1-2-2017-01"
+
+
+
+PROXY protocol support on AWS
+
+To enable PROXY protocol support for clusters running on AWS, you can use the following service annotation:
+
+            metadata:
+              name: my-service
+              annotations:
+                service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
+
+
+ELB Access Logs on AWS:
+
+
+metadata:
+
+      name: my-service
+      annotations:
+        # Specifies whether access logs are enabled for the load balancer
+        service.beta.kubernetes.io/aws-load-balancer-access-log-enabled: "true"
+
+        # The interval for publishing the access logs. You can specify an interval of either 5 or 60 (minutes).
+        service.beta.kubernetes.io/aws-load-balancer-access-log-emit-interval: "60"
+
+        # The name of the Amazon S3 bucket where the access logs are stored
+        service.beta.kubernetes.io/aws-load-balancer-access-log-s3-bucket-name: "my-bucket"
+
+        # The logical hierarchy you created for your Amazon S3 bucket, for example `my-bucket-prefix/prod`
+        service.beta.kubernetes.io/aws-load-balancer-access-log-s3-bucket-prefix: "my-bucket-prefix/prod"
+        
+  
+  
+ Connection Draining on AWS:
+
+        metadata:
+              name: my-service
+              annotations:
+                service.beta.kubernetes.io/aws-load-balancer-connection-draining-enabled: "true"
+                service.beta.kubernetes.io/aws-load-balancer-connection-draining-timeout: "60"
+
+  
+
+Other ELB annotations
+
+There are other annotations to manage Classic Elastic Load Balancers that are described below.
+
+        metadata:
+          name: my-service
+          annotations:
+            # The time, in seconds, that the connection is allowed to be idle (no data has been sent
+            # over the connection) before it is closed by the load balancer
+            service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "60"
+
+            # Specifies whether cross-zone load balancing is enabled for the load balancer
+            service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+
+            # A comma-separated list of key-value pairs which will be recorded as
+            # additional tags in the ELB.
+            service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: "environment=prod,owner=devops"
+
+            # The number of successive successful health checks required for a backend to
+            # be considered healthy for traffic. Defaults to 2, must be between 2 and 10
+            service.beta.kubernetes.io/aws-load-balancer-healthcheck-healthy-threshold: ""
+
+            # The number of unsuccessful health checks required for a backend to be
+            # considered unhealthy for traffic. Defaults to 6, must be between 2 and 10
+            service.beta.kubernetes.io/aws-load-balancer-healthcheck-unhealthy-threshold: "3"
+
+            # The approximate interval, in seconds, between health checks of an
+            # individual instance. Defaults to 10, must be between 5 and 300
+            service.beta.kubernetes.io/aws-load-balancer-healthcheck-interval: "20"
+
+            # The amount of time, in seconds, during which no response means a failed
+            # health check. This value must be less than the service.beta.kubernetes.io/aws-load-balancer-healthcheck-interval
+            # value. Defaults to 5, must be between 2 and 60
+            service.beta.kubernetes.io/aws-load-balancer-healthcheck-timeout: "5"
+
+            # A list of existing security groups to be configured on the ELB created. Unlike the annotation
+            # service.beta.kubernetes.io/aws-load-balancer-extra-security-groups, this replaces all other
+            # security groups previously assigned to the ELB and also overrides the creation
+            # of a uniquely generated security group for this ELB.
+            # The first security group ID on this list is used as a source to permit incoming traffic to
+            # target worker nodes (service traffic and health checks).
+            # If multiple ELBs are configured with the same security group ID, only a single permit line
+            # will be added to the worker node security groups, that means if you delete any
+            # of those ELBs it will remove the single permit line and block access for all ELBs that shared the same security group ID.
+            # This can cause a cross-service outage if not used properly
+            service.beta.kubernetes.io/aws-load-balancer-security-groups: "sg-53fae93f"
+
+            # A list of additional security groups to be added to the created ELB, this leaves the uniquely
+            # generated security group in place, this ensures that every ELB
+            # has a unique security group ID and a matching permit line to allow traffic to the target worker nodes
+            # (service traffic and health checks).
+            # Security groups defined here can be shared between services.
+            service.beta.kubernetes.io/aws-load-balancer-extra-security-groups: "sg-53fae93f,sg-42efd82e"
+
+            # A comma separated list of key-value pairs which are used
+            # to select the target nodes for the load balancer
+            service.beta.kubernetes.io/aws-load-balancer-target-node-labels: "ingress-gw,gw-name=public-api"
+
+
+
+
+Network Load Balancer support on AWS:
+
+FEATURE STATE: Kubernetes v1.15 [beta]
+
+To use a Network Load Balancer on AWS, use the annotation service.beta.kubernetes.io/aws-load-balancer-type with the value set to nlb.
+
+            metadata:
+              name: my-service
+              annotations:
+                service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+
+
+
+
+        spec:
+          loadBalancerSourceRanges:
+            - "143.231.0.0/16"
+
+
+
+  Type ExternalName:
+  
+
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: my-service
+          namespace: prod
+        spec:
+          type: ExternalName
+          externalName: my.database.example.com
+    
+    
+External IPs:
+
+
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: my-service
+        spec:
+          selector:
+            app.kubernetes.io/name: MyApp
+          ports:
+            - name: http
+              protocol: TCP
+              port: 80
+              targetPort: 9376
+          externalIPs:
+            - 80.11.12.10
+
+
+
+
+
+
 # Deployment
 
 # Ingress
