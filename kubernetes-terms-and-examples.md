@@ -9,7 +9,7 @@ Kubernetes Terms:
 
 Jobs
 
-[Pods](#pods), [Nodes](#nodes), [Ingress](#ingress), [Services](#services)j, [Deployment](#deployment), [StatefullSet](#statefullset)
+[Pods](#pods), [Nodes](#nodes), [Ingress](#ingress), [Services](#services), [Deployment](#deployment), [StatefullSet](#statefullset)
 
 Main Kubernetes Components summarized:
 
