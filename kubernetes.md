@@ -10,7 +10,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 [Go To Bottom](#bottom)
 ## Topics 
 
-Kubernest Terms: Pod, Node, ConfigMap, Ingress, Service, deployment, secret, volumes, 
+Kubernest Terms: Pod, Node, ConfigMap, Ingress, Service, deployment, secrets, volumes, 
 
 ###### 1. Basic Commands [Go to Basic Commands click here](#basic_commands)
 ###### 2. Minikube [Go to Minikube click here](#minikube)
