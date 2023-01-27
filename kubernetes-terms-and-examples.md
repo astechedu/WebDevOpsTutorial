@@ -1101,7 +1101,7 @@ kubectl describe ingress test
 
 
 [Got To Top](#top)
-<a name="pods"></a>
+<a name="volumes"></a>
 # Volumes
 
 
@@ -1111,7 +1111,7 @@ kubectl describe ingress test
 
 
 [Got To Top](#top)
-<a name="pods"></a>
+<a name="configmap"></a>
 # ConfigMap
 
 
@@ -1242,7 +1242,7 @@ Immutable ConfigMaps:
 
 
 [Got To Top](#top)
-<a name="pods"></a>
+<a name="secrets"></a>
 # Secrets
 
 
@@ -1807,7 +1807,7 @@ You can create an immutable Secret by setting the immutable field to true. For e
 
 
 [Got To Top](#top)
-<a name="pods"></a>
+<a name="clusterip"></a>
 # ClusterIP
 
 
@@ -1863,7 +1863,7 @@ The allocation strategy implemented in Kubernetes to allocate ClusterIPs to Serv
 The ClusterIP range is divided, based on the formula min(max(16, cidrSize / 16), 256), described as never less than 16 or more than 256 with a graduated step between them.
 
 Dynamic IP assignment uses the upper band by default, once this has been exhausted it will use the lower range. This will allow users to use static allocations on the lower band with a low risk of collision.
-Examples 
+ 
 
 
 
@@ -1880,7 +1880,7 @@ Examples
 
 
 [Got To Top](#top)
-<a name="pods"></a>
+<a name="headless"></a>
 # Headless 
 
 Headless Services
@@ -2003,7 +2003,7 @@ The DNS server returns three different IPs for the pods
 	
 
 [Got To Top](#top)
-<a name="pods"></a>
+<a name="multi-port"></a>
 # Multi-Port 
 
 
@@ -2074,7 +2074,7 @@ service/svc3 created
 
 
 [Got To Top](#top)
-<a name="pods"></a>
+<a name="nodeport"></a>
 # NodePort 
 
 
@@ -2122,7 +2122,7 @@ Note: This Service is visible as <NodeIP>:spec.ports[*].nodePort and .spec.clust
 
 
 [Got To Top](#top)
-<a name="pods"></a>
+<a name="statefullset"></a>
 # StatefullSet
 
 StatefulSet is the workload API object used to manage stateful applications.
@@ -2216,7 +2216,7 @@ The example below demonstrates the components of a StatefulSet.
 
 
 [Got To Top](#top)
-<a name="pods"></a>
+<a name="loadbalancer"></a>
 # LoadBalancer
 
 Type LoadBalancer
@@ -2247,5 +2247,10 @@ status:
 
 
 [Got To Top](#top)
-<a name="pods"></a>
+<a name="jobs"></a>
 # Jobs
+
+	
+	
+	
+	
