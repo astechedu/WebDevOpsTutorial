@@ -11,6 +11,7 @@ $$\large{\colorbox{black}{\color{white}Kubernetes \ Commands \ and \ Examples \ 
 ## Topics 
 
 Kubernest Terms: Pod, Node, Ingress, Service, deployment
+Main Kubernetes Components summarized: ConfigMap, Secrets, Volumes
 Kubernetes: Expernal Configration: ConfigMap, Secrets, Volumes
 
 
