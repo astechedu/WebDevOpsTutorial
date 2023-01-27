@@ -7,13 +7,13 @@ Topics
 
 Kubernetes Terms:
 
-[Pods](#pods), [Nodes](#nodes), [Ingress](#ingress), [Services](#services)j, [Deployment](#deployment), [StatefullSet](#statefullset)
+Jobs
 
+[Pods](#pods), [Nodes](#nodes), [Ingress](#ingress), [Services](#services)j, [Deployment](#deployment), [StatefullSet](#statefullset)
 
 Main Kubernetes Components summarized:
 
 [Volumes](#volumes), [ConfigMap](#configmap), [Sectets](#secrets)
-
 
 Kubernetes Services: ,Headless,Multi-Port,NodePort,LoadBalancer
 
@@ -53,3 +53,5 @@ Kubernetes Services: ,Headless,Multi-Port,NodePort,LoadBalancer
 # LoadBalancer
 
 # StatefullSet
+
+# Jobs
