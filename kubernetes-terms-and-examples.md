@@ -25,7 +25,8 @@ Kubernetes Services: ,Headless,Multi-Port,NodePort,LoadBalancer
 
 #
 
-
+[Got To Top](#top)
+<a name="pods"></a>
 # Pods
 
 Pods are the smallest deployable units of computing that you can create and manage in Kubernetes.
@@ -77,6 +78,8 @@ PodTemplates are specifications for creating Pods, and are included in workload 
 
 
 
+[Got To Top](#nodes)
+<a name="nodes"></a>
 # Nodes
 
 Kubernetes runs your workload by placing containers into Pods to run on Nodes. A node may be a virtual or physical machine, depending on the cluster. Each node is managed by the control plane and contains the services necessary to run Pods.
@@ -168,6 +171,8 @@ The corresponding kubelet config YAML configuration would be:
 
 
 
+[Got To Top](#services)
+<a name="services"></a>
 # Services
 
 An abstract way to expose an application running on a set of Pods as a network service.
@@ -533,26 +538,80 @@ External IPs:
 
 
 
+[Got To Top](#top)
+<a name="depooyment"></a>
 # Deployment
 
+
+
+
+[Got To Top](#top)
+<a name="pods"></a>
 # Ingress
 
+
+
+
+[Got To Top](#top)
+<a name="pods"></a>
 # Volumes
 
+
+
+
+[Got To Top](#top)
+<a name="pods"></a>
 # ConfigMap
 
+
+
+[Got To Top](#top)
+<a name="pods"></a>
 # Secrets
 
+
+
+
+[Got To Top](#top)
+<a name="pods"></a>
 # ClusterIP
 
+
+
+[Got To Top](#top)
+<a name="pods"></a>
 # Headless 
 
+
+
+[Got To Top](#top)
+<a name="pods"></a>
 # Multi-Port 
 
+
+
+
+[Got To Top](#top)
+<a name="pods"></a>
 # NodePort 
 
+
+
+
+[Got To Top](#top)
+<a name="pods"></a>
 # LoadBalancer
 
+
+
+
+[Got To Top](#top)
+<a name="pods"></a>
 # StatefullSet
 
+
+
+
+[Got To Top](#top)
+<a name="pods"></a>
 # Jobs
