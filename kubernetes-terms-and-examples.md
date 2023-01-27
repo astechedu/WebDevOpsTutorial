@@ -1883,7 +1883,124 @@ Examples
 <a name="pods"></a>
 # Headless 
 
+Headless Services
 
+Sometimes you don't need load-balancing and a single Service IP. In this case, you can create what are termed "headless" Services, by explicitly specifying "None" for the cluster IP (.spec.clusterIP).
+
+You can use a headless Service to interface with other service discovery mechanisms, without being tied to Kubernetes' implementation.
+
+For headless Services, a cluster IP is not allocated, kube-proxy does not handle these Services, and there is no load balancing or proxying done by the platform for them. How DNS is automatically configured depends on whether the Service has selectors defined:
+With selectors
+
+For headless Services that define selectors, the Kubernetes control plane creates EndpointSlice objects in the Kubernetes API, and modifies the DNS configuration to return A or AAAA records (IPv4 or IPv6 addresses) that point directly to the Pods backing the Service.
+Without selectors
+
+For headless Services that do not define selectors, the control plane does not create EndpointSlice objects. However, the DNS system looks for and configures either:
+
+    DNS CNAME records for type: ExternalName Services.
+    DNS A / AAAA records for all IP addresses of the Service's ready endpoints, for all Service types other than ExternalName.
+        For IPv4 endpoints, the DNS system creates A records.
+        For IPv6 endpoints, the DNS system creates AAAA records.
+        
+        
+
+What is a Headless Service?
+
+When there is no need of load balancing or single-service IP addresses.We create a headless service which is used for creating a service grouping. That does not allocate an IP address or forward traffic.So you can do this by explicitly setting ClusterIP to “None” in the mainfest file, which means no cluster IP is allocated.
+
+
+        
+ Use Cases of Headless Service-
+
+    Create Stateful service
+    Deploying RabbitMQ to Kubernetes requires a stateful set for RabbitMQ cluster nodes.
+    Deployment of Relational databases
+
+Deployment manifest file:-
+
+		apiVersion: apps/v1
+		kind: Deployment
+		metadata:
+		  name: app
+		  labels:
+		    app: server
+		spec:
+		  replicas: 3
+		  selector:
+		    matchLabels:
+		      app: web
+		  template:
+		    metadata:
+		      labels:
+			app: web
+		    spec:
+		      containers:
+		      - name: nginx
+			image: nginx
+			ports:
+			- containerPort: 80
+
+		Regular Service:-
+
+		apiVersion: v1
+		kind: Service
+		metadata:
+		  name: regular-service
+		spec:
+		  selector:
+		    app: web
+		  ports:
+		    - protocol: TCP
+		      port: 80
+		      targetPort: 8080
+
+		Headless Service:-
+
+		apiVersion: v1
+		kind: Service
+		metadata:
+		  name: headless-svc
+		spec:
+		  clusterIP: None 
+		  selector:
+		    app: web
+		  ports:
+		    - protocol: TCP
+		      port: 80
+		      targetPort: 8080
+
+Create all resources and run the pod
+
+kubectl create -f deployment.yaml
+
+kubectl create -f regular-service.yaml
+
+kubectl create -f headless-service.yaml
+
+kubectl run temporary --image=radial/busyboxplus:curl -i --tty
+
+Cleanup the used resources
+
+kubectl delete svc regular-service
+
+kubectl delete svc headless-svc
+
+kubectl delete deployment app
+
+kubectl delete po temporary
+
+The DNS server returns three different IPs for the pods
+
+   
+        
+        
+        
+
+
+
+	
+	
+	
 
 [Got To Top](#top)
 <a name="pods"></a>
