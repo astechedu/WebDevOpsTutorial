@@ -155,6 +155,8 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 :link:[Docker Swarm click here](docker.swarm.md)
 
+:link:[Kubernetes Glossary](kubernetes-glossary.md)
+
 :link:[Kubernetes click here](kubernetes.md)
 
 :link:[Kubernetes click here](kubernetes.txt)
