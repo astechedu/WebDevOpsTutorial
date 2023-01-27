@@ -1531,8 +1531,8 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 <a name="configmap"></a>
 # ConfigMap
 
-	kind: ConfigMap
 	apiVersion: v1
+	kind: ConfigMap	
 	metadata:
 	  name: mysql-config
 	data:
