@@ -1811,6 +1811,73 @@ You can create an immutable Secret by setting the immutable field to true. For e
 # ClusterIP
 
 
+Service ClusterIP allocation:
+
+
+
+How Service ClusterIPs are allocated?
+
+	dynamically
+	statically
+
+
+
+Why do you need to reserve Service Cluster IPs?
+
+Sometimes you may want to have Services running in well-known IP addresses, so other components and users in the cluster can use them.
+
+The best example is the DNS Service for the cluster. As a soft convention, some Kubernetes installers assign the 10th IP address from the Service IP range to the DNS service. Assuming you configured your cluster with Service IP range 10.96.0.0/16 and you want your DNS Service IP to be 10.96.0.10, you'd have to create a Service like this:
+
+
+
+		apiVersion: v1
+		kind: Service
+		metadata:
+		  labels:
+		    k8s-app: kube-dns
+		    kubernetes.io/cluster-service: "true"
+		    kubernetes.io/name: CoreDNS
+		  name: kube-dns
+		  namespace: kube-system
+		spec:
+		  clusterIP: 10.96.0.10
+		  ports:
+		  - name: dns
+		    port: 53
+		    protocol: UDP
+		    targetPort: 53
+		  - name: dns-tcp
+		    port: 53
+		    protocol: TCP
+		    targetPort: 53
+		  selector:
+		    k8s-app: kube-dns
+		  type: ClusterIP
+
+
+
+How can you avoid Service ClusterIP conflicts?
+
+The allocation strategy implemented in Kubernetes to allocate ClusterIPs to Services reduces the risk of collision.
+
+The ClusterIP range is divided, based on the formula min(max(16, cidrSize / 16), 256), described as never less than 16 or more than 256 with a graduated step between them.
+
+Dynamic IP assignment uses the upper band by default, once this has been exhausted it will use the lower range. This will allow users to use static allocations on the lower band with a low risk of collision.
+Examples 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 [Got To Top](#top)
 <a name="pods"></a>
