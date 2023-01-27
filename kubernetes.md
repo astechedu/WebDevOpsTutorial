@@ -13,15 +13,15 @@ $$\large{\colorbox{blue}{\color{white}Kubernetes \ Commands \ and \ Examples \ F
 [Go To Bottom](#bottom)
 ## Topics 
 
-***Kubernetes Terms:*** Pod, Node, Ingress, Service, deployment, StatefullSet
-
  [***Kubernetes Terms:*** Pod, Node, Ingress, Service, deployment, StatefullSet](kubernetes-terms-and-examples.md)
  
-***Main Kubernetes Components summarized:*** ConfigMap, Secrets, Volumes
+ [***Main Kubernetes Components summarized:*** ConfigMap, Secrets, Volumes](kubernetes-terms-and-examples.md)
+ 
+ [***Kubernetes Expernal Configration:*** ConfigMap, Secrets, Volumes](kubernetes-terms-and-examples.md)
+ 
+ [***Kubernetes Services:*** ClusterIP,Headless,Multi-Port,NodePort,LoadBalancer](kubernetes-terms-and-examples.md)
+ 
 
-***Kubernetes Expernal Configration:*** ConfigMap, Secrets, Volumes
-
-***Kubernetes Services:*** ClusterIP,Headless,Multi-Port,NodePort,LoadBalancer
 
 
 ###### 1. Basic Commands [Go to Basic Commands click here](#basic_commands)
