@@ -1105,6 +1105,423 @@ kubectl describe ingress test
 # Volumes
 
 
+Volumes:
+
+On-disk files in a container are ephemeral, which presents some problems for non-trivial applications when running in containers. One problem is the loss of files when a container crashes. The kubelet restarts the container but with a clean state. A second problem occurs when sharing files between containers running together in a Pod. The Kubernetes volume abstraction solves both of these problems. Familiarity with Pods is suggested.
+Background
+
+Creating an AWS EBS volume
+
+Before you can use an EBS volume with a pod, you need to create it.
+
+aws ec2 create-volume --availability-zone=eu-west-1a --size=10 --volume-type=gp2
+
+Make sure the zone matches the zone you brought up your cluster in. Check that the size and EBS volume type are suitable for your use.
+AWS EBS configuration example
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: test-ebs
+		spec:
+		  containers:
+		  - image: registry.k8s.io/test-webserver
+		    name: test-container
+		    volumeMounts:
+		    - mountPath: /test-ebs
+		      name: test-volume
+		  volumes:
+		  - name: test-volume
+		    # This AWS EBS volume must already exist.
+		    awsElasticBlockStore:
+		      volumeID: "<volume id>"
+		      fsType: ext4
+
+If the EBS volume is partitioned, you can supply the optional field partition: "<partition number>" to specify which partition to mount on.
+AWS EBS CSI migration
+FEATURE STATE: Kubernetes v1.25 [stable]
+
+The cinder volume type is used to mount the OpenStack Cinder volume into your pod.
+Cinder volume configuration example
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: test-cinder
+		spec:
+		  containers:
+		  - image: registry.k8s.io/test-webserver
+		    name: test-cinder-container
+		    volumeMounts:
+		    - mountPath: /test-cinder
+		      name: test-volume
+		  volumes:
+		  - name: test-volume
+		    # This OpenStack volume must already exist.
+		    cinder:
+		      volumeID: "<volume id>"
+		      fsType: ext4
+
+OpenStack CSI migration
+FEATURE STATE: Kubernetes v1.24 [stable]
+
+The CSIMigration feature for Cinder is enabled by default since Kubernetes 1.21. It redirects all plugin operations from the existing in-tree plugin to the cinder.csi.openstack.org Container Storage Interface (CSI) Driver. OpenStack Cinder CSI Driver must be installed on the cluster.
+
+When referencing a ConfigMap, you provide the name of the ConfigMap in the volume. You can customize the path to use for a specific entry in the ConfigMap. The following configuration shows how to mount the log-config ConfigMap onto a Pod called configmap-pod:
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: configmap-pod
+		spec:
+		  containers:
+		    - name: test
+		      image: busybox:1.28
+		      volumeMounts:
+			- name: config-vol
+			  mountPath: /etc/config
+		  volumes:
+		    - name: config-vol
+		      configMap:
+			name: log-config
+			items:
+			  - key: log_level
+			    path: log_level
+
+The log-config ConfigMap is mounted as a volume, and all contents stored in its log_level entry are mounted into the Pod at path /etc/config/log_level. Note that this path is derived from the volume's mountPath and the path keyed with log_level.
+Note:
+
+    You must create a ConfigMap before you can use it.
+
+    A container using a ConfigMap as a subPath volume mount will not receive ConfigMap updates.
+
+    Text data is exposed as files using the UTF-8 character encoding. For other character encodings, use binaryData.
+
+
+A size limit can be specified for the default medium, which limits the capacity of the emptyDir volume. The storage is allocated from node ephemeral storage. If that is filled up from another source (for example, log files or image overlays), the emptyDir may run out of capacity before this limit.
+Note: If the SizeMemoryBackedVolumes feature gate is enabled, you can specify a size for memory backed volumes. If no size is specified, memory backed volumes are sized to 50% of the memory on a Linux host.
+emptyDir configuration example
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: test-pd
+		spec:
+		  containers:
+		  - image: registry.k8s.io/test-webserver
+		    name: test-container
+		    volumeMounts:
+		    - mountPath: /cache
+		      name: cache-volume
+		  volumes:
+		  - name: cache-volume
+		    emptyDir:
+		      sizeLimit: 500Mi
+
+fc (fibre channel)
+
+An fc volume type allows an existing fibre channel block storage volume to mount in a Pod. You can specify single or multiple target world wide names (WWNs) using the parameter targetWWNs in your Volume configuration. If multiple WWNs are specified, targetWWNs expect that those WWNs are from multi-path connections.
+Note: You must configure FC SAN Zoning to allocate and mask those LUNs (volumes) to the target WWNs beforehand so that Kubernetes hosts can access them.
+
+Creating a GCE persistent disk
+
+Before you can use a GCE persistent disk with a Pod, you need to create it.
+
+gcloud compute disks create --size=500GB --zone=us-central1-a my-data-disk
+
+GCE persistent disk configuration example
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: test-pd
+		spec:
+		  containers:
+		  - image: registry.k8s.io/test-webserver
+		    name: test-container
+		    volumeMounts:
+		    - mountPath: /test-pd
+		      name: test-volume
+		  volumes:
+		  - name: test-volume
+		    # This GCE PD must already exist.
+		    gcePersistentDisk:
+		      pdName: my-data-disk
+		      fsType: ext4
+
+Regional persistent disks
+
+The Regional persistent disks feature allows the creation of persistent disks that are available in two zones within the same region. In order to use this feature, the volume must be provisioned as a PersistentVolume; referencing the volume directly from a pod is not supported.
+Manually provisioning a Regional PD PersistentVolume
+
+
+gcloud compute disks create --size=500GB my-data-disk
+  --region us-central1
+  --replica-zones us-central1-a,us-central1-b
+
+Regional persistent disk configuration example
+
+		apiVersion: v1
+		kind: PersistentVolume
+		metadata:
+		  name: test-volume
+		spec:
+		  capacity:
+		    storage: 400Gi
+		  accessModes:
+		  - ReadWriteOnce
+		  gcePersistentDisk:
+		    pdName: my-data-disk
+		    fsType: ext4
+		  nodeAffinity:
+		    required:
+		      nodeSelectorTerms:
+		      - matchExpressions:
+			# failure-domain.beta.kubernetes.io/zone should be used prior to 1.21
+			- key: topology.kubernetes.io/zone
+			  operator: In
+			  values:
+			  - us-central1-a
+			  - us-central1-b
+
+Here is an example of a gitRepo volume:
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: server
+		spec:
+		  containers:
+		  - image: nginx
+		    name: nginx
+		    volumeMounts:
+		    - mountPath: /mypath
+		      name: git-volume
+		  volumes:
+		  - name: git-volume
+		    gitRepo:
+		      repository: "git@somewhere:me/my-git-repository.git"
+		      revision: "22f1d8406d464b0c0874075539c1f2e96c253775"
+
+
+hostPath configuration example
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: test-pd
+		spec:
+		  containers:
+		  - image: registry.k8s.io/test-webserver
+		    name: test-container
+		    volumeMounts:
+		    - mountPath: /test-pd
+		      name: test-volume
+		  volumes:
+		  - name: test-volume
+		    hostPath:
+		      # directory location on host
+		      path: /data
+		      # this field is optional
+		      type: Directory
+
+Caution: The FileOrCreate mode does not create the parent directory of the file. If the parent directory of the mounted file does not exist, the pod fails to start. To ensure that this mode works, you can try to mount directories and files separately, as shown in the FileOrCreateconfiguration.
+hostPath FileOrCreate configuration example
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: test-webserver
+		spec:
+		  containers:
+		  - name: test-webserver
+		    image: registry.k8s.io/test-webserver:latest
+		    volumeMounts:
+		    - mountPath: /var/local/aaa
+		      name: mydir
+		    - mountPath: /var/local/aaa/1.txt
+		      name: myfile
+		  volumes:
+		  - name: mydir
+		    hostPath:
+		      # Ensure the file directory is created.
+		      path: /var/local/aaa
+		      type: DirectoryOrCreate
+		  - name: myfile
+		    hostPath:
+		      path: /var/local/aaa/1.txt
+		      type: FileOrCreate
+
+iscsi
+
+An iscsi volume allows an existing iSCSI (SCSI over IP) volume to be mounted into your Pod. Unlike emptyDir, which is erased when a Pod is removed, the contents of an iscsi volume are preserved and the volume is merely unmounted. This means that an iscsi volume can be pre-populated with data, and that data can be shared between pods.
+Note: You must have your own iSCSI server running with the volume created before you can use it.
+
+
+See the iSCSI example for more details.
+
+
+
+local
+
+A local volume represents a mounted local storage device such as a disk, partition or directory.
+
+Local volumes can only be used as a statically created PersistentVolume. Dynamic provisioning is not supported.
+
+Compared to hostPath volumes, local volumes are used in a durable and portable manner without manually scheduling pods to nodes. The system is aware of the volume's node constraints by looking at the node affinity on the 
+
+
+PersistentVolume.
+
+However, local volumes are subject to the availability of the underlying node and are not suitable for all applications. If a node becomes unhealthy, then the local volume becomes inaccessible by the pod. The pod using this volume is unable to run. Applications using local volumes must be able to tolerate this reduced availability, as well as potential data loss, depending on the durability characteristics of the underlying disk.
+
+The following example shows a PersistentVolume using a local volume and nodeAffinity:
+
+		apiVersion: v1
+		kind: PersistentVolume
+		metadata:
+		  name: example-pv
+		spec:
+		  capacity:
+		    storage: 100Gi
+		  volumeMode: Filesystem
+		  accessModes:
+		  - ReadWriteOnce
+		  persistentVolumeReclaimPolicy: Delete
+		  storageClassName: local-storage
+		  local:
+		    path: /mnt/disks/ssd1
+		  nodeAffinity:
+		    required:
+		      nodeSelectorTerms:
+		      - matchExpressions:
+			- key: kubernetes.io/hostname
+			  operator: In
+			  values:
+			  - example-node
+
+You must set a PersistentVolume nodeAffinity when using local volumes. The Kubernetes scheduler uses the PersistentVolume nodeAffinity to schedule these Pods to the correct node.
+
+PersistentVolume volumeMode can be set to "Block" (instead of the default value "Filesystem") to expose the local volume as a raw block device.
+
+
+
+nfs
+
+An nfs volume allows an existing NFS (Network File System) share to be mounted into a Pod. Unlike emptyDir, which is erased when a Pod is removed, the contents of an nfs volume are preserved and the volume is merely unmounted. This means that an NFS volume can be pre-populated with data, and that data can be shared between pods. NFS can be mounted by multiple writers simultaneously.
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: test-pd
+		spec:
+		  containers:
+		  - image: registry.k8s.io/test-webserver
+		    name: test-container
+		    volumeMounts:
+		    - mountPath: /my-nfs-data
+		      name: test-volume
+		  volumes:
+		  - name: test-volume
+		    nfs:
+		      server: my-nfs-server.example.com
+		      path: /my-nfs-volume
+		      readOnly: true
+
+
+A portworxVolume can be dynamically created through Kubernetes or it can also be pre-provisioned and referenced inside a Pod. Here is an example Pod referencing a pre-provisioned Portworx volume:
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: test-portworx-volume-pod
+		spec:
+		  containers:
+		  - image: registry.k8s.io/test-webserver
+		    name: test-container
+		    volumeMounts:
+		    - mountPath: /mnt
+		      name: pxvol
+		  volumes:
+		  - name: pxvol
+		    # This Portworx volume must already exist.
+		    portworxVolume:
+		      volumeID: "pxvol"
+		      fsType: "<fs-type>"
+
+Note: Make sure you have an existing PortworxVolume with name pxvol before using it in the Pod.
+
+For more details, see the Portworx volume examples.
+Portworx CSI migration
+
+
+
+The PHP application's code and assets map to the volume's html folder and the MySQL database is stored in the volume's mysql folder. For example:
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: my-lamp-site
+		spec:
+		    containers:
+		    - name: mysql
+		      image: mysql
+		      env:
+		      - name: MYSQL_ROOT_PASSWORD
+			value: "rootpasswd"
+		      volumeMounts:
+		      - mountPath: /var/lib/mysql
+			name: site-data
+			subPath: mysql
+		    - name: php
+		      image: php:7.0-apache
+		      volumeMounts:
+		      - mountPath: /var/www/html
+			name: site-data
+			subPath: html
+		    volumes:
+		    - name: site-data
+		      persistentVolumeClaim:
+			claimName: my-lamp-site-data
+
+
+Using subPath with expanded environment variables
+
+Use the subPathExpr field to construct subPath directory names from downward API environment variables. The subPath and subPathExpr properties are mutually exclusive.
+
+In this example, a Pod uses subPathExpr to create a directory pod1 within the hostPath volume /var/log/pods. The hostPath volume takes the Pod name from the downwardAPI. The host directory /var/log/pods/pod1 is mounted at /logs in the container.
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: pod1
+		spec:
+		  containers:
+		  - name: container1
+		    env:
+		    - name: POD_NAME
+		      valueFrom:
+			fieldRef:
+			  apiVersion: v1
+			  fieldPath: metadata.name
+		    image: busybox:1.28
+		    command: [ "sh", "-c", "while [ true ]; do echo 'Hello'; sleep 10; done | tee -a /logs/hello.txt" ]
+		    volumeMounts:
+		    - name: workdir1
+		      mountPath: /logs
+		      # The variable expansion uses round brackets (not curly brackets).
+		      subPathExpr: $(POD_NAME)
+		  restartPolicy: Never
+		  volumes:
+		  - name: workdir1
+		    hostPath:
+		      path: /var/log/pods
+
+Resources
+
+The storage media (such as Disk or SSD) of an emptyDir volume is determined by the medium of the filesystem holding the kubelet root dir (typically /var/lib/kubelet). There is no limit on how much space an emptyDir or hostPath volume can consume, and no isolation between containers or between pods.
+
+
 
 
 
