@@ -2008,6 +2008,70 @@ The DNS server returns three different IPs for the pods
 
 
 
+Multi-Port Services
+
+For some Services, you need to expose more than one port. Kubernetes lets you configure multiple port definitions on a Service object. When using multiple ports for a Service, you must give all of your ports names so that these are unambiguous. For example:
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app.kubernetes.io/name: MyApp
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 9376
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: 9377
+
+Note:
+
+As with Kubernetes names in general, names for ports must only contain lowercase alphanumeric characters and -. Port names must also start and end with an alphanumeric character.
+
+
+
+
+
+
+How to expose multiple port in services in kubernetes or Multi-Port Services
+
+names so that these are unambiguous. For example:
+
+		apiVersion: v1
+		kind: Service
+		metadata:
+		  name: my-service
+		spec:
+		  selector:
+		    app: MyApp
+		  ports:
+		    - name: http
+		      protocol: TCP
+		      port: 80
+		      targetPort: 9376
+		    - name: https
+		      protocol: TCP
+		      port: 443
+		      targetPort: 9377
+
+
+
+How to work with command line?
+
+	kubectl create service  clusterip svc3 --tcp=8080:80 --tcp=8090:80
+
+service/svc3 created
+
+	kubectl describe svc svc3
+	
+	
+	
+
 
 [Got To Top](#top)
 <a name="pods"></a>
