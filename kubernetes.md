@@ -15,6 +15,8 @@ $$\large{\colorbox{blue}{\color{white}Kubernetes \ Commands \ and \ Examples \ F
 
 ***Kubernetes Terms:*** Pod, Node, Ingress, Service, deployment, StatefullSet
 
+ [***Kubernetes Terms:*** Pod, Node, Ingress, Service, deployment, StatefullSet](kubernetes-terms-and-examples.md)
+ 
 ***Main Kubernetes Components summarized:*** ConfigMap, Secrets, Volumes
 
 ***Kubernetes Expernal Configration:*** ConfigMap, Secrets, Volumes
