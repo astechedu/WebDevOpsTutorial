@@ -672,6 +672,21 @@ Updating a Deployment
 # Ingress
 
 
+FEATURE STATE:
+
+An API object that manages external access to the services in a cluster, typically HTTP.
+
+Ingress may provide load balancing, SSL termination and name-based virtual hosting.
+
+
+<img src="https://d33wubrfki0l68.cloudfront.net/91ace4ec5dd0260386e71960638243cf902f8206/c3c52/docs/images/ingress.svg" alt="Image loading...." width="10%">
+
+
+
+
+
+
+
 
 
 [Got To Top](#top)
