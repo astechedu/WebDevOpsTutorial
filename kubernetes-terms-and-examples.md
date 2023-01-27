@@ -1531,7 +1531,22 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 <a name="configmap"></a>
 # ConfigMap
 
-
+	kind: ConfigMap
+	apiVersion: v1
+	metadata:
+	  name: mysql-config
+	data:
+	  confluence.cnf: |-
+	    [mysqld]
+	    bind-address     = 0.0.0.0
+	    character-set-server=utf8
+	    collation-server=utf8_bin
+	    default-storage-engine=INNODB
+	    max_allowed_packet=256M
+	    innodb_log_file_size=2GB
+	    transaction-isolation=READ-COMMITTED
+	
+	
 ConfigMaps
 
 A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
