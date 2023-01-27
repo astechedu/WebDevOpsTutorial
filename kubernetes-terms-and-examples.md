@@ -1249,6 +1249,564 @@ Immutable ConfigMaps:
 
 
 
+A Secret is an object that contains a small amount of sensitive data such as a password, a token, or a key. Such information might otherwise be put in a Pod specification or in a container image. Using a Secret means that you don't need to include confidential data in your application code.
+
+
+This is an example of a Pod that mounts a Secret named mysecret in a volume:
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: mypod
+		spec:
+		  containers:
+		  - name: mypod
+		    image: redis
+		    volumeMounts:
+		    - name: foo
+		      mountPath: "/etc/foo"
+		      readOnly: true
+		  volumes:
+		  - name: foo
+		    secret:
+		      secretName: mysecret
+		      optional: false # default setting; "mysecret" must exist
+
+
+
+
+Projection of Secret keys to specific paths:
+
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: mypod
+		spec:
+		  containers:
+		  - name: mypod
+		    image: redis
+		    volumeMounts:
+		    - name: foo
+		      mountPath: "/etc/foo"
+		      readOnly: true
+		  volumes:
+		  - name: foo
+		    secret:
+		      secretName: mysecret
+		      items:
+		      - key: username
+			path: my-group/my-username		
+			
+  
+  
+  
+      
+      
+Secret files permissions:
+ 
+		 
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: mypod
+		spec:
+		  containers:
+		  - name: mypod
+		    image: redis
+		    volumeMounts:
+		    - name: foo
+		      mountPath: "/etc/foo"
+		  volumes:
+		  - name: foo
+		    secret:
+		      secretName: mysecret
+		      defaultMode: 0400
+     
+      
+      
+      
+     Consuming Secret values from volumes
+     ls /etc/foo/
+     cat /etc/foo/username
+     cat /etc/foo/password  
+          
+    
+
+Using Secrets as environment variables:
+
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: secret-env-pod
+		spec:
+		  containers:
+		  - name: mycontainer
+		    image: redis
+		    env:
+		      - name: SECRET_USERNAME
+			valueFrom:
+			  secretKeyRef:
+			    name: mysecret
+			    key: username
+			    optional: false # same as default; "mysecret" must exist
+				            # and include a key named "username"
+		      - name: SECRET_PASSWORD
+			valueFrom:
+			  secretKeyRef:
+			    name: mysecret
+			    key: password
+			    optional: false # same as default; "mysecret" must exist
+				            # and include a key named "password"
+		  restartPolicy: Never
+
+
+
+
+
+
+kubectl get events
+
+
+
+Use cases
+Use case: As container environment variables
+
+Create a secret
+
+		apiVersion: v1
+		kind: Secret
+		metadata:
+		  name: mysecret
+		type: Opaque
+		data:
+		  USER_NAME: YWRtaW4=
+		  PASSWORD: MWYyZDFlMmU2N2Rm
+
+
+
+
+    	kubectl apply -f mysecret.yaml      
+          
+          
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: secret-test-pod
+		spec:
+		  containers:
+		    - name: test-container
+		      image: registry.k8s.io/busybox
+		      command: [ "/bin/sh", "-c", "env" ]
+		      envFrom:
+		      - secretRef:
+			  name: mysecret
+		  restartPolicy: Never
+			  
+          
+          
+Use case: Pod with SSH keys
+
+Create a Secret containing some SSH keys:
+
+		kubectl create secret generic ssh-key-secret --from-file=ssh-privatekey=/path/to/.ssh/id_rsa --from-file=ssh-publickey=/path/to/.ssh/id_rsa.pub
+
+
+
+Now you can create a Pod which references the secret with the SSH key and consumes it in a volume:
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: secret-test-pod
+		  labels:
+		    name: secret-test
+		spec:
+		  volumes:
+		  - name: secret-volume
+		    secret:
+		      secretName: ssh-key-secret
+		  containers:
+		  - name: ssh-test-container
+		    image: mySshImage
+		    volumeMounts:
+		    - name: secret-volume
+		      readOnly: true
+		      mountPath: "/etc/secret-volume"
+
+
+          
+
+
+When the container's command runs, the pieces of the key will be available in:
+
+		/etc/secret-volume/ssh-publickey
+		/etc/secret-volume/ssh-privatekey
+
+
+
+
+Use case: Pods with prod / test credentials
+
+
+
+		kubectl create secret generic prod-db-secret --from-literal=username=produser --from-literal=password=Y4nys7f11
+
+
+
+You can also create a secret for test environment credentials.
+
+		kubectl create secret generic test-db-secret --from-literal=username=testuser --from-literal=password=iluvtests
+
+
+
+		kubectl create secret generic dev-db-secret --from-literal=username=devuser --from-literal=password='S!B\*d$zDsb='
+
+
+
+
+Now make the Pods:
+
+		cat <<EOF > pod.yaml
+		apiVersion: v1
+		kind: List
+		items:
+		- kind: Pod
+		  apiVersion: v1
+		  metadata:
+		    name: prod-db-client-pod
+		    labels:
+		      name: prod-db-client
+		  spec:
+		    volumes:
+		    - name: secret-volume
+		      secret:
+			secretName: prod-db-secret
+		    containers:
+		    - name: db-client-container
+		      image: myClientImage
+		      volumeMounts:
+		      - name: secret-volume
+			readOnly: true
+			mountPath: "/etc/secret-volume"
+		- kind: Pod
+		  apiVersion: v1
+		  metadata:
+		    name: test-db-client-pod
+		    labels:
+		      name: test-db-client
+		  spec:
+		    volumes:
+		    - name: secret-volume
+		      secret:
+			secretName: test-db-secret
+		    containers:
+		    - name: db-client-container
+		      image: myClientImage
+		      volumeMounts:
+		      - name: secret-volume
+			readOnly: true
+			mountPath: "/etc/secret-volume"
+		EOF
+
+		Add the pods to the same kustomization.yaml:
+
+		cat <<EOF >> kustomization.yaml
+		resources:
+		- pod.yaml
+		EOF
+
+
+
+
+
+Apply all those objects on the API server by running:
+
+kubectl apply -k .
+
+
+
+
+Both containers will have the following files present on their filesystems with the values for each container's environment:
+
+	/etc/secret-volume/username
+	/etc/secret-volume/password
+
+
+
+
+    prod-user with the prod-db-secret
+    test-user with the test-db-secret
+
+The Pod specification is shortened to:
+
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: prod-db-client-pod
+		  labels:
+		    name: prod-db-client
+		spec:
+		  serviceAccount: prod-db-client
+		  containers:
+		  - name: db-client-container
+		    image: myClientImage
+
+
+
+
+
+
+Use case: dotfiles in a secret volume:
+
+
+
+		apiVersion: v1
+		kind: Secret
+		metadata:
+		  name: dotfile-secret
+		data:
+		  .secret-file: dmFsdWUtMg0KDQo=
+		---
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		  name: secret-dotfiles-pod
+		spec:
+		  volumes:
+		  - name: secret-volume
+		    secret:
+		      secretName: dotfile-secret
+		  containers:
+		  - name: dotfile-test-container
+		    image: registry.k8s.io/busybox
+		    command:
+		    - ls
+		    - "-l"
+		    - "/etc/secret-volume"
+		    volumeMounts:
+		    - name: secret-volume
+		      readOnly: true
+		      mountPath: "/etc/secret-volume"
+		      
+		      
+		      
+
+
+
+Types of Secret:
+
+
+
+	Built-in Type	Usage
+	Opaque	arbitrary user-defined data
+	kubernetes.io/service-account-token	ServiceAccount token
+	kubernetes.io/dockercfg	serialized ~/.dockercfg file
+	kubernetes.io/dockerconfigjson	serialized ~/.docker/config.json file
+	kubernetes.io/basic-auth	credentials for basic authentication
+	kubernetes.io/ssh-auth	credentials for SSH authentication
+	kubernetes.io/tls	data for a TLS client or server
+	bootstrap.kubernetes.io/token	bootstrap token data
+
+
+
+
+Opaque secrets
+
+
+
+		kubectl create secret generic empty-secret
+		kubectl get secret empty-secret
+
+
+
+
+		Service account token Secrets
+
+
+The following example configuration declares a service account token Secret:
+
+		apiVersion: v1
+		kind: Secret
+		metadata:
+		  name: secret-sa-sample
+		  annotations:
+		    kubernetes.io/service-account.name: "sa-name"
+		type: kubernetes.io/service-account-token
+		data:
+		  # You can include additional key value pairs as you do with Opaque Secrets
+		  extra: YmFyCg==
+
+
+
+
+
+
+Docker config Secrets:
+
+
+    	    kubernetes.io/dockercfg
+	    kubernetes.io/dockerconfigjson
+
+
+
+Below is an example for a kubernetes.io/dockercfg type of Secret:
+
+		apiVersion: v1
+		kind: Secret
+		metadata:
+		  name: secret-dockercfg
+		type: kubernetes.io/dockercfg
+		data:
+		  .dockercfg: |
+			"<base64 encoded ~/.dockercfg file>"
+
+
+
+kubectl create secret docker-registry secret-tiger-docker \
+  --docker-email=tiger@acme.example \
+  --docker-username=tiger \
+  --docker-password=pass1234 \
+  --docker-server=my-registry.example:5000
+
+
+kubectl get secret secret-tiger-docker -o jsonpath='{.data.*}' | base64 -d
+
+
+then the output is equivalent to this JSON document (which is also a valid Docker configuration file):
+
+		{
+		  "auths": {
+		    "my-registry.example:5000": {
+		      "username": "tiger",
+		      "password": "pass1234",
+		      "email": "tiger@acme.example",
+		      "auth": "dGlnZXI6cGFzczEyMzQ="
+		    }
+		  }
+		}
+
+
+
+
+
+
+
+The following manifest is an example of a basic authentication Secret:
+
+		apiVersion: v1
+		kind: Secret
+		metadata:
+		  name: secret-basic-auth
+		type: kubernetes.io/basic-auth
+		stringData:
+		  username: admin      # required field for kubernetes.io/basic-auth
+		  password: t0p-Secret # required field for kubernetes.io/basic-auth
+
+
+
+
+
+The following manifest is an example of a Secret used for SSH public/private key authentication:
+
+		apiVersion: v1
+		kind: Secret
+		metadata:
+		  name: secret-ssh-auth
+		type: kubernetes.io/ssh-auth
+		data:
+		  # the data is abbreviated in this example
+		  ssh-privatekey: |
+			  MIIEpQIBAAKCAQEAulqb/Y ...
+
+
+
+The following YAML contains an example config for a TLS Secret:
+
+		apiVersion: v1
+		kind: Secret
+		metadata:
+		  name: secret-tls
+		type: kubernetes.io/tls
+		data:
+		  # the data is abbreviated in this example
+		  tls.crt: |
+			MIIC2DCCAcCgAwIBAgIBATANBgkqh ...
+		  tls.key: |
+			MIIEpgIBAAKCAQEA7yn3bRHQ5FHMQ ...
+
+
+
+
+		kubectl create secret tls my-tls-secret \
+		  --cert=path/to/cert/file \
+		  --key=path/to/key/file
+		  
+  
+  
+
+
+
+As a Kubernetes manifest, a bootstrap token Secret might look like the following:
+
+		apiVersion: v1
+		kind: Secret
+		metadata:
+		  name: bootstrap-token-5emitj
+		  namespace: kube-system
+		type: bootstrap.kubernetes.io/token
+		data:
+		  auth-extra-groups: c3lzdGVtOmJvb3RzdHJhcHBlcnM6a3ViZWFkbTpkZWZhdWx0LW5vZGUtdG9rZW4=
+		  expiration: MjAyMC0wOS0xM1QwNDozOToxMFo=
+		  token-id: NWVtaXRq
+		  token-secret: a3E0Z2lodnN6emduMXAwcg==
+		  usage-bootstrap-authentication: dHJ1ZQ==
+		  usage-bootstrap-signing: dHJ1ZQ==
+
+
+In fact, you can create an identical Secret using the following YAML:
+
+		apiVersion: v1
+		kind: Secret
+		metadata:
+		  # Note how the Secret is named
+		  name: bootstrap-token-5emitj
+		  # A bootstrap token Secret usually resides in the kube-system namespace
+		  namespace: kube-system
+		type: bootstrap.kubernetes.io/token
+		stringData:
+		  auth-extra-groups: "system:bootstrappers:kubeadm:default-node-token"
+		  expiration: "2020-09-13T04:39:10Z"
+		  # This token ID is used in the name
+		  token-id: "5emitj"
+		  token-secret: "kq4gihvszzgn1p0r"
+		  # This token can be used for authentication
+		  usage-bootstrap-authentication: "true"
+		  # and it can be used for signing
+		  usage-bootstrap-signing: "true"
+
+
+
+
+
+Marking a Secret as immutable
+
+You can create an immutable Secret by setting the immutable field to true. For example,
+
+
+		apiVersion: v1
+		kind: Secret
+		metadata:
+		  ...
+		data:
+		  ...
+		immutable: true
+
+
+
+
+
 
 [Got To Top](#top)
 <a name="pods"></a>
