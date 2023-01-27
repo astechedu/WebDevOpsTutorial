@@ -1,6 +1,9 @@
 <!-- # Kubernetes Commands & Examples For Beginners -->
 $$\large{\colorbox{blue}{\color{white}Kubernetes \ Commands \ and \ Examples \ For \ Beginners}}$$
 
+<img src="https://kubernetes.io/images/favicon.png" alt="Kubernetes image loading...." width="10%">
+
+
 :link:[Home](all-file-links.md)     
 
 <!--$\color{blue}ajay$-->
