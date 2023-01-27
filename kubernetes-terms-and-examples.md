@@ -2078,12 +2078,6 @@ service/svc3 created
 # NodePort 
 
 
-
-
-[Got To Top](#top)
-<a name="pods"></a>
-# LoadBalancer
-
 Type NodePort
 
 If you set the type field to NodePort, the Kubernetes control plane allocates a port from a range specified by --service-node-port-range flag (default: 30000-32767). Each node proxies that port (the same port number on every Node) into your Service. Your Service reports the allocated port in its .spec.ports[*].nodePort field.
@@ -2218,6 +2212,36 @@ The example below demonstrates the components of a StatefulSet.
 		    whenDeleted: Retain
 		    whenScaled: Delete
 		...
+
+
+
+[Got To Top](#top)
+<a name="pods"></a>
+# LoadBalancer
+
+Type LoadBalancer
+
+On cloud providers which support external load balancers, setting the type field to LoadBalancer provisions a load balancer for your Service. The actual creation of the load balancer happens asynchronously, and information about the provisioned balancer is published in the Service's .status.loadBalancer field. For example:
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app.kubernetes.io/name: MyApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+  clusterIP: 10.0.171.239
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.0.2.127
+
+
 
 
 
