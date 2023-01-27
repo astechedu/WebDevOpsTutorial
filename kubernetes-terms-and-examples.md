@@ -76,7 +76,7 @@ PodTemplates are specifications for creating Pods, and are included in workload 
 
 
 
-[Got To Top](#nodes)
+[Got To Top](#top)
 <a name="nodes"></a>
 # Nodes
 
@@ -170,7 +170,7 @@ The corresponding kubelet config YAML configuration would be:
 
 
 
-[Got To Top](#services)
+[Got To Top](#top)
 <a name="services"></a>
 # Services
 
