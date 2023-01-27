@@ -687,6 +687,414 @@ Ingress exposes HTTP and HTTPS routes from outside the cluster to services withi
 
 
 
+service/networking/minimal-ingress.yaml
+
+	apiVersion: networking.k8s.io/v1
+	kind: Ingress
+	metadata:
+	  name: minimal-ingress
+	  annotations:
+	    nginx.ingress.kubernetes.io/rewrite-target: /
+	spec:
+	  ingressClassName: nginx-example
+	  rules:
+	  - http:
+	      paths:
+	      - path: /testpath
+		pathType: Prefix
+		backend:
+		  service:
+		    name: test
+		    port:
+		      number: 80
+
+
+
+
+
+service/networking/ingress-resource-backend.yaml 
+
+
+	apiVersion: networking.k8s.io/v1
+	kind: Ingress
+	metadata:
+	  name: ingress-resource-backend
+	spec:
+	  defaultBackend:
+	    resource:
+	      apiGroup: k8s.example.com
+	      kind: StorageBucket
+	      name: static-assets
+	  rules:
+	    - http:
+		paths:
+		  - path: /icons
+		    pathType: ImplementationSpecific
+		    backend:
+		      resource:
+		        apiGroup: k8s.example.com
+		        kind: StorageBucket
+		        name: icon-assets
+
+
+
+
+
+
+		kubectl describe ingress ingress-resource-backend
+
+
+
+
+
+	Examples:
+	
+	Kind	Path(s)	Request path(s)	Matches?
+	Prefix	/	(all paths)	Yes
+	Exact	/foo	/foo	Yes
+	Exact	/foo	/bar	No
+	Exact	/foo	/foo/	No
+	Exact	/foo/	/foo	No
+	Prefix	/foo	/foo, /foo/	Yes
+	Prefix	/foo/	/foo, /foo/	Yes
+	Prefix	/aaa/bb	/aaa/bbb	No
+	Prefix	/aaa/bbb	/aaa/bbb	Yes
+	Prefix	/aaa/bbb/	/aaa/bbb	Yes, ignores trailing slash
+	Prefix	/aaa/bbb	/aaa/bbb/	Yes, matches trailing slash
+	Prefix	/aaa/bbb	/aaa/bbb/ccc	Yes, matches subpath
+	Prefix	/aaa/bbb	/aaa/bbbxyz	No, does not match string prefix
+	Prefix	/, /aaa	/aaa/ccc	Yes, matches /aaa prefix
+	Prefix	/, /aaa, /aaa/bbb	/aaa/bbb	Yes, matches /aaa/bbb prefix
+	Prefix	/, /aaa, /aaa/bbb	/ccc	Yes, matches / prefix
+	Prefix	/aaa	/ccc	No, uses default backend
+	Mixed	/foo (Prefix), /foo (Exact)	/foo	Yes, prefers Exact
+
+
+
+
+
+
+Hostname wildcards:
+
+		   Host	Host header	Match?
+		   
+		*.foo.com	bar.foo.com	Matches based on shared suffix
+		*.foo.com	baz.bar.foo.com	No match, wildcard only covers a single DNS label
+		*.foo.com	foo.com	No match, wildcard only covers a single DNS label
+
+
+
+service/networking/ingress-wildcard-host.yaml
+
+		apiVersion: networking.k8s.io/v1
+		kind: Ingress
+		metadata:
+		  name: ingress-wildcard-host
+		spec:
+		  rules:
+		  - host: "foo.bar.com"
+		    http:
+		      paths:
+		      - pathType: Prefix
+			path: "/bar"
+			backend:
+			  service:
+			    name: service1
+			    port:
+			      number: 80
+		  - host: "*.foo.com"
+		    http:
+		      paths:
+		      - pathType: Prefix
+			path: "/foo"
+			backend:
+			  service:
+			    name: service2
+			    port:
+			      number: 80
+
+
+
+
+
+service/networking/external-lb.yaml 
+
+
+		apiVersion: networking.k8s.io/v1
+		kind: IngressClass
+		metadata:
+		  name: external-lb
+		spec:
+		  controller: example.com/ingress-controller
+		  parameters:
+		    apiGroup: k8s.example.com
+		    kind: IngressParameters
+		    name: external-lb
+
+
+
+
+
+
+
+For example:
+
+		---
+		apiVersion: networking.k8s.io/v1
+		kind: IngressClass
+		metadata:
+		  name: external-lb-1
+		spec:
+		  controller: example.com/ingress-controller
+		  parameters:
+		    # The parameters for this IngressClass are specified in a
+		    # ClusterIngressParameter (API group k8s.example.net) named
+		    # "external-config-1". This definition tells Kubernetes to
+		    # look for a cluster-scoped parameter resource.
+		    scope: Cluster
+		    apiGroup: k8s.example.net
+		    kind: ClusterIngressParameter
+		    name: external-config-1
+
+
+
+
+
+
+
+service/networking/default-ingressclass.yaml
+
+
+		apiVersion: networking.k8s.io/v1
+		kind: IngressClass
+		metadata:
+		  labels:
+		    app.kubernetes.io/component: controller
+		  name: nginx-example
+		  annotations:
+		    ingressclass.kubernetes.io/is-default-class: "true"
+		spec:
+		  controller: k8s.io/ingress-nginx
+
+
+
+
+service/networking/test-ingress.yaml 
+
+
+		apiVersion: networking.k8s.io/v1
+		kind: Ingress
+		metadata:
+		  name: test-ingress
+		spec:
+		  defaultBackend:
+		    service:
+		      name: test
+		      port:
+			number: 80
+
+
+
+kubectl get ingress test-ingress
+
+
+
+
+service/networking/simple-fanout-example.yaml
+
+
+		apiVersion: networking.k8s.io/v1
+		kind: Ingress
+		metadata:
+		  name: simple-fanout-example
+		spec:
+		  rules:
+		  - host: foo.bar.com
+		    http:
+		      paths:
+		      - path: /foo
+			pathType: Prefix
+			backend:
+			  service:
+			    name: service1
+			    port:
+			      number: 4200
+		      - path: /bar
+			pathType: Prefix
+			backend:
+			  service:
+			    name: service2
+			    port:
+			      number: 8080
+
+
+
+
+
+kubectl describe ingress simple-fanout-example
+
+
+
+
+service/networking/name-virtual-host-ingress.yaml
+
+
+
+		apiVersion: networking.k8s.io/v1
+		kind: Ingress
+		metadata:
+		  name: name-virtual-host-ingress
+		spec:
+		  rules:
+		  - host: foo.bar.com
+		    http:
+		      paths:
+		      - pathType: Prefix
+			path: "/"
+			backend:
+			  service:
+			    name: service1
+			    port:
+			      number: 80
+		  - host: bar.foo.com
+		    http:
+		      paths:
+		      - pathType: Prefix
+			path: "/"
+			backend:
+			  service:
+			    name: service2
+			    port:
+			      number: 80
+
+
+
+
+
+
+service/networking/name-virtual-host-ingress-no-third-host.yaml
+
+
+		apiVersion: networking.k8s.io/v1
+		kind: Ingress
+		metadata:
+		  name: name-virtual-host-ingress-no-third-host
+		spec:
+		  rules:
+		  - host: first.bar.com
+		    http:
+		      paths:
+		      - pathType: Prefix
+			path: "/"
+			backend:
+			  service:
+			    name: service1
+			    port:
+			      number: 80
+		  - host: second.bar.com
+		    http:
+		      paths:
+		      - pathType: Prefix
+			path: "/"
+			backend:
+			  service:
+			    name: service2
+			    port:
+			      number: 80
+		  - http:
+		      paths:
+		      - pathType: Prefix
+			path: "/"
+			backend:
+			  service:
+			    name: service3
+			    port:
+			      number: 80
+
+
+
+
+
+		apiVersion: v1
+		kind: Secret
+		metadata:
+		  name: testsecret-tls
+		  namespace: default
+		data:
+		  tls.crt: base64 encoded cert
+		  tls.key: base64 encoded key
+		type: kubernetes.io/tls
+
+
+
+
+
+
+
+
+service/networking/tls-example-ingress.yaml
+
+
+		apiVersion: networking.k8s.io/v1
+		kind: Ingress
+		metadata:
+		  name: tls-example-ingress
+		spec:
+		  tls:
+		  - hosts:
+		      - https-example.foo.com
+		    secretName: testsecret-tls
+		  rules:
+		  - host: https-example.foo.com
+		    http:
+		      paths:
+		      - path: /
+			pathType: Prefix
+			backend:
+			  service:
+			    name: service1
+			    port:
+			      number: 80
+
+
+
+
+kubectl describe ingress test
+kubectl edit ingress test
+
+
+		spec:
+		  rules:
+		  - host: foo.bar.com
+		    http:
+		      paths:
+		      - backend:
+			  service:
+			    name: service1
+			    port:
+			      number: 80
+			path: /foo
+			pathType: Prefix
+		  - host: bar.baz.com
+		    http:
+		      paths:
+		      - backend:
+			  service:
+			    name: service2
+			    port:
+			      number: 80
+			path: /foo
+			pathType: Prefix
+		..
+
+
+
+
+
+kubectl describe ingress test
+
+
+
 
 
 
