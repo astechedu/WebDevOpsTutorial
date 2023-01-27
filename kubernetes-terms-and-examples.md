@@ -686,6 +686,7 @@ Ingress exposes HTTP and HTTPS routes from outside the cluster to services withi
 <img src="https://d33wubrfki0l68.cloudfront.net/91ace4ec5dd0260386e71960638243cf902f8206/c3c52/docs/images/ingress.svg" alt="Image loading...." width="50%">
 
 
+<img src="https://d33wubrfki0l68.cloudfront.net/36c8934ba20b97859854610063337d2072ea291a/28e8b/docs/images/ingressfanout.svg" alt="Image loading..." width="40%">
 
 service/networking/minimal-ingress.yaml
 
