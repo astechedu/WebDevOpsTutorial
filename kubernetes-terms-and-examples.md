@@ -10,13 +10,9 @@ Kubernetes Terms:
 [Pods](#pods), [Nodes](#nodes), [Ingress](#ingress), [Services](#services)j, [Deployment](#deployment), [StatefullSet](#statefullset)
 
 
-Main Kubernetes Components summarized: ConfigMap, Secrets, Volumes
-[Pods](#pods), [Pods](#pods), [Pods](#pods), [Pods](#pods)j, [Pods](#pods), [Pods](#pods), [Pods](#pods)
+Main Kubernetes Components summarized:
 
-
-
-Kubernetes Expernal Configration: ConfigMap, Secrets, Volumes
-[Pods](#pods), [Pods](#pods), [Pods](#pods), [Pods](#pods)j, [Pods](#pods), [Pods](#pods), [Pods](#pods)
+[Volumes](#volumes), [ConfigMap](#configmap), [Sectets](#secrets)
 
 
 Kubernetes Services: ClusterIP,Headless,Multi-Port,NodePort,LoadBalancer
