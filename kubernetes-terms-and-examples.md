@@ -1531,6 +1531,58 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 <a name="configmap"></a>
 # ConfigMap
 
+	
+	apiVersion: v1
+	data:
+	  key1: value1
+	  key2: value2
+	  ...
+	kind: ConfigMap
+	metadata:
+	  creationTimeStamp: ...
+	  name: example-configmap
+	  namespace: default
+	  resourceVersion: ...
+	  selfLink: /api/v1/namespace/default/configmaps/example-configmap
+	  uid: ...
+	
+	
+	
+Mounting ConfigMap as a Volume:	
+
+	
+	Add a volume section to the to the yaml file of your pod:
+
+	volumes:
+	  - name: config
+	  configMap
+	    name: [configmap_name]
+	    items:
+	    - key: [key/file_name]
+	    path: [inside_the_pod]
+
+	
+Use ConfigMap with EnvFrom
+	
+	
+	env:
+		- name: SPECIAL_LEVEL_KEY
+		  valueFrom:
+		    configMapKeyRef:
+		      name: [configmap_name]
+		      key: [key/file_name]	
+
+	
+	
+To pull all environment variables from a ConfigMap, add the envFrom section to the yaml file:
+
+	envFrom:
+	  - configMapKeyRef
+	      name: env-config	
+
+
+	
+	
 	apiVersion: v1
 	kind: ConfigMap	
 	metadata:
