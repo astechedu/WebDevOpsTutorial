@@ -1531,6 +1531,13 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 <a name="configmap"></a>
 # ConfigMap
 
+	How to Create a ConfigMap?
+	
+	kubectl create configmap [configmap_name] [attribute] [source]	
+	
+	  --from file (if the source is a file/directory)
+	  --from-literal (if the source is a key-value pair)	
+
 	
 	apiVersion: v1
 	data:
@@ -2453,26 +2460,29 @@ Deployment manifest file:-
 		      port: 80
 		      targetPort: 8080
 
-Create all resources and run the pod
 
-kubectl create -f deployment.yaml
 
-kubectl create -f regular-service.yaml
+	Create all resources and run the pod
 
-kubectl create -f headless-service.yaml
+	kubectl create -f deployment.yaml
 
-kubectl run temporary --image=radial/busyboxplus:curl -i --tty
+	kubectl create -f regular-service.yaml
 
-Cleanup the used resources
+	kubectl create -f headless-service.yaml
 
-kubectl delete svc regular-service
+	kubectl run temporary --image=radial/busyboxplus:curl -i --tty
 
-kubectl delete svc headless-svc
+	Cleanup the used resources
 
-kubectl delete deployment app
+	kubectl delete svc regular-service
 
-kubectl delete po temporary
+	kubectl delete svc headless-svc
 
+	kubectl delete deployment app
+
+	kubectl delete po temporary
+
+	
 The DNS server returns three different IPs for the pods
 
    
