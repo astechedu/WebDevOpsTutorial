@@ -17,7 +17,7 @@ Main Kubernetes Components summarized:
 
 Kubernetes Services: ,Headless,Multi-Port,NodePort,LoadBalancer
 
-[ClusterIP](#clusterip), [Headless](#headless), [Multi-Port](#multi-port), [NodePort](#nodeport)j, [LoadBalancer](#loadbalancer)
+[ClusterIP](#clusterip), [Headless](#headless), [Multi-Port](#multi-port), [NodePort](#nodeport), [LoadBalancer](#loadbalancer)
 
 
 
