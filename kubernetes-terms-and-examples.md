@@ -1531,6 +1531,83 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 <a name="configmap"></a>
 # ConfigMap
 
+     ***Tested Example By Ajay Sisaudiya***
+	
+	
+    CMDS:
+	
+	microk8s kubectl create configmap envcm01 --from-literal="astechutube" --from-literal="abc123"
+ 
+  or 
+ 
+	microk8s kubectl create cm envcm01 --from-literal="astechutube" --from-literal="abc123"
+
+	microk8s kubectl get cm
+	microk8s kubectl describe cm envcm01
+
+	microk8s kubectl explain --recursive pod
+	microk8s kubectl explain --recursive pod | less
+
+  
+	
+cm01-pod.yml  (Only One Value)
+
+	apiVersion: v1 
+	kind: Pod
+	metadata: 
+	   name: cm01-pod
+	spec: 
+	  containers: 
+	  - name: cm01-pod
+	    image: nginx
+	    imagePullPolicy: Never
+	    env: 
+	     - name: varsfromcm
+	       valueFrom:
+		 configMapKeyRef:
+		    key: name
+		    name: envcm01 
+
+
+            
+   OR         
+            
+            
+cm01-pod.yml (Only Two Values)
+
+	apiVersion: v1 
+	kind: Pod
+	metadata: 
+	   name: cm01-pod
+	spec: 
+	  containers: 
+	  - name: cm01-pod
+	    image: nginx
+	    imagePullPolicy: Never
+	    env: 
+	     - name: varsfromcm1
+	       valueFrom:
+		 configMapKeyRef:
+		    key: name
+		    name: envcm01 
+	     - name: varsfromcm2
+	       valueFrom:
+		 configMapKeyRef:
+		    key: password
+		    name: envcm01 
+
+            
+            
+  CMDS: 
+	microk8s kubectl apply -f cm01-pod.yml      
+	microk8s kubectl exec -it cm01-pod bash  
+	root@cm01-pod:/# env
+
+:end:	
+	
+	
+	
+	
 	How to Create a ConfigMap?
 	
 	kubectl create configmap [configmap_name] [attribute] [source]	
