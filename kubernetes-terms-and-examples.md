@@ -1536,12 +1536,11 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 	
     CMDS:
 	
-	microk8s kubectl create configmap envcm01 --from-literal="astechutube" --from-literal="abc123"
- 
-  or 
- 
+	Creating CinfigMap: 
+	
+	microk8s kubectl create configmap envcm01 --from-literal="astechutube" --from-literal="abc123" 
+ 	 or  
 	microk8s kubectl create cm envcm01 --from-literal="astechutube" --from-literal="abc123"
-
 	microk8s kubectl get cm
 	microk8s kubectl describe cm envcm01
 
