@@ -1573,9 +1573,11 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 
             
    OR         
+	
             
 2. ***cm01-pod.yml (Only Two Values)***
 
+	
 	apiVersion: v1 
 	kind: Pod
 	metadata: 
@@ -1605,12 +1607,11 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 	root@cm01-pod:/# env
 	
 	
-3.
 	
-     ***Using Yaml File***
 	
+3. ***Using Yaml File***	
 
-    fromfilemc01.yml
+   fromfilemc01.yml
 	
 	
 	apiVersion: v1
@@ -1682,21 +1683,21 @@ cm01-pod.yml
     fromfilemc01.yml
 	
 	
-	apiVersion: v1
-	kind: ConfigMap
-	metadata:
-	  name: fromfilecm01
-	data:
-	  #property-like keys; each key maps to a simple value
-	  #player_initial_lives: "3"
-	  #ui_properties_file_name: "user-interface.properties"
+		apiVersion: v1
+		kind: ConfigMap
+		metadata:
+		  name: fromfilecm01
+		data:
+		  #property-like keys; each key maps to a simple value
+		  #player_initial_lives: "3"
+		  #ui_properties_file_name: "user-interface.properties"
 
-	  #file-like keys
-	  env.sh: |
-	    name=ajay
-	    age=88
-	    city=meerut
-	    country=india
+		  #file-like keys
+		  env.sh: |
+		    name=ajay
+		    age=88
+		    city=meerut
+		    country=india
 
 	
 	
@@ -1708,19 +1709,20 @@ cm01-pod.yml
 	
 	
 cm01-pod.yml
+	
 
-	apiVersion: v1 
-	kind: Pod
-	metadata: 
-	   name: cm01-pod
-	spec: 
-	  containers: 
-	  - name: cm01-pod
-	    image: nginx
-	    imagePullPolicy: Never         
-	    envFrom:
-	      - configMapRef:           
-		  name: fromfilecm 
+		apiVersion: v1 
+		kind: Pod
+		metadata: 
+		   name: cm01-pod
+		spec: 
+		  containers: 
+		  - name: cm01-pod
+		    image: nginx
+		    imagePullPolicy: Never         
+		    envFrom:
+		      - configMapRef:           
+			  name: fromfilecm 
 
 
 
