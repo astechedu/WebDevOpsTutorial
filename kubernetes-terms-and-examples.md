@@ -1570,36 +1570,37 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 		    key: name
 		    name: envcm01 
 
-
             
    OR         
 	
-            
+ #           
+	
 2. ***cm01-pod.yml (Only Two Values)***
 
 	
-	apiVersion: v1 
-	kind: Pod
-	metadata: 
-	   name: cm01-pod
-	spec: 
-	  containers: 
-	  - name: cm01-pod
-	    image: nginx
-	    imagePullPolicy: Never
-	    env: 
-	     - name: varsfromcm1
-	       valueFrom:
-		 configMapKeyRef:
-		    key: name
-		    name: envcm01 
-	     - name: varsfromcm2
-	       valueFrom:
-		 configMapKeyRef:
-		    key: password
-		    name: envcm01 
+	
+		apiVersion: v1 
+		kind: Pod
+		metadata: 
+		   name: cm01-pod
+		spec: 
+		  containers: 
+		  - name: cm01-pod
+		    image: nginx
+		    imagePullPolicy: Never
+		    env: 
+		     - name: varsfromcm1
+		       valueFrom:
+			 configMapKeyRef:
+			    key: name
+			    name: envcm01 
+		     - name: varsfromcm2
+		       valueFrom:
+			 configMapKeyRef:
+			    key: password
+			    name: envcm01 
 
-            
+
             
   CMDS: 
 	microk8s kubectl apply -f cm01-pod.yml      
@@ -1607,28 +1608,28 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 	root@cm01-pod:/# env
 	
 	
-	
+#	
 	
 3. ***Using Yaml File***	
 
    fromfilemc01.yml
 	
 	
-	apiVersion: v1
-	kind: ConfigMap
-	metadata:
-	  name: fromfilecm01
-	data:
-	  #property-like keys; each key maps to a simple value
-	  #player_initial_lives: "3"
-	  #ui_properties_file_name: "user-interface.properties"
+		apiVersion: v1
+		kind: ConfigMap
+		metadata:
+		  name: fromfilecm01
+		data:
+		  #property-like keys; each key maps to a simple value
+		  #player_initial_lives: "3"
+		  #ui_properties_file_name: "user-interface.properties"
 
-	  #file-like keys
-	  env.sh: |
-	    name=ajay
-	    age=88
-	    city=meerut
-	    country=india
+		  #file-like keys
+		  env.sh: |
+		    name=ajay
+		    age=88
+		    city=meerut
+		    country=india
 
 	
 	
@@ -1641,33 +1642,33 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 cm01-pod.yml
 	
 	
-	apiVersion: v1
-	kind: Pod
-	metadata:
-	   name: cm01-pod
-	spec:
-	  containers:
-	  - name: cm01-pod
-	    image: nginx
-	    imagePullPolicy: Never
-	    env:
-	     - name: varsfromcm1
-	       valueFrom:
-		 configMapKeyRef:
-		    key: name
-		    name: envcm01
-	     - name: varsfromcm2
-	       valueFrom:
-		 configMapKeyRef:
-		    key: password
-		    name: envcm01
-	     - name: varsfromfile3
-	       valueFrom:
-		 configMapKeyRef:
-		    key: env.sh
-		    name: fromfilecm01
-	
-	
+		apiVersion: v1
+		kind: Pod
+		metadata:
+		   name: cm01-pod
+		spec:
+		  containers:
+		  - name: cm01-pod
+		    image: nginx
+		    imagePullPolicy: Never
+		    env:
+		     - name: varsfromcm1
+		       valueFrom:
+			 configMapKeyRef:
+			    key: name
+			    name: envcm01
+		     - name: varsfromcm2
+		       valueFrom:
+			 configMapKeyRef:
+			    key: password
+			    name: envcm01
+		     - name: varsfromfile3
+		       valueFrom:
+			 configMapKeyRef:
+			    key: env.sh
+			    name: fromfilecm01
+
+
 	
 	
   CMDS: 
@@ -1677,10 +1678,13 @@ cm01-pod.yml
 	
 	
 	
+	
 4. ***Using envFrom & configMapRef (Including configMap File***	
 
+	
 
     fromfilemc01.yml
+	
 	
 	
 		apiVersion: v1
@@ -1725,6 +1729,7 @@ cm01-pod.yml
 			  name: fromfilecm 
 
 
+	
 
 	microk8s kubectl apply -f cm01-pod.yml      
 	microk8s kubectl exec -it cm01-pod bash  
