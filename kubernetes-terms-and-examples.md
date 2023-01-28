@@ -1551,8 +1551,9 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
 
   
 	
-cm01-pod.yml  (Only One Value)
+ cm01-pod.yml  (Only One Value)
 
+	
 	apiVersion: v1 
 	kind: Pod
 	metadata: 
@@ -1573,9 +1574,7 @@ cm01-pod.yml  (Only One Value)
             
    OR         
             
-2. 
-	
-cm01-pod.yml (Only Two Values)
+2. ***cm01-pod.yml (Only Two Values)***
 
 	apiVersion: v1 
 	kind: Pod
@@ -1619,11 +1618,11 @@ cm01-pod.yml (Only Two Values)
 	metadata:
 	  name: fromfilecm01
 	data:
-	  # property-like keys; each key maps to a simple value
+	  #property-like keys; each key maps to a simple value
 	  #player_initial_lives: "3"
 	  #ui_properties_file_name: "user-interface.properties"
 
-	  # file-like keys
+	  #file-like keys
 	  env.sh: |
 	    name=ajay
 	    age=88
@@ -1688,11 +1687,11 @@ cm01-pod.yml
 	metadata:
 	  name: fromfilecm01
 	data:
-	  # property-like keys; each key maps to a simple value
+	  #property-like keys; each key maps to a simple value
 	  #player_initial_lives: "3"
 	  #ui_properties_file_name: "user-interface.properties"
 
-	  # file-like keys
+	  #file-like keys
 	  env.sh: |
 	    name=ajay
 	    age=88
@@ -1827,11 +1826,11 @@ Here's an example ConfigMap that has some keys with single values, and other key
 		metadata:
 		  name: game-demo
 		data:
-		  # property-like keys; each key maps to a simple value
+		  #property-like keys; each key maps to a simple value
 		  player_initial_lives: "3"
 		  ui_properties_file_name: "user-interface.properties"
 
-		  # file-like keys
+		  #file-like keys
 		  game.properties: |
 		    enemy.types=aliens,monsters
 		    player.maximum-lives=5    
