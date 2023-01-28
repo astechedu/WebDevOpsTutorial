@@ -1534,6 +1534,8 @@ The storage media (such as Disk or SSD) of an emptyDir volume is determined by t
      ***Tested Example By Ajay Sisaudiya***
 	
 	
+1. 	
+	
     CMDS:
 	
 	Creating CinfigMap: 
@@ -1571,7 +1573,8 @@ cm01-pod.yml  (Only One Value)
             
    OR         
             
-            
+2. 
+	
 cm01-pod.yml (Only Two Values)
 
 	apiVersion: v1 
@@ -1603,6 +1606,7 @@ cm01-pod.yml (Only Two Values)
 	root@cm01-pod:/# env
 	
 	
+3.
 	
      ***Using Yaml File***
 	
@@ -1673,11 +1677,65 @@ cm01-pod.yml
 	
 	
 	
+4. ***Using envFrom & configMapRef (Including configMap File***	
 
+
+    fromfilemc01.yml
+	
+	
+	apiVersion: v1
+	kind: ConfigMap
+	metadata:
+	  name: fromfilecm01
+	data:
+	  # property-like keys; each key maps to a simple value
+	  #player_initial_lives: "3"
+	  #ui_properties_file_name: "user-interface.properties"
+
+	  # file-like keys
+	  env.sh: |
+	    name=ajay
+	    age=88
+	    city=meerut
+	    country=india
+
+	
+	
+     CMDS:
+	
+	microk8s kubectl apply -f fromfilecm01.yml
+	
+	
+	
+	
+cm01-pod.yml
+
+	apiVersion: v1 
+	kind: Pod
+	metadata: 
+	   name: cm01-pod
+	spec: 
+	  containers: 
+	  - name: cm01-pod
+	    image: nginx
+	    imagePullPolicy: Never         
+	    envFrom:
+	      - configMapRef:           
+		  name: fromfilecm 
+
+
+
+	microk8s kubectl apply -f cm01-pod.yml      
+	microk8s kubectl exec -it cm01-pod bash  
+	root@cm01-pod:/# env	
+
+
+	
+	
 :end:	
 	
 	
-	
+#	
 	
 	How to Create a ConfigMap?
 	
