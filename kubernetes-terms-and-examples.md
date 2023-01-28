@@ -1948,6 +1948,21 @@ Immutable ConfigMaps:
 <a name="secrets"></a>
 # Secrets
 
+	
+CMDS:
+	
+
+		microk8s kubectl explain secret      
+		microk8s kubectl api-resources | grep -i sec
+		microk8s kubectl create secret --help
+		microk8s kubectl create secret generic --help | less
+		microk8s kubectl create secret generic first --from-literal=name=ajay
+		microk8s kubectl get secrets
+		microk8s kubectl describe secret first
+		microk8s kubectl get secrets first
+		microk8s kubectl get secrets first -o yaml
+		echo -n "ajay" | base64
+
 
 
 A Secret is an object that contains a small amount of sensitive data such as a password, a token, or a key. Such information might otherwise be put in a Pod specification or in a container image. Using a Secret means that you don't need to include confidential data in your application code.
