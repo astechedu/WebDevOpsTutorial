@@ -28,7 +28,7 @@ Topic:
    
   [Docker save/docker load ](#docker-save-load)
    
-    
+  [Docker All Commands](#docker-cmds) 
   
   
    
@@ -572,7 +572,49 @@ CMDS:
     ls
     docker image load < logstash.tar
 
+#
+:end:
 
+# Docker Commands
+
+ 
+***Docker Import & Export ***
+
+    docker export -o [ContainerID] [tarfilename.tar]
+    docker image import [tarfilename.tar] [newimagename] 
+    docker images 
+ 
+***Docker save & load***
+
+    docker save <imageNameWithVersion> -o <tarfileName.tar>
+    docker load -i <tarfileName.tar>
+
+***Docker Network***
+ 
+    docker network create <networkName>
+    docker network rm <networkName>
+    docker network ls
+    docker network inspect <networkName>
+    docker network connect <networkName> <containerIdorName>
+    docker service create --network frontend --network backend 
+    docker network create --driver=bridge network1 --subnet=172.19.0.0/24
+    docker network create --driver=bridge network2 --subnet=172.19.1.0/24
+
+
+***Docker Volume***
+
+    docker volume create <volumeName>
+    docker volume rm <volumeName>
+    docker volume ls
+    docker volume inspect <volumeName>
+
+
+***Docker Commands***
+
+    docker run --name db --network mynetwork -p 8000:80 -d nginx
+    docker run --name myserver --network mynetwork --link mydb  -p 8000:80 -v "$PWD"/src:/var/www/html -d server01
+
+#
 
 
 
