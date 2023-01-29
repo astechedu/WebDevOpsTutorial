@@ -174,6 +174,33 @@ The corresponding kubelet config YAML configuration would be:
 <a name="services"></a>
 # Services
 
+
+service-deployment.yml:
+
+
+
+	apiVersion: v1
+	kink: Service
+	metadata:
+	  name: demoservice
+	spec: 
+	 ports: 
+	  - port: 80
+	    targetPort: 80
+	 selector:
+	   name: deployment
+	 type: ClusterIP
+
+
+
+
+   kubectl apply -f service-deployment.yml
+   kubectl get po -o wide
+
+
+
+
+#
 An abstract way to expose an application running on a set of Pods as a network service.
 
 With Kubernetes you don't need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives Pods their own IP addresses and a single DNS name for a set of Pods, and can load-balance across them.
