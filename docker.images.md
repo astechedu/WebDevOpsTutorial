@@ -614,6 +614,15 @@ CMDS:
     docker network create --driver=bridge network2 --subnet=172.19.1.0/24
 
 
+Not Defining subnet & gateway (Default Gateway IP):
+
+     docker network create my-network
+
+Defining subnet & gateway (Set Gateway IP):
+   
+     docker network create --subnet 10.7.0.0/16 --gateway 10.7.7.7 my-network
+
+
 ***Docker Volume***
 
  <img src="https://docs.docker.com/storage/images/types-of-mounts-volume.png" alt="Image loading..." width="30%">
