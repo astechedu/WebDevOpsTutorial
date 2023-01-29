@@ -633,6 +633,9 @@ Uses:
  
        -v <sourcePath>:<targetPath>
        -v "$PWD"/src:/usr/share/nginx/html
+       
+       -v /<source>:<target>
+       -v /src:/usr/share/nginx/html
 
   In Compose File:
  
