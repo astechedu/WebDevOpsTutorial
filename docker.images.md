@@ -621,6 +621,29 @@ CMDS:
     docker volume ls
     docker volume inspect <volumeName>
 
+Uses: 
+
+  Choose the -v or --mount flag
+   
+   --mount 'type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>
+ 
+  In a Container:
+ 
+   -v <sourcePath>:<targetPath>
+   -v "$PWD"/src:/usr/share/nginx/html
+ 
+  In Compose File:
+ 
+       volumes:
+      - myapp:/home/node/app
+ 
+  volumes:
+   myapp:
+     external: true
+ 
+ 
+ 
+   
 
 ***Docker Commands***
 
