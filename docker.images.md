@@ -627,13 +627,13 @@ Uses:
 
   Choose the -v or --mount flag
    
-   --mount 'type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>
+       --mount 'type=volume,src=<VOLUME-NAME>,dst=<CONTAINER-PATH>
  
   In a Container:
  
-   -v <sourcePath>:<targetPath>
-   -v "$PWD"/src:/usr/share/nginx/html
- 
+       -v <sourcePath>:<targetPath>
+       -v "$PWD"/src:/usr/share/nginx/html
+
   In Compose File:
  
        volumes:
