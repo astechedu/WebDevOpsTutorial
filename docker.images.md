@@ -603,7 +603,9 @@ CMDS:
     docker load -i <tarfileName.tar>
 
 ***Docker Network***
- 
+
+ <img src="https://docs.docker.com/engine/tutorials/bridge1.png" alt="Image loading..." width="30%">
+  
     docker network create <networkName>
     docker network rm <networkName>
     docker network ls
