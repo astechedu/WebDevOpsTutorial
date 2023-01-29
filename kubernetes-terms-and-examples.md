@@ -542,6 +542,37 @@ External IPs:
 <a name="depooyment"></a>
 # Deployment
 
+
+deployhttpd.yml: 
+
+
+	apiVersion: v1
+	kind: Deployment
+	metadata:
+	  name: mydeployment
+	spec:
+	  replicas: 1
+	  selector:
+	   matchLabels:
+	     name: deployment
+	  template:
+	    metadata:
+	      name: testpod1
+	      labels:
+		name: deployment
+	    spec:
+	     containers: 
+	       - name: c00
+		 image: httpd
+		 ports:
+		 - containerPort: 80
+
+
+
+     kubectl apply -f deployhttpd.yml
+     kubectl get deployment
+
+#
 A Deployment provides declarative updates for Pods and ReplicaSets.
 
 You describe a desired state in a Deployment, and the Deployment Controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments.
@@ -2999,7 +3030,7 @@ status:
 
 
 
-
+#
 [Got To Top](#top)
 <a name="jobs"></a>
 # Jobs
