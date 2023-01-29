@@ -173,8 +173,9 @@ The corresponding kubelet config YAML configuration would be:
 [Got To Top](#top)
 <a name="services"></a>
 # Services
-<a name="deploy-to-service"></a>
-[Depoyment](#service-to-deploy)
+<a name="to-service"></a>
+[Deployment](#to-deploy)
+
 
 
 
@@ -571,8 +572,8 @@ External IPs:
 [Got To Top](#top)
 <a name="depooyment"></a>
 # Deployment
-<a name="deploy-to-service"></a>
-[Service](#deploy-to-service)
+<a name="to-deploy"></a>
+[Service](#to-service)
 
 
 deployhttpd.yml: 
