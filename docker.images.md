@@ -604,7 +604,7 @@ CMDS:
 
 ***Docker Network***
 
- <img src="https://docs.docker.com/engine/tutorials/bridge1.png" alt="Image loading..." width="30%">
+ <img src="https://docs.docker.com/engine/tutorials/bridge1.png" alt="Image loading..." width="20%">
   
     docker network create <networkName>
     docker network rm <networkName>
