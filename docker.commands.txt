@@ -1911,6 +1911,7 @@ In this page we explained how Docker containers discover and communicate with ea
  
 ------------------ X -----------------------------------------
 
+ 
 ***Docker Import & Export ***
 docker export -o [ContainerID] [tarfilename.tar]
 docker image import [tarfilename.tar] [newimagename] 
@@ -1926,6 +1927,8 @@ docker network rm <networkName>
 docker network ls
 docker network inspect <networkName>
 docker network connect <networkName> <containerIdorName>
+docker network disconnect <networkName> <containerNameOrId>
+
 docker service create --network frontend --network backend 
 docker network create --driver=bridge network1 --subnet=172.19.0.0/24
 docker network create --driver=bridge network2 --subnet=172.19.1.0/24
