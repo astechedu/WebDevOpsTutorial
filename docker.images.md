@@ -641,7 +641,7 @@ Uses:
    myapp:
      external: true
  
- 
+ <img src="https://docs.docker.com/storage/images/types-of-mounts-volume.png" alt="Image loading..." width="50%">
  
    
 
