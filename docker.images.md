@@ -616,6 +616,8 @@ CMDS:
 
 ***Docker Volume***
 
+ <img src="https://docs.docker.com/storage/images/types-of-mounts-volume.png" alt="Image loading..." width="30%">
+ 
     docker volume create <volumeName>
     docker volume rm <volumeName>
     docker volume ls
@@ -637,12 +639,12 @@ Uses:
        volumes:
       - myapp:/home/node/app
  
-  volumes:
-   myapp:
-     external: true
  
- <img src="https://docs.docker.com/storage/images/types-of-mounts-volume.png" alt="Image loading..." width="50%">
- 
+       volumes:
+        myapp:
+          external: true
+
+
    
 
 ***Docker Commands***
