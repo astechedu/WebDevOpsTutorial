@@ -153,6 +153,8 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 # Kubernetes :diamond_shape_with_a_dot_inside:
 
+:link:[Kubernetes Deployment](kubernetes-deployment.md)
+
 :link:[Docker Swarm click here](docker.swarm.md)
 
 :link:[Kubernetes Glossary](kubernetes-glossary.md)
