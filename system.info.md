@@ -12,12 +12,26 @@ Topics
   
   
   
+  
+#
+[Got To Top](#top)
+<a name="windows"></a>
 # Windows
+Find Out the Maximum RAM Your Computer Can Support
+Windows
+
+Windows users can determine the maximum RAM capacity in the Command prompt with the command below. It gives the final value in kilobytes which can be converted to gigabytes (divide the value by 1048576 to convert KB to GB).
+
+wmic memphysical get MaxCapacity, MemoryDevices
+
+
+
+
+
   
-  
-  
+#
   [Got To Top](#top)
-  <a name=""></a>
+  <a name="linux"></a>
   # Linux
     
 # Basic Linux Commands to Check Hardware and System Information
