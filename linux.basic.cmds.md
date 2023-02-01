@@ -66,7 +66,7 @@ Once the user logs in, they can change their password by using the passwd comman
 If you need to create a user that has no home directory and is locked out from logging in, you can do this with the the following commands:
 
      sudo useradd -M USERNAME
-     âsudo usermod -L USERNAME
+     sudo usermod -L USERNAME
 
 Where USERNAME is the name of the user to add.
 
