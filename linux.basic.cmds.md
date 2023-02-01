@@ -364,7 +364,205 @@ How do I set permissions for a directory and all of its contents by using symbol
 
      chmod -R o=rwx,g+rw,o-rwx Resources
 
------------------------------------------------------------
 
---------------------------------------
 
+#
+
+
+# Linux:
+
+
+Create User in Short: 
+
+	sudo -i
+
+
+# Create a standard user account
+
+	useradd -m cli_user1
+	
+
+# Create an administrator user account
+
+	useradd -m cli_user1 -G sudo
+
+
+
+	ls -la /home/cli_user1
+
+
+
+# Create the user with a custom home directory
+
+	useradd -m -d /tmp/tmp_user tmp_user
+	
+# List the custom home directory
+
+	ls -la /tmp/tmp_user
+
+
+
+
+	useradd -u 1234 uid_user
+
+	id uid_user
+
+        useradd -e 2020-06-30 temp_user
+        chage -l temp_user
+
+
+Setting the New User Password:
+
+	passwd cli_user1
+
+
+
+# Exit the root shell
+
+	exit
+	
+# Switch to the new user account
+
+	su - cli_user1
+	
+# Show the current user account
+
+	whoami
+
+
+
+#
+
+Change USERNAME:
+
+https://www.hepeng.me/changing-username-and-hostname-on-ubuntu/
+
+At the start screen press Ctrl+Alt+F1
+
+Set a password for the "root" account.
+
+	sudo passwd root 
+
+Log out.
+
+	exit
+
+
+Log in using the "root" account and the password you have previously set.
+Change the username and the home folder to the new name that you want.
+
+	usermod -l <newname> -d /home/<newname> -m <oldname>
+
+Change the group name to the new name that you want. I'm not so sure about which group should I change to
+
+	groupmod -n <newgroup> <oldgroup> 
+
+Lock the "root" account.
+
+	passwd -l root
+
+If you were using ecryptfs (encrypted home directory). Mount your encrypted directory using ecryptfs-recover-private and edit <mountpoint>/.ecryptfs/Private.mnt to reflect your new home directory.
+Log out.
+
+	exit
+
+	Press Ctrl+Alt+F7.
+
+
+
+#
+
+Change HostName:
+
+https://phoenixnap.com/kb/ubuntu-20-04-change-hostname
+
+Change Hostname on Ubuntu 20.04 – Alternative Method (Reboot Required)
+
+    Step 1: Open /etc/hostname and Change the Hostname. ...
+    Step 2: Open /etc/hosts and Change the Hostname. ...
+    Step 3: Reboot the System.
+
+
+
+CMDS:
+   
+      hostname              
+      hostnamectl 
+
+
+
+sudo systemctl reboot
+
+
+#
+
+
+How To Create a New Sudo-enabled User on Ubuntu 20.04 [Quickstart]:
+
+https://www.digitalocean.com/community/tutorials/how-to-create-a-new-sudo-enabled-user-on-ubuntu-20-04-quickstart
+
+
+/etc/sudoers
+
+
+When managing a server, you’ll sometimes want to allow users to execute commands as “root,” the administrator-level user. The sudo command provides system administrators with a way to grant administrator privileges — ordinarily only available to the root user — to normal users.
+
+how to create a new user with sudo access on Ubuntu 20.04 without having to modify your server’s /etc/sudoers file.
+
+
+Step 1 — Logging Into Your Server
+
+SSH in to your server as the root user:
+
+    ssh root@your_server_ip_address
+
+
+Step 2 — Adding a New User to the System
+
+Use the adduser command to add a new user to your system:
+
+    adduser sammy
+
+
+Be sure to replace sammy with the username that you want to create. You will be prompted to create and verify a password for the user:
+
+
+
+Step 3 — Adding the User to the sudo Group
+
+Use the usermod command to add the user to the sudo group:
+
+    usermod -aG sudo sammy
+
+
+Again, be sure to replace sammy with the username you just added. By default on Ubuntu, all members of the sudo group have full sudo privileges.
+
+
+Step 4 — Testing sudo Access
+
+
+To test that the new sudo permissions are working, first use the su command to switch to the new user account:
+
+    su - sammy
+
+
+As the new user, verify that you can use sudo by prepending sudo to the command that you want to run with superuser privileges:
+
+    sudo command_to_run
+
+
+For example, you can list the contents of the /root directory, which is normally only accessible to the root user:
+
+    sudo ls -la /root
+
+
+The first time you use sudo in a session, you will be prompted for the password of that user’s account. Enter the password to proceed:
+
+
+Output:
+[sudo] password for sammy:
+
+#
+
+:end:
+<a name="top"></a>
