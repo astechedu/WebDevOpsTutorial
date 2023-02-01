@@ -37,7 +37,7 @@ Windows users can determine the maximum RAM capacity in the Command prompt with 
 # Basic Linux Commands to Check Hardware and System Information
 
 
-
+#
 1. Printing Machine Hardware Name (uname –m uname –a)
  
     Using the -m switch with the uname command prints the hardware name of our machine. If we want the uname command to print all the information mentioned above, we can use the command with all the switches.
@@ -46,7 +46,7 @@ Windows users can determine the maximum RAM capacity in the Command prompt with 
         uname –m
         uname -a
 
-
+#
 2. The lscpu command reports information about the cpu and processing units. It does not have any further options or functionality.
 
 The lscpu command reports information about the cpu and processing units. It does not have any further options or functionality.
@@ -74,58 +74,57 @@ We can also export lshw reports in html, xml and json formats.
 
             sudo lshw –xml >lshw-output.xml
 
-
-2. hwinfo- Hardware Information
-
+#
+7
              hwinfo
 
              hwinfo –short
 
-
-3. lspci- List PCI
+#
+4. lspci- List PCI
  
 
              lspci
 
 
-
-4. lsscsi-List sci devices
+#
+5. lsscsi-List sci devices
 
              lsscsi
 
-
-5. lsusb- List usb buses and device details
+#
+6. lsusb- List usb buses and device details
 
 
              lsusb
              
-
-6. lsblk- List block devices
+#
+7. lsblk- List block devices
 
 
              lsblk
              
-
-7. df-disk space of file systems
+#
+8. df-disk space of file systems
 
 
              df -H
 
 
-
-8. fdisk
+#
+9. fdisk
 
              sudo fdisk –l
 
-
-9. mount
+#
+10. mount
 
 
              mount | column -t
  
  
- 
-10. Dmidecode
+ #
+11. Dmidecode
 
 The dmidecode command is different from all other commands. It extracts hardware information by reading data from the SMBOIS data structures (also called DMI tables). # display information about the processor/cpu
 
@@ -137,7 +136,8 @@ The dmidecode command is different from all other commands. It extracts hardware
             sudo dmidecode -t bios
 
 
-11. /proc files
+#
+12. /proc files
 
 Many of the virtual files in the /proc directory contain information about hardware and configurations. Here are some of them
 
@@ -159,16 +159,16 @@ Partitions
                  cat /proc/partitions
 
 
-
-12. hdparm
+#
+13. hdparm
 
 The hdparm command gets information about sata devices like hard disks. Each of the command has a slightly different method of extracting information.
 
 
                 hdparm
 
-
-13. Inxi
+#
+14. Inxi
 
                 inxi –Fx
 
@@ -179,10 +179,9 @@ The hdparm command gets information about sata devices like hard disks. Each of 
 
 
 
+#
 
-
-///
-Ways to Check Available Memory in Ubuntu 22.04
+***Ways to Check Available Memory in Ubuntu 22.04***
 
     free           command.
     vmstat         command.
@@ -204,7 +203,7 @@ Ways to Check Available Memory in Ubuntu 22.04
 man top
 
 
-Graphical Utility Option:
+***Graphical Utility Option:***
 
 To launch Ubuntu’s system monitor, enter the following in a terminal window:
 
@@ -218,6 +217,34 @@ ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10
 
 
 
+
+
+#
+***Linux***
+
+To find the maximum RAM capacity in Linux, you can make use of the command dmidecode, though it is not installed by default in most distros.
+
+1. Install dmidecode:
+
+#ubuntu/debian
+
+    sudo apt install dmidecode
+ 
+#arch
+
+    sudo pacman -S dmidecode
+ 
+#Fedora
+
+    sudo dnf install dmidecode
+ 
+#openSUSE
+
+    sudo zypper in dmidecode
+
+2. Run the command:
+
+    sudo dmidecode -t 16
 
 
 
