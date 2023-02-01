@@ -22,7 +22,7 @@ Windows
 
 Windows users can determine the maximum RAM capacity in the Command prompt with the command below. It gives the final value in kilobytes which can be converted to gigabytes (divide the value by 1048576 to convert KB to GB).
 
-wmic memphysical get MaxCapacity, MemoryDevices
+    wmic memphysical get MaxCapacity, MemoryDevices
 
 
 
