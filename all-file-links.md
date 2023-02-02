@@ -215,7 +215,9 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 :link:[AS TECH EDU Youtube Videos Page Links](astechedu.youtube.videos.md)
 
 
+# Interview Questions Answers
 
+:link:[Interviews Questions Answers](interviews.md)
 
 # Resume 
 
