@@ -6,8 +6,9 @@ $$\color{green} Virtual \ Machine \ Installations$$
 
 Topics: 
 
-[VirtualBox Installation On Ubuntu Option-1](#vm-install-op-1)
-[VirtualBox Installation On Ubuntu Option-2](#vm-install-op-2)
+1. [VirtualBox Installation On Ubuntu Option-1](#vm-install-op-1)
+
+2. [VirtualBox Installation On Ubuntu Option-2](#vm-install-op-2)
 
  
  
