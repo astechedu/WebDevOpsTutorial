@@ -6,42 +6,51 @@ $$\color{green} Virtual \ Machines \ Installations$$
 
 Topics: 
 
-[Virtual Machine Installation On Ubuntu]()
-
-
-
-VirtualBox: 
-
+[VirtualBox Installation On Ubuntu Option-1](#vm-install-op-1)
+[VirtualBox Installation On Ubuntu Option-2](#vm-install-op-2)
 
  
-How to Install VirtualBox on Ubuntu?
+ 
+ 
+ 
+ 
+ 
+ 
+# 
+ 
+[Top](#top)	
+<a name="vm-install-op-2"></a>	 
+***How to Install VirtualBox on Ubuntu?***
 
 
-Introduction
+Introduction:
 
 VirtualBox is a powerful free tool by Oracle for running a virtual operating system on your computer. In this tutorial learn how to install VirtualBox on Ubuntu and other Debian-based Linux distributions.
 
 
 
-Prerequisites
+Prerequisites:
 
     A user account with sudo privileges
     A terminal window (Ctrl+Alt+T)
     
     
- Option 1: Install VirtualBox from Ubuntu Repositories
+ ***Option 1: Install VirtualBox from Ubuntu Repositories***
  
  
  The easiest way to install VirtualBox is by using the official Ubuntu repositories.
 
+
 1. Open a terminal, and enter the following to update the repository:
+
 
 	sudo apt-get update
 
+
 2. Download and install VirtualBox by running:
 
-	sudo apt-get install virtualbox
 
+	sudo apt-get install virtualbox
 
 
 3. Next, install the VirtualBox Extension Pack:
@@ -62,9 +71,12 @@ Output displaying you have successfully installed VirtualBox Extension Pack.
 The Extension Pack enhances VirtualBox by adding USB 2.0 and 3.0 support, remote desktop, and encryption.
 
 
-
+	
+	
 #
-Option 2: Installing VirtualBox from Oracle’s Repositories
+[Top](#top)	
+<a name="vm-install-op-2"></a>		
+***Option 2: Installing VirtualBox from Oracle’s Repositories***
 
 
    
