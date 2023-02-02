@@ -84,7 +84,7 @@ Logging & Monitoring	In-built tools for logging and monitoring.	3rd party tools 
 #
 Q2. What is Kubernetes?
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/q1-1.png" width=20%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/q1-1.png" width=25%>
 
 Kubernetes is an open-source container management tool that holds the responsibilities of container deployment, scaling & descaling of containers & load balancing. Being Google’s brainchild, it offers excellent community and works brilliantly with all the cloud providers. So, we can say that Kubernetes is not a containerization platform, but it is a multi-container management solution. 
 
@@ -96,7 +96,7 @@ It’s a known fact that Docker provides the lifecycle management of containers 
 #
 Q4. What is the difference between deploying applications on hosts and containers?
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/Application-768x472.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/Application-768x472.png" width=35%>
 
 Deploying Applications On Host vs Containers:
 
@@ -119,7 +119,7 @@ Q6. What is the need for Container Orchestration?
 
 Consider you have 5-6 microservices for a single application performing various tasks, and all these microservices are put inside containers. Now, to make sure that these containers communicate with each other we need container orchestration.
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/5-1.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/5-1.png" width=35%>
 
 Challenges Without Container Orchestration
 
@@ -131,7 +131,7 @@ Q7. What are the features of Kubernetes?
 
 The features of Kubernetes, are as follows:
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/7.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/7.png" width=35%>
 
 
 #
@@ -145,7 +145,7 @@ Q9. What do you know about clusters in Kubernetes?
 The fundamental behind Kubernetes is that we can enforce the desired state management, by which I mean that we can feed the cluster services of a specific configuration, and it will be up to the cluster services to go out and run that configuration in the infrastructure.
 
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/Containers-1.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/Containers-1.png" width=35%>
 
 Representation Of Kubernetes Cluster 
 
@@ -183,7 +183,7 @@ This is an agent service which runs on each node and enables the slave to commun
 #
 Q15. What do you understand by a node in Kubernetes?
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/15-1.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/15-1.png" width=50%>
 
 
 Node In Kubernetes 
@@ -201,7 +201,7 @@ The Kubernetes Architecture has mainly 2 components – the master node and the 
 
 
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/16-1.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/16-1.png" width=50%>
 
 Architecture Of Kubernetes
 
@@ -219,7 +219,7 @@ Kubernetes master controls the nodes and inside the nodes the containers are pre
 
 
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/18-1.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/18-1.png" width=35%>
 
 Representation Of Kubernetes Master Node
 
@@ -242,7 +242,7 @@ So, the different types of controller manager running on the master node are :
 Types Of Controllers - Kubernetes Interview Questions - Edureka
 
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/25-1.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/25-1.png" width=35%>
 
 Types Of Controllers
 
@@ -257,7 +257,7 @@ Q7. What are the different types of services in Kubernetes? 
 
 The following are the different types of services used:
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/22-1.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/22-1.png" width=35%>
 
 Types Of Services
 
@@ -290,7 +290,7 @@ Now, suppose we want the packet to flow from pod1 to pod 4. Refer to the below d
 Ingress Network
 
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/Pods.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/Pods.png" width=35%>
 
     
  Working Of Ingress Network
@@ -321,7 +321,7 @@ Types of Cloud Controller Manager
 
 
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/20-2.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/20-2.png" width=35%>
    
       
 Types Of Cloud Controller Manager    
@@ -334,7 +334,7 @@ As for users, it is really important to understand the performance of the applic
 
 The various container resource monitoring tools are as follows:
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/26.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/26.png" width=35%>
           
 
 
@@ -371,7 +371,7 @@ The following are the best security measures that you can follow while using Kub
 Security Measures
 
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/26.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/26.png" width=35%>
    
 
 
@@ -387,7 +387,7 @@ Multiple Kubernetes clusters can be managed as a single cluster with the help of
 The federated clusters can achieve this by doing the following two things. Refer to the below diagram.
 
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/30.png" width=30%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/30.png" width=35%>
   
 Federated Clusters
 
