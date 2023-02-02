@@ -1,4 +1,4 @@
-$$\color{green} Virtual \ Machines \ Installations$$
+$$\color{green} Virtual \ Machine \ Installations$$
 
 [Home](all-file-links.md)
 
@@ -20,6 +20,7 @@ Topics:
  
 [Top](#top)	
 <a name="vm-install-op-2"></a>	 
+
 ***How to Install VirtualBox on Ubuntu?***
 
 
