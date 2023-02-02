@@ -568,12 +568,14 @@ CMDS:
 
 
     docker images
-    docker image save logstash > logstash.tar
+    docker image save -o <originalImgName> <tarFilename>.tar
+    docker image save -o php myphp.tar
     ls
     docker image history logstash
     docker image rm logstash
     ls
-    docker image load < logstash.tar
+    docker load -i  <existedTarfileName>.tar
+    docker load -i myphp.tar
 
 #
 :end:
