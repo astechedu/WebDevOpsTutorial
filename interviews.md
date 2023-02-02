@@ -1,1 +1,1 @@
-$$\colorbox{black}This \ is$$
+$$\color{black}This \ is$$
