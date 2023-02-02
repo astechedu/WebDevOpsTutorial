@@ -119,7 +119,7 @@ Q6. What is the need for Container Orchestration?
 
 Consider you have 5-6 microservices for a single application performing various tasks, and all these microservices are put inside containers. Now, to make sure that these containers communicate with each other we need container orchestration.
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/5-1.png" width=35%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/5-1.png" width=40%>
 
 Challenges Without Container Orchestration
 
@@ -131,7 +131,7 @@ Q7. What are the features of Kubernetes?
 
 The features of Kubernetes, are as follows:
 
-<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/7.png" width=35%>
+<img src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/08/7.png" width=40%>
 
 
 #
