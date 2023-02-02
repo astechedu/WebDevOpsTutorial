@@ -569,13 +569,27 @@ CMDS:
 
     docker images
     docker image save -o <originalImgName> <tarFilename>.tar
+    OR
+    docker image save -o <originalImgName> <tarFilename>.tar
+    
     docker image save -o php myphp.tar
+    OR
+    docker image save php > myphp.tar
+     
     ls
+    
     docker image history logstash
     docker image rm logstash
+    
     ls
-    docker load -i  <existedTarfileName>.tar
+    
+    docker load -i  <existedTarfileName.tar>
+    OR
+    docker load < <existedTarfileName.tar>
+    
     docker load -i myphp.tar
+    OR
+    docker load < myphp.tar
 
 #
 :end:
