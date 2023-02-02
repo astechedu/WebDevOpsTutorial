@@ -59,10 +59,10 @@ Top 10 Kubernetes Related Interview Questions:
 10. What is Google Container Engine?
 
 
-    Kubernetes Basic Interview Questions
-    Architecture-Based Interview Questions
-    Scenario-Based Interview Questions
-    Multiple Choice Questions
+* Kubernetes Basic Interview Questions
+* Architecture-Based Interview Questions
+* Scenario-Based Interview Questions
+* Multiple Choice Questions
     
     
     
