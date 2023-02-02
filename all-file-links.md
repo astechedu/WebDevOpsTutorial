@@ -153,7 +153,7 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 # Kubernetes :diamond_shape_with_a_dot_inside:
 
-:link:[Virtual Machines Installations](virtual-machine-installations)
+:link:[Virtual Machines Installations](virtual-machine-installations.md)
 
 :link:[Kubernetes Deployment](kubernetes-deployment.md)
 
