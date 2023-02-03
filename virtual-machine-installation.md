@@ -29,7 +29,7 @@ To install VirtualBox from the Ubuntu repositories using APT:
 
      apt update -y
 
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-61.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-61.png" width=40%>
 
 
 
@@ -40,26 +40,26 @@ The extended pack is a set of additional features for VirtualBox that lets you u
       apt install virtualbox virtualbox-ext-pack -y
 
 
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-62.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-62.png" width=40%>
 
 
 
 3. Select OK, and press Enter after reading the VirtualBox Extension Pack Personal Use and Evaluation License (PUEL) terms.
 
 
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-63-1536x683.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-63-1536x683.png" width=40%>
 
 
 
 4. Now, select Yes, and press Enter to accept the Oracle Binary Code License Agreement for the VirtualBox Extension Pack.
 
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-64.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-64.png" width=40%>
 
 
 
 The installer will download and install all the necessary files, as shown below. Wait for the process to complete. That’s it! You’ve successfully installed VirtualBox on your machine using APT.
 
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-65-1536x242.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-65-1536x242.png" width=40%>
 
 
 
@@ -72,7 +72,7 @@ The installer will download and install all the necessary files, as shown below.
       
 The main VirtualBox Manager window appears, as shown below, where you can manage your VMs.      
       
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-66.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-66.png" width=40%>
 
     
     
@@ -93,7 +93,7 @@ To install VirtualBox from Oracle’s official repository, you first need to add
       
 
       
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-67-1536x157.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-67-1536x157.png" width=40%>
 
       
 2. Next, run the following add-apt-repository command to add the Oracle repository to your system. This repository contains the latest versions of VirtualBox for Ubuntu.
@@ -103,14 +103,14 @@ To install VirtualBox from Oracle’s official repository, you first need to add
       
       
        
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-68-1536x508.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-68-1536x508.png" width=40%>
      
       
 3. After adding the repository, run the below apt update command to update the APT cache and apply the new changes.      
 
       apt update -y      
       
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-69.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-69.png" width=40%>
      
      
 4. Run the apt cache command to check which version of VirtualBox is available in the official repositories.
@@ -119,14 +119,14 @@ To install VirtualBox from Oracle’s official repository, you first need to add
           
  Pick the latest version of VirtualBox from the list to install.
  
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-70.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-70.png" width=40%>
      
  
 5. Now, run the apt install command to install the latest VirtualBox version you picked from step four.
 
       apt install virtualbox-6.1 -y 
  
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-71.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-71.png" width=40%>
       
  
  
@@ -134,7 +134,7 @@ Alternatively, you can copy and paste the apt install virtualbox- command to you
 
 All the versions currently available will be displayed, as shown below. Choose the newest one to install. This behavior works for any supported Ubuntu release and VirtualBox version combination. 
  
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-72.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-72.png" width=40%>
        
  
 6. Next, run the following command to download the VirtualBox Extension Pack. Ensure the version number of the extension pack matches the version of VirtualBox you just installed (6.1). 
@@ -144,7 +144,7 @@ All the versions currently available will be displayed, as shown below. Choose t
  
  
   
-<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-73.png" width=50%>
+<img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-73.png" width=40%>
    
  
  7. Lastly, run the VBoxManage command below to install the VirtualBox Extension Pack.
@@ -153,7 +153,7 @@ All the versions currently available will be displayed, as shown below. Choose t
  
  Type y and press Enter when prompted to agree to the terms, as shown below.
  
- <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-74.png" width=50%>
+ <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-74.png" width=40%>
    
           
           
@@ -170,7 +170,7 @@ To install VirtualBox from a .deb package:
           
 Right click on the hyperlink, as shown below, and choose Copy link address to copy the download link.
 
- <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-75.png" width=50%>
+ <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-75.png" width=40%>
    
 
 2. Now run the wget command to download the .deb package. Replace the link below with the download link you copied in step one.
@@ -180,7 +180,7 @@ The -P option is used to specify the destination directory, which in this case i
       wget https://download.virtualbox.org/virtualbox/6.1.34/virtualbox-6.1_6.1.34-150636.1~Ubuntu~eoan_amd64.deb -P Downloads
       
       
- <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-76-1536x625.png" width=50%>
+ <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-76-1536x625.png" width=40%>
          
       
  3. Now, run the following commands to switch to the Downloads directory and install VirtualBox.
@@ -190,7 +190,7 @@ cd Downloads
       dpkg -i Downloads/virtualbox-6.1_6.1.34-150636.1~Ubuntu~eoan_amd64.deb     
      
       
-  <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-77-1536x212.png" width=50%>
+  <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-77-1536x212.png" width=40%>
          
            
 #      
@@ -204,7 +204,7 @@ To create your first VM:
 
 2. Click the New button on the toolbar to create a new VM.    
       
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-78.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-78.png" width=40%>
               
       
 3. Configure the name and operating system (OS) for your VM with the following:
@@ -218,44 +218,44 @@ To create your first VM:
 
     Click Next to continue.
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-79.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-79.png" width=40%>
        
 
 4. Now, specify how much memory (RAM in MB) you want to allocate for your VM, and click Next.
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-80.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-80.png" width=40%>
        
 
 5. Select the Create a virtual hard disk now option on the next screen, and click Create.
 
 This option lets you create a virtual hard disk (a file) that stores all the data for your VM, including the operating system, applications, and files.
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-81.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-81.png" width=40%>
        
 
 6. Next, choose the VDI (VirtualBox Disk Image) option, which is a good choice for most users, and click Next.
 
 But if you’re running VirtualBox on an enterprise environment, choose one of the other two options instead.
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-82.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-82.png" width=40%>
       
 
 7. On the next screen, choose the storage type for your virtual hard disk. But for this tutorial, select the default option (Dynamically allocated) and click Next.
 
 Why use dynamic allocation? This option is more efficient with storage space because it only allocates the amount of disk space the VM uses.
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-83.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-83.png" width=40%>
       
 
 8. Choose a name for the virtual hard disk, allocate the storage space for your VM, and click Create. You can choose the storage size you prefer, but this tutorial’s choice is 20 GB.
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-84.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-84.png" width=40%>
       
 
 
 Once the VM is created, you’ll see the VM listed in the left pane of the VirtualBox window.
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-85.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-85.png" width=40%>
       
 
 Attaching a Bootable Media
@@ -268,7 +268,7 @@ To attach a bootable media to your VM:
 1. Click on your VM in the left pane, and click Settings from the toolbar to access your VM’s settings.
 
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-86.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-86.png" width=40%>
       
       
 2. On the Settings window, click Storage in the left pane —> Empty drive under Storage Devices —> the disc icon under Attributes.
@@ -276,34 +276,34 @@ To attach a bootable media to your VM:
 A context menu opens where you can choose how to attach a bootable media for the VM (step three).      
         
       
-  <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-87.png" width=50%>
+  <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-87.png" width=40%>
       
       
  3. Select Choose disk file from the dropdown menu to look up your bootable media (ISO).     
       
       
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-88.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-88.png" width=40%>
            
 4. Now, locate and select your ISO image file.
 
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-89.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-89.png" width=40%>
           
 
 5. Click OK to close the Settings window.
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-90.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-90.png" width=40%>
         
 6. Lastly, click Start at the toolbar to start your new VM.
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-91.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-91.png" width=40%>
         
 
 You’ll see a new window open with your VM booting up. At this point, you can install your OS (Windows 10) as you usually would on a local machine.
 
 After installing the OS, you can boot up your VM and use it just like any other computer.
 
-   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-92.png" width=50%>
+   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-92.png" width=40%>
       
 
 
@@ -311,7 +311,7 @@ Increasing VM’s Video Memory (VRAM) to Improve Performance
 
 Did you notice slowness on your VM after setting up its OS? By default, the VRAM allocated to a VM is only 128 MB, which is also the max VRAM you can allocate, as shown below.
 
- <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-93.png" width=50%>
+ <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-93.png" width=40%>
       
 
 
@@ -321,7 +321,7 @@ To increase the video memory for your VM:
 
 1. Click on the Machine menu —> ACPI Shutdown, as shown below, or press Host+H keys to shutdown your VM. The Host key is the right Ctrl key on your keyboard.
 
- <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-94.png" width=50%>
+ <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-94.png" width=40%>
       
 
 2. Next, run the below command to increase (modifyvm) your VM’s VRAM to 256. This command doesn’t provide output but sets your VM’s max VRAM to 256. Be sure to replace W10 with your VM’s name.
@@ -333,7 +333,7 @@ To increase the video memory for your VM:
 4. Finally, open VM’s settings, click on Display in the left pane and see the Video Memory is set to 256 MB, as shown below. This output indicates that your Windows 10 VM’s video adapter now uses 256 MB of video memory.
 
 
- <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-95.png" width=50%>
+ <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-95.png" width=40%>
     
 
 
