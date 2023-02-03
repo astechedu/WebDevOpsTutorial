@@ -74,8 +74,9 @@ The main VirtualBox Manager window appears, as shown below, where you can manage
       
 <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-66.png" width=50%>
 
-      
-      
+    
+    
+#      
 ***Installing VirtualBox from Oracle’s Official Repository***     
       
 You’ve learned to install VirtualBox using the APT package manager, a quick method. But that method has one major downside; you will not get the latest version of VirtualBox.      
@@ -156,7 +157,7 @@ All the versions currently available will be displayed, as shown below. Choose t
    
           
           
-          
+#          
 ***Install VirtualBox using a Deb Package***
 
 If you’re not a fan of adding third-party repositories to your system, you can install VirtualBox using a deb package. You can download the deb package from Oracle and install it manually on your system.
@@ -192,7 +193,7 @@ cd Downloads
   <img src="https://adamtheautomator.com/wp-content/uploads/2022/08/image-77-1536x212.png" width=50%>
          
            
-      
+#      
  ***Creating Your First VM***
 
 You’ve successfully installed VirtualBox on your machine and are ready to create your first VM. This tutorial uses a Windows 10 image to create a VM, but you can choose any you prefer.
