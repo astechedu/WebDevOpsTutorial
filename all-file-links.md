@@ -106,6 +106,10 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 :link:[All Apis Commands click here](all.apis.projects.links.txt)
 
+# Virtual Machines :diamond_shape_with_a_dot_inside:
+
+:link:[Virtual Machine Installations](virtual-machine-installation.md)
+
 # Linux :diamond_shape_with_a_dot_inside:
 
 :link:[Servers ON Linux as nginx apache2 etc](servers.on.linux.md)
