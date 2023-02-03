@@ -108,7 +108,7 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 # Virtual Machines :diamond_shape_with_a_dot_inside:
 
-:link:[Virtual Machine Installations](virtual-machine-installation.md)
+:link:[Virtual Machine Installations On Linux](virtual-machine-installation.md)
 
 # Linux :diamond_shape_with_a_dot_inside:
 
