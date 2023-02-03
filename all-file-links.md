@@ -133,6 +133,10 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 :link:[GitLab CI click here](gitlab-ci.yml)
 
+# Clouds
+
+:link:[Clouds: Providers, Resources & More](clouds-providers-resources.md)
+
 # Docker :diamond_shape_with_a_dot_inside:
 
 :link:[Docker Images & Commands click here](docker.images.md) 
@@ -203,19 +207,9 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 :link:[Windows Info click here](windows.info.txt)
 
- 
-# Rough Code Or Practice Code
-
-:link:[Rough Or Practice Code](any.practice.code.txt)
-
-
-
-
-
 # AsTechEdu Youtube Videos
 
 :link:[AS TECH EDU Youtube Videos Page Links](astechedu.youtube.videos.md)
-
 
 # Interview Questions Answers
 
@@ -227,6 +221,9 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 :link:[Developers Requirement And More](developers.requirements.and.more.md)
 
+# Rough Code Or Practice Code
+
+:link:[Rough Or Practice Code](any.practice.code.txt)
 
 
 
