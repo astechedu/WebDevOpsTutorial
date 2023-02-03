@@ -32,10 +32,49 @@ Topics:
 <a name="aws-providers-resources"></a>
 # AWS Cloud Providers and Resources
 
+How to use this provider?
+
+To install this provider, copy and paste this code into your Terraform configuration. Then, run terraform init.
+
+Terraform 0.13+
+
+Provider:
+
+
+      terraform {
+        required_providers {
+          aws = {
+            source = "hashicorp/aws"
+            version = "4.53.0"
+          }
+        }
+      }
+
+      provider "aws" {
+        # Configuration options
+      }
 
 
 
 
+Resources:
+
+Example Usage
+
+
+    data "aws_instance" "foo" {
+      instance_id = "i-instanceid"
+
+      filter {
+        name   = "image-id"
+        values = ["ami-xxxxxxxx"]
+      }
+
+      filter {
+        name   = "tag:Name"
+        values = ["instance-name-tag"]
+      }
+    }
 
 
 
@@ -47,8 +86,49 @@ Topics:
 
 
 
+How to use this provider
+
+To install this provider, copy and paste this code into your Terraform configuration. Then, run terraform init.
+
+Terraform 0.13+
 
 
+Provider:
+
+
+    terraform {
+      required_providers {
+        google = {
+          source = "hashicorp/google"
+          version = "4.51.0"
+        }
+      }
+    }
+
+    provider "google" {
+      # Configuration options
+    }
+
+
+
+Resources:
+
+
+Example Usage - Dns Managed Zone
+
+
+    resource "google_dns_managed_zone" "example-zone" {
+      name        = "example-zone"
+      dns_name    = "example-${random_id.rnd.hex}.com."
+      description = "Example DNS zone"
+      labels = {
+        foo = "bar"
+      }
+    }
+
+    resource "random_id" "rnd" {
+      byte_length = 4
+    }
 
 
 
@@ -59,8 +139,46 @@ Topics:
 # Azure Cloud Providers and Resources
 
 
+How to use this provider
+
+To install this provider, copy and paste this code into your Terraform configuration. Then, run terraform init.
+
+Terraform 0.13+
 
 
+Provider:
+
+
+
+    terraform {
+      required_providers {
+        azurerm = {
+          source = "hashicorp/azurerm"
+          version = "3.41.0"
+        }
+      }
+    }
+
+    provider "azurerm" {
+      # Configuration options
+    }
+
+
+
+Resources: 
+
+Example Usage
+
+    resource "azurerm_kubernetes_fleet_manager" "example" {
+
+      hub_profile {
+        dns_prefix = "example"
+      }
+
+      location            = azurerm_resource_group.example.location
+      name                = "example"
+      resource_group_name = azurerm_resource_group.example.name
+    }
 
 
 
@@ -84,6 +202,7 @@ Provider:
 
           terraform {
             required_providers {
+            
               github = {
                 source = "integrations/github"
                 version = "5.16.0"
