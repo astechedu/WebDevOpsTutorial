@@ -6,7 +6,7 @@ $$\color{purple}{Clouds \ : Providers \ And \ Resources}$$
 
 Topics: 
 
-     [Terrafomr Registery io: providers and resources list](https://registry.terraform.io/)
+  [Terrafomr Registery io: providers and resources list](https://registry.terraform.io/)
  
   1. [AWS Cloud Providers and Resources](#aws-providers-resources)
    
