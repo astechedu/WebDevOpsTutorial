@@ -17,7 +17,7 @@ Topics:
 # VirtualBox Installation On Ubuntu 20.04
 
 
-Installing VirtualBox on Ubuntu 20.04 via APT
+***Installing VirtualBox on Ubuntu 20.04 via APT***
 
 
 The base repositories for Ubuntu 20.04 include VirtualBox, but it doesn’t come installed by default. The easiest way to install VirtualBox on Ubuntu is to use the APT package manager. This method works whether you’re using Ubuntu Desktop or Server.
