@@ -479,9 +479,50 @@ To destroy all Terraform environments, ensure that you're in the Terraform modul
      Enter users: ["ajay","amit","sonu"]
 
 
+#
+[Top](#top)
+<a name="aws-ec2-create-instance"></a>
+# AWS Cloud Create EC2 Instance
+
+In order to connect to AWS. Terraform has to successfully authenticate. It is done with the help of Programmatic API Keys (Access Key and Secret.)
+Some Sample usage of these API Keys in a terraform configuration.
+
+provider.tf
+
+
+    provider "aws" {
+      region     = "us-west-2"
+      access_key = "my-access-key"
+      secret_key = "my-secret-key"
+    }
 
 
 
+The following file presumes that you are using the AWS Config profile. So it refers to the profile: default for the authentication.
+
+provider.tf
+
+    provider "aws" {
+      profile    = "default"
+      region     = "us-east-1"
+    }
+    
+
+
+instance.tf
+
+    resource "aws_instance" "example" {
+      ami           = "ami-2757f631"
+      instance_type = "t2.micro"
+      tags {
+        name = "First-TF-INSTANCE"
+      }
+    }
+
+
+
+
+:end:
 
 
 
