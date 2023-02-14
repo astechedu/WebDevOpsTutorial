@@ -16,7 +16,7 @@ Topics:
     
   4. [Github Cloud Providers and Resources](#github-providers-resources)
     
-              
+  5. [AWS Cloud Create EC2 Instance](#aws-ec2-create-instance)        
         
     
     
@@ -237,7 +237,47 @@ Example Usage:
 
 
 
+:end:
 
+
+[Top](#top)
+<a name="aws-ec2-create-instance"></a>
+# AWS Cloud Create EC2 Instance
+
+In order to connect to AWS. Terraform has to successfully authenticate. It is done with the help of Programmatic API Keys (Access Key and Secret.)
+Some Sample usage of these API Keys in a terraform configuration.
+
+
+    provider "aws" {
+      region     = "us-west-2"
+      access_key = "my-access-key"
+      secret_key = "my-secret-key"
+    }
+
+
+
+The following file presumes that you are using the AWS Config profile. So it refers to the profile: default for the authentication.
+
+
+    provider "aws" {
+      profile    = "default"
+      region     = "us-east-1"
+    }
+    
+
+    resource "aws_instance" "example" {
+      ami           = "ami-2757f631"
+      instance_type = "t2.micro"
+    }
+
+
+
+
+
+
+
+
+        
 
 
 
