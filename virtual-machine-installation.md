@@ -8,6 +8,7 @@ Topics:
 
 [VirtualBox Installation On Ubuntu 20.04](#virtualbox-install-on-ubuntu20.04)
 
+[Create Light Weight Linux Alpine Machine on VirtualBox](#create-vm-alpine)
 
 
 
@@ -340,6 +341,86 @@ To increase the video memory for your VM:
 :end:
 
 
+
+#
+[Top](#top)
+<a name="create-vm-alpine"></a>
+# Create Linux Alpine Virtual Machine Light Weight
+
+Steps: 
+
+          Download linux alpine iso
+
+          Docker Swarm (Using alpine image): 
+
+
+          Video: https://youtu.be/E7zJTzf0pWA?t=586
+
+
+          Create Node Or Worker:
+
+
+
+          On VirtualBox:
+
+          install alpine linux 64 bit image 
+
+
+          localhost login           : root
+
+          command                   : setup-alpine     (type)
+
+          keyboard                  : us
+                                    : us
+                                    : node1        
+                                    : enter (default)
+                                    : enter
+                                    : enter
+
+           localhost password       : ajay123 
+           time zone                : ?
+                                    : Asia          
+            sub time zone           : ?
+            are you in              : kolkata
+                                    : all defaults enter             
+           which disk you like      : sda
+
+           how would you like to use: sys
+           erease the disk          : yes         
+                                    : poweroff
+
+          Setting: Select Hard Disk Only (tick)                          
+
+          Start machine: 
+
+             node1:  vi  /etc/ssh/sshd_config    
+
+             #change this
+             permitRootLogin yes     (write this)
+
+             :wq
+
+           node1# service sshd restart 
+           node1# ip a 
+            display: inet 192.168.43.144/24,      brd 192.168.43.255
+
+           Now ssh with git or putty (any):
+
+            ssh root@192.168.43.255
+                         yes  (type)
+
+                 Now Install docker:        
+                  docker info
+
+                  vi /etc/apk/repositories        
+                  all repos commented out in this file               
+
+              node1# apk add docker        
+              service docker start
+              docker images
+    
+    
+:end:
 
 
 
