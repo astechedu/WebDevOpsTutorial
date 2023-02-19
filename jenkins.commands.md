@@ -1,6 +1,6 @@
 # Jenkin Pipeline Commands
 
-$${\large{{\color{green}Jenkins}}$$
+$${\large{\color{green}Jenkins}$$
 [Home](#all-files-links.md)
 
 <a name="top"></a>
