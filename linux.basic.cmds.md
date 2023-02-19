@@ -24,10 +24,8 @@ Steps:
 
 
 #
-#
-#
-#
-Ubuntu Basic Commands: 
+
+#Ubuntu Basic Commands: 
 How to create users and groups in Linux from the command line 
 
 If you administer a Linux server, you very likely will have to create users and groups. Without knowing how to create users, you will find yourself limited in a few crucial ways. First off, new users cannot be added to a system. Second, you might find yourself having to create a user in order to install a piece of software. As for groups: Beyond having to create groups for successful installation of certain software, this is a great way to control user permissions for directories.
@@ -121,98 +119,116 @@ If you were concerned that managing users on Linux would be a challenge, you sho
 
 
 Linux: 
- //Group Management
+
+ ####Group Management
  
- groupadd group1   //Creating group
- groupadd group1   //Creating group
- groupadd group1   //Creating group
+	 groupadd group1   //Creating group
+	 groupadd group1   //Creating group
+	 groupadd group1   //Creating group
+
  
+	 cat /etc/group    //Groups file
+
+	 groups            //Group members
+
+	 cat /etc/users    // check users
+	 cat /etc/passwd   //Check Which users 
+
+	 useradd user1     //Creating uers
+	 useradd user2
+	 useradd user3
+	 useradd user4
  
- cat /etc/group    //Groups file
+	 cat /etc/passwd   //Check users
+
+	 usermod -G group1 user1      //user1 added to group1 
+
+	 cat /etc/group
+
+#
+ ####Overwrite all users to gropu1
  
- groups            //Group members
- 
- cat /etc/users    // check users
- cat /etc/passwd   //Check Which users 
- 
- useradd user1     //Creating uers
- useradd user2
- useradd user3
- useradd user4
- 
- cat /etc/passwd   //Check users
- 
- usermod -G group1 user1      //user1 added to group1 
- 
- cat /etc/group
- 
- //Overwrite all users to gropu1
- usermod -G group1 user2      //user2 added to group1 
- usermod -G group1 user3      //user3 added to group1 
- usermod -G group1 user4      //user4 added to group1 
+	 usermod -G group1 user2      //user2 added to group1 
+	 usermod -G group1 user3      //user3 added to group1 
+	 usermod -G group1 user4      //user4 added to group1 
+
+#
+####Appened all users to group1
+
+	 usermod -aG group1 user1      //user1 added to group1 
+	 usermod -aG group1 user2      //user2 added to group1 
+	 usermod -aG group1 user3      //user3 added to group1 
+	 usermod -aG group1 user4      //user4 added to group1 
 
 
-//Appened all users to group1
- usermod -aG group1 user1      //user1 added to group1 
- usermod -aG group1 user2      //user2 added to group1 
- usermod -aG group1 user3      //user3 added to group1 
- usermod -aG group1 user4      //user4 added to group1 
+####Changing group name
 
-//Changing group name
- groupmod -n newgroup group5  
- 
- cat /etc/group
- 
- groupdel newgroup
- 
- cat /etc/group
- 
- gpasswd -A harsh gropu1         //Make group admin
- cat /etc/gshadow                //check admin info
- 
- id user5                        //Checking 
- 
- gpasswd -a user5 group1
- 
- gpasswd -A "" group1            //Removing group admin
- 
- cat /etc/gshadow
- 
+	 groupmod -n newgroup group5  
+
+	 cat /etc/group
+
+	 groupdel newgroup
+
+	 cat /etc/group
+
+	 gpasswd -A harsh gropu1         //Make group admin
+	 cat /etc/gshadow                //check admin info
+
+	 id user5                        //Checking 
+
+	 gpasswd -a user5 group1
+
+	 gpasswd -A "" group1            //Removing group admin
+
+	 cat /etc/gshadow
+
  
 //The command to change the user ID for a user.  
+
      usermod  -u new_id username
      
 //Command to Modify the group ID of a user. 
+
      usermod -g  new_group_id username 
      
 // You can change the user login name using usermod command.
+
      sudo usermod -l new_login_name old_login_name
      
 //The command to change the home directory     
+
      usermod -d new_home_directory_path username
 
 //You can also delete a user name
+
      userdel -r username
      
 //Command to Set the Password for the Group
+
       gpasswd group_name
 
 //Command to Display the Group Password File
+
       cat /etc/gshadow
       
 //Command to Add User to Group Without Removing From Existing Groups
+
      usermod -aG *group_name  *username
     
 //Command to Add Multiple Users to a Group at once:
+
      gpasswd -M *username1, *username2, *username3 ...., *usernamen *group_name
      
 //Command to Delete a User From a Group
+
      gpasswd -d *username1  *group_name
      
 //Command to Delete a Group
+
      groupdel *group_name
      
 //Linux command to change UID and GID 
+
      usermod -u 2005 foo
      groupmod -g 3000 foo
     
@@ -224,6 +240,7 @@ Linux:
      id -g foo
      
  //Search for 'foo' in the passwd file 
+ 
      grep foo /etc/passwd      //serch for 'foo' on the group file 
      grep foo /etc/group       //use the find command to locate files owned by 'foo'
      
@@ -231,6 +248,7 @@ Linux:
      find / -group sales -ls 
     
 //For more info see the following manual pages using the man command or help command
+
      man id
      man usermod
      man find 
@@ -284,6 +302,7 @@ Each access level (read, write, execute) has an octal value:
      Execute 	      1
 
 Each identity (user, group, others) has a position:
+
      Identity 	Position
 
      User 	First or left-most
@@ -297,6 +316,7 @@ Each identity (user, group, others) has a position:
        chmod 740 file2
 
 //The three permissions values are associated with identities:
+
     ugo
     740
     
@@ -310,6 +330,7 @@ In this example, the user has rwx, the group has r only, and all others have no 
 Example.
 
 How do I grant the user (owner) read and write, the group read-only, and all others read-only to file2?
+
 
 # chmod 644 file2
 
