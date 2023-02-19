@@ -1,6 +1,6 @@
 # Jenkin Pipeline Commands
 
-$${\large{\color{green}Jenkins}}$$
+$${\large{\textcolor{green}Jenkins}}$$
 
 ## $\textcolor{yellow}{This\ is\ a\ Big\ Title}$
 
