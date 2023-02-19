@@ -569,27 +569,26 @@ Output:
 :end:
 	
 #
+	
 [Top](#top)
 <a name="linux-basic-cmds"></a>
+	
 #### Linux Basic Commands
 
----> Basic Linux Commands <-----
-
-
- _________________________
-|                         | 
-| Linux Basic Commands:   |
-|_________________________|
+	 _________________________
+	|                         | 
+	| Linux Basic Commands:   |
+	|_________________________|
 
 
 What Is a Linux Command?
 
 
-ls, sudo, cd, mv, find, grep, pwd, cat, touch, mkdir, rmdir, 
-df, du, locate, head, tail, diff, tar, chmod, chown, jobs, kill, 
-ping, wget, uname, top , history, man,echo, zip, unzip, hostname, 
-useradd, userdell, apt-get, nano, vi, vim, jed, alias, unalias, su,
-htop, ps
+	ls, sudo, cd, mv, find, grep, pwd, cat, touch, mkdir, rmdir, 
+	df, du, locate, head, tail, diff, tar, chmod, chown, jobs, kill, 
+	ping, wget, uname, top , history, man,echo, zip, unzip, hostname, 
+	useradd, userdell, apt-get, nano, vi, vim, jed, alias, unalias, su,
+	htop, ps
 
 
 A Linux command is a program or utility that runs on the CLI – a console that interacts with the system via texts and processes. It’s similar to the Command Prompt application in Windows.
@@ -616,8 +615,8 @@ Although the steps may differ depending on your Linux distribution, the Terminal
 
 Here is the list of basic Linux commands:
 
-1. sudo command
-   ------------
+####1. sudo command
+   
 
 Short for superuser do, sudo is one of the most popular basic Linux commands that lets you perform tasks that require administrative or root permissions.
 
@@ -637,8 +636,8 @@ You can also add an option, such as:
     -h or –host=host runs commands on the host.
 
 
-2. pwd command
-   -----------
+####2. pwd command
+   
 
 Use the pwd command to find the path of your current working directory. Simply entering pwd will return the full current path – a path of all the directories that starts with a forward slash (/). For example, /home/username.
 
@@ -655,8 +654,8 @@ It has two acceptable options:
     -P or –physical prints the actual path of the current directory.
 
 
-3. cd command
-   ----------
+####3. cd command
+   
 
 To navigate through the Linux files and directories, use the cd command. Depending on your current working directory, it requires either the full path or the directory name.
 
@@ -678,8 +677,8 @@ Here are some shortcuts to help you navigate:
     cd- moves to your previous directory.
 
 
-4. ls command
-   ----------
+####4. ls command
+   
 
 The ls command lists files and directories within a system. Running it without a flag or parameter will show the current working directory’s content.
 
@@ -695,8 +694,8 @@ Here are some options you can use with the ls command:
     ls -lh shows the file sizes in easily readable formats, such as MB, GB, and TB.
 
 
-5. cat command
-   -----------
+####5. cat command
+   
 
 Concatenate, or cat, is one of the most frequently used Linux commands. It lists, combines, and writes file content to the standard output. To run the cat command, type cat followed by the file name and its extension. For instance:
 
@@ -709,8 +708,8 @@ Here are other ways to use the cat command:
     tac filename.txt displays content in reverse order.
 
 
-6. cp command
-   ----------
+####6. cp command
+   
 
 Use the cp command to copy files or directories and their content. Take a look at the following use cases.
 
@@ -730,8 +729,8 @@ To copy an entire directory, pass the -R flag before typing the source directory
 
 	cp -R /home/username/Documents /home/username/Documents_backup
 
-7. mv command
-   ----------
+####7. mv command
+   
 
 The primary use of the mv command is to move and rename files and directories. Additionally, it doesn’t produce an output upon execution.
 
@@ -743,8 +742,8 @@ You can also use the mv command to rename a file:
 
 	mv old_filename.txt new_filename.txt
 
-8. mkdir command
-   -------------
+####8. mkdir command
+   
 
 Use the mkdir command to create one or multiple directories at once and set permissions for each of them. The user executing this command must have the privilege to make a new folder in the parent directory, or they may receive a permission denied error.
 
@@ -766,8 +765,8 @@ The mkdir command accepts many options, such as:
     -m sets the file permissions. For instance, to create a directory with full read, write, and execute permissions for all users, enter mkdir -m777 directory_name.
     -v prints a message for each created directory.
 
-9. rmdir command
-   -------------
+####9. rmdir command
+   
 
 To permanently delete an empty directory, use the rmdir command. Remember that the user running this command should have sudo privileges in the parent directory.
 
@@ -775,8 +774,8 @@ For example, you want to remove an empty subdirectory named personal1 and its ma
 
 	rmdir -p mydir/personal1
 
-10. rm command
-    ----------
+####10. rm command
+    
 
 The rm command is used to delete files within a directory. Make sure that the user performing this command has write permissions.
 
@@ -796,8 +795,9 @@ Here are some acceptable options you can add:
     -f allows the system to remove without a confirmation.
     -r deletes files and directories recursively.
 
-11. touch command
-    -------------
+	
+####11. touch command
+    
 
 The touch command allows you to create an empty file or generate and modify a timestamp in the Linux command line.
 
@@ -805,8 +805,8 @@ For example, enter the following command to create an HTML file named Web in the
 
 	touch /home/username/Documents/Web.html
 
-12. locate command
-    --------------
+####12. locate command
+    
 
 The locate command can find a file in the database system.
 
@@ -818,8 +818,8 @@ To look for content that contains two or more words, use an asterisk (*). For ex
 
 The command will search for files that contain the words school and note, whether they use uppercase or lowercase letters.
 
-13. find command
-    ------------
+####13. find command
+    
 
 Use the find command to search for files within a specific directory and perform subsequent operations. Here’s the general syntax:
 
@@ -834,8 +834,8 @@ Here are other variations when using find:
     find -name filename.txt to find files in the current directory.
     find ./ -type d -name directoryname to look for directories.
 
-14. grep command
-    ------------
+####14. grep command
+    
 
 Another basic Linux command on the list is grep or global regular expression print. It lets you find a word by searching through all the texts in a specific file.
 
@@ -847,8 +847,8 @@ For example, you want to search for the word blue in the notepad.txt file:
 
 The command’s output will display lines that contain blue.
 
-15. df command
-    ----------
+####15. df command
+    
 
 Use the df command to report the system’s disk space usage, shown in percentage and kilobyte (KB). Here’s the general syntax:
 
@@ -864,8 +864,8 @@ These are some acceptable options to use:
     df -k displays file system usage in KBs.
     df -T shows the file system type in a new column.
 
-16. du command
-    ----------
+####16. du command
+    
 
 If you want to check how much space a file or a directory takes up, use the du command. You can run this command to identify which part of the system uses the storage excessively.
 
@@ -880,8 +880,8 @@ Adding a flag to the du command will modify the operation, such as:
     k displays information in KB.
     -h informs the last modification date of the displayed folders and files.
 
-17. head command
-    ------------
+####17. head command
+    
 
 The head command allows you to view the first ten lines of a text. Adding an option lets you change the number of lines shown. The head command is also used to output piped data to the CLI.
 
@@ -899,8 +899,8 @@ Below are some options you can add:
     -c or –bytes prints the first customized number of bytes of each file.
     -q or –quiet will not print headers specifying the file name.
 
-18. tail command
-    ------------
+####18. tail command
+    
 
 The tail command displays the last ten lines of a file. It allows users to check whether a file has new data or to read error messages.
 
@@ -913,8 +913,8 @@ For example, you want to show the last ten lines of the colors.txt file:
 	tail -n colors.txt
 
 
-19. diff command
-    ------------
+####19. diff command
+    
 
 Short for difference, the diff command compares two contents of a file line by line. After analyzing them, it will display the parts that do not match.
 
@@ -934,8 +934,8 @@ Here are some acceptable options to add:
     -u displays the output without redundant information.
     -i makes the diff command case insensitive.
 
-20. tar command
-    -----------
+####20. tar command
+    
 
 The tar command archives multiple files into a TAR file – a common Linux format similar to ZIP, with optional compression.
 
@@ -955,8 +955,8 @@ The tar command accepts many options, such as:
 
 Check out the more practical examples to know more about the other functions.
 
-21. chmod command
-    -------------
+####21. chmod command
+    
 
 chmod is a common command that modifies a file or directory’s read, write, and execute permissions. In Linux, each file is associated with three user classes – owner, group member, and others.
 
@@ -973,9 +973,9 @@ This command supports many options, including:
     -c or –changes displays information when a change is made.
     -f or –silent suppresses the error messages.
     -v or –verbose displays a diagnostic for each processed file.
-
+####
 22. chown command
-    -------------
+    
 
 The chown command lets you change the ownership of a file, directory, or symbolic link to a specified username.
 
@@ -987,8 +987,8 @@ For example, you want to make linuxuser2 the owner of filename.txt:
 
 chown linuxuser2 filename.txt
 
-23. jobs command
-    ------------
+####23. jobs command
+    
 
 A job is a process that the shell starts. The jobs command will display all the running processes along with their statuses. Remember that this command is only available in csh, bash, tcsh, and ksh shells.
 
@@ -1004,8 +1004,8 @@ Here are some options you can use:
     -n lists jobs whose statuses have changed since the last notification.
     -p lists process IDs only.
 
-24. kill command
-    ------------
+####24. kill command
+    
 
 Use the kill command to terminate an unresponsive program manually. It will signal misbehaving applications and instruct them to close their processes.
 
@@ -1026,8 +1026,8 @@ For example, the program’s PID is 63773, and you want to force it to stop:
 
 	kill SIGKILL 63773
 
-25. ping command
-    ------------
+####25. ping command
+    
 
 The ping command is one of the most used basic Linux commands for checking whether a network or a server is reachable. In addition, it is used to troubleshoot various connectivity issues.
 
@@ -1039,8 +1039,8 @@ For example, you want to know whether you can connect to Google and measure its 
 
 	ping google.com
 
-26. wget command
-    ------------
+####26. wget command
+    
 
 The Linux command line lets you download files from the internet using the wget command. It works in the background without hindering other running processes.
 
@@ -1054,8 +1054,8 @@ For example, enter the following command to download the latest version of WordP
 
 	wget https://wordpress.org/latest.zip
 
-27. uname command
-    -------------
+####27. uname command
+    
 
 The uname or unix name command will print detailed information about your Linux system and hardware. This includes the machine name, operating system, and kernel. To run this command, simply enter uname into your CLI.
 
@@ -1069,8 +1069,8 @@ These are the acceptable options to use:
     -s prints the kernel name.
     -n prints the system’s node hostname.
 
-28. top command
-    -----------
+####28. top command
+    
 
 The top command in Linux Terminal will display all the running processes and a dynamic real-time view of the current system. It sums up the resource utilization, from CPU to memory usage.
 
@@ -1078,7 +1078,7 @@ The top command can also help you identify and terminate a process that may use 
 
 To run the command, simply enter top into the CLI.
 
-29. history command
+####29. history command
 
 With history, the system will list up to 500 previously executed commands, allowing you to reuse them without re-entering. Keep in mind that only users with sudo privileges can execute this command. How this utility runs also depends on which Linux shell you use.
 
@@ -1092,7 +1092,7 @@ This command supports many options, such as:
     -d offset deletes the history entry at the OFFSET position.
     -a appends history lines.
 
-30. man command
+####30. man command
 
 The man command provides a user manual of any commands or utilities you can run in Terminal, including the name, description, and options.
 
@@ -1124,7 +1124,7 @@ For instance, you want to see section 2 of the ls command manual:
 
 	man 2 ls
 
-31. echo command
+####31. echo command
 
 The echo command is a built-in utility that displays a line of text or string using the standard output. Here’s the basic syntax:
 
@@ -1145,7 +1145,7 @@ This command supports many options, such as:
     \c produces no further output.
     -E displays the default option and disables the interpretation of backslash escapes.
 
-32. zip, unzip commands
+####32. zip, unzip commands
 
 Use the zip command to compress your files into a ZIP file, a universal format commonly used on Linux. It can automatically choose the best compression ratio.
 
@@ -1167,7 +1167,7 @@ So, to unzip a file called archive.zip in the current directory, enter:
 
 	unzip archive.zip
 
-33. hostname command
+####33. hostname command
 
 Run the hostname command to know the system’s hostname. You can execute it with or without an option. Here’s the general syntax:
 
@@ -1183,7 +1183,7 @@ For example, enter the following command to know your computer’s IP address:
 
 	hostname -i
 
-34. useradd, userdel commands
+####34. useradd, userdel commands
 
 Linux is a multi-user system, meaning more than one person can use it simultaneously. useradd is used to create a new account, while the passwd command allows you to add a password. Only those with root privileges or sudo can run the useradd command.
 
@@ -1211,7 +1211,7 @@ To delete a user account, use the userdel command:
 
 	userdel username
 
-35. apt-get command
+####35. apt-get command
 
 apt-get is a command line tool for handling Advanced Package Tool (APT) libraries in Linux. It lets you retrieve information and bundles from authenticated sources to manage, update, remove, and install software and its dependencies.
 
@@ -1227,7 +1227,7 @@ These are the most common commands you can add to apt-get:
     upgrade installs the latest version of all installed packages.
     check updates the package cache and checks broken dependencies.
 
-36. nano, vi, jed commands
+####36. nano, vi, jed commands
 
 Linux allows users to edit and manage files via a text editor, such as nano, vi, or jed. nano and vi come with the operating system, while jed has to be installed.
 
@@ -1245,7 +1245,7 @@ jed has a drop-down menu interface that allows users to perform actions without 
 
 To open the program, simply enter jed to the command line.
 
-37. alias, unalias commands
+####37. alias, unalias commands
 
 alias allows you to create a shortcut with the same functionality as a command, file name, or text. When executed, it instructs the shell to replace one string with another.
 
@@ -1263,7 +1263,7 @@ Here’s what the general syntax looks like:
 
 	unalias [alias_name]
 
-38. su command
+####38. su command
 
 The switch user or su command allows you to run a program as a different user. It changes the administrative account in the current log-in session. This command is especially beneficial for accessing the system through SSH or using the GUI display manager when the root user is unavailable.
 
@@ -1279,7 +1279,7 @@ Here are some acceptable options to use:
     -s or –shell lets you specify a different shell environment to run.
     -l or –login runs a login script to switch to a different username. Executing it requires you to enter the user’s password.
 
-39. htop command
+####39. htop command
 
 The htop command is an interactive program that monitors system resources and server processes in real time. It is available on most Linux distributions, and you can install it using the default package manager.
 
@@ -1295,7 +1295,7 @@ You can also add options, such as:
     -C or –no-color enables the monochrome mode.
     -h or –help displays the help message and exit.
 
-40. ps command
+####40. ps command
 
 The process status or ps command produces a snapshot of all running processes in your system. The static results are taken from the virtual files in the /proc file system.
 
@@ -1311,229 +1311,27 @@ Here are some acceptable options you can use:
     -T displays all processes associated with the current shell session.
     -u username lists processes associated with a specific user.
     -A or -e shows all the running processes.
-----------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
---------------------------
-
-
-
-
+	
+	
+:end: 
+	
+#
 Ubuntu22.04: 
 
-
-
----------------------------
-
+#
 Kali:
 
 
-
----------------------------
-
+#
 CentOS 8 Stream:
 
-
-------------------------------------------
+#
 Red Hat: 
-
------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-------------------------
-
-CentOS 8 Stream (Nothing is installing)
-
-
-Working This settings: 
-
-
-VirtualBox 7 In Windows 10 64-bit (CentOS 8 Stream)
-
-This is used for CentOS Linux, but in the case of centos appstream use the following trick
-
-Go to /etc/yum.repos.d.
-
-Add in CentOS-Stream-AppStream.repo
-baseurl=http://mirror.centos.org/centos/8-stream/AppStream/x86_64/os/
-
-Add in CentOS-Stream-BaseOS.repo
-baseurl=http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/
-
-Add in CentOS-Stream-Extras.repo
-baseurl=http://mirror.centos.org/centos/8-stream/extras/x86_64/os/
-
-CentOS-Stream-Extras-common.repo
-baseurl=https://vault.centos.org/centos/8-stream/extras/Source/extras-common/
-
------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-Alpine Linux Image: 
-
-
-https://www.mowson.org/karl/2016/2016-05-20_alpinelinux_vm_under_virtualbox/
-
-alpine-3.3.3-x86_64.iso
-
-
-Basic Alpine Linux Install
-
-    Start the VM.
-    Login as root (no password required).
-
-Run "setup-alpine", and configure as follows:
-
-    keyboard layout = "us"
-    keyboard variant = "us"
-    system hostname = whatever suits you
-    initialise interface: "eth0"
-    "dhcp"
-    no manual setup
-    enter root password, as desired.
-    timezone: "Pacific/Auckland" (or whatever suits you)
-    HTTP/FTP proxy URL: [none]
-    Detect and add fastest mirror (f)
-    SSH server: "openssh"
-    NTP client: "chrony"
-    install to disk: "sda"
-    install type: "sys"
-    erase & continue? Y
-
-
-Update Packeged: 
-
-Use vi to edit the repositories - uncomment all the URL lines to enable them all.
-
-vi /etc/apk/repositories
-
-
-#/media/cdrom/apks
-http://dl-6.alpinelinux.org/alpine/v3.3/main
-http://dl-6.alpinelinux.org/alpine/v3.3/community
-http://dl-6.alpinelinux.org/alpine/edge/main
-http://dl-6.alpinelinux.org/alpine/edge/community
-http://dl-6.alpinelinux.org/alpine/edge/testing
-
-
-Update the package list and upgrade what has already been installed:
-
-apk update
-apk upgrade
-
-
-
-Setup User and Sudo
-
-Create the sudo group, create a non-root user (use whatever username you like, instead of "otheruser"), and add the new user to the sudo group:
-
-addgroup sudo
-adduser otheruser
-adduser otheruser sudo
-
-Install sudo
-
-apk add sudo
-
-
-
-Run "visudo" and remove the "#" comment character from the 2nd line in this group so it looks like:
-
-## Uncomment to allow members of group sudo to execute any command
-%sudo ALL=(ALL) ALL
-
-
-Run "visudo" and remove the "#" comment character from the 2nd line in this group so it looks like:
-
-## Uncomment to allow members of group sudo to execute any command
-%sudo ALL=(ALL) ALL
-
-
-
-
------------------------------------------------------------------------------------------------
-
+#
 
 :end:
 #
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 <a name="top"></a>
