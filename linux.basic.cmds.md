@@ -598,7 +598,7 @@ Linux commands are executed on Terminal by pressing Enter at the end of the line
 
 Here’s what a Linux command’s general syntax looks like:
 
-CommandName [option(s)] [parameter(s)]
+	CommandName [option(s)] [parameter(s)]
 
 A command may contain an option or a parameter. In some cases, it can still run without them. These are the three most common parts of a command:
 
@@ -607,6 +607,7 @@ A command may contain an option or a parameter. In some cases, it can still run 
     Parameter or argument specifies any necessary information for the command.
 
 Keep in mind that all Linux commands are case-sensitive.
+
 The 40 Most Commonly Used Linux Commands
 
 Before proceeding to the list of basic commands, you need to open Terminal first. If you are still unsure, check out our CLI tutorial.
@@ -630,9 +631,11 @@ sudo (command)
 
 You can also add an option, such as:
 
+
     -k or –reset-timestamp invalidates the timestamp file.
     -g or –group=group runs commands as a specified group name or ID.
     -h or –host=host runs commands on the host.
+
 
 2. pwd command
    -----------
@@ -641,12 +644,16 @@ Use the pwd command to find the path of your current working directory. Simply e
 
 The pwd command uses the following syntax:
 
-pwd [option]
+
+	pwd [option]
+
 
 It has two acceptable options:
 
+
     -L or –logical prints environment variable content, including symbolic links.
     -P or –physical prints the actual path of the current directory.
+
 
 3. cd command
    ----------
@@ -661,13 +668,15 @@ cd Photos.
 
 If you want to switch to a completely new directory, for example, /home/username/Movies, you have to enter cd followed by the directory’s absolute path:
 
-cd /home/username/Movies
+	cd /home/username/Movies
 
 Here are some shortcuts to help you navigate:
+
 
     cd ~[username] goes to another user’s home directory.
     cd .. moves one directory up.
     cd- moves to your previous directory.
+
 
 4. ls command
    ----------
@@ -676,26 +685,29 @@ The ls command lists files and directories within a system. Running it without a
 
 To see other directories’ content, type ls followed by the desired path. For example, to view files in the Documents folder, enter:
 
-ls /home/username/Documents
+	ls /home/username/Documents
 
 Here are some options you can use with the ls command:
+
 
     ls -R lists all the files in the subdirectories.
     ls -a shows hidden files in addition to the visible ones.
     ls -lh shows the file sizes in easily readable formats, such as MB, GB, and TB.
+
 
 5. cat command
    -----------
 
 Concatenate, or cat, is one of the most frequently used Linux commands. It lists, combines, and writes file content to the standard output. To run the cat command, type cat followed by the file name and its extension. For instance:
 
-cat filename.txt.
+	cat filename.txt.
 
 Here are other ways to use the cat command:
 
     cat > filename.txt creates a new file.
     cat filename1.txt filename2.txt > filename3.txt merges filename1.txt and filename2.txt and stores the output in filename3.txt.
     tac filename.txt displays content in reverse order.
+
 
 6. cp command
    ----------
@@ -704,19 +716,19 @@ Use the cp command to copy files or directories and their content. Take a look a
 
 To copy one file from the current directory to another, enter cp followed by the file name and the destination directory. For example:
 
-cp filename.txt /home/username/Documents
+	cp filename.txt /home/username/Documents
 
 To copy files to a directory, enter the file names followed by the destination directory:
 
-cp filename1.txt filename2.txt filename3.txt /home/username/Documents
+	cp filename1.txt filename2.txt filename3.txt /home/username/Documents
 
 To copy the content of a file to a new file in the same directory, enter cp followed by the source file and the destination file:
 
-cp filename1.txt filename2.txt
+	cp filename1.txt filename2.txt
 
 To copy an entire directory, pass the -R flag before typing the source directory, followed by the destination directory:
 
-cp -R /home/username/Documents /home/username/Documents_backup
+	cp -R /home/username/Documents /home/username/Documents_backup
 
 7. mv command
    ----------
@@ -725,11 +737,11 @@ The primary use of the mv command is to move and rename files and directories. A
 
 Simply type mv followed by the filename and the destination directory. For example, you want to move filename.txt to the /home/username/Documents directory:
 
-mv filename.txt /home/username/Documents.
+	mv filename.txt /home/username/Documents.
 
 You can also use the mv command to rename a file:
 
-mv old_filename.txt new_filename.txt
+	mv old_filename.txt new_filename.txt
 
 8. mkdir command
    -------------
@@ -738,15 +750,15 @@ Use the mkdir command to create one or multiple directories at once and set perm
 
 Here’s the basic syntax:
 
-mkdir [option] directory_name
+	mkdir [option] directory_name
 
 For example, you want to create a directory called Music:
 
-mkdir Music
+	mkdir Music
 
 To make a new directory called Songs inside Music, use this command:
 
-mkdir Music/Songs
+	mkdir Music/Songs
 
 The mkdir command accepts many options, such as:
 
@@ -761,7 +773,7 @@ To permanently delete an empty directory, use the rmdir command. Remember that t
 
 For example, you want to remove an empty subdirectory named personal1 and its main folder mydir:
 
-rmdir -p mydir/personal1
+	rmdir -p mydir/personal1
 
 10. rm command
     ----------
@@ -776,7 +788,7 @@ rm filename
 
 To remove multiple files, enter the following command:
 
-rm filename1 filename2 filename3
+	rm filename1 filename2 filename3
 
 Here are some acceptable options you can add:
 
@@ -791,7 +803,7 @@ The touch command allows you to create an empty file or generate and modify a ti
 
 For example, enter the following command to create an HTML file named Web in the Documents directory:
 
-touch /home/username/Documents/Web.html
+	touch /home/username/Documents/Web.html
 
 12. locate command
     --------------
@@ -802,7 +814,7 @@ Moreover, adding the -i argument will turn off case sensitivity, so you can sear
 
 To look for content that contains two or more words, use an asterisk (*). For example:
 
-locate -i school*not
+	locate -i school*not
 
 The command will search for files that contain the words school and note, whether they use uppercase or lowercase letters.
 
@@ -811,11 +823,11 @@ The command will search for files that contain the words school and note, whethe
 
 Use the find command to search for files within a specific directory and perform subsequent operations. Here’s the general syntax:
 
-find [option] [path] [expression]
+	find [option] [path] [expression]
 
 For example, you want to look for a file called notes.txt within the home directory and its subfolders:
 
-find /home -name notes.txt
+	find /home -name notes.txt
 
 Here are other variations when using find:
 
@@ -831,7 +843,7 @@ Once the grep command finds a match, it prints all lines that contain the specif
 
 For example, you want to search for the word blue in the notepad.txt file:
 
-grep blue notepad.txt
+	grep blue notepad.txt
 
 The command’s output will display lines that contain blue.
 
@@ -840,11 +852,11 @@ The command’s output will display lines that contain blue.
 
 Use the df command to report the system’s disk space usage, shown in percentage and kilobyte (KB). Here’s the general syntax:
 
-df [options] [file]
+	df [options] [file]
 
 For example, enter the following command if you want to see the current directory’s system disk space usage in a human-readable format:
 
-df -h
+	df -h
 
 These are some acceptable options to use:
 
@@ -859,7 +871,7 @@ If you want to check how much space a file or a directory takes up, use the du c
 
 Remember, you must specify the directory path when using the du command. For example, to check /home/user/Documents enter:
 
-du /home/user/Documents
+	du /home/user/Documents
 
 Adding a flag to the du command will modify the operation, such as:
 
@@ -879,7 +891,7 @@ head [option] [file]
 
 For instance, you want to view the first ten lines of note.txt, located in the current directory:
 
-head note.txt
+	head note.txt
 
 Below are some options you can add:
 
@@ -894,11 +906,11 @@ The tail command displays the last ten lines of a file. It allows users to check
 
 Here’s the general format:
 
-tail [option] [file]
+	tail [option] [file]
 
 For example, you want to show the last ten lines of the colors.txt file:
 
-tail -n colors.txt
+	tail -n colors.txt
 
 
 19. diff command
@@ -910,11 +922,11 @@ Programmers often use the diff command to alter a program instead of rewriting t
 
 Here’s the general format:
 
-diff [option] file1 file2
+	diff [option] file1 file2
 
 For example, you want to compare two text files – note.txt and note_update.txt:
 
-diff note.txt note_update.txt
+	diff note.txt note_update.txt
 
 Here are some acceptable options to add:
 
@@ -929,11 +941,11 @@ The tar command archives multiple files into a TAR file – a common Linux forma
 
 Here’s the basic syntax:
 
-tar [options] [archive_file] [file or directory to be archived]
+	tar [options] [archive_file] [file or directory to be archived]
 
 For instance, you want to create a new TAR archive named newarchive.tar in the /home/user/Documents directory:
 
-tar -cvf newarchive.tar /home/user/Documents
+	tar -cvf newarchive.tar /home/user/Documents
 
 The tar command accepts many options, such as:
 
@@ -950,11 +962,11 @@ chmod is a common command that modifies a file or directory’s read, write, and
 
 Here’s the basic syntax:
 
-chmod [option] [permission] [file_name]
+	chmod [option] [permission] [file_name]
 
 For example, the owner is currently the only one with full permissions to change note.txt. To allow group members and others to read, write, and execute the file, change it to the -rwxrwxrwx permission type, whose numeric value is 777:
 
-chmod 777 note.txt
+	chmod 777 note.txt
 
 This command supports many options, including:
 
@@ -969,7 +981,7 @@ The chown command lets you change the ownership of a file, directory, or symboli
 
 Here’s the basic format:
 
-chown [option] owner[:group] file(s)
+	chown [option] owner[:group] file(s)
 
 For example, you want to make linuxuser2 the owner of filename.txt:
 
@@ -982,7 +994,7 @@ A job is a process that the shell starts. The jobs command will display all the 
 
 This is the basic syntax:
 
-jobs [options] jobID
+	jobs [options] jobID
 
 To check the status of jobs in the current shell, simply enter jobs to the CLI.
 
@@ -999,11 +1011,11 @@ Use the kill command to terminate an unresponsive program manually. It will sign
 
 To kill a program, you must know its process identification number (PID). If you don’t know the PID, run the following command:
 
-ps ux
+	ps ux
 
 After knowing what signal to use and the program’s PID, enter the following syntax:
 
-kill [signal_option] pid
+	kill [signal_option] pid
 
 There are 64 signals that you can use, but these two are among the most commonly used:
 
@@ -1012,7 +1024,7 @@ There are 64 signals that you can use, but these two are among the most commonly
 
 For example, the program’s PID is 63773, and you want to force it to stop:
 
-kill SIGKILL 63773
+	kill SIGKILL 63773
 
 25. ping command
     ------------
@@ -1021,11 +1033,11 @@ The ping command is one of the most used basic Linux commands for checking wheth
 
 Here’s the general format:
 
-ping [option] [hostname_or_IP_address]
+	ping [option] [hostname_or_IP_address]
 
 For example, you want to know whether you can connect to Google and measure its response time:
 
-ping google.com
+	ping google.com
 
 26. wget command
     ------------
@@ -1036,11 +1048,11 @@ The wget command retrieves files using HTTP, HTTPS, and FTP protocols. It can pe
 
 To use it, enter the following command:
 
-wget [option] [url]
+	wget [option] [url]
 
 For example, enter the following command to download the latest version of WordPress:
 
-wget https://wordpress.org/latest.zip
+	wget https://wordpress.org/latest.zip
 
 27. uname command
     -------------
@@ -1049,7 +1061,7 @@ The uname or unix name command will print detailed information about your Linux 
 
 Here’s the basic syntax:
 
-uname [option]
+	uname [option]
 
 These are the acceptable options to use:
 
@@ -1072,7 +1084,7 @@ With history, the system will list up to 500 previously executed commands, allow
 
 To run it, enter the command below:
 
-history [option]
+	history [option]
 
 This command supports many options, such as:
 
@@ -1098,29 +1110,29 @@ It consists of nine sections:
 
 To display the complete manual, enter:
 
-man [command_name]
+	man [command_name]
 
 For example, you want to access the manual for the ls command:
 
-man ls
+	man ls
 
 Enter this command if you want to specify the displayed section:
 
-man [option] [section_number] [command_name]
+	man [option] [section_number] [command_name]
 
 For instance, you want to see section 2 of the ls command manual:
 
-man 2 ls
+	man 2 ls
 
 31. echo command
 
 The echo command is a built-in utility that displays a line of text or string using the standard output. Here’s the basic syntax:
 
-echo [option] [string]
+	echo [option] [string]
 
 For example, you can display the text Hostinger Tutorials by entering:
 
-echo “Hostinger Tutorials”
+	echo “Hostinger Tutorials”
 
 This command supports many options, such as:
 
@@ -1141,25 +1153,25 @@ The zip command is also useful for archiving files and directories and reducing 
 
 To use it, enter the following syntax:
 
-zip [options] zipfile file1 file2….
+	zip [options] zipfile file1 file2….
 
 For example, you have a file named note.txt that you want to compress into archive.zip in the current directory:
 
-zip archive.zip note.txt
+	zip archive.zip note.txt
 
 On the other hand, the unzip command extracts the zipped files from an archive. Here’s the general format:
 
-unzip [option] file_name.zip
+	unzip [option] file_name.zip
 
 So, to unzip a file called archive.zip in the current directory, enter:
 
-unzip archive.zip
+	unzip archive.zip
 
 33. hostname command
 
 Run the hostname command to know the system’s hostname. You can execute it with or without an option. Here’s the general syntax:
 
-hostname [option]
+	hostname [option]
 
 There are many optional flags to use, including:
 
@@ -1169,7 +1181,7 @@ There are many optional flags to use, including:
 
 For example, enter the following command to know your computer’s IP address:
 
-hostname -i
+	hostname -i
 
 34. useradd, userdel commands
 
@@ -1183,7 +1195,7 @@ When you use the useradd command, it performs some major changes:
 
 Here’s the basic syntax:
 
-useradd [option] username
+	useradd [option] username
 
 To set the password:
 
@@ -1191,13 +1203,13 @@ passwd the_password_combination
 
 For example, to add a new person named John, enter the following command simultaneously:
 
-useradd John
+	useradd John
 
-passwd 123456789
+	passwd 123456789
 
 To delete a user account, use the userdel command:
 
-userdel username
+	userdel username
 
 35. apt-get command
 
@@ -1207,7 +1219,7 @@ Running the apt-get command requires you to use sudo or root privileges.
 
 Here’s the main syntax:
 
-apt-get [options] (command)
+	apt-get [options] (command)
 
 These are the most common commands you can add to apt-get:
 
@@ -1221,13 +1233,13 @@ Linux allows users to edit and manage files via a text editor, such as nano, vi,
 
 The nano command denotes keywords and can work with most languages. To use it, enter the following command:
 
-nano [filename]
+	nano [filename]
 
 vi uses two operating modes to work – insert and command. insert is used to edit and create a text file. On the other hand, the command performs operations, such as saving, opening, copying, and pasting a file.
 
 To use vi on a file, enter:
 
-vi [filename]
+	vi [filename]
 
 jed has a drop-down menu interface that allows users to perform actions without entering keyboard combinations or commands. Like vi, it has modes to load modules or plugins to write specific texts.
 
@@ -1239,17 +1251,17 @@ alias allows you to create a shortcut with the same functionality as a command, 
 
 To use the alias command, enter this syntax:
 
-alias Name=String
+	alias Name=String
 
 For example, you want to make k the alias for the kill command:
 
-alias k=’kill’
+	alias k=’kill’
 
 On the other hand, the unalias command deletes an existing alias.
 
 Here’s what the general syntax looks like:
 
-unalias [alias_name]
+	unalias [alias_name]
 
 38. su command
 
@@ -1257,7 +1269,7 @@ The switch user or su command allows you to run a program as a different user. I
 
 Here’s the general syntax of the command:
 
-su [options] [username [argument]]
+	su [options] [username [argument]]
 
 When executed without any option or argument, the su command runs through root privileges. It will prompt you to authenticate and use the sudo privileges temporarily.
 
@@ -1275,7 +1287,7 @@ Compared to the top command, htop has many improvements and additional features,
 
 To use it, run the following command:
 
-htop [options]
+	htop [options]
 
 You can also add options, such as:
 
@@ -1499,15 +1511,18 @@ apk add sudo
 Run "visudo" and remove the "#" comment character from the 2nd line in this group so it looks like:
 
 ## Uncomment to allow members of group sudo to execute any command
-	
 %sudo ALL=(ALL) ALL
 
 
 Run "visudo" and remove the "#" comment character from the 2nd line in this group so it looks like:
 
 ## Uncomment to allow members of group sudo to execute any command
-	
 %sudo ALL=(ALL) ALL
+
+
+
+
+-----------------------------------------------------------------------------------------------
 
 
 :end:
