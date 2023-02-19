@@ -21,6 +21,12 @@ Steps:
 
 
 
+
+
+#
+#
+#
+#
 Ubuntu Basic Commands: 
 How to create users and groups in Linux from the command line 
 
