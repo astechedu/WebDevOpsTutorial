@@ -299,6 +299,11 @@ Architecture:
 
 # How to Install and Configure Ansible on CentOS
 
+**Step 1: Update Your Control Node**
+
+Before installing any new software, it is important to ensure that your existing operating version is up-to-date. Enter the command mentioned below to start your task.
+
+	yum update	
 
 Step 2: Install EPEL Repository
 
