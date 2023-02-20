@@ -331,6 +331,7 @@ Add the admin user, and set a password onto your Managed node.
 	passwd Simpli@123
 
 Learn from Experienced Industry Experts!
+
 DevOps Engineer Masters ProgramExplore Program
 
 Learn from Experienced Industry Experts!
@@ -359,7 +360,7 @@ Now, enter ‘i’ to get to the insert mode, and add the hostname of the Manage
 
 Now, save the file by typing ‘[ESC]:wq’.
 
-    Increase team productivity and improve business outcomes with the DevOps Engineer Masters Program. Enroll now!
+Increase team productivity and improve business outcomes with the DevOps Engineer Masters Program. Enroll now!
 
 Step 7: Create an Ansible Playbook
 
