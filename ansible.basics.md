@@ -147,7 +147,6 @@ Output:
 
 **What is Ansible in DevOps?**
 
-Image result for what is ansible
 Ansible is defined as an open-source, cross-platform tool for resource provisioning automation that DevOps professionals popularly use for continuous delivery of software code by taking advantage of an “infrastructure as code” approach.
 
 
