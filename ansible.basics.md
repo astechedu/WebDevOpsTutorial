@@ -196,7 +196,7 @@ A module is a reusable, standalone script that Ansible runs on your behalf, eith
 
 An Ansible playbook is an organized unit of scripts that defines work for a server configuration managed by the automation tool Ansible. Ansible is a configuration management tool that automates the configuration of multiple servers by the use of Ansible playbooks.
 
-Example:
+Example 1:
 
 Here’s what a simple playbook looks like:
 
@@ -252,6 +252,7 @@ RUN Playbook CMD:
 
 
 
+
 Stop Instance: 
 
 
@@ -262,7 +263,7 @@ Stop Instance:
 	      aws_secret_key: keywithout qoutes
 	      instance_ids: i-jskxjejkjf
 	      region: us-east-1
-	      state: stopped
+	      state: stopped OR running OR absent
 	      wait: true
 	      vpc_subnet_ip: subnet-any
 	      assign_public_id: yes
