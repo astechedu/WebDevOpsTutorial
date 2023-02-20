@@ -305,7 +305,7 @@ Before installing any new software, it is important to ensure that your existing
 
 	yum update	
 
-Step 2: Install EPEL Repository
+**Step 2: Install EPEL Repository**
 
 Moving on, install the EPEL repository on the system.
 
@@ -313,35 +313,34 @@ Moving on, install the EPEL repository on the system.
 
 EPEL provides easy access to install commonly used packages on CentOS.
 
-Step 3: Install Ansible
+**Step 3: Install Ansible**
 
 The next step is to install the Ansible package from the EPEL repository.
 
 	yum install ansible
 
-Step 4: Create a User for Ansible
+**Step 4: Create a User for Ansible**
 
-Let's create a non-root user on both the nodes that will run our Ansible playbooks. In this demo, we will use "Simplilearn"' as the username (but any username can be added). Also, you should ensure that you use the same username on both the nodes (i.e., controller node and your managed node).
+Let's create a non-root user on both the nodes that will run our Ansible playbooks. In this demo, we will use "ajaysis"' as the username (but any username can be added). Also, you should ensure that you use the same username on both the nodes (i.e., controller node and your managed node).
 
 Add a user and set a password onto your Controller node.
 
-useradd  simplilearn
+	useradd  ajaysis
 
-	passwd Simpli@123
+	passwd ajay@123
 
 Add the admin user, and set a password onto your Managed node.
 
-	useradd simplilearn
+	useradd ajay
 
-	passwd Simpli@123
+	passwd ajay@123
 
-Learn from Experienced Industry Experts!
+
 
 DevOps Engineer Masters ProgramExplore Program
 
-Learn from Experienced Industry Experts!
 
-Step 5: Configure Our Admin User for SSH Access
+**Step 5: Configure Our Admin User for SSH Access**
 
 Configure the admin user (i.e. Simplilearn user) so that it can access the Managed node without a password. Then, ensure that you set up an SSH key pair to the Simplilearn user.
 
@@ -353,7 +352,7 @@ Then, copy the public key and paste it to our Managed node with the command belo
 
 	ssh-copy-id node.kb.liquidweb.com
 	
-Step 6: Create an Inventory
+**Step 6: Create an Inventory**
 
 An inventory list is created to identify your managed nodes. 
 
@@ -365,9 +364,7 @@ Now, enter ‘i’ to get to the insert mode, and add the hostname of the Manage
 
 Now, save the file by typing ‘[ESC]:wq’.
 
-Increase team productivity and improve business outcomes with the DevOps Engineer Masters Program. Enroll now!
-
-Step 7: Create an Ansible Playbook
+**Step 7: Create an Ansible Playbook**
 
 Here, we will create a simple Ansible playbook by installing Nginx on the Managed Node.
 
@@ -454,7 +451,7 @@ Then type '[ESC]:wq' to save this and exit.
 
 Note: Prioritize using only spaces and not tabs. Make sure to use consistent spacing for your YAML file to avoid errors.
 
-Step 8: Run the Playbook
+**Step 8: Run the Playbook**
 
 Our Ansible playbook is built. Now, to run the playbook, type the following command on the controller node:
 
