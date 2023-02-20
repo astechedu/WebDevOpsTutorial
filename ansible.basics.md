@@ -20,7 +20,7 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 
 #
 <a name="ansible_installation"></a>
-#Installing Ansible On Linux:
+# Installing Ansible On Linux:
 
       sudo apt update
       
@@ -143,7 +143,7 @@ Output:
 <a name="ansible_basics"></a>
 [Top](#top)
 
-#Ansible Basic Terms
+# Ansible Basic Terms
 
 **What is Ansible in DevOps?**
 
