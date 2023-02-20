@@ -141,23 +141,27 @@ Output:
 
 #Ansible Basic Terms
 
-What is Ansible in DevOps?
+**What is Ansible in DevOps?**
 
 Image result for what is ansible
 Ansible is defined as an open-source, cross-platform tool for resource provisioning automation that DevOps professionals popularly use for continuous delivery of software code by taking advantage of an “infrastructure as code” approach.
 
-Inventory
+**Inventory**
 
 The Ansible inventory file defines the hosts and groups of hosts upon which commands, modules, and tasks in a playbook operate. The file can be in one of many formats depending on your Ansible environment and plugins.
 
 
-Module
+**Module**
 
 A module is a reusable, standalone script that Ansible runs on your behalf, either locally or remotely. Modules interact with your local machine, an API, or a remote system to perform specific tasks like changing a database password or spinning up a cloud instance.
 
-Playbook
+**Playbook**
 
 An Ansible playbook is an organized unit of scripts that defines work for a server configuration managed by the automation tool Ansible. Ansible is a configuration management tool that automates the configuration of multiple servers by the use of Ansible playbooks.
+
+
+
+
 
 
 
