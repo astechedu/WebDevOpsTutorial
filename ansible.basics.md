@@ -252,7 +252,12 @@ Architecture:
 	 5. Modules
 	 6. Ad Hoc
 	 7. Playbooks
+	 
+#
 
+
+
+Architecture:
 
 
 						 _____________________
