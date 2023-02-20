@@ -337,12 +337,10 @@ Add the admin user, and set a password onto your Managed node.
 
 
 
-DevOps Engineer Masters ProgramExplore Program
-
 
 **Step 5: Configure Our Admin User for SSH Access**
 
-Configure the admin user (i.e. Simplilearn user) so that it can access the Managed node without a password. Then, ensure that you set up an SSH key pair to the Simplilearn user.
+Configure the admin user (i.e. Ajaysis user) so that it can access the Managed node without a password. Then, ensure that you set up an SSH key pair to the Ajaysis user.
 
 Now, run the following command (in the control node) to generate an SSH key pair. 
 
@@ -350,7 +348,7 @@ Now, run the following command (in the control node) to generate an SSH key pair
 
 Then, copy the public key and paste it to our Managed node with the command below.
 
-	ssh-copy-id node.kb.liquidweb.com
+	ssh-copy-id node.ab.example.com
 	
 **Step 6: Create an Inventory**
 
@@ -360,7 +358,7 @@ Log in to your control node as the admin user to connect the Managed node to the
 
 	vim /home/admin/inventory
 
-Now, enter ‘i’ to get to the insert mode, and add the hostname of the Managed Node. node.kb.liquidweb.com
+Now, enter ‘i’ to get to the insert mode, and add the hostname of the Managed Node. node.ab.example.com
 
 Now, save the file by typing ‘[ESC]:wq’.
 
@@ -368,9 +366,9 @@ Now, save the file by typing ‘[ESC]:wq’.
 
 Here, we will create a simple Ansible playbook by installing Nginx on the Managed Node.
 
-First, log onto your Controller Node as the “Simplilearn” user and create a file with a descriptive name.
+First, log onto your Controller Node as the “Ajaysis” user and create a file with a descriptive name.
 
-	vim /home/simplilearn/install-nginx.yml
+	vim /home/ajaysis/install-nginx.yml
 
 These playbooks are written in YAML language which is human-readable (as shown below).
 
