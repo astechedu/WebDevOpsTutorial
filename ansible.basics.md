@@ -155,6 +155,12 @@ OR
 
 Ansible is a configuration and orchestration management tool where applications are deployed automatically in a variety of environments.
 
+OR
+
+Ansible is the simplest way to automate apps and IT infrastructure. Application Deployment + Configuration Management + Continuous Delivery.
+
+
+
 **Plugins**
 
 Plugins are pieces of code that augment Ansible's core functionality. Ansible uses a plugin architecture to enable a rich, flexible and expandable feature set. Ansible ships with a number of handy plugins, and you can easily write your own.
