@@ -7,6 +7,9 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 # Topics: 
 
    :link:[Ansible Installation on Linux Ubuntu 20.04/22.04](#ansible_installation)
+   
+   :link:[Ansible Basic Terms](#ansible_basics)
+
 
 
 
@@ -136,7 +139,7 @@ Output:
 
 #
 
-#Ansible Terms
+#Ansible Basic Terms
 
 
 Ansible :
