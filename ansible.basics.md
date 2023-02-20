@@ -155,7 +155,9 @@ Ansible is defined as an open-source, cross-platform tool for resource provision
 
 Any host with Ansible installed. Ansible control nodes are primarily used to run tasks on managed hosts. You can use any machine with Python installed as an Ansible control node. However, you cannot use Windows as an Ansible control node. Managed nodes: Hosts that you manage using Ansible.
 
+**Managed node**
 
+A managed node is any device being managed by the control node. Ansible works by connecting to nodes (clients, servers, or whatever you're configuring) on a network, and then sending a small program called an Ansible module to that node. Ansible executes these modules over SSH and removes them when finished.
 
 **Inventory**
 
