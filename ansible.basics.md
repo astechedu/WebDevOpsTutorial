@@ -240,7 +240,7 @@ Playbook: aws.yml file
 	      instance_tags: 
 		name: prod-instance
 	      monitoring: 
-              region: aws-user-1
+              region: us-east-1
 	      vpc_subnet_ip: subnet-any
 	      assign_public_id: yes
 	      
@@ -248,8 +248,35 @@ Playbook: aws.yml file
 RUN Playbook CMD: 
 	  	
 		ansible-playbook aws.yml
-	  
+
+
+
+
+Stop Instance: 
+
+
+	- host: localhost
+	  tasks: 
+	   - ec2: 
+	      aws_access_key: keywithoutqoutes
+	      aws_secret_key: keywithout qoutes
+	      instance_ids: i-jskxjejkjf
+	      region: us-east-1
+	      state: stopped
+	      wait: true
+	      vpc_subnet_ip: subnet-any
+	      assign_public_id: yes
+     
 	      
+
+RUN Playbook CMD: aswstop.yml
+
+                ansible-playbook awsstop.yml
+
+	 
+	 
+	 
+	 
 #
 
 Ansible :
