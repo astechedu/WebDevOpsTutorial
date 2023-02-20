@@ -6,9 +6,17 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 #
 # Topics: 
 
-   :link:[Ansible Installation](#ansible_installation)  <br />  
+   :link:[Ansible Installation](#ansible_installation)
 
 
+
+
+
+
+
+
+
+#
 <a name="ansible_installation"></a>
 
 Installing Ansible:
