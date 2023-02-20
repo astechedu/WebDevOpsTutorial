@@ -231,7 +231,16 @@ Example 2:
 	      instance_tags: 
 		name: prod-instance
 	      monitoring: 
-
+              region: aws-user-1
+	      vpc_subnet_ip: subnet-any
+	      assign_public_id: yes
+	      
+	      
+	  RUN Playbook CMD: 
+	  	
+		ansible-playbook aws.yml
+	  
+	      
 #
 
 Ansible :
