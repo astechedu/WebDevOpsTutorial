@@ -192,8 +192,11 @@ Ansible :
 Management: 
   
  Server Changes
+ 
  Device Changes
+ 
  Cloud
+ 
  Virtualization Host
  
 
@@ -206,13 +209,13 @@ It works an forks and serial mode. Default It comes width forks style (forks5)
 
 Architecture: 
 
- 1. Control Node
- 2. Manage Node
- 3. Connection plugin
- 4. Inventory System
- 5. Modules
- 6. Ad Hoc
- 7. Playbooks
+	 1. Control Node
+	 2. Manage Node
+	 3. Connection plugin
+	 4. Inventory System
+	 5. Modules
+	 6. Ad Hoc
+	 7. Playbooks
 
 
 
