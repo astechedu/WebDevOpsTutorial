@@ -134,6 +134,74 @@ Output:
 
 
 
+#
+
+#Ansible Terms
+
+
+Ansible :
+
+ Opensource, Configuration tools. 
+
+1. Manual 
+
+2. Two types of automation
+
+ a) Scripted Languages
+ b) Tool (Ansible:Automation)
+
+
+Management: 
+  
+ Server Changes
+ Device Changes
+ Cloud
+ Virtualization Host
+ 
+
+Working: 
+
+Ansible is is an agent less configuration tool
+It works of Push System.
+It works an forks and serial mode. Default It comes width forks style (forks5)
+
+
+Architecture: 
+
+ 1. Control Node
+ 2. Manage Node
+ 3. Connection plugin
+ 4. Inventory System
+ 5. Modules
+ 6. Ad Hoc
+ 7. Playbooks
+
+
+
+
+				 __________________
+				|Control Node     |
+				|                 |
+				|_________________| 
+
+				 __________________
+				|Control Node     |
+				|                 |
+				|_________________| 
+ __________________
+|Control Node     |
+|                 |
+|_________________| 
+
+				 __________________
+				|Control Node     |
+				|                 |
+				|_________________| 
+
+				 __________________
+				|Control Node     |
+				|                 |
+				|_________________| 
 
 
 
