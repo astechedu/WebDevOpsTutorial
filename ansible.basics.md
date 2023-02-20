@@ -1,4 +1,4 @@
-$\Large{\color{purple} Ansible For Beginners}$
+$$\Large{\color{red} Ansible For Beginners}$$
 
 
 
