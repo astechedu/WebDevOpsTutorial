@@ -216,14 +216,14 @@ Here’s what a simple playbook looks like:
 
 Example 2: 
 
-Inventory: 
+Inventory: hosts file
 
 	vim /etc/ansible/hosts
 	
 	[localhost]
 	localhost
 
-Playbook:
+Playbook: aws.yml file
 
 	- host: localhost
 	  tasks: 
@@ -245,7 +245,7 @@ Playbook:
 	      assign_public_id: yes
 	      
 	      
-	  RUN Playbook CMD: 
+RUN Playbook CMD: 
 	  	
 		ansible-playbook aws.yml
 	  
