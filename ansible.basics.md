@@ -6,7 +6,8 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 #
 # Topics: 
 
-   :link:[Ansible Installation on Linux Ubuntu 20.04/22.04](#ansible_installation)
+
+   :link:[Ansible Installation on Linux Ubuntu 20.04/22.04, CentOS of Fedora, ](#ansible_installation)   
    
    :link:[Ansible Basic Terms](#ansible_basics)
 
@@ -22,8 +23,43 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 
 #
 <a name="ansible_installation"></a>
-# Installing Ansible On Linux:
+# Installing Ansible On Linux Ubuntu, Fedora or CentOS:
 
+
+ [Ansible Installation on Ubuntu](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-ubuntu)
+ 
+ To configure the PPA on your system and install Ansible run these commands:
+
+	sudo apt update
+	sudo apt install software-properties-common
+	sudo add-apt-repository --yes --update ppa:ansible/ansible
+	sudo apt install ansible
+
+
+ 
+ Fedora Or CentOS:
+ 
+ [Installing Ansible on Fedora or CentOS](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-ubuntu)
+ 
+ 
+ On Fedora:
+
+	sudo dnf install ansible
+
+On CentOS:
+
+	sudo yum install epel-release
+	sudo yum install ansible
+
+
+ 
+
+
+:end:
+
+#
+OR
+#
       sudo apt update
       
       sudo apt-add-repository ppa:ansible/ansible
