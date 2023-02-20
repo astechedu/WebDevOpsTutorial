@@ -139,8 +139,10 @@ Output:
 
 #
 
+
 <a name="ansible_basics"></a>
 [Top](#top)
+
 #Ansible Basic Terms
 
 **What is Ansible in DevOps?**
