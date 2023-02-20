@@ -15,7 +15,6 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 
 
 
-
 #
 <a name="ansible_installation"></a>
 #Installing Ansible On Linux:
