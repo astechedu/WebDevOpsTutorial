@@ -216,6 +216,15 @@ Here’s what a simple playbook looks like:
 
 Example 2: 
 
+Inventory: 
+
+	vim /etc/ansible/hosts
+	
+	[localhost]
+	localhost
+
+Playbook:
+
 	- host: localhost
 	  tasks: 
 	   - ec2: 
