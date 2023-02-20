@@ -1,5 +1,4 @@
-$$\colorbox{green}Ansible Basics & Installations For Absolute beginners$$
-$\Large{\color{purple} Ansible}$
+$\Large{\color{purple} Ansible For Beginners}$
 
 
 
