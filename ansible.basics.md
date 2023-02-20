@@ -151,6 +151,9 @@ Output:
 
 Ansible is defined as an open-source, cross-platform tool for resource provisioning automation that DevOps professionals popularly use for continuous delivery of software code by taking advantage of an “infrastructure as code” approach.
 
+OR
+
+Ansible is a configuration and orchestration management tool where applications are deployed automatically in a variety of environments.
 
 **Plugins**
 
@@ -211,7 +214,23 @@ Here’s what a simple playbook looks like:
 
 
 
+Example 2: 
 
+	- host: localhost
+	  tasks: 
+	   - ec2: 
+	      aws_access_key: keywithoutqoutes
+	      aws_secret_key: keywithout qoutes
+	      key_name: key-pair-one
+	      group: xyz
+	      instance_type: t2.micro
+	      image: ami-zyajskdxdkjek
+	      wait: yes
+	      wait_timeout: 500
+	      count: 1
+	      instance_tags: 
+		name: prod-instance
+	      monitoring: 
 
 #
 
