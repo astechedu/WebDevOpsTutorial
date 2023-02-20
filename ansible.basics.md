@@ -6,7 +6,7 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 #
 # Topics: 
 
-   :link:[Ansible Installation on Linux](#ansible_installation)
+   :link:[Ansible Installation on Linux Ubuntu 20.04/22.04](#ansible_installation)
 
 
 
