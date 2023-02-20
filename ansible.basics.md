@@ -6,7 +6,7 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 #
 # Topics: 
 
-   :link:[Ansible Installation](#ansible_installation)
+   :link:[Ansible Installation on Linux](#ansible_installation)
 
 
 
@@ -18,8 +18,7 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 
 #
 <a name="ansible_installation"></a>
-
-Installing Ansible:
+#Installing Ansible On Linux:
 
       sudo apt update
       
@@ -127,6 +126,8 @@ Output:
           ansible all -m apt -a "name=vim state=latest" -u root
           ansible servers -a "uptime" -u root
           ansible server1:server2 -m ping -u root
+
+
 
 
 
