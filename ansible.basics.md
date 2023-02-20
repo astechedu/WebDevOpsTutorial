@@ -163,6 +163,22 @@ A managed node is any device being managed by the control node. Ansible works by
 The Ansible inventory file defines the hosts and groups of hosts upon which commands, modules, and tasks in a playbook operate. The file can be in one of many formats depending on your Ansible environment and plugins.
 
 
+Exmple: 
+
+Here’s what a plain text inventory file looks like:
+
+	---
+	[webservers]
+	www1.example.com
+	www2.example.com
+
+	[dbservers]
+	db0.example.com
+	db1.example.com
+
+
+
+
 **Module**
 
 A module is a reusable, standalone script that Ansible runs on your behalf, either locally or remotely. Modules interact with your local machine, an API, or a remote system to perform specific tasks like changing a database password or spinning up a cloud instance.
@@ -170,6 +186,22 @@ A module is a reusable, standalone script that Ansible runs on your behalf, eith
 **Playbook**
 
 An Ansible playbook is an organized unit of scripts that defines work for a server configuration managed by the automation tool Ansible. Ansible is a configuration management tool that automates the configuration of multiple servers by the use of Ansible playbooks.
+
+Example:
+
+Here’s what a simple playbook looks like:
+
+	---
+	- hosts: webservers
+	  serial: 5 # update 5 machines at a time
+	  roles:
+	  - common
+	  - webapp
+
+	- hosts: content_servers
+	  roles:
+	  - common
+	  - content
 
 
 
