@@ -15,6 +15,26 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 
    :link:[Examples of Playbook & Inventory](#ansible-playbook-inventory)
 
+   :link:[Ansible Playbook to Exchange keys between hosts](#ssh-share)
+
+  :link:[Some Configuration](#some-config)
+
+
+
+#
+<a name="some-config"></a>
+# Some Configuration 
+
+<!--Changing in file sudoers -->
+
+	sudo nano /etc/sudoers
+	ec2-user ALL=(ALL) NOPASSWD: ALL
+	ajay ALL=(ALL) NOPASSWD: ALL
+
+
+        sudo nano /etc/ssh/sshd_config
+        PermitRootLogin yes
+
 
 
 
@@ -945,8 +965,113 @@ Here is the Ansible Playbook example to setup LAMP Stack
 
 
 
+#
+# Ansible Playbook  to Exchange keys between hosts
+
+Type1: With Ansible Shell module and Typical Commands
+
+
+	---
+	- name: Exchange Keys between servers
+	  become: yes
+	  become_user: weblogic
+	  hosts: app
+	  tasks:
+	    - name: SSH KeyGen command
+	      shell: > 
+		ssh-keygen -q -b 2048 -t rsa -N "" -C "creating SSH" -f ~/.ssh/id_rsa
+		creates="~/.ssh/id_rsa"
+
+	    - name: Fetch the keyfile from one server to another
+	      fetch: 
+		src: "~/.ssh/id_rsa.pub"
+		dest: "buffer/{{ansible_hostname}}-id_rsa.pub"
+		flat: yes
+
+	    - name: Copy the file from master to the destination
+	      copy:
+		src: "buffer/{{item.dest}}-id_rsa.pub"
+		dest: "/tmp/remote-id_rsa.pub"  
+	      when: "{{ item.dest != ansible_hostname }}"
+	      with_items: 
+		- { dest: "{{groups['app'][1]}}"}
+		- { dest: "{{groups['app'][0]}}"}
+
+	    - name: add the public key into Authorized_keys file to enable Key Auth
+	      shell: "cat /tmp/remote-id_rsa.pub >> ~/.ssh/authorized_keys"
+	      register: addtoauth
 
 
 
+Type2: With Ansible authorized_key module
+
+
+	---
+	- name: Exchange Keys between servers
+	  become: yes
+	  become_user: weblogic
+	  hosts: app
+	  tasks:
+	    - name: SSH KeyGen command
+	      tags: run
+	      shell: > 
+		ssh-keygen -q -b 2048 -t rsa -N "" -C "creating SSH" -f ~/.ssh/id_rsa
+		creates="~/.ssh/id_rsa"
+
+	    - name: Fetch the keyfile from one server to another
+	      tags: run
+	      fetch: 
+		src: "~/.ssh/id_rsa.pub"
+		dest: "buffer/{{ansible_hostname}}-id_rsa.pub"
+		flat: yes
+
+	    - name: Copy the key add to authorized_keys using Ansible module
+	      tags: run
+	      authorized_key:
+		user: weblogic
+		state: present
+		key: "{{ lookup('file','buffer/{{item.dest}}-id_rsa.pub')}}"
+	      when: "{{ item.dest != ansible_hostname }}"
+	      with_items: 
+		- { dest: "{{groups['app'][1]}}"}
+		- { dest: "{{groups['app'][0]}}"}
+
+
+
+Ansible SSH Key Exchange between multiple hosts
+
+
+	---
+	- name: Exchange Keys between servers
+	  hosts: multi
+	  tasks:
+	    - name: SSH KeyGen command
+	      tags: run
+	      shell: > 
+		ssh-keygen -q -b 2048 -t rsa -N "" -C "creating SSH" -f ~/.ssh/id_rsa
+		creates="~/.ssh/id_rsa"
+
+	    - name: Fetch the keyfile from the node to master
+	      tags: run
+	      fetch: 
+		src: "~/.ssh/id_rsa.pub"
+		dest: "buffer/{{ansible_hostname}}-id_rsa.pub"
+		flat: yes
+
+	    - name: Copy the key add to authorized_keys using Ansible module
+	      tags: runcd
+	      authorized_key:
+		user: vagrant
+		state: present
+		key: "{{ lookup('file','buffer/{{item}}-id_rsa.pub')}}"
+	      when: "{{ item != ansible_hostname }}"
+	      with_items: 
+		- "{{ groups['multi'] }}"       
+
+
+
+CMD:
+
+	sshkey-exchange-t1.yaml 
 
 :end: 
