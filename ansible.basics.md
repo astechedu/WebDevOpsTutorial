@@ -34,9 +34,24 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 
         sudo nano /etc/ssh/sshd_config
         PermitRootLogin yes
+        PasswordAuthentication yes
+	
 
+      ssh-keygetn
+      ssh-copy-id root@192.168.43.135
+      
+      
+      
+Adding All Machines:
 
-
+       sudo vim /etc/ansible/hosts
+       [local]
+       localhost
+       [apacheweb]
+       192.168.43.135
+       192.168.43.144
+       [webapps]
+       192.168.43.145
 
 
 
