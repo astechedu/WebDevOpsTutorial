@@ -689,47 +689,48 @@ Here is the ansible playbook with multiple hosts in it.  You can see we are work
 2.
 
 
----
-  # Play1 - WebServer related tasks
-  
-  - name: Play Web - Create apache directories and username in web servers
-    hosts: webservers
-    become: yes
-    become_user: root
-    tasks:
-      - name: create username apacheadm
-        user:
-          name: apacheadm
-          group: users,admin
-          shell: /bin/bash
-          home: /home/weblogic
+	---
+	  # Play1 - WebServer related tasks
 
-      - name: install httpd
-        yum:
-          name: httpd
-          state: installed
+	  - name: Play Web - Create apache directories and username in web servers
+	    hosts: webservers
+	    become: yes
+	    become_user: root
+	    tasks:
+	      - name: create username apacheadm
+		user:
+		  name: apacheadm
+		  group: users,admin
+		  shell: /bin/bash
+		  home: /home/weblogic
+
+	      - name: install httpd
+		yum:
+		  name: httpd
+		  state: installed
         
-  # Play2 - Application Server related tasks
+	
+           # Play2 - Application Server related tasks  
   
-  - name: Play app - Create tomcat directories and username in app servers
-    hosts: appservers
-    become: yes
-    become_user: root
-    tasks:
-      - name: Create a username for tomcat
-        user:
-          name: tomcatadm
-          group: users
-          shell: /bin/bash
-          home: /home/tomcat
+	  - name: Play app - Create tomcat directories and username in app servers
+	    hosts: appservers
+	    become: yes
+	    become_user: root
+	    tasks:
+	      - name: Create a username for tomcat
+		user:
+		  name: tomcatadm
+		  group: users
+		  shell: /bin/bash
+		  home: /home/tomcat
 
-      - name: create a directory for apache tomcat
-        file:
-          path: /opt/oracle
-          owner: tomcatadm
-          group: users
-          state: present
-          mode: 0755
+	      - name: create a directory for apache tomcat
+		file:
+		  path: /opt/oracle
+		  owner: tomcatadm
+		  group: users
+		  state: present
+		  mode: 0755
 
 
 In the preceding playbook, you could notice that two plays are there and both of them targeted to different host groups.
@@ -795,6 +796,7 @@ Let’s suppose we want to add a few variables for our webserver like the server
 
 it can be done with vars like this
 
+
 	---
 	  - name: Playbook
 	    hosts: webservers
@@ -817,6 +819,7 @@ it can be done with vars like this
 		service:
 		  name: httpd
 		  state: started
+		  
 
 and the variables can be referred with the jinja2 template later"{{ variable name }}"
 
@@ -845,6 +848,7 @@ You have to first save the variables and values in the same format you have writ
 		service:
 		  name: httpd
 		  state: started
+
 
 the content of the apacheconf.yml would like like this
 
