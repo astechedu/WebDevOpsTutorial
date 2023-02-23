@@ -6,7 +6,8 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 #
 # Topics: 
 
-
+    :link:[Ansible Basic CMD](#ansible-basic-cmds)
+    
    :link:[Ansible Installation on Linux Ubuntu 20.04/22.04, CentOS of Fedora, ](#ansible_installation)   
    
    :link:[Ansible Basic Terms](#ansible_basics)
@@ -17,7 +18,7 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 
    :link:[Ansible Playbook to Exchange keys between hosts](#ssh-share)
 
-  :link:[Some Configuration](#some-config)
+   :link:[Some Configuration](#some-config)
 
 
 
@@ -1089,4 +1090,151 @@ CMD:
 
 	sshkey-exchange-t1.yaml 
 
-:end: 
+:end:
+
+
+
+
+[Top](#top)
+<a name="ansible-basic-cmds"></a>
+
+# Ansible Basic Commands
+
+>>>>> Ansible <<<<<<
+
+
+Control Plan: Machine in which ansible is installed; dir: /home/ajay/myplaybook.yml
+Managed Node: Remote Machine or host; 
+
+sudo nano /etc/ansible/host
+
+	[localhost]
+	localhost
+	node3.my.domain
+
+	[webservers]
+	192.168.43.125
+	192.168.43.144
+
+	or
+	
+	server1 ansible_host=192.168.43.125
+	server2 ansible_host=192.168.43.144
+	server3 ansible_host=localhost
+
+
+CMD: 
+
+Run Playbook:
+
+	ansible-playbook myplaybook.yml -l server1 -u root
+	ansible-playbook myplaybook.yml -l server2 -u root
+	ansible-playbook myplaybook.yml -l server3 -u root
+
+
+
+
+	ssh-copy-id -i ~/.ssh/mykey user@host  //Copy Key
+	ssh -i ~/.ssh/mykey user@host          //Test key
+
+	ssh sammy@server_host_or_IP
+	ssh sammy@server_host_or_IP -i ~/.ssh/ansible_controller_key
+	sudo ufw status
+
+
+
+#
+
+vars/default.yml
+
+The default.yml variable file contains values that will be used within the playbook tasks, such as the name of the user that will be created and the packages that should be installed as part of the initial server setup.
+vars/default.yml
+
+	---
+	create_user: sammy
+	copy_local_key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+	sys_packages: [ 'curl', 'vim', 'git', 'ufw']
+
+
+
+# 
+
+playbook.yml
+------------
+
+
+---
+- hosts: all
+  become: true
+  vars_files:
+    - vars/default.yml
+
+  tasks:
+    - name: Install Prerequisites
+      apt: name=aptitude update_cache=yes state=latest force_apt_get=yes
+
+  # Sudo Group Setup
+  
+    - name: Make sure we have a 'wheel' group
+      group:
+        name: wheel
+        state: present
+
+    - name: Allow 'wheel' group to have passwordless sudo
+     lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: '^%wheel'
+        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+        validate: '/usr/sbin/visudo -cf %s'
+
+  # User + Key Setup
+  
+    - name: Create a new regular user with sudo privileges
+      user:
+        name: "{{ create_user }}"
+        state: present
+        groups: wheel
+        append: true
+        create_home: true
+        shell: /bin/bash
+
+    - name: Set authorized key for remote user
+      authorized_key:
+        user: "{{ create_user }}"
+        state: present
+        key: "{{ copy_local_key }}"
+
+    - name: Disable password authentication for root
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        state: present
+        regexp: '^#?PermitRootLogin'
+        line: 'PermitRootLogin prohibit-password'
+
+  # Install Packages
+  
+    - name: Update apt
+      apt: update_cache=yes
+
+    - name: Install required system packages
+      apt: name={{ sys_packages }} state=latest
+
+  # UFW Setup
+ 
+    - name: UFW - Allow SSH connections
+      ufw:
+        rule: allow
+        name: OpenSSH
+
+    - name: UFW - Deny all other incoming traffic by default
+      ufw:
+        state: enabled
+        policy: deny
+        direction: incoming
+
+
+:end:
+
+
+
