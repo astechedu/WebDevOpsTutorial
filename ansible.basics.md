@@ -22,6 +22,8 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 
    :link:[The procedure to install Ansible on Ubuntu 18.04/20.04/22.04 LTS ](#ansible-process)
    
+   :link:[Install Ansible On Alpine Linux Machine On VirtualBox](#ansible-on-alpine-linux)
+   
    
 
 #
@@ -1522,3 +1524,100 @@ Save and close the file. We are reusing SSH connection to speed up remote login 
 
 
 :end:
+
+#
+
+[Top](#top)
+<a name="ansible-on-alpine-linux"></a>
+
+>>>> Ansible Installation On Alpine Linux <<<<<<
+
+
+
+#Install ansible 
+
+	apk add ansible 
+
+#Create a SSH key
+
+	ssh-keygen -t ed25519
+
+
+#Managed nodes:
+authorized_keys
+
+	apk add python3 
+
+
+#Transfer the SSH key:
+
+#Copy ssh key from one machine to another machine
+
+	ssh root@[IP of the management system] 'cat ~/.ssh/id_ed25519.pub' | cat - >> ~/.ssh/authorized_keys
+
+	ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.168.225.33
+
+
+#Configuration
+Inventory
+
+/etc/ansible/hosts
+
+Contents of /etc/ansible/hosts
+
+	[control]
+	192.168.224.30
+
+	[managed]
+	192.168.224.33
+	192.168.224.34
+
+
+Ping:
+
+Check that you can reach all nodes:
+
+	ansible all -m ping
+
+
+Playbooks:
+
+
+---
+
+- name: Make "lighttpd" start on boot and start now, if not started.
+  ansible-builtin.service:
+    name: lighttpd
+    enabled: true
+    state: started
+
+
+
+---
+- name: Ensure lighttpd is installed, update cache and install if not.
+  community.general.apk:
+    name: lighttpd
+    state: present
+    update_cache: yes
+
+
+---
+- name: Enable "foobar" policy
+  community.general.awall:
+    name: foobar
+    state: enabled
+    activate: true
+
+
+
+CMDs:
+
+	ansible all -i myhosts
+	or 
+	anible web -i myhosts
+
+
+
+:end:
+
+
