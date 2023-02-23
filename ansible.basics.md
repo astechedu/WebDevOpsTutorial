@@ -1530,26 +1530,35 @@ Save and close the file. We are reusing SSH connection to speed up remote login 
 [Top](#top)
 <a name="ansible-on-alpine-linux"></a>
 
->>>> Ansible Installation On Alpine Linux <<<<<<
+# Ansible Installation On Alpine Linux
+
+
+Three Alpine Machines On VirtualBox
+
+1 Control Node (Alpine Machine)
+
+  Install Ansible & Pythone3
+
+2 Managed Nodes (Alpine Machines)
+
+  Install Python3 
 
 
 
-#Install ansible 
+#Install ansible (On Control Node)
 
 	apk add ansible 
 
-#Create a SSH key
+#Create a SSH key  (On Control Node)
 
 	ssh-keygen -t ed25519
 
 
-#Managed nodes:
-authorized_keys
+#Managed nodes (On Managed Nodes)
 
 	apk add python3 
 
-
-#Transfer the SSH key:
+#Transfer the SSH key (From Control Node to Managed Node):
 
 #Copy ssh key from one machine to another machine
 
@@ -1559,6 +1568,7 @@ authorized_keys
 
 
 #Configuration
+
 Inventory
 
 /etc/ansible/hosts
