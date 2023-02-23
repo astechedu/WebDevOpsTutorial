@@ -20,7 +20,9 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 
    :link:[Some Configuration](#some-config)
 
-
+   :link:[The procedure to install Ansible on Ubuntu 18.04/20.04/22.04 LTS ](#ansible-process)
+   
+   
 
 #
 <a name="some-config"></a>
@@ -1238,3 +1240,275 @@ playbook.yml
 
 
 
+#
+
+[Top](#top)
+<a name="ansible-process"></a>
+# Ansible Installation Proccess On Ubuntu
+>>> Ansible <<<<
+
+https://www.cyberciti.biz/faq/how-to-install-and-configure-latest-version-of-ansible-on-ubuntu-linux/
+
+How to Install and Configure latest version of Ansible on Ubuntu Linux
+
+
+
+
+
+The procedure to install Ansible on Ubuntu 18.04/20.04/22.04 LTS is as follows
+
+
+First, remove the default version supplied by the official Ubuntu repos, run commands:
+sudo apt remove ansible
+sudo apt --purge autoremove
+Update Ubuntu repo and apply all pending patches:
+sudo apt update
+sudo apt upgrade
+Install software-properties-common package on Ubuntu to enable PPA support, run:
+sudo apt -y install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+Finally, install the latest version of Ansible on Ubuntu Linux using the apt:
+sudo apt install ansible
+
+
+
+How to Install and Configure latest version of Ansible on Ubuntu Linux
+
+
+sudo apt update
+sudo apt upgrade
+sudo apt install software-properties-common
+
+Next add ppa:ansible/ansible to your system’s Software Source:
+sudo apt-add-repository ppa:ansible/ansible
+
+Next, update your repos:
+sudo apt update
+
+
+It is time to install the latest version of Ansible, enter:
+sudo apt install ansible
+
+
+Setting up Ansible bash completion support
+
+Type the following two commands:
+sudo apt install python3-argcomplete
+sudo activate-global-python-argcomplete3
+
+Now you can press the [Tab] to get a list of options for bash and other shell.
+
+
+
+Finding out the Ansible version
+
+Type the following command:
+ansible --version
+
+
+
+
+My Ansible version running on Ubuntu 20.04 LTS desktop:
+
+ansible [core 2.12.10]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/home/vivek/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /home/vivek/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible
+  python version = 3.8.10 (default, Jun 22 2022, 20:18:18) [GCC 9.4.0]
+  jinja version = 2.10.1
+  libyaml = True
+
+
+
+On Ubuntu 22.04 LTS (Jammy Jellyfish), you get version 2.13.3 or higher:
+
+ansible [core 2.13.6rc1]
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/bin/ansible
+  python version = 3.10.6 (main, Aug 10 2022, 11:40:04) [GCC 11.3.0]
+  jinja version = 3.0.3
+  libyaml = True
+  
+  
+  
+ 
+ Creating your hosts file:
+ 
+ In your $HOME directory:
+ 
+ sudo vi /etc/ansible/hosts
+ 
+ OR
+ 
+ vi $HOME/hosts
+ 
+ 
+ Append your server’s DNS or IP address:
+ 
+ 
+[webservers]
+server1.cyberciti.biz
+104.20.187.5
+104.20.186.5
+
+[devservers]
+10.98.222.4
+10.98.222.7
+10.98.222.8
+
+
+I have two groups. The first one named as webserver and other is called devservers. 
+
+
+
+Setting up ssh keys:
+
+You must configure ssh keys between your machine and remote servers specified in ~/hosts file:
+$ ssh-keygen -t rsa -b 4096 -C "My ansisble key"
+
+
+Use scp or ssh-copy-id command to copy your public key file (e.g., $HOME/.ssh/id_rsa.pub) to your account on the remote server/host:
+ssh-copy-id -i $HOME/.ssh/id_rsa.pub root@server1.cyberciti.biz
+ssh-copy-id -i $HOME/.ssh/id_rsa.pub root@10.98.222.4
+ssh-copy-id -i $HOME/.ssh/id_rsa.pub root@10.98.222.7
+ssh-copy-id -i $HOME/.ssh/id_rsa.pub root@10.98.222.8
+eval $(ssh-agent)
+ssh-add
+
+
+
+Now ansible can talk to all remote servers using ssh command.
+
+
+Send ping requests to all servers
+
+Just type the following command:
+ansible -i ~/hosts -m ping all
+
+
+Find out uptime for all hosts
+
+ansible -i hosts -m shell -a 'uptime' all
+
+
+
+Where,
+
+    -i ~/hosts : Specify inventory host path. You can setup shell variable and skip the -i option. For e.g.: export ANSIBLE_HOSTS=~/hosts
+    -m shell : Module name to execute such as shell, apt, yum and so on
+    -a 'uptime' : Module arguments. For example, shell module will accept Unix/Linux command names. The apt module will accept options to update remote boxes using apt-get/apt command and so on.
+    all : The all means “all hosts.” You can speificy group name such as devservers (ansible -i hosts -m shell -a 'uptime' dbservers) or host names too.
+
+
+
+Update all Debian/Ubuntu server using apt module
+
+Run the following command:
+
+ansible -i ~/hosts -m apt -a 'update_cache=yes upgrade=dist' dbservers
+
+
+Writing your first playbook:
+
+You can combine all modules in a text file as follows in yml format i.e. create a file named update.yml:
+
+
+---
+- hosts: dbservers
+  tasks:
+          - name: Updating host using apt
+            apt:
+                    update_cache: yes
+                    upgrade: dist
+                    
+                    
+                
+
+etc/ansible/hosts Or other file
+
+Here is my hosts file displayed using the cat command:
+
+cat hosts
+
+[all:vars]
+# Username for ssh connection
+ansible_user='vivek'
+# Run commands as root user?  
+ansible_become='yes'
+# How do I become root user? Use sudo. 
+ansible_become_method='sudo'
+# Password for sudo
+ansible_become_pass='superSecretPassword' 
+###################################################
+# Password for sudo user i.e. ansible_user password
+# See https://www.cyberciti.biz/faq/how-to-set-and-use-sudo-password-for-ansible-vault/
+# Read it from an encrypted file
+# ansible_become_pass='{{ my_sudo_password }}' 
+###################################################
+[dbservers]
+10.98.222.4
+10.98.222.7
+10.98.222.8
+
+
+Now you can run it as follows:
+
+ansible-playbook -i ~/hosts update.yml
+
+
+
+You just install and configure latest version of Ansible on Ubuntu Linux and ran your first playbook too.
+
+
+A note about Python version 3
+
+Ansible needs python installed on a remote server. You can specify remote version of python using the following syntax in hosts file:
+ansible_python_interpreter='/usr/bin/env python3'
+
+For example here is my sample host file displayed using the cat command:
+cat hosts
+
+
+[all:vars]
+ansible_user='{{ my_user }}'
+ansible_become=yes
+ansible_become_method=sudo
+ansible_become_pass='{{ my_user_pass }}'
+ansible_python_interpreter='/usr/bin/env python3'
+ 
+[bsdboxes]
+192.168.2.30
+192.168.2.31
+192.168.2.32
+192.168.2.33
+
+
+Setting and configuring default Ansible option
+
+The config file for ansible is located at /etc/ansible/ansible.cfg. Edit the file:
+sudo vim /etc/ansible/ansible.cfg
+
+
+
+Under [defaults] set display_skipped_hosts to False to hide displaying skipped task/host entries in a task in the default callback:
+
+
+display_skipped_hosts = False
+
+
+Next look up for [ssh_connection] to set up default ssh arguments:
+
+[ssh_connection]
+ssh_args = -o ServerAliveInterval=30 -o ControlMaster=auto -o ControlPersist=60s
+
+#
+Save and close the file. We are reusing SSH connection to speed up remote login process using multiplexing by setting up ssh_args option. OpenSSH server connection drops out after few minutes of inactivity hence we are setting ServerAliveInterval to 30. We also used ControlPersist in conjunction with ControlMaster, specifies that the master connection should remain open in the background (waiting for future client connections) after the initial client connection has been closed.
+
+
+
+:end:
