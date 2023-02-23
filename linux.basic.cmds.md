@@ -19,6 +19,7 @@ Steps:
 
 [Linux Basic Commands](#linux-basic-cmds)
 
+[Linix Networking CMDs](#linux-networking-cmds)
 
 
 
@@ -1342,6 +1343,888 @@ Here are some acceptable options you can use:
 	
 	
 :end: 
+	
+	
+#
+# Linux Basic CMDs
+	
+>>>>> Linux Commands <<<<<<<<<
+
+
+
+How do I change directory permissions in Linux? 
+
+To change directory permissions in Linux, use the following:
+
+    chmod +rwx filename to add permissions
+    chmod -rwx directoryname to remove permissions. 
+    chmod +x filename to allow executable permissions.
+    chmod -wx filename to take out write and executable permissions.
+
+
+How to Change Directory Permissions in Linux for the Group Owners and Others 
+
+
+The command for changing directory permissions for group owners is similar, but add a “g” for group or “o” for users:
+
+    chmod g+w filename
+    chmod g-wx filename
+    chmod o+w filename
+    chmod o-rwx foldername
+
+
+To change directory permissions for everyone, use “u” for users, “g” for group, “o” for others, and “ugo” or “a” (for all).
+
+    chmod ugo+rwx foldername to give read, write, and execute to everyone.
+    chmod a=r foldername to give only read permission for everyone.
+
+
+How to Change Groups of Files and Directories in Linux:
+
+By issuing these commands, you can change groups of files and directories in Linux. 
+
+    chgrp groupname filename
+    chgrp groupname foldername
+
+
+How to change ownership in Linux
+
+
+Another helpful command is changing ownerships of files and directories in Linux:
+
+    chown name filename
+    chown name foldername
+
+You can also combine the group and ownership command by using:
+    chown -R name:filename /home/name/directoryname
+
+
+How to change permissions in numeric code in Linux
+
+You may need to know how to change permissions in numeric code in Linux, so to do this you use numbers instead of “r”, “w”, or “x”.
+
+    0 = No Permission
+    1 = Execute
+    2 = Write
+    4 = Read
+
+
+Permission numbers are:
+
+    0 = ---
+    1 = --x
+    2 = -w-
+    3 = -wx
+    4 = r-
+    5 = r-x
+    6 = rw-
+    7 = rwx
+
+
+  chmod 777 foldername will give read, write, and execute permissions for everyone.
+
+  chmod 700 foldername will give read, write, and execute permissions for the user only.
+
+  chmod 327 foldername will give write and execute (3) permission for the user, w (2) for the group, and read, write, and execute for the users.
+
+
+
+Chown Command in Linux (File Ownership):
+
+chown [OPTIONS] USER[:GROUP] FILE(s)
+
+    USER - If only the user is specified, the specified user will become the owner of the given files, the group ownership is not changed.
+    USER: - When the username is followed by a colon :, and the group name is not given, the user will become the owner of the files, and the files group ownership is changed to user’s login group.
+    USER:GROUP - If both the user and the group are specified (with no space betwen them), the user ownership of the files is changed to the given user and the group ownership is changed to the given group.
+    :GROUP - If the User is omitted and the group is prefixed with a colon :, only the group ownership of the files is changed to the given group.
+    : If only a colon : is given, without specifying the user and the group, no change is made.
+    
+    
+    
+    
+    How to Change the Owner of a File: 
+    
+    chown USER FILE          //User (new owner)
+    chown linuxize file1     // linuxxize (new Owner)
+    
+    chown linuxize file1 dir1 
+    
+    chown 1000 file2          // 1000 (new owner id)
+    
+    
+    
+  How to Change the Owner and Group of a File:
+    
+  chown USER:GROUP FILE
+ 
+  chown linuxize:users file1
+
+  chown linuxize: file1
+  
+  
+ How to Change the Group of a File:
+ 
+   chown :GROUP FILE
+
+   chown :www-data file1
+   
+   
+ How to Change Symbolic Links Ownership:  
+ 
+   chown www-data: symlink1
+   
+   chown -h www-data symlink1
+   
+   
+How to Recursively Change the File Ownership: 
+
+    chown -R USER:GROUP DIRECTORY
+    chown -R www-data: /var/www
+    chown -hR www-data: /var/www
+    
+    
+ Using a Reference File:
+ 
+    chown --reference=file1 file2
+    
+     (For example, the following command will assign the user and group ownership of the file1 to file2)
+   
+   
+--------------------------------------------------
+   
+AddGroup & DelGroup: 
+--------------------
+How to Create Groups in Linux (groupadd Command): 
+
+groupadd Command Syntax:
+
+   groupadd [OPTIONS] GROUPNAME
+   
+Creating a Group in Linux: 
+
+   groupadd mygroup
+   groupadd -f mygroup
+   
+   
+Creating a Group with Specific GID: 
+
+   groupadd -g 1010 mygroup
+   
+ You can verify the group’s GID, by listing all groups and filtering the result with grep :  
+ 
+   getent group | grep mygroup  
+   
+   
+When used with the -o (--non-unique) option the groupadd command allows you to create a group with non-unique GID:
+
+   groupadd -o -g 1010 mygroup
+   
+
+Creating a System Group: 
+
+   groupadd -r mysystemgroup
+   
+   
+Overriding the Default /etc/login.defs Values
+
+   groupadd -K GID_MIN=1200 -K GID_MAX=1500 mygroup   
+   
+  
+Creating a System Group with Password 
+
+   groupadd -p grouppassword mygroup    
+     
+ 
+Deleting a group:
+
+  groupdel [groupName]
+  
+   
+--------------------------------------------------------
+    
+
+AddUser: 
+
+
+useradd Command:
+
+useradd [OPTIONS] USERNAME
+
+
+How to Create a New User in Linux: 
+
+  sudo useradd username
+  sudo passwd username
+  
+  
+How to Add a New User and Create Home Directory:
+
+  sudo useradd -m username
+  ls -la /home/username/
+  
+Creating a User with Specific Home Directory:
+
+  sudo useradd -m -d /opt/username username  
+  sudo useradd -m -d /opt/username username
+  
+Creating a User with Specific User ID: 
+
+  sudo useradd -u 1500 username
+  id -u username
+  
+Creating a User with Specific Group ID: 
+
+  sudo useradd -g users username
+  id -gn username
+  
+Creating a User and Assign Multiple Groups:
+
+  sudo useradd -g users -G wheel,developers username    //primary grou:users, secondly groups: whell and developers
+  id username  
+  
+  
+Creating a User with Specific Login Shell: 
+
+
+    sudo useradd -s /usr/bin/zsh username
+    grep username /etc/passwd
+  
+Creating a User with Specific Login Shell     
+  
+    sudo useradd -s /usr/bin/zsh username
+    grep username /etc/passwd                //verify
+  
+  
+Creating a User with Custom Comment: 
+
+    grep username /etc/passwd
+  
+Creating a User with an Expiry Date: 
+
+    sudo useradd -e 2019-01-22 username
+    sudo chage -l username
+     
+Creating a System User: 
+
+    sudo useradd -r username 
+    
+Changing the Default useradd Values: 
+
+    useradd -D    
+    sudo useradd -D -s /bin/bash: 
+    sudo useradd -D | grep -i shell     //verify
+    
+
+--------------------------------------------------------
+--------------------------------------------------------
+
+
+What is a Linux Group?
+
+Linux groups help developers manage user accounts in Linux. You can set individual permissions for each user. But, this can be impractical if you’re working with multiple users who should all have the same privileges. 
+
+ Primary group : 
+ Secondary group : 
+ 
+How to Add a User to a Group Linux: 
+
+  sudo usermod -a -G group_to_add username
+  
+
+The -a flag tells usermod to add a user to a group.
+The -G flag specifies the name of the secondary group to which you want to add the user.
+
+
+ Linux: Add User to Group Example: 
+ 
+  Let’s say you want to add the user “ajay” to the “sudo” group on our computer.
+  
+    sudo usermod -a -G sudo ajay
+    sudo usermod -a -G sudo,test ajay
+    
+    
+ Add User to Group Linux: New User Example:
+ 
+     sudo useradd -g staff -G test cktutorials
+     
+ How to Check a User’s Group: 
+ 
+      id username
+      
+      
+          
+     
+ 
+
+-----------------------------------------------------------
+
+
+
+ display:
+
+    All users 
+
+    All groups
+    
+    
+
+Display users & groups list: 
+
+
+You can display with the help of compgen builtin command as follows:
+
+    To display all users run following command:
+
+    compgen -u
+
+    To display all groups run following command:
+
+    compgen -g
+
+However you can also display all users by cut -d ":" -f 1 /etc/passwd.
+
+
+//
+
+Here we are going to use getent for the detailed the info
+
+We can list the user with the following command:
+
+getent passwd
+
+We can list the group as follows:
+
+    getent group
+
+To fetch detail a specific user
+
+    getent passwd lalit
+
+
+
+You can also list a specific group’s membership using the following command:
+
+     getent group www-data
+
+
+
+Listing All Groups:
+
+     less /etc/group
+
+
+
+To get a list of all groups, type the following command:
+
+	getent group
+
+You can also use awk or cut to print only the first field containing the name of the group:
+
+	getent group | awk -F: '{ print $1}'
+
+	getent group | cut -d: -f1
+	
+	
+--------------------------------------------------------------------------------
+
+
+Get a List of all Users using the getent Command :
+
+	getent passwd
+
+	getent passwd | awk -F: '{ print $1}'
+	getent passwd | cut -d: -f1
+
+
+Check whether a user exists in the Linux system:
+
+	getent passwd | grep jack
+	
+	getent passwd jack
+	
+	getent passwd | wc -l
+	
+	
+System and Normal Users: 
+
+	grep -E '^UID_MIN|^UID_MAX' /etc/login.defs
+	
+	getent passwd {1000..60000}
+	
+	
+Your system UID_MIN and UID_MIN values may be different so the more generic version of the command above would be:
+
+eval getent passwd {$(awk '/^UID_MIN/ {print $2}' /etc/login.defs)..$(awk '/^UID_MAX/ {print $2}' /etc/login.defs)}
+
+If you want to print only the usernames just pipe the output to the cut command:
+
+eval getent passwd {$(awk '/^UID_MIN/ {print $2}' /etc/login.defs)..$(awk '/^UID_MAX/ {print $2}' /etc/login.defs)} | cut -d: -f1
+	
+	
+	
+	
+#
+
+[Top](#top)
+<a name="linux-networking-cmds"></a>
+
+# Linux Networking Commands with Examples:
+
+
+    ifconfig        //showing the IP address of 3 networks, Ethernet, local network, and WLAN
+    ip
+    traceroute
+    tracepath
+    ping
+    netstat
+    ss
+    dig
+    nslookup
+    route
+    host
+    arp
+    iwconfig
+    hostname
+    curl or wget
+    mtr
+    whois
+    ifplugstatus
+    iftop
+    tcpdum
+
+
+
+ifconfig
+
+	ifconfig eth0
+	ifconfig lo
+	ifconfig wlan0
+
+
+To assign an IP address and Gateway to an interface:
+
+ ifconfig eth0 <address> netmask <address> 
+
+
+To enable or disable an interface:
+
+ifup eth0                 //To enable an interface
+ifdown eth0              //To disable an interface
+ifconfig eth0 mtu xxxx   //To set the size of MTU
+
+
+ip
+
+ip a 
+ip addr
+
+ip a show eth0
+ip a how lo
+ip a show wlan0
+
+
+	
+traceroute
+traceroute <destination>
+
+sudo apt-get install inetutils-traceroute
+
+Ex:
+traceroute google.com
+traceroute -n google.com
+sudo traceroute -I google.com
+
+sudo traceroute -T google.com
+
+
+
+4.tracepath
+
+tracepath <destination> 
+
+Example:   
+
+tracepath mindmajix.com
+
+
+5. ping
+
+
+Syntax:
+
+ping <destination> 
+
+Example:
+Command: 
+
+ping google.com
+ping -c <number> <destination>
+
+
+6. netstat
+
+Syntax:
+
+netstat
+
+
+1) To display the programs 
+
+Syntax:
+
+netstat -p
+
+2) To get the details of the ports
+
+Syntax:
+
+netstat -s
+
+3) To get the information of the routing table 
+
+Syntax:
+
+netstat -r
+
+
+
+7. ss
+
+syntax: 
+ 
+ ss
+ 
+ ss -ta
+ ss -ua
+ ss -xa
+ 
+ ss -lt  
+ss -lu  
+ss -lx
+
+
+
+    To get a list of all the established sockets of TCP for IPV4,
+
+Command: 
+
+$ ss -t4 state established
+
+    To get a list of all closed TCP sockets,
+
+Command:
+
+ $ ss -t4 state closed
+ 
+ 
+ 
+    To get a list of all connected ports for a specific IP address:
+
+Command:
+
+ $ ss dst XXX.XXX.XXX.XXX
+ 
+ 
+ 
+ 
+8. dig (Domain Information)
+
+Syntax:
+
+dig <domainName> 
+
+Example:
+
+ $ dig google.com
+ 
+Command:
+
+ $ dig google.com MX
+
+    To get all types of records at once, use the keyword ANY ass below:
+
+Command:
+
+ $ dig google.com ANY
+ 
+ 
+ 
+ 
+9.nslookup
+
+
+Linux nslookup is also a command used for DNS related queries. It is the older version of dig.
+
+Syntax:
+
+ nslookup <domainName>
+
+Example:
+
+nslookup mindmajix.com
+
+
+
+
+10.route
+
+Linux route command displays and manipulates the routing table existing for your system.
+
+
+Displaying numerical IP address
+
+route -n
+
+
+Toa add a gateway
+
+Syntax:
+
+ route add default gw <IP address> 
+ 
+ 
+ To get routing information
+ 
+ Syntax:
+
+ route -Cn
+ 
+ 
+11. host
+
+Linux host command displays the domain name for a given IP address and IP address for a given hostname. It is also used to fetch DNS lookup for DNS related query.
+
+Example:
+
+host mindmajix.com  
+host 149.77.21.18
+
+
+Syntax:
+
+host -t <resourceName> 
+
+
+12.arp
+
+Linux arp command stands for Address Resolution Protocol. It is used to view and add content to the kernel's ARP table.
+
+Syntax:
+
+arp
+
+Command:
+
+ $ arp -n
+
+You can also delete the entries from the arp table, as shown below.
+Command:
+
+$ arp -d HWADDR
+
+
+
+13.iwconfig
+
+Linux iwconfig is used to configure the wireless network interface. It is used to set and view the basic WI-FI details like SSID and encryption. To know more about this command, refer to the man page.
+
+Syntax:
+
+iwconfig
+
+Output:
+14.hostname
+
+Linux hostname is the simple command used to view and set the hostname of a system.
+
+Syntax:
+
+hostname
+
+Output:
+
+    To set the hostname
+
+Use the syntax below to set the hostname.
+
+Syntax:
+
+ sudo hostname <newName>
+
+The hostname set through this command is not permanent. It will be reset to the name in the hostname file back when the system reboots.
+
+In order to permanently set a hostname, you have to re-write the hostname in the hostname file, present on the server. Once set, you have to reboot the box.
+
+In Ubuntu, /etc/hostname file is used.
+
+In RHEL, /etc/sysconfig/network is used.
+15.curl & wget
+
+Linux curl and wget commands are used in downloading files from the internet through CLI. The curl command has to be used with the option "O" to fetch the file, while the wget command is used directly.
+
+Below are the syntax and the example for the two commands.
+
+a) Curl
+
+Syntax:
+
+curl -O <fileLink>
+
+Example:
+
+ curl -O google.com/doodles/childrens-day-2014-multiple-countries 
+
+b) wget
+
+Syntax:
+
+ wget <fileLink> 
+
+Example:
+
+wget google.com/doodles/new-years-day-2012
+
+Output:
+16.mtr
+
+Linux mtr command is a combination of ping and the traceroute command. It continuously displays information regarding the packets sent with the ping time of each hop. It is also used to view the network issues.
+
+Syntax:
+
+mtr <path>
+
+Example:
+
+$ mtr google.com
+
+Output:
+
+You can use mtr with –report option. It sends 10 packets to each hop that is found on the way.
+
+Syntax:
+
+$ mtr --report <path>
+
+17.whois
+
+Linux whois command is used to fetch all the information related to a website. You can get all the information about a website including the registration and the owner information.
+
+Syntax:
+
+whois <websiteName>
+
+Example:
+
+whois mindmajix.com
+
+Output:
+18.ifplugstatus
+
+Linux ifplugstatus command is used to check if a cable is plugged into the network interface. This command is not directly available on Ubuntu. You can install this using the command below:
+Command:
+
+sudo apt-get install ifplugd
+
+Syntax:
+
+ ifplugstatus
+
+Output:
+
+In the output above, "link beat detected" means that the cable is plugged in.
+19.iftop
+
+Linux iftop command is used in traffic monitoring. 
+
+Use the following command to download iftop on your system.
+Command:
+
+ $ wget http://www.ex-parrot.com/pdw/iftop/download/iftop-0.17.tar.gz
+
+This will give a zip file. To extract it, use the following command,
+Command:
+
+$  tar zxvf iftop-0.17.tar.gz
+
+You can compile this using,
+Commands:
+
+$ cd iftop-0.17
+$  ./configure
+$ make
+$ make install
+
+Now, run the tool as a root user,
+
+ $ sudo iftop -I <interface>
+
+Output:
+
+You can view the ports using the -P option in command like this,
+Command:
+
+ $ sudo iftop -P
+
+You can use the -B command to get the data in bytes, instead of bits (which is shown by default).
+Command:
+
+ $ iftop -B
+
+20.tcpdump
+
+Linux tcpdump command is the most used command in network analysis among other Linux network commands. It captures the traffic that is passing through the network interface and displays it. 
+
+This kind of access to the packet will be crucial when troubleshooting the network.
+
+Syntax:
+
+ $ tcpdump -i <network_device>
+
+Output:
+
+You can also specify the protocol (TCP, UDP, ICMP, and others) in the command like this,
+Command:
+
+ $ tcpdump -i <network_device> tcp
+
+To specify the port, use the command,
+Command:
+
+ $ tcpdump -i <network_device> port 80
+
+tcpdump command keeps executing and sending packets unless canceled. Hence you can specify the number of events to be captured to control the continuous execution.
+Related  Article: Linux Tutorial for Beginners
+Command:
+
+ $ tcpdump -c 20 -i <network_device>
+
+You can
+
+also specify the IP you are capturing from, using the tag src or dst.
+Command:
+
+ $ tcpdump -c 20 -i <network_device> src XXX.XXX.XXX.XXX
+
+You can save the network traffic captured at an instant, into a file and use it later. This can be done using the command below,
+
+a) Save into a file
+Command:
+
+$ tcpdump -w /path/ -i <network_device>
+
+b) Read from the file
+Command:
+
+ $ tcpdump -r /path
+
+These were the most essential network commands in Linux that are used frequently for network analysis and troubleshooting.
+
+	
+	
+:end:	
+	
+	
+	
 	
 #
 Ubuntu22.04: 
