@@ -21,6 +21,7 @@ Steps:
 
 [Linix Networking CMDs](#linux-networking-cmds)
 
+[Alpine Linux Basic Commands](#alpine-basic-cmds)
 
 
 
@@ -2225,6 +2226,364 @@ These were the most essential network commands in Linux that are used frequently
 	
 	
 	
+[Top](#top)
+<a name="alpine-basic-cmds"</a>	
+	
+# Alpine Basicd Commands
+
+	>>>> Alpine Linux Cmds <<<<<<
+
+
+
+
+10 Alpine Linux apk Command Examples:
+	
+
+apk-command
+
+I am new Alpine Linux system admin user. How do I use apk command line utility for the package management on Apline Linux server running in cloud or a Linux container? How can I use the Alpine package manager?
+
+apk command details
+	
+	Description	Alpine Linux package manager
+	
+	Category	        Package Manager
+	Difficulty level	Easy
+	Root privileges	Yes
+	OS compatibility	Alpine • Linux
+	Est. reading time	10 minutes
+	Table of contents ↓
+
+	    1 Syntax
+	    2 Examples
+	    3 Update the package list
+	    4 Search for package
+	    5 Install a package
+	    6 Remove/delete a package
+	    7 Upgrade running system
+	    8 List installed packages
+	    9 Show statistics
+	    10 See also
+
+Alpine Linux is a free and open-source Linux kernel-based distro. It uses musl and busybox as init system. This distro is designed with security in mind and targeted at power users who want a secure machine. Alpine comes with PaX and grsecurity for Linux kernel protection, including all binaries with stack smashing protection. APK stands for Alpine Linux package keeper (manager). One can use the apk command to delete, install, upgrade, or list software on a running Alpine Linux based system. Like most modern Linux distros, all software packages for Alpine Linux are digitally signed to avoid security problems. You can install packages from a local disk (such as CDROM or a USB stick) or the internet archive location using apk command, the Alpine package manager for binary packages, instead of compiling them from the source.
+
+
+
+The list of repositories is stored in /etc/apk/repositories configuration file. Use the cat command to view /etc/apk/repositories file. Alpine Linux package often has the .apk extension called “a-packs”. The apk command is equivalent to apt/apt-get command on Debian/Ubuntu, yum command on CentOS/RHEL Linux, or zypper command on SuSE/OpenSUSE Linux..
+Purpose
+
+    Use apk for installing, upgrading, configuring, and removing apps/programs for an Alpine Linux operating system in a consistent manner.
+
+Syntax
+
+The basic syntax is as follows:
+
+	apk [options] command
+	apk [options] command pkgName
+	apk [options] command pkgName1 pkgName2
+
+Alpine Linux apk command examples
+
+Let us see how to use the apk command to install security updates or new set of packages on an Alpine Linux server.
+How to update the package list
+
+To update your package list, enter:
+
+	apk update
+
+
+The syntax is:
+	
+	apk search pkgName
+
+For example, search a package named htop, run:
+
+	apk search htop
+
+
+To search and display description:
+
+	apk search -v -d 'htop'
+
+
+To list all packages available, along with their descriptions
+
+	apk search -v
+
+How do I search package by wildcards?
+
+The syntax is as follows to search all php7 packages or php5 packages:
+	
+	apk search -v 'php5*'
+	
+### OR ###
+
+	apk search -v 'php7*'
+
+How to install a package(s) by name
+
+The syntax is:
+	
+	apk add pkgName
+	apk add pkgName1 pkgName2
+
+To install a htop package, run:
+
+	apk add htop
+
+
+To install Apache2 along with PHP7 and modules, run:
+
+	apk add apache2 php7-apache2 php7-gd php7-mysqli
+
+Interactive install or upgrade
+
+We can force confirmation before performing certain operations by passing the -i option:
+	
+	apk -i add nginx
+
+	apk -i upgrade
+
+The following packages will be upgraded:
+  libcrypto1.1 libssl1.1 alpine-base linux-lts xtables-addons-lts openssh-keygen openssh-client openssh-sftp-server openssh-server-common openssh-server openssh openssl zfs-lts
+After this operation, 16 KiB of additional disk space will be used.
+Do you want to continue [Y/n]?
+
+Simulation with apk command
+
+We can simulate the requested operation without making any changes. Helpful to see what packages will be upgrades or what will be done on the Alpine Linux system:
+	
+	apk -s command
+	apk -s add nginx
+
+	apk -s upgrade
+
+In other words, nothing was installed or upgraded on the system, but you will know precisely what apk was about to do.
+How to hold a specific package back and not upgrade it
+
+If you want to upgrade Alpine Linux system, but keep or hold a specific package add version number. For instance, to hold the bash package to the version 	
+	5.0.0-r0 level or lower, run:
+	
+	apk add bash=5.0.0-r0
+
+One can do regex based version matching to hold the version to a major/minor release. For example:
+	
+	apk add bash=~5.0
+
+Now, upgrade the system. However, apk will upgrade the entire system, keeping the bash package at the 5.0.0-r0 or lower level:
+	
+	apk upgrade
+
+It is possible to remove holding. For example, make sure upgrade bash to the current lastest version, run:
+
+	apk add bash>5.0.0-r0
+
+Alpine Linux apk Command Examples:
+	
+How do install a local .apk file package?
+
+The syntax is as follows to add a local package named foo.apk:
+	
+	apk add --allow-untrusted /path/to/foo.apk
+
+	apk add --allow-untrusted pkg1.apk pkg2.apk
+	
+How to remove or delete a package(s) by name
+
+The syntax is:
+	
+	apk del pkgName
+	apk del pkgName1 pkgName2
+
+To delete a htop package run:
+
+	apk del htop
+
+How do I delete old packages caches on Alpine Linux?
+
+To remove out older versions of packages, run the clean command as follows:
+	
+	apk cache clean
+	
+## or ##
+	apk -v cache clean
+
+One can also clean cache and download missing packages in one step:
+
+	apk cache -v sync
+	
+How to upgrade running Alpine Linux
+
+The syntax is:
+	
+	apk update && apk upgrade
+
+You can create a bash shell alias as follows in ~/.bashrc
+echo "alias update='apk update && apk upgrade'" >> /.bashrc
+
+Run it as follows:
+
+	update
+	
+How do I upgrade selected packages only?
+
+The syntax is
+	
+	apk add -u pkgName
+
+To upgrade a htop only package:
+	
+	apk update
+
+	apk add -u htop
+	
+How do I list installed packages?
+
+The syntax is:
+	apk info
+	
+# filter out info using the grep command #
+	
+	apk info -vv | grep 'foo'
+	
+# Get verbose outputs and sort it using the sort command #
+
+	apk info -vv | sort
+
+Fig.02: How do I show/list installed packages in Alpine Linux
+
+Fig.02: How do I show/list installed packages in Alpine Linux
+	
+Find out which package a file belongs to..
+
+to determine which package a file named /etc/passwd or /sbin/apk belongs to:
+	
+	apk info --who-owns /etc/passwd
+	
+/etc/passwd is owned by alpine-baselayout-3.0.4-r0
+
+	apk info --who-owns /sbin/apk
+	
+/sbin/apk is owned by apk-tools-2.6.8-r2
+	
+List contents of the PACKAGE
+
+	apk -L info pkgName
+
+	apk -L info htop
+
+
+Check if PACKAGE is installed
+
+	apk -e info pkgName
+
+	apk -e info atop
+
+No output displayed if PACKAGE is NOT installed.
+	
+List packages that the PACKAGE depends on
+
+	apk -R info atop
+
+	apk -R info atop
+
+
+List all packages depending on PACKAGE
+
+Pass the -r to the apk command:
+	
+	apk info -r pkgNameHere
+	
+# For example, list all pkgs depending upon GNU/bash #
+
+	apk info -r bash
+
+Sample outputs:
+
+bash-5.1.16-r0 is required by:
+bash-completion-2.11-r4
+wireguard-tools-wg-quick-1.0.20210914-r0
+
+Show installed size of PACKAGE
+
+You need to pass the -s to the apk command as follows:
+	
+	apk info -s pkgName
+
+# Let us list size of a package named 'atop' #
+
+	apk info -s atop
+
+
+Print description for PACKAGE
+
+Want to get a short description about APK package? Try passing the -d as follows:
+
+	apk info -d pkgName
+
+	apk info -d bash
+
+Here is what I see:
+
+bash-5.1.16-r0 description:
+	
+The GNU Bourne Again shell
+
+Print all information about PACKAGE
+
+Pass the -a option to the apk command as follows:
+	
+	apk info -a pkgName
+	
+# Get info about GNU/bash, run: #
+
+	apk info -a bash
+
+
+apk command options and examples:
+
+Table 1: 	
+	
+	apk update 	Update the package list 	apk update
+	apk upgrade 	Upgrade the system 	        apk update
+	apt ugrade
+	apk add pkg 	Add a package 	                apk add apache
+	apk del pkg 	Delete a package 	        apk del nginx
+	apk search -v 	Search for packages 	        apk search -v
+	apk search -v -d 'nginx*‘
+	apk search -v 'apache*'
+	apk info 	List all installed pacakges 	                                        apk info
+	apk fix 	Repair package or upgrade it without modifying main dependencies 	apk fix
+	apk policy pkg 	Show repository policy for packages 	                                apk policy bash
+	apk stats 	Show statistics about repositories and installations 	                apk stats
+	See also
+
+You learned about apk command and everyday examples to add, remove and manage packages on Alpine Linux. See also:
+
+    	/etc/apk/repositories file.
+	
+    The apk command has many more options. Hence, read apk command manual page using the man command or help command
+
+man apk
+	apk --help
+	
+# Want to get help about add/del commands? #
+	
+	apk add --help
+
+#
+	apk add docker
+	apk del docker
+	docker context use
+	docker context ls
+	docker context show
+	service docker start
+	service docker status
+	service docker stop or restart
+	unset DOCKER_HOST
+	export DOCKER_HOST=unix:///var/run/docker.sock
+
+:end:
 	
 #
 Ubuntu22.04: 
