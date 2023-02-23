@@ -2227,11 +2227,10 @@ These were the most essential network commands in Linux that are used frequently
 	
 	
 [Top](#top)
+	
 <a name="alpine-basic-cmds"</a>	
 	
-# Alpine Basicd Commands
-
-	>>>> Alpine Linux Cmds <<<<<<
+# Alpine Basicd Commands:
 
 
 
