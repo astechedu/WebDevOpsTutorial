@@ -6,7 +6,7 @@ $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 #
 # Topics: 
 
-    :link:[Ansible Basic CMDs](#ansible-basic-cmds)
+   :link:[Ansible Basic CMDs](#ansible-basic-cmds)
     
    :link:[Ansible Installation on Linux Ubuntu 20.04/22.04, CentOS of Fedora, ](#ansible_installation)   
    
