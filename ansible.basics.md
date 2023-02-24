@@ -1662,83 +1662,83 @@ Alpine linux
     
 1. Creating an Empty File To Managed Node: 
 
-	---
-
-	- hosts: all
-	  tasks:
-	  - name: Creating an empty file
-	    file:
-	      path: "/your path"
-	      state: touch
+		---
+		- hosts: all
+		  tasks:
+		  - name: Creating an empty file
+		    file:
+		      path: "/your path"
+		      state: touch
  
 
 2. Creating a File With Content to Managed Node: 
 
 
-	---
-	- hosts: all
-	  tasks:
-	  - name: Creating a file with content
-	    copy:
-	      dest: "/your path"
-	      content: |
-		line 01
-		line 02
+		---
+		- hosts: all
+		  tasks:
+		  - name: Creating a file with content
+		    copy:
+		      dest: "/your path"
+		      content: |
+			line 01
+			line 02
+
 
 
 3. Creating Multiple Files
 
-	---
-	- hosts: all
-	  tasks:
-	  - name: Create multiple files
-	    file:
-	      path: "{{ item }}"
-	      state: touch
-	    with_items:
-	    - test01.txt
-	    - test02.txt
-	    - test03.txt
-	    - test04.txt
+		---
+		- hosts: all
+		  tasks:
+		  - name: Create multiple files
+		    file:
+		      path: "{{ item }}"
+		      state: touch
+		    with_items:
+		    - test01.txt
+		    - test02.txt
+		    - test03.txt
+		    - test04.txt
         
     
 4. Creating a Directory
 
 
-	---
-	- hosts: all
-	  tasks:
-	  - name: Creating a new directory
-	    file:
-	      path: "/your path"
-	      state: directory
+		---
+		- hosts: all
+		  tasks:
+		  - name: Creating a new directory
+		    file:
+		      path: "/your path"
+		      state: directory
 
    
    
 5. Removing Files
 
-	---
-	- hosts: all
-	  tasks:
-	  - name: Removing a file
-	    file:
-	      path: "/your path"
-	      state: absent
-      
+		---
+		- hosts: all
+		  tasks:
+		  - name: Removing a file
+		    file:
+		      path: "/your path"
+		      state: absent
+
       
       
 6. Setting File Permissions      
         
     
-	---
-	- hosts: all
-	  tasks:
-	  - name: Create a new file with permissions
-	    file:
-	      path: "/your path"
-	      state: touch
-	      mode: 0755
-	      owner: test
+		---
+		- hosts: all
+		  tasks:
+		  - name: Create a new file with permissions
+		    file:
+		      path: "/your path"
+		      state: touch
+		      mode: 0755
+		      owner: test
 
 
 Or Symbolic
