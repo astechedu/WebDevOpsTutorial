@@ -1169,75 +1169,78 @@ playbook.yml
 ------------
 
 
----
-- hosts: all
-  become: true
-  vars_files:
-    - vars/default.yml
+	---
+	- hosts: all
+	  become: true
+	  vars_files:
+	    - vars/default.yml
 
-  tasks:
-    - name: Install Prerequisites
-      apt: name=aptitude update_cache=yes state=latest force_apt_get=yes
+	  tasks:
+	    - name: Install Prerequisites
+	      apt: name=aptitude update_cache=yes state=latest force_apt_get=yes
+
 
   # Sudo Group Setup
   
-    - name: Make sure we have a 'wheel' group
-      group:
-        name: wheel
-        state: present
+	    - name: Make sure we have a 'wheel' group
+	      group:
+		name: wheel
+		state: present
 
-    - name: Allow 'wheel' group to have passwordless sudo
-     lineinfile:
-        path: /etc/sudoers
-        state: present
-        regexp: '^%wheel'
-        line: '%wheel ALL=(ALL) NOPASSWD: ALL'
-        validate: '/usr/sbin/visudo -cf %s'
+	    - name: Allow 'wheel' group to have passwordless sudo
+	     lineinfile:
+		path: /etc/sudoers
+		state: present
+		regexp: '^%wheel'
+		line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+		validate: '/usr/sbin/visudo -cf %s'
+
 
   # User + Key Setup
   
-    - name: Create a new regular user with sudo privileges
-      user:
-        name: "{{ create_user }}"
-        state: present
-        groups: wheel
-        append: true
-        create_home: true
-        shell: /bin/bash
+	    - name: Create a new regular user with sudo privileges
+	      user:
+		name: "{{ create_user }}"
+		state: present
+		groups: wheel
+		append: true
+		create_home: true
+		shell: /bin/bash
 
-    - name: Set authorized key for remote user
-      authorized_key:
-        user: "{{ create_user }}"
-        state: present
-        key: "{{ copy_local_key }}"
+	    - name: Set authorized key for remote user
+	      authorized_key:
+		user: "{{ create_user }}"
+		state: present
+		key: "{{ copy_local_key }}"
 
-    - name: Disable password authentication for root
-      lineinfile:
-        path: /etc/ssh/sshd_config
-        state: present
-        regexp: '^#?PermitRootLogin'
-        line: 'PermitRootLogin prohibit-password'
+	    - name: Disable password authentication for root
+	      lineinfile:
+		path: /etc/ssh/sshd_config
+		state: present
+		regexp: '^#?PermitRootLogin'
+		line: 'PermitRootLogin prohibit-password'
+
 
   # Install Packages
   
-    - name: Update apt
-      apt: update_cache=yes
+	    - name: Update apt
+	      apt: update_cache=yes
 
-    - name: Install required system packages
-      apt: name={{ sys_packages }} state=latest
+	    - name: Install required system packages
+	      apt: name={{ sys_packages }} state=latest
 
   # UFW Setup
  
-    - name: UFW - Allow SSH connections
-      ufw:
-        rule: allow
-        name: OpenSSH
+	    - name: UFW - Allow SSH connections
+	      ufw:
+		rule: allow
+		name: OpenSSH
 
-    - name: UFW - Deny all other incoming traffic by default
-      ufw:
-        state: enabled
-        policy: deny
-        direction: incoming
+	    - name: UFW - Deny all other incoming traffic by default
+	      ufw:
+		state: enabled
+		policy: deny
+		direction: incoming
 
 
 :end:
@@ -1589,36 +1592,35 @@ Ping:
 
 Check that you can reach all nodes:
 
-	ansible all -m ping
+		ansible all -m ping
 
 
 Playbooks:
 
 
----
-
-- name: Make "lighttpd" start on boot and start now, if not started.
-  ansible-builtin.service:
-    name: lighttpd
-    enabled: true
-    state: started
-
+		---
+		- name: Make "lighttpd" start on boot and start now, if not started.
+		  ansible-builtin.service:
+		    name: lighttpd
+		    enabled: true
+		    state: started
 
 
----
-- name: Ensure lighttpd is installed, update cache and install if not.
-  community.general.apk:
-    name: lighttpd
-    state: present
-    update_cache: yes
+
+		---
+		- name: Ensure lighttpd is installed, update cache and install if not.
+		  community.general.apk:
+		    name: lighttpd
+		    state: present
+		    update_cache: yes
 
 
----
-- name: Enable "foobar" policy
-  community.general.awall:
-    name: foobar
-    state: enabled
-    activate: true
+		---
+		- name: Enable "foobar" policy
+		  community.general.awall:
+		    name: foobar
+		    state: enabled
+		    activate: true
 
 
 
