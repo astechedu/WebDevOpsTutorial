@@ -1625,6 +1625,12 @@ CMDs:
 	ansible all -i myhosts
 	or 
 	anible web -i myhosts
+	
+	ansible-playbook playbookName -i inventoryName
+	
+	anible-playbook aws.yml -i myhosts
+	or
+	ansible-playbook -i myhosts aws.yml
 
 
 
