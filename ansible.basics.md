@@ -1756,4 +1756,18 @@ Or Symbolic
 		      mode: u=rwx,g=rx,o=rx
 		      owner: test
 
+
+
+7. Install httpd module to managed nodes
+
+		---
+		- hosts: server
+		  gather_facts: no
+		  tasks:
+		  - name: Install httpd module
+		    package:
+		      name: httpd
+		      state: present
+
+      
 :end:
