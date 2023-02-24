@@ -1700,8 +1700,7 @@ Alpine linux
 	    - test02.txt
 	    - test03.txt
 	    - test04.txt
-    
-    
+        
     
 4. Creating a Directory
 
@@ -1745,14 +1744,14 @@ Alpine linux
 Or Symbolic
 
 
-	---
-	- hosts: all
-	  tasks:
-	  - name: Create a new file with permissions
-	    file:
-	      path: "/your path"
-	      state: touch
-	      mode: u=rwx,g=rx,o=rx
-	      owner: test
+		---
+		- hosts: all
+		  tasks:
+		  - name: Create a new file with permissions
+		    file:
+		      path: "/your path"
+		      state: touch
+		      mode: u=rwx,g=rx,o=rx
+		      owner: test
 
 :end:
