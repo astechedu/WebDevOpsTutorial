@@ -1649,7 +1649,6 @@ Alpine linux
 
 /usr/bin/ansible
 
-Error agruments
 
 	ansible-playbook -i inventory playbook.yml
 
@@ -1661,8 +1660,7 @@ Error agruments
     
     
     
-1.    
-Creating an Empty File To Managed Node: 
+1. Creating an Empty File To Managed Node: 
 
 	---
 
@@ -1674,8 +1672,7 @@ Creating an Empty File To Managed Node:
 	      state: touch
  
 
-2.
-Creating a File With Content to Managed Node: 
+2. Creating a File With Content to Managed Node: 
 
 
 	---
@@ -1689,8 +1686,7 @@ Creating a File With Content to Managed Node:
 		line 02
 
 
-3.
-Creating Multiple Files
+3. Creating Multiple Files
 
 	---
 	- hosts: all
@@ -1706,9 +1702,9 @@ Creating Multiple Files
 	    - test04.txt
     
     
-4.
+    
+4. Creating a Directory
 
-Creating a Directory
 
 	---
 	- hosts: all
@@ -1719,8 +1715,8 @@ Creating a Directory
 	      state: directory
 
    
-5.
-Removing Files
+   
+5. Removing Files
 
 	---
 	- hosts: all
@@ -1731,9 +1727,8 @@ Removing Files
 	      state: absent
       
       
-6.
-
-Setting File Permissions      
+      
+6. Setting File Permissions      
         
     
 	---
