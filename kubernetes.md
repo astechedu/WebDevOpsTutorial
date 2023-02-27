@@ -70,6 +70,10 @@ $\color{green}0. \ Display \ all \ list \ (pods, \ services, \ deployments \ and
 
 Minikube On Windows10:
 
+	        minikube start --driver=docker
+	        minikube status
+	        kubectl cluster-info
+	        kubectl get node
 		
 		Running Pod:
 
