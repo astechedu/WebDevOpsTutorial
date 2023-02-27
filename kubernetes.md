@@ -68,6 +68,22 @@ $\color{green}0. \ Display \ all \ list \ (pods, \ services, \ deployments \ and
 	   kubectl get all --all-namespaces  
 	   microk8s enable dns storage           //Use add-ons
 
+Minikube On Windows10:
+
+		
+		Running Pod:
+
+		kubectl run nginx1 --image=nginx --port=80   //Running pod
+		kubectl get po -o wide
+
+		kubectl expose po nginx1 --type=NodePort    //Exposing service
+		kubectl get svc
+
+		minikube service nginx3 --url              //Getting url 
+
+		http://192.168.59.100:30353                //Showing this ip; copy & paste on browser
+
+
 
 
 $\color{green}1. \ Run \ a \ yamal \ file$
