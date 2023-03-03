@@ -157,8 +157,6 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 :link:[Docker Commands click here text file](docker.commands.txt)   
 
-:link:[Dockerized apps click here text file](dockerized.apps.txt) 
-
 # Kubernetes :diamond_shape_with_a_dot_inside:
 
 :link:[Virtual Machines Installations](virtual-machine-installations.md)
