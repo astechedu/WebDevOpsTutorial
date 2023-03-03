@@ -506,7 +506,46 @@ Dockerfile
 
 ===> End Angular App <======
 
+#
+:end:
+
+#
+Website: 
+   https://dev.to/dronk6/getting-started-with-docker-docker-playground-28h3
+
+
+---> What's in a Dockerfile?
+
+//1. Creating Dockerfile
+
+FROM node:12
+WORKDIR /home/node/app
+COPY package.json ./
+RUN yarn install
+COPY . .
+CMD [ "yarn", "start" ]
+
+
+
+
+//2. Creating Dockerfile
+
+FROM node:10 AS ui-build
+WORKDIR /usr/src/app
+COPY my-app/ ./my-app/
+RUN cd my-app && npm install && npm run build
+
+FROM node:10 AS server-build
+WORKDIR /root/
+COPY --from=ui-build /usr/src/app/my-app/dist ./my-app/dist
+COPY api/package*.json ./api/
+RUN cd api && npm install
+COPY api/server.js ./api/
+
+EXPOSE 80
+
+CMD ["node", "./api/server.js"]
 
 
 #
-#
+:end:
