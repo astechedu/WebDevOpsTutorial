@@ -12,9 +12,7 @@ Topics:
 
 
 
-
-
-
+#
 
 
 [Go To Top](#top)
@@ -26,51 +24,55 @@ Topics:
 
 
 
+#
 
 [Go To Top](#top)
 <a name="doc_django"></a>  
 # Django   (Worked)
+
    Install Django in local dir: 
+   
       pip install django
    
    
 Add the following content to the Dockerfile.
 
-    FROM python:3.8
+        FROM python:3.8
 
-    RUN apt-get update \
-      && apt-get install -y --no-install-recommends \
-        #postgresql-client \
-      && rm -rf /var/lib/apt/lists/*
+        RUN apt-get update \
+          && apt-get install -y --no-install-recommends \
+            #postgresql-client \
+          && rm -rf /var/lib/apt/lists/*
 
-    WORKDIR /usr/src/app
-    COPY requirements.txt ./
-    RUN pip install -r requirements.txt
-    COPY . .
+        WORKDIR /usr/src/app
+        COPY requirements.txt ./
+        RUN pip install -r requirements.txt
+        COPY . .
 
-    EXPOSE 8000
-    CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+        EXPOSE 8000
+        CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 
 
 requirements.txt: 
 
-  requiremasgiref==3.6.0
-  backports.zoneinfo==0.2.1
-  Django==4.1.4
-  sqlparse==0.4.3
-  ents.txt:
+      requiremasgiref==3.6.0
+      backports.zoneinfo==0.2.1
+      Django==4.1.4
+      sqlparse==0.4.3
+      ents.txt:
 
 
 .dockerignore:
 
 #Byte-compiled / optimized / DLL files
-  __pycache__/
 
-  **/migrations
-  src/media
-  src/db.sqlite3
-  Procfile
-  .git
+    __pycache__/
+
+    **/migrations
+    src/media
+    src/db.sqlite3
+    Procfile
+    .git
 
 
 #Building docker image:
@@ -84,6 +86,7 @@ requirements.txt:
 
 
 #Pull this image from Docker Hub 
+
     docker pull astechutube/sample-django-app
 
 
