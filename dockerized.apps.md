@@ -1003,3 +1003,977 @@ myproject/src/index.php
 
 #
 :end:
+
+#
+
+<<<< More Examples >>>>
+
+
+>>>> Docker PHP, Mysql & Apache <<<<
+
+Website:   Good site
+
+ https://www.section.io/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/
+
+
+
+version: '3.8'
+services:
+    php-apache-environment:
+        container_name: php-apache
+        build:
+            context: ./php
+            dockerfile: Dockerfile
+        depends_on:
+            - db
+        volumes:
+            - ./php/src:/var/www/html/
+        ports:
+            - 8000:80
+    db:
+        container_name: db
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+            MYSQL_DATABASE: MYSQL_DATABASE
+            MYSQL_USER: MYSQL_USER
+            MYSQL_PASSWORD: MYSQL_PASSWORD
+        ports:
+            - "9906:3306"
+
+
+Dockerfile 
+
+
+FROM php:8.0-apache
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+RUN apt-get update && apt-get upgrade -y
+
+
+phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - '8080:80'
+    restart: always
+    environment:
+        PMA_HOST: db
+    depends_on:
+        - db
+        
+---------------------------------------------------
+
+
+>>> Docker-Compose <<<<
+
+*) Dockerfile
+
+FROM: php:7.4-apache
+
+
+*) docker-compose.yml file
+
+version: "3"
+services: 
+ web:
+  build: . 
+  volumes: 
+   - ./src:/var/www/html
+  ports:
+   - 80:80
+
+db: 
+ image: mysql
+ volumes: 
+  -  ./db_data:/var/lib/mysql
+ environment: 
+  MYSQL_ROOT_PASSWORD:12345
+  MYSQL_DATABASE: docker_d
+ ports: 
+  - 3306:3306
+
+
+
+
+----------------------------------------------------
+
+
+
+
+>>>> Docker php:7.4-apache <<<<
+
+
+Image Name: php:7.4-apache
+
+docker-compose.yml  (file)
+
+version: "3"
+services: 
+ web
+  image: php:7.4-apache
+  container_name: php
+  ports: 
+   - "80:80"
+  volumes: 
+   - ~/html:/var/www/html
+
+
+
+
+-------------------------------------------------------
+-------------------------------------------------------
+
+>>>>> nginx + php <<<<<<
+
+//Working
+
+myproject (dir)
+1. nginx (dir) -> Dockerfile, default.conf
+2. php (dir)   -> Dockerfile,
+3. www/html (dir) -> index.php
+
+nginx: Dockerfile
+       FROM nginx:latest   
+       COPY ./default.conf /etc/nginx/conf.d/default.conf
+
+php: Dockerfile
+     FROM php:7.0-fpm  
+     RUN docker-php-ext-install pdo_mysql
+
+version: "3"
+services:
+ nginx:
+  build: ./nginx/
+  container_name: nginx-container
+  ports:
+   - 80:80
+  links:
+   - php
+  volumes:
+   - ./www/html/:/var/www/html/
+
+ php:
+  image: php:7.0-fpm
+  container_name: php-container
+  expose:
+   – 9000
+  volumes:
+   – ./www/html/:/var/www/html/
+
+
+-------------------------------------------------------
+-------------------------------------------------------
+
+>>> nginx + php <<<<<<
+
+
+    nginx:    
+      build: ./nginx/  
+      container_name: nginx-container  
+      ports:  
+       - 80:80  
+      links:  
+       - php  
+      volumes_from:  
+       - app-data  
+
+    php:    
+      image: php:7.0-fpm  
+      container_name: php-container  
+      expose:  
+       - 9000  
+      volumes_from:  
+       - app-data  
+
+    app-data:    
+      image: php:7.0-fpm  
+      container_name: app-data-container  
+      volumes:  
+       - ./www/html/:/var/www/html/  
+      command: "true"
+
+----------------------------------------------------------
+
+
+>>>> nginx + php + myql <<<<<<<<<<
+
+
+     nginx:    
+      build: ./nginx/  
+      container_name: nginx-container  
+      ports:  
+       - 80:80  
+      links:  
+       - php  
+      volumes_from:  
+       - app-data  
+
+     php:    
+      build: ./php/  
+      container_name: php-container  
+      expose:  
+       - 9000  
+      links:  
+       - mysql  
+      volumes_from:  
+       - app-data  
+
+     app-data:    
+      image: php:7.0-fpm  
+      container_name: app-data-container  
+      volumes:  
+       - ./www/html/:/var/www/html/  
+      command: "true"  
+
+     mysql:    
+      image: mysql:5.7  
+      container_name: mysql-container  
+      volumes_from:  
+       - mysql-data  
+      environment:  
+       MYSQL_ROOT_PASSWORD: secret  
+       MYSQL_DATABASE: mydb  
+       MYSQL_USER: myuser  
+       MYSQL_PASSWORD: password  
+
+     mysql-data:    
+      image: mysql:5.7  
+      container_name: mysql-data-container  
+      volumes:  
+       - /var/lib/mysql  
+      command: "true" 
+      
+
+
+#
+Next Example: 
+
+//docker-compose.yml file
+
+
+version: '3.1'
+
+srvices:
+	php:
+     build:
+       dockerfile: Dockerfile        //Dockerfile Given below
+	 ports: 
+	   - 80:80
+	 volume:
+	   - ./src:/var/www/html
+	
+	db:
+      image: mysql 
+      command: -default-authentication-plugin=mysql_native_password
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: example
+
+
+
+
+
+//Above included
+
+Dockerfile
+
+ FROM php:7.4-apache
+ RUN docker-php-eat-install mysqli
+ COPY ./src:/var/www/html
+
+
+
+:end:
+
+#
+
+
+
+
+
+>>>> Application ( Nginx, PHP, MySql ) <<<<<<<<<<<<<<<<<<<
+
+Website: 
+    https://www.atlantic.net/vps-hosting/how-to-deploy-a-php-application-with-nginx-and-mysql-using-docker-and-docker-compose/
+
+
+
+How to Deploy a PHP Application with Nginx and 
+MySQL Using Docker and Docker Compose: 
+
+
+Step 1 – Create Atlantic.Net Cloud Server: 
+
+apt-get update -y
+
+Step 2 – Install Docker and Docker Compose: 
+
+ apt-get install apt-transport-https ca-certificates curl tree software-properties-common -y
+
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+
+apt-get install docker-ce docker-compose -y
+
+
+Step 3 – Directory Structure: 
+
+/root/docker-project/
+├── docker-compose.yml
+├── nginx
+│   ├── default.conf
+│   └── Dockerfile
+├── php
+│   └── Dockerfile
+└── www
+    └── html
+        └── index.php
+
+
+Step 4 – Create an Nginx Container: 
+
+mkdir ~/docker-project
+
+
+cd ~/docker-project
+nano docker-compose.yml
+
+
+Add the following lines:
+
+     nginx:   
+      image: nginx:latest  
+      container_name: nginx-container  
+      ports:   
+       - 80:80 
+
+
+docker-compose up -d
+docker ps
+
+
+Now, open your web browser and access your Nginx container using the URL http://your-server-ip.
+
+On Browser displaying
+
+Welcome to nginx        //Output on browser
+
+
+
+Step 5 – Create a PHP Container: 
+
+
+mkdir -p ~/docker-project/www/html
+nano ~/docker-project/www/html/index.php
+
+
+//Add the following lines:
+
+     <!DOCTYPE html>  
+     <head>  
+      <title>Hello World!</title>
+     </head>  
+
+     <body>  
+      <h1>Hello World!</h1>
+      <p><?php echo 'We are running PHP, version: ' . phpversion(); ?></p>
+     </body>
+
+
+mkdir ~/docker-project/nginx
+
+nano ~/docker-project/nginx/default.conf
+
+
+
+---- Nginx Config ---> 
+
+Add the following lines:
+
+server {  
+
+     listen 80 default_server;  
+     root /var/www/html;  
+     index index.html index.php;  
+
+     charset utf-8;  
+
+     location / {  
+      try_files $uri $uri/ /index.php?$query_string;  
+     }  
+
+     location = /favicon.ico { access_log off; log_not_found off; }  
+     location = /robots.txt { access_log off; log_not_found off; }  
+
+     access_log off;  
+     error_log /var/log/nginx/error.log error;  
+
+     sendfile off;  
+
+     client_max_body_size 100m;  
+
+     location ~ .php$ {  
+      fastcgi_split_path_info ^(.+.php)(/.+)$;  
+      fastcgi_pass php:9000;  
+      fastcgi_index index.php;  
+      include fastcgi_params;  
+      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;  
+      fastcgi_intercept_errors off;  
+      fastcgi_buffer_size 16k;  
+      fastcgi_buffers 4 16k;  
+    }  
+
+     location ~ /.ht {  
+      deny all;  
+     }  
+    } 
+
+
+
+-- Nginx Config ------>
+
+
+nano ~/docker-project/nginx/Dockerfile
+
+
+
+
+Add the following lines:
+
+    FROM nginx:latest   
+    COPY ./default.conf /etc/nginx/conf.d/default.conf 
+
+
+Next, edit the docker-compose.yml file:
+
+nano ~/docker-project/docker-compose.yml
+
+
+
+Remove the old contents and add the following contents:
+
+---
+nginx:
+build: ./nginx/
+container_name: nginx-container
+ports:
+- 80:80
+links:
+- php
+volumes:
+- ./www/html/:/var/www/html/
+
+
+php:
+image: php:7.0-fpm
+container_name: php-container
+expose:
+– 9000
+volumes:
+– ./www/html/:/var/www/html/
+
+
+cd ~/docker-project
+docker-compose up -d
+
+docker ps
+
+
+Now, open your web browser and access the URL http://your-server-ip. You should see your Hello World page:
+
+
+nano ~/docker-project/www/html/index.php
+
+
+Change the line “Hello World! Changes are Applied”:
+
+     <!DOCTYPE html>  
+     <head>  
+      <title>Hello World!</title>
+     </head>  
+
+     <body>  
+      <h1>Hello World! Changes are Applied</h1>
+      <p><?php echo 'We are running PHP, version: ' . phpversion(); ?></p>
+     </body>
+
+
+//Now, refresh your web page. 
+
+
+:end:
+
+#
+
+
+Docker Laravel:
+
+//How to create laravel development environment using docker
+
+
+you should have a total of 6 services (containers) running on your machine, one for each specific need of our application, here is the full list:
+
+
+    PHP 8.0 (application code)
+    MySQL 5.7 (database)
+    NGINX (webserver)
+    phpMyAdmin (database managment)
+    Redis (caching)
+    MailHog (local email testing)
+
+
+Also here is the link to the official Docker website with installations instructions.
+
+https://www.docker.com/products/docker-desktop
+
+//Step 1: Clone Laravel's git repository
+git clone https://github.com/laravel/laravel.git src
+
+
+Now, create a couple of files and folders we need to setup and organize our docker environment. Create two files at the root of the project, one called docker-compose.yaml and another called Dockerfile. Then create the following list of folder/subfolder.
+
+    nginx/conf
+    mysql/data
+    redis/data
+
+
+//Step 2: Create a custom PHP 8 image
+
+
+But, according to Laravel's documentation (https://laravel.com/docs/8.x/deployment#server-requirements), there a list of PHP extensions (listed below) the framework version we will use (8.x) needs installed to properly work:
+
+
+    BCMath PHP Extension
+    Ctype PHP Extension
+    Fileinfo PHP Extension
+    JSON PHP Extension
+    Mbstring PHP Extension
+    OpenSSL PHP Extension
+    PDO PHP Extension
+    Tokenizer PHP Extension
+    XML PHP Extension
+
+
+
+To know which extensions a given PHP installation has available we just need to run the following command, php -m, after I executed it inside the PHP image we will be using (I already pulled it to my machine) and I got the following list of installed extensions.
+
+
+	docker run php:8.0.3-fpm-buster php -m
+
+[PHP Modules]
+Core
+ctype
+curl
+date
+dom
+fileinfo
+filter
+ftp
+hash
+iconv
+json
+libxml
+mbstring
+mysqlnd
+openssl
+pcre
+PDO
+pdo_sqlite
+Phar
+posix
+readline
+Reflection
+session
+SimpleXML
+sodium
+SPL
+sqlite3
+standard
+tokenizer
+xml
+xmlreader
+xmlwriter
+zlib
+
+[Zend Modules]
+
+
+Comparing it with the list of extensions required by Laravel we can see we are missing only a single extension and since we will be using MySQL, we will also need to install the pdo_mysql.
+
+
+
+
+To create a custom image we will need to write some code to the Dockerfile we created earlier, the code we need is below.
+
+
+FROM php:8.0.3-fpm-buster
+
+RUN docker-php-ext-install bcmath pdo_mysql
+
+RUN apt-get update
+RUN apt-get install -y git zip unzip
+
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+EXPOSE 9000
+
+
+//Step 3: Setup the basic services (PHP, NGINX and MySQL)
+
+
+Let's start defining docker setup and you will see how simple it actually is.
+
+version: "3.7"
+
+networks:
+    app-network:
+        driver: bridge
+
+services:
+    app:
+        
+    
+    mysql:
+        
+    
+    nginx:
+        
+
+
+//3.2 App (custom PHP) service
+
+app:
+        build: 
+            context: ./
+            dockerfile: Dockerfile
+        image: laravel8-php-fpm-80
+        container_name: app
+        restart: unless-stopped
+        tty: true
+        working_dir: /var/www
+        volumes: 
+            - ./src:/var/www
+        networks: 
+            - app-network
+
+
+
+//3.3 NGINX service
+
+
+This container will be a standard NGINX container and will have the following set of configurations.
+
+    nginx:
+        image: nginx:1.19.8-alpine
+        container_name: nginx
+        restart: unless-stopped
+        tty: true
+        ports: 
+            - 8100:80
+        volumes: 
+            - ./src:/var/www
+            - ./nginx/conf:/etc/nginx/conf.d
+        networks: 
+            - app-network
+
+
+
+//It's content will be the following.
+
+server {
+    listen 80;
+    index index.php index.html;
+    error_log /var/log/nginx/error.log;
+    access_log /var/log/nginx/access.log;
+    root /var/www/public;
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass app:9000;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+    }
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+        gzip_static on;
+    }
+}
+
+
+
+//3.4 MySQL service
+
+//I will call that database laravel8, but you can call it whatever you want.
+
+
+
+ mysql:
+        image: mysql:5.7.33
+        container_name: mysql
+        restart: unless-stopped
+        tty: true
+        environment: 
+            MYSQL_DATABASE: laravel8
+            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_PASSWORD: 123456
+            MYSQL_USER: laravel8
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql
+        volumes: 
+            - ./mysql/data:/var/lib/mysql
+        networks:
+            - app-network
+
+
+
+//In laravel env
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel8
+DB_USERNAME=laravel8
+DB_PASSWORD=123456
+
+
+//The first version of our docker-compose.yaml file will look like this.
+
+
+version: "3.7"
+
+networks:
+    app-network:
+        driver: bridge
+
+services:
+    app:
+        build: 
+            context: ./
+            dockerfile: Dockerfile
+        image: laravel8-php-fpm-80
+        container_name: app
+        restart: unless-stopped
+        tty: true
+        working_dir: /var/www
+        volumes: 
+            - ./src:/var/www
+        networks: 
+            - app-network
+    
+    mysql:
+        image: mysql:5.7.33
+        container_name: mysql
+        restart: unless-stopped
+        tty: true
+        environment: 
+            MYSQL_DATABASE: laravel8
+            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_PASSWORD: 123456
+            MYSQL_USER: laravel8
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql
+        volumes: 
+            - ./mysql/data:/var/lib/mysql
+        networks:
+            - app-network
+    
+    nginx:
+        image: nginx:1.19.8-alpine
+        container_name: nginx
+        restart: unless-stopped
+        tty: true
+        ports: 
+            - 8100:80
+        volumes: 
+            - ./src:/var/www
+            - ./nginx/conf:/etc/nginx/conf.d
+        networks: 
+            - app-network
+
+
+//Step 4: Test our initial setup
+
+docker-compose up
+
+
+
+//4.1 Accessing the homepage
+
+
+
+docker-compose [OPTIONS] exec [SERVICE NAME] [COMMAND]
+
+//So to install our dependencies will execute.
+
+docker-compose exec -T app composer install
+
+
+
+
+docker-compose exec -T app cp .env.example .env
+docker-compose exec -T app php artisan key:generate
+
+
+
+//Now Laravel welcome page is displaying on the breowser
+
+
+4.2 Running migrations
+
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel8
+DB_USERNAME=laravel8
+DB_PASSWORD=123456
+
+
+docker-compose exec -T app php artisan config:clear
+docker-compose exec -T app php artisan migrate
+
+//4.3 Installing additional composer packages
+
+docker-compose exec -T app composer require laravel/socialite
+
+
+//Step 5: Setup additional services (Redis, phpMyAdmin and MailHog)
+
+
+//5.1 Adding Redis (caching)
+
+
+redis:
+        image: redis:6.2.1-buster
+        container_name: redis
+        restart: unless-stopped
+        tty: true
+        volumes: 
+            - ./redis/data:/data
+        networks: 
+            - app-network
+
+
+docker-compose exec -T app composer require predis/predis
+
+
+CACHE_DRIVER=redis
+REDIS_HOST=redis
+REDIS_CLIENT=predis
+
+docker-compose exec -T app php artisan config:clear
+
+
+
+//web.php
+
+use Illuminate\Support\Facades\Redis;
+
+Route::get('/store', function() {
+    Redis::set('foo', 'bar');
+});
+
+Route::get('/retrieve', function() {
+    return Redis::get('foo');
+});
+
+
+
+docker-compose down
+docker-compose up
+
+After hitting the /store route we should see nothing on the screen since we are just storin our key value pair and returning nothing, but after hitting the /retrieve route we should see on the screen the value we stored for the foo key, which is bar. 
+
+
+//5.2 Adding MailHog (local mail testing)
+
+
+mailhog:
+        image: mailhog/mailhog:v1.0.1
+        container_name: mailhog
+        restart: unless-stopped
+        ports: 
+            - 8025:8025
+        networks: 
+            - app-network
+
+
+
+MAIL_FROM_ADDRESS=isaac@isaacsouza.dev
+
+
+
+docker-compose exec -T app php artisan config:clear
+
+
+docker-compose exec -T app php artisan make:mail TestMail
+
+
+
+//It will create a file called TestMail.php inside the app/Mail folder and in it we will the following //line of code to its build method.
+
+/**
+ * Build the message.
+ *
+ * @return $this
+ */
+public function build()
+{
+    return $this->view('mail.test');
+}
+
+
+
+
+// resources/views/email/test.blade.php
+
+testing mailhog
+
+
+
+//web.php
+
+<?php
+
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
+
+Route::get('/send-email', function() {
+    Mail::to('isaac@isaacsouza.dev')->send(new TestMail);
+});
+
+
+
+docker-compose down
+docker-compose up
+
+
+5.3 Adding phpMyAdmin (MySQL managment)
+
+
+phpmyadmin:
+        image: phpmyadmin:5.1.0-apache
+        container_name: phpmyadmin
+        restart: unless-stopped
+        ports: 
+            - 8200:80
+        environment:
+            PMA_HOST: mysql
+            PMA_PORT: 3306
+            PMA_USER: laravel8
+            PMA_PASSWORD: 123456
+        networks:
+            - app-network
+
+
+docker-compose down
+docker-compose up
+
+
+:end:
+
+
+
