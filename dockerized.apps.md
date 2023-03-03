@@ -8,20 +8,20 @@
 
    
 1. [Dockrized App Laravel 9.x App Worked Click Here](#php_laravel)
+
 2. [Dockrized App Symfony 6.x App Worked Click Here](#php_symfony)
    
-   [Dockrized App Composer Worked Click Here](#php_composer) 
+3. [Dockrized App Composer Worked Click Here](#php_composer) 
    
-   [Dockrized App PHP + MySql+ PHPMyAdmin Worked Click Here](#php_mysql_phpmyadmin)  
+4. [Dockrized App PHP + MySql+ PHPMyAdmin Worked Click Here](#php_mysql_phpmyadmin)  
    
-   [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
+5. [Dockrized App PHP + MySql+ Adminer Worked Click Here](#php_mysql_adminer)   
 
-   [Dockerized Laravel & Symfony Apps Same Code Worked 100% Click Here](#php_laravel_symfony)   
-
+6. [Dockerized Laravel & Symfony Apps Same Code Worked 100% Click Here](#php_laravel_symfony)   
   
-    [Dockrized App PHP-PFM NGINX Worked Click Here](#phpfpm_nginx)  
+7. [Dockrized App PHP-PFM NGINX Worked Click Here](#phpfpm_nginx)  
 
-
+8. [Dockrized App Laravel 9.x ](#php_laravel9)
 
 ------------------------------------------------------------------------------------
 
@@ -697,6 +697,153 @@ docker-compose.yml:
 
 
 ===> End Symfony App <======
+
+
+
+
+
+***Dockerized Laravel 9 
+
+php81
+
+laravel9/
+
+.docker/nginx/nginx.config
+.docker/php/dockerfile
+.docker/php/php.ini
+
+docker-compose.yml
+
+
+.docker/nginx/nginx.config
+
+
+      server {
+          listen 80;
+          index index.php index.html;
+          error_log  /var/log/nginx/error.log;
+          access_log /var/log/nginx/access.log;
+          root /var/www/public;
+
+          location ~ \.php$ {
+              try_files $uri =404;
+              fastcgi_split_path_info ^(.+\.php)(/.+)$;
+              fastcgi_pass backend:9000;
+              fastcgi_index index.php;
+              include fastcgi_params;
+              fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+              fastcgi_param PATH_INFO $fastcgi_path_info;
+          }
+
+          location / {
+              try_files $uri $uri/ /index.php?$query_string;
+              gzip_static on;
+          }
+      }
+
+
+
+.docker/php/php.ini
+
+
+      upload_max_filesize = 100M
+      post_max_size = 108M
+
+
+.docker/php/dockerfile
+
+
+      FROM php:8.1-fpm
+
+      ENV USER=www
+      ENV GROUP=www
+
+      # Install system dependencies
+      RUN apt-get update && apt-get install -y \
+          git \
+          curl \
+          libpng-dev \
+          libonig-dev \
+          libxml2-dev \
+          zip \
+          unzip
+
+      # Clear cache
+      RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+      # Install PHP extensions
+      RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+
+      # Install Postgre PDO
+      RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql
+
+      # Get latest Composer
+      COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
+      # Setup working directory
+      WORKDIR /var/www/
+
+      # Create User and Group
+      RUN groupadd -g 1000 ${GROUP} && useradd -u 1000 -ms /bin/bash -g ${GROUP} ${USER}
+
+      # Grant Permissions
+      RUN chown -R ${USER} /var/www
+
+      # Select User
+      USER ${USER}
+
+      # Copy permission to selected user
+      COPY --chown=${USER}:${GROUP} . .
+
+      EXPOSE 9000
+
+      CMD ["php-fpm"]
+
+
+
+docker.compose.yml
+
+
+      version: '3.8'
+
+      networks:
+        app-network:
+
+      volumes:
+        app-data:
+
+      services:
+        webserver:
+          image: nginx:1.21.6-alpine
+          container_name: webserver
+          restart: unless-stopped
+          ports:
+            - "80:80"
+          volumes:
+            - ./:/var/www
+            - .docker/nginx:/etc/nginx/conf.d
+          networks:
+            app-network:
+
+        backend:
+          build:
+            context: .docker/php
+            dockerfile: dockerfile
+          container_name: backend
+          volumes:
+            - ./:/var/www
+            - .docker/php/php.ini:/usr/local/etc/php/conf.d/local.ini
+          networks:
+            app-network:
+
+
+
+
+
+
+
+
+
 
 
 
