@@ -852,3 +852,154 @@ docker.compose.yml
 #
 
 :end:
+
+
+
+#
+
+
+
+====> PHPfpm and NGINX : Production  100% Working =====>
+
+
+
+//PHPFPM ajay nginx ( 100% Woring - Production)
+
+
+//Directries : 
+
+myapp (project app) (dir)
+ 1 docker(dir) -> nginx(dir) -> Dockerfile, docker-compose.yml
+ 2 src (dir) -> public (dir) -> index.php
+ 
+Directory Structure:
+
+
+
+
+Dockerfile
+
+
+FROM php:8.0.2-fpm
+
+RUN apt-get update && apt-get install -y \
+   git \
+   curl \
+   zip  \
+   unzip 
+   
+WORKDIR /var/www
+
+
+
+docker-composer.yml
+
+
+version: "3.8"
+services: 
+  app: 
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: my-app
+    restart: always
+    working_dir: /var/www/
+    volumes: 
+      - ../src:/var/www
+      
+  nginx: 
+     image: nginx:1.19-alpine
+     container_name: my-nginx
+     restart: always
+     ports: 
+       - "8001:80"
+     volumes: 
+       - ../src:/var/www
+       - ./nginx:/etc/nginx/conf.d
+   
+   
+  
+
+server {
+
+  listen 80;
+  index index.php;
+  error_log /var/log/nginx/error.log;
+  access_log /var/log/nginx/acces.log;
+  error_page 404 /index.php;
+  root /var/www/public; 
+  
+  location ~ \.php$ {
+      try_files $uri =404;
+      fastcgi_pass app:9000;
+      fastcgi_index index.php;
+      include fastcgi_params;
+      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;      
+  }
+  location /.php$ {
+     try_files $uri $uri/ /index.php?$query_string; 
+     gzip_static on;
+  }
+
+
+}
+
+
+
+-----------------------------------------------------------
+
+
+
+
+# PHP MySql and Network
+//When both containers in same network, No need any link between them
+
+Mysql Container: 
+
+docker create network mynetwork --driver bridge
+docker network ls
+docker inspect network mynetwork
+
+Dockerfile:  myproject/Dockerfile
+
+FROM php:8.0-apache
+RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+RUN apt-get update && apt-get upgrade -y
+
+
+Creating MySql Container: 
+docker run --name mydb -e MYSQL_ALLOW_EMPTY_PASSWORD=true -v mysql:/var/lib/mysql -p 3306:3306 -d --network mynetwork  mysql:latest
+
+
+PHP Container: 
+docker run --name myserver --network mynetwork -p 8000:80 -v "$PWD"/src:/var/www/html -d server01
+
+
+
+
+myproject/src/index.php
+
+
+      <?php
+      //These are the defined authentication environment in the db service
+
+      // The MySQL service named in the docker-compose.yml.
+      $host = 'db';
+
+      // Database use name
+      $user = 'MYSQL_USER';
+
+      //database user password
+      $pass = 'MYSQL_PASSWORD';
+
+      // check the MySQL connection status
+      $conn = new mysqli($host, $user, $pass);
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      } else {
+          echo "Connected to MySQL server successfully!";
+      }
+      ?>
+
+#
+:end:
