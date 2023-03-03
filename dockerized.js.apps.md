@@ -193,9 +193,8 @@ So access the application at the address http://localhost:8080/
 [Go To Top](#top)
 <a name="angular_app"></a>
 # 3
-# How To Dockerize an Angular Application with Nginx
 
-##### ===> Angualr App <==========
+### How To Dockerize an Angular Application with Nginx
 
 Contents:
 
