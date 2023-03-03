@@ -1972,8 +1972,23 @@ phpmyadmin:
 docker-compose down
 docker-compose up
 
-
+#
 :end:
 
+#
+
+>>>>> Docker Run PHP Scirpt in Container <<<<<<
+
+
+//Working in docker plyagound
+//Create index.php in root where you are right now
+
+docker run --rm --name corephp -v "$PWD":/usr/src/yapp -w /usr/src/yapp php:7.1-cli php index.php
+
+//PHP file in app folder
+
+docker run --rm --name corephp -v "$PWD":/usr/src/yapp -w /usr/src/yapp php:7.1-cli php ./app/index.php
+
+:end:
 
 
