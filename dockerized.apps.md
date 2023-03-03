@@ -27,8 +27,8 @@
 
 
 
+#
 
-===> PHP App <==========
 
 [Go To Top](#top)
 <a name="php_laravel"></a>    
@@ -55,6 +55,7 @@
             unzip
 
        # RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
+
 
 
         WORKDIR /var/www/html
@@ -102,7 +103,11 @@ docker-compose.yml:
 
   :computer:
   
-  
+
+
+#
+:end:
+
 
 
 [Go To Top](#top)
@@ -179,8 +184,8 @@ docker-compose.yml:
 
   
   
-  
-  
+  #
+ :end: 
   
 
 [Go To Top](#top)
@@ -216,6 +221,8 @@ Dockerfile
       docker run composer create-project symfony/symfony
 
 
+#
+:end:
 
 
 [Go To Top](#top)
@@ -298,6 +305,11 @@ Dockerfile
       }
 
 
+
+#
+:end:
+
+
 [Go To Top](#top)
 ##### 3. PHP + MYSQL + PHPMYADMIN    ( Worked )
 
@@ -358,7 +370,8 @@ http://localhost
       docker-compose down        //Stop and delete all containers
 
 
------x------
+#
+
 
 [Go To Top](#top)
 <a name="php_mysql_adminer"></a>    
@@ -421,6 +434,7 @@ FROM php:7.4-apache
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY start-apache /usr/local/bin
 RUN a2enmod rewrite
+
 
 ##### Copy application source
 
@@ -495,9 +509,9 @@ The final docker-compose.yml looks like this:
       $ git push origin master
 
 
-===> End PHP App <======
+#
+:end:
 
-----------------------------------------------------------
 
 ===> Lavavel App <==========
 
@@ -551,8 +565,8 @@ docker-machine ip default
 ===> End Laravel App <======
 
 
-
-----------------------------------------------------------
+:end:
+#
 
 [Go To Top](#top)
 ##### 7. 
@@ -638,18 +652,13 @@ my site.conf
               AllowOverride all
           </Directory>
       </VirtualHost>
-
-===> End Codeigniter App <======
-
-
-
+      
+#
+:end:
 
 
+#
 
-
-
-
-----------------------------------------------------------
 
 ===> Cakephp App <==========
 
@@ -657,7 +666,10 @@ my site.conf
 
 
 
-----------------------------------------------------------
+#
+:end:
+
+
 
 [Go To Top](#top)
 <a name="php_laravel_symfony"></a>
@@ -694,10 +706,8 @@ docker-compose.yml:
               - 8080:80
 
 
-
-
-===> End Symfony App <======
-
+#
+:end:
 
 
 
@@ -839,34 +849,6 @@ docker.compose.yml
             app-network:
 
 
+#
 
-
-
-
-
-
-
-
-
-
-----------------------------------------------------------
-
-===> Python App <==========
-
-===> End Python App <======
-
-----------------------------------------------------------
-
-===> Django App <==========
-
-===> End Django App <======
-
-----------------------------------------------------------
-
-===> Flask App <==========
-
-===> End Flask App <======
-
-----------------------------------------------------------
------------------------------------------------------------
-
+:end:
