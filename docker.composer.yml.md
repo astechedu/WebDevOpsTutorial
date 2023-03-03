@@ -1174,3 +1174,207 @@ docker-compose.yml:
 
 :end:
 
+#
+
+1. Manually installing PHP, MySQL and Apache
+2. Preconfigured Packages such as XAMPP
+3. Virtual Machines and Vagrant
+4. Docker
+
+nginx.conf / httpd.conf, php.ini, /bin/php72, /bin/php, open_basedir, docker, docker-compose 
+
+systemctl start docker.service and enable it with systemctl enable docker
+
+
+docker-compose.yml for NGINX
+
+
+      version: '3'
+      services:
+          web:
+              image: nginx:latest
+              ports:
+                  - "80:80"
+
+
+            
+version: '3'
+
+services, nginx:latest
+
+
+      version: '3'
+      services:
+          web:
+              image: nginx:1.18.0
+              ports:
+                  - "80:80"
+
+
+
+http://127.0.0.1
+
+Running the Service
+
+
+httpdocs, htdocs or public, volumes
+
+      version: '3'
+      services:
+          web:
+              image: nginx:latest
+              ports:
+                  - "80:80"
+              volumes:
+                  - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+                  - ./app:/app
+
+
+
+/etc/nginx/conf.d
+
+
+      server {
+          listen 80 default_server;
+          root /app/public;
+      }
+
+
+docker-compose.yml
+
+
+      version: '3'
+      services:
+          web:
+              image: nginx:latest
+              ports:
+                  - "80:80"
+              volumes:
+                  - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+                  - ./app:/app
+          php:
+              image: php:fpm
+              volumes:
+                  - ./app:/app
+
+
+
+fpm, php:fpm-latest, php:7.4-fpm, php:7.3-fpm, php:8.0-fpm, php:8.0-fpm, php:fpm
+
+
+nginx.conf
+
+
+      server {
+          listen 80 default_server;
+          root /app/public;
+
+          index index.php index.html index.htm;
+
+          location ~ \.php$ {
+              fastcgi_pass php:9000;
+              fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+              include fastcgi_params;     
+          }
+      } 
+
+
+fastcgi_pass php:9000
+
+
+Create a phpinfo file at app/public/index.php:
+
+      <?php
+      phpinfo();
+
+http://127.0.0.1 
+
+
+php:fpm
+
+
+      version: '3'
+      services:
+          web:
+              image: nginx:latest
+              ports:
+                  - "80:80"
+              volumes:
+                  - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+                  - ./app:/app
+          php:
+              build:
+                  context: .
+                  dockerfile: PHP.Dockerfile
+              volumes:
+                  - ./app:/app
+
+
+
+PHP.Dockerfile
+
+      FROM php:fpm
+      RUN docker-php-ext-install pdo pdo_mysql
+
+
+
+      FROM php:fpm
+      RUN docker-php-ext-install mysqli
+
+
+xdbug
+
+
+      FROM php:fpm
+      RUN docker-php-ext-install pdo pdo_mysql
+      RUN pecl install xdebug && docker-php-ext-enable xdebug
+
+
+
+MYSQL: 
+
+      version: '3'
+      services:
+          web:
+              image: nginx:latest
+              ports:
+                  - "80:80"
+              volumes:
+                  - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+                  - ./app:/app
+          php:
+              build:
+                  context: .
+                  dockerfile: PHP.Dockerfile
+              volumes:
+                  - ./app:/app
+          mysql:
+              image: mariadb:latest
+              environment:
+                  MYSQL_ROOT_PASSWORD: 'secret'
+                  MYSQL_USER: 'tutorial'
+                  MYSQL_PASSWORD: 'secret'
+                  MYSQL_DATABASE: 'tutorial'
+              volumes:
+                  - mysqldata:/var/lib/mysql
+              ports:
+                  - 3306:3306
+      volumes:
+          mysqldata: {}
+
+
+mariadb:latest, environment, MYSQL_ROOT_PASSWORD, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE
+app/public
+
+
+      <?php
+      $pdo = new PDO('mysql:dbname=tutorial;host=mysql', 'tutorial', 'secret', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+
+      $query = $pdo->query('SHOW VARIABLES like "version"');
+
+      $row = $query->fetch();
+
+      echo 'MySQL version:' . $row['Value'];
+
+
+:end:
