@@ -1601,7 +1601,6 @@ But, according to Laravel's documentation (https://laravel.com/docs/8.x/deployme
     XML PHP Extension
 
 
-
 To know which extensions a given PHP installation has available we just need to run the following command, php -m, after I executed it inside the PHP image we will be using (I already pulled it to my machine) and I got the following list of installed extensions.
 
 
