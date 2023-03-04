@@ -23,7 +23,8 @@
 
 8. [Dockrized App Laravel 9.x ](#php_laravel9x)
 
-------------------------------------------------------------------------------------
+9. [Dockrized NGINX & PHP Worked ](#nginx-and-php)
+
 
 
 
@@ -1992,3 +1993,51 @@ docker run --rm --name corephp -v "$PWD":/usr/src/yapp -w /usr/src/yapp php:7.1-
 :end:
 
 
+
+#
+[Top](#top)
+<a name="nginx-and-php"></a>
+
+# Dockerized NGIN and PHP (Working)
+
+
+docker-compose.yml
+
+
+		version: "3.5"
+		services:
+		  nginx:
+		    image: nginx
+		    volumes:
+			- ./app:/var/www/html
+			- ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+		    ports:
+		      - "8080:80"
+		  php:
+		    image: php:fpm-alpine
+		    volumes:
+			- ./app:/var/www/html
+
+
+
+/etc/nginx/conf.d/default.conf
+
+
+		server {
+		    listen 0.0.0.0:80;
+		    root /var/www/html;
+		    location / {
+			index index.php index.html;
+		    }
+		    location ~ \.php$ {
+			include fastcgi_params;
+			fastcgi_pass php:9000;
+			fastcgi_index index.php;
+			fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+		    }
+		}
+
+
+
+
+:end:
