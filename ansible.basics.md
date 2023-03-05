@@ -1,6 +1,6 @@
 $$\Large{\colorbox{black}{\color{white} Ansible For Beginners}}$$
 
-$${\colorbox{black}{\color{white} Ansible For Beginners}$$
+$${\colorbox{black}Ansible For Beginners}$$
 
 [Home](all-file-links.md)
 
