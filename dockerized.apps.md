@@ -166,7 +166,7 @@ docker-compose.yml:
          #Include conf-available/serve-cgi-bin.conf
       </VirtualHost>
 
-# vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+#vim: syntax=apache ts=4 sw=4 sts=4 sr noet
 
 
         docker-compose up -d 
@@ -306,9 +306,16 @@ Dockerfile
 
 
 
+
+Note: 
+
+  Send request to app (Service name or container name from container app or my-app
+  fastcgi_pass app:9000;
+  
 #
 :end:
 
+#
 
 [Go To Top](#top)
 ##### 3. PHP + MYSQL + PHPMYADMIN    ( Worked )
@@ -712,7 +719,7 @@ docker-compose.yml
 
 Note: 
 
-  Send request to webapp from container web or webapp
+  Send request to webapp (Service name of container name) from container web or webapp
   fastcgi_pass webapp:9000;
 
 
@@ -816,6 +823,14 @@ docker-compose.yml
       }
 
 
+
+
+Note: 
+
+  Send request to backend (Container Name Or Service Name) from container backend
+  fastcgi_pass backend:9000;
+  
+  
 
 .docker/php/php.ini
 
@@ -1005,6 +1020,12 @@ server {
 
 
 }
+
+
+Send request to app (Service name or container name from container app
+fastcgi_pass app:9000;
+
+
 
 
 
@@ -1537,6 +1558,8 @@ server {
     } 
 
 
+ Send request to php (Service name or container name from container php
+ fastcgi_pass php:9000;
 
 -- Nginx Config ------>
 
@@ -1809,6 +1832,9 @@ server {
 }
 
 
+ Send request to app (Service name or container name from container app
+ fastcgi_pass app:9000;
+  
 
 //3.4 MySQL service
 
