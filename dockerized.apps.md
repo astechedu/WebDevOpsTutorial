@@ -23,8 +23,7 @@
 
 8. [Dockrized App Laravel 9.x ](#php_laravel9x)
 
-9. [Dockrized NGINX & PHP Worked ](#nginx-and-php)
-
+9. [Dockrized App PHP & NGINX (Working)](#nginx-php-app)
 
 
 
@@ -658,6 +657,68 @@ my site.conf
 :end:
 
 
+#
+[Top](#top)
+<a name="nginx-php-app"></a>
+
+*Dockerized Nginx and PHP Web App Testing (Working)
+
+
+docker-compose.yml
+
+
+	version: "3.5"
+	services:
+	  webserver:
+	    image: nginx:latest
+	    container_name: nginx-server
+	    volumes:
+	       - ./app/php/:/var/www/html/
+	       - ./app/nginx/default.conf:/etc/nginx/conf.d/default.conf
+	    ports:
+	       - 8080:80
+	  web:
+	     image: php:fpm-alpine
+	     container_name: webapp
+	     volumes:
+	       - ./app/php/:/var/www/html/
+
+
+
+
+/etc/nginx/conf.d/default.conf
+
+
+	server {
+	    listen 80;
+	    index index.php;
+	    error_log /var/log/nginx/error.log;
+	    access_log /var/log/nginx/acces.log;
+	    error_page 404 /index.php;
+	    root /var/www/html;
+
+	    location ~ \.php$ {
+		try_files $uri =404;
+		fastcgi_pass webapp:9000;
+		fastcgi_index index.php;
+		include fastcgi_params;
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+	    }
+	    location /.php$ {
+	       try_files $uri $uri/ /index.php?$query_string;
+	       gzip_static on;
+	    }
+	  }
+
+Note: 
+
+  Send request to webapp from container web or webapp
+  fastcgi_pass webapp:9000;
+
+
+
+
+:end:
 #
 
 
