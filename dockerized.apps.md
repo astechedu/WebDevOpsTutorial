@@ -25,7 +25,7 @@
 
 9. [Dockrized App PHP & NGINX (Working)](#nginx-php-app)
 
-
+10. [Dockrized Core PHP App Fetch Data, Nginx, PHP, MySql & Adminer ( Working )](#core-php-app)
 
 #
 
@@ -1076,6 +1076,139 @@ docker-compose.yml
 
 
 :end:
+#
+
+
+[Top](#top)
+<a name="core-php-app"></a>
+*Docker Nginx, PHP, MySql & Adminer; Fetching Data, Core PHP(Working)
+
+Directories Structure: 
+php,nginx,docker-compose.yml & Dockerfile
+
+docker-compose.yml
+
+	version: "3"
+	services:
+	  webserver:
+	      image: nginx:latest
+	      container_name: server01
+	      volumes:
+		 - ./php:/var/www/html
+		 - ./nginx:/etc/nginx/conf.d
+	      ports:
+		 - 8081:80
+	  web:
+	    build:
+	       context: .
+	       dockerfile: Dockerfile
+	    container_name: frontend
+	    volumes:
+		 - ./php:/var/www/html
+
+	  database:
+	      image: mysql
+	      container_name: backend
+	      command: --default-authentication-plugin=mysql_native_password
+	      restart: always
+	      environment:
+		MYSQL_USER: ajay
+		MYSQL_ROOT_PASSWORD: ajay123
+	      volumes:
+		- ./database:/var/lib/mysql
+
+	  adminer:
+	      image: adminer
+	      restart: always
+	      ports:
+	       - 8080:8080
+
+
+
+Dockerfile: 
+
+	FROM php:fpm-alpine
+	WORKDIR /var/www/html
+	RUN docker-php-ext-install mysqli 
+
+
+
+
+
+php/index.php: 
+
+
+	<!doctype html>
+	<html lang="en">
+	  <head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Docker Compose</title>
+	  <style>
+	     body {background: yellow;}
+	     .heading {text-align:center;color: brown;}
+	     .records {background: green:color:pink;}
+	  </style>
+	  </head>
+	  <body>
+	    <h1 class="heading">Docker For Development</h1>
+	    <?php
+		$servername = "database";
+		$username = "root";
+		$password = "ajay123";
+		$dbname = "mydb01";
+
+		// Create connection
+		$conn = mysqli_connect($servername, $username, $password, $dbname);
+		// Check connection
+		if (!$conn) {
+			die("Connection failed: " . mysqli_connect_error());
+		}
+
+		$sql = "SELECT * FROM users";
+		$result = mysqli_query($conn, $sql);
+
+		if (mysqli_num_rows($result) > 0) {
+		// output data of each row
+		while($row = mysqli_fetch_assoc($result)) {
+			 echo "<div class='records'>"."id: " . $row["id"]. " - Name: " . $row["name"]. " " . " - City: ".$row["city"]. "</div>";
+		}
+		} else {
+			echo "0 results";
+		}
+
+			mysqli_close($conn);
+		?>
+	  </body>
+	</html>
+
+
+
+nginx/default.conf
+
+
+	 server {
+	    listen 80;
+	    index index.php;
+	    error_log /var/log/nginx/error.log;
+	    access_log /var/log/nginx/acces.log;
+	    error_page 404 /index.php;
+
+	    root /var/www/html;
+
+	    location ~ \.php$ {
+		try_files $uri =404;
+		fastcgi_pass web:9000;
+		fastcgi_index index.php;
+		include fastcgi_params;
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+	    }
+	    location /.php$ {
+	       try_files $uri $uri/ /index.php?$query_string;
+	       gzip_static on;
+	    }
+	  }
+
 
 #
 
