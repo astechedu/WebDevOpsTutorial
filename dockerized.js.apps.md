@@ -12,9 +12,7 @@ Topics:
 2. [How To Dockerize an React App? (Worked)](#react_app)
 3. [How To Dockerize an Angular App? with Nginx (Worked)](#angular_app)
 4. [How To Dockerize an Express Web App (Worked)](#express_app)
-
-
-
+5. [Dockerizing a Node.js web app](#web-app)
 
 
 
@@ -572,3 +570,135 @@ CMD ["node", "./api/server.js"]
       
 
 :end: 
+#
+
+[Top](#top)
+<a name="web-app"></a>
+
+package.json 
+
+
+      {
+        "name": "docker_web_app",
+        "version": "1.0.0",
+        "description": "Node.js on Docker",
+        "author": "First Last <first.last@example.com>",
+        "main": "server.js",
+        "scripts": {
+          "start": "node server.js"
+        },
+        "dependencies": {
+          "express": "^4.16.1"
+        }
+      }
+
+
+
+server.js
+
+
+      'use strict';
+
+      const express = require('express');
+
+      // Constants
+      const PORT = 8080;
+      const HOST = '0.0.0.0';
+
+      // App
+      const app = express();
+      app.get('/', (req, res) => {
+        res.send('Hello World');
+      });
+
+      app.listen(PORT, HOST, () => {
+        console.log(`Running on http://${HOST}:${PORT}`);
+      });
+
+
+
+Dockerfile
+
+      FROM node:16
+
+      #Create app directory
+      WORKDIR /usr/src/app
+
+      #Install app dependencies
+      #A wildcard is used to ensure both package.json AND package-lock.json are copied
+      #where available (npm@5+)
+      COPY package*.json ./
+
+      RUN npm install
+      #If you are building your code for production
+      #RUN npm ci --only=production
+
+      #Bundle app source
+      COPY . .
+
+      EXPOSE 8080
+      CMD [ "node", "server.js" ]
+
+
+.dockerignore
+
+      node_modules
+      npm-debug.log
+
+
+Building your image:
+
+      docker images
+      docker build . -t <your username>/node-web-app
+
+Run the image:
+
+      docker run -p 49160:8080 -d <your username>/node-web-app
+
+
+Print the output of your app:
+
+       #Get container ID
+       docker ps
+
+       #Print app output
+       docker logs <container id>
+
+       #Example
+       Running on http://localhost:8080
+
+
+If you need to go inside the container you can use the exec command:
+
+# Enter the container
+
+      $ docker exec -it <container id> /bin/bash
+
+
+Test: 
+
+To test your app, get the port of your app that Docker mapped:
+
+      docker ps
+
+      curl -i localhost:49160
+
+
+Shut down the image:
+
+
+# Kill our running container
+
+      docker kill <container id>
+      
+      <container id>
+
+Confirm that the app has stopped
+      
+      curl -i localhost:49160
+      
+curl: (7) Failed to connect to localhost port 49160: Connection refused
+     
+     
+#
+:end:
