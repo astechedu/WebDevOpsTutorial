@@ -10,7 +10,7 @@ Topics:
   3. [Dockrized Flask](#doc_flash)<br>
   4. [Containerize a Python service](#python_flash)
   5. [Create a Simple Docker Container with a Python Web Server](#py-flask)
-  
+  6. [Dockerized Django App](#dj-app)
 #
 
 
@@ -291,6 +291,59 @@ Put Everything into a Docker Container:
         Run docker run — rm -p 8000:80 — name web-server-test web-server-test
 
     
+#
+:end:
+#
+
+[Top](#top)
+<a name="dj-app"></a>
+
+# Dockerized Django App
+
+Dockerfile
+
+    FROM python:3.6-alpine
+    ENV PYTHONDONTWRITEBYTECODE 1
+    ENV PYTHONUNBUFFERED 1
+    RUN mkdir /code
+    WORKDIR /code
+    RUN pip install --upgrade pip
+    COPY requirements.txt /code/
+    RUN pip install -r requirements.txt
+    COPY . /code/
+    EXPOSE 8000
+    CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+
+Dockrfile: 
+
+
+FROM python:3
+
+#Here, we set the environmental variable that shows the output from python that is sent straight to the terminal without buffering it first.
+  ENV PYTHONUNBUFFERED 1
+#Here, we set the container's working directory for this path to /app.
+  WORKDIR /app
+#Here, we copy each file from our local project directory into the container.
+  ADD ./app
+#Here, it runs the pip install command for all packages consolidated listed in the requirements.txt file.
+  RUN pip install -r requirements.txt
+
+
+
+docker-compose.yml
+
+
+version: '3.7'
+services:
+   web:
+       build: .
+       command: python manage.py runserver localhost:8000
+       ports:
+           - 8000:8000
+
+
+
 #
 :end:
 
