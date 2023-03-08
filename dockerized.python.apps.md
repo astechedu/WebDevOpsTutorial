@@ -9,7 +9,7 @@ Topics:
   2. [Dockrized Django (Worked)](#doc_django)<br>
   3. [Dockrized Flask](#doc_flash)<br>
   4. [Containerize a Python service](#python_flash)
-
+  5. [Create a Simple Docker Container with a Python Web Server](#py-flask)
 #
 
 
@@ -232,6 +232,68 @@ curl http://localhost:5000
    
 #
 :end:    
+#
+
+**Create a Simple Docker Container with a Python Web Server
+
+Create index.html:
+
+    <!DOCTYPE html>
+    <html>
+    <body>
+    Hello World
+    </body>
+    </html>
+
+
+
+    Create server.py:
+
+
+
+     #!/usr/bin/python3
+     from http.server import BaseHTTPRequestHandler, HTTPServer
+     import time
+     import json
+     from socketserver import ThreadingMixIn
+     import threadinghostName = “0.0.0.0”
+     serverPort = 80class Handler(BaseHTTPRequestHandler):
+     def do_GET(self):
+     #curl http://<ServerIP>/index.html
+     if self.path == “/”:
+     #Respond with the file contents.
+     self.send_response(200)
+     self.send_header(“Content-type”, “text/html”)
+     self.end_headers()
+     content = open(‘index.html’, ‘rb’).read()
+     self.wfile.write(content)else:
+     self.send_response(404)returnclass ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
+     “””Handle requests in a separate thread.”””if __name__ == “__main__”:
+     webServer = ThreadedHTTPServer((hostName, serverPort), Handler)
+     print(“Server started http://%s:%s" % (hostName, serverPort))try:
+     webServer.serve_forever()
+     except KeyboardInterrupt:
+     passwebServer.server_close()
+     print(“Server stopped.”)  
+     ```
+
+
+Put Everything into a Docker Container:
+
+    Create Dockerfile:
+
+        FROM python:3
+        ADD index.html index.html
+        ADD server.py server.py
+        EXPOSE 8888
+        ENTRYPOINT ["python3", "server.py"]
+        cd into the folder you created.
+        Run docker build -f Dockerfile . -t web-server-test
+        Run docker run — rm -p 8000:80 — name web-server-test web-server-test
+
+    
+#
+:end:
 
 
 
