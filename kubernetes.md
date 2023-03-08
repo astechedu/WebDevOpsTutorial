@@ -56,6 +56,8 @@ $$\large{\colorbox{blue}{\color{white}Kubernetes \ Commands \ and \ Examples \ F
 
 
 
+#
+
 [Go To Top](#top)
 <!----><a name="basic_commands"></a>
 
@@ -161,9 +163,9 @@ Requirements:
 
 $\large{\color{blue} \ Minikube \ Installation ( minikube.exe )}$
 
-	   Usually used to run k8s cluster in your local machine/computer.
-	   Minikube runs a single-node Kubernetes cluster on your machine so that you can try out Kubernetes for your daily development work.
-	   Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one  node.
+    Usually used to run k8s cluster in your local machine/computer.
+    Minikube runs a single-node Kubernetes cluster on your machine so that you can try out Kubernetes for your daily development work.
+    Minikube is a lightweight Kubernetes implementation that creates a VM on your local machine and deploys a simple cluster containing only one  node.
 	
 	
 	
@@ -171,9 +173,12 @@ $\large{\color{blue} \ Minikube \ Installation ( minikube.exe )}$
 	
 [Go To Top](#top)	
 <!----><a name="kubectl"></a>
+
 ### 2. KubeCtl Installation ( Kubectl.exe )
 
-	kubectl. The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For more information including a complete list of kubectl operations, see the kubectl reference documentation.
+kubectl:
+	
+The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For more information including a complete list of kubectl operations, see the kubectl reference documentation.
 
   Download minikube & kubectl
   
@@ -182,6 +187,7 @@ $\large{\color{blue} \ Minikube \ Installation ( minikube.exe )}$
   Path to environment variable  ( kubectl & minikube )
 
 	  Open cmd write command 
+	  
 		    > minikube start --driver=docker
 		    > minikube status
 		    > kubectl cluster-info
@@ -200,6 +206,7 @@ $\large{\color{blue} \ Minikube \ Installation ( minikube.exe )}$
  
  [Go To Top](#top)
  <!----><a name="create_yml_file"></a>
+ 
  ### Create Yaml File
 
    MyFirst Yaml File:
@@ -411,6 +418,7 @@ Some CMDS:
 
 [Go To Top](#top)
 <!----><a name="install_minikube"></a>
+
  Installation Minikube on ubuntu
  
  Minikube System Requirements
@@ -427,20 +435,24 @@ Some CMDS:
     Stable Internet Connection
 
 Step 1) Apply updates: 
+
         Apply all updates of existing packages of your system by executing the following apt commands,
  
-   sudo apt update -y 
-   sudo apt upgrade -y
+	   sudo apt update -y 
+	   sudo apt upgrade -y
   
  Once all the updates are installed then reboot your system once.
-  sudo reboot
+ 
+  	   sudo reboot
  
 Step 2) Install Minikube dependencies
-         Install the following minikube dependencies by running beneath command,
+
+        Install the following minikube dependencies by running beneath command,
 	 
-   sudo apt install -y curl wget apt-transport-https
+   	   sudo apt install -y curl wget apt-transport-https
  
 Step 3) Download Minikube Binary
+
         Download Minikube latest minikube binary       
 
  	 wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
@@ -475,9 +487,10 @@ Step 4) Install Kubectl utility
 	  kubectl version -o yaml              
   
  Step 5) Start minikube
-         As we are already stated in the beginning that we would be using docker as base for minikue, so start the minikube with the docker driver, run 
+ 
+       As we are already stated in the beginning that we would be using docker as base for minikue, so start the minikube with the docker driver, run 
   
-  minikube start --driver=docker      
+  	  minikube start --driver=docker      
   
   
  In case you want to start minikube with customize resources and want installer to automatically select the driver then you can run following command,
@@ -508,14 +521,17 @@ Step 4) Install Kubectl utility
 
 <a name="top"></a>
 <a name="d_svc_rc"></a>
+
 # Deployment Services(svc) Replicaset(rc)
 
 
 	microk8s kubectl get all -o wide
         microk8s kubectl get po,svc,deploy
 
+
 [Go To Top](#top)
 <a name="pods"></a>
+
 Pods:
 
 	microk8s kubectl run tif-nginx --image=nginx:alpine --port=80
@@ -554,6 +570,7 @@ In Pod:
 
 [Go To Top](#top)
 <a name="deployment"></a>
+
 Devpoyment ():
 
 	microk8s kubectl get deployment  --all-namespaces
