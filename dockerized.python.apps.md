@@ -10,8 +10,6 @@ Topics:
   3. [Dockrized Flask](#doc_flash)<br>
   4. [Containerize a Python service](#python_flash)
 
-
-
 #
 
 
@@ -28,7 +26,7 @@ Topics:
 
 [Go To Top](#top)
 <a name="doc_django"></a>  
-# Django   (Worked)
+# Django (Worked)
 
    Install Django in local dir: 
    
