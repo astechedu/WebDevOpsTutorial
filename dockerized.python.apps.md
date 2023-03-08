@@ -318,31 +318,28 @@ Dockerfile
 Dockrfile: 
 
 
-FROM python:3
-
-#Here, we set the environmental variable that shows the output from python that is sent straight to the terminal without buffering it first.
-  ENV PYTHONUNBUFFERED 1
-#Here, we set the container's working directory for this path to /app.
-  WORKDIR /app
-#Here, we copy each file from our local project directory into the container.
-  ADD ./app
-#Here, it runs the pip install command for all packages consolidated listed in the requirements.txt file.
-  RUN pip install -r requirements.txt
+    FROM python:3
+    #Here, we set the environmental variable that shows the output from python that is sent straight to the terminal without buffering it first.
+      ENV PYTHONUNBUFFERED 1
+    #Here, we set the container's working directory for this path to /app.
+      WORKDIR /app
+    #Here, we copy each file from our local project directory into the container.
+      ADD ./app
+    #Here, it runs the pip install command for all packages consolidated listed in the requirements.txt file.
+      RUN pip install -r requirements.txt
 
 
 
 docker-compose.yml
 
 
-  version: '3.7'
-  services:
-     web:
-         build: .
-         command: python manage.py runserver localhost:8000
-         ports:
-             - 8000:8000
-
-
+    version: '3.7'
+    services:
+       web:
+           build: .
+           command: python manage.py runserver localhost:8000
+           ports:
+               - 8000:8000
 
 #
 :end:
