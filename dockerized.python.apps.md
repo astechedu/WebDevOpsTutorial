@@ -11,6 +11,8 @@ Topics:
   4. [Containerize a Python service](#python_flash)
   5. [Create a Simple Docker Container with a Python Web Server](#py-flask)
   6. [Dockerized Django App](#dj-app)
+  7. [Dockerized MERN App](#mern-app)
+  
 #
 
 
@@ -368,6 +370,142 @@ Dockrfile:
 #
 :end:
 
+#
+
+
+[Top](#top)
+<a name="mern-app"></a>
+
+#Dockerized MERN APP
+
+Dockerfile:
+
+
+      #Dockerfile for React client
+      #Build react client
+      FROM node:10.16-alpine
+      #Working directory be app
+      WORKDIR /usr/src/app
+      COPY package*.json ./
+      ###  Installing dependencies
+      RUN npm install --silent
+      #Copy local files to app folder
+      COPY . .
+      EXPOSE 3000
+      CMD ["npm","start"]
+
+
+CMD: 
+
+    docker build -t react-app .
+    docker run -p 3000:3000 react-app
+    
+    
+    
+    #Dockerfile for Node Express Backend
+    FROM node:10.16-alpine
+    #Create App Directory
+    RUN mkdir -p /usr/src/app
+    WORKDIR /usr/src/app
+    #Install Dependencies
+    COPY package*.json ./
+    RUN npm install --silent
+    #Copy app source code
+    COPY . .
+    #Exports
+    EXPOSE 5000
+    CMD ["npm","start"]
+
+
+docker build -t node-app .
 
 
 
+
+docker-compose.yml
+
+
+      version: '3.7'
+
+      services:
+        server:
+          build:
+            context: ./server
+            dockerfile: Dockerfile
+          image: myapp-server
+          container_name: myapp-node-server
+          command: /usr/src/app/node_modules/.bin/nodemon server.js
+          volumes:
+            - ./server/:/usr/src/app
+            - /usr/src/app/node_modules
+          ports:
+            - "5000:5000"
+          depends_on:
+            - mongo
+          env_file: ./server/.env
+          environment:
+            - NODE_ENV=development
+          networks:
+            - app-network
+        mongo:
+          image: mongo
+          volumes:
+            - data-volume:/data/db
+          ports:
+            - "27017:27017"
+          networks:
+            - app-network
+        client:
+          build:
+            context: ./client
+            dockerfile: Dockerfile
+          image: myapp-client
+          container_name: myapp-react-client
+          command: npm start
+          volumes:
+            - ./client/:/usr/app
+            - /usr/app/node_modules
+          depends_on:
+            - server
+          ports:
+            - "3000:3000"
+          networks:
+            - app-network
+
+      networks:
+          app-network:
+              driver: bridge
+
+      volumes:
+          data-volume:
+          node_modules:
+          web-root:
+            driver: local
+
+
+
+
+Creating the Build:
+
+To create the build for the entire application, we need to run the following 
+command: docker-compose build
+
+
+Starting the Services:
+
+We can start the multi-container system using the following simple command: docker-compose up
+
+At last, we can open http://localhost:3000 to see our React Frontend.
+
+The backend server is live on http://localhost:5000
+
+And MongoDB is running on http://localhost:27017
+
+
+
+
+
+
+
+#
+:end:
