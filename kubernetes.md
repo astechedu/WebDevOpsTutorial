@@ -443,7 +443,7 @@ Step 1) Apply updates:
 	   sudo apt update -y 
 	   sudo apt upgrade -y
   
- Once all the updates are installed then reboot your system once.
+     Once all the updates are installed then reboot your system once.
  
   	   sudo reboot
  
@@ -457,7 +457,7 @@ Step 3) Download Minikube Binary
 
      Download Minikube latest minikube binary       
 
- 	 wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+ 	  wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
      Once the binary is downloaded, copy it to the path /usr/local/bin and set the executable permissions on it
 
@@ -493,12 +493,12 @@ Step 4) Install Kubectl utility
  
       As we are already stated in the beginning that we would be using docker as base for minikue, so start the minikube with the docker driver, run 
   
-  	  minikube start --driver=docker      
+  	    minikube start --driver=docker      
   
   
  In case you want to start minikube with customize resources and want installer to automatically select the driver then you can run following command,
  
-  	  minikube start --addons=ingress --cpus=2 --cni=flannel --install-addons=true --kubernetes-version=stable --memory=6g      
+  	    minikube start --addons=ingress --cpus=2 --cni=flannel --install-addons=true --kubernetes-version=stable --memory=6g      
   
   
   
