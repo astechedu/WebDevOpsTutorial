@@ -89,12 +89,10 @@ requirements.txt:
     docker pull astechutube/sample-django-app
 
 
-
 So access the application at the address http://localhost:8080/
 
 
 :end:
-
 
 
 
@@ -236,7 +234,8 @@ curl http://localhost:5000
 
 [Top](#py-flask)
 <a name="py-flask"></a>
-**Create a Simple Docker Container with a Python Web Server
+
+# Create a Simple Docker Container with a Python Web Server
 
 Create index.html:
 
