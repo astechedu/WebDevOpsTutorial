@@ -576,7 +576,7 @@ CMD ["node", "./api/server.js"]
 <a name="web-app"></a>
 **Create simple node js server
 
-Exmple: 01:
+Example: 01:
 
 
 package.json 
@@ -676,7 +676,7 @@ If you need to go inside the container you can use the exec command:
 
 # Enter the container
 
-      $ docker exec -it <container id> /bin/bash
+        docker exec -it <container id> /bin/bash
 
 
 Test: 
