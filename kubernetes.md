@@ -450,21 +450,27 @@ Step 1) Apply updates:
 Step 2) Install Minikube dependencies
 
      Install the following minikube dependencies by running beneath command,
+     
 	 
    	   sudo apt install -y curl wget apt-transport-https
+	   
  
 Step 3) Download Minikube Binary
 
-     Download Minikube latest minikube binary       
+    Download Minikube latest minikube binary       
+
 
  	  wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+	  
 
-     Once the binary is downloaded, copy it to the path /usr/local/bin and set the executable permissions on it
+    Once the binary is downloaded, copy it to the path /usr/local/bin and set the executable permissions on it
+
 
 	  sudo cp minikube-linux-amd64 /usr/local/bin/minikube
 	  sudo chmod +x /usr/local/bin/minikube 
 
-     Verify the minikube version
+
+    Verify the minikube version
        
 	  minikube version
 	  minikube version: v1.27.0                          
@@ -479,19 +485,23 @@ Step 4) Install Kubectl utility
     curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl     
     
     
-      Once kubectl is downloaded then set the executable permissions on kubectl binary and move it to the path /usr/local/bin.    
+    Once kubectl is downloaded then set the executable permissions on kubectl binary and move it to the path /usr/local/bin.    
     
     
 	  chmod +x kubectl                      
-	  sudo mv kubectl /usr/local/bin/       
+	  sudo mv kubectl /usr/local/bin/ 
+	  
     
-      Now verify the kubectl version    
+     Now verify the kubectl version   
+      
     
-	  kubectl version -o yaml              
+	  kubectl version -o yaml  
+	  
   
  Step 5) Start minikube
  
-      As we are already stated in the beginning that we would be using docker as base for minikue, so start the minikube with the docker driver, run 
+     As we are already stated in the beginning that we would be using docker as base for minikue, so start the minikube with the docker driver, run 
+  
   
   	    minikube start --driver=docker      
   
