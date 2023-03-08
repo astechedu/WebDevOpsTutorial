@@ -8,7 +8,7 @@ Topics:
   1. [Dockrized Python](#doc_python)<br>
   2. [Dockrized Django (Worked)](#doc_django)<br>
   3. [Dockrized Flask](#doc_flash)<br>
-
+  4. [Containerize a Python service](#python_flash)
 
 
 
@@ -143,12 +143,97 @@ Here is a good explanation on best docker practices with python. Search for Exam
 
 
 
+[Top](#top)
+<a name="python_flask"></a>
+# Containerize a Python service
+
+
+We have now the following structure:
+
+  app
+  ├─── requirements.txt
+  └─── src
+       └─── server.py
+
+     
+server.py
+
+    from flask import Flask
+    server = Flask(__name__)
+
+    @server.route("/")
+     def hello():
+        return "Hello World!"
+
+    if __name__ == "__main__":
+       server.run(host='0.0.0.0') 
+
+
+requirements.txt
+
+
+Flask==1.1.1
+
+
+Dockrfile: 
+
+
+    #set base image (host OS)
+    FROM python:3.8
+
+    #set the working directory in the container
+    WORKDIR /code
+
+    #copy the dependencies file to the working directory
+    COPY requirements.txt .
+
+    #install dependencies
+    RUN pip install -r requirements.txt
+
+    #copy the content of the local src directory to the working directory
+    COPY src/ .
+
+    #command to run on container start
+    CMD [ "python", "./server.py" ] 
+    
+    
+    
+Multi-stage builds:
+
+
+    #first stage
+    FROM python:3.8 AS builder
+    COPY requirements.txt .
+
+    #install dependencies to the local user directory (eg. /root/.local)
+    RUN pip install --user -r requirements.txt
+
+    #second unnamed stage
+    FROM python:3.8-slim
+    WORKDIR /code
+
+    #copy only the dependencies installation from the 1st stage image
+    COPY --from=builder /root/.local /root/.local
+    COPY ./src .
+
+    #update PATH environment variable
+    ENV PATH=/root/.local:$PATH
+
+    CMD [ "python", "./server.py" ]
 
 
 
+CMD:
 
-
-
+    docker images
+    docker ps
+    docker run -d -p 5000:5000 myimage
+    
+curl http://localhost:5000
+    
+   
+#
+:end:    
 
 
 
