@@ -150,10 +150,10 @@ Here is a good explanation on best docker practices with python. Search for Exam
 
 We have now the following structure:
 
-  app
-  ├─── requirements.txt
-  └─── src
-       └─── server.py
+    app
+    ├─── requirements.txt
+    └─── src
+         └─── server.py
 
      
 server.py
