@@ -502,9 +502,16 @@ The backend server is live on http://localhost:5000
 And MongoDB is running on http://localhost:27017
 
 
+Maintenance & Inspection:
+
+    docker-compose ps
+    docker-compose logs
 
 
+Stopping the containers:
 
+    docker-compose stop
+    docker-compose down --volumes
 
 
 #
