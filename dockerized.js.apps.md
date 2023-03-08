@@ -8,12 +8,11 @@
 <a name="top"></a>
 Topics: 
 
-1. [How To Dockerize an Vue App? (Worked)](#vuejs_app)
-2. [How To Dockerize an React App? (Worked)](#react_app)
-3. [How To Dockerize an Angular App? with Nginx (Worked)](#angular_app)
-4. [How To Dockerize an Express Web App (Worked)](#express_app)
-5. [Dockerizing a Node.js web app](#web-app)
-
+1. [Dockerizing a Node.js web app](#web-app)
+2. [How To Dockerize an Vue App? (Worked)](#vuejs_app)
+3. [How To Dockerize an React App? (Worked)](#react_app)
+4. [How To Dockerize an Angular App? with Nginx (Worked)](#angular_app)
+5. [How To Dockerize an Express Web App (Worked)](#express_app)
 
 
 
@@ -572,8 +571,13 @@ CMD ["node", "./api/server.js"]
 :end: 
 #
 
+
 [Top](#top)
 <a name="web-app"></a>
+**Create simple node js server
+
+Exmple: 01:
+
 
 package.json 
 
@@ -697,8 +701,50 @@ Confirm that the app has stopped
       
       curl -i localhost:49160
       
-curl: (7) Failed to connect to localhost port 49160: Connection refused
-     
-     
+curl: (7) Failed to connect to localhost port 49160: Connection refused   
+  
+#
+:end:
+
+#
+
+Example 02: 
+
+Dockerfile: 
+
+      FROM node:18.7.0
+      RUN apt-get update && apt-get install -y \
+        nano \
+        Vim
+
+
+
+docker-compose.yml:
+
+      services:
+       notes:
+         build:
+           context: .
+         ports:
+           - 8080:8080
+           - 9229:9229
+         environment:
+           - SERVER_PORT=8080
+           - DATABASE_CONNECTIONSTRING=mongodb://mongo:27017/notes
+         volumes:
+           - ./:/code
+         command: npm run debug
+
+       mongo:
+         image: mongo:4.2.8
+         ports:
+           - 27017:27017
+         volumes:
+           - mongodb:/data/db
+           - mongodb_config:/data/configdb
+       volumes:
+         mongodb:
+         Mongodb_config:
+
 #
 :end:
