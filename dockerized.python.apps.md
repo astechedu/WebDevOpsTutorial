@@ -341,6 +341,30 @@ docker-compose.yml
            ports:
                - 8000:8000
 
+
+
+
+
+Dockrfile:
+
+
+    FROM python:3.9-alpine
+    WORKDIR /app
+    #Set environment variables
+    ENV PYTHONDONTWRITEBYECODE 1
+    ENV PYTHONUNBUFFERED 1
+    #Install psycopg2 dependencies
+    RUN apk update \
+        && apk add postgresql-dev gcc python3-dev musl-dev
+    #Install dependencies
+    COPY requirements.txt /app/requirements.txt
+    RUN pip install --upgrade pip
+    RUN pip install --no-cache-dir -r requirements.txt
+    #Copy project
+    COPY . .
+
+
+
 #
 :end:
 
