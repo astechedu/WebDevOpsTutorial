@@ -334,13 +334,13 @@ FROM python:3
 docker-compose.yml
 
 
-version: '3.7'
-services:
-   web:
-       build: .
-       command: python manage.py runserver localhost:8000
-       ports:
-           - 8000:8000
+  version: '3.7'
+  services:
+     web:
+         build: .
+         command: python manage.py runserver localhost:8000
+         ports:
+             - 8000:8000
 
 
 
