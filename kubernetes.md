@@ -288,6 +288,7 @@ This is heading
  
  [Go To Top](#top)
 <!----><a name="micro8ks_cmds"></a>
+
  ### Microk8s CMDS
  
 	 sudo snap install microk8s --classic --channel=1.25   //Install MicroK8s
@@ -307,7 +308,8 @@ This is heading
 
 
 [Go To Top](#top)
-  //microk8s
+
+ ### microk8s
 	
 	  microk8s stop
 	  microk8s start
@@ -329,7 +331,7 @@ This is heading
 
 
 [Go To Top](#top)
-//In Pod's container
+### In Pod's container
 	
 	kubectl get pods
 	kubectl exec <podName> env
@@ -351,7 +353,7 @@ Some CMDS:
 	kubectl get svc
 	curl 10.88.20e.56:8000
 
-//Mulit containers in a pod (shared network)
+### Mulit containers in a pod (shared network)
 	
 	kubectl get pods
 	kubectl apply -f firstpod.yml
@@ -364,7 +366,7 @@ Some CMDS:
 	telnet localhost 8000
 	ifconfig
 
-//initContainer (Add initContainer in above yml file)
+### initContainer (Add initContainer in above yml file)
 	
 	 initContainers:
 	  - name: initcontainer
@@ -419,7 +421,7 @@ Some CMDS:
 [Go To Top](#top)
 <!----><a name="install_minikube"></a>
 
- Installation Minikube on ubuntu
+# Installation Minikube on ubuntu
  
  Minikube System Requirements
 
@@ -459,8 +461,8 @@ Step 3) Download Minikube Binary
 
        Once the binary is downloaded, copy it to the path /usr/local/bin and set the executable permissions on it
 
-		 sudo cp minikube-linux-amd64 /usr/local/bin/minikube
-		 sudo chmod +x /usr/local/bin/minikube 
+	  sudo cp minikube-linux-amd64 /usr/local/bin/minikube
+	  sudo chmod +x /usr/local/bin/minikube 
 
        Verify the minikube version
        
@@ -470,6 +472,7 @@ Step 3) Download Minikube Binary
 
        
 Step 4) Install Kubectl utility
+
  	Kubectl is a command line utility which is used to interact with Kubernetes cluster. It is used for managing deployments, service and pods etc. Use below curl command to download latest version of kubectl.
  
  
@@ -495,11 +498,11 @@ Step 4) Install Kubectl utility
   
  In case you want to start minikube with customize resources and want installer to automatically select the driver then you can run following command,
  
-  	minikube start --addons=ingress --cpus=2 --cni=flannel --install-addons=true --kubernetes-version=stable --memory=6g      
+  	  minikube start --addons=ingress --cpus=2 --cni=flannel --install-addons=true --kubernetes-version=stable --memory=6g      
   
   
   
- //Run below minikube command to check status,
+### Run below minikube command to check status,
  
 	  ajay@sisaudiya:~$ minikube status
 	  minikube
