@@ -53,7 +53,7 @@ $$\large{\colorbox{blue}{\color{white}Kubernetes \ Commands \ and \ Examples \ F
 
 ###### 23 Microk8s CMDS [Deploy and Access the Kubernetes Dashboard](#k8-dashboard)
 
-
+###### 24 Minikube [Kubernetes Volumes Minikube On Windows](#minikube-volumes-on-windows)
 
 
 #
@@ -2055,10 +2055,34 @@ You can enable access to the Dashboard using the kubectl command-line tool, by r
 
 
 
+	
+#
+	
+[Top](#top)
+<a name="minikube-volumes-on-windows"></a>
+	
+### Kubernetes Volumes Minikube On Windiws 
+	
+	
+	apiVersion: v1
+	kind: Pod
+	metadata:
+	  name: vol1
+	spec:
+	  containers:
+	  - name: vol1
+	    image: nginx
+	    volumeMounts:
+	     - name: testvol1
+	       mountPath: /usr/share/nginx/html          
+	  volumes:
+	  - name: testvol1
+	    hostPath: 
+	       path: /c/Users/k8s	
 
 
-
-
-
+:end:
+	
+#
 [Go To Top](#top)
 <a name="bottom"></a>
