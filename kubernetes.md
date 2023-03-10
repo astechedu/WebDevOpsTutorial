@@ -1,5 +1,5 @@
 <!-- # Kubernetes Commands & Examples For Beginners -->
-$$Kubernetes Commands and Examples For Beginners$$
+$$Kubernetes \ Commands \ and \ Examples \ For \ Beginners$$
 
 <img src="https://kubernetes.io/images/favicon.png" alt="Kubernetes image loading...." width="5%">
 
