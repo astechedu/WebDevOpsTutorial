@@ -1,4 +1,3 @@
-# Kubernetes Deployment And More Basics
 $$\large{\color{purple} Kubernetes \ Deployment \ And \ More \ Basics}$$
 
 
