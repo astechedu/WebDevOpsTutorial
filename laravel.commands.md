@@ -8,11 +8,66 @@ $$\colorbox{Cyan}{\large{\color{white}{Laravel \ Framework}}}$$
 <a name="top"></a>
 Topic: 
 #
+ [Laravel Installation CMDS](#laravel-installation-cmds) 
+ 
  [Installing Inertia - React in Laravel Project](#laravel-intertial-react) 
  
   
 #  
 
+[Top](#top)
+<a name="laravel-intertial-react"></a>
+# Laravel Installing CMDS
+
+Composer create-project command:
+
+
+    composer create-project laravel/laravel example-app
+
+
+Laravel installer via Composer:
+
+
+    composer global require laravel/installer
+
+    laravel new example-app
+
+
+
+    cd example-app
+
+    php artisan serve
+
+
+
+    composer create-project laravel/laravel <your-project-name>
+    composer require laravel/jetstream
+
+
+
+    Install Jetstream With Livewire
+    php artisan jetstream:install livewire
+    php artisan jetstream:install livewire --teams
+
+
+    Install Jetstream With Inertia
+    php artisan jetstream:install inertia
+    php artisan jetstream:install inertia --teams
+
+
+ Finalizing The Installation: 
+ 
+    npm install
+    npm run dev
+    php artisan migrate
+
+
+Livewire:
+
+    php artisan vendor:publish --tag=jetstream-views
+
+
+#
 
 [Top](#top)
 <a name="laravel-intertial-react"></a>
