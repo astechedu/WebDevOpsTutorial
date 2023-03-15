@@ -1,6 +1,6 @@
 $$\colorbox{Cyan}{\large{\color{white}{Laravel \ Framework}}}$$
 
-<img src="https://en.wikipedia.org/wiki/Laravel#/media/File:Laravel.svg" alt="Docker Image Loading....." width="10%">
+<img src="https://laravel.com/img/logomark.min.svg" alt="Loading image....." width="10%">
 
 :link:[Home](all-file-links.md)     
 
