@@ -19,6 +19,7 @@ Topic:
 <a name="laravel-intertial-react"></a>
 # Laravel Installing CMDS
 
+
 Composer create-project command:
 
 
@@ -27,22 +28,17 @@ Composer create-project command:
 
 Laravel installer via Composer:
 
-
     composer global require laravel/installer
 
     laravel new example-app
 
 
-
     cd example-app
-
     php artisan serve
-
 
 
     composer create-project laravel/laravel <your-project-name>
     composer require laravel/jetstream
-
 
 
     Install Jetstream With Livewire
@@ -67,6 +63,51 @@ Livewire:
     php artisan vendor:publish --tag=jetstream-views
 
 
+
+
+Laravel Breeze: 
+
+    composer require laravel/breeze --dev
+
+Breeze & Blade:
+
+    php artisan breeze:install
+
+    php artisan migrate
+    npm install
+    npm run dev
+
+Dark Mode: 
+
+    php artisan breeze:install --dark
+ 
+ 
+Breeze & React / Vue:
+
+    php artisan breeze:install vue
+
+    # Or...
+
+    php artisan breeze:install react
+
+    php artisan migrate
+    npm install
+    npm run dev
+ 
+ 
+ 
+ Server-Side Rendering:
+ 
+    php artisan breeze:install vue --ssr
+    php artisan breeze:install react --ssr
+    
+    
+Breeze & Next.js / API:
+
+    php artisan breeze:install api
+    php artisan migrate
+
+ 
 #
 
 [Top](#top)
