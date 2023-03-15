@@ -56,15 +56,25 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 # PHP :diamond_shape_with_a_dot_inside:
 
-:link:[PHP click here](php.txt)
+:link:[PHP cmds click here](php.txt)
+
+:link:[CakePhp Framework click here](cakephp.commands.md)
 
 :link:[CakePhp click here](cakephp.commands.txt)
 
+:link:[Codeigniter Framework click here](codeigniter.commands.md)
+
 :link:[Codeigniter click here](codeigniter.commands.txt)
+
+:link:[Laravel Framework click here](laravel.commands.md)
 
 :link:[Laravel click here](laravel.commands.txt)
 
+:link:[Sysmfony Framework Commands click here](symfony.commands.md)
+
 :link:[Sysmfony Commands click here](symfony.commands.txt)
+
+:link:[Yii Framework click here](yii.commands.md)
 
 :link:[Yii click here](yii.commands.txt)
 
