@@ -23,6 +23,7 @@ Steps:
 
 [Alpine Linux Basic Commands](#alpine-basic-cmds)
 
+[CentOS 8 AppStream PHP Installation & Change PHP Version](#php-on-centos8)
 
 
 #
@@ -2592,8 +2593,53 @@ Kali:
 
 
 #
-CentOS 8 Stream:
+[Top](#top)
+# CentOS 8 Stream:
 
+CentOS 8 Stream (Nothing is installing)
+
+
+Working This settings: 
+
+
+VirtualBox 7 In Windows 10 64-bit (CentOS 8 Stream)
+
+This is used for CentOS Linux, but in the case of centos appstream use the following trick
+
+Go to /etc/yum.repos.d.
+
+Add in CentOS-Stream-AppStream.repo
+	
+	baseurl=http://mirror.centos.org/centos/8-stream/AppStream/x86_64/os/
+
+Add in CentOS-Stream-BaseOS.repo
+	
+	baseurl=http://mirror.centos.org/centos/8-stream/BaseOS/x86_64/os/
+
+Add in CentOS-Stream-Extras.repo
+	
+	baseurl=http://mirror.centos.org/centos/8-stream/extras/x86_64/os/
+
+CentOS-Stream-Extras-common.repo
+	
+	baseurl=https://vault.centos.org/centos/8-stream/extras/Source/extras-common/
+	
+#
+	
+	
+[Top](#top)	
+<a name="php-on-centos8"></a>	
+# PHP Installation & Change PHP Version	
+	
+	sudo yum module list php
+	dnf module list php
+	dnf module switch-to php:remi-8.2
+	Or
+	dnf module switch-to php:8.2
+	php -v
+	
+	
+	
 #
 Red Hat: 
 #
