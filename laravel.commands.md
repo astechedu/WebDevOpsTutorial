@@ -1,4 +1,4 @@
-$$\colorbox{pink}{\large{\color{red}{Laravel \ Framework}}}$$
+$$\colorbox{pink}{\large{\color{red}{Laravel \ Framework \ Commands}}}$$
 
 <img src="https://laravel.com/img/logomark.min.svg" alt="Loading image....." width="10%">
 
