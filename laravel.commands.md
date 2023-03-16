@@ -654,10 +654,15 @@ http://127.0.0.1:8000/companies
 
 
 Step 1: Install Laravel & Connect Database
+
 Step 2: Install Breeze & Setup Inertia Js React
+
 Step 3: Create Post Model and Resource Controller
+
 Step 4: Create Post Request
+
 Step 5: Create React js view file for CRUD
+
 
 
 Step 1: Install Laravel & Connect Database
