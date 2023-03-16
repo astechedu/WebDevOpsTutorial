@@ -16,6 +16,9 @@ Topic:
  
  [Laravel Breeze Inertia js CRUD with React Tutorial](#laravel-breeze-react)
   
+ [Laravel 9 Vue JS CRUD App using Vite Example ](#larvel-vue-crud)
+ 
+ 
 #  
 
 [Top](#top)
@@ -1232,6 +1235,540 @@ Laravel Inertia js CRUD with React v3
 
 #
 
+<a name=""></a>
+
+Steps for Laravel 9 Vue JS CRUD App using Vite Example:
+
+    Step 1: Installing fresh new Laravel 9 Application
+    Step 2: Creating Database and Configuration
+    Step 3: Creating Auth with Breeze
+    Step 4: Creating Migration and Model
+    Step 5: Creating Route
+    Step 6: Creating Controller
+    Step 7: Creating Vue Pages
+    Step 8: Testing
+    Step 9: Conclusion
+
+
+Step 1: Installing fresh new Laravel 9 Application 
+
+
+    composer create-project laravel/laravel vuejs-crud-vite
+    cd vuejs-crud-vite
+
+
+
+Step 2: Creating Database and Configuration 
+
+Create Database & Table 
+
+.env
+
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=vuejs-crud-vite
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+Step 3: Creating Auth with Breeze 
+
+    composer require laravel/breeze --dev
+    php artisan breeze:install vue
+    npm install
+    npm run dev
+
+
+    php artisan migrate
+
+
+Step 4: Creating Migration and Model 
+
+    php artisan make:migration create_posts_table
+
+
+
+<?php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('body');
+            $table->timestamps();
+        });
+    }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('posts');
+    }
+};
+
+
+
+php artisan migrate
+php artisan make:model Post
+
+Post.php
+
+
+<?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+class Post extends Model
+{
+    use HasFactory;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title', 'body'
+    ];
+}
+
+
+Step 5: Creating Route
+
+routes/web.php
+
+
+<?php
+use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
+use App\Http\Controllers\PostController;
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+Route::get('/', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+require __DIR__.'/auth.php';
+Route::resource('posts', PostController::class);
+
+
+
+Step 6: Creating Controller
+
+ Create a new file PostController.php in app/Http/Controllers folder
+
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Inertia\Inertia;
+use App\Models\Post;
+use Illuminate\Support\Facades\Validator;
+
+class PostController extends Controller
+{
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        $posts = Post::all();
+        return Inertia::render('Posts/Index', ['posts' => $posts]);
+    }
+
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function create()
+    {
+        return Inertia::render('Posts/Create');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        Validator::make($request->all(), [
+            'title' => ['required'],
+            'body' => ['required'],
+        ])->validate();
+
+        Post::create($request->all());
+
+        return redirect()->route('posts.index');
+    }
+
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function edit(Post $post)
+    {
+        return Inertia::render('Posts/Edit', [
+            'post' => $post
+        ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function update($id, Request $request)
+    {
+        Validator::make($request->all(), [
+            'title' => ['required'],
+            'body' => ['required'],
+        ])->validate();
+
+        Post::find($id)->update($request->all());
+        return redirect()->route('posts.index');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        Post::find($id)->delete();
+        return redirect()->route('posts.index');
+    }
+}
+
+
+
+Step 7: Creating Vue Pages
+
+resources/js/Pages 
+Index.vue, Edit.vue & Create.vue
+
+
+resources/js/Pages/Posts/Index.vue
+
+<script setup>
+import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+defineProps({
+    posts: Array,
+});
+const form = useForm();
+function destroy(id) {
+    if (confirm("Are you sure you want to Delete")) {
+        form.delete(route('posts.destroy', id));
+    }
+}
+</script>
+<template>
+    <Head title="Dashboard" />
+    <BreezeAuthenticatedLayout>
+        <template #header>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Laravel 9 Vue JS CRUD App using Vite Example - LaravelTuts.com
+            </h2>
+        </template>
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        <div className="flex items-center justify-between mb-6">
+                            <Link
+                                className="px-6 py-2 text-white bg-green-500 rounded-md focus:outline-none"
+                                :href="route('posts.create')"
+                            >
+                                Create Post
+                            </Link>
+                        </div>
+                        <table className="table-fixed w-full">
+                            <thead>
+                                <tr className="bg-gray-100">
+                                    <th className="px-4 py-2 w-20">No.</th>
+                                    <th className="px-4 py-2">Title</th>
+                                    <th className="px-4 py-2">Body</th>
+                                    <th className="px-4 py-2">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="post in posts">
+                                    <td className="border px-4 py-2">{{ post.id }}</td>
+                                    <td className="border px-4 py-2">{{ post.title }}</td>
+                                    <td className="border px-4 py-2">{{ post.body }}</td>
+                                    <td className="border px-4 py-2">
+                                        <Link
+                                            tabIndex="1"
+                                            className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
+                                            :href="route('posts.edit', post.id)"
+                                        >
+                                            Edit
+                                        </Link>
+                                        <button
+                                            @click="destroy(post.id)"
+                                            tabIndex="-1"
+                                            type="button"
+                                            className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"
+                                        >
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </BreezeAuthenticatedLayout>
+</template>
+
+resources/js/Pages/Posts/Create.vue
+
+<script setup>
+import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+import BreezeLabel from '@/Components/Label.vue';
+import BreezeInput from '@/Components/Input.vue';
+import BreezeTextArea from '@/Components/Textarea.vue';
+import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+const form = useForm({
+    title: '',
+    body: ''
+});
+const submit = () => {
+    form.post(route('posts.store'));
+};
+</script>
+<template>
+    <Head title="Dashboard" />
+    <BreezeAuthenticatedLayout>
+        <template #header>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Create Post
+            </h2>
+        </template>
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        <div className="flex items-center justify-between mb-6">
+                            <Link
+                                className="px-6 py-2 text-white bg-blue-500 rounded-md focus:outline-none"
+                                :href="route('posts.index')"
+                            >
+                                Back
+                            </Link>
+                        </div>
+                        <form name="createForm" @submit.prevent="submit">
+                                <div className="flex flex-col">
+                                    <div className="mb-4">
+                                        <BreezeLabel for="title" value="Title" />
+
+                                        <BreezeInput 
+                                            id="title" 
+                                            type="text" 
+                                            class="mt-1 block w-full" 
+                                            v-model="form.title" 
+                                            autofocus />
+                                        <span className="text-red-600" v-if="form.errors.title">
+                                            {{ form.errors.title }}
+                                        </span>
+                                    </div>
+                                    <div className="mb-4">
+                                        <BreezeLabel for="body" value="Body" />
+
+                                        <BreezeTextArea 
+                                            id="body" 
+                                            class="mt-1 block w-full" 
+                                            v-model="form.body" 
+                                            autofocus />
+                                        <span className="text-red-600" v-if="form.errors.body">
+                                            {{ form.errors.body }}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div className="mt-4">
+                                    <button
+                                        type="submit"
+                                        className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+                                    >
+                                        Save
+                                    </button>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </BreezeAuthenticatedLayout>
+</template>
+
+resources/js/Pages/Posts/Edit.vue
+
+<script setup>
+import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+import BreezeLabel from '@/Components/Label.vue';
+import BreezeInput from '@/Components/Input.vue';
+import BreezeTextArea from '@/Components/Textarea.vue';
+import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+const props = defineProps({
+    post: Object,
+});
+const form = useForm({
+    title: props.post.title,
+    body: props.post.body
+});
+const submit = () => {
+    form.put(route('posts.update', props.post.id));
+};
+</script>
+<template>
+    <Head title="Dashboard" />
+    <BreezeAuthenticatedLayout>
+        <template #header>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Edit Post
+            </h2>
+        </template>
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        <div className="flex items-center justify-between mb-6">
+                            <Link
+                                className="px-6 py-2 text-white bg-blue-500 rounded-md focus:outline-none"
+                                :href="route('posts.index')"
+                            >
+                                Back
+                            </Link>
+                        </div>
+                        <form name="createForm" @submit.prevent="submit">
+                                <div className="flex flex-col">
+                                    <div className="mb-4">
+                                        <BreezeLabel for="title" value="Title" />
+
+                                        <BreezeInput 
+                                            id="title" 
+                                            type="text" 
+                                            class="mt-1 block w-full" 
+                                            v-model="form.title" 
+                                            autofocus />
+                                        <span className="text-red-600" v-if="form.errors.title">
+                                            {{ form.errors.title }}
+                                        </span>
+                                    </div>
+                                    <div className="mb-4">
+                                        <BreezeLabel for="body" value="Body" />
+
+                                        <BreezeTextArea 
+                                            id="body" 
+                                            class="mt-1 block w-full" 
+                                            v-model="form.body" 
+                                            autofocus />
+                                        <span className="text-red-600" v-if="form.errors.body">
+                                            {{ form.errors.body }}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div className="mt-4">
+                                    <button
+                                        type="submit"
+                                        className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+                                    >
+                                        Save
+                                    </button>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </BreezeAuthenticatedLayout>
+</template>
+
+Create a new file Textaarea.vue inside resources/js/Components
+
+resources/js/Components/Textarea.vue
+
+<script setup>
+    import { onMounted, ref } from 'vue';
+    defineProps(['modelValue']);
+    defineEmits(['update:modelValue']);
+    const input = ref(null);
+    onMounted(() => {
+        if (input.value.hasAttribute('autofocus')) {
+            input.value.focus();
+        }
+    });
+</script>
+<template>
+    <textarea class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" ref="input"></textarea>
+</template>
+
+Add a Post Navigation in Authenticated.vue inside resources/js/Layouts folder.
+
+<!-- Navigation Links -->
+<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+  <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">Dashboard</BreezeNavLink>
+  <BreezeNavLink :href="route('posts.index')" :active="route().current('posts.index')">Posts</BreezeNavLink>
+</div>
+
+
+Laravel 9 Vue JS CRUD App using Vite Example
+
+Step 8: Testing
+
+Now let’s test our Laravel 9 Vue JS CRUD App using Vite Example. Run the following command to start laravel server.
+
+php artisan serve
+
+npm run dev
+npm run build
+
+http://127.0.0.1:8000/
+
 
 :end:
 
+#
