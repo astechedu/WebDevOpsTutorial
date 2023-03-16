@@ -762,467 +762,467 @@ Step 4: Create Post Request
 app/Http/Requests/StorePostRequest.php
 
 
-<?php
+    <?php
 
-namespace App\Http\Requests;
+    namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
+    use Illuminate\Foundation\Http\FormRequest;
 
-class StorePostRequest extends FormRequest
-{
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
+    class StorePostRequest extends FormRequest
     {
-        return true;
-    }
+        /**
+         * Determine if the user is authorized to make this request.
+         *
+         * @return bool
+         */
+        public function authorize()
+        {
+            return true;
+        }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
-    {
-        return [
-            'title' => 'required',
-            'description' => 'required'
-        ];
+        /**
+         * Get the validation rules that apply to the request.
+         *
+         * @return array
+         */
+        public function rules()
+        {
+            return [
+                'title' => 'required',
+                'description' => 'required'
+            ];
+        }
     }
-}
 
 
 PostController.php
 
-<?php
+    <?php
 
-namespace App\Http\Controllers;
+    namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePostRequest;
-use App\Models\Post;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Request;
-use Inertia\Inertia;
+    use App\Http\Requests\StorePostRequest;
+    use App\Models\Post;
+    use Illuminate\Support\Facades\Redirect;
+    use Illuminate\Support\Facades\Request;
+    use Inertia\Inertia;
 
-class PostController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    class PostController extends Controller
     {
-        $posts = Post::latest()->get();
+        /**
+         * Display a listing of the resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function index()
+        {
+            $posts = Post::latest()->get();
 
-        return Inertia::render('Post/Index', ['posts' => $posts]);
+            return Inertia::render('Post/Index', ['posts' => $posts]);
+        }
+
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function create()
+        {
+            return Inertia::render('Post/Create');
+        }
+
+        /**
+         * Store a newly created resource in storage.
+         *
+         * @param  \Illuminate\Http\Request  $request
+         * @return \Illuminate\Http\Response
+         */
+        public function store(StorePostRequest $request)
+        {
+            Post::create(
+                $request->validated()
+            );
+
+            return Redirect::route('posts.index');
+        }
+
+        /**
+         * Display the specified resource.
+         *
+         * @param  int  $id
+         * @return \Illuminate\Http\Response
+         */
+        public function show($id)
+        {
+            //
+        }
+
+        /**
+         * Show the form for editing the specified resource.
+         *
+         * @param  int  $id
+         * @return \Illuminate\Http\Response
+         */
+        public function edit(Post $post)
+        {
+            return Inertia::render('Post/Edit', [
+                'post' => [
+                    'id' => $post->id,
+                    'title' => $post->title,
+                    'description' => $post->description
+                ]
+            ]);
+        }
+
+        /**
+         * Update the specified resource in storage.
+         *
+         * @param  \Illuminate\Http\Request  $request
+         * @param  int  $id
+         * @return \Illuminate\Http\Response
+         */
+        public function update(StorePostRequest $request, Post $post)
+        {
+            $post->update($request->validated());
+
+            return Redirect::route('posts.index');
+        }
+
+        /**
+         * Remove the specified resource from storage.
+         *
+         * @param  int  $id
+         * @return \Illuminate\Http\Response
+         */
+        public function destroy(Post $post)
+        {
+            $post->delete();
+
+            return Redirect::route('posts.index');
+        }
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return Inertia::render('Post/Create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StorePostRequest $request)
-    {
-        Post::create(
-            $request->validated()
-        );
-
-        return Redirect::route('posts.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Post $post)
-    {
-        return Inertia::render('Post/Edit', [
-            'post' => [
-                'id' => $post->id,
-                'title' => $post->title,
-                'description' => $post->description
-            ]
-        ]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(StorePostRequest $request, Post $post)
-    {
-        $post->update($request->validated());
-
-        return Redirect::route('posts.index');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Post $post)
-    {
-        $post->delete();
-
-        return Redirect::route('posts.index');
-    }
-}
 
 
 app/routes/web.php
 
-<?php
+    <?php
 
-use App\Http\Controllers\PostController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+    use App\Http\Controllers\PostController;
+    use Illuminate\Foundation\Application;
+    use Illuminate\Support\Facades\Route;
+    use Inertia\Inertia;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+    /*
+    |--------------------------------------------------------------------------
+    | Web Routes
+    |--------------------------------------------------------------------------
+    |
+    | Here is where you can register web routes for your application. These
+    | routes are loaded by the RouteServiceProvider within a group which
+    | contains the "web" middleware group. Now create something great!
+    |
+    */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+    Route::get('/', function () {
+        return Inertia::render('Welcome', [
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'laravelVersion' => Application::VERSION,
+            'phpVersion' => PHP_VERSION,
+        ]);
+    });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('posts', PostController::class);
-require __DIR__.'/auth.php';
+    Route::resource('posts', PostController::class);
+    require __DIR__.'/auth.php';
 
 
 Step 5: Create React js view file for CRUD
 
 app/resources/js/Pages/Post/Create.js
 
-import React from "react";
-import { Inertia } from "@inertiajs/inertia";
-import { InertiaLink, useForm } from "@inertiajs/inertia-react";
+    import React from "react";
+    import { Inertia } from "@inertiajs/inertia";
+    import { InertiaLink, useForm } from "@inertiajs/inertia-react";
 
-const Create = () => {
-    const { data, setData, errors, post } = useForm({
-        title: "",
-        description: "",
-    });
+    const Create = () => {
+        const { data, setData, errors, post } = useForm({
+            title: "",
+            description: "",
+        });
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        post(route("posts.store"));
-    }
+        function handleSubmit(e) {
+            e.preventDefault();
+            post(route("posts.store"));
+        }
 
-    return (
-        <div className="mt-20">
-            <div className="container flex flex-col justify-center mx-auto">
-                <div>
-                    <h1 className="mb-8 text-3xl font-bold">
-                        <InertiaLink
-                            href={route("posts.index")}
-                            className="text-indigo-600 hover:text-indigo-700"
-                        >
-                            Posts
-                        </InertiaLink>
-                        <span className="font-medium text-indigo-600"> / </span>
-                        Create
-                    </h1>
-                </div>
-                <div className="max-w-6xl p-8 bg-white rounded shadow">
-                    <form name="createForm" onSubmit={handleSubmit}>
-                        <div className="flex flex-col">
-                            <div className="mb-4">
-                                <label className="">Title</label>
-                                <input
-                                    type="text"
-                                    className="w-full px-4 py-2"
-                                    label="Title"
-                                    name="title"
-                                    value={data.title}
-                                    onChange={(e) =>
-                                        setData("title", e.target.value)
-                                    }
-                                />
-                                <span className="text-red-600">
-                                    {errors.title}
-                                </span>
-                            </div>
-                            <div className="mb-0">
-                                <label className="">Description</label>
-                                <textarea
-                                    type="text"
-                                    className="w-full rounded"
-                                    label="description"
-                                    name="description"
-                                    errors={errors.description}
-                                    value={data.description}
-                                    onChange={(e) =>
-                                        setData("description", e.target.value)
-                                    }
-                                />
-                                <span className="text-red-600">
-                                    {errors.description}
-                                </span>
-                            </div>
-                        </div>
-                        <div className="mt-4">
-                            <button
-                                type="submit"
-                                className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+        return (
+            <div className="mt-20">
+                <div className="container flex flex-col justify-center mx-auto">
+                    <div>
+                        <h1 className="mb-8 text-3xl font-bold">
+                            <InertiaLink
+                                href={route("posts.index")}
+                                className="text-indigo-600 hover:text-indigo-700"
                             >
-                                Save
-                            </button>
-                        </div>
-                    </form>
+                                Posts
+                            </InertiaLink>
+                            <span className="font-medium text-indigo-600"> / </span>
+                            Create
+                        </h1>
+                    </div>
+                    <div className="max-w-6xl p-8 bg-white rounded shadow">
+                        <form name="createForm" onSubmit={handleSubmit}>
+                            <div className="flex flex-col">
+                                <div className="mb-4">
+                                    <label className="">Title</label>
+                                    <input
+                                        type="text"
+                                        className="w-full px-4 py-2"
+                                        label="Title"
+                                        name="title"
+                                        value={data.title}
+                                        onChange={(e) =>
+                                            setData("title", e.target.value)
+                                        }
+                                    />
+                                    <span className="text-red-600">
+                                        {errors.title}
+                                    </span>
+                                </div>
+                                <div className="mb-0">
+                                    <label className="">Description</label>
+                                    <textarea
+                                        type="text"
+                                        className="w-full rounded"
+                                        label="description"
+                                        name="description"
+                                        errors={errors.description}
+                                        value={data.description}
+                                        onChange={(e) =>
+                                            setData("description", e.target.value)
+                                        }
+                                    />
+                                    <span className="text-red-600">
+                                        {errors.description}
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="mt-4">
+                                <button
+                                    type="submit"
+                                    className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+                                >
+                                    Save
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
-};
+        );
+    };
 
-export default Create;
+    export default Create;
 
 
 
 app/resources/js/Pages/Post/Index.js
 
-import React from "react";
-import { Inertia } from "@inertiajs/inertia";
-import { InertiaLink, usePage } from "@inertiajs/inertia-react";
+    import React from "react";
+    import { Inertia } from "@inertiajs/inertia";
+    import { InertiaLink, usePage } from "@inertiajs/inertia-react";
 
-const Index = () => {
-    const { posts } = usePage().props;
-    const { data } = posts;
+    const Index = () => {
+        const { posts } = usePage().props;
+        const { data } = posts;
 
-    return (
-        <div>
-            <div className="container mx-auto">
-                <h1 className="mb-8 text-3xl font-bold text-center">Post</h1>
-                <div className="flex items-center justify-between mb-6">
-                    <InertiaLink
-                        className="px-6 py-2 text-white bg-green-500 rounded-md focus:outline-none"
-                        href={route("posts.create")}
-                    >
-                        Create Post
-                    </InertiaLink>
-                </div>
+        return (
+            <div>
+                <div className="container mx-auto">
+                    <h1 className="mb-8 text-3xl font-bold text-center">Post</h1>
+                    <div className="flex items-center justify-between mb-6">
+                        <InertiaLink
+                            className="px-6 py-2 text-white bg-green-500 rounded-md focus:outline-none"
+                            href={route("posts.create")}
+                        >
+                            Create Post
+                        </InertiaLink>
+                    </div>
 
-                <div className="overflow-x-auto bg-white rounded shadow">
-                    <table className="w-full whitespace-nowrap">
-                        <thead className="text-white bg-gray-600">
-                            <tr className="font-bold text-left">
-                                <th className="px-6 pt-5 pb-4">#</th>
-                                <th className="px-6 pt-5 pb-4">Title</th>
-                                <th className="px-6 pt-5 pb-4">Description</th>
-                                <th className="px-6 pt-5 pb-4">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data.map(({ id, title, description }) => (
-                                <tr key={id} className="">
-                                    <td className="border-t">
-                                        <InertiaLink
-                                            href={route("posts.edit", id)}
-                                            className="flex items-center px-6 py-4 focus:text-indigo-700 focus:outline-none"
-                                        >
-                                            {id}
-                                        </InertiaLink>
-                                    </td>
-                                    <td className="border-t">
-                                        <InertiaLink
-                                            href={route("posts.edit", id)}
-                                            className="flex items-center px-6 py-4 focus:text-indigo-700 focus:outline-none"
-                                        >
-                                            {title}
-                                        </InertiaLink>
-                                    </td>
-                                    <td className="border-t">
-                                        <InertiaLink
-                                            tabIndex="1"
-                                            className="flex items-center px-6 py-4"
-                                            href={route("posts.edit", id)}
-                                        >
-                                            {description}
-                                        </InertiaLink>
-                                    </td>
-                                    <td className="border-t">
-                                        <InertiaLink
-                                            tabIndex="1"
-                                            className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
-                                            href={route("posts.edit", id)}
-                                        >
-                                            Edit
-                                        </InertiaLink>
-                                    </td>
+                    <div className="overflow-x-auto bg-white rounded shadow">
+                        <table className="w-full whitespace-nowrap">
+                            <thead className="text-white bg-gray-600">
+                                <tr className="font-bold text-left">
+                                    <th className="px-6 pt-5 pb-4">#</th>
+                                    <th className="px-6 pt-5 pb-4">Title</th>
+                                    <th className="px-6 pt-5 pb-4">Description</th>
+                                    <th className="px-6 pt-5 pb-4">Action</th>
                                 </tr>
-                            ))}
-                            {data.length === 0 && (
-                                <tr>
-                                    <td
-                                        className="px-6 py-4 border-t"
-                                        colSpan="4"
-                                    >
-                                        No contacts found.
-                                    </td>
-                                </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {data.map(({ id, title, description }) => (
+                                    <tr key={id} className="">
+                                        <td className="border-t">
+                                            <InertiaLink
+                                                href={route("posts.edit", id)}
+                                                className="flex items-center px-6 py-4 focus:text-indigo-700 focus:outline-none"
+                                            >
+                                                {id}
+                                            </InertiaLink>
+                                        </td>
+                                        <td className="border-t">
+                                            <InertiaLink
+                                                href={route("posts.edit", id)}
+                                                className="flex items-center px-6 py-4 focus:text-indigo-700 focus:outline-none"
+                                            >
+                                                {title}
+                                            </InertiaLink>
+                                        </td>
+                                        <td className="border-t">
+                                            <InertiaLink
+                                                tabIndex="1"
+                                                className="flex items-center px-6 py-4"
+                                                href={route("posts.edit", id)}
+                                            >
+                                                {description}
+                                            </InertiaLink>
+                                        </td>
+                                        <td className="border-t">
+                                            <InertiaLink
+                                                tabIndex="1"
+                                                className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
+                                                href={route("posts.edit", id)}
+                                            >
+                                                Edit
+                                            </InertiaLink>
+                                        </td>
+                                    </tr>
+                                ))}
+                                {data.length === 0 && (
+                                    <tr>
+                                        <td
+                                            className="px-6 py-4 border-t"
+                                            colSpan="4"
+                                        >
+                                            No contacts found.
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
-};
+        );
+    };
 
-export default Index;
+    export default Index;
 
 
 
 app/resources/js/Pages/Post/Edit.js
 
-import React from "react";
-import { Inertia } from "@inertiajs/inertia";
-import { InertiaLink, usePage, useForm } from "@inertiajs/inertia-react";
+    import React from "react";
+    import { Inertia } from "@inertiajs/inertia";
+    import { InertiaLink, usePage, useForm } from "@inertiajs/inertia-react";
 
-const Edit = () => {
-    const { post } = usePage().props;
-    const { data, setData, put, errors } = useForm({
-        title: post.title || "",
-        description: post.description || "",
-    });
+    const Edit = () => {
+        const { post } = usePage().props;
+        const { data, setData, put, errors } = useForm({
+            title: post.title || "",
+            description: post.description || "",
+        });
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        put(route("posts.update", post.id));
-    }
-    function destroy() {
-        if (confirm("Are you sure you want to delete this user?")) {
-            Inertia.delete(route("posts.destroy", post.id));
+        function handleSubmit(e) {
+            e.preventDefault();
+            put(route("posts.update", post.id));
         }
-    }
+        function destroy() {
+            if (confirm("Are you sure you want to delete this user?")) {
+                Inertia.delete(route("posts.destroy", post.id));
+            }
+        }
 
-    return (
-        <div className="mt-20">
-            <div className="container flex flex-col justify-center mx-auto">
-                <div>
-                    <h1 className="mb-8 text-3xl font-bold">
-                        <InertiaLink
-                            href={route("posts.index")}
-                            className="text-indigo-600 hover:text-indigo-700"
-                        >
-                            Posts
-                        </InertiaLink>
-                        <span className="font-medium text-indigo-600"> /</span>
-                        Edit
-                    </h1>
-                </div>
-                <div className="max-w-3xl p-8 bg-white rounded shadow">
-                    <form name="createForm" onSubmit={handleSubmit}>
-                        <div className="flex flex-col">
-                            <div className="mb-4">
-                                <label className="">Title</label>
-                                <input
-                                    type="text"
-                                    className="w-full px-4 py-2"
-                                    label="Title"
-                                    name="title"
-                                    value={data.title}
-                                    onChange={(e) =>
-                                        setData("title", e.target.value)
-                                    }
-                                />
-                                <span className="text-red-600">
-                                    {errors.title}
-                                </span>
-                            </div>
-                            <div className="mb-4">
-                                <label className="">Description</label>
-                                <textarea
-                                    type="text"
-                                    className="w-full rounded"
-                                    label="description"
-                                    name="description"
-                                    errors={errors.description}
-                                    value={data.description}
-                                    onChange={(e) =>
-                                        setData("description", e.target.value)
-                                    }
-                                />
-                                <span className="text-red-600">
-                                    {errors.description}
-                                </span>
-                            </div>
-                        </div>
-                        <div className="flex justify-between">
-                            <button
-                                type="submit"
-                                className="px-4 py-2 text-white bg-green-500 rounded"
+        return (
+            <div className="mt-20">
+                <div className="container flex flex-col justify-center mx-auto">
+                    <div>
+                        <h1 className="mb-8 text-3xl font-bold">
+                            <InertiaLink
+                                href={route("posts.index")}
+                                className="text-indigo-600 hover:text-indigo-700"
                             >
-                                Update
-                            </button>
-                            <button
-                                onClick={destroy}
-                                tabIndex="-1"
-                                type="button"
-                                className="px-4 py-2 text-white bg-red-500 rounded"
-                            >
-                                Delete
-                            </button>
-                        </div>
-                    </form>
+                                Posts
+                            </InertiaLink>
+                            <span className="font-medium text-indigo-600"> /</span>
+                            Edit
+                        </h1>
+                    </div>
+                    <div className="max-w-3xl p-8 bg-white rounded shadow">
+                        <form name="createForm" onSubmit={handleSubmit}>
+                            <div className="flex flex-col">
+                                <div className="mb-4">
+                                    <label className="">Title</label>
+                                    <input
+                                        type="text"
+                                        className="w-full px-4 py-2"
+                                        label="Title"
+                                        name="title"
+                                        value={data.title}
+                                        onChange={(e) =>
+                                            setData("title", e.target.value)
+                                        }
+                                    />
+                                    <span className="text-red-600">
+                                        {errors.title}
+                                    </span>
+                                </div>
+                                <div className="mb-4">
+                                    <label className="">Description</label>
+                                    <textarea
+                                        type="text"
+                                        className="w-full rounded"
+                                        label="description"
+                                        name="description"
+                                        errors={errors.description}
+                                        value={data.description}
+                                        onChange={(e) =>
+                                            setData("description", e.target.value)
+                                        }
+                                    />
+                                    <span className="text-red-600">
+                                        {errors.description}
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="flex justify-between">
+                                <button
+                                    type="submit"
+                                    className="px-4 py-2 text-white bg-green-500 rounded"
+                                >
+                                    Update
+                                </button>
+                                <button
+                                    onClick={destroy}
+                                    tabIndex="-1"
+                                    type="button"
+                                    className="px-4 py-2 text-white bg-red-500 rounded"
+                                >
+                                    Delete
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    );
-};
+        );
+    };
 
-export default Edit;
+    export default Edit;
 
 Laravel Inertia js CRUD with React v3
 
@@ -1266,12 +1266,12 @@ Create Database & Table
 .env
 
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=vuejs-crud-vite
-DB_USERNAME=root
-DB_PASSWORD=
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=vuejs-crud-vite
+    DB_USERNAME=root
+    DB_PASSWORD=
 
 
 Step 3: Creating Auth with Breeze 
@@ -1291,61 +1291,61 @@ Step 4: Creating Migration and Model
 
 
 
-<?php
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
+    <?php
+    use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Support\Facades\Schema;
+    return new class extends Migration
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('body');
-            $table->timestamps();
-        });
-    }
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('posts');
-    }
-};
+        /**
+         * Run the migrations.
+         *
+         * @return void
+         */
+        public function up()
+        {
+            Schema::create('posts', function (Blueprint $table) {
+                $table->id();
+                $table->string('title');
+                $table->text('body');
+                $table->timestamps();
+            });
+        }
+        /**
+         * Reverse the migrations.
+         *
+         * @return void
+         */
+        public function down()
+        {
+            Schema::dropIfExists('posts');
+        }
+    };
 
 
 
-php artisan migrate
-php artisan make:model Post
+    php artisan migrate
+    php artisan make:model Post
 
 Post.php
 
 
-<?php
-namespace App\Models;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-class Post extends Model
-{
-    use HasFactory;
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'title', 'body'
-    ];
-}
+    <?php
+    namespace App\Models;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+    use Illuminate\Database\Eloquent\Model;
+    class Post extends Model
+    {
+        use HasFactory;
+        /**
+         * The attributes that are mass assignable.
+         *
+         * @var array
+         */
+        protected $fillable = [
+            'title', 'body'
+        ];
+    }
 
 
 Step 5: Creating Route
@@ -1353,34 +1353,34 @@ Step 5: Creating Route
 routes/web.php
 
 
-<?php
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
-use App\Http\Controllers\PostController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-require __DIR__.'/auth.php';
-Route::resource('posts', PostController::class);
+    <?php
+    use Illuminate\Foundation\Application;
+    use Illuminate\Support\Facades\Route;
+    use Inertia\Inertia;
+    use App\Http\Controllers\PostController;
+    /*
+    |--------------------------------------------------------------------------
+    | Web Routes
+    |--------------------------------------------------------------------------
+    |
+    | Here is where you can register web routes for your application. These
+    | routes are loaded by the RouteServiceProvider within a group which
+    | contains the "web" middleware group. Now create something great!
+    |
+    */
+    Route::get('/', function () {
+        return Inertia::render('Welcome', [
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'laravelVersion' => Application::VERSION,
+            'phpVersion' => PHP_VERSION,
+        ]);
+    });
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+    require __DIR__.'/auth.php';
+    Route::resource('posts', PostController::class);
 
 
 
@@ -1390,94 +1390,94 @@ Step 6: Creating Controller
 
 
 
-<?php
+    <?php
 
-namespace App\Http\Controllers;
+    namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Inertia\Inertia;
-use App\Models\Post;
-use Illuminate\Support\Facades\Validator;
+    use Illuminate\Http\Request;
+    use Inertia\Inertia;
+    use App\Models\Post;
+    use Illuminate\Support\Facades\Validator;
 
-class PostController extends Controller
-{
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function index()
+    class PostController extends Controller
     {
-        $posts = Post::all();
-        return Inertia::render('Posts/Index', ['posts' => $posts]);
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return Response
+         */
+        public function index()
+        {
+            $posts = Post::all();
+            return Inertia::render('Posts/Index', ['posts' => $posts]);
+        }
+
+        /**
+         * Write code on Method
+         *
+         * @return response()
+         */
+        public function create()
+        {
+            return Inertia::render('Posts/Create');
+        }
+
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return Response
+         */
+        public function store(Request $request)
+        {
+            Validator::make($request->all(), [
+                'title' => ['required'],
+                'body' => ['required'],
+            ])->validate();
+
+            Post::create($request->all());
+
+            return redirect()->route('posts.index');
+        }
+
+        /**
+         * Write code on Method
+         *
+         * @return response()
+         */
+        public function edit(Post $post)
+        {
+            return Inertia::render('Posts/Edit', [
+                'post' => $post
+            ]);
+        }
+
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return Response
+         */
+        public function update($id, Request $request)
+        {
+            Validator::make($request->all(), [
+                'title' => ['required'],
+                'body' => ['required'],
+            ])->validate();
+
+            Post::find($id)->update($request->all());
+            return redirect()->route('posts.index');
+        }
+
+        /**
+         * Show the form for creating a new resource.
+         *
+         * @return Response
+         */
+        public function destroy($id)
+        {
+            Post::find($id)->delete();
+            return redirect()->route('posts.index');
+        }
     }
-
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function create()
-    {
-        return Inertia::render('Posts/Create');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        Validator::make($request->all(), [
-            'title' => ['required'],
-            'body' => ['required'],
-        ])->validate();
-
-        Post::create($request->all());
-
-        return redirect()->route('posts.index');
-    }
-
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function edit(Post $post)
-    {
-        return Inertia::render('Posts/Edit', [
-            'post' => $post
-        ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function update($id, Request $request)
-    {
-        Validator::make($request->all(), [
-            'title' => ['required'],
-            'body' => ['required'],
-        ])->validate();
-
-        Post::find($id)->update($request->all());
-        return redirect()->route('posts.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        Post::find($id)->delete();
-        return redirect()->route('posts.index');
-    }
-}
 
 
 
@@ -1489,283 +1489,283 @@ Index.vue, Edit.vue & Create.vue
 
 resources/js/Pages/Posts/Index.vue
 
-<script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
-import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
-defineProps({
-    posts: Array,
-});
-const form = useForm();
-function destroy(id) {
-    if (confirm("Are you sure you want to Delete")) {
-        form.delete(route('posts.destroy', id));
+    <script setup>
+    import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+    import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+    defineProps({
+        posts: Array,
+    });
+    const form = useForm();
+    function destroy(id) {
+        if (confirm("Are you sure you want to Delete")) {
+            form.delete(route('posts.destroy', id));
+        }
     }
-}
-</script>
-<template>
-    <Head title="Dashboard" />
-    <BreezeAuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Laravel 9 Vue JS CRUD App using Vite Example - LaravelTuts.com
-            </h2>
-        </template>
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 bg-white border-b border-gray-200">
-                        <div className="flex items-center justify-between mb-6">
-                            <Link
-                                className="px-6 py-2 text-white bg-green-500 rounded-md focus:outline-none"
-                                :href="route('posts.create')"
-                            >
-                                Create Post
-                            </Link>
+    </script>
+    <template>
+        <Head title="Dashboard" />
+        <BreezeAuthenticatedLayout>
+            <template #header>
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                    Laravel 9 Vue JS CRUD App using Vite Example - LaravelTuts.com
+                </h2>
+            </template>
+            <div class="py-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <div className="flex items-center justify-between mb-6">
+                                <Link
+                                    className="px-6 py-2 text-white bg-green-500 rounded-md focus:outline-none"
+                                    :href="route('posts.create')"
+                                >
+                                    Create Post
+                                </Link>
+                            </div>
+                            <table className="table-fixed w-full">
+                                <thead>
+                                    <tr className="bg-gray-100">
+                                        <th className="px-4 py-2 w-20">No.</th>
+                                        <th className="px-4 py-2">Title</th>
+                                        <th className="px-4 py-2">Body</th>
+                                        <th className="px-4 py-2">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="post in posts">
+                                        <td className="border px-4 py-2">{{ post.id }}</td>
+                                        <td className="border px-4 py-2">{{ post.title }}</td>
+                                        <td className="border px-4 py-2">{{ post.body }}</td>
+                                        <td className="border px-4 py-2">
+                                            <Link
+                                                tabIndex="1"
+                                                className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
+                                                :href="route('posts.edit', post.id)"
+                                            >
+                                                Edit
+                                            </Link>
+                                            <button
+                                                @click="destroy(post.id)"
+                                                tabIndex="-1"
+                                                type="button"
+                                                className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <table className="table-fixed w-full">
-                            <thead>
-                                <tr className="bg-gray-100">
-                                    <th className="px-4 py-2 w-20">No.</th>
-                                    <th className="px-4 py-2">Title</th>
-                                    <th className="px-4 py-2">Body</th>
-                                    <th className="px-4 py-2">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="post in posts">
-                                    <td className="border px-4 py-2">{{ post.id }}</td>
-                                    <td className="border px-4 py-2">{{ post.title }}</td>
-                                    <td className="border px-4 py-2">{{ post.body }}</td>
-                                    <td className="border px-4 py-2">
-                                        <Link
-                                            tabIndex="1"
-                                            className="px-4 py-2 text-sm text-white bg-blue-500 rounded"
-                                            :href="route('posts.edit', post.id)"
-                                        >
-                                            Edit
-                                        </Link>
-                                        <button
-                                            @click="destroy(post.id)"
-                                            tabIndex="-1"
-                                            type="button"
-                                            className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded"
-                                        >
-                                            Delete
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
-        </div>
-    </BreezeAuthenticatedLayout>
-</template>
+        </BreezeAuthenticatedLayout>
+    </template>
 
 resources/js/Pages/Posts/Create.vue
 
-<script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
-import BreezeLabel from '@/Components/Label.vue';
-import BreezeInput from '@/Components/Input.vue';
-import BreezeTextArea from '@/Components/Textarea.vue';
-import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
-const form = useForm({
-    title: '',
-    body: ''
-});
-const submit = () => {
-    form.post(route('posts.store'));
-};
-</script>
-<template>
-    <Head title="Dashboard" />
-    <BreezeAuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Create Post
-            </h2>
-        </template>
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 bg-white border-b border-gray-200">
-                        <div className="flex items-center justify-between mb-6">
-                            <Link
-                                className="px-6 py-2 text-white bg-blue-500 rounded-md focus:outline-none"
-                                :href="route('posts.index')"
-                            >
-                                Back
-                            </Link>
+    <script setup>
+    import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+    import BreezeLabel from '@/Components/Label.vue';
+    import BreezeInput from '@/Components/Input.vue';
+    import BreezeTextArea from '@/Components/Textarea.vue';
+    import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+    const form = useForm({
+        title: '',
+        body: ''
+    });
+    const submit = () => {
+        form.post(route('posts.store'));
+    };
+    </script>
+    <template>
+        <Head title="Dashboard" />
+        <BreezeAuthenticatedLayout>
+            <template #header>
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                    Create Post
+                </h2>
+            </template>
+            <div class="py-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <div className="flex items-center justify-between mb-6">
+                                <Link
+                                    className="px-6 py-2 text-white bg-blue-500 rounded-md focus:outline-none"
+                                    :href="route('posts.index')"
+                                >
+                                    Back
+                                </Link>
+                            </div>
+                            <form name="createForm" @submit.prevent="submit">
+                                    <div className="flex flex-col">
+                                        <div className="mb-4">
+                                            <BreezeLabel for="title" value="Title" />
+
+                                            <BreezeInput 
+                                                id="title" 
+                                                type="text" 
+                                                class="mt-1 block w-full" 
+                                                v-model="form.title" 
+                                                autofocus />
+                                            <span className="text-red-600" v-if="form.errors.title">
+                                                {{ form.errors.title }}
+                                            </span>
+                                        </div>
+                                        <div className="mb-4">
+                                            <BreezeLabel for="body" value="Body" />
+
+                                            <BreezeTextArea 
+                                                id="body" 
+                                                class="mt-1 block w-full" 
+                                                v-model="form.body" 
+                                                autofocus />
+                                            <span className="text-red-600" v-if="form.errors.body">
+                                                {{ form.errors.body }}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-4">
+                                        <button
+                                            type="submit"
+                                            className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+                                        >
+                                            Save
+                                        </button>
+                                    </div>
+                                </form>
                         </div>
-                        <form name="createForm" @submit.prevent="submit">
-                                <div className="flex flex-col">
-                                    <div className="mb-4">
-                                        <BreezeLabel for="title" value="Title" />
-
-                                        <BreezeInput 
-                                            id="title" 
-                                            type="text" 
-                                            class="mt-1 block w-full" 
-                                            v-model="form.title" 
-                                            autofocus />
-                                        <span className="text-red-600" v-if="form.errors.title">
-                                            {{ form.errors.title }}
-                                        </span>
-                                    </div>
-                                    <div className="mb-4">
-                                        <BreezeLabel for="body" value="Body" />
-
-                                        <BreezeTextArea 
-                                            id="body" 
-                                            class="mt-1 block w-full" 
-                                            v-model="form.body" 
-                                            autofocus />
-                                        <span className="text-red-600" v-if="form.errors.body">
-                                            {{ form.errors.body }}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4">
-                                    <button
-                                        type="submit"
-                                        className="px-6 py-2 font-bold text-white bg-green-500 rounded"
-                                    >
-                                        Save
-                                    </button>
-                                </div>
-                            </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </BreezeAuthenticatedLayout>
-</template>
+        </BreezeAuthenticatedLayout>
+    </template>
 
 resources/js/Pages/Posts/Edit.vue
 
-<script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
-import BreezeLabel from '@/Components/Label.vue';
-import BreezeInput from '@/Components/Input.vue';
-import BreezeTextArea from '@/Components/Textarea.vue';
-import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
-const props = defineProps({
-    post: Object,
-});
-const form = useForm({
-    title: props.post.title,
-    body: props.post.body
-});
-const submit = () => {
-    form.put(route('posts.update', props.post.id));
-};
-</script>
-<template>
-    <Head title="Dashboard" />
-    <BreezeAuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Edit Post
-            </h2>
-        </template>
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 bg-white border-b border-gray-200">
-                        <div className="flex items-center justify-between mb-6">
-                            <Link
-                                className="px-6 py-2 text-white bg-blue-500 rounded-md focus:outline-none"
-                                :href="route('posts.index')"
-                            >
-                                Back
-                            </Link>
+    <script setup>
+    import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+    import BreezeLabel from '@/Components/Label.vue';
+    import BreezeInput from '@/Components/Input.vue';
+    import BreezeTextArea from '@/Components/Textarea.vue';
+    import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+    const props = defineProps({
+        post: Object,
+    });
+    const form = useForm({
+        title: props.post.title,
+        body: props.post.body
+    });
+    const submit = () => {
+        form.put(route('posts.update', props.post.id));
+    };
+    </script>
+    <template>
+        <Head title="Dashboard" />
+        <BreezeAuthenticatedLayout>
+            <template #header>
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                    Edit Post
+                </h2>
+            </template>
+            <div class="py-12">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <div className="flex items-center justify-between mb-6">
+                                <Link
+                                    className="px-6 py-2 text-white bg-blue-500 rounded-md focus:outline-none"
+                                    :href="route('posts.index')"
+                                >
+                                    Back
+                                </Link>
+                            </div>
+                            <form name="createForm" @submit.prevent="submit">
+                                    <div className="flex flex-col">
+                                        <div className="mb-4">
+                                            <BreezeLabel for="title" value="Title" />
+
+                                            <BreezeInput 
+                                                id="title" 
+                                                type="text" 
+                                                class="mt-1 block w-full" 
+                                                v-model="form.title" 
+                                                autofocus />
+                                            <span className="text-red-600" v-if="form.errors.title">
+                                                {{ form.errors.title }}
+                                            </span>
+                                        </div>
+                                        <div className="mb-4">
+                                            <BreezeLabel for="body" value="Body" />
+
+                                            <BreezeTextArea 
+                                                id="body" 
+                                                class="mt-1 block w-full" 
+                                                v-model="form.body" 
+                                                autofocus />
+                                            <span className="text-red-600" v-if="form.errors.body">
+                                                {{ form.errors.body }}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-4">
+                                        <button
+                                            type="submit"
+                                            className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+                                        >
+                                            Save
+                                        </button>
+                                    </div>
+                                </form>
                         </div>
-                        <form name="createForm" @submit.prevent="submit">
-                                <div className="flex flex-col">
-                                    <div className="mb-4">
-                                        <BreezeLabel for="title" value="Title" />
-
-                                        <BreezeInput 
-                                            id="title" 
-                                            type="text" 
-                                            class="mt-1 block w-full" 
-                                            v-model="form.title" 
-                                            autofocus />
-                                        <span className="text-red-600" v-if="form.errors.title">
-                                            {{ form.errors.title }}
-                                        </span>
-                                    </div>
-                                    <div className="mb-4">
-                                        <BreezeLabel for="body" value="Body" />
-
-                                        <BreezeTextArea 
-                                            id="body" 
-                                            class="mt-1 block w-full" 
-                                            v-model="form.body" 
-                                            autofocus />
-                                        <span className="text-red-600" v-if="form.errors.body">
-                                            {{ form.errors.body }}
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div className="mt-4">
-                                    <button
-                                        type="submit"
-                                        className="px-6 py-2 font-bold text-white bg-green-500 rounded"
-                                    >
-                                        Save
-                                    </button>
-                                </div>
-                            </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </BreezeAuthenticatedLayout>
-</template>
+        </BreezeAuthenticatedLayout>
+    </template>
 
 Create a new file Textaarea.vue inside resources/js/Components
 
 resources/js/Components/Textarea.vue
 
-<script setup>
-    import { onMounted, ref } from 'vue';
-    defineProps(['modelValue']);
-    defineEmits(['update:modelValue']);
-    const input = ref(null);
-    onMounted(() => {
-        if (input.value.hasAttribute('autofocus')) {
-            input.value.focus();
-        }
-    });
-</script>
-<template>
-    <textarea class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" ref="input"></textarea>
-</template>
+    <script setup>
+        import { onMounted, ref } from 'vue';
+        defineProps(['modelValue']);
+        defineEmits(['update:modelValue']);
+        const input = ref(null);
+        onMounted(() => {
+            if (input.value.hasAttribute('autofocus')) {
+                input.value.focus();
+            }
+        });
+    </script>
+    <template>
+        <textarea class="border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" ref="input"></textarea>
+    </template>
 
 Add a Post Navigation in Authenticated.vue inside resources/js/Layouts folder.
 
-<!-- Navigation Links -->
-<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-  <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">Dashboard</BreezeNavLink>
-  <BreezeNavLink :href="route('posts.index')" :active="route().current('posts.index')">Posts</BreezeNavLink>
-</div>
+    <!-- Navigation Links -->
+    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+      <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">Dashboard</BreezeNavLink>
+      <BreezeNavLink :href="route('posts.index')" :active="route().current('posts.index')">Posts</BreezeNavLink>
+    </div>
 
 
-Laravel 9 Vue JS CRUD App using Vite Example
+
 
 Step 8: Testing
 
 Now let’s test our Laravel 9 Vue JS CRUD App using Vite Example. Run the following command to start laravel server.
 
-php artisan serve
+    php artisan serve
 
-npm run dev
-npm run build
+    npm run dev
+    npm run build
 
 http://127.0.0.1:8000/
 
