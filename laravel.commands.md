@@ -22,7 +22,9 @@ Topic:
  
  [Laravel 10 Select2 Ajax Autocomplete Search Example](#laravel10-autosearch)
  
+ [Laravel 10 REST API with Passport Authentication](#passport-api)
 #  
+
 
 [Top](#top)
 <a name="laravel-installation-cmds"></a>
@@ -2869,6 +2871,836 @@ http://localhost:8000/demo-search
 #
 
 
+#Laravel 10 REST API with Passport Authentication Tutorial
+
+
+Step 1: Install Laravel 10
+
+    composer create-project laravel/laravel example-app
+
+Step 2: Install Passport
+
+    composer require laravel/passport
+    php artisan migrate
+    php artisan passport:install
+
+
+Step 3: Passport Configuration
+
+app/Models/User.php
+
+<code>
+
+<?php
+
+  
+
+namespace App\Models;
+
+  
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+use Illuminate\Notifications\Notifiable;
+
+use Laravel\Passport\HasApiTokens;
+
+  
+
+class User extends Authenticatable
+
+{
+
+    use HasApiTokens, HasFactory, Notifiable;
+
+  
+
+    /**
+
+     * The attributes that are mass assignable.
+
+     *
+
+     * @var array
+
+     */
+
+    protected $fillable = [
+
+        'name',
+
+        'email',
+
+        'password',
+
+    ];
+
+  
+
+    /**
+
+     * The attributes that should be hidden for serialization.
+
+     *
+
+     * @var array
+
+     */
+
+    protected $hidden = [
+
+        'password',
+
+        'remember_token',
+
+    ];
+
+ 
+
+    /**
+
+     * The attributes that should be cast.
+
+     *
+
+     * @var array
+
+     */
+
+    protected $casts = [
+
+        'email_verified_at' => 'datetime',
+
+    ];
+
+}
+</code>
+
+config/auth.php
+
+<code>
+<?php
+
+
+return [
+
+    .....
+
+    'guards' => [
+
+        'web' => [
+
+            'driver' => 'session',
+
+            'provider' => 'users',
+
+        ],
+
+        'api' => [
+
+            'driver' => 'passport',
+
+            'provider' => 'users',
+
+        ],
+
+    ],
+
+    .....
+
+]
+</code>
+
+Step 4: Add Product Table and Model
+
+    php artisan make:migration create_products_table
+
+<code>
+<?php
+
+  
+
+use Illuminate\Database\Migrations\Migration;
+
+use Illuminate\Database\Schema\Blueprint;
+
+use Illuminate\Support\Facades\Schema;
+
+  
+
+return new class extends Migration
+
+{
+
+    /**
+
+     * Run the migrations.
+
+     *
+
+     * @return void
+
+     */
+
+    public function up(): void
+
+    {
+
+        Schema::create('products', function (Blueprint $table) {
+
+            $table->id();
+
+            $table->string('name');
+
+            $table->text('detail');
+
+            $table->timestamps();
+
+        });
+
+    }
+
+  
+
+    /**
+
+     * Reverse the migrations.
+
+     *
+
+     * @return void
+
+     */
+
+    public function down(): void
+
+    {
+
+        Schema::dropIfExists('products');
+
+    }
+
+};
+</code>
+
+    php artisan migrate
+
+app/Models/Product.php
+
+<code>
+<?php
+
+  
+
+namespace App\Models;
+
+  
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+use Illuminate\Database\Eloquent\Model;
+
+  
+
+class Product extends Model
+
+{
+
+    use HasFactory;
+
+  
+
+    /**
+
+     * The attributes that are mass assignable.
+
+     *
+
+     * @var array
+
+     */
+
+    protected $fillable = [
+
+        'name', 'detail'
+
+    ];
+
+}
+
+Step 5: Create API Routes
+</code>
+
+
+Step 5: Create API Routes
+
+    routes/api.php
+
+
+<code>
+<?php
+
+  
+
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Route;
+
+  
+
+use App\Http\Controllers\API\RegisterController;
+
+use App\Http\Controllers\API\ProductController;
+
+  
+
+/*
+
+|--------------------------------------------------------------------------
+
+| API Routes
+
+|--------------------------------------------------------------------------
+
+|
+
+| Here is where you can register API routes for your application. These
+
+| routes are loaded by the RouteServiceProvider within a group which
+
+| is assigned the "api" middleware group. Enjoy building your API!
+
+|
+
+*/
+
+  
+
+Route::post('register', [RegisterController::class, 'register']);
+
+Route::post('login', [RegisterController::class, 'login']);
+
+     
+
+Route::middleware('auth:api')->group( function () {
+
+    Route::resource('products', ProductController::class);
+
+});
+
+
+</code>
+
+
+Step 6: Create Controller Files
+
+app/Http/Controllers/API/BaseController.php
+
+<code>
+<?php
+
+
+namespace App\Http\Controllers\API;
+
+
+use Illuminate\Http\Request;
+
+use App\Http\Controllers\Controller as Controller;
+
+
+class BaseController extends Controller
+
+{
+
+    /**
+
+     * success response method.
+
+     *
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function sendResponse($result, $message)
+
+    {
+
+    	$response = [
+
+            'success' => true,
+
+            'data'    => $result,
+
+            'message' => $message,
+
+        ];
+
+
+        return response()->json($response, 200);
+
+    }
+
+
+    /**
+
+     * return error response.
+
+     *
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function sendError($error, $errorMessages = [], $code = 404)
+
+    {
+
+    	$response = [
+
+            'success' => false,
+
+            'message' => $error,
+
+        ];
+
+
+        if(!empty($errorMessages)){
+
+            $response['data'] = $errorMessages;
+
+        }
+
+
+        return response()->json($response, $code);
+
+    }
+
+}
+</code>
+
+app/Http/Controllers/API/RegisterController.php
+
+<code>
+<?php
+
+     
+
+namespace App\Http\Controllers\API;
+
+     
+
+use Illuminate\Http\Request;
+
+use App\Http\Controllers\API\BaseController as BaseController;
+
+use App\Models\User;
+
+use Illuminate\Support\Facades\Auth;
+
+use Validator;
+
+use Illuminate\Http\JsonResponse;
+
+     
+
+class RegisterController extends BaseController
+
+{
+
+    /**
+
+     * Register api
+
+     *
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function register(Request $request): JsonResponse
+
+    {
+
+        $validator = Validator::make($request->all(), [
+
+            'name' => 'required',
+
+            'email' => 'required|email',
+
+            'password' => 'required',
+
+            'c_password' => 'required|same:password',
+
+        ]);
+
+     
+
+        if($validator->fails()){
+
+            return $this->sendError('Validation Error.', $validator->errors());       
+
+        }
+
+     
+
+        $input = $request->all();
+
+        $input['password'] = bcrypt($input['password']);
+
+        $user = User::create($input);
+
+        $success['token'] =  $user->createToken('MyApp')->accessToken;
+
+        $success['name'] =  $user->name;
+
+   
+
+        return $this->sendResponse($success, 'User register successfully.');
+
+    }
+
+     
+
+    /**
+
+     * Login api
+
+     *
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function login(Request $request): JsonResponse
+
+    {
+
+        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){ 
+
+            $user = Auth::user(); 
+
+            $success['token'] =  $user->createToken('MyApp')-> accessToken; 
+
+            $success['name'] =  $user->name;
+
+   
+
+            return $this->sendResponse($success, 'User login successfully.');
+
+        } 
+
+        else{ 
+
+            return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
+
+        } 
+
+    }
+
+}
+</code>
+
+app/Http/Controllers/API/ProductController.php
+
+<code>
+<?php
+
+       
+
+namespace App\Http\Controllers\API;
+
+       
+
+use Illuminate\Http\Request;
+
+use App\Http\Controllers\API\BaseController as BaseController;
+
+use App\Models\Product;
+
+use Validator;
+
+use App\Http\Resources\ProductResource;
+
+use Illuminate\Http\JsonResponse;
+
+       
+
+class ProductController extends BaseController
+
+{
+
+    /**
+
+     * Display a listing of the resource.
+
+     *
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function index(): JsonResponse
+
+    {
+
+        $products = Product::all();
+
+        
+
+        return $this->sendResponse(ProductResource::collection($products), 'Products retrieved successfully.');
+
+    }
+
+    /**
+
+     * Store a newly created resource in storage.
+
+     *
+
+     * @param  \Illuminate\Http\Request  $request
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function store(Request $request): JsonResponse
+
+    {
+
+        $input = $request->all();
+
+       
+
+        $validator = Validator::make($input, [
+
+            'name' => 'required',
+
+            'detail' => 'required'
+
+        ]);
+
+       
+
+        if($validator->fails()){
+
+            return $this->sendError('Validation Error.', $validator->errors());       
+
+        }
+
+       
+
+        $product = Product::create($input);
+
+       
+
+        return $this->sendResponse(new ProductResource($product), 'Product created successfully.');
+
+    } 
+
+     
+
+    /**
+
+     * Display the specified resource.
+
+     *
+
+     * @param  int  $id
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function show($id): JsonResponse
+
+    {
+
+        $product = Product::find($id);
+
+      
+
+        if (is_null($product)) {
+
+            return $this->sendError('Product not found.');
+
+        }
+
+       
+
+        return $this->sendResponse(new ProductResource($product), 'Product retrieved successfully.');
+
+    }
+
+      
+
+    /**
+
+     * Update the specified resource in storage.
+
+     *
+
+     * @param  \Illuminate\Http\Request  $request
+
+     * @param  int  $id
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function update(Request $request, Product $product): JsonResponse
+
+    {
+
+        $input = $request->all();
+
+       
+
+        $validator = Validator::make($input, [
+
+            'name' => 'required',
+
+            'detail' => 'required'
+
+        ]);
+
+       
+
+        if($validator->fails()){
+
+            return $this->sendError('Validation Error.', $validator->errors());       
+
+        }
+
+       
+
+        $product->name = $input['name'];
+
+        $product->detail = $input['detail'];
+
+        $product->save();
+
+       
+
+        return $this->sendResponse(new ProductResource($product), 'Product updated successfully.');
+
+    }
+
+     
+
+    /**
+
+     * Remove the specified resource from storage.
+
+     *
+
+     * @param  int  $id
+
+     * @return \Illuminate\Http\Response
+
+     */
+
+    public function destroy(Product $product): JsonResponse
+
+    {
+
+        $product->delete();
+
+       
+
+        return $this->sendResponse([], 'Product deleted successfully.');
+
+    }
+
+}
+</code>
+
+php artisan make:resource ProductResource
+
+<code>
+<?php
+
+  
+
+namespace App\Http\Resources;
+
+  
+
+use Illuminate\Http\Request;
+
+use Illuminate\Http\Resources\Json\JsonResource;
+
+  
+
+class ProductResource extends JsonResource
+
+{
+
+    /**
+
+     * Transform the resource into an array.
+
+     *
+
+     * @return array
+
+     */
+
+    public function toArray(Request $request): array
+
+    {
+
+        return [
+
+            'id' => $this->id,
+
+            'name' => $this->name,
+
+            'detail' => $this->detail,
+
+            'created_at' => $this->created_at->format('d/m/Y'),
+
+            'updated_at' => $this->updated_at->format('d/m/Y'),
+
+        ];
+
+    }
+
+}
+
+
+</code>
+
+
+    php artisan serve
+
+make sure in details api we will use following headers as listed bellow:
+
+<code>
+'headers' => [
+
+    'Accept' => 'application/json',
+
+    'Authorization' => 'Bearer '.$accessToken,
+
+]
+</code>
+
+Testing Apis in PostMan: 
+
+Now simply you can run above listed url like as bellow screen shot:
+
+1) Register API: Verb:GET, URL:http://localhost:8000/api/register
+2) Login API: Verb:GET, URL:http://localhost:8000/api/login
+3) Product List API: Verb:GET, URL:http://localhost:8000/api/products
+4) Product Create API: Verb:POST, URL:http://localhost:8000/api/products
+5) Product Show API: Verb:GET, URL:http://localhost:8000/api/products/{id}
+6) Product Update API: Verb:PUT, URL:http://localhost:8000/api/products/{id}
+7) Product Delete API: Verb:DELETE, URL:http://localhost:8000/api/products/{id}
 
 #
 [Top](#top)
