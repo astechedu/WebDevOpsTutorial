@@ -2605,7 +2605,7 @@ Read Also: Laravel 10 REST API with Passport Authentication Tutorial
 #
 
 [Top](#top)
-<a name="laravel10-autoselect"></a>
+<a name="laravel10-autosearch"></a>
 #Laravel 10 Select2 Ajax Autocomplete Search Example
 
 
