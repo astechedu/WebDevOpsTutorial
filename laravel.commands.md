@@ -18,6 +18,7 @@ Topic:
   
  [Laravel 9 Vue JS CRUD App using Vite Example ](#larvel-breeze-vue)
  
+ [Laravel 10 CRUD](#larvel10-crud)
  
 #  
 
@@ -1771,6 +1772,840 @@ http://127.0.0.1:8000/
 
 
 :end:
+
+
+
+[Top](#top)
+<a name="laravel10-crud"></a>
+
+#Laravel 10 Crud Example
+
+
+Step 1: Install Laravel 10 App
+
+Let us begin the tutorial by installing a new laravel 10 application. if you have already created the project, then skip the following step.
+
+    composer create-project laravel/laravel example-app
+
+Step 2: Database Configuration
+
+In the second step, we will make a database configuration, we need to add the database name, MySQL username, and password. So let's open the .env file and fill in all details like as below:
+
+.env
+
+  DB_CONNECTION=mysql
+
+  DB_HOST=127.0.0.1
+
+  DB_PORT=3306
+
+  DB_DATABASE=here your database name(blog)
+
+  DB_USERNAME=here database username(root)
+
+  DB_PASSWORD=here database password(root)
+
+
+
+    Step 3: Create Migration
+
+
+<code>
+<?php
+
+  
+
+use Illuminate\Database\Migrations\Migration;
+
+use Illuminate\Database\Schema\Blueprint;
+
+use Illuminate\Support\Facades\Schema;
+
+  
+
+return new class extends Migration
+
+{
+
+    /**
+
+     * Run the migrations.
+
+     *
+
+     * @return void
+
+     */
+
+    public function up()
+
+    {
+
+        Schema::create('products', function (Blueprint $table) {
+
+            $table->id();
+
+            $table->string('name');
+
+            $table->text('detail');
+
+            $table->timestamps();
+
+        });
+
+    }
+
+  
+
+    /**
+
+     * Reverse the migrations.
+
+     *
+
+     * @return void
+
+     */
+
+    public function down()
+
+    {
+
+        Schema::dropIfExists('products');
+
+    }
+
+};
+
+
+</code>
+
+Now you have to run this migration by the following command:
+
+    php artisan migrate
+    php artisan make:migration create_products_table --create=products
+
+
+After this command you will find one file in the following path "database/migrations" and you have to put below code in your migration file for creating the products table.
+
+
+Now you have to run this migration by the following command:
+
+    php artisan migrate
+
+
+
+Step 4: Create Controller and Model
+
+In this step, now we should create new resource controller as ProductController. So run bellow command and create new controller. bellow controller for create resource controller.
+
+    php artisan make:controller ProductController --resource --model=Product
+
+
+In this controller will create seven methods by default as bellow methods:
+
+ 1)index()
+
+ 2)create()
+
+ 3)store()
+
+ 4)show()
+
+ 5)edit()
+
+6)update()
+
+7)destroy()
+
+
+So, let's copy bellow code and put on ProductController.php file.
+
+app/Http/Controllers/ProductController.php
+
+<code>
+<?php
+
+  
+
+namespace App\Http\Controllers;
+
+  
+
+use App\Models\Product;
+
+use Illuminate\Http\RedirectResponse;
+
+use Illuminate\Http\Request;
+
+use Illuminate\Http\Response;
+
+use Illuminate\View\View;
+
+  
+
+class ProductController extends Controller
+
+{
+
+    /**
+
+     * Display a listing of the resource.
+
+     */
+
+    public function index(): View
+
+    {
+
+        $products = Product::latest()->paginate(5);
+
+        
+
+        return view('products.index',compact('products'))
+
+                    ->with('i', (request()->input('page', 1) - 1) * 5);
+
+    }
+
+  
+
+    /**
+
+     * Show the form for creating a new resource.
+
+     */
+
+    public function create(): View
+
+    {
+
+        return view('products.create');
+
+    }
+
+  
+
+    /**
+
+     * Store a newly created resource in storage.
+
+     */
+
+    public function store(Request $request): RedirectResponse
+
+    {
+
+        $request->validate([
+
+            'name' => 'required',
+
+            'detail' => 'required',
+
+        ]);
+
+        
+
+        Product::create($request->all());
+
+         
+
+        return redirect()->route('products.index')
+
+                        ->with('success','Product created successfully.');
+
+    }
+
+  
+
+    /**
+
+     * Display the specified resource.
+
+     */
+
+    public function show(Product $product): View
+
+    {
+
+        return view('products.show',compact('product'));
+
+    }
+
+  
+
+    /**
+
+     * Show the form for editing the specified resource.
+
+     */
+
+    public function edit(Product $product): View
+
+    {
+
+        return view('products.edit',compact('product'));
+
+    }
+
+  
+
+    /**
+
+     * Update the specified resource in storage.
+
+     */
+
+    public function update(Request $request, Product $product): RedirectResponse
+
+    {
+
+        $request->validate([
+
+            'name' => 'required',
+
+            'detail' => 'required',
+
+        ]);
+
+        
+
+        $product->update($request->all());
+
+        
+
+        return redirect()->route('products.index')
+
+                        ->with('success','Product updated successfully');
+
+    }
+
+  
+
+    /**
+
+     * Remove the specified resource from storage.
+
+     */
+
+    public function destroy(Product $product): RedirectResponse
+
+    {
+
+        $product->delete();
+
+         
+
+        return redirect()->route('products.index')
+
+                        ->with('success','Product deleted successfully');
+
+    }
+
+}
+</code>
+
+Step 5: Add Resource Route
+
+Here, we need to add resource route for product crud application. so open your "routes/web.php" file and add following route.
+
+    routes/web.php
+
+
+<code>
+<?php
+
+  
+
+use Illuminate\Support\Facades\Route;
+
+  
+
+use App\Http\Controllers\ProductController;
+
+  
+
+/*
+
+|--------------------------------------------------------------------------
+
+| Web Routes
+
+|--------------------------------------------------------------------------
+
+|
+
+| Here is where you can register web routes for your application. These
+
+| routes are loaded by the RouteServiceProvider within a group that
+
+| contains the "web" middleware group. Now create something great!
+
+|
+
+*/
+
+  
+
+Route::resource('products', ProductController::class);
+<code>
+
+
+Step 6: Add Blade Files
+
+In last step. In this step we have to create just blade files. So mainly we have to create layout file and then create new folder "products" then create blade files of crud app. So finally you have to create following bellow blade file:
+
+1) layout.blade.php
+
+2) index.blade.php
+
+3) create.blade.php
+
+4) edit.blade.php
+
+5) show.blade.php
+
+So let's just create following file and put bellow code.
+
+resources/views/products/layout.blade.php
+
+
+<code>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Laravel 10 CRUD Application - ItSolutionStuff.com</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    
+
+<div class="container">
+
+    @yield('content')
+
+</div>
+
+    
+
+</body>
+
+</html>
+
+</code>
+
+resources/views/products/index.blade.php
+
+<code>
+@extends('products.layout')
+
+ 
+
+@section('content')
+
+    <div class="row">
+
+        <div class="col-lg-12 margin-tb">
+
+            <div class="pull-left">
+
+                <h2>Laravel 10 CRUD Example from scratch - ItSolutionStuff.com</h2>
+
+            </div>
+
+            <div class="pull-right">
+
+                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+   
+
+    @if ($message = Session::get('success'))
+
+        <div class="alert alert-success">
+
+            <p>{{ $message }}</p>
+
+        </div>
+
+    @endif
+
+   
+
+    <table class="table table-bordered">
+
+        <tr>
+
+            <th>No</th>
+
+            <th>Name</th>
+
+            <th>Details</th>
+
+            <th width="280px">Action</th>
+
+        </tr>
+
+        @foreach ($products as $product)
+
+        <tr>
+
+            <td>{{ ++$i }}</td>
+
+            <td>{{ $product->name }}</td>
+
+            <td>{{ $product->detail }}</td>
+
+            <td>
+
+                <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+
+   
+
+                    <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+
+    
+
+                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+
+   
+
+                    @csrf
+
+                    @method('DELETE')
+
+      
+
+                    <button type="submit" class="btn btn-danger">Delete</button>
+
+                </form>
+
+            </td>
+
+        </tr>
+
+        @endforeach
+
+    </table>
+
+  
+
+    {!! $products->links() !!}
+
+      
+
+@endsection
+</code>
+
+
+<code>
+resources/views/products/create.blade.php
+
+@extends('products.layout')
+
+  
+
+@section('content')
+
+<div class="row">
+
+    <div class="col-lg-12 margin-tb">
+
+        <div class="pull-left">
+
+            <h2>Add New Product</h2>
+
+        </div>
+
+        <div class="pull-right">
+
+            <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+   
+
+@if ($errors->any())
+
+    <div class="alert alert-danger">
+
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+
+        <ul>
+
+            @foreach ($errors->all() as $error)
+
+                <li>{{ $error }}</li>
+
+            @endforeach
+
+        </ul>
+
+    </div>
+
+@endif
+
+   
+
+<form action="{{ route('products.store') }}" method="POST">
+
+    @csrf
+
+  
+
+     <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+
+            <div class="form-group">
+
+                <strong>Name:</strong>
+
+                <input type="text" name="name" class="form-control" placeholder="Name">
+
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+
+            <div class="form-group">
+
+                <strong>Detail:</strong>
+
+                <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
+
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+        </div>
+
+    </div>
+
+   
+
+</form>
+
+@endsection
+
+</code>
+
+
+
+resources/views/products/edit.blade.php
+
+
+<code>
+@extends('products.layout')
+
+   
+
+@section('content')
+
+    <div class="row">
+
+        <div class="col-lg-12 margin-tb">
+
+            <div class="pull-left">
+
+                <h2>Edit Product</h2>
+
+            </div>
+
+            <div class="pull-right">
+
+                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+   
+
+    @if ($errors->any())
+
+        <div class="alert alert-danger">
+
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+
+            <ul>
+
+                @foreach ($errors->all() as $error)
+
+                    <li>{{ $error }}</li>
+
+                @endforeach
+
+            </ul>
+
+        </div>
+
+    @endif
+
+  
+
+    <form action="{{ route('products.update',$product->id) }}" method="POST">
+
+        @csrf
+
+        @method('PUT')
+
+   
+
+         <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                <div class="form-group">
+
+                    <strong>Name:</strong>
+
+                    <input type="text" name="name" value="{{ $product->name }}" class="form-control" placeholder="Name">
+
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                <div class="form-group">
+
+                    <strong>Detail:</strong>
+
+                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $product->detail }}</textarea>
+
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+
+            </div>
+
+        </div>
+
+   
+
+    </form>
+
+@endsection
+</code>
+
+
+resources/views/products/show.blade.php
+
+
+
+<code>
+@extends('products.layout')
+
+  
+
+@section('content')
+
+    <div class="row">
+
+        <div class="col-lg-12 margin-tb">
+
+            <div class="pull-left">
+
+                <h2> Show Product</h2>
+
+            </div>
+
+            <div class="pull-right">
+
+                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+   
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+
+            <div class="form-group">
+
+                <strong>Name:</strong>
+
+                {{ $product->name }}
+
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+
+            <div class="form-group">
+
+                <strong>Details:</strong>
+
+                {{ $product->detail }}
+
+            </div>
+
+        </div>
+
+    </div>
+
+@endsection
+</code>
+
+
+
+
+
+All the required steps have been done, now you have to type the given below command and hit enter to run the Laravel app:
+
+    php artisan serve
+
+
+Now, Go to your web browser, type the given URL and view the app output:
+
+Read Also: Laravel 10 REST API with Passport Authentication Tutorial
+
+
+    http://localhost:8000/products
+
+
+:end: 
+
+
+
+
+
+
+
 
 #
 [Top](#top)
