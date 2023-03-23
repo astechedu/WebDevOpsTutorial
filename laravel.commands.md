@@ -2218,7 +2218,7 @@ resources/views/products/index.blade.php
 
             <div class="pull-left">
 
-                <h2>Laravel 10 CRUD Example from scratch - ItSolutionStuff.com</h2>
+                <h2>Laravel 10 CRUD Example from scratch</h2>
 
             </div>
 
