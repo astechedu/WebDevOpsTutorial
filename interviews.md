@@ -11,6 +11,7 @@ Topics:
 
 [Kubernetes Top 10 Questions Answers](#kubernetes-Q-A-1)
 [Kubernetes Top 50 Question Answers](#kubernetes-Q-A-2)
+[PHP Interview Questions And Answers For 5 Year Experience](#php5years-Q-A-2)
 
 
 
@@ -564,3 +565,452 @@ Q10. The handler invoked by Kubelet to check if a container’s IP address is o
 
 
 :end:
+#
+
+[Top](#top)
+<a name="#php5years-Q-A-2"></a>
+#PHP Interview Questions And Answers For 5 Year Experience
+
+
+PHP Experience Interview Questions
+
+    How can we know the number of days between two given dates using PHP?
+    How can we repair a MySQL table?
+    How can we get the properties of an image (size, type, width, height) using php image functions?
+    How can we take a backup of a mysql table and how can we restore it?
+    What is a persistent cookie and how it is different from the Temporary cookie?
+    How To Get the Uploaded File Information in the Receiving Script?
+    What is the difference between mysql_fetch_object and mysql_fetch_array?
+    What are the different tables present in MySQL?
+    How can we encrypt the username and password using PHP?
+    How can we send mail using JavaScript?
+    What is the difference between ereg_replace() and eregi_replace()?
+    How do I find out the number of parameters passed into a function?
+    What’s the special meaning of __sleep and __wakeup?
+    What is the difference between the functions unlink() and unset()?
+    What is the difference between characters \023 and \x23?
+    What’s the output of the ucwords function in this example?
+    What’s the difference between htmlentities() and htmlspecialchars()?
+    What are the different functions in sorting an array?
+    How can we know the count/number of elements of an array?
+    What is the maximum length of a table name, a database name, or a field name in MySQL?
+
+
+#
+
+
+PHP Interview Questions And Answers For 5 Year Experience
+
+1) How can we know the number of days between two given dates using PHP?
+
+A) Simple arithmetic:
+
+    $date1 = date(‘Y-m-d’);
+    $date2 = ‘2006-07-01’;
+    $days = (strtotime() – strtotime()) / (60 * 60 * 24);
+    echo “Number of days since ‘2006-07-01’: $days”;
+
+2) How can we repair a MySQL table?
+
+A) We can use REPAIR command to repair a table. The REPAIR command will repair the table specified.
+
+The syntex for repairing a mysql table is:
+REPAIR TABLE tablename
+REPAIR TABLE tablename QUICK
+REPAIR TABLE tablename EXTENDED
+
+If QUICK is given, MySQL will do a repair of only the index tree.
+If EXTENDED is given, it will create index row by row.
+
+3) How can we get the properties of an image (size, type, width, height) using php image functions?
+
+A) To know the Image type use exif_imagetype () function
+To know the Image size use getimagesize () function
+To know the image width use imagesx () function
+To know the image height use imagesy() function
+
+4) How can we take a backup of a mysql table and how can we restore it?
+
+A) Create a full backup of your database:
+
+    shell> mysqldump tab=/path/to/some/diropt db_name
+
+Or
+
+    shell> mysqlhotcopy db_name /path/to/some/dir
+
+The full backup file is just a set of SQL statements, so restoring it is very easy:
+
+    shell> mysql “.”Executed”;
+    mysql_close($link2);
+
+5) What Is a Persistent Cookie and how it is different from Temporary cookie?
+
+A) A persistent cookie is a cookie which is stored in a cookie file permanently on the browser’s computer. By default, cookies are created as temporary cookies which stored only in the browser’s memory. When the browser is closed, temporary cookies will be erased. You should decide when to use temporary cookies and when to use persistent cookies based on their differences:
+
+    Temporary cookies cannot be used for tracking long-term information.
+    Persistent cookies can be used for tracking long-term information.
+    Temporary cookies are safer because no programs other than the browser can access them.
+    Persistent cookies are less secure because users can open cookie files see the cookie values.
+
+Read This Article: UI Developer Interview Questions
+
+6) How To Get the Uploaded File Information in the Receiving Script?
+
+A) Once the Web server received the uploaded file, it will call the PHP script specified in the form action attribute to process them. This receiving PHP script can get the uploaded file information through the predefined array called $_FILES. Uploaded file information is organized in $_FILES as a two-dimensional array as:
+
+    $_FILES[$fieldName][‘name’] – The Original file name on the browser system.
+    $_FILES[$fieldName][‘type’] – The file type determined by the browser.
+    $_FILES[$fieldName][‘size’] – The Number of bytes of the file content.
+    $_FILES[$fieldName][‘tmp_name’] – The temporary filename of the file in which
+
+The uploaded file was stored on the server.
+
+    $_FILES[$fieldName][‘error’] – The error code associated with this file upload.
+
+The $fieldName is the name used in the <input name=”fieldName” type=”FILE,” />
+
+7) What is the difference between mysql_fetch_object and mysql_fetch_array?
+
+A) MySQL fetch object will collect first single matching record where mysql_fetch_array will collect all matching records from the table in an array
+
+8) 14. What are the different tables present in MySQL?
+
+A) Total 5 types of tables we can create
+
+    MyISAM
+    Heap
+    Merge
+    INNO DB
+    ISAM
+
+9) How can we encrypt the username and password using PHP?
+
+A) You can encrypt a password with the following Mysql>SET PASSWORD=PASSWORD(“Password”);
+
+Or
+
+You can use the MySQL PASSWORD() function to encrypt username and password.
+
+Example: INSERT into user (password, …) VALUES (PASSWORD($password”)), …);
+
+10) How can we send mail using JavaScript?
+
+A) No. There is no way to send emails directly using JavaScript.
+
+But you can use JavaScript to execute a client side email program send the email using the “mailto” code.
+
+Here is an example:
+
+function myfunction(form)
+{
+tdata=document.myform.tbox1.value;
+location=”mailto:mailid@domain.com?subject=…”;
+return true;
+}
+PHP Developer Interview Questions And Answers For Experienced
+
+11) What is the difference between ereg_replace() and eregi_replace()?
+
+A) eregi_replace() function is identical to ereg_replace() except that it ignores case distinction when matching alphabetic characters.
+
+12) How do I find out the number of parameters passed into function?
+
+A) func_num_args() function returns the number of parameters passed in.
+
+Also Read: AngularJS Interview Questions
+
+13) What’s the special meaning of __sleep and __wakeup?
+
+A) __sleep returns the array of all the variables than need to be saved, while __wakeup retrieves them.
+
+14) What is the difference between the functions unlink() and unset()?
+
+A) unlink() is a function for file system handling. It will simply delete the file in context.
+
+unset() is a function for variable management. It will make a variable undefined.
+Interview Questions For PHP Developer
+
+15) What is the difference between characters \023 and \x23?
+
+A) The first one is octal 23, the second is hex 23.
+
+16) What’s the output of the ucwords function in this example?
+
+$formatted = ucwords(“PHP interview questions for experienced”);
+print $formatted;
+
+A) ucwords() makes every first letter of every word capital.
+
+What will be printed is PHP Interview Questions For Experienced.
+
+17) What’s the difference between htmlentities() and htmlspecialchars()?
+
+A) htmlspecialchars only takes care of <, >, single quote ‘, double quote ” and ampersand.
+
+htmlentities translates all occurrences of character sequences that have different meaning in HTML.
+
+18) What are the different functions in sorting an array?
+
+A) Sorting functions in PHP:
+
+    asort()
+    arsort()
+    ksort()
+    krsort()
+    uksort()
+    sort()
+    natsort()
+    rsort()
+
+19) How can we know the count/number of elements of an array?
+
+A) In two ways, we can count the number of elements of an array:
+a) sizeof($array) – This function is an alias of count()
+b) count($urarray) – This function returns the number of elements in an array.
+
+20) What is the maximum length of a table name, a database name, or a field name in MySQL?
+
+A) The maximum length of a table name, database name and field name is:
+
+Database name: 64 characters
+Table name: 64 characters
+Column name: 64 characters
+PHP Mysql Interview Questions And Answers For 5 Years Experience
+
+21) How many values can the SET function of MySQL take?
+
+A) MySQL SET function can take zero or more values, but at the maximum it can take 64 values.
+
+22) What are the other commands to know the structure of a table using MySQL commands except EXPLAIN command?
+
+A) DESCRIBE table_name;
+
+23) What’s the difference between md5(), crc32() and sha1() crypto on PHP?
+
+A) The major difference is the length of the hash generated.
+
+CRC32 is, evidently, 32 bits, while sha1() returns a 128 bit value, and md5() returns a 160 bit value.
+
+This is important when avoiding collisions.
+
+PHP Interview Questions And Answers For 5 Year Experience
+24) How can we find the number of rows in a result set using PHP?
+
+A) Here is how you can find the number of rows in a result set in PHP:
+
+$result = mysql_query($any_valid_sql, $database_link);
+$num_rows = mysql_num_rows($result);
+echo “$num_rows rows found”;
+
+25) How many ways we can we find the current date using MySQL?
+
+A) We can find current date using MySQL in different ways, they are:
+
+    SELECT CURDATE();
+    SELECT CURRENT_DATE();
+    SELECT CURTIME();
+    SELECT CURRENT_TIME();
+
+PHP Interview Quesetions And Answers For Senior Developers
+
+26) How to read and display a HTML source from the website url?
+
+A) $filename=”https://codingcompiler.com/”;
+$fh=fopen(“$filename”, “r”);
+while( !feof($fh) ){
+$contents=htmlspecialchars(fgets($fh, 1024));
+print “$contents”;
+}
+fclose($fh);
+?>
+
+PHP Interview Questions And Answers For 5 Year Experience
+27) How we used $_get and $_post variable in PHP?
+
+A) We know that when we use $_GET variable all data_values are display on our URL.So,using this we don’t have to send secret data (Like:password, account code). But using we can bookmarked the importpage.
+
+We use $_POST variable when we want to send data_values without display on URL.And their is no limit to send particular amount of character.
+Using this we can not bookmarked the page.
+
+28) Why we use $_REQUEST variable?
+
+A) We use $_REQUEST variable in PHP to collect the data_values from $_GET,$_POST and $_COOKIE variable.
+
+29) How we use ceil() and floor() function in PHP?
+
+A) ceil() is use to find nearest maximum values of passing value.
+
+Ceil Example:
+$var=6.5;
+$ans_var=ceil($var);
+echo $ans_var;
+
+Output: 7
+
+floor() is use to find nearest minimum values of passing value.
+
+Floor Example:
+$var=6.5
+$ans_var=floor($var);
+echo $ans_var;
+
+Output: 6
+
+30) What is the answer of following code echo 1< 2 and echo 1 >2 ?
+
+A) Output of the given code are given below:
+echo 1<2
+output: 1
+
+echo 1>2
+output: no output
+PHP Programming Interview Questions And Answers For Experienced
+
+31) What is the difference b/w isset and empty?
+
+A) The main difference b/w isset and empty are:
+
+isset: This variable is used to handle functions and checked a variable is set even through it is empty.
+
+empty: This variable is used to handle functions and checked either variable has a value or it is an empty string,zero0 or not set at all.
+
+32) What do you understand about PHP accelerator ?
+
+A) Basically PHP accelerator is used to boost up the performance of PHP programing language.We use PHP accelerator to reduce the server load and also use to enhance the performance of PHP code near about 2-10 times.In one word we can say that PHP accelertator is code optimization technique.
+
+filetype:pdf
+filetype:doc
+filetype:txt
+
+33) What is the functionality of MD5 function in PHP?
+
+A) string md5(string)
+
+It calculates the MD5 hash of a string. The hash is a 32-character hexadecimal number.
+
+34) How can we know the number of days between two given dates using MySQL?
+
+A) Use DATEDIFF()
+SELECT DATEDIFF(NOW(),’2006-07-01′);
+
+35) How can we change the data type of a column of a table?
+
+A) ALTER TABLE table_name CHANGE colm_name same_colm_name [new data type]
+PHP Experienced Interview Questions And Answers
+
+36) How can we encrypt and decrypt a data presented in a table using MySQL?
+
+A) You can use functions: AES_ENCRYPT() and AES_DECRYPT() like:
+AES_ENCRYPT(str, key_str)
+AES_DECRYPT(crypt_str, key_str)
+
+37) How can I retrieve values from one database server and store them in other database server using PHP?
+
+A) For this purpose, you can first read the data from one server into session variables. Then connect to other server and simply insert the data into the database.
+
+PHP Interview Questions And Answers For 5 Year Experience
+38) What are encryption functions in PHP?
+
+A) CRYPT() and MD5()
+
+39) How can we get second of the current time using date function?
+
+A) $second = date(“s”);
+
+40) How many ways we can give the output to a browser?
+
+A) HTML output
+PHP, ASP, JSP, Servlet Function
+Script Language output Function
+Different Type of embedded Package to output to a browser
+PHP 5 Years Experience Interview Questions
+
+41) How array_walk function works in PHP?
+
+A) It is used to update the elements/index of an original array.
+In array_walk, two parameter are required.
+original array and an callback function, with use of we update the array.
+
+42) How to get the 2nd highest salary of an employee, if two employees may have the same salary?
+
+A) select salary from employee group by salary order by salary limit 1,1
+
+43) How to find duplicate email records in users table?
+
+A) SELECT u1.first_name, u1.last_name, u1.email FROM users as u1
+INNER JOIN (
+SELECT email FROM users GROUP BY email HAVING count(id) > 1
+) u2 ON u1.email = u2.email;
+
+44) How to set the header in CURL?
+
+A) curl_setopt($ch, CURLOPT_HTTPHEADER, Array(“Content-Type: text/xml”));
+
+45) How to redirect https to HTTP URL and vice versa in .htaccess?
+
+A) Redirect https to http
+
+RewriteEngine On
+RewriteCond %{HTTPS} on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+Redirect http to https
+
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+PHP Logical Interview Questions And Answers
+
+46) What is the use of explode() function ?
+
+A) This function is used to split a string into an array. Syntax : array explode( string $delimiter , string $string [, int $limit ] );
+
+47) What is the use of mysql_real_escape_string() function?
+
+A) mysql_real_escape_string() function mainly used to escapes special characters in a string for use in an SQL statement
+
+48) What are Traits?
+
+A) Traits are a mechanism that allows you to create reusable code in PHP where multiple inheritance is not supported. To create a Traits we use keyword trait.
+
+49) Can you write source code to demonstrate Traits?
+
+A) Example of Traits
+
+trait users {
+function getUserType() { }
+function getUserDescription() { }
+function getUserDelete() { }
+}
+
+class ezcReflectionMethod extends ReflectionMethod {
+use users;
+}
+
+class ezcReflectionFunction extends ReflectionFunction {
+use users;
+}
+
+50) How to start displaying errors in PHP application?
+
+A) Add following code in PHP.
+
+ini_set(‘display_errors’, 1);
+ini_set(‘display_startup_errors’, 1);
+error_reporting(E_ALL);
+
+OR Add following code in .htacess
+
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+php_flag log_errors on
+:end:
+
+
+
+
+
+
+
