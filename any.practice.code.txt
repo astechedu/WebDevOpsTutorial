@@ -518,8 +518,7 @@ Bank Widthdaw from zebpay:
              2000.00                  W1879121     2
              1000.00                  W1820223     2 years   
              1000.00                  W1773441     2 years             
-             1000.00                  W1729858     2 years ago
-             4000.00                  W1537847     4 years ago
+             1000.00                  W1729858     2 years ago             
   widthraw   5007.12    inr           w1537847     4 
             15000.00   payment ref no W502468      5 years ago
       
