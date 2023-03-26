@@ -17,6 +17,22 @@ Topic:
   
 #  
 
+Codeignier 4 Basic Commands: 
+
+Migrations: 
+
+<code>
+php spark migrate
+For Unix:
+php spark migrate -g test -n Acme\\Blog
+
+For Windows:
+php spark migrate -g test -n Acme\Blog
+php spark migrate:rollback               // -g -b -f
+php spark migrate:refresh               // -g -n --all -f
+php spark migrate:status
+php spark make:migration <class> [options]    // --session  --table   --dbgroup  --namespace  --suffix
+</code>
 
 
 #
