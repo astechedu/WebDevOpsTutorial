@@ -165,7 +165,6 @@ class UserCrud extends Controller
         return $this->response->redirect(site_url('/users-list'));
     }    
 }
-
 </code>
 
 
