@@ -104,12 +104,14 @@ class UserModel extends Model
     
     protected $allowedFields = ['name', 'email'];
 }
+</code>
 
-
+#
 Create CRUD Controller:
 
 app/Controllers/UserCrud.php
 
+<code>
 <?php 
 namespace App\Controllers;
 use App\Models\UserModel;
