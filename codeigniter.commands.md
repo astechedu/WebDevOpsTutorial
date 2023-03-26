@@ -34,21 +34,22 @@ Topic:
     Step 8: Show Data List & Delete
     Step 9: Edit and Update Data
 
-
+<code>
 	composer create-project codeigniter4/appstarter
 	cd codeigniter-crud-example
-
+</code>
 
 Open app/Config/Boot/development.php file and set the display_errors to 1 instead of 0. Repeat the same process in app/Config/Boot/production.php file.
 
 
-
+<code>
 	ini_set('display_errors', '1');
-
+</code>
 
 
 DB Config: 
 
+<code>
 public $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
@@ -71,10 +72,10 @@ public $default = [
         'port'     => 3306,
 	];
 
+</code>
 
 
-
-
+<code>
 # MAMPP
 public $default = [
   ...
@@ -87,11 +88,12 @@ public $default = [
      'hostname' => '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',
   ...
 ]
-
+</code>
 
 
 Create New Model:
 
+<code>
 <?php 
 namespace App\Models;
 use CodeIgniter\Model;
@@ -161,13 +163,16 @@ class UserCrud extends Controller
     }    
 }
 
-
+</code>
 
 
 Create Routes in Codeigniter:
+
+<code>
  app/Config/Routes.php
+<code>
 
-
+<code>
 // CRUD RESTful Routes
 $routes->get('users-list', 'UserCrud::index');
 $routes->get('user-form', 'UserCrud::create');
@@ -175,14 +180,15 @@ $routes->post('submit-form', 'UserCrud::store');
 $routes->get('edit-view/(:num)', 'UserCrud::singleUser/$1');
 $routes->post('update', 'UserCrud::update');
 $routes->get('delete/(:num)', 'UserCrud::delete/$1');
+</code>
 
 
-
-Codeigniter Insert Data in Database Example
+Codeigniter Insert Data in Database Example:
 
 
 app/Views/add_user.php
 
+<code>
 <!DOCTYPE html>
 <html>
 <head>
@@ -248,13 +254,16 @@ app/Views/add_user.php
   </script>
 </body>
 </html>
-
+</code>
 
 
 //Show Data List & Delete
 
+
 app/Views/user_view.php
 
+
+<code>
 <!doctype html>
 <html lang="en">
   <head>
@@ -312,13 +321,14 @@ app/Views/user_view.php
 </script>
 </body>
 </html>
-
+</code>
 
 
 //Edit and Update Data
 
 app/Views/edit_view.php
 
+<code>
 <!DOCTYPE html>
 <html>
 <head>
@@ -385,12 +395,12 @@ app/Views/edit_view.php
   </script>
 </body>
 </html>
-
-
+</code>
 
 
 	php spark serve
-
+	
+	
 http://localhost:8080/index.php/users-list
 
 #
