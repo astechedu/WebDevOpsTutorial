@@ -39,16 +39,57 @@ Searching Key Words:
 [Go To Top](#top)
 <a name="sql_basic_queries"></a>
  # SQL Basic Queries
+
+Only Basic Queries and find highest salary queries:
  
+//Showing only one
+<code>
+select *from users limit 1;
+</code>
+
+//Showing only two
+<code>
+select *from users limit 2;
+</code>
+
+//Showing only three
+<code>
+select *from users limit 3;
+</code>
+
+//Second highest salary using Limit without subquery
+<code>
+select *from users order by salary desc limit 1,1;
+</code>
+
+//Third highest salary using Limit with subquery
+<code>
+select *from users order by salary desc limit 2,1;
+</code>
+
+//Showing salary which greater or less than highest salary or second highest salary using subquery
+<code>
+SELECT name,salary from users where salary > (select salary from users order by salary desc limit 1,1);
+SELECT name,salary from users where salary > (select salary from users order by salary desc limit 2,1);
+SELECT name,salary from users where salary < (select salary from users order by salary desc limit 1,1);
+</code>
+	
+//Update query
+<code>	
+update users 
+set salary = 6000, city = "testing" where id = 6;
+</code>
+ #
  Below is a selection from the "Customers" table:
  
+<code>
 CustomerID 	CustomerName 	                      ContactName 	       Address 	                      City 	     PostalCode 	  Country
 1	          Alfreds Futterkiste 	               Maria Anders 	      Obere Str. 57 	                Berlin 	    12209 	      Germany 
 2          	Ana Trujillo Emparedados y helados 	Ana Trujillo 	      Avda. de la Constitución 2222 	México D.F. 05021 	      Mexico
 3 	         Antonio Moreno Taquería 	           Antonio Moreno      Mataderos 2312 	               México D.F. 05023   	    Mexico
 4 	         Around the Horn 	                   Thomas Hardy 	      120 Hanover Sq. 	              London 	    WA1 1DP 	    UK
 5 	         Berglunds snabbköp 	                Christina Berglund 	Berguvsvägen 8 	               Luleå 	     S-958 22 	   Sweden
-
+</code>
 
 
 
