@@ -462,6 +462,7 @@ Location:
 
 Loading in BaseController:
 
+<code>
 class BaseController extends Controller{
 
    protected $request;
@@ -473,7 +474,7 @@ class BaseController extends Controller{
 
    }
 }
-
+</code>
 
 Loading in Controller:
 
@@ -481,24 +482,25 @@ Loading in Controller:
 	php spark make:controller PageController
 	
 
+<code>
    public function index(){
       
       helper('my_helper'); // Loading single helper
       helper(['custom1_helper','custom2_helper']);      //Or Multiple Helpers
    }
-
+</code>
 
 
 Loading in View:
 
-
+<code>
 <body>
    <?php 
    // helper("custom1_helper"); // Single helper loading
    helper(["custom1_helper","custom2_helper"]); // Multiple helper loading
    ?>
 <body>
-
+</code>
 
 
 
