@@ -23,7 +23,7 @@ $$\color{purple}{SQL \ Queries}$$
 
    [Top 14 Frequently asked SQL Query Interview Questions](#more_examples_on_highest_salarary)
   
-   [MySql Transactions](#top)
+   [MySql Transactions](#mysql-transactions)
     
 
 Searching Key Words: 
