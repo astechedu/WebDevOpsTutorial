@@ -13,10 +13,15 @@ Topic:
  
  [Codeigniter 4 CRUD with Bootstrap and MySQL Example](#ci-crud) 
  
+ [Codeigniter 4 CSS & JS Links](#css-js-links)
+ 
+ [Codeigniter 4 Calling Helper Classes](#helpers)
  
   
 #  
 
+
+#
 Codeignier 4 Basic Commands: 
 
 Migrations: 
@@ -424,4 +429,77 @@ http://localhost:8080/index.php/users-list
 #
 :end:
 
+#
+[Top](#top)
+<a name="css-js-links"></a>
 
+## Codeigniter 4 CSS & JS Files Paths
+
+	public/assets/css/my.css
+	public/assets/js/my.js
+
+Links In View Files: 
+
+	<link href="<?php echo base_url(); ?>/assets/css/my.css" rel="stylesheet">
+	<script src="<?php echo base_url(); ?>/assets/js/my.js"type="text/javascript"></script>
+	OR
+	<link href="<?php echo base_url(); ?>assets/css/my.css" rel="stylesheet">
+	<script src="<?php echo base_url(); ?>assets/js/my.js"type="text/javascript"></script>  
+
+
+:end:
+
+
+#
+[Top](#top)
+<a name="helpers"></a>
+## Codeigniter 4 Calling Helper Classes: 
+
+Location: 
+
+	app/Helpers
+        app/Helpers/my_helper.php
+
+Loading in BaseController:
+
+class BaseController extends Controller{
+
+   protected $request;
+   protected $helpers = ['custom1_helper'];
+   public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
+   {
+
+       parent::initController($request, $response, $logger);
+
+   }
+}
+
+
+Loading in Controller:
+
+
+	php spark make:controller PageController
+	
+
+   public function index(){
+      
+      helper('my_helper'); // Loading single helper
+      helper(['custom1_helper','custom2_helper']);      //Or Multiple Helpers
+   }
+
+
+
+Loading in View:
+
+
+<body>
+   <?php 
+   // helper("custom1_helper"); // Single helper loading
+   helper(["custom1_helper","custom2_helper"]); // Multiple helper loading
+   ?>
+<body>
+
+
+
+
+:end:
