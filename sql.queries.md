@@ -92,23 +92,25 @@ CustomerID 	CustomerName 	                      ContactName 	       Address 	   
 </code>
 
 
-
+<code>
 ProductID 	ProductName 	SupplierID 	CategoryID 	Unit 	Price
 1 	Chais 	1 	1 	10 boxes x 20 bags 	18
 2 	Chang 	1 	1 	24 - 12 oz bottles 	19
 3 	Aniseed Syrup 	1 	2 	12 - 550 ml bottles 	10
 4 	Chef Anton's Cajun Seasoning 	2 	2 	48 - 6 oz jars 	22
 5 	Chef Anton's Gumbo Mix 	2 	2 	36 boxes 	21.35
+</code>
 
-
+<code>
 OrderDetailID 	OrderID 	ProductID 	Quantity
 1 	10248 	11 	12
 2 	10248 	42 	10
 3 	10248 	72 	5
 4 	10249 	14 	9
 5 	10249 	51 	40
+</code>
 
-
+<code>	
 CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
 1	Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
 2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
@@ -117,24 +119,25 @@ CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
 5	Berglunds snabbköp	Christina Berglund	Berguvsvägen 8	Luleå	S-958 22	Sweden
 6	Blauer See Delikatessen	Hanna Moos	Forsterstr. 57	Mannheim	68306	Germany
 7	Blondel père et fils	Frédérique Citeaux	24, place Kléber	Strasbourg	67000	France
-
+</code>
 
 Sample Table:
 
 Below is a selection from the "Orders" table in the Northwind sample database:
+<code>	
 OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
 10248 	90 	5 	7/4/1996 	3
 10249 	81 	6 	7/5/1996 	1
 10250 	34 	4 	7/8/1996 	2
 10251 	84 	3 	7/9/1996 	1
 10252 	76 	4 	7/10/1996 	2
-
+</code>
 
 
 
 
  #Some of The Most Important SQL Commands:
-
+<code>
     SELECT - extracts data from a database
     UPDATE - updates data in a database
     DELETE - deletes data from a database
@@ -146,32 +149,34 @@ OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
     DROP TABLE - deletes a table
     CREATE INDEX - creates an index (search key)
     DROP INDEX - deletes an index
+</code>
 
-
+	
 SQL SELECT Statement:
-
+<code>
     SELECT * FROM table_name;  
-    
+</code>
+	
 The following SQL statement selects all the records in the "Customers" table:
 
     SELECT * FROM Customers;
 
-
+<code>
     SELECT column1, column2, ...
     FROM table_name; 
-
+</code>
    
     SELECT CustomerName, City FROM Customers;
 
 
 
 SQL SELECT DISTINCT Statement:
-
+<code>
     SELECT DISTINCT column1, column2, ...
     FROM table_name; 
+</code>
 
-
-
+<code>
 SELECT Example Without DISTINCT:
 
     SELECT Country FROM Customers;
@@ -183,73 +188,81 @@ SELECT Example Without DISTINCT:
 
     SELECT Count(*) AS DistinctCountries
     FROM (SELECT DISTINCT Country FROM Customers);
-
+</code>
 
 SQL WHERE Clause:
 
-
+<code>
     SELECT column1, column2, ...
     FROM table_name
     WHERE condition; 
+</code>
 
-
-
+<code>
     SELECT * FROM Customers
     WHERE Country='Mexico'; 
+</code>
 
-
+<code>	
 SELECT * FROM Customers
 WHERE CustomerID=1; 
-
+</code>
 
 
 SQL AND, OR and NOT Operators:
 
 
 AND Syntax:
-
+<code>
     SELECT column1, column2, ...
     FROM table_name
     WHERE condition1 AND condition2 AND condition3 ...; 
+</code>
 
 OR Syntax:
-
+<code>
     SELECT column1, column2, ...
     FROM table_name
     WHERE condition1 OR condition2 OR condition3 ...;
-
+</code>
+	
 NOT Syntax:
-
+<code>
     SELECT column1, column2, ...
     FROM table_name
     WHERE NOT condition; 
+</code>
 
 
-
-
+<code>
 SELECT * FROM Customers
 WHERE Country='Germany' AND City='Berlin';
+</code>
 
-
+<code>
 SELECT * FROM Customers
 WHERE City='Berlin' OR City='München';
+</code>
 
-
+<code>
 SELECT * FROM Customers
 WHERE Country='Germany' OR Country='Spain';
+</code>
 
-
+<code>
 SELECT * FROM Customers
 WHERE NOT Country='Germany';
+</code>
 
-
+<code>
 SELECT * FROM Customers
 WHERE Country='Germany' AND (City='Berlin' OR City='München'); 
+</code>
 
-
+<code>
 SELECT * FROM Customers
 WHERE NOT Country='Germany' AND NOT Country='USA'; 
-
+</code>
 
 
 
@@ -257,105 +270,116 @@ WHERE NOT Country='Germany' AND NOT Country='USA';
 
 SQL ORDER BY Keyword:
 
-
+<code>
 ORDER BY Syntax
 SELECT column1, column2, ...
 FROM table_name
 ORDER BY column1, column2, ... ASC|DESC; 
+</code>
 
-
+<code>	
 SELECT * FROM Customers
 ORDER BY Country;
+</code>
 
-
-
+<code>
 SELECT * FROM Customers
 ORDER BY Country DESC; 
+</code>
 
-
+<code>	
     SELECT * FROM Customers
     ORDER BY Country, CustomerName; 
+</code>
 
-
+<code>
     SELECT * FROM Customers
     ORDER BY Country ASC, CustomerName DESC; 
-
+</code>
 
 
 SQL INSERT INTO Statement:
 
-
+<code>
 INSERT INTO table_name (column1, column2, column3, ...)
 VALUES (value1, value2, value3, ...); 
+</code>
 
-
-
+<code>
 INSERT INTO table_name
 VALUES (value1, value2, value3, ...); 
+</code>
 
-
+<code>
 INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
 VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+</code>
 
-
+<code>
 INSERT INTO Customers (CustomerName, City, Country)
 VALUES ('Cardinal', 'Stavanger', 'Norway');
-
+</code>
 
 SQL NULL Values:
 
 
 IS NULL Syntax:
-
+<code>
     SELECT column_names
     FROM table_name
     WHERE column_name IS NULL;
-
+</code>
+	
 IS NOT NULL Syntax:
-
+<code>
     SELECT column_names
     FROM table_name
     WHERE column_name IS NOT NULL; 
+</code>
 
-
+<code>
     SELECT CustomerName, ContactName, Address
     FROM Customers
     WHERE Address IS NULL;
+</code>
 
-
+<code>	
     SELECT CustomerName, ContactName, Address
     FROM Customers
     WHERE Address IS NOT NULL;
-
+</code>
 
 
 SQL UPDATE Statement:
 
-
-
+<code>
     UPDATE Syntax
     UPDATE table_name
     SET column1 = value1, column2 = value2, ...
     WHERE condition; 
+</code>
 
-
+<code>
     UPDATE Customers
     SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
     WHERE CustomerID = 1;
+</code>
 
-
+<code>
      UPDATE Customers
      SET ContactName='Juan'
      WHERE Country='Mexico';
+</code>
 
-
+<code>
      UPDATE Customers
      SET ContactName='Juan';
+</code>
 
-
+	
 SQL DELETE Statement:
 
-
+<code>
       DELETE FROM table_name WHERE condition;
     
       DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
@@ -363,7 +387,7 @@ SQL DELETE Statement:
       DELETE FROM table_name;
 
       DELETE FROM Customers;
-
+</code>
 
 
 SQL TOP, LIMIT, FETCH FIRST or ROWNUM Clause:
@@ -371,44 +395,52 @@ SQL TOP, LIMIT, FETCH FIRST or ROWNUM Clause:
 
 
 SQL Server / MS Access Syntax:
-
+	
+<code>
      SELECT TOP number|percent column_name(s)
      FROM table_name
      WHERE condition;
-
+</code>
+	
 MySQL Syntax:
-
+	
+<code>
      SELECT column_name(s)
      FROM table_name
      WHERE condition
      LIMIT number;
-
+</code>
+	
 Oracle 12 Syntax:
 
+</code>
      SELECT column_name(s)
      FROM table_name
      ORDER BY column_name(s)
      FETCH FIRST number ROWS ONLY;
+</code>
 
 Older Oracle Syntax:
 
+<code>
      SELECT column_name(s)
      FROM table_name
      WHERE ROWNUM <= number;
+</code>
 
 Older Oracle Syntax (with ORDER BY):
-
+<code>
      SELECT *
      FROM (SELECT column_name(s) FROM table_name ORDER BY column_name(s))
      WHERE ROWNUM <= number; 
-
+</code>
 
 
 
 
 SQL TOP, LIMIT and FETCH FIRST Examples:
 
-
+<code>
 	SELECT TOP 3 * FROM Customers;
 
 	SELECT * FROM Customers
@@ -417,12 +449,12 @@ SQL TOP, LIMIT and FETCH FIRST Examples:
 
 	SELECT * FROM Customers
 	FETCH FIRST 3 ROWS ONLY; 
-
+</code>
 
 
 SELECT TOP 50 PERCENT * FROM Customers;
 
-
+<code>
 	SELECT * FROM Customers
 	FETCH FIRST 50 PERCENT ROWS ONLY;
 
@@ -441,20 +473,21 @@ SELECT TOP 50 PERCENT * FROM Customers;
         SELECT * FROM Customers
         WHERE Country='Germany'
         FETCH FIRST 3 ROWS ONLY;
-
+</code>
 
 
 The SQL MIN() and MAX() Functions:
 
-
+<code>
 MIN() Syntax: 
 
     SELECT MIN(column_name)
     FROM table_name
     WHERE condition;
-
+</code>
+	
 MAX() Syntax: 
-
+<code>
     SELECT MAX(column_name)
     FROM table_name
     WHERE condition; 
@@ -466,58 +499,65 @@ MAX() Syntax:
 
     SELECT MAX(Price) AS LargestPrice
     FROM Products; 
-
+</code>
 
 
 SQL COUNT(), AVG() and SUM() Functions:
 
-
+<code>
 COUNT() Syntax:
 
     SELECT COUNT(column_name)
     FROM table_name
     WHERE condition; 
-
+</code>
+	
+	
 AVG() Syntax:
-
+	
+<code>
     SELECT AVG(column_name)
     FROM table_name
     WHERE condition; 
+</code>
 
+	
 SUM() Syntax:
-
+<code>
     SELECT SUM(column_name)
     FROM table_name
     WHERE condition; 
-
+</code>
+	
 COUNT() :
-
+<code>
 	SELECT COUNT(ProductID)
 	FROM Products;
-
+</code>
+	
 AVG() : 
-
+<code>
 	SELECT AVG(Price)
 	FROM Products;
-
+</code>
 
 SUM(): 
-
+<code>
 	SELECT SUM(Quantity)
 	FROM OrderDetails; 
-
+</code>
 
 
 SQL LIKE Operator: 
-
+<code>
 	LIKE Syntax
 	SELECT column1, column2, ...
 	FROM table_name
 	WHERE columnN LIKE pattern; 
-
+</code>
 
 SQL LIKE: 
-
+<code>
 	SELECT * FROM Customers
 	WHERE CustomerName LIKE 'a%'; 
 
@@ -543,14 +583,14 @@ SQL LIKE:
 
     SELECT * FROM Customers
     WHERE CustomerName NOT LIKE 'a%';
-
+</code>
 
 
 SQL Wildcard Characters: 
 
 
 Using the % Wildcard:
-
+<code>
    	SELECT * FROM Customers
    	WHERE City LIKE 'ber%'; 
 
@@ -579,17 +619,17 @@ Using the % Wildcard:
 
     SELECT * FROM Customers
     WHERE City NOT LIKE '[bsp]%'; 
-
+</code>
 
 SQL IN Operator: 
-
+<code>
     SELECT column_name(s)
     FROM table_name
     WHERE column_name IN (value1, value2, ...); 
-
+</code>
 
 or:
-
+<code>
     SELECT column_name(s)
     FROM table_name
     WHERE column_name IN (SELECT STATEMENT); 
@@ -604,12 +644,12 @@ or:
 
     SELECT * FROM Customers
     WHERE Country IN (SELECT Country FROM Suppliers);
-
+</code>
 
 
 SQL BETWEEN Operator: 
 
-
+<code>
 	SELECT column_name(s)
 	FROM table_name
 	WHERE column_name BETWEEN value1 AND value2; 
@@ -640,28 +680,30 @@ SQL BETWEEN Operator:
 
     SELECT * FROM Orders
     WHERE OrderDate BETWEEN #07/01/1996# AND #07/31/1996#;
-
+</code>
 OR:
 
+<code>
     SELECT * FROM Orders
     WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
-
+</code>
 
 SQL Aliases: 
 
 Alias Column Syntax:
-
+<code>
     SELECT column_name AS alias_name
     FROM table_name;
-
+</code>
+	
 Alias Table Syntax:
-
+<code>
     SELECT column_name(s)
     FROM table_name AS alias_name; 
-
+</code>
 
 Alias for Columns: 
-
+<code>
 	SELECT CustomerID AS ID, CustomerName AS Customer
 	FROM Customers; 
 
@@ -686,12 +728,12 @@ Alias for Columns:
 	SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName
 	FROM Customers, Orders
 	WHERE Customers.CustomerName='Around the Horn' AND Customers.CustomerID=Orders.CustomerID;
-
+</code>
 
 
 SQL Joins: 
 
-
+<code>
 OrderID 	CustomerID 	OrderDate
 10308 	2 	1996-09-18
 10309 	37 	1996-09-19
@@ -706,17 +748,17 @@ CustomerID 	CustomerName 	ContactName 	Country
 SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
 FROM Orders
 INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
-
+</code>
 
 and it will produce something like this:
-
+<code>
 OrderID 	CustomerName 	OrderDate
 10308 	Ana Trujillo Emparedados y helados 	9/18/1996
 10365 	Antonio Moreno Taquería 	11/27/1996
 10383 	Around the Horn 	12/16/1996
 10355 	Around the Horn 	11/15/1996
 10278 	Berglunds snabbköp 	8/12/1996
-
+</code>
 
 
 Different Types of SQL JOINs: 
@@ -732,7 +774,7 @@ Here are the different types of the JOINs in SQL:
 
 SQL INNER JOIN Keyword: 
 
-
+<code>
 	INNER JOIN Syntax
 	SELECT column_name(s)
 	FROM table1
@@ -751,7 +793,7 @@ CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
 2 Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
 3 Antonio Moreno Taquería 	Antonio Moreno 	Mataderos 2312 	México D.F. 	05023 	Mexico
-
+</code>
 
 
 Example:
@@ -781,21 +823,22 @@ LEFT JOIN Syntax:
     LEFT JOIN table2
     ON table1.column_name = table2.column_name;
 
-
+<code>
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 1
 
 	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
 2 	Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
 3 	Antonio Moreno Taquería 	Antonio Moreno 	Mataderos 2312 	México D.F. 	05023 	Mexico
-
+</code>
 
 And a selection from the "Orders" table:
+<code>
 OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
 10308 	2 	7 	1996-09-18 	3
 10309 	37 	3 	1996-09-19 	1
 10310 	77 	8 	1996-09-20 	2
-
+</code>
 
 SQL LEFT JOIN Example:
 
@@ -818,7 +861,7 @@ RIGHT JOIN Syntax:
     RIGHT JOIN table2
     ON table1.column_name = table2.column_name;
 
-
+<code>
 OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
 10308 	2 	7 	1996-09-18 	3
 10309 	37 	3 	1996-09-19 	1
@@ -829,7 +872,7 @@ EmployeeID 	LastName 	FirstName 	BirthDate 	Photo
 1 	Davolio 	Nancy 	12/8/1968 	EmpID1.pic
 2 	Fuller 	Andrew 	2/19/1952 	EmpID2.pic
 3 	Leverling 	Janet 	8/30/1963 	EmpID3.pic
-
+</code>
 
 SQL RIGHT JOIN Example:
 
@@ -851,7 +894,7 @@ FULL OUTER JOIN Syntax:
 	ON table1.column_name = table2.column_name
 	WHERE condition; 
 
-
+<code>
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
 2 	Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
@@ -862,7 +905,7 @@ OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
 10308 	2 	7 	1996-09-18 	3
 10309 	37 	3 	1996-09-19 	1
 10310 	77 	8 	1996-09-20 	2
-
+</code>
 
 SQL FULL OUTER JOIN Example: 
 
@@ -881,12 +924,12 @@ A self join is a regular join, but the table is joined with itself.
 	FROM table1 T1, table1 T2
 	WHERE condition;
 
-
+<code>
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
 2 	Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
 3 	Antonio Moreno Taquería 	Antonio Moreno 	Mataderos 2312 	México D.F.
-
+</code>
 
 
 SQL Self Join Example:
@@ -915,18 +958,21 @@ UNION ALL Syntax:
 	UNION ALL
 	SELECT column_name(s) FROM table2; 
 
+<code>	
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
 2 	Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
 3 	Antonio Moreno Taquería 	Antonio Moreno 	Mataderos 2312 	México D.F. 	05023 	Mexico
-
+</code>
+	
 And a selection from the "Suppliers" table:
 
+<code>	
 SupplierID 	SupplierName 	ContactName 	Address 	City 	PostalCode 	Country
 1 	Exotic Liquid 	Charlotte Cooper 	49 Gilbert St. 	London 	EC1 4SD 	UK
 2 	New Orleans Cajun Delights 	Shelley Burke 	P.O. Box 78934 	New Orleans 	70117 	USA
 3 	Grandma Kelly's Homestead 	Regina Murphy 	707 Oxford Rd. 	Ann Arbor 	48104 	USA
-
+</code>
 
 SQL UNION Example:
 
@@ -984,14 +1030,14 @@ SQL GROUP BY Statement:
 	GROUP BY column_name(s)
 	ORDER BY column_name(s); 
 
-
+<code>
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
 2 	Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
 3 	Antonio Moreno Taquería 	Antonio Moreno 	Mataderos 2312 	México D.F. 	05023 	Mexico
 4	Around the Horn 	Thomas Hardy 	120 Hanover Sq. 	London 	WA1 1DP 	UK
 5 	Berglunds snabbköp 	Christina Berglund 	Berguvsvägen 8 	Luleå 	S-958 22 	Sweden
-
+</code>
 
 SQL GROUP BY: 
 
@@ -1005,20 +1051,21 @@ SQL GROUP BY:
 	GROUP BY Country
 	ORDER BY COUNT(CustomerID) DESC;
 
-
+<code>
 OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
 10248 	90 	5 	1996-07-04 	3
 10249 	81 	6 	1996-07-05 	1
 10250 	34 	4 	1996-07-08 	2
-
+</code>
 
 And a selection from the "Shippers" table:
 
+<code>
 ShipperID 	ShipperName
 1 	Speedy Express
 2 	United Package
 3 	Federal Shipping
-
+</code>
 
 GROUP BY With JOIN:
 
@@ -1038,13 +1085,14 @@ SQL HAVING Clause:
 	HAVING condition
 	ORDER BY column_name(s); 
 
+<code>
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
 2 	Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
 3 	Antonio Moreno Taquería 	Antonio Moreno 	Mataderos 2312 	México D.F. 	05023 	Mexico
 4	Around the Horn 	Thomas Hardy 	120 Hanover Sq. 	London 	WA1 1DP 	UK
 5 	Berglunds snabbköp 	Christina Berglund 	Berguvsvägen 8 	Luleå 	S-958 22 	Sweden
-
+</code>
 
 SQL HAVING Examples
 
@@ -1059,6 +1107,7 @@ SQL HAVING Examples
 	HAVING COUNT(CustomerID) > 5
 	ORDER BY COUNT(CustomerID) DESC;
 
+<code>
 OrderID 	CustomerID 	EmployeeID 	OrderDate 	ShipperID
 10248 	90 	5 	1996-07-04 	3
 10249 	81 	6 	1996-07-05 	1
@@ -1069,7 +1118,7 @@ EmployeeID 	LastName 	FirstName 	BirthDate 	Photo 	Notes
 1 	Davolio 	Nancy 	1968-12-08 	EmpID1.pic 	Education includes a BA....
 2 	Fuller 	Andrew 	1952-02-19 	EmpID2.pic 	Andrew received his BTS....
 3 	Leverling 	Janet 	1963-08-30 	EmpID3.pic 	Janet has a BS degree....
-
+</code>
 
 
 More HAVING Examples:
@@ -1104,23 +1153,24 @@ SQL EXISTS Operator:
 	WHERE EXISTS
 	(SELECT column_name FROM table_name WHERE condition); 
 
+<code>
 ProductID 	ProductName 	SupplierID 	CategoryID 	Unit 	Price
 1 	Chais 	1 	1 	10 boxes x 20 bags 	18
 2 	Chang 	1 	1 	24 - 12 oz bottles 	19
 3 	Aniseed Syrup 	1 	2 	12 - 550 ml bottles 	10
 4 	Chef Anton's Cajun Seasoning 	2 	2 	48 - 6 oz jars 	22
 5 	Chef Anton's Gumbo Mix 	2 	2 	36 boxes 	21.35
-
+</code>
 
 
 And a selection from the "Suppliers" table:
-
+<code>
 SupplierID 	SupplierName 	ContactName 	Address 	City 	PostalCode 	Country
 1 	Exotic Liquid 	Charlotte Cooper 	49 Gilbert St. 	London 	EC1 4SD 	UK
 2 	New Orleans Cajun Delights 	Shelley Burke 	P.O. Box 78934 	New Orleans 	70117 	USA
 3 	Grandma Kelly's Homestead 	Regina Murphy 	707 Oxford Rd. 	Ann Arbor 	48104 	USA
 4 	Tokyo Traders 	Yoshi Nagase 	9-8 Sekimai Musashino-shi 	Tokyo 	100 	Japan
-
+</code>
 
 
 Example:
@@ -1164,7 +1214,7 @@ ALL Syntax With WHERE or HAVING:
 	  FROM table_name
 	  WHERE condition);   
 
-
+<code>
 ProductID 	ProductName 	SupplierID 	CategoryID 	Unit 	Price
 1 	Chais 	1 	1 	10 boxes x 20 bags 	18
 2 	Chang 	1 	1 	24 - 12 oz bottles 	19
@@ -1175,9 +1225,10 @@ ProductID 	ProductName 	SupplierID 	CategoryID 	Unit 	Price
 7 	Uncle Bob's Organic Dried Pears 	3 	7 	12 - 1 lb pkgs. 	30
 8 	Northwoods Cranberry Sauce 	3 	2 	12 - 12 oz jars 	40
 9 	Mishi Kobe Niku 	4 	6 	18 - 500 g pkgs. 	97
-
+</code>
 
 And a selection from the "OrderDetails" table:
+<code>
 OrderDetailID 	OrderID 	ProductID 	Quantity
 1 	10248 	11 	12
 2 	10248 	42 	10
@@ -1189,7 +1240,7 @@ OrderDetailID 	OrderID 	ProductID 	Quantity
 8 	10250 	65 	15
 9 	10251 	22 	6
 10 	10251 	57 	15
-
+</code>
 
 SQL ANY Examples: 
 
@@ -1325,17 +1376,21 @@ Demo Database:
 In this tutorial we will use the well-known Northwind sample database.
 
 Below is a selection from the "Customers" table:
+	
+<code>
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 1	Alfreds Futterkiste 	Maria Anders 	Obere Str. 57 	Berlin 	12209 	Germany
 2 	Ana Trujillo Emparedados y helados 	Ana Trujillo 	Avda. de la Constitución 2222 	México D.F. 	05021 	Mexico
 3 	Antonio Moreno Taquería 	Antonio Moreno 	Mataderos 2312 	México D.F. 	05023 	Mexico
-
+</code>
+	
 And a selection from the "Suppliers" table:
+<code>
 SupplierID 	SupplierName 	ContactName 	Address 	City 	Postal Code 	Country
 1 	Exotic Liquid 	Charlotte Cooper 	49 Gilbert St. 	Londona 	EC1 4SD 	UK
 2 	New Orleans Cajun Delights 	Shelley Burke 	P.O. Box 78934 	New Orleans 	70117 	USA
 3 	Grandma Kelly's Homestead 	Regina Murphy 	707 Oxford Rd. 	Ann Arbor 	48104 	USA
-
+</code>
 
 SQL INSERT INTO SELECT Examples:
 
@@ -1378,13 +1433,14 @@ SQL CASE Expression:
 Demo Database:
 
 Below is a selection from the "OrderDetails" table in the Northwind sample database:
+<code>
 OrderDetailID 	OrderID 	ProductID 	Quantity
 1 	10248 	11 	12
 2 	10248 	42 	10
 3 	10248 	72 	5
 4 	10249 	14 	9
 5 	10249 	51 	40
-
+</code>
 
 SQL CASE Examples
 
@@ -1414,11 +1470,13 @@ Example:
 
 SQL IFNULL(), ISNULL(), COALESCE(), and NVL() Functions: 
 
+<code>
 P_Id 	ProductName 	UnitPrice 	UnitsInStock 	UnitsOnOrder
 1 	Jarlsberg 	10.45 	16 	15
 2 	Mascarpone 	32.56 	23 	 
 3 	Gorgonzola 	15.67 	9 	20
-
+</code>
+	
 Look at the following SELECT statement:
 
 	SELECT ProductName, UnitPrice * (UnitsInStock + UnitsOnOrder)
@@ -1494,6 +1552,8 @@ Execute a Stored Procedure:
 Demo Database:
 
 Below is a selection from the "Customers" table in the Northwind sample database:
+	
+<code>
 CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 1
 
@@ -1504,7 +1564,7 @@ CustomerID 	CustomerName 	ContactName 	Address 	City 	PostalCode 	Country
 
 	Around the Horn 	Thomas Hardy 	120 Hanover Sq. 	London 	WA1 1DP 	UK
 5 	Berglunds snabbköp 	Christina Berglund 	Berguvsvägen 8 	Luleå 	S-958 22 	Sweden
-
+</code>
 
 Stored Procedure Example:
 
@@ -3320,17 +3380,17 @@ For nth highest salary-
          
          
 Patients Table:
-
+<code>
 Patient ID	Patient Name	Sex	Age	Address	                                 Postal Code	  State	      Country	RegDate	   DoctorID<br>
 01	        Sheela	      F	  23	 Flat no 201, Vasavi Heights, Yakutapura 	500023	       Telangana	  India	  03/03/2020	142<br>
 02	        Rehan	       M	  21	 Building no 2, Yelahanka	                560063	       Karnataka	  India	  13/11/2020	211<br>
 03	        Anay        	M	  56	 H No 1, Panipat	                         132140	       Haryana	    India	  12/12/2021	142<br>
 04	        Mahira	      F	  42	 House no 12, Gandhinagar	                382421	       Gujarat	    India	  28/01/2022	345<br>
 05	        Nishant     	M	  12	 Sunflower Heights, Thane	                400080	       Maharashtra	India	  05/01/2022	131<br>
-
+</code>
 
 PatientsCheckup Table: 
-
+<code>
 Patient ID	 BP	      Weight	 Consultation Fees<br>
 
 01	         121/80	  67	     300 <br>
@@ -3338,7 +3398,7 @@ Patient ID	 BP	      Weight	 Consultation Fees<br>
 03	         151/75	  55	     300 <br>
 04	         160/81	  61	     550 <br>
 05	         143/67	  78	     700<br>
-
+</code>
 
 ### Q1.  Write an SQL query to fetch the current date-time from the system.
 
