@@ -10,7 +10,7 @@ Topic:
 #
  [Cakephp 4 All Commands](#cakephp-cmds) 
  
- [Cakephp 4 MVC](#cakephp4-mvc)
+ [Cakephp 4 Controller And Model-> Tables](#cakephp4-mvc)
  
  [Cakephp 4 Form](#cakephp4-form)
  
@@ -20,7 +20,21 @@ Topic:
 <a name="cakephp4-mvc"></a>
 ### Cakephp 4 MVC
 
-Table: 
+Create Table: 
+
+    CREATE TABLE articles (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        user_id INT NOT NULL,
+        title VARCHAR(255) NOT NULL,
+        slug VARCHAR(191) NOT NULL,
+        body TEXT,
+        published BOOLEAN DEFAULT FALSE,
+        created DATETIME,
+        modified DATETIME,
+        UNIQUE KEY (slug)
+    ) CHARSET=utf8mb4;
+    Table: 
+
 
 ArticlesTAble
 
