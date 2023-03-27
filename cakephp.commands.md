@@ -33,8 +33,10 @@ Create Table:
         modified DATETIME,
         UNIQUE KEY (slug)
     ) CHARSET=utf8mb4;
-    Table: 
 
+
+
+Table: 
 
 ArticlesTAble
 
