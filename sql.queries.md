@@ -1407,8 +1407,6 @@ The following SQL statement copies data from more than one table into a new tabl
 	WHERE 1 = 0;
 
 
-
-
 SQL INSERT INTO SELECT Statement: 
 
 INSERT INTO SELECT Syntax:
@@ -2478,7 +2476,6 @@ AUTO INCREMENT Field:
 Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
 
 
-
 Syntax for MySQL
 
 The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
@@ -2537,7 +2534,6 @@ Syntax for Oracle
 	INSERT INTO Persons (Personid,FirstName,LastName)
 	VALUES (seq_person.nextval,'Lars','Monsen'); 
 
-
 SQL Working With Dates: 
 
 SQL Date Data Types:
@@ -2567,13 +2563,11 @@ OrderId 	ProductName 	OrderDate
 
  	SELECT * FROM Orders WHERE OrderDate='2008-11-11'
 
-
 The result-set will look like this:
 
 OrderId 	ProductName 	OrderDate
 1 	Geitost 	2008-11-11
 3 	Mozzarella di Giovanni 	2008-11-11
-
 
 
 Now, assume that the "Orders" table looks like this (notice the added time-component in the "OrderDate" column):
@@ -2587,7 +2581,6 @@ OrderId 	ProductName 	OrderDate
 If we use the same SELECT statement as above:
 
 	SELECT * FROM Orders WHERE OrderDate='2008-11-11'
-
 
 SQL Views: 
 
@@ -2611,11 +2604,9 @@ Example
 	FROM Customers
 	WHERE Country = 'Brazil'; 
 
-
 Example
 
 	SELECT * FROM [Brazil Customers]; 
-
 
 Example
 
@@ -2649,7 +2640,6 @@ Example
 	FROM Customers
 	WHERE Country = 'Brazil'; 
 
-
 SQL Dropping a View
 
 A view is deleted with the DROP VIEW statement.
@@ -2661,16 +2651,13 @@ Example:
 
 	DROP VIEW [Brazil Customers]; 
 
-
 SQL Injection: 
-
 
 	SQL injection is a code injection technique that might destroy your database.
 	SQL injection is one of the most common web hacking techniques.
 	SQL injection is the placement of malicious code in SQL statements, via web page input.
 
 SQL in Web Pages:
-
 
 Example
 
@@ -2682,9 +2669,7 @@ SQL Injection Based on 1=1 is Always True
 
 	SELECT * FROM Users WHERE UserId = 105 OR 1=1; 
 
-
 	SELECT UserId, Name, Password FROM Users WHERE UserId = 105 or 1=1; 
-
 
 SQL Injection Based on ""="" is Always True
 
@@ -2715,8 +2700,6 @@ The code at the server will create a valid SQL statement like this:
 Result
 
 	SELECT * FROM Users WHERE Name ="" or ""="" AND Pass ="" or ""=""
-
-
 
 
 SQL Injection Based on Batched SQL Statements 
@@ -2805,17 +2788,7 @@ INSERT INTO STATEMENT IN PHP:
 	$stmt->bindParam(':cit', $txtCit);
 	$stmt->execute();
 
-
-
- 
- 
  :end:
- 
- 
- 
- 
- 
- 
  
 
 [Go To Top](#top)
@@ -2847,11 +2820,9 @@ Here is the query
     ON e.DeptId = d.DeptID 
     GROUP BY DeptName;
 
-
 Question 3: Write SQL Query to display the current date?
 
     SELECT GetDate(); 
-
 
 Question 4: Write an SQL Query to check whether the date passed to Query is the date of the given format or not?
 
@@ -2860,14 +2831,11 @@ Question 4: Write an SQL Query to check whether the date passed to Query is the 
 
 It will return 0 because the passed date is not in the correct format.
 
-
 Question 5: Write an SQL Query to print the name of the distinct employee whose DOB is between 01/01/1960 to 31/12/1975.
 
     SELECT DISTINCT EmpName 
     FROM Employees 
     WHERE DOB BETWEEN ‘01/01/1960’ AND ‘31/12/1975’;
-
-
 
 Question 6: Write an SQL Query to find the number of employees according to gender whose DOB is between 01/01/1960 to 31/12/1975.
 
@@ -2884,7 +2852,6 @@ Question 7: Write an SQL Query to find an employee whose salary is equal to or g
     SELECT EmpName FROM  Employees WHERE  Salary>=10000;
 
 
-
 Question 8: Write an SQL Query to find the name of an employee whose name Start with ‘M’
 
     SELECT * FROM Employees WHERE EmpName like 'M%';
@@ -2893,8 +2860,6 @@ Question 8: Write an SQL Query to find the name of an employee whose name Start 
 Question 9: find all Employee records containing the word "Joe", regardless of whether it was stored as JOE, Joe, or joe.
 
     SELECT * from Employees  WHERE  UPPER(EmpName) like '%JOE%';
-
-
 
 Question 10: Write an SQL Query to find the year from date.
 
@@ -2908,7 +2873,6 @@ Question 11: Write SQL Query to find duplicate rows in a database? and then writ
     FROM EMP b 
     WHERE a.empno=b.empno)
 
-
 to Delete:
 
     DELETE FROM emp a 
@@ -2921,9 +2885,7 @@ Question 12: There is a table which contains two columns Student and Marks, you 
     FROM table 
     WHERE marks > SELECT AVG(marks) from table)
 
-
 SQL Query Interview Questions and Answers
-
 
 Question 13: How do you find all employees who are also managers?
 You have given a standard employee table with an additional column mgr_id, which contains the employee id of the manager.
@@ -2942,15 +2904,8 @@ this will show employee name and manager name in two columns like
 Question 14: You have a composite index of three columns, and you only provide the value of two columns in the WHERE clause of a select query? Will Index be used for this operation? For example, if Index is on EmpId, EmpFirstName, and EmpSecondName and you write a query like
 
     SELECT * FROM Employee WHERE EmpId=2 and EmpFirstName='Radhe'
-
-
   
  :end:
-
-
-
-
-
 
 [Go To Top](#top)
 <a name="sql_interviews_questions_40"></a>
@@ -2982,21 +2937,16 @@ SQL Query Interview Questions for Freshers:
     FROM EmployeeDetails
     WHERE ManagerId = 986;
 
-
-
 ###  Ques.2. Write an SQL query to fetch the different projects available from the EmployeeSalary table.
 
     SELECT DISTINCT(Project)
     FROM EmployeeSalary;
-
 
 ### Ques.3. Write an SQL query to fetch the count of employees working in project ‘P1’.
 
     SELECT COUNT(*) 
     FROM EmployeeSalary 
     WHERE Project = 'P1';
-
-
 
 ### Ques.4. Write an SQL query to find the maximum, minimum, and average salary of the employees.
 
@@ -3005,14 +2955,11 @@ SQL Query Interview Questions for Freshers:
     AVG(Salary) 
     FROM EmployeeSalary;
 
-
 ### Ques.5. Write an SQL query to find the employee id whose salary lies in the range of 9000 and 15000.
 
     SELECT EmpId, Salary
     FROM EmployeeSalary
     WHERE Salary BETWEEN 9000 AND 15000;
-
-
 
 ### Ques.6. Write an SQL query to fetch those employees who live in Toronto and work under the manager with ManagerId – 321.
 
@@ -3026,13 +2973,11 @@ SQL Query Interview Questions for Freshers:
     FROM EmployeeDetails
     WHERE City='California' OR ManagerId='321';
     
-
 ### Ques.8. Write an SQL query to fetch all those employees who work on Projects other than P1.
 
     SELECT EmpId
     FROM EmployeeSalary
     WHERE NOT Project='P1';
-
 
 Or using the ‘not equal to’ operator-
 
@@ -3043,21 +2988,17 @@ Or using the ‘not equal to’ operator-
 For the difference between NOT and <> SQL operators, check this link – Difference between the NOT and != operators.
 
 
-
 ### Ques.9. Write an SQL query to display the total salary of each employee adding the Salary with Variable value.
 
     SELECT EmpId,
     Salary+Variable as TotalSalary 
     FROM EmployeeSalary;
 
-
-
 ### Ques.10. Write an SQL query to fetch the employees whose name begins with any two characters, followed by a text “hn” and ends with any sequence of characters.
 
     SELECT FullName
     FROM EmployeeDetails
     WHERE FullName LIKE ‘__hn%’;
-
 
 ### Ques.11. Write an SQL query to fetch all the EmpIds which are present in either of the tables – ‘EmployeeDetails’ and ‘EmployeeSalary’.
 
@@ -3066,14 +3007,11 @@ For the difference between NOT and <> SQL operators, check this link – Differe
     UNION 
     SELECT EmpId FROM EmployeeSalary;
 
-
-
 ### Ques.12. Write an SQL query to fetch common records between two tables.
 
     SELECT * FROM EmployeeSalary
     INTERSECT
     SELECT * FROM ManagerSalary;
-
 
 MySQL – Since MySQL doesn’t have INTERSECT operator so we can use the subquery-
 
@@ -3098,16 +3036,12 @@ MySQL – Since MySQL doesn’t have a MINUS operator so we can use LEFT join-
     ManagerSalary USING (EmpId)
     WHERE ManagerSalary.EmpId IS NULL;
 
-
-
 ### Ques.14. Write an SQL query to fetch the EmpIds that are present in both the tables –   ‘EmployeeDetails’ and ‘EmployeeSalary.
 
     SELECT EmpId FROM 
     EmployeeDetails 
     where EmpId IN 
     (SELECT EmpId FROM EmployeeSalary);
-
-
 
 ### Ques.15. Write an SQL query to fetch the EmpIds that are present in EmployeeDetails but not in EmployeeSalary.
 
@@ -3117,27 +3051,20 @@ MySQL – Since MySQL doesn’t have a MINUS operator so we can use LEFT join-
     where EmpId Not IN 
     (SELECT EmpId FROM EmployeeSalary);
 
-
-
 ### Ques.16. Write an SQL query to fetch the employee’s full names and replace the space with ‘-’.
 
     SELECT REPLACE(FullName, ' ', '-') 
     FROM EmployeeDetails;
-
-
 
 ### Ques.17. Write an SQL query to fetch the position of a given character(s) in a field.
 
     SELECT INSTR(FullName, 'Snow')
     FROM EmployeeDetails;
 
-
-
 ### Ques.18. Write an SQL query to display both the EmpId and ManagerId together.
 
     SELECT CONCAT(EmpId, ManagerId) as NewId
     FROM EmployeeDetails;
-
 
 ### Ques.19. Write a query to fetch only the first name(string before space) from the FullName column of the EmployeeDetails table.
 
@@ -3146,19 +3073,15 @@ MySQL – using MID
    SELECT MID(FullName, 1, LOCATE(' ',FullName)) 
    FROM EmployeeDetails;
 
-
 SQL Server – using SUBSTRING
 
     SELECT SUBSTRING(FullName, 1, CHARINDEX(' ',FullName)) 
     FROM EmployeeDetails;
 
-
-
 ### Ques.20. Write an SQL query to uppercase the name of the employee and lowercase the city values.
 
     SELECT UPPER(FullName), LOWER(City) 
     FROM EmployeeDetails;
-
 
 ### Ques.21. Write an SQL query to find the count of the total occurrences of a particular character – ‘n’ in the FullName field.
 
@@ -3166,20 +3089,16 @@ SQL Server – using SUBSTRING
     LENGTH(FullName) - LENGTH(REPLACE(FullName, 'n', ''))
     FROM EmployeeDetails;
 
-
-
 ### Ques.22. Write an SQL query to update the employee names by removing leading and trailing spaces.
 
     UPDATE EmployeeDetails 
     SET FullName = LTRIM(RTRIM(FullName));
-
 
 ### Ques.23. Fetch all the employees who are not working on any project.
 
     SELECT EmpId 
     FROM EmployeeSalary 
     WHERE Project IS NULL;
-
 
 ### Ques.24. Write an SQL query to fetch employee names having a salary greater than or equal to 5000 and less than or equal to 10000.
 
@@ -3189,19 +3108,15 @@ SQL Server – using SUBSTRING
     (SELECT EmpId FROM EmployeeSalary 
     WHERE Salary BETWEEN 5000 AND 10000);
 
-
-
 ### Ques.25. Write an SQL query to find the current date-time.
 
 MySQL-
 
     SELECT NOW();
 
-
 SQL Server-
 
     SELECT getdate();
-
 
 Oracle-
 
@@ -3214,12 +3129,10 @@ Oracle-
     WHERE DateOfJoining BETWEEN '2020/01/01'
     AND '2020/12/31';
 
-
 Also, we can extract the year part from the joining date (using YEAR in MySQL)-
 
     SELECT * FROM EmployeeDetails 
     WHERE YEAR(DateOfJoining) = '2020';
-
 
 ### Ques.27. Write an SQL query to fetch all employee records from the EmployeeDetails table who have a salary record in the EmployeeSalary table.
 
@@ -3228,14 +3141,12 @@ Also, we can extract the year part from the joining date (using YEAR in MySQL)-
     (SELECT * FROM EmployeeSalary S 
     WHERE  E.EmpId = S.EmpId);
 
-
 ### Ques.28. Write an SQL query to fetch the project-wise count of employees sorted by project’s count in descending order.
 
     SELECT Project, count(EmpId) EmpProjectCount
     FROM EmployeeSalary
     GROUP BY Project
     ORDER BY EmpProjectCount DESC;
-
 
 ### Ques.29. Write a query to fetch employee names and salary records. Display the employee details even if the salary record is not present for the employee.
 
@@ -3245,15 +3156,12 @@ Also, we can extract the year part from the joining date (using YEAR in MySQL)-
     EmployeeSalary S
     ON E.EmpId = S.EmpId;
 
-
-
 ### Ques.30. Write an SQL query to join 3 tables.
 
     SELECT column1, column2
     FROM TableA
     JOIN TableB ON TableA.Column3 = TableB.Column3
     JOIN TableC ON TableA.Column4 = TableC.Column4;
-
 
 SQL Query Interview Questions for Experienced: 
 
@@ -3314,7 +3222,6 @@ Using a user-defined variable in MySQL-
           JOIN (SELECT @rowNumber:= 0) r
          ) t 
     WHERE rn % 2 = 1;
-
 
 
 ### Ques.35. Write an SQL query to fetch only even rows from the table.
@@ -3418,15 +3325,7 @@ For nth highest salary-
                 )
 
 
-
-
 :end: 
-
-
-
-
-
-
 
 
 [Go To Top](#top)
@@ -3534,8 +3433,6 @@ To create an Empty table
     CREATE TABLE NewPatientsTable 
     SELECT * FROM Patients WHERE 1=0;
 
-
-
 Create a table consisting of data
 
 -USING SELECT command
@@ -3545,7 +3442,6 @@ Create a table consisting of data
  – USING CREATE command IN MySQL 
  
     CREATE TABLE NewPatientsTable AS SELECT * FROM Patients;
-
 
 ### Q6. Write a query to fetch even and odd rows from a table.
 
@@ -3598,7 +3494,6 @@ In case you wish to find the odd rows, then the remainder when divided by 2 shou
     WHERE P.State = P1.State AND P.PatientID != P1.PatientID;
 
 ### Q10. Write a query to retrieve two minimum and maximum consultation fees from the PatientsCheckup Table.
-
   
   – TWO MINIMUM CONSULTATION FEES
   
@@ -3611,8 +3506,6 @@ In case you wish to find the odd rows, then the remainder when divided by 2 shou
       SELECT DISTINCT ConsultationFees FROM PatientsCheckup P1
        WHERE 2 >= (SELECT COUNT(DISTINCT ConsultationFees)FROM PatientsCheckup P2
         WHERE P1.ConsultationFees <= P2.ConsultationFees) ORDER BY P1.ConsultationFees DESC;
-
-
 
 ### Q11. Write a query to fetch patient details along with the weight fees, even if the details are missing.
 
@@ -3753,11 +3646,7 @@ USING SUBSTRING
 
     SELECT * FROM Patients ORDER BY PatientName ASC, State DESC;
 
-
-
 :end:
-
-
 
 
 <a name="top"></a>
@@ -3785,7 +3674,6 @@ There are other ways :
     FROM employee); 
 
  
-
     SELECT name, MAX(salary) AS salary 
     FROM employee 
     WHERE salary <> (SELECT MAX(salary) 
@@ -3839,7 +3727,6 @@ Generic query will be
     WHERE salary= (SELECT DISTINCT(salary) 
     FROM employee ORDER BY salary DESC LIMIT n-1,1);
 
-
 #EMPLOYEE WITH HIGHEST SALARY
 
     SELECT name, salary FROM employee ORDER BY salary DESC LIMIT 1; 
@@ -3854,7 +3741,6 @@ Generic query will be
 
 :end: 
     
-
 #
 [Top](#top)
 <a name="mysql-transactions"></a>
@@ -3873,46 +3759,36 @@ MySQL provides us with the following important statement to control transactions
 
 By default, MySQL automatically commits the changes permanently to the database. To force MySQL not to commit changes automatically, you use the following statement:
 
-
-
 	SET autocommit = 0;
 	OR
 	SET autocommit = OFF
 
-
 You use the following statement to enable the autocommit mode explicitly:
-
 
 	SET autocommit = 1;
         OR
         SET autocommit = ON;
 
 
-MySQL transaction example:
+****MySQL transaction example:
 
 We will use the  orders and orderDetails table from the sample database for the demonstration.
-<code>
-orders      
-      
-orderNumber
-orderDate
-requiredDate 
-shippedDate
-status
-comments
-customerNumber  
-</code>
 
+orders          
+	orderNumber
+	orderDate
+	requiredDate 
+	shippedDate
+	status
+	comments
+	customerNumber  
 
-<code>
 orderdetails
-orderNumber
-productCode
-quantityOrderd
-priceEach
-orderLineNumber
-</code>
-
+	orderNumber
+	productCode
+	quantityOrderd
+	priceEach
+	orderLineNumber
 
 
 COMMIT example: 
@@ -3969,10 +3845,8 @@ VALUES(@orderNumber,'S18_1749', 30, '136', 1),
 COMMIT;
 <code>
 
-
 	@orderNumber:=IFNULL(MAX(orderNumber),0)+1
 	10425
-
 
 To get the newly created sales order, you use the following query:
 
@@ -3997,20 +3871,15 @@ WHERE
     a.ordernumber = 10426;
 </code>
 
-
-
-ROLLBACK example
+***ROLLBACK example:
 
 First, log in to the MySQL database server and delete data from the orders table:
 
+	mysql> START TRANSACTION;
+	Query OK, 0 rows affected (0.00 sec)
 
-<code>
-mysql> START TRANSACTION;
-Query OK, 0 rows affected (0.00 sec)
-
-mysql> DELETE FROM orders;
-Query OK, 327 rows affected (0.03 sec)
-</code>
+	mysql> DELETE FROM orders;
+	Query OK, 327 rows affected (0.03 sec)
 
 As you can see from the output, MySQL confirmed that all the rows from the orders table were deleted.
 
@@ -4026,21 +3895,16 @@ mysql> SELECT COUNT(*) FROM orders;
 1 row in set (0.00 sec)
 </code>
 
-
 In this second session, we still can see the data from the orders table.
 
 We have made the changes in the first session. However, the changes are not permanent. In the first session, we can either commit or roll back the changes.
 
 For the demonstration purpose, we will roll back the changes in the first session.
 
-
-<code>
-mysql> ROLLBACK;
-Query OK, 0 rows affected (0.04 sec)
-</code>
+	mysql> ROLLBACK;
+	Query OK, 0 rows affected (0.04 sec)
 
 in the first session, we will also verify the contents of the orders table:
-
 
 <code>
 mysql> SELECT COUNT(*) FROM orders;	
@@ -4054,11 +3918,8 @@ mysql> SELECT COUNT(*) FROM orders;
 
 As you can see clearly from the output, the changes have been rolled back.
 
-
 :end:
 
-	
-	
 	
 [Top](#top)
 <a name="mysql-triggers"></a>
@@ -4087,69 +3948,60 @@ Contents:
     Delete a MySQL trigger
 
 
-#
 //Creating two tables users and usersbackup
 //When delete or insert or update data into users trigger is called.
 
 //Example when delete data from users table, inserted into usersdetails table
 	
-<code>
-create table users (
- id int not null auto_increment,
- name varchar(20),
- primary key(id)
-);
+	create table users (
+	 id int not null auto_increment,
+	 name varchar(20),
+	 primary key(id)
+	);
 
 
-create table usersbackup (
-id int not null auto_increment,
-name varchar(20),
-primary key(id)
-);
-</code>
+	create table usersbackup (
+	id int not null auto_increment,
+	name varchar(20),
+	primary key(id)
+	);
 
 //Check this statements 
-<code>
-create trigger trigName after DELETE on users
 
-BEGIN
-insert into usersdetails (:old.id,:old.name) 
-END
-</code>
+	create trigger trigName after DELETE on users
+
+	BEGIN
+	insert into usersdetails (:old.id,:old.name) 
+	END
 
 
 OR
 Here is a simple example:
-<code>
-mysql> CREATE TRIGGER ins_sum BEFORE INSERT ON account
-    -> FOR EACH ROW SET @sum = @sum + NEW.amount;
-Query OK, 0 rows affected (0.06 sec)
-</code>
+
+	mysql> CREATE TRIGGER ins_sum BEFORE INSERT ON account
+	    -> FOR EACH ROW SET @sum = @sum + NEW.amount;
+	Query OK, 0 rows affected (0.06 sec)
+
 
 Example:
 
 Trigger Name: emp_details_AINS
 Default Trigger code details:
 
-<code>
-USE `dbName`;	
-DELIMITER 
-$$
-CREATE TRIGGER `emp_details_AINS` 
-AFTER INSERT 
-ON emp_details FOR EACH ROW
-</code>
+	USE `dbName`;	
+	DELIMITER 
+	$$
+	CREATE TRIGGER `emp_details_AINS` 
+	AFTER INSERT 
+	ON emp_details FOR EACH ROW
+
 -- Edit trigger body code below this line. Do not edit lines above this one
 
 After completing the code, click on apply button.
-	
-	
+		
 :end:
 	
 [Top](#top)
-
-
-
 
 
 <a name="bottom"></a>
