@@ -23,6 +23,7 @@ $$\color{purple}{SQL \ Queries}$$
 
    [Top 14 Frequently asked SQL Query Interview Questions](#more_examples_on_highest_salarary)
   
+   [MySql Transactions](#top)
     
 
 Searching Key Words: 
@@ -3798,6 +3799,211 @@ Generic query will be
 
 :end: 
     
+
+#
+[Top](#top)
+<a name="mysql-transactions"></a>
+
+*MySQL Transaction:
+
+
+MySQL transaction statements
+
+MySQL provides us with the following important statement to control transactions:
+
+    To start a transaction, you use the START TRANSACTION  statement. The BEGIN or  BEGIN WORK are the aliases of the START TRANSACTION.
+    To commit the current transaction and make its changes permanent,  you use the COMMIT statement.
+    To roll back the current transaction and cancel its changes, you use the ROLLBACK statement.
+    To disable or enable the auto-commit mode for the current transaction, you use the SET autocommit statement.
+
+By default, MySQL automatically commits the changes permanently to the database. To force MySQL not to commit changes automatically, you use the following statement:
+
+
+
+	SET autocommit = 0;
+	OR
+	SET autocommit = OFF
+
+
+You use the following statement to enable the autocommit mode explicitly:
+
+
+	SET autocommit = 1;
+        OR
+        SET autocommit = ON;
+
+
+MySQL transaction example:
+
+We will use the  orders and orderDetails table from the sample database for the demonstration.
+<code>
+orders      
+      
+orderNumber
+orderDate
+requiredDate 
+shippedDate
+status
+comments
+customerNumber  
+</code>
+
+
+<code>
+orderdetails
+orderNumber
+productCode
+quantityOrderd
+priceEach
+orderLineNumber
+</code>
+
+
+
+COMMIT example: 
+
+In order to use a transaction, you first have to break the SQL statements into logical portions and determine when data should be committed or rolled back.
+
+The following illustrates the step of creating a new sales order:
+
+    First, start a transaction by using the START TRANSACTION  statement.
+    Next, select the latest sales order number from the orders table and use the next sales order number as the new sales order number.
+    Then, insert a new sales order into the orders table.
+    After that, insert sales order items into the orderdetails table.
+    Finally, commit the transaction using the COMMIT statement.
+
+Optionally, you can select data from both orders and orderdetails tables to check the new sales order.
+
+The following is the script that performs the above steps:
+
+
+<code>
+-- 1. start a new transaction
+START TRANSACTION;
+
+-- 2. Get the latest order number
+SELECT 
+    @orderNumber:=MAX(orderNUmber)+1
+FROM
+    orders;
+
+-- 3. insert a new order for customer 145
+INSERT INTO orders(orderNumber,
+                   orderDate,
+                   requiredDate,
+                   shippedDate,
+                   status,
+                   customerNumber)
+VALUES(@orderNumber,
+       '2005-05-31',
+       '2005-06-10',
+       '2005-06-11',
+       'In Process',
+        145);
+        
+-- 4. Insert order line items
+INSERT INTO orderdetails(orderNumber,
+                         productCode,
+                         quantityOrdered,
+                         priceEach,
+                         orderLineNumber)
+VALUES(@orderNumber,'S18_1749', 30, '136', 1),
+      (@orderNumber,'S18_2248', 50, '55.09', 2); 
+      
+-- 5. commit changes    
+COMMIT;
+<code>
+
+
+	@orderNumber:=IFNULL(MAX(orderNumber),0)+1
+	10425
+
+
+To get the newly created sales order, you use the following query:
+
+<code>
+SELECT 
+    a.orderNumber,
+    orderDate,
+    requiredDate,
+    shippedDate,
+    status,
+    comments,
+    customerNumber,
+    orderLineNumber,
+    productCode,
+    quantityOrdered,
+    priceEach
+FROM
+    orders a
+        INNER JOIN
+    orderdetails b USING (orderNumber)
+WHERE
+    a.ordernumber = 10426;
+</code>
+
+
+
+ROLLBACK example
+
+First, log in to the MySQL database server and delete data from the orders table:
+
+
+<code>
+mysql> START TRANSACTION;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> DELETE FROM orders;
+Query OK, 327 rows affected (0.03 sec)
+</code>
+
+As you can see from the output, MySQL confirmed that all the rows from the orders table were deleted.
+
+Second, log in to the MySQL database server in a separate session and query data from the orders table:
+
+<code>
+mysql> SELECT COUNT(*) FROM orders;
++----------+
+| COUNT(*) |
++----------+
+|      327 |
++----------+
+1 row in set (0.00 sec)
+</code>
+
+
+In this second session, we still can see the data from the orders table.
+
+We have made the changes in the first session. However, the changes are not permanent. In the first session, we can either commit or roll back the changes.
+
+For the demonstration purpose, we will roll back the changes in the first session.
+
+
+<code>
+mysql> ROLLBACK;
+Query OK, 0 rows affected (0.04 sec)
+</code>
+
+in the first session, we will also verify the contents of the orders table:
+
+
+<code>
+mysql> SELECT COUNT(*) FROM orders;	
++----------+
+| COUNT(*) |
++----------+
+|      327 |
++----------+
+1 row in set (0.00 sec)
+</code>
+
+As you can see clearly from the output, the changes have been rolled back.
+
+
+:end:
+
+[Top](#top)
+
 
 
 
