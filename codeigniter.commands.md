@@ -18,7 +18,6 @@ Topic:
  [Codeigniter 4 Calling Helper Classes](#helpers)
  
   
-#  
 
 
 #
@@ -26,18 +25,18 @@ Codeignier 4 Basic Commands:
 
 Migrations: 
 
-<code>
-php spark migrate
-For Unix:
-php spark migrate -g test -n Acme\\Blog
 
-For Windows:
-php spark migrate -g test -n Acme\Blog
-php spark migrate:rollback               // -g -b -f
-php spark migrate:refresh               // -g -n --all -f
-php spark migrate:status
-php spark make:migration <class> [options]    // --session  --table   --dbgroup  --namespace  --suffix
-</code>
+	php spark migrate
+	For Unix:
+	php spark migrate -g test -n Acme\\Blog
+
+	For Windows:
+	php spark migrate -g test -n Acme\Blog
+	php spark migrate:rollback               // -g -b -f
+	php spark migrate:refresh               // -g -n --all -f
+	php spark migrate:status
+	php spark make:migration <class> [options]    // --session  --table   --dbgroup  --namespace  --suffix
+
 
 
 #
@@ -56,17 +55,17 @@ php spark make:migration <class> [options]    // --session  --table   --dbgroup 
     Step 8: Show Data List & Delete
     Step 9: Edit and Update Data
 
-<code>
+
 	composer create-project codeigniter4/appstarter
 	cd codeigniter-crud-example
-</code>
+
 
 Open app/Config/Boot/development.php file and set the display_errors to 1 instead of 0. Repeat the same process in app/Config/Boot/production.php file.
 
 
-<code>
+
 	ini_set('display_errors', '1');
-</code>
+
 
 
 DB Config: 
@@ -96,25 +95,20 @@ public $default = [
 
 </code>
 
-
-<code>
-# MAMPP
-public $default = [
-  ...
-     'hostname' => '/Applications/MAMP/tmp/mysql/mysql.sock',
-  ...
-]
-# XAMPP
-public $default = [
-  ...
-     'hostname' => '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',
-  ...
-]
-</code>
-
+	# MAMPP
+	public $default = [
+	  ...
+	     'hostname' => '/Applications/MAMP/tmp/mysql/mysql.sock',
+	  ...
+	]
+	# XAMPP
+	public $default = [
+	  ...
+	     'hostname' => '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',
+	  ...
+	]
 
 Create New Model:
-
 
 	<?php 
 	namespace App\Models;
@@ -209,7 +203,6 @@ Codeigniter Insert Data in Database Example:
 
 
 app/Views/add_user.php
-
 
 	<!DOCTYPE html>
 	<html>
