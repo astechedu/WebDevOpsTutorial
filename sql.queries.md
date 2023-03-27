@@ -24,7 +24,8 @@ $$\color{purple}{SQL \ Queries}$$
    [Top 14 Frequently asked SQL Query Interview Questions](#more_examples_on_highest_salarary)
   
    [MySql Transactions](#mysql-transactions)
-    
+   
+   [MySql Triggers](#mysql-triggers)
 
 Searching Key Words: 
   [Create Database](#create_database) [Drop Database](#drop_database) 
@@ -80,6 +81,60 @@ SELECT name,salary from users where salary < (select salary from users order by 
 update users 
 set salary = 6000, city = "testing" where id = 6;
 </code>
+	
+//Select data row wise
+<code>
+select *from users where rownumber > 4
+</code>
+	
+//Any
+<code>
+SELECT * from users where salary = ANY (select salary from users where salary > 2000);
+</code>
+	
+//Alter table commands:
+
+ALTER TABLE table_name
+<code>
+ADD column_name datatype; 
+</code>
+or
+<code>
+DROP COLUMN column_name; 
+</code>
+or
+<code>	
+RENAME COLUMN old_name to new_name;
+</code>
+or
+<code>
+MODIFY column_name datatype;
+</code>	
+or
+<code>
+ALTER COLUMN column_name datatype; 
+</code>
+	
+Examples: 
+	
+<code>
+ALTER TABLE table_name
+</code>
+ADD Email varchar(255);
+</code>
+or
+<code>
+ADD DateOfBirth date;
+<code>
+or
+<code>
+DROP COLUMN Email;
+<code>
+or
+<code>
+DROP COLUMN DateOfBirth; 
+<code>
+	
  #
  Below is a selection from the "Customers" table:
  
@@ -4002,18 +4057,96 @@ As you can see clearly from the output, the changes have been rolled back.
 
 :end:
 
+	
+	
+	
 [Top](#top)
+<a name="mysql-triggers"></a>
+*MySql Triggers
+MySql Trigger: 
+
+A trigger is a set of actions that are run automatically when a specified change 
+operation (SQL INSERT, UPDATE, or DELETE statement) is performed on a specified table. 
+Triggers are useful for tasks such as enforcing business rules, validating input data, and keeping an audit trail.
+#
+
+Contents:
+
+    Uses for triggers
+    Benefits of using triggers in business
+    MySQL Triggers
+    Create MySQL triggers
+    Sample database, table, table structure, table records
+    Tool to create MySQL Triggers
+    MySQL Trigger : Example AFTER INSERT
+    MySQL Trigger : Example BEFORE INSERT
+    MySQL Trigger : Example AFTER UPDATE
+    MySQL Trigger : Example BEFORE UPDATE
+    MySQL Trigger : Example AFTER DELETE
+    How MySQL handle errors during trigger execution?
+    Delete a MySQL trigger
 
 
+#
+//Creating two tables users and usersbackup
+//When delete or insert or update data into users trigger is called.
+
+//Example when delete data from users table, inserted into usersdetails table
+	
+<code>
+create table users (
+ id int not null auto_increment,
+ name varchar(20),
+ primary key(id)
+);
 
 
+create table usersbackup (
+id int not null auto_increment,
+name varchar(20),
+primary key(id)
+);
+</code>
+
+//Check this statements 
+<code>
+create trigger trigName after DELETE on users
+
+BEGIN
+insert into usersdetails (:old.id,:old.name) 
+END
+</code>
 
 
+OR
+Here is a simple example:
+<code>
+mysql> CREATE TRIGGER ins_sum BEFORE INSERT ON account
+    -> FOR EACH ROW SET @sum = @sum + NEW.amount;
+Query OK, 0 rows affected (0.06 sec)
+</code>
 
+Example:
 
+Trigger Name: emp_details_AINS
+Default Trigger code details:
 
+<code>
+USE `dbName`;	
+DELIMITER 
+$$
+CREATE TRIGGER `emp_details_AINS` 
+AFTER INSERT 
+ON emp_details FOR EACH ROW
+</code>
+-- Edit trigger body code below this line. Do not edit lines above this one
 
-
+After completing the code, click on apply button.
+	
+	
+:end:
+	
+[Top](#top)
 
 
 
