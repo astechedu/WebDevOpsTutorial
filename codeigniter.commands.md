@@ -502,8 +502,9 @@ Files:
 //2. FormModel
 //3. contact_form.php
 
-<code>
-	<?php 
+
+FormController.php
+		
 	namespace App\Controllers;
 	use App\Models\FormModel;
 	use CodeIgniter\Controller;
@@ -539,8 +540,9 @@ Files:
 	    }
 	}
 
-</code>
 
+FormModel.php
+		
 	<?php 
 	namespace App\Models;
 	use CodeIgniter\Model;
@@ -552,6 +554,7 @@ Files:
 	}
 
 
+contact_form.php
 
 	<!doctype html>
 	<html lang="en">
