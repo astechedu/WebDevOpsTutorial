@@ -494,7 +494,7 @@ Loading in View:
 #
 [Top](#top)
 <a name="ci4-form"></a>
-# Codeigniter 4 Form Validation with Example
+# Codeigniter 4 Form Validation, Contact Form & Save Data Example
 
 Files: 
 
@@ -503,115 +503,115 @@ Files:
 3. contact_form.php
 
 
-<?php 
-namespace App\Controllers;
-use App\Models\FormModel;
-use CodeIgniter\Controller;
-class FormController extends Controller
-{
-    public function index() {
-        helper(['form']);
-        $data = [];
-        return view('contact_form');
-    }
- 
-    public function store() {
-        helper(['form']);
-        $rules = [
-            'name' => 'required|min_length[3]',
-            'email' => 'required|valid_email',
-            'phone' => 'required|numeric|max_length[10]'
-        ];
-          
-        if($this->validate($rules)){
-            $formModel = new FormModel();
-            $data = [
-                'name'  => $this->request->getVar('name'),
-                'email'  => $this->request->getVar('email'),
-                'phone'  => $this->request->getVar('phone'),
-            ];
-            $formModel->save($data);
-            return redirect()->to('/contact-form');
-        }else{
-            $data['validation'] = $this->validator;
-            echo view('contact_form', $data);
-        }        
-    }
-}
+	<?php 
+	namespace App\Controllers;
+	use App\Models\FormModel;
+	use CodeIgniter\Controller;
+	class FormController extends Controller
+	{
+	    public function index() {
+		helper(['form']);
+		$data = [];
+		return view('contact_form');
+	    }
+
+	    public function store() {
+		helper(['form']);
+		$rules = [
+		    'name' => 'required|min_length[3]',
+		    'email' => 'required|valid_email',
+		    'phone' => 'required|numeric|max_length[10]'
+		];
+
+		if($this->validate($rules)){
+		    $formModel = new FormModel();
+		    $data = [
+			'name'  => $this->request->getVar('name'),
+			'email'  => $this->request->getVar('email'),
+			'phone'  => $this->request->getVar('phone'),
+		    ];
+		    $formModel->save($data);
+		    return redirect()->to('/contact-form');
+		}else{
+		    $data['validation'] = $this->validator;
+		    echo view('contact_form', $data);
+		}        
+	    }
+	}
 
 
-<?php 
-namespace App\Models;
-use CodeIgniter\Model;
-class FormModel extends Model
-{
-    protected $table = 'users';
-    protected $primaryKey = 'id';
-    protected $allowedFields = ['name', 'email', 'phone'];
-}
+	<?php 
+	namespace App\Models;
+	use CodeIgniter\Model;
+	class FormModel extends Model
+	{
+	    protected $table = 'users';
+	    protected $primaryKey = 'id';
+	    protected $allowedFields = ['name', 'email', 'phone'];
+	}
 
 
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Codeigniter 4 Form Validation Example - positronx.io</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <style>
-    .container {
-      max-width: 550px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container mt-5">
-    <h1>Register</h1>
-    <?php $validation = \Config\Services::validation(); ?>
-    <form action="<?php echo base_url(); ?>/FormController/store" method="post">
+	<!doctype html>
+	<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <title>Codeigniter 4 Form Validation Example - positronx.io</title>
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	  <style>
+	    .container {
+	      max-width: 550px;
+	    }
+	  </style>
+	</head>
+	<body>
+	  <div class="container mt-5">
+	    <h1>Register</h1>
+	    <?php $validation = \Config\Services::validation(); ?>
+	    <form action="<?php echo base_url(); ?>/FormController/store" method="post">
 
-      <div class="form-group">
-        <label>Name</label>
-        <input type="text" name="name" class="form-control">
-        <!-- Error -->
-        <?php if($validation->getError('name')) {?>
-            <div class='alert alert-danger mt-2'>
-              <?= $error = $validation->getError('name'); ?>
-            </div>
-        <?php }?>
-      </div>
-       
-      <div class="form-group">
-        <label>Email</label>
-        <input type="text" name="email" class="form-control">
-        <!-- Error -->
-        <?php if($validation->getError('email')) {?>
-            <div class='alert alert-danger mt-2'>
-              <?= $error = $validation->getError('email'); ?>
-            </div>
-        <?php }?>
-      </div>
+	      <div class="form-group">
+		<label>Name</label>
+		<input type="text" name="name" class="form-control">
+		<!-- Error -->
+		<?php if($validation->getError('name')) {?>
+		    <div class='alert alert-danger mt-2'>
+		      <?= $error = $validation->getError('name'); ?>
+		    </div>
+		<?php }?>
+	      </div>
 
-      <div class="form-group">
-        <label>Phone</label>
-        <input type="text" name="phone" class="form-control">
-        <!-- Error -->
-        <?php if($validation->getError('phone')) {?>
-            <div class='alert alert-danger mt-2'>
-              <?= $error = $validation->getError('phone'); ?>
-            </div>
-        <?php }?>
-      </div>
+	      <div class="form-group">
+		<label>Email</label>
+		<input type="text" name="email" class="form-control">
+		<!-- Error -->
+		<?php if($validation->getError('email')) {?>
+		    <div class='alert alert-danger mt-2'>
+		      <?= $error = $validation->getError('email'); ?>
+		    </div>
+		<?php }?>
+	      </div>
 
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-      </div>
+	      <div class="form-group">
+		<label>Phone</label>
+		<input type="text" name="phone" class="form-control">
+		<!-- Error -->
+		<?php if($validation->getError('phone')) {?>
+		    <div class='alert alert-danger mt-2'>
+		      <?= $error = $validation->getError('phone'); ?>
+		    </div>
+		<?php }?>
+	      </div>
 
-    </form>
-    
-  </div>
-</body>
-</html>
+	      <div class="form-group">
+		<button type="submit" class="btn btn-primary btn-block">Submit</button>
+	      </div>
+
+	    </form>
+
+	  </div>
+	</body>
+	</html>
 	
 :end:
