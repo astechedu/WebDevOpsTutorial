@@ -65,6 +65,7 @@ PHP_URL_PATH
 
 
 -------------------------------------------------------------------------
+1)
 
 //Adding 7 days to today's date
 
@@ -101,6 +102,23 @@ function dateDiffInDays($date1, $date2)
 
 Output: 
 Difference between two dates: 14 Days
+
+
+2) 
+
+ // Creates DateTime objects
+  $datetime1 = date_create('17-09-2018');
+  $datetime2 = date_create('25-09-2018');
+  
+  // Calculates the difference between DateTime objects
+  $interval = date_diff($datetime1, $datetime2);
+  
+  // Display the result
+  echo $interval->format('Difference between two dates: %R%a days');
+
+
+Output: 
+Difference between two dates: +8 days
 
 --------------------------------------------------------------------------
 
