@@ -627,9 +627,7 @@ contact_form.php
 <a name="ci4-modules-config"></a>
 # Codeigniter 4 Modules Configration: 
 
-
 1. Modules in root dir
-
 
 codeigniter4/
 app/
@@ -657,7 +655,6 @@ app/config/routes.php
 if (file_exists(ROOTPATH . 'modules/User/Config/Routes.php')){
   require ROOTPATH . 'modules/User/Config/Routes.php';
 }
-
 
 //Modules/User/Config/routes.php
 
@@ -710,9 +707,7 @@ class User extends BaseController
 //Modules/User/Views
 
   <h1>This is outer User module</h1>
-
-
-        
+       
         //Calling User Module index function
         //In Controller or in any
         //$mUser = new User();
@@ -720,15 +715,10 @@ class User extends BaseController
         //OR
         //User::index();
 
-
-
-
-
 2. Modules in app dir
 
 //Codeigniter4/app/config/routes.php   (All are same as given above)
 //Onlly this is added to...
-
 
 // include Admin module 
 if (file_exists(ROOTPATH . 'modules/Admin/Config/Routes.php')){
