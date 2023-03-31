@@ -73,6 +73,35 @@ echo $startDate = date( "Y-m-d", strtotime( "$dt +0 day" ) );     // PHP:  2023-
 
 echo $endDate = date( "Y-m-d", strtotime( "$dt +7 day" ) );       // PHP:  2023-04-07
 
+
+//Diff two dates
+function dateDiffInDays($date1, $date2) 
+  {
+      // Calculating the difference in timestamps
+      $diff = strtotime($date2) - strtotime($date1);
+  
+      // 1 day = 24 hours
+      // 24 * 60 * 60 = 86400 seconds
+      return abs(round($diff / 86400));
+  }
+  
+  // Start date
+  $date1 = "17-09-2018";	
+  
+  // End date
+  $date2 = "31-09-2018";
+  
+  // Function call to find date difference
+  $dateDiff = dateDiffInDays($date1, $date2);
+  
+  // Display the result
+  printf("Difference between two dates: "
+     . $dateDiff . " Days ");
+
+
+Output: 
+Difference between two dates: 14 Days
+
 --------------------------------------------------------------------------
 
 # PHP Installation On Ubuntu
