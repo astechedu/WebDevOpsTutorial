@@ -5,7 +5,7 @@
 
 Keys: 
   password hash, password identify, header, php installation on ubuntu,
-  php mysql connection,
+  php mysql connection,date
 ----------------------------------------
 ----------------------------------------
 ----------------------------------------
@@ -64,7 +64,15 @@ PHP_URL_PATH
 //sodium_crypto_pwhash_str() - Get an ASCII-encoded hash
 
 
--------------------------------------------
+-------------------------------------------------------------------------
+
+//Adding 7 days to today's date
+$dt = date("Y-m-d");
+echo $start = date( "Y-m-d", strtotime( "$dt +0 day" ) ); // PHP:  2009-03-04
+echo "<br>";
+echo $end = date( "Y-m-d", strtotime( "$dt +7 day" ) ); // PHP:  2009-03-31
+
+--------------------------------------------------------------------------
 
 # PHP Installation On Ubuntu
 
