@@ -497,12 +497,12 @@ Loading in View:
 # Codeigniter 4 Form Validation, Contact Form & Save Data Example
 
 Files: 
+		
+//1. FormController
+//2. FormModel
+//3. contact_form.php
 
-1. FormController
-2. FormModel
-3. contact_form.php
-
-
+<code>
 	<?php 
 	namespace App\Controllers;
 	use App\Models\FormModel;
@@ -539,6 +539,7 @@ Files:
 	    }
 	}
 
+</code>
 
 	<?php 
 	namespace App\Models;
