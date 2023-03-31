@@ -19,6 +19,7 @@ Topic:
  
  [Codeigniter 4 Contact Form & Save Data Example](#ci4-form)
   
+ [Codeigniter 4 Config User and Admin Modules Config](#ci4-modules-config) 
 
 
 #
@@ -618,4 +619,120 @@ contact_form.php
 	</body>
 	</html>
 	
+:end:
+
+#
+
+[Top](#top)
+<a name="ci4-modules-config"></a>
+# Codeigniter 4 Modules Configration: 
+
+
+1. Modules in root dir
+
+
+codeigniter4/
+app/
+modules/
+   -> User
+       -> Config -> routes.php
+       -> Controllers -> User.php
+       -> Models -> User.php
+       -> Views  -> index.php
+
+Config Module: 
+
+app/config/Autoload.php
+
+    public $psr4 = [
+        APP_NAMESPACE => APPPATH, // For custom app namespace
+        'Config'      => APPPATH . 'Config',
+        'Modules'     => ROOTPATH . 'modules',
+    ];
+
+
+app/config/routes.php
+      
+// include Outer User module 
+if (file_exists(ROOTPATH . 'modules/User/Config/Routes.php')){
+  require ROOTPATH . 'modules/User/Config/Routes.php';
+}
+
+
+//Modules/User/Config/routes.php
+
+<?php
+
+namespace Modules\User\Config;
+
+    $routes->group('/user', ['namespace' => 'Modules\User\Controllers'], function($routes)
+    {
+         $routes->get('/', 'User::index');
+    });
+?>
+
+//Modules/User/Controllers
+
+<?php 
+
+namespace Modules\User\Controllers;
+
+use App\Controllers\BaseController;
+
+class User extends BaseController
+{    
+    public  function __construct()
+    {    	
+    	echo " Outer User Module"."<br>";
+    }
+ 
+    public function index(){          
+
+        return view('index');
+    }
+}
+
+
+//Modules/User/Models
+
+    <?php
+     
+    namespace Modules\User\Models;
+     
+    use CodeIgniter\Model;
+     
+    class User extends Model
+    {
+        // Table
+        protected $table = 'users';
+    }
+
+//Modules/User/Views
+
+  <h1>This is outer User module</h1>
+
+
+        
+        //Calling User Module index function
+        //In Controller or in any
+        //$mUser = new User();
+        //$mUser->index();
+        //OR
+        //User::index();
+
+
+
+
+
+2. Modules in app dir
+
+//Codeigniter4/app/config/routes.php   (All are same as given above)
+//Onlly this is added to...
+
+
+// include Admin module 
+if (file_exists(ROOTPATH . 'modules/Admin/Config/Routes.php')){
+  require ROOTPATH . 'modules/Admin/Config/Routes.php';
+}
+
 :end:
