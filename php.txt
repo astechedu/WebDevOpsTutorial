@@ -67,10 +67,11 @@ PHP_URL_PATH
 -------------------------------------------------------------------------
 
 //Adding 7 days to today's date
+
 $dt = date("Y-m-d");
-echo $start = date( "Y-m-d", strtotime( "$dt +0 day" ) ); // PHP:  2009-03-04
-echo "<br>";
-echo $end = date( "Y-m-d", strtotime( "$dt +7 day" ) ); // PHP:  2009-03-31
+echo $startDate = date( "Y-m-d", strtotime( "$dt +0 day" ) );     // PHP:  2023-03-31
+
+echo $endDate = date( "Y-m-d", strtotime( "$dt +7 day" ) );       // PHP:  2023-04-07
 
 --------------------------------------------------------------------------
 
