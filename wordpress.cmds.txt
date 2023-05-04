@@ -1,0 +1,732 @@
+>>> Wordpress Theme Development <<<<<<
+
+
+
+
+----------------------------------------------------------------------------------------
+
+Keys: short code, plugin, widget, Short Code in Custom Page,
+
+
+
+----------------------------------------------------------------------------------------
+
+Topics: 
+
+
+[Theme Functions: functions.php : Register Options to Admin: Examples](#theme-functions)
+
+[What Is a WordPress Database Table?](#wp-database)
+
+[Child Theme](#chile-theme)
+
+[Child Theme](#chile-theme)
+
+[Child Theme](#chile-theme)
+
+[Child Theme](#chile-theme)
+
+[Child Theme](#chile-theme)
+
+[Child Theme](#chile-theme)
+
+
+
+
+
+
+Making Theme: 
+
+-----
+Default Page: page.php
+Blog Page: index.php
+Custom Design: template
+
+For Admin: functions.php
+-----
+
+
+Insert HTMT to Wordpress Theme
+
+User Wordpress Functions: 
+Calling: 
+
+<?php echo get_template_directory_uri(); ?>
+<?php echo bloginfo(); ?>
+
+<?php echo get_header(); ?>
+
+<?php echo get_footer(); ?>
+<?php echo the_title(); ?>
+
+
+
+//Header file name: header.php
+<?php echo get_header(''); ?>
+
+//Header file name: header-inner.php
+<?php echo get_header('inner'); ?>
+
+
+//Header file name: footer.php
+<?php echo get_footer()?>
+
+//Header file name: footer-inner.php
+<?php echo get_footer('inner'); ?>
+
+<?php site_url(); ?>
+<?php the_content(); ?>
+<?php echo get_the_content(); ?>
+<?php the_post(); ?>
+
+<?php the_post_thumbnail(); ?>
+<?php wp_get_attachment_image_src(get_post_thumbnail_id(), 'large'; ?>
+
+
+
+----------------------------------------------------------------------
+------------------------------------------------------------------------------
+
+What is functions.php?
+
+The functions.php file behaves like a WordPress plugin, adding features and functionality to a WordPress site.
+ You can use it to call WordPress functions and to define your own functions.
+
+-------------------------------------------------------------------------------
+---------------------------------------------------------------------
+//Register a New Menu in Wordpress
+
+<?php echo register_nav_menu(); ?>
+<?php echo wp_nav_menu(); ?>
+
+File: funtions.php
+
+
+//Showing options in admin
+functions.php 
+
+<?php
+
+regiter_nav_menus(
+        array('primary-menu'=>'Top Menu'
+)
+
+
+add_theme_support('post-thumbnails');
+
+
+//Admin mein image add hogi
+<?php add_theme_support('custom-header'); ?>
+
+?>
+
+
+
+
+
+Calling: 
+
+<div class="menu-bar">
+     <?php wp_nav_menu(array('
+           theme_location'=>'primary-menu'
+           ,'menu_class'=>'nav')) ?>
+           )) ?>
+</div>
+
+------------------------------------------------------------
+
+How to call default page template in wordpress
+
+File: page.php
+
+
+
+------------------------------------------------------------
+
+<?php 
+  $logoimg = get_header_image(); 
+?>
+
+
+
+
+
+-----------------------------------------------------------------------------
+
+Theme Functions
+
+    Automatic Feed Links.
+    Navigation Menus.
+    Load Text Domain.
+    Post Thumbnails.
+    Post Formats.
+    Theme support in block themes.
+    Initial Setup Example.
+
+------------------------------------------------------------------------------
+
+
+#
+[Top](#top)
+<a name="theme-functions"></a>
+
+*Theme Functions: functions.php : Register Options to Admin
+
+
+What is functions.php?
+
+The functions.php file behaves like a WordPress plugin, adding features and functionality to a WordPress site.
+ You can use it to call WordPress functions and to define your own functions.
+
+
+Examples:
+
+<code>
+function load_stylesheets()
+{
+    wp_register_style('style_css', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('style_css');
+
+}
+add_action( 'wp_enqueue_scripts',  'load_stylesheets');
+</code>
+
+
+Theme Setup
+
+A number of theme features should be included within a “setup” function that runs initially when your theme is activated. As shown below, each of these features can be added to your functions.php file to activate recommended WordPress features.
+
+To create this initial function, start a new function entitled myfirsttheme_setup(), like so:
+
+<code>
+if ( ! function_exists( 'myfirsttheme_setup' ) ) :
+/**
+ * Sets up theme defaults and registers support for various WordPress  
+ * features.
+ *
+ * It is important to set up these functions before the init hook so
+ * that none of these features are lost.
+ *
+ *  @since MyFirstTheme 1.0
+ */
+function myfirsttheme_setup() { ... }
+</code>
+
+
+Automatic Feed Links
+
+Automatic feed links enables post and comment RSS feeds by default. These feeds will be displayed in <head> automatically. They can be called using add_theme_support() in classic themes. This feature is automatically enabled for block themes, and does not need to be included during theme setup.
+
+
+	add_theme_support( 'automatic-feed-links' );
+
+
+
+Navigation Menus: 
+
+<code>
+register_nav_menus( array(
+    'primary'   => __( 'Primary Menu', 'myfirsttheme' ),
+    'secondary' => __( 'Secondary Menu', 'myfirsttheme' )
+) );
+
+</code>
+
+
+
+Load Text Domain: 
+
+<code>
+load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+</code>
+
+
+Post Thumbnails: 
+
+<code>
+add_theme_support( 'post-thumbnails' );
+</code>
+
+
+
+Post Formats: 
+
+<code>
+add_theme_support( 'post-formats',  array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+</code>
+
+
+
+Theme support in block themes: 
+
+<code>
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'responsive-embeds' );
+add_theme_support( 'editor-styles' );
+add_theme_support( 'html5', array( 'style','script' ) );
+add_theme_support( 'automatic-feed-links' ); 
+</code>
+
+
+
+Initial Setup Example: 
+
+<code>
+if ( ! function_exists( 'myfirsttheme_setup' ) ) :
+	/**
+	 * Sets up theme defaults and registers support for various
+	 * WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme
+	 * hook, which runs before the init hook. The init hook is too late
+	 * for some features, such as indicating support post thumbnails.
+	 */
+	function myfirsttheme_setup() {
+
+    /**
+	 * Make theme available for translation.
+	 * Translations can be placed in the /languages/ directory.
+	 */
+		load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+
+		/**
+		 * Add default posts and comments RSS feed links to <head>.
+		 */
+		add_theme_support( 'automatic-feed-links' );
+
+		/**
+		 * Enable support for post thumbnails and featured images.
+		 */
+		add_theme_support( 'post-thumbnails' );
+
+		/**
+		 * Add support for two custom navigation menus.
+		 */
+		register_nav_menus( array(
+			'primary'   => __( 'Primary Menu', 'myfirsttheme' ),
+			'secondary' => __( 'Secondary Menu', 'myfirsttheme' ),
+		) );
+
+		/**
+		 * Enable support for the following post formats:
+		 * aside, gallery, quote, image, and video
+		 */
+		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+	}
+endif; // myfirsttheme_setup
+add_action( 'after_setup_theme', 'myfirsttheme_setup' );
+
+</code>
+
+
+
+Content Width: 
+
+<code>
+if ( ! isset ( $content_width) ) {
+    $content_width = 800;
+}
+</code>
+
+
+
+Other Features: 
+
+
+    Custom Headers -Classic themes
+    Sidebars (widget areas) -Classic themes
+    Custom Background -Classic themes
+    Title tag -Classic themes
+    Add Editor Styles
+    HTML5 -Classic themes
+
+
+
+
+Your functions.php File: 
+
+<code>
+/**
+ * MyFirstTheme's functions and definitions
+ *
+ * @package MyFirstTheme
+ * @since MyFirstTheme 1.0
+ */
+
+/**
+ * First, let's set the maximum content width based on the theme's
+ * design and stylesheet.
+ * This will limit the width of all uploaded images and embeds.
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 800; /* pixels */
+}
+
+
+if ( ! function_exists( 'myfirsttheme_setup' ) ) :
+
+	/**
+	 * Sets up theme defaults and registers support for various
+	 * WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme
+	 * hook, which runs before the init hook. The init hook is too late
+	 * for some features, such as indicating support post thumbnails.
+	 */
+	function myfirsttheme_setup() {
+
+		/**
+		 * Make theme available for translation.
+		 * Translations can be placed in the /languages/ directory.
+		 */
+		load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+
+		/**
+		 * Add default posts and comments RSS feed links to <head>.
+		 */
+		add_theme_support( 'automatic-feed-links' );
+
+		/**
+		 * Enable support for post thumbnails and featured images.
+		 */
+		add_theme_support( 'post-thumbnails' );
+
+		/**
+		 * Add support for two custom navigation menus.
+		 */
+		register_nav_menus( array(
+			'primary'   => __( 'Primary Menu', 'myfirsttheme' ),
+			'secondary' => __( 'Secondary Menu', 'myfirsttheme' ),
+		) );
+
+		/**
+		 * Enable support for the following post formats:
+		 * aside, gallery, quote, image, and video
+		 */
+		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+	}
+endif; // myfirsttheme_setup
+add_action( 'after_setup_theme', 'myfirsttheme_setup' );
+
+</code>
+
+
+
+
+#
+[Top](#top)
+<a name="child-theme"></a>
+
+*Child Theme
+
+
+Create a style.css in the child theme folder
+
+style.css
+
+<code>
+/* 
+Theme Name: Twenty Seventeen Child 
+Theme URI: http://yourdomain.com
+Description: Twenty Seventeen Child 
+Theme Author: Your Name
+Author URI: http://yourdomain.com
+Template: twentyseventeen 
+Version: 1.0.0
+Text Domain: twentyseventeen-child
+License: GNU General Public License or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+*/
+</code>
+
+
+Create a PHP file named functions.php in the child theme’s directory: 
+
+<code>
+<?php
+add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
+function enqueue_parent_styles() {
+   wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
+}
+?>
+</code>
+
+
+
+Change the background color: 
+
+<code>
+.site-content-contain {
+    background-color: #DEF0F5;
+    position: relative;
+}
+</code>
+
+
+Change Side Bar Color: 
+
+<code>
+.widget {
+background: #B9EBFA;
+padding: 25px;
+}
+</code>
+
+
+
+Changing Font Types, Sizes, and Colors: 
+
+<code>
+p {
+color: teal;
+}
+p {
+font-family: Georgia;
+font-size: 18px;
+}
+</code>
+
+
+
+Entry Title: 
+
+<code>
+.entry-title a {
+    color: #333;
+    text-decoration: none;
+    margin-left: -2px;
+}
+</code>
+
+
+
+page.php: 
+
+<code>
+get_template_part( 'template-parts/page/content', 'page' );
+</code>
+
+
+#
+
+[Top](#top)
+<a name="wp-database"></a>
+
+*What Is a WordPress Database Table?
+
+A database stores data in the form of tables. Each table consists of unique data displayed in columns and rows that contain more specific pieces of information or parameters.
+
+By default, a WordPress database contains the following tables;
+
+    	wp_commentmeta – keeps the metadata of each comment posted on the website.
+   	wp_comments – stores data related to user comments, including the author name, URL, IP address, email, and comment content.
+   	wp_links – it was used for holding information from the Links feature. Since the feature has been deprecated, this table is often empty.
+
+	wp_options – contains WordPress configuration settings, such as website URL, default category, and posts per page.
+	wp_postmeta – keeps metadata of each post on the site, such as custom fields.
+	wp_posts – stores data from articles, custom post types, pages, and navigation menu items.
+	wp_termmeta – stores metadata of the terms.
+	wp_terms – contains the WordPress terms for each post tag and category.
+	wp_term_relationships – maintains the association between posts and terms in the wp_terms table.
+	wp_term_taxonomy – describes the taxonomy for each category, link, and tag in the wp_terms table.
+
+#
+
+How to fetch data from database using MySqli or $wpdb  (Code Not Tested)
+
+<code>
+$results = $wpdb->get_results( "SELECT * FROM $table_name"); // Query to fetch data from database table and storing in $results
+if(!empty($results))                        // Checking if $results have some values or not
+{    
+    echo "<table width='100%' border='0'>"; // Adding <table> and <tbody> tag outside foreach loop so that it wont create again and again
+    echo "<tbody>";      
+    foreach($results as $row){   
+    $userip = $row->user_ip;               //putting the user_ip field value in variable to use it later in update query
+    echo "<tr>";                           // Adding rows of table inside foreach loop
+    echo "<th>ID</th>" . "<td>" . $row->id . "</td>";
+    echo "</tr>";
+    echo "<td colspan='2'><hr size='1'></td>";
+    echo "<tr>";        
+    echo "<th>User IP</th>" . "<td>" . $row->user_ip . "</td>";   //fetching data from user_ip field
+    echo "</tr>";
+    echo "<td colspan='2'><hr size='1'></td>";
+    echo "<tr>";        
+    echo "<th>Post ID</th>" . "<td>" . $row->post_id . "</td>";
+    echo "</tr>";
+    echo "<td colspan='2'><hr size='1'></td>";
+    echo "<tr>";        
+    echo "<th>Time</th>" . "<td>" . $row->time . "</td>";
+    echo "</tr>";
+    echo "<td colspan='2'><hr size='1'></td>";
+    }
+    echo "</tbody>";
+    echo "</table>"; 
+
+}
+</code>
+
+#
+To update time field on if condition:
+
+if($userip==245.356.134.22){  //Checking if user_ip field have following value
+$wpdb->update( 
+$table_name, 
+array( 
+    'time' => 'YOUR NEW TIME' // Entring the new value for time field
+),      
+array('%d')                   // Specify the datatype of time field
+);
+}
+
+
+Update
+
+If you want to check if the IP you are going to insert in database is already exist or not then check it like this
+
+<code>
+global $wpdb,$ip;
+$results = $wpdb->get_results( "SELECT user_ip FROM $table_name");  //query to fetch record only from user_ip field
+
+$new_ip = 245.356.134.22;   //New Ip address storing in variable
+
+if(!empty($results))                       
+{    
+    foreach($results as $row){  
+    $old_ip = $row->user_ip;        // putting the value of user_ip field in variable
+    if($new_ip==$old_ip){           //  comparing new ip address with old ip addresses
+      $ip = 'Already Exist';        // if ip already exist in database then assigning some string to variable
+    }
+    }
+
+}
+if($ip = 'Already Exist'){          // Checking if variable have some string (It has some string only when if IP already exist in database as checked in if condition by comparing old ips with new ip)
+//Insert query according to Ip already exist in database
+}else{
+//Insert query according to Ip doesn't exist in database
+}
+</code>
+
+#
+
+<code>
+//For fetching data use
+global $wpdb;
+$results = $wpdb->get_results("SLECT * FROM table_name"); 
+//and for update use below code 
+$wpdb->update( 
+  $table_name, 
+  array( 
+    'time' => time(),   // string
+  ), 
+  array( 'user_ip' => '245.356.134.22' ), 
+  array('%s'), 
+  array( '%d' )
+);
+</code>
+
+#
+<code>
+$wpdb->update($table_name , array('user_ip' => $user_ip, 'post_id' =>$postID, 'time' => $visittime),array('%s','%d', '%d') );
+$results = $wpdb->get_results("SELECT * FROM table_name"); 
+</code>
+
+#
+
+
+
+*Database Application Programming Interface (API)
+
+
+    get_comments()
+    get_pages()
+    get_posts()
+    get_results()
+    get_row()
+    get_users()
+    get_var()
+
+
+#
+
+# Short Code in wordpress
+
+  In functions.php file:
+
+   function my_shortcode {
+
+      $message = "<h1>This short code</h1>";
+
+      return $message;
+   }
+
+  //Register Short Code,  Using:  [greeting]
+
+   add_shortcode('greeting', 'my_shortcode') 
+
+
+#
+
+# Using Short Code In Custom Page in Wordpress (In Child Theme)
+ //Short Code in Custom Page
+
+<?php
+  /* Template Name: Contact Us */
+  get_header();
+?>
+
+   <h1>Contact Us</h1>
+   <?php echo do_shortcode("[greeting]"); ?>
+
+
+<?php
+
+ get_footer();
+
+?>
+
+
+
+#
+# Widged in Wordpress
+
+ In functions.php file
+
+ function header_widget() {
+   register_sidebar(array(
+     
+     'name' => 'Header Widget',
+     'id' => 'header_widget',
+     'description' => 'will be displayed in the Header',
+     'before_widget' => '<div class="heade_widget">'
+     'after_widget' => '</div>',
+     'before_title' => '<h2 class="widget_title"></h2>',
+     'after_widget' => '</h2>',     
+     
+   ));
+ }
+
+  //Wordpress hook
+  add_action('widget_init','header_widget');   
+
+//Put this code in any file example header.php 
+
+  <?php if(is_active_sidebar('header_widget)) :?>
+  <div class="head_wrap">
+    <?php dynamic_sidebar('header_widget') ?>
+  </div>
+  <?php endif; ?>
+
+
+
+
+#
+:end:
+
+
+
+
+
+
+
+
