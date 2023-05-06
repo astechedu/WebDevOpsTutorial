@@ -1,0 +1,92 @@
+>>>>> AWS Services Tutoril <<<<<
+
+
+-----------------------------------------------------------
+
+keys: php mysql apache2 on aws instance,
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+
+
+PHP MySql Apache2 On AWS Instance:
+
+Installation: 
+
+
+Ubuntu: 
+
+#!/bin/bash
+sudo apt update -y
+sudo apt install -y apache2
+
+PHP:
+
+sudo add-apt-repository ppa:ordrej/php -y 
+sudo apt update -y
+sudo apt install php8.1 -y
+
+sudo systemctl start apache2
+
+cd /var/www/html
+sudo mv index.html index.old.html
+sudo bash -c "echo '<?php phpinfo(): ?>' > index.php"
+
+
+-----------------------------------------------------------
+
+2)
+
+update apt
+sudo apt-get update
+
+install update
+sudo apt-get install apach2
+
+install php
+sudo apt-get install php libapache2-mod-php
+
+install mysql 
+sudo apt-get install mysql-server
+
+install phpmyadmin
+sudo apt-get install phpmyadmin php-mbstring php-gettext
+
+restart apache
+udo systemctl restart apache2
+
+enable file permission
+sudo chown ubuntu /var/www/html
+
+Use this command phpmyadmin not work
+sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-availble/phpmyadmin.conf
+
+sudo a2enconf phpmyadmin.conf
+
+sudo systemctl restart apache2
+
+
+Setup custom password for phpmyadmin
+sudo mysql 
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password By 'mypass123';
+mysql>exit
+
+
+---------------------------------------------------------------
+
+
+AWS Free SSL Certificate
+
+
+Install certbot on ubuntu 
+-------------------------
+
+sudo apt-get-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install python-certbot-apache 
+sudo certbot --apache -d domain.com
+
+----------------------------------------------
+
+
+---------------------------------------------------------------
