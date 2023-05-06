@@ -79,6 +79,8 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 :link:[Yii click here](yii.commands.txt)
 
+:link:[Wordpress: Create Plugins, Widgets & Shortcode etc](wordpress.info.txt)
+
 # Python :diamond_shape_with_a_dot_inside:
 
 :link:[Python Basics click here md](python.basics.md)
