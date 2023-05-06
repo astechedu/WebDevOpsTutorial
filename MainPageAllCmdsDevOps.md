@@ -8,7 +8,6 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 :computer:
 
 
-
 ## ***System Information*** :diamond_shape_with_a_dot_inside:
 
 :link:[Windows Linux etc click here](system.info.md)     
@@ -152,6 +151,8 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 :link:[Clouds: Providers, Resources & More](clouds-providers-resources.md)
 
+:link:[How to Instal PHP, MySql & Apache2 On AWS Instance](aws.tutorial.cmds.txt) 
+
 # Docker :diamond_shape_with_a_dot_inside:
 
 :link:[Docker Images & Commands click here](docker.images.md) 
@@ -244,3 +245,5 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 
 [Got To TOP](#top)
+
+Thanks To All
