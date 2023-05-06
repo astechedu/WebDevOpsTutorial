@@ -48,10 +48,10 @@ Added Points to resume (Kubernetes:
 # Resume (PHP Developer)
 
 <code>
-Ajay Sisaudiya                                                                                                                                                                                                                  	                                 	                                                                                                                                                                                                                                                           Email : example@gmail.com
-     (PHP Developer)                                                                                            Phone | +91 0000000000, 0000000000  
-                                                                                                                                                                             Address | Nehrucolony Road Balawala Meetut      
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ajay Sisaudiya                                                                                                                                                                                           	             Email : example@gmail.com
+(PHP Developer)                                             Phone | +91 0000000000, 0000000000 
+                                                            Address | Your Address      
+-------------------------------------------------------------------------------------------------------------
 Career Objective:
 Seeking a responsible career in an organization where I can utilize my skills, knowledge to work at my level best. To grow with the organization and deliver best possible services.
 Technical Skills:	
@@ -89,14 +89,58 @@ Education:
 </code>
 
 
+#
+:end:
+#
+
+# 2 Resume Some Changes
+
+Ajay Sisaudiya    
+( PHP WEB Developer )                                                                                                                                                                                                    Email : example@gmail.com                                         Phone | +91 0000000000,  0000000000  
+                                                                  Address :  Your Address   
+-------------------------------------------------------------------------------------------------------------
+
+Career Objective:
+Seeking a responsible career in an organization where I can utilize my skills, knowledge to work at my level best. To grow with the organization and deliver best possible services.
+Technical Skills:	
+->Server-side                   :  PHP
+->Database                        :  MYSQL
+->Server                              :  Apache, Nginx
+->Frameworks                  :  Laravel, Codeigniter, Cakephp and Zend
+->CMS                                  :  Wordpress
+->OS                                      :  Win 10,  Linux     
+ ->FTP                                    :  FileZilla, WinSCP
+->Version Control Tool  :  Git
+->Client-side                      :  HTML5, CSS3, Bootstrap, Javascript, Jquery
+->Editors                              :  Sublime , Visual Studio Code, Notepad++ 
+->Cloud                                 :  AWS  ( Instance , IAM User)
+->Tools                                  :  Jenkins, Terraform, Ansible, VirtualBox
+
+->Able to write clean, testable, object oriented PHP
+Work Experience: 
+PHP Developer:
+-> 6+ Years experience (Jan 2014 - Aug 2020) in SeekUs Technology as PHP  Developer, Dehradun.
+Projects: Ecommerce, Car Rental (Flexi Drive), SPA, PaymentGateway, API's
+(Browsers Compatibility, Responsive designs, Debugging, Testing)
+HTML Developer:
+->Seven months experience  (Jun 2013 to Dec 2013) in Evon Technology as HTML Developer, Dehradun.
+ ( Html5, CSS3,  Javascript,  Jquery,  Bootstrap, Photoshop, Browsers Compatibility, Responsive designs, Debugging)
+STRENGTHS:-	
+->Good Convincing Power, Willingness to learn, Hardworking Person, Self-motivated and Honesty, Positive Attitude
+HOBBIES:-	
+-> Surfing Internet and Reading
+At Present:
+->Creating & uploading web development ‘s videos on my youtube channel ( https://www.youtube.com/@astechedu )
+->(html, css, bootstrap, js, jquery, vue, react, angular, express, mysql, pdo, php,cURL laravel, codeigniter, cakephp, symfony, json, ajax, nodejs, python, docker, terraform, ansible, jenkins K8s etc...)
+-> Taking an experience of AWS and Docker on windows 10 and Linux
+Education:
+->Certificate in PHP 
+->One Year Diploma in Computer Software
+->Three Months Computer Hardware Certificate
+->Master Degree in Mathematics from D.A.V (P.G) College, Dehradu
+
+
+# 
+
 
 :end:
-
-
-
-
-
-
-
-
-
