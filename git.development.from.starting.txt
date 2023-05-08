@@ -1,0 +1,204 @@
+<<<< Git Starting For Development <<<
+
+
+------------------------------------------------------------------
+keys: git cmds, git life cycle, staging area, checkout, pictorial graphp, 
+      resource, development starting
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+
+------------------------------------------------------------------
+
+
+1. To create empty branch, you have to go to terminal and execute:
+
+ 
+
+git checkout --orphan branchname
+
+git rm -rf .
+
+
+add files: 
+---------
+
+git add .
+
+git commit -m "commit message"
+
+git push -u origin branchname
+
+
+
+
+-----------------------------------------------------------------------
+
+
+Git Life Cycle:
+--------------
+
+https://intellipaat.com/blog/tutorial/devops-tutorial/git-tutorial/
+
+
+              git init                      git add 
+Working Dir *----------* Initialization *-----------------
+                                                          *
+                                                          |
+                                                      ----------------
+                                                     | Staging Area  |
+                                                      ----------------
+                                                          |
+ 							  *
+GitHub *----------* Local Repositoty *------------------
+         git push                         git commit
+                         
+    
+
+
+-----------------------------------------------------------------------------------------
+
+// Development Starting: Working from here
+
+//Working on Git step by step cmds
+
+//Git CMDS:
+
+ 
+Example: 01 
+
+//1. Using git add (Go to staging area)
+
+touch ajay.txt
+git status
+git add .                           //Adding files to staging area                
+git status
+git restore --staged ajay.txt      //Back to working dir
+
+
+//2. Usign git commit (Go to local repository)
+
+git add. ajay.txt                         //File adding to staging area
+git status   
+git commit -m "file to local repository"  //File go to local reposity
+git status
+git reset --soft HEAD^1                   //ComeBackToStagingArea, If last commit is 1, 
+git status 
+ 
+git reset HEAD~ ajay.txt           //Not used //If last commit is not first(or initial) Using: git reset HEAD~
+                                  //Not used //If last commit is first(or initial) Using: git update-ref -d HEAD
+
+
+//3. Usign git push (Go to github)
+
+
+----------------------------------------------------------------------------------------------------------
+
+Checkout:
+
+git checkout fileName      //Last commit match to new   (matching file)
+git checkout -f            //Recover all or one file matck   (maching files)
+
+-----------------------------------------------------------------------------------------
+
+Showing Commits: 
+
+git log -p -1    //For one where is changes
+git log -p -2    //
+
+------------------------------------------------------------------------------------------
+
+git diff -a                  //File compage working tree to staging area
+git diff --staged            //File compare with staging area to last commit
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+//Details with pictorial graphp
+https://builtin.com/software-engineering-perspectives/git-reset-soft-head
+
+
+      _________________________________________________________________________________________________________
+     |                   |                  Local Git Repository  |                   |           |            |
+     |_________________________________________________________________________________________________________|
+            ^            |                                        |                   |           |
+            |            |                                        |                   |           | 
+            |            |                                        |                   |           |
+            |            |                                        |                   |           V git reset --soft
+      __________________________________________________________________________________________________________
+     |      |git commit  |git checkout      Index(Staging Area)                       |                         |
+     |__________________________________________________________________________________________________________|
+       ^                 |                                        |                   |
+       |                 |                                        |                   |
+       |                 V                                        |                   V git reset --mixed
+      ___________________________________________________________________________________________________________
+     | | git add                            Working Directory     |                                              |    
+     |___________________________________________________________________________________________________________|
+                                                                  |git reset --hard
+                                                                  V
+
+
+
+
+What Flags Do We Use With the Git Reset Command?
+
+    git reset --soft HEAD~1
+    git reset --mixed HEAD~1
+    git reset --hard HEAD~1
+
+-----------------------------------------------------------------------------------------
+
+Some:
+
+Git Restore:
+
+The "restore" command helps to unstage or even discard uncommitted local changes.
+
+
+git restore --staged index.html
+git restore --staged *.css
+git restore index.html
+git restore --source 7173808e index.html
+git restore --source master~2 index.html
+
+------------------------------------------------------------------------------------------
+
+
+
+
+
+Important Options:
+
+https://www.git-tower.com/learn/git/commands/git-restore
+
+
+
+<filename>
+The name of a file (or multiple files) you want to restore
+
+
+--staged:
+
+Removes the file from the Staging Area, but leaves its actual modifications untouched. 
+modifications will remain untouched
+
+
+
+--source <ref>
+
+Restores a specific revision of the file.
+
+
+
+--patch
+
+Allows you to select individual chunks to restore. 
+
+
+-----------------------------------------------------------------------------------------
+
+
