@@ -80,6 +80,8 @@ $\large{\color{red} Ajay \ Sisaudiya }$
 
 :link:[Wordpress: Create Plugins, Widgets & Shortcode etc](wordpress.info.txt)
 
+:link:[My PHP Code Like Date Searching etc... Copy & Paste from Here](mycode.to.dev.txt)
+
 # Python :diamond_shape_with_a_dot_inside:
 
 :link:[Python Basics click here md](python.basics.md)
