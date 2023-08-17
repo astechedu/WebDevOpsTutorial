@@ -194,7 +194,7 @@ The primary configuration file for PHP when run from the Apache module.
 
 The primary configuration file for PHP when run from as PHP-FPM.
 
--------------------------------------------
+----------------------------------------------
 
 
 
