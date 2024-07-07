@@ -5,9 +5,7 @@
 
 
 Links: 
- Set Environment Variable:
- https://help.ubuntu.com/community/EnvironmentVariables
- 
+ https://help.ubuntu.com/community/EnvironmentVariables 
  
  
  
@@ -525,5 +523,4 @@ Bank Widthdaw from zebpay:
       
       
 ---------------------------------------------------------------------------------      
-      
-      
+
